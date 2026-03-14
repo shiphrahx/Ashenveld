@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styles from './CharacterCreation.module.css'
+import StarField from './StarField'
 
 export interface CreationResult {
   gender: string
@@ -129,6 +130,7 @@ export default function CharacterCreation({ onComplete }: Props) {
 
   return (
     <div className={styles.creationScreen}>
+      <StarField />
 
       {/* ── STEP 1: GENDER ── */}
       {step === 1 && (

@@ -17,23 +17,6 @@
     radial-gradient(ellipse 30% 50% at 20% 80%, rgba(15,25,45,0.3) 0%, transparent 60%);
 }
 
-.stars {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.star {
-  position: absolute;
-  border-radius: 50%;
-  background: var(--text-muted);
-  animation: twinkle var(--dur, 4s) ease-in-out infinite var(--del, 0s);
-}
-
-@keyframes twinkle {
-  0%, 100% { opacity: var(--lo, 0.2); }
-  50%       { opacity: var(--hi, 0.7); }
-}
 
 .titleContent {
   position: relative;
