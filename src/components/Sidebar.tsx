@@ -6,6 +6,7 @@ interface Props {
   state: GameState
   onJournal: () => void
   onItems: () => void
+  onPeople: () => void
 }
 
 const STAT_KEYS: Array<[keyof GameState['player']['stats'], string, string]> = [
@@ -52,7 +53,7 @@ const CLASS_LABELS: Record<string, string> = {
   cipher:    'The Cipher',
 }
 
-export default function Sidebar({ state, onJournal, onItems }: Props) {
+export default function Sidebar({ state, onJournal, onItems, onPeople }: Props) {
   const { player, world, factions } = state
   const hpPct = Math.max(0, Math.min(100, (player.resources.health / player.resources.max_health) * 100))
   const classLabel = CLASS_LABELS[player.class] ?? player.class
@@ -135,7 +136,7 @@ export default function Sidebar({ state, onJournal, onItems }: Props) {
           <span className={styles.al}>Map</span>
           <span className={styles.tip}>Map</span>
         </button>
-        <button className={styles.ab}>
+        <button className={styles.ab} onClick={onPeople}>
           <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           <span className={styles.al}>People</span>
           <span className={styles.tip}>Relationships</span>
