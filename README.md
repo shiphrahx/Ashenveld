@@ -8,8 +8,6 @@
 
 # Ashenveld
 
-> *You left this place eleven years ago. Now something you love has disappeared into it.*
-
 Ashenveld is a web-based narrative RPG set in a cursed town and the ancient forest that is consuming it. It is a game about returning to a place you thought you were done with, and about what it costs to go looking for someone who may not want to be found.
 
 ---

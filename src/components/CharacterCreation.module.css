@@ -39,9 +39,9 @@
 
 .stepNum {
   font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
-  font-size: 9px;
+  font-size: 16px;
   letter-spacing: 0.3em;
-  color: var(--text-dim);
+  color: var(--text-muted);
   text-transform: uppercase;
   margin-bottom: 14px;
 }
@@ -57,8 +57,7 @@
 
 .stepSub {
   font-size: 16px;
-  font-style: italic;
-  color: var(--text-muted);
+  color: var(--text-main);
   line-height: 1.7;
   max-width: 480px;
   margin: 0 auto;
@@ -232,10 +231,10 @@
 
 .classArchetype {
   font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--text-main);
   margin-top: 4px;
 }
 
@@ -243,11 +242,11 @@
 
 .classTag {
   font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   border: 1px solid var(--border-lit);
-  color: var(--text-muted);
+  color: var(--text-main);
   padding: 3px 10px;
   flex-shrink: 0;
   transition: all 0.18s;
@@ -260,15 +259,14 @@
 
 .classQuote {
   font-size: 14px;
-  font-style: italic;
   color: var(--blue-ice);
   line-height: 1.6;
   opacity: 0.8;
 }
 
 .classDesc {
-  font-size: 14px;
-  color: var(--text-muted);
+  font-size: 16px;
+  color: var(--text-main);
   line-height: 1.75;
 }
 
@@ -281,11 +279,11 @@
 
 .statPill {
   font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.1em;
-  padding: 3px 9px;
-  border: 1px solid var(--border);
-  color: var(--text-dim);
+  padding: 4px 10px;
+  border: 1px solid var(--border-lit);
+  color: var(--text-muted);
   transition: all 0.18s;
 }
 
@@ -317,17 +315,17 @@
 
 .fieldLabel {
   font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
-  font-size: 9.5px;
+  font-size: 12px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--text-main);
 }
 
 .fieldInput {
   background: var(--panel);
   border: 1px solid var(--border);
   color: var(--text-bright);
-  font-family: 'Lora', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  font-family: 'Segoe UI', system-ui, sans-serif;
   font-size: 17px;
   padding: 13px 16px;
   outline: none;
@@ -336,7 +334,7 @@
 }
 
 .fieldInput:focus { border-color: var(--blue-steel); }
-.fieldInput::placeholder { color: var(--text-dim); font-style: italic; }
+.fieldInput::placeholder { color: var(--text-muted); font-style: italic; }
 
 .relationGrid {
   display: grid;
@@ -346,15 +344,14 @@
 
 .relBtn {
   background: var(--panel);
-  border: 1px solid var(--border);
-  color: var(--text-muted);
-  font-family: 'Lora', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-  font-size: 14px;
+  border: 1px solid var(--border-lit);
+  color: var(--text-main);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 15px;
   padding: 12px 10px;
   cursor: pointer;
   text-align: center;
   transition: all 0.15s;
-  font-style: italic;
 }
 
 .relBtn:hover { border-color: var(--border-lit); color: var(--text-main); }
@@ -372,9 +369,8 @@
 }
 
 .previewText {
-  font-size: 15px;
-  font-style: italic;
-  color: var(--text-muted);
+  font-size: 16px;
+  color: var(--text-main);
   line-height: 1.8;
 }
 
@@ -398,9 +394,8 @@
 }
 
 .namePreviewText {
-  font-size: 15px;
-  font-style: italic;
-  color: var(--text-muted);
+  font-size: 16px;
+  color: var(--text-main);
   line-height: 1.8;
 }
 
@@ -421,10 +416,10 @@
 
 .navBack {
   font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--text-dim);
+  color: var(--text-muted);
   background: none;
   border: none;
   cursor: pointer;
@@ -461,12 +456,12 @@
 
 .navNext {
   font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--blue-ice);
+  color: var(--white-cold);
   background: none;
-  border: 1px solid var(--blue-mid);
+  border: 1px solid var(--blue-steel);
   padding: 12px 32px;
   cursor: pointer;
   transition: all 0.18s;
@@ -540,7 +535,6 @@
 
 .finalText {
   font-size: 17px;
-  font-style: italic;
   color: var(--text-muted);
   line-height: 1.85;
 }

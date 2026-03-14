@@ -20,7 +20,7 @@
   flex-shrink: 0;
 }
 
-.crumb { color: var(--text-dim); font-size: 9.5px; letter-spacing: 0.1em; }
+.crumb { color: var(--text-muted); font-size: 11px; letter-spacing: 0.1em; }
 
 .narrative {
   flex: 1;
@@ -90,7 +90,7 @@
   background: none;
   border: 1px solid var(--border-dim);
   color: var(--text-main);
-  font-family: 'Lora', serif;
+  font-family: 'Segoe UI', system-ui, sans-serif;
   font-size: 17px;
   padding: 11px 14px 11px 12px;
   text-align: left;
@@ -110,8 +110,8 @@
 
 .mk {
   font-family: 'Cinzel', serif;
-  font-size: 9.5px;
-  color: var(--text-dim);
+  font-size: 11px;
+  color: var(--text-muted);
   min-width: 14px;
   flex-shrink: 0;
 }
@@ -120,7 +120,7 @@
 
 .badge {
   font-family: 'Cinzel', serif;
-  font-size: 9.5px;
+  font-size: 11px;
   letter-spacing: 0.06em;
   padding: 2px 8px;
   border: 1px solid;
@@ -132,4 +132,4 @@
 .badge.easy   { color: var(--success-lit); border-color: var(--success); }
 .badge.medium { color: var(--partial-lit); border-color: var(--partial); }
 .badge.hard   { color: var(--fail-lit);    border-color: var(--fail); }
-.badge.none   { color: var(--text-dim);    border-color: var(--border); }
+.badge.none   { color: var(--text-muted);  border-color: var(--border-lit); }
