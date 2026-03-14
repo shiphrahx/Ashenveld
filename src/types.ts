@@ -81,7 +81,7 @@ export interface StateChanges {
 
 export interface Outcome {
   text: string
-  next_scene: string
+  next_scene: string | null
   state_changes: StateChanges
 }
 

@@ -144,6 +144,7 @@ export default function App() {
     if (!gameState) return
     let next = applyStateChanges(gameState, outcome.state_changes)
     next = { ...next, journal: [...(next.journal ?? []), entry] }
+    if (!outcome.next_scene) return  // ending reached — stay on current scene
     await navigateTo(outcome.next_scene, next)
   }, [gameState, navigateTo])
 
