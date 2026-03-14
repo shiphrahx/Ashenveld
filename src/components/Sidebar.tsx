@@ -5,6 +5,7 @@ import styles from './Sidebar.module.css'
 interface Props {
   state: GameState
   onJournal: () => void
+  onItems: () => void
 }
 
 const STAT_KEYS: Array<[keyof GameState['player']['stats'], string, string]> = [
@@ -51,7 +52,7 @@ const CLASS_LABELS: Record<string, string> = {
   cipher:    'The Cipher',
 }
 
-export default function Sidebar({ state, onJournal }: Props) {
+export default function Sidebar({ state, onJournal, onItems }: Props) {
   const { player, world, factions } = state
   const hpPct = Math.max(0, Math.min(100, (player.resources.health / player.resources.max_health) * 100))
   const classLabel = CLASS_LABELS[player.class] ?? player.class
@@ -124,7 +125,7 @@ export default function Sidebar({ state, onJournal }: Props) {
           <span className={styles.al}>Journal</span>
           <span className={styles.tip}>Journal</span>
         </button>
-        <button className={styles.ab}>
+        <button className={styles.ab} onClick={onItems}>
           <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
           <span className={styles.al}>Items</span>
           <span className={styles.tip}>Inventory</span>

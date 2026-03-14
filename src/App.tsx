@@ -15,6 +15,7 @@ import TitleScreen from './components/TitleScreen'
 import StarField from './components/StarField'
 import GameOver from './components/GameOver'
 import Journal from './components/Journal'
+import Items from './components/Items'
 import CharacterCreation, { type CreationResult } from './components/CharacterCreation'
 import SceneView from './components/SceneView'
 import SceneArt from './components/SceneArt'
@@ -41,6 +42,7 @@ export default function App() {
   const [currentScene, setCurrentScene] = useState<Scene | null>(null)
   const [saveExists, setSaveExists] = useState(false)
   const [journalOpen, setJournalOpen] = useState(false)
+  const [itemsOpen, setItemsOpen] = useState(false)
 
   useEffect(() => { setRootClass(phase) }, [phase])
 
@@ -202,9 +204,12 @@ export default function App() {
         <div className={styles.shell}>
           <SceneArt locationName={locationName()} />
           <SceneView scene={currentScene} state={gameState} onChoice={handleChoice} />
-          <Sidebar state={gameState} onJournal={() => setJournalOpen(true)} />
+          <Sidebar state={gameState} onJournal={() => setJournalOpen(true)} onItems={() => setItemsOpen(true)} />
           {journalOpen && (
             <Journal entries={gameState.journal ?? []} onClose={() => setJournalOpen(false)} />
+          )}
+          {itemsOpen && (
+            <Items inventory={gameState.inventory} onClose={() => setItemsOpen(false)} />
           )}
         </div>
       </>
