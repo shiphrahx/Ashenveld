@@ -1,0 +1,246 @@
+{
+  "chapter": 2,
+  "title": "The Inner Approach",
+  "scenes": [
+    {
+      "id": "act2_ch2_inner_approach",
+      "act": 2, "chapter": 2,
+      "location": "ruins_inner_approach",
+      "title": "Going Down",
+      "on_enter": {
+        "state_changes": { "world": { "curse_spread": 3 } },
+        "time_advance": 40
+      },
+      "requires": { "flags": { "missing_person_found": true } },
+      "text": {
+        "default": "They lead you through the outskirts with the ease of someone who has done this hundreds of times. They know which stones to avoid, which routes are denser with the curse's effect, which areas are safer. Fourteen months of learning this place the hard way.\n\nThe inner approach begins at a specific point — what appears from the outside to be a collapsed wall turns out, from the right angle, to be the entrance to a downward passage. The ground slopes gradually. The walls close in. The stone here is older than the stone above — darker, smoother, the texture that comes from centuries of human hands.\n\nThe carvings begin here.\n\nThey cover every surface — walls, ceiling, even sections of the floor. Dense, deliberate, a text that has no white space, as if whoever wrote it was working against time and needed every surface. You cannot read a word of it. Your missing person can read some of it, incompletely, the way you might read a language learned in adulthood — halting, approximate, missing idiom.",
+        "commander": "You walk the approach as you would walk any unfamiliar position — reading it for tactical information, for cover, for sight lines, for the places where you would want to be if something came from either direction.\n\nThe approach is a corridor and corridors are bad. But the carvings create uneven surfaces that would complicate any mass movement through here. Whoever built this was not expecting to defend it with military force. They were expecting to defend it with knowledge.",
+        "arcane": "The carvings are consuming your peripheral attention even as you walk. You are reading them the way you read things when you are not supposed to be reading them — catching fragments, building partial translations, trying to hold them all simultaneously.\n\nThe language is old. Older than any tradition you know. But it shares structural features with several dead languages you have studied, and from those features you can extract — not words, but principles. The way sentences work. The way causation is expressed.\n\nYou will need to come back here with proper time.",
+        "ranger": "You walk the approach with your hand off the wall — you learned from the outskirts passage that the stone here is not neutral — and read the space the way you would read a burrow or a den.\n\nSomething has lived in this passage. Not recently — the signs are old. But before the ruins were abandoned, this was inhabited space. The wear patterns on the floor suggest regular traffic over centuries. This was not a ritual entrance. It was a corridor people used every day.",
+        "cipher": "You walk and watch your missing person move through the approach. They are showing you the path they know, which means they are also showing you the path they chose to learn, which means you are reading a map of their fourteen months in the choices they make about which turning to take and which wall to avoid.\n\nThey are not afraid here. That is the most significant thing you observe. They came into this place fourteen months ago and learned it and are not afraid of it. That is either extraordinary adaptation or something you should be more concerned about than you currently are."
+      },
+      "choices": [
+        {
+          "id": "ask_about_carvings",
+          "text": "\"What do the carvings say?\"",
+          "requires": {},
+          "roll": { "stat": "intelligence", "dc": 11 },
+          "outcomes": {
+            "success": {
+              "text": "They stop and look at a specific section. \"This part,\" they say, pointing to a panel of the carving, \"is the history. What the city was for. The power they were containing, where it came from, why they built the mechanism to hold it.\"\n\nThey move further along. \"This part is the maintenance protocols. How often the mechanism required attention. What happened if it was neglected.\"\n\nA pause at another section. \"And this part is what I spent eight months on. The sealing ritual. The full text. Every precaution, every requirement, every risk. The builders were honest about the risks.\" They look at you. \"I will show you the relevant sections when we reach the chamber.\"",
+              "next_scene": "act2_ch2_chamber_entrance",
+              "state_changes": {
+                "flags": { "understands_carving_structure": true }
+              }
+            },
+            "success_at_cost": {
+              "text": "They give you the broad structure — history, maintenance, ritual — and the specific location of the ritual section. The details are beyond your current ability to extract from the carving, but the shape of it is useful.",
+              "next_scene": "act2_ch2_chamber_entrance",
+              "state_changes": {}
+            },
+            "failure": {
+              "text": "They explain but the explanation does not fully land — the concepts involved are sufficiently distant from your frame of reference that the words arrive without the understanding. You file what you can and keep moving.",
+              "next_scene": "act2_ch2_chamber_entrance",
+              "state_changes": {}
+            }
+          }
+        },
+        {
+          "id": "ask_about_their_time_here",
+          "text": "\"What was the first month like? Before you understood any of it?\"",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "They walk for a moment before answering.\n\n\"Terrifying,\" they say. \"And then not. The first month I kept expecting to die or to lose myself the way the afflicted do. I kept testing — small exposures, careful retreats, learning where the worst of it was concentrated.\" They pause. \"Somewhere in the second month I stopped being afraid and started being curious. I have thought about that transition a lot. Whether the curiosity was mine or the ruins'.\"\n\n\"What did you conclude?\"\n\n\"That the distinction may not matter as much as I used to think,\" they say. \"The curiosity is real. I am following it. Where it came from—\" They glance at you. \"That is the question I would like to have answered when this is over.\"",
+              "next_scene": "act2_ch2_chamber_entrance",
+              "state_changes": {
+                "relationships": { "the_missing_person": { "closeness": 10 } }
+              }
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act2_ch2_chamber_entrance",
+      "act": 2, "chapter": 2,
+      "location": "ruins_inner_approach",
+      "title": "Before the Chamber",
+      "on_enter": {
+        "state_changes": { "world": { "curse_spread": 2 } },
+        "time_advance": 20
+      },
+      "requires": {},
+      "text": {
+        "default": "They stop at a specific point in the passage — not at the chamber entrance, which you can see ahead, a larger opening from which a faint light emanates, but ten metres short of it.\n\n\"Before we go in,\" they say. \"You need to know some things.\"\n\nThey tell you.\n\nThe chamber is the worst place in Ashenveld for curse-density. Extended exposure without preparation will cause symptoms. The herbs Maret's camp uses will help. The ward the Covenant gave you will help. Neither is complete protection.\n\nThe mechanism at the centre of the chamber radiates the curse, but it also radiates something else — the original power the city was containing. Direct contact with the mechanism is inadvisable. They have been as close as three metres and the effect at three metres took three days to clear.\n\n\"The ritual,\" they say, \"does not require contact with the mechanism. It requires proximity. There is a difference.\"",
+        "commander": "\"What is the exit strategy if something goes wrong?\" you ask.\n\n\"Back the way we came,\" they say. \"The passage holds. The outskirts are navigable. I have always been able to get out.\" A pause. \"I did not plan on company when I was designing the emergency exits. I will revise.\"\n\nThis is, you realise, a joke. The first joke they have made since you found them. Something in your chest loosens slightly.",
+        "arcane": "\"What are the symptoms of acute exposure?\" you ask.\n\nThey list them. First: the narrowing, which you know. Second: temporal distortion — time moving inconsistently, usually slower. Third: what they call the hearing, though it is not precisely hearing — a sense of the chamber's original function pressing against your perception, like being near something very loud even in silence. Fourth, in severe cases: the dissolution of the distinction between yourself and the ambient.\n\n\"The fourth stage,\" you say, \"is irreversible?\"\n\n\"I believe so,\" they say. \"I have not tested it.\"",
+        "ranger": "\"How will I know if I am going too deep?\" you ask. Meaning into exposure, not into the chamber.\n\nThey think about this. \"When things stop mattering in the order they should,\" they say. \"You will notice. The things that matter least go first.\" They pause. \"For me, the first time, it was being cold. I stopped caring about being cold. I noticed that before anything else and I retreated.\"\n\nYou file this as a metric. Cold. When you stop caring about cold, you leave.",
+        "cipher": "\"Who else knows how to reach this chamber?\" you ask.\n\n\"Maret knows the outskirts,\" they say. \"She does not know the inner approach. The Covenant has a partial map — I found evidence they were here twenty years ago — but their map is old and the outskirts have shifted since then. The Compact has nothing.\"\n\nA pause. \"That may change if Seriva is back.\"\n\n\"It will change,\" you say. \"If she caused the sealing to fail she knows exactly what she is looking for and how to find it.\""
+      },
+      "choices": [
+        {
+          "id": "enter_chamber",
+          "text": "Enter the chamber.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You take what protection you have — the herbs, the ward if you carry it, the specific knowledge that you now have about what to watch for — and you go through the entrance.\n\nThe light in the chamber is wrong. Not the grey light of the outskirts — something older, something that seems to come from the stone itself rather than from any source you can identify. It is enough to see by. More than enough, in a way that is difficult to explain.",
+              "next_scene": "act2_ch2_source_chamber",
+              "state_changes": {
+                "flags": { "chamber_entered": true }
+              }
+            }
+          }
+        },
+        {
+          "id": "prepare_first",
+          "text": "Take time to prepare. Use whatever protection you have.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You take twenty minutes. The herbs, if you have them. The ward, if you carry it. You and your missing person go over the chamber's layout, the ritual's requirements, the specific locations they will need you to stand.\n\nPreparation does not eliminate risk. It does what preparation always does: it changes the shape of what can go wrong.",
+              "next_scene": "act2_ch2_source_chamber",
+              "state_changes": {
+                "flags": { "chamber_prepared": true },
+                "player": { "resources": { "health": 10 } }
+              }
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act2_ch2_source_chamber",
+      "act": 2, "chapter": 2,
+      "location": "ruins_source_chamber",
+      "title": "The Source",
+      "on_enter": {
+        "state_changes": {
+          "flags": { "source_chamber_seen": true },
+          "world": { "curse_spread": 5 }
+        },
+        "time_advance": 30
+      },
+      "requires": {},
+      "text": {
+        "default": "The chamber is large and mostly intact.\n\nThe ceiling has collapsed in one section, leaving a gap through which you can see no sky — just more stone, deeper layers of the buried city above. The walls are carved from floor to the collapsed section, the same dense text as the passage but supplemented here with diagrams, schematics, the visual language of engineering applied to something that is not quite engineering.\n\nAt the centre: the mechanism.\n\nIt is approximately three metres across, made of a fused material that is neither fully stone nor fully metal, and it is broken. You can see the break — a catastrophic fracture through its primary element, the kind of damage that does not happen from age or erosion. Something struck it. Something very deliberately struck it.\n\nFrom the break, very faintly visible in the chamber's light, a thread of something. Not smoke. Not light. Something that has no analogue in your experience of the visible world, rising from the fracture and dispersing into the air of the chamber and from there, you now understand, outward through every geological connection this place has with the wider world.",
+        "commander": "You assess the mechanism the way you would assess a damaged fortification. The break is intentional — the angle of the fracture, the distribution of the damage, all consistent with a precise and deliberate strike rather than an accident or structural failure.\n\nSomeone broke this on purpose. Deliberately, carefully, knowing what they were doing and doing it anyway.\n\nYou look at the mechanism and think of Seriva.",
+        "arcane": "You stand at the safe distance your missing person indicated and read the chamber walls with everything you have.\n\nThe mechanism is a binding of the first order — not a cage, not a container, but a transformation. The builders did not seal the power away. They gave it a form — the city itself, the life of the city, the continuous human activity of maintenance and ritual and presence. The power was not imprisoned. It was given something to be.\n\nWhen the city was abandoned, the form dissolved. And the power reverted to what it was before the form was given: formless, directionless, transforming everything it touched into the purest version of itself.\n\nYou understand the curse completely for the first time. And you understand why the ritual requires two people.",
+        "ranger": "The chamber smells like nothing you have ever encountered. Not bad. Not good. The smell of something very old that has been operating continuously and has never had occasion to develop an odour because it has never stopped to be anything other than what it is.\n\nYou track the mechanism the way you track anything potentially dangerous — from a respectful distance, reading its behaviour, looking for the patterns that would tell you when it is safe to move closer and when it is not.\n\nIt breathes. In a sense. A pulse, slow, like the mechanism is doing something that corresponds to breathing.",
+        "cipher": "You read the chamber as a space with a function and you read the mechanism as the object that performs that function and you read the fracture as the thing that interrupted the function and you read the chamber walls as the documentation of what the function was supposed to be.\n\nAll of this in approximately ninety seconds.\n\nThe remaining question, the one you cannot read from the available information, is: who fractured the mechanism and why, and what did they expect to happen when they did."
+      },
+      "choices": [
+        {
+          "id": "study_the_ritual_text",
+          "text": "Study the ritual text on the walls. Understand what you are agreeing to.",
+          "requires": {},
+          "roll": { "stat": "intelligence", "dc": 12 },
+          "outcomes": {
+            "success": {
+              "text": "Your missing person guides you through the relevant sections. The ritual text is dense but you can follow the structure with their help.\n\nThe ritual requires two participants to simultaneously perform complementary actions at specific points in the chamber, maintaining physical contact at the moment of sealing. The mechanism will respond to the combined intention of the two participants — the text uses a concept your missing person translates as *unified wanting*, two people wanting the same outcome with sufficient clarity that the mechanism can read it as a single signal.\n\nThe risk: the mechanism, in responding to the participants, reads them in full. Not just the wanting. Everything. The text is explicit that participants may experience things about themselves and each other that they would not have chosen to experience in other circumstances.\n\nYou look at the person you came fourteen months into an empty landscape to find. \"Everything?\" you say.\n\n\"Everything,\" they say.",
+              "next_scene": "act2_ch2_decision_to_return",
+              "state_changes": {
+                "flags": { "ritual_understood": true }
+              }
+            },
+            "success_at_cost": {
+              "text": "You understand the broad strokes — two participants, complementary actions, unified intention, physical contact. The specific risks remain partially opaque, which your missing person notes is probably not ideal.\n\n\"We should come back to this,\" they say. \"Before the ritual. You should understand all of it.\"",
+              "next_scene": "act2_ch2_decision_to_return",
+              "state_changes": { "flags": { "ritual_partially_understood": true } }
+            },
+            "failure": {
+              "text": "The ritual text is beyond you without more time and better preparation. Your missing person gives you the summary they have developed over eight months of reading it. It will have to do for now.",
+              "next_scene": "act2_ch2_decision_to_return",
+              "state_changes": { "flags": { "ritual_summarised": true } }
+            }
+          }
+        },
+        {
+          "id": "examine_the_fracture",
+          "text": "Examine the mechanism's fracture from the safe distance. Understand what broke it.",
+          "requires": {},
+          "roll": { "stat": "perception", "dc": 13 },
+          "outcomes": {
+            "success": {
+              "text": "From three metres you can read the fracture clearly enough.\n\nThe damage is old — twenty years at least, consistent with the timeline of the sealing's failure. The fracture pattern is consistent with a very precise strike using a tool designed for exactly this purpose. Not a weapon. A tool. Something someone brought here specifically.\n\nAnd at the point of impact, barely visible against the surface of the mechanism: the residue of a ritual. Someone performed a ritual at the moment of striking. They did not just break the mechanism. They performed a specific operation on it.\n\nThis was not vandalism. This was surgery. Someone removed something from the mechanism. The fracture is the wound left by the removal.",
+              "next_scene": "act2_ch2_decision_to_return",
+              "state_changes": {
+                "flags": { "understands_fracture": true, "seriva_suspected": true }
+              }
+            },
+            "success_at_cost": {
+              "text": "The fracture is intentional. Old. Done with purpose. That much you can read. The specific nature of the operation performed at the moment of fracture is beyond you from this distance.",
+              "next_scene": "act2_ch2_decision_to_return",
+              "state_changes": { "flags": { "fracture_is_intentional": true } }
+            },
+            "failure": {
+              "text": "The fracture reads as damage. Old, intentional damage. Beyond that you need to be closer than is advisable.",
+              "next_scene": "act2_ch2_decision_to_return",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act2_ch2_decision_to_return",
+      "act": 2, "chapter": 2,
+      "location": "ruins_source_chamber",
+      "title": "We Need to Go Back",
+      "on_enter": {
+        "state_changes": { "world": { "curse_spread": 2 } },
+        "time_advance": 20
+      },
+      "requires": {},
+      "text": {
+        "default": "You have been in the chamber for over an hour. Your missing person is watching you with the specific attention of someone monitoring for the first signs of overexposure.\n\n\"We should leave,\" they say. \"For today.\"\n\nYou feel the effects of the chamber — not acutely, not dangerously, but present. A slight narrowing at the edges. A quality of distance between yourself and the things that usually feel immediate.\n\n\"The ritual,\" you say. \"Are we doing it?\"\n\nThey look at you for a moment. \"I would like to,\" they say. \"But you came here for me and I am asking you to risk yourself for Ashenveld. Those are different things. I want you to choose it, not be led into it.\" A pause. \"We go back to the outskirts. You sleep. Tomorrow you tell me what you want to do.\"",
+        "commander": "\"If we do not seal it,\" you say, \"what happens?\"\n\n\"Crestfall is gone in weeks,\" they say. \"Then the next town. Then the next. The mechanism's degradation is accelerating. In a year — possibly less — the affected area will be large enough that stopping it becomes geometrically harder with each passing month.\"\n\nA military assessment of the situation. You have had to make worse calls with worse information. \"Tomorrow,\" you say.",
+        "arcane": "\"If we do the ritual and it does not work,\" you say, \"what happens to us?\"\n\nThey are quiet for a moment. \"The text does not describe failure clearly. It describes the conditions for success. The implication is that the mechanism requires sufficient clarity of intention — if the intention is not clear enough, the mechanism simply does not respond and nothing happens.\"\n\nA pause. \"The other possibility — that the mechanism responds and the participants are not prepared for what responding entails — the text is less clear about that.\"",
+        "ranger": "You have been tracking your own symptoms since you entered the chamber. The narrowing is mild. The temporal distortion — time moving inconsistently — is present but not acute. You are within safe parameters.\n\n\"I can stay longer if useful,\" you say.\n\n\"No,\" they say. Firmly, not unkindly. \"First exposure should be short. The effects compound on subsequent visits. You need a baseline.\" They move toward the passage entrance. \"Tomorrow.\"",
+        "cipher": "\"There are things happening in Crestfall,\" you say. \"Seriva. Vorne. The timeline is not only ours.\"\n\n\"I know,\" they say. \"Which is why we need to move quickly and carefully, which requires you to rest and process today before we discuss timing.\" A pause. \"I have been here fourteen months. I know how to think in this place. You just arrived. Trust me on this one thing.\"",
+        "maret_note": "If Maret joined the player: Maret has been waiting in the outskirts during this scene. She has not entered the inner approach. When the player and missing person emerge, she and the missing person see each other for the first time in fourteen months."
+      },
+      "choices": [
+        {
+          "id": "agree_and_return",
+          "text": "Agree. Return to the outskirts. Rest.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You leave the chamber. The passage back feels shorter than the way in, which your missing person says is normal — the chamber creates a temporal distortion that makes the duration of time inside it feel extended. You have been in there for three hours. It felt like one.\n\nThe outskirts. The grey forest light. The Watcher at the gate, unchanged.\n\nYou camp in the outskirts, in a specific area your missing person has cleared and made as safe as any place in the ruins can be. Tomorrow.",
+              "next_scene": "act2_ch3_crestfall_news",
+              "state_changes": {
+                "world": { "time_of_day": "evening", "day": 6 }
+              }
+            }
+          }
+        },
+        {
+          "id": "tell_them_yes_now",
+          "text": "\"I do not need to sleep on it. I am doing the ritual.\"",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "They look at you for a long moment.\n\n\"Not today,\" they say. \"You need preparation and I need to prepare you properly. But—\" Something in their face shifts. \"Thank you. For not needing to think about it.\"\n\nYou leave the chamber and camp in the outskirts. In the morning they will begin showing you what you need to know.",
+              "next_scene": "act2_ch3_crestfall_news",
+              "state_changes": {
+                "flags": { "ritual_agreed": true },
+                "relationships": { "the_missing_person": { "closeness": 20 } },
+                "world": { "time_of_day": "evening", "day": 6 }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

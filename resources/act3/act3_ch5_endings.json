@@ -1,0 +1,200 @@
+{
+  "chapter": 5,
+  "title": "The Endings",
+  "scenes": [
+    {
+      "id": "act3_ch5_endings",
+      "act": 3, "chapter": 5,
+      "location": "crestfall_market",
+      "title": "The Router",
+      "on_enter": { "state_changes": {}, "time_advance": 0 },
+      "requires": {},
+      "text": {
+        "default": "This scene routes to the appropriate ending based on player choices throughout the game.",
+        "note": "Engine should evaluate flags here and route to the correct ending scene."
+      },
+      "choices": [
+        {
+          "id": "route_to_ending",
+          "text": "Continue.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "The story finds its end.",
+              "next_scene": "ending_router",
+              "state_changes": {}
+            }
+          },
+          "routing_logic": {
+            "if_flags": [
+              { "condition": { "flags": { "player_stays_ashenveld": true, "rootless_aligned": true } }, "next_scene": "ending_warden_of_ashenveld" },
+              { "condition": { "flags": { "player_stays_ashenveld": true, "compact_aligned": true } }, "next_scene": "ending_compact_warden" },
+              { "condition": { "flags": { "player_stays_ashenveld": true, "ashenveld_settlement_reached": true, "documentation_complete": true }, "min_relationship": { "the_missing_person": 60, "maret": 40 } }, "next_scene": "ending_stays_together" },
+              { "condition": { "flags": { "player_stays_ashenveld": true, "seriva_admitted_guilt": true, "knows_covenant_kills_afflicted": true, "documentation_complete": true }, "min_relationship": { "the_missing_person": 80 } }, "next_scene": "ending_the_account" },
+              { "condition": { "flags": { "player_leaves_ashenveld": true } }, "next_scene": "ending_escape_together" },
+              { "condition": { "flags": { "player_stays_alone": true, "alone_committed": true } }, "next_scene": "ending_alone_legend" },
+              { "condition": { "flags": { "player_stays_alone": true }, "health_below": 20 }, "next_scene": "ending_what_remains" },
+              { "default": true, "next_scene": "ending_stays_together" }
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "ending_stays_together",
+      "act": 3, "chapter": 5,
+      "location": "crestfall_market",
+      "title": "The Warden Stays",
+      "on_enter": { "state_changes": { "flags": { "game_complete": true } }, "time_advance": 0 },
+      "requires": {},
+      "text": {
+        "default": "A specific morning, some years later.\n\nCrestfall. The market square. The fountain running properly now — someone fixed it in the second year, a project that took three weeks and which the whole town had an opinion about and which Aldous funded half of and will not admit to funding.\n\nThe market has nine stalls. The ninth is new — a woman from one of the eastern villages who walked back out of the forest eighteen months after walking in, confused and thin and eventually, gradually, herself again. She sells dried herbs now. Some of them are from Maret's garden. Some of them are varieties nobody recognised until she started growing them.\n\nYou and your missing person live in the house on the north lane — Goran's old recommendation, which became available two years after you decided to stay. You have been in it since.\n\nThis morning: the market. The fountain. A specific quality of light that this time of year produces over Crestfall — not warm exactly, something more honest than warm. You are standing in it and so is your missing person and the day has not yet told you what it needs.",
+        "commander": "You have a formal role now — not the Compact's offer, something more particular. The regional recovery authority, a small organisation with a large remit. You chair it. Maret sits on it. Pol advises it. Branch does not sit on it because Branch does not sit on things but is always available.\n\nYou have done harder work with less. You have done less meaningful work with more. This is the right work at the right scale with the right people and you have the specific satisfaction of someone doing a thing they are built for.",
+        "arcane": "The documentation became a text. The text has been in print for two years. You receive letters about it from scholars in four countries and from ordinary people who read it because they heard there was a book about what happened in Ashenveld.\n\nYour missing person, who spent fourteen months making the core findings possible, is credited on the cover. They accept this with the equanimity of someone who stopped needing certain things while they were in the ruins and has not fully recovered the need.",
+        "ranger": "The forest east of Crestfall is different now from the forest of three years ago. Not restored — you would not use that word, it implies a return to a fixed state, and forests do not return, they continue — but functioning. The apex predators came back in the third year. The ecosystem is a working ecosystem.\n\nYou still read it every morning. The record you have been keeping is the most complete account of a damaged ecosystem's recovery from a novel cause that exists anywhere.\n\nSome mornings your missing person comes with you. They read the landscape with you the way you read people — looking for what is true underneath what is presented. They are not bad at it.",
+        "cipher": "The political situation in Ashenveld has reached the specific stability that follows from people having invested in something long enough to not want to lose what they built.\n\nMaret is the most trusted person in the region. Branch is the most competent. Lira is, improbably, becoming a teacher — she found that the skill she developed for managing her own cognition translates into helping others manage theirs.\n\nYou watch all of this with the specific satisfaction of someone who built something they can see working.\n\nYour missing person, standing beside you in the morning market light, says: \"You are cataloguing again.\"\n\n\"Yes,\" you say.\n\n\"Good,\" they say."
+      },
+      "choices": [
+        {
+          "id": "end_the_story",
+          "text": "Stay in the morning. Let the day arrive.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You stay.\n\nThe day arrives the way days do — with the specific indifference of things that do not know they are significant, or do not need to know.\n\nAshenveld. The market. The fountain. Nine stalls and the light and your missing person and the years that made this morning possible.\n\nThis is the ending that is not an ending. This is the story that keeps going in the specific way that real things keep going — not dramatically, not conclusively, but persistently. Because the alternative is not something you chose.\n\n— End —",
+              "next_scene": null,
+              "state_changes": { "flags": { "ending_reached": "warden_stays" } }
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "ending_escape_together",
+      "act": 3, "chapter": 5,
+      "location": "east_road",
+      "title": "The Warden Escapes",
+      "on_enter": { "state_changes": { "flags": { "game_complete": true } }, "time_advance": 0 },
+      "requires": {},
+      "text": {
+        "default": "A specific morning, some time later. Not years — months. Long enough for things to settle into a pattern.\n\nYou are in a place that does not know your name and does not need to. The specific quality of anonymity that comes from being somewhere that has not been shaped by anything you did.\n\nYour missing person is beside you. They are having breakfast in a market town they chose because they heard the birds here are interesting. The birds are interesting. They were right.\n\nThe letters from Ashenveld arrive every two weeks — from Maret, from Branch, from Pol. The recovery is ongoing. The work continues without you. This is what you built: something that can continue without you.\n\nAcross the table, your missing person is eating something ordinary with the specific attention of someone who has not had ordinary things for a long time and has not yet stopped being grateful for them.\n\nYou watch them eat breakfast in a market town they chose. This is not what you expected your life to look like. You are not sure what you expected. You are here.",
+        "commander": "You are not currently in command of anything. This is a new condition.\n\nYou are discovering that the capacity for command does not disappear when there is nothing to command. It becomes something else — attention, precision, the ability to read situations quickly. These things are useful in ordinary life too. They are just useful differently.",
+        "arcane": "You are writing. Not the Ashenveld documentation — that is complete. Something new. The beginning of a longer work about what the ruins were, what the power was, what the ritual means for the understanding of phenomena that have been observed in other places and not yet understood.\n\nAshenveld is not unique. You knew this theoretically. You are beginning to understand it practically.\n\nYour missing person reads your drafts and asks questions that improve them. They spent fourteen months in the most concentrated field site for your area of study that has existed in recorded history. They are, if they wanted to be, a significant scholarly collaborator.\n\nYou ask them if they want to be. They think about it. They say: sometimes.",
+        "ranger": "The forest in this region is different from Ashenveld's forest — ordinary, undamaged, the specific richness of a landscape that has not been through what Ashenveld went through.\n\nYou read it every morning anyway. You cannot stop reading landscapes. You have accepted this about yourself.\n\nYour missing person has started coming with you. They are learning to read landscapes the way you read them — for what is true underneath what is presented. They are not bad at it. They are the person who spent fourteen months reading one of the most complex landscapes on record. The skill transferred.",
+        "cipher": "You are out of the political environment of Ashenveld and the absence of a specific political problem to manage has revealed something: you are a person who is interesting to be around when not actively managing a political problem.\n\nThis surprises you more than it surprises your missing person, who apparently knew this already.\n\n\"You are different out here,\" they say.\n\n\"Yes,\" you say.\n\n\"It suits you,\" they say. They are telling you something about who you are when the circumstances do not require the other version. You take the information and hold it."
+      },
+      "choices": [
+        {
+          "id": "end_escape",
+          "text": "Stay in the morning.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "The day continues. Ordinary and specific.\n\nAshenveld is behind you. What you learned there is not. You carry it the way you carry anything that changed you — not as a burden, not as a trophy, as a quality of attention you did not have before.\n\nThe birds here are interesting.\n\nYour missing person finishes their breakfast. They look up and see you looking at them.\n\n\"What?\" they say.\n\n\"Nothing,\" you say. \"Watching.\"\n\nThey accept this. They have accepted a lot from you. You intend to be worth the accepting.\n\n— End —",
+              "next_scene": null,
+              "state_changes": { "flags": { "ending_reached": "escape_together" } }
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "ending_alone_legend",
+      "act": 3, "chapter": 5,
+      "location": "crestfall_market",
+      "title": "The Warden of Ashenveld",
+      "on_enter": { "state_changes": { "flags": { "game_complete": true } }, "time_advance": 0 },
+      "requires": {},
+      "text": {
+        "default": "A specific morning, several years later.\n\nCrestfall. The market square. The fountain running — it has been running for two years now. Nine stalls. Children who do not remember the curse as anything other than a story their parents tell.\n\nThe children call you the Warden. Not a title anyone assigned — a name that accumulated the way names do in small places, from the specific accumulation of someone always being there, always doing the thing that needed doing, always knowing the answer to the question the town was asking.\n\nYou are not sure you like the name. You have stopped trying to change it.\n\nThis morning: the market. The fountain. The children who do not know what the wrong silence sounded like because they were too young or not yet born. The Rootless camp, now a formal institution with a building and a sign and Lira on the staff. Branch, somewhere on the perimeter, doing whatever Branch does on perimeters.\n\nMaret, crossing the square, who sees you and raises a hand in greeting — the specific shorthand of two people who have worked together long enough that full greeting is unnecessary.",
+        "commander": "You took the Compact's offer eventually. Modified it. Restructured it into something you could accept without surrendering the independence the work requires.\n\nThe regional recovery authority exists because you built it. It works because Maret runs the human side and you run the institutional side and the two sides, improbably, trust each other.\n\nYou have not made peace with being here alone. You have made peace with the work being worth it regardless.",
+        "arcane": "The documentation became a text. The text is taught in three universities. You receive letters from students who have read it and want to know more.\n\nSome years ago a letter arrived from a town three weeks west of Ashenveld. Not from who you thought it might be from — from a scholar your missing person had sent it to, who wanted to connect with you about a related phenomenon in their region.\n\nYou wrote back. You have been corresponding since. The work extends further than Ashenveld. This is either comfort or distraction. You have decided it is both and that both are acceptable.",
+        "ranger": "The hawk's descendants have territories now. You know three individuals from the original hawk's line by their markings and their specific territories.\n\nThe forest east of Crestfall is functioning. Not as it was before the curse — differently. New species that were not here before. The curse changed the land and the land kept changing after the curse stopped. What it became is not a restoration. It is a continuation.\n\nYou read it every morning. You have read it every morning for several years. You are the person who knows this land most completely. When you are gone, the record you have kept will be what remains of that knowledge.\n\nThis concerns you sometimes. You have been training Branch's youngest to read the forest. He is not bad at it.",
+        "cipher": "The political situation in Ashenveld has long since stabilised past the point where it requires your active management.\n\nWhat it requires now is your presence — the specific gravity that comes from being the person who was there when it mattered and stayed when staying was the necessary thing.\n\nYou are not naive about this. You understand the mechanism. You have been the thing that holds a situation together for long enough that you are now part of the structure rather than an actor within it.\n\nThere are worse things to become. You have decided to be this thing without pretending you chose it entirely freely. Some choices are made by accumulation. You note this. Then you go to the market and do the work of another day."
+      },
+      "choices": [
+        {
+          "id": "end_legend",
+          "text": "Let the morning be what it is.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "Maret crosses the square. She raises a hand. You raise yours.\n\nShe keeps walking. You keep standing.\n\nAshenveld. The fountain. The children. The hawk somewhere over the ordinary forest to the east.\n\nYou are the Warden of Ashenveld. It is not what you came here to become. It is what happened when you kept staying.\n\nSomewhere west of here, a person you came back to Ashenveld for is having a morning that you are not part of. This is true and present and it is one of the things the morning contains along with everything else.\n\nThe day begins.\n\n— End —",
+              "next_scene": null,
+              "state_changes": { "flags": { "ending_reached": "alone_legend" } }
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "ending_warden_of_ashenveld",
+      "act": 3, "chapter": 5,
+      "location": "crestfall_market",
+      "title": "The Warden",
+      "on_enter": { "state_changes": { "flags": { "game_complete": true } }, "time_advance": 0 },
+      "requires": {},
+      "text": {
+        "default": "Years have passed. Crestfall has a name in the region now — not a famous one, but a known one. The town where the curse stopped. The town with the camp that knows what to do when someone comes in from the forest changed.\n\nThe Rootless camp is not called the Rootless camp anymore. It has a formal name — the Ashenveld Recovery Centre, a name that took three meetings to agree on and that nobody uses except on official documents. Unofficially it is still the camp. Maret is still Maret.\n\nYou and your missing person are in it. In all of it — the work, the place, the specific texture of a life built in a hard place with the people who stayed.\n\nThis is the Rootless ending. Not the easiest path. Not the one the institutions wanted. The one that put the people who knew the most about the curse in charge of what came after it.",
+        "commander": "The regional authority reports to a civilian board rather than to the Compact. This was the negotiation that took the longest and cost the most political capital and was the one that mattered most.\n\nVorne, who moved on to a different region three years ago, sends letters occasionally. They are formal and occasional and warm in the way military correspondence is warm — acknowledging what was accomplished without dwelling on it.\n\nYou write back in the same register. You were adversaries and collaborators and neither of those things cleanly and the correspondence reflects this.",
+        "arcane": "The knowledge of what the ruins are and what the sealing did is public and complete. Nobody controls it. This was your most important achievement and the one most likely to be forgotten — not the content of the knowledge, but the act of ensuring no single entity held it exclusively.\n\nYou teach, now, alongside the documentation. Students come to Ashenveld. The site is the text. You are the most knowledgeable person about the text who is also willing to stand in it with students and let them ask questions.\n\nThis is the best version of academic work you have done.",
+        "ranger": "The camp has a garden that produces things the surrounding villages need. Lira designed the garden. She knows which plants absorb the curse's residual effects, which ones help the afflicted who are still recovering, which ones are simply good for people to grow and tend.\n\nYou helped with the initial land assessment. The garden is Lira's.\n\nThis is how the work goes, done correctly: you do your part and step back and the people who know their part do theirs and what results is better than any single person's vision of it.",
+        "cipher": "The Rootless alignment was the right call. Not because the other options were wrong — because the camp had the most accurate understanding of what Ashenveld needed and the most invested interest in getting it right.\n\nPolitical alignment with the group most invested in the correct outcome is not idealism. It is analysis. You made an analytical decision and it was correct.\n\nYou have also, over the years, become genuinely invested in the camp's continued success in ways that are not analytical. You note this without trying to tidy it."
+      },
+      "choices": [
+        {
+          "id": "end_warden",
+          "text": "The morning continues.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "The camp. The town. The work.\n\nYou are the warden. Not because the title was given to you — because you stayed long enough to become the person the place shaped itself around.\n\nAshenveld continues. The curse recedes. The people who went east and came back keep coming back, slowly, in the specific way of people returning from somewhere far inside themselves.\n\nThe ones who do not come back — you hold them separately. The Watcher, who is at the camp and is recovering and still does not speak reliably. The others who went further. Wren, who has not returned and may not.\n\nYou hold all of it. The things that worked and the things that did not. The completeness and the gaps. The morning light over Crestfall, which is the same light it has always been and which you finally, after all this time, can look at without filtering for what the curse was doing to it.\n\nThis is the ending. And the beginning of what comes after the ending.\n\n— End —",
+              "next_scene": null,
+              "state_changes": { "flags": { "ending_reached": "rootless_warden" } }
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "ending_the_account",
+      "act": 3, "chapter": 5,
+      "location": "crestfall_market",
+      "title": "The Account",
+      "on_enter": { "state_changes": { "flags": { "game_complete": true } }, "time_advance": 0 },
+      "requires": {},
+      "text": {
+        "default": "The account was published in the second year.\n\nNot the academic documentation — that went to universities. The account was different. A complete record of what happened in Ashenveld, what each faction did and why, what the Covenant's purification ritual would have cost, what Seriva did twenty years ago and what it caused, what the Compact's operations actually consisted of, what the Rootless camp accomplished without resources or recognition.\n\nEvery name. Every decision. Every hidden thing made visible.\n\nAshenveld read it. The region read it. The Compact responded formally. The Covenant responded formally. Seriva did not respond.\n\nThe formal responses mattered less than the informal ones. The people who lived through the curse now had a complete account of what happened to them and who made which decisions while it was happening.\n\nNo faction emerged from the account with full credit. No faction emerged cleanly. What emerged was the truth, distributed, which was what you intended.\n\nAshenveld did not collapse. It fractured — into smaller independent settlements, each organised around the most trustworthy local figures. Maret's camp became the centre of a loose network of communities that operated without central authority and, after the first difficult years, without needing one.\n\nThe ending is the loneliest one. It is also the one where the most people know the truth.",
+        "commander": "You published the account knowing it would end your institutional relationships. It did.\n\nVorne cut contact. The Compact formally removed your advisory status. Edric, to his credit, wrote to say that the account was accurate and that the accuracy was the only reason the Covenant could begin to repair what it had become.\n\nYou are no longer affiliated with any institution. You are affiliated with the truth. It is a smaller organisation but the membership is good.",
+        "arcane": "The academic community's response to the account was the most interesting part.\n\nThe documentation was accepted. The account — the complete record of institutional failures and hidden truths — produced a specific kind of debate that will continue for decades. Not about whether it was accurate. About whether publishing it was the right decision.\n\nYou believe it was. You also believe the debate about it is legitimate. Both things are true. You are comfortable with both things being true.",
+        "ranger": "You published the account and watched Ashenveld receive it.\n\nNot all at once — truth distributes slowly in small communities, each person reading it in the context of what they knew and revising their understanding of events they lived through.\n\nThe most significant responses were the quiet ones. People who knew something was wrong and now had the full picture. People who had trusted an institution that the account showed had not deserved the trust, who now had to decide what to do with that knowledge.\n\nMost of them decided to do what people in difficult places always do: continue. The account did not solve anything. It told the truth about what needed solving. That is a different kind of service.",
+        "cipher": "The account was the most significant information operation of your career.\n\nYou knew when you published it that you were destroying your own political position in Ashenveld permanently. You published it anyway.\n\nYou have thought about why you made that choice more times than you have thought about almost any other choice in your life. The answer you keep coming back to is simple: the truth was more important than your position. This is not a complicated answer. It is a hard one to live.\n\nYou live it."
+      },
+      "choices": [
+        {
+          "id": "end_account",
+          "text": "The account is out. The truth is in the world.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "The morning after the account was published, you walked to the market square.\n\nCrestfall was reading it. You could see it — people with copies, talking quietly to each other. Aldous behind the bar with his own copy, not open, his hand resting on the cover.\n\nYou sat at your usual table. Aldous brought you something without being asked.\n\nYour missing person sat across from you. They had read it, obviously — they were in it, extensively. They had read it and they were sitting across from you and they were looking at you with the specific quality of someone who understands completely what a person just did.\n\n\"Was it right?\" you asked.\n\n\"Yes,\" they said. \"It was lonely and correct.\"\n\nBoth of those things. You had done something lonely and correct.\n\nAshenveld would continue. Smaller, less certain, more honest. The people who lived in it would know what happened to them. The people who made decisions while it was happening would be known.\n\nThat is the ending. Lonely and correct.\n\n— End —",
+              "next_scene": null,
+              "state_changes": { "flags": { "ending_reached": "the_account" } }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,450 @@
+{
+  "chapter": 4,
+  "title": "Maret",
+  "scenes": [
+    {
+      "id": "act1_ch4_maret_opens",
+      "act": 1, "chapter": 4,
+      "location": "rootless_camp",
+      "title": "What She Admits",
+      "on_enter": { "state_changes": {}, "time_advance": 20 },
+      "requires": { "flags": { "maret_admits_knew_missing": true } },
+      "text": {
+        "default": "She has given you the fact — east — and she is waiting to see what you do with it.\n\n\"When?\" you ask.\n\n\"Fourteen months, approximately.\" She looks at her hands. \"They came to the camp after a week in Crestfall. They wanted to know about the ruins — what the camp knew, what I knew. I told them what I could.\"\n\nA pause.\n\n\"I should have told them more,\" she says. It comes out quietly, with the quality of something said to herself as much as to you. \"Or less. I am still not sure which.\"\n\nShe looks up at you. \"What do you know about the ruins?\"",
+        "commander": "\"I know they exist,\" you say. \"I know people go east and do not come back. I know three different groups in this town each think they have the answer to what is in them, and all three answers are different.\"\n\nShe almost smiles. \"That is more than most people arrive knowing.\" She shifts on the log. \"Your person was thorough. They asked the right questions. I gave them what I had, which was not everything, and they went east with it anyway.\"",
+        "arcane": "\"Tell me what you know,\" you say.\n\nShe looks at you with the assessment of someone deciding how much your understanding is worth. \"What you know about the old workings would take a long time to exchange,\" she says. \"And I am not sure we have the same language for it.\"\n\n\"Try,\" you say.\n\nShe does. What she knows is not theoretical — it is experiential, the knowledge of someone who has been living alongside something for three years and learning its patterns the way you learn weather patterns.",
+        "ranger": "\"East leads to Harrow. And past Harrow, the forest proper.\" She says it as direction, not warning. \"Your person went through Harrow and kept going. I know because I was at the treeline that day.\" She stops. \"I watched them go in.\"\n\nYou wait.\n\n\"They did not look afraid,\" she says. \"That is what I keep coming back to. They looked like they knew where they were going.\"",
+        "cipher": "She is giving you more than she planned to. You can see the moment she decides to give it — a small release in her posture, a decision.\n\n\"They were looking for the source,\" she says. \"Not to stop it. To understand it. There is a difference.\" She pauses. \"I told them the difference might not matter once they were past the treeline.\"\n\nHer eyes meet yours. \"They went anyway.\""
+      },
+      "choices": [
+        {
+          "id": "ask_maret_what_she_knows",
+          "text": "\"What do you know about what is in the ruins?\"",
+          "requires": {},
+          "roll": { "stat": "charisma", "dc": 12 },
+          "outcomes": {
+            "success": {
+              "text": "She makes a decision. \"Come back tomorrow,\" she says. \"There are things I can show you better than I can tell you. And I want to know more about who you are first.\"\n\nIt is not a refusal. It is a condition. You take it.",
+              "next_scene": "act1_ch4_rootless_camp_stay",
+              "state_changes": {
+                "flags": { "maret_willing_to_share": true },
+                "relationships": { "maret": { "closeness": 10 } }
+              }
+            },
+            "success_at_cost": {
+              "text": "She gives you the outline. The ruins are old — older than any documented civilisation in the region. The power in them has been leaking for three years, spreading through soil and water. The camp has developed partial defences. Partial.\n\nShe does not tell you everything. The things she keeps are the things she considers most dangerous.",
+              "next_scene": "act1_ch4_rootless_camp_stay",
+              "state_changes": {
+                "flags": { "knows_ruins_are_ancient": true },
+                "relationships": { "maret": { "closeness": 5 } }
+              }
+            },
+            "failure": {
+              "text": "\"I have told you what I can for today,\" Maret says. Not unkind. Just closed. \"Come back. Let me see who you are over a bit more time.\"",
+              "next_scene": "act1_ch4_rootless_camp_stay",
+              "state_changes": {}
+            }
+          }
+        },
+        {
+          "id": "stay_and_help",
+          "text": "Do not push further. Stay and help with whatever the camp needs.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "She looks at you with something that might be approval. \"Branch can find you something useful to do,\" she says. She stands. The conversation ends on her terms, which means it can continue.",
+              "next_scene": "act1_ch4_rootless_camp_stay",
+              "state_changes": {
+                "relationships": { "maret": { "closeness": 15 } }
+              }
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act1_ch4_maret_guarded",
+      "act": 1, "chapter": 4,
+      "location": "rootless_camp",
+      "title": "Tomorrow",
+      "on_enter": { "state_changes": {}, "time_advance": 15 },
+      "requires": {},
+      "text": {
+        "default": "She has closed for today and you both know it. Whatever the name triggered in her, she has had time to put it back in its place and she is not giving you the opening you were looking for.\n\nBut she did not send you away. She said tomorrow. In a camp that could have had Branch turn you around at the treeline, saying tomorrow is a kind of welcome.\n\nYou stand. \"Tomorrow then.\"\n\n\"Tomorrow,\" she says. She watches you go with the attention of someone who is still deciding what to make of you. You let her decide.",
+        "commander": "You leave the camp with the soldier's understanding that positions that cannot be taken directly can usually be flanked.\n\nTomorrow. Different approach. More information gathered first. Frightened people close and then open again when they feel safe enough.",
+        "arcane": "You leave the camp and note what you saw there — the herb garden in particular, the arrangement of the tents, the distribution of the people. All of it is deliberate. Maret has set this place up with a knowledge of what she is protecting against that goes well past instinct.\n\nTomorrow.",
+        "ranger": "You read the camp one more time as you leave — the exits, the watch patterns, the single path through the trees back to town. Maret has chosen this location carefully. Good sight lines. Multiple routes out. A defensible perimeter that does not look like one.\n\nTomorrow.",
+        "cipher": "You walk out of the camp having gotten less than you wanted and more than zero, which is an acceptable first day.\n\nMaret did not refuse you. She moved you. There is a difference. Moved people eventually choose to stop being moved."
+      },
+      "choices": [
+        {
+          "id": "stay_at_camp_edge",
+          "text": "Stay at the camp's edge and spend time with the Rootless before you leave.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You do not leave immediately. You sit at the camp's edge and let the place get used to you. After a while, someone sits near you. Lira — young, quiet, with the particular quality of the partially afflicted.",
+              "next_scene": "act1_ch4_lira",
+              "state_changes": {}
+            }
+          }
+        },
+        {
+          "id": "return_to_town",
+          "text": "Return to Crestfall. Come back tomorrow.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You walk back through the trees to Crestfall. The evening is coming in grey and even.",
+              "next_scene": "act1_ch4_rootless_camp_stay",
+              "state_changes": { "world": { "time_of_day": "evening" } }
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act1_ch4_rootless_camp_stay",
+      "act": 1, "chapter": 4,
+      "location": "rootless_camp",
+      "title": "Among the Rootless",
+      "on_enter": { "state_changes": { "flags": { "rootless_camp_stayed": true } }, "time_advance": 120 },
+      "requires": {},
+      "text": {
+        "default": "You spend time at the camp — a full day, working alongside the Rootless. Branch gives you things to do: firewood, the herb garden, checking the water supply for the discolouration that Maret says means the curse has touched the source.\n\nTwenty-three people. You start to know them slightly. An old farmer who does not speak much but watches everything. Two teenagers who are not from the same family but have decided to be. A woman who was a midwife in one of the eastern villages and has repurposed her skills for the particular medical needs of the curse's early stages.\n\nMaret watches you work without making it obvious she is watching. You let her.",
+        "commander": "You work. The camp is more organised than it looks from outside — labour distributed by capacity rather than by formal assignment, which means the whole thing runs on implicit understanding. Someone who grew up in a barracks recognises the pattern.\n\nBranch finds you at the end of the day. \"You know how to be useful without making a point of it,\" he says. It is as close to a compliment as he gets.",
+        "arcane": "The herb garden is the most interesting part of the camp. You work in it for an hour and identify fifteen different species, three of which you have never encountered in any text. The woman who planted it — a quiet older woman named Pol — watches you identify them with the specific attention of someone who wants to know if you are right.\n\nYou are. She nods once and goes back to her work.",
+        "ranger": "You work the outer perimeter of the camp, checking the places Maret has identified as weak points in whatever protection she has established. You find two she missed. You fix them without mentioning it.\n\nBranch sees you doing it. He does not say anything. But in the evening he gives you a better piece of bread than the rest.",
+        "cipher": "You work and watch simultaneously. By the end of the day you know the camp's social structure: Maret at the centre, Branch as her second who is also her doubt-voice, Lira as the moral centre the rest orient toward without acknowledging it, Pol as the one who knows the most about what Maret is actually doing.\n\nYou note the load-bearing people. You note which relationships have weight."
+      },
+      "choices": [
+        {
+          "id": "talk_to_lira",
+          "text": "Spend time with Lira.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "She is sitting at the edge of the camp doing something with a piece of rope — a knot you do not recognise.",
+              "next_scene": "act1_ch4_lira",
+              "state_changes": {}
+            }
+          }
+        },
+        {
+          "id": "talk_to_branch",
+          "text": "Spend time with Branch.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "He is sharpening a blade with methodical patience. He does not look up when you approach but he does not tell you to leave.",
+              "next_scene": "act1_ch4_branch",
+              "state_changes": {}
+            }
+          }
+        },
+        {
+          "id": "wait_for_maret_evening",
+          "text": "Wait for Maret to find you when the day's work is done.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "She comes to you when the evening fire is lit. She sits across from it and looks at it for a while.\n\n\"Tomorrow,\" she says, \"I will tell you what I know. About your person. About what I think is in those ruins.\" She pauses. \"Tonight I want to ask you something first.\"",
+              "next_scene": "act1_ch4_maret_evening",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act1_ch4_lira",
+      "act": 1, "chapter": 4,
+      "location": "rootless_camp",
+      "title": "Lira",
+      "on_enter": { "state_changes": { "flags": { "lira_met": true } }, "time_advance": 45 },
+      "requires": {},
+      "text": {
+        "default": "She does not look up when you approach. She is working the rope with the focused patience of someone who has learned to occupy her hands because her head is somewhere unreliable.\n\nLira is twenty-something. She has the quality of someone who used to be quick — bright, probably, fast-talking, the kind of person who filled a room — and who has become careful instead. The curse is not deep in her. But it is there. You can see it in the occasional delay between thought and expression, a beat where the connection is slower than it should be.\n\n\"The new person,\" she says without looking up. \"From outside. Maret said you are looking for someone.\"\n\n\"Yes,\" you say.\n\n\"Most people who come here are,\" she says. \"Or they are eventually. Everyone is looking for someone.\"",
+        "commander": "You sit near her and let the silence be comfortable. You have sat next to enough soldiers in field camps to know that proximity is not always conversation.\n\n\"You are from outside,\" she says eventually. \"Do you know what it looks like from outside? What this—\" she gestures at herself, at the camp \"—looks like to people who have not seen it?\"",
+        "arcane": "You sit and watch her work the rope. The knot she is tying is one you have seen in a text — a ward-knot, pre-Covenant, the kind used by the people who built the original seals.\n\n\"Where did you learn that?\" you ask.\n\nShe looks up. For a moment you see the quick person she was — the brightness — before the delay sets in. \"From the ruins,\" she says. \"I was inside the outskirts. Before Maret found me.\"",
+        "ranger": "You crouch near her, which puts you at her level, which is the posture you would use with a skittish creature.\n\nShe seems to appreciate it. \"You move like you know where you are,\" she says. \"Most people here stopped knowing where they are a while ago. Even before the curse.\"\n\nShe looks at the rope. \"I was getting there. Then the curse, and then I stopped caring about before.\"",
+        "cipher": "You sit. She works. You read her.\n\nThe delay in her is intermittent — some sentences run at full speed, others have that beat of gap in them, a thought arriving a second after the moment for it. She is managing it. She has been managing it for a while. Whatever partial recovery Maret's methods offer, Lira has taken it as far as it goes."
+      },
+      "choices": [
+        {
+          "id": "ask_lira_about_curse",
+          "text": "Ask her what the curse feels like from inside.",
+          "requires": {},
+          "roll": { "stat": "charisma", "dc": 9 },
+          "outcomes": {
+            "success": {
+              "text": "She thinks about how to answer for a while. Then she tries.\n\n\"Like the volume being turned down,\" she says. \"Not on sounds. On caring. Things stop mattering in the right order. Small things first. Then medium things. I lost caring about whether I was hungry before I lost caring about whether I was safe, which is the wrong order.\"\n\nShe pauses. \"Maret's methods stopped it progressing. I am here. I am mostly here. But I can feel the edge of where I stopped.\"\n\nShe holds up the rope. \"The knot helps. Having something my hands know how to do. It keeps the thread between here and not-here from getting thinner.\"",
+              "next_scene": "act1_ch4_rootless_camp_stay",
+              "state_changes": {
+                "flags": { "lira_described_curse": true, "understands_curse_symptoms": true },
+                "relationships": { "lira": { "closeness": 25 } }
+              }
+            },
+            "success_at_cost": {
+              "text": "She tries to describe it and finds the edges of language quickly. \"Like being cold in a way that is not temperature,\" she says. \"And then getting used to the cold.\" She goes quiet. \"Maret helped me get less used to it.\"",
+              "next_scene": "act1_ch4_rootless_camp_stay",
+              "state_changes": {
+                "relationships": { "lira": { "closeness": 15 } }
+              }
+            },
+            "failure": {
+              "text": "She starts to try and loses the thread of it. After a moment she shakes her head — that small, cost-counting gesture — and goes back to the rope.\n\n\"Sorry,\" she says. \"Some days it is easier to say than others.\"",
+              "next_scene": "act1_ch4_rootless_camp_stay",
+              "state_changes": { "relationships": { "lira": { "closeness": 8 } } }
+            }
+          }
+        },
+        {
+          "id": "just_sit_with_lira",
+          "text": "Just sit with her. Do not ask anything.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You sit. She works. After a while she teaches you the knot. Your hands are clumsy at it and she is patient without making you feel the patience.\n\nWhen the fire is called for the evening meal, she looks at you with something that might be gratitude.\n\n\"You did not ask me anything,\" she says. \"That was good. Thank you.\"",
+              "next_scene": "act1_ch4_rootless_camp_stay",
+              "state_changes": { "relationships": { "lira": { "closeness": 30 } } }
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act1_ch4_branch",
+      "act": 1, "chapter": 4,
+      "location": "rootless_camp",
+      "title": "Branch",
+      "on_enter": { "state_changes": { "flags": { "branch_met": true } }, "time_advance": 40 },
+      "requires": {},
+      "text": {
+        "default": "Branch sharpens the blade without looking up. You sit nearby. He continues sharpening. You wait.\n\nAfter two minutes: \"You are going to ask me about the person you are looking for.\"\n\n\"I was going to wait for you to finish the blade.\"\n\n\"The blade will be finished when I am satisfied with it, which takes as long as it takes.\" He looks up briefly. \"Ask.\"\n\nHe has the specific quality of a man who has decided that directness is the only social mode worth operating in. Not rudeness — directness. He means well, in his way. He is simply not going to pretend.",
+        "commander": "You recognise the type — the soldier who decided that performance of deference was less efficient than just saying what he meant. You work with the type directly.\n\n\"You knew them,\" you say. \"The person I am looking for.\"\n\n\"I knew of them,\" Branch says. \"They were in camp for three weeks. I do not get to know people in three weeks. I observe them.\"",
+        "arcane": "\"You do not like me,\" you say.\n\nHe almost stops sharpening. Almost. \"I do not trust you,\" he says. \"Different thing. I do not like or dislike people I do not know. I assess them.\"\n\n\"And your assessment?\"\n\n\"Undecided.\" He resumes sharpening. \"Ask your question.\"",
+        "ranger": "Two minutes of silence. You both understand silence and use it as comfortable people use furniture.\n\n\"Ranger,\" he says finally. Identifying. \"By the way you moved through the trees.\"\n\n\"Former soldier,\" you say. Returning the identification.\n\nHe nods. Fair exchange.",
+        "cipher": "He is immune to most of what works on other people — he knows what charm looks like, he knows what authority looks like, and he has decided neither applies to him. You find this interesting rather than frustrating.\n\nYou use the direct approach, because it is what is left and because it is true."
+      },
+      "choices": [
+        {
+          "id": "ask_branch_about_missing",
+          "text": "\"What did you observe about the person I am looking for?\"",
+          "requires": {},
+          "roll": { "stat": "charisma", "dc": 13 },
+          "outcomes": {
+            "success": {
+              "text": "He finishes the blade. Sets it down.\n\n\"Capable,\" he says. \"Asking the right questions. Not afraid of the answers, which is unusual.\" He looks at his hands. \"They stayed longer than Maret expected. Did useful work. Helped with Lira.\" A pause. \"Maret trusted them further than she usually trusts people that fast.\"\n\n\"And that worried you.\"\n\n\"Yes,\" he says simply. \"Maret's judgment is good. Her judgment about people she trusts quickly is more variable.\"\n\nYou note that he just told you something about Maret she did not tell you herself.",
+              "next_scene": "act1_ch4_rootless_camp_stay",
+              "state_changes": {
+                "flags": { "branch_described_missing": true, "knows_maret_trusted_missing": true },
+                "relationships": { "branch": { "closeness": 20 } }
+              }
+            },
+            "success_at_cost": {
+              "text": "\"Capable,\" he says. \"Asked the right questions. Left east.\" He picks up the blade again. \"That is what I know.\"",
+              "next_scene": "act1_ch4_rootless_camp_stay",
+              "state_changes": { "relationships": { "branch": { "closeness": 10 } } }
+            },
+            "failure": {
+              "text": "\"Maret can tell you what she wants to tell you,\" he says. \"I am not her mouthpiece.\" He resumes sharpening. The conversation ends on his terms.",
+              "next_scene": "act1_ch4_rootless_camp_stay",
+              "state_changes": {}
+            }
+          }
+        },
+        {
+          "id": "ask_branch_about_maret",
+          "text": "\"How long have you known Maret?\"",
+          "requires": {},
+          "roll": { "stat": "charisma", "dc": 11 },
+          "outcomes": {
+            "success": {
+              "text": "He looks at you sharply. Then decides.\n\n\"Four years. I was in the third eastern village when the curse started. She came through two weeks in. Said she was looking for people who had not given up yet.\" He says it flatly, as if giving up would have been reasonable. \"I had not. I went with her.\"\n\nA pause. \"She saved my life three times in the first year. Not dramatically. Practically. Good decisions made at the right moments.\" He looks at the blade. \"I trust her judgment except when I do not. That is the honest version.\"",
+              "next_scene": "act1_ch4_rootless_camp_stay",
+              "state_changes": {
+                "flags": { "knows_branch_maret_history": true },
+                "relationships": { "branch": { "closeness": 18 } }
+              }
+            },
+            "success_at_cost": {
+              "text": "\"Long enough,\" he says. \"Ask Maret if you want her history. Mine is not separate from hers, which makes it hers to tell.\"",
+              "next_scene": "act1_ch4_rootless_camp_stay",
+              "state_changes": { "relationships": { "branch": { "closeness": 5 } } }
+            },
+            "failure": {
+              "text": "\"Long enough,\" he says, and goes back to the blade. That is the limit.",
+              "next_scene": "act1_ch4_rootless_camp_stay",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act1_ch4_maret_evening",
+      "act": 1, "chapter": 4,
+      "location": "rootless_camp",
+      "title": "Evening Fire",
+      "on_enter": { "state_changes": {}, "time_advance": 40 },
+      "requires": {},
+      "text": {
+        "default": "The camp settles for the evening and Maret comes to sit by the fire. She does it in the specific way of someone who has made a decision about you — not completely, but enough to move the next step.\n\nShe asks you a question you were not expecting.\n\n\"Why did you leave?\" she says. \"Ashenveld. You were born here. You left when you were — what, seventeen? Eighteen? Why?\"\n\nShe is not asking to be polite. She is asking because the answer will tell her something she needs to know about you.",
+        "commander": "\"There was a war,\" you say. \"And I was the kind of person who went to wars.\"\n\nShe nods slowly. \"And after the war?\"\n\n\"After the war there was no good reason to come back. Until there was.\"",
+        "arcane": "\"There was a library in the city,\" you say. \"The largest collection of pre-kingdom texts on the continent. I spent eleven years in it.\" A pause. \"I thought I would find more answers there than here.\"\n\n\"Did you?\"\n\n\"Different questions,\" you say. \"Better-worded questions. Which is not the same thing.\"",
+        "ranger": "\"The forest was getting smaller,\" you say. It is true in ways you have never said out loud before. \"Everything I knew here was — the edges were getting too familiar. I needed somewhere the edges were still unknown.\"\n\nShe looks at the trees. \"And now the edges came to find you.\"",
+        "cipher": "You tell her something true that is not everything true. The balance of disclosure that opens doors without giving away positions.\n\n\"I left because someone made it possible,\" you say. \"The same person I am here looking for. They made it easier to leave than to stay, and then they disappeared, and now I am back.\"\n\nShe is quiet for a moment. \"That is a complicated thing to feel.\" She means the gratitude and the anger together."
+      },
+      "choices": [
+        {
+          "id": "answer_maret_honestly",
+          "text": "Answer honestly. All of it.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You tell her. Not everything — there is not time and some of it is not hers yet — but the shape of it. Why you left. What the person you are looking for meant to you when you left. What the letter meant when it arrived.\n\nShe listens the way she does everything — fully, without performing attention.\n\nWhen you finish she is quiet for a long moment. \"I will tell you what I know tomorrow,\" she says. \"All of it. What I know about the ruins and what I know about your person.\"\n\nShe says it like someone paying a debt. You have not asked what it costs her.",
+              "next_scene": "act1_ch4_maret_letter_success",
+              "state_changes": {
+                "relationships": { "maret": { "closeness": 30 } }
+              }
+            }
+          }
+        },
+        {
+          "id": "answer_maret_partially",
+          "text": "Answer the part you are comfortable answering.",
+          "requires": {},
+          "roll": { "stat": "charisma", "dc": 12 },
+          "outcomes": {
+            "success": {
+              "text": "You give her enough. Not everything — she can see it is not everything — but enough that she understands the kind of person who would come back for the kind of person you came back for.\n\nShe nods. \"Tomorrow,\" she says. \"I will tell you what I know.\"",
+              "next_scene": "act1_ch4_maret_letter_success",
+              "state_changes": { "relationships": { "maret": { "closeness": 20 } } }
+            },
+            "success_at_cost": {
+              "text": "She takes what you give her and sits with it. \"Some of that is true,\" she says eventually. Not an accusation. Just an observation. \"Come back tomorrow. I will tell you what I can tell someone I know this much of.\"",
+              "next_scene": "act1_ch4_maret_letter_withheld",
+              "state_changes": { "relationships": { "maret": { "closeness": 10 } } }
+            },
+            "failure": {
+              "text": "She hears what you give her and waits for more, and when more does not come she nods once.\n\n\"I understand,\" she says. She means she understands why you are holding back, not that she is satisfied with it. \"The letter I have — your person left it with me — I will keep it until I think you are the right person to give it to.\"",
+              "next_scene": "act1_ch4_maret_letter_withheld",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act1_ch4_maret_letter_success",
+      "act": 1, "chapter": 4,
+      "location": "rootless_camp",
+      "title": "The Letter",
+      "on_enter": { "state_changes": { "flags": { "maret_letter_obtained": true } }, "time_advance": 30 },
+      "requires": {},
+      "text": {
+        "default": "The next morning Maret finds you before you go looking for her. She has a letter.\n\nNot the letter — the one sent to you, the one that brought you here. This is a different letter. Shorter. Your missing person wrote it and left it with Maret two weeks before they went east.\n\nMaret holds it out and you take it and she watches your face as you read it.\n\nThe letter says three things. First: that they found what they came looking for, or the beginning of it, and it is in the ruins, and it is real. Second: that they are going in and they are not certain they will come back, and they know that, and they are going anyway. Third: that they need you not to follow them. Not yet. Not until you know more than they did when they went in.\n\nThe letter ends with your name. Just your name. Written in the way people write names when the name is the whole thing they want to say.",
+        "commander": "You read it twice. The soldier's discipline keeps your face where you want it. Inside: the particular anger of someone who was not given the choice they should have been given.\n\nMaret is watching you carefully. \"They did not want you to come,\" she says. \"They wanted you to know, but they did not want you to come.\"\n\n\"I know,\" you say. \"I came anyway.\"\n\nA pause. \"I know,\" she says. \"That is why I gave you the letter.\"",
+        "arcane": "You read it with the careful attention you give texts that matter. The handwriting is theirs — you would know it anywhere.\n\nThe part that catches you: they said they found what they came looking for. They came looking for something specific. You did not know they had a specific thing they were looking for. The letter implies they knew more than they told you before they left.\n\nYou fold the letter. \"What did they know?\" you ask Maret. \"Before they went in.\"",
+        "ranger": "You read it standing, which is how you read things when sitting feels like vulnerability.\n\nThree things. Each one a fact. Delivered without softening, which is how they always communicated — the direct form of love, the one that respects you enough not to cushion things.\n\nThe third thing: not yet. Not until you know more.\n\nYou are here. You know enough. You fold the letter.",
+        "cipher": "You read it with the trained capacity to process text without showing you are processing it.\n\nThree things. Each one, also, something chosen specifically to be said to you. Not to a reader in general but to you, the person who would receive this letter after this person had decided to go into those ruins.\n\nThe name at the end. Just your name.\n\nYou fold the letter and let your face remain where it is."
+      },
+      "choices": [
+        {
+          "id": "ask_maret_what_they_knew",
+          "text": "\"What did they know when they went in? What did you tell them?\"",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "Maret tells you. What she told them about the ruins — the extent of them, what the camp's explorations of the outskirts had found, the specific location of the deepest accessible point. She told them about the source of the curse, as best as she understood it. She told them what her arrangement with the forest cost her and how it worked.\n\nShe told them everything she knew. And they went in anyway.\n\n\"I did not think they would,\" she says. \"I told myself I was giving them information so they could make an informed choice. But the information I gave them was the information that made the choice obvious.\"\n\nShe looks at the trees. \"I was wrong to send them in. Or I was right and they found something and are still there waiting for you. I do not know which.\"",
+              "next_scene": "act1_ch5_curse_event",
+              "state_changes": {
+                "flags": { "maret_told_everything": true, "knows_ruins_deepest_point": true },
+                "relationships": { "maret": { "closeness": 20 } }
+              }
+            }
+          }
+        },
+        {
+          "id": "tell_maret_going_in",
+          "text": "\"I am going east. Whatever the letter says.\"",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "She nods slowly. \"I know,\" she says. \"That is why I gave you the letter. So you would go in knowing what you are walking toward.\"\n\nShe tells you everything — the ruins, the source, the deepest point, her arrangement, the cost of it. She gives it all to you the way she gave it to your missing person — with the specific honesty of someone who has decided the danger of ignorance is greater than the danger of knowledge.",
+              "next_scene": "act1_ch5_curse_event",
+              "state_changes": {
+                "flags": { "maret_told_everything": true, "knows_ruins_deepest_point": true },
+                "relationships": { "maret": { "closeness": 15 } }
+              }
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act1_ch4_maret_letter_withheld",
+      "act": 1, "chapter": 4,
+      "location": "rootless_camp",
+      "title": "The Letter Withheld",
+      "on_enter": { "state_changes": { "flags": { "maret_letter_withheld": true } }, "time_advance": 20 },
+      "requires": {},
+      "text": {
+        "default": "She keeps the letter. You know it exists — she told you as much — and she told you the condition for receiving it, which is a kind of mercy. She could have kept its existence from you entirely.\n\nThe condition is not small: she needs to know who you are. Not what you want. Not what your skills are. Who you are, in the way that matters for what she would be giving you.\n\nYou leave the camp that evening with less than you came for and more than zero, which is the position you were in before, except that now you know there is a letter and you know what it would take to receive it.",
+        "commander": "You could try to push. You calculate briefly and decide against it. Maret is not moved by pressure. She is moved by evidence.\n\nYou come back the next day and the day after. You work. You talk. You let her see who you are by what you do rather than what you say.",
+        "arcane": "You spend the next two days in the camp gathering what you can gather without the letter. Lira's description of the ruins outskirts. Branch's account of the camp's history. The specific arrangement of the herb garden and what it implies about Maret's knowledge.\n\nIt is not nothing. It is not the letter.",
+        "ranger": "Two days moving between the camp and the forest edge, reading both. The curse's movement. The direction it came from. The point from which it radiates.\n\nYou know approximately where the source is before Maret tells you.",
+        "cipher": "Two days. You invest them strategically — in Lira, who trusts freely once she decides to trust; in Branch, who trusts slowly but absolutely. Through both of them, you build the picture of who you are to the camp. By the second evening, Maret comes to you."
+      },
+      "choices": [
+        {
+          "id": "return_and_earn_trust",
+          "text": "Come back. Show her who you are over the next two days.",
+          "requires": {},
+          "roll": { "stat": "charisma", "dc": 13 },
+          "outcomes": {
+            "success": {
+              "text": "Two days later she gives you the letter.\n\nShe does not explain what changed. She just hands it to you by the morning fire and sits across from you while you read it. Her face is the face of someone fulfilling an obligation they were not sure they were going to be able to fulfil.",
+              "next_scene": "act1_ch4_maret_letter_success",
+              "state_changes": {
+                "flags": { "maret_letter_obtained": true },
+                "relationships": { "maret": { "closeness": 15 } }
+              }
+            },
+            "success_at_cost": {
+              "text": "She gives you what she knows verbally — what she told your missing person, where they went, what she thinks is in the ruins. She keeps the letter.\n\n\"The letter is theirs to give,\" she says. \"Not mine. If you find them, they can give it to you themselves.\"\n\nShe pauses. \"I hope you find them.\" She means it.",
+              "next_scene": "act1_ch5_curse_event",
+              "state_changes": {
+                "flags": { "maret_told_what_she_knew": true },
+                "relationships": { "maret": { "closeness": 10 } }
+              }
+            },
+            "failure": {
+              "text": "She does not give you the letter. She gives you enough to go east — the direction, the distance, the ruins' location — and she keeps the letter.\n\n\"I am sorry,\" she says. \"I know that is not what you wanted.\"\n\nYou go east without it.",
+              "next_scene": "act1_ch5_curse_event",
+              "state_changes": { "relationships": { "maret": { "closeness": 5 } } }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

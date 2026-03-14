@@ -1,0 +1,317 @@
+{
+  "meta": {
+    "game": "Ashenveld",
+    "version": "1.0",
+    "description": "Master scene index. Load this file at game startup. It tells the engine which JSON file contains each scene and validates cross-file routing. All next_scene values in scene files reference IDs in this index.",
+    "total_scenes": 116,
+    "load_order": [
+      "act1_00_meta.json",
+      "act2_00_meta.json",
+      "act3_00_meta.json",
+      "act1_ch1_scenes.json",
+      "act1_ch2_scenes.json",
+      "act1_ch3_scenes.json",
+      "act1_ch4_scenes.json",
+      "act1_ch5_scenes.json",
+      "act1_ch6_scenes.json",
+      "act1_ch7_scenes.json",
+      "act2_ch1_scenes.json",
+      "act2_ch2_scenes.json",
+      "act2_ch3_scenes.json",
+      "act2_ch4_scenes.json",
+      "act2_ch5_scenes.json",
+      "act2_ch6_scenes.json",
+      "act2_ch7_scenes.json",
+      "act2_ch8_scenes.json",
+      "act3_ch1_scenes.json",
+      "act3_ch2_scenes.json",
+      "act3_ch3_scenes.json",
+      "act3_ch4_scenes.json",
+      "act3_ch5_endings.json"
+    ]
+  },
+
+  "scene_index": {
+    "act1_ch1_barge_arrival":           { "file": "act1_ch1_scenes.json", "act": 1, "chapter": 1 },
+    "act1_ch1_docks_encounter":         { "file": "act1_ch1_scenes.json", "act": 1, "chapter": 1 },
+    "act1_ch1_tallow_arrival":          { "file": "act1_ch1_scenes.json", "act": 1, "chapter": 1 },
+    "act1_ch1_innkeeper_success":       { "file": "act1_ch1_scenes.json", "act": 1, "chapter": 1 },
+    "act1_ch1_innkeeper_cost":          { "file": "act1_ch1_scenes.json", "act": 1, "chapter": 1 },
+    "act1_ch1_innkeeper_failure":       { "file": "act1_ch1_scenes.json", "act": 1, "chapter": 1 },
+    "act1_ch1_still_man":               { "file": "act1_ch1_scenes.json", "act": 1, "chapter": 1 },
+    "act1_ch1_tallow_room":             { "file": "act1_ch1_scenes.json", "act": 1, "chapter": 1 },
+
+    "act1_ch2_morning_crestfall":       { "file": "act1_ch2_scenes.json", "act": 1, "chapter": 2 },
+    "act1_ch2_market_square":           { "file": "act1_ch2_scenes.json", "act": 1, "chapter": 2 },
+    "act1_ch2_market_rumour_missing":   { "file": "act1_ch2_scenes.json", "act": 1, "chapter": 2 },
+    "act1_ch2_childhood_home":          { "file": "act1_ch2_scenes.json", "act": 1, "chapter": 2 },
+    "act1_ch2_old_friend":              { "file": "act1_ch2_scenes.json", "act": 1, "chapter": 2 },
+
+    "act1_ch3_compact_introduction":    { "file": "act1_ch3_scenes.json", "act": 1, "chapter": 3 },
+    "act1_ch3_compact_offer":           { "file": "act1_ch3_scenes.json", "act": 1, "chapter": 3 },
+    "act1_ch3_covenant_introduction":   { "file": "act1_ch3_scenes.json", "act": 1, "chapter": 3 },
+    "act1_ch3_covenant_warning":        { "file": "act1_ch3_scenes.json", "act": 1, "chapter": 3 },
+    "act1_ch3_covenant_task":           { "file": "act1_ch3_scenes.json", "act": 1, "chapter": 3 },
+    "act1_ch3_rootless_rumour":         { "file": "act1_ch3_scenes.json", "act": 1, "chapter": 3 },
+    "act1_ch3_rootless_camp_approach":  { "file": "act1_ch3_scenes.json", "act": 1, "chapter": 3 },
+    "act1_ch3_maret_first_meeting":     { "file": "act1_ch3_scenes.json", "act": 1, "chapter": 3 },
+
+    "act1_ch4_maret_opens":             { "file": "act1_ch4_scenes.json", "act": 1, "chapter": 4 },
+    "act1_ch4_maret_guarded":           { "file": "act1_ch4_scenes.json", "act": 1, "chapter": 4 },
+    "act1_ch4_rootless_camp_stay":      { "file": "act1_ch4_scenes.json", "act": 1, "chapter": 4 },
+    "act1_ch4_lira":                    { "file": "act1_ch4_scenes.json", "act": 1, "chapter": 4 },
+    "act1_ch4_branch":                  { "file": "act1_ch4_scenes.json", "act": 1, "chapter": 4 },
+    "act1_ch4_maret_evening":           { "file": "act1_ch4_scenes.json", "act": 1, "chapter": 4 },
+    "act1_ch4_maret_letter_success":    { "file": "act1_ch4_scenes.json", "act": 1, "chapter": 4 },
+    "act1_ch4_maret_letter_withheld":   { "file": "act1_ch4_scenes.json", "act": 1, "chapter": 4 },
+
+    "act1_ch5_curse_event":             { "file": "act1_ch5_scenes.json", "act": 1, "chapter": 5 },
+    "act1_ch5_faction_responses":       { "file": "act1_ch5_scenes.json", "act": 1, "chapter": 5 },
+    "act1_ch5_player_curse_touch":      { "file": "act1_ch5_scenes.json", "act": 1, "chapter": 5 },
+    "act1_ch5_class_specific":          { "file": "act1_ch5_scenes.json", "act": 1, "chapter": 5 },
+
+    "act1_ch6_departure_decision":      { "file": "act1_ch6_scenes.json", "act": 1, "chapter": 6 },
+    "act1_ch6_visit_maret_departure":   { "file": "act1_ch6_scenes.json", "act": 1, "chapter": 6 },
+    "act1_ch6_east_road_start":         { "file": "act1_ch6_scenes.json", "act": 1, "chapter": 6 },
+    "act1_ch6_place_covenant_marker":   { "file": "act1_ch6_scenes.json", "act": 1, "chapter": 6 },
+    "act1_ch6_cursed_creature":         { "file": "act1_ch6_scenes.json", "act": 1, "chapter": 6 },
+    "act1_ch6_road_traveller":          { "file": "act1_ch6_scenes.json", "act": 1, "chapter": 6 },
+    "act1_ch6_missing_person_campsite": { "file": "act1_ch6_scenes.json", "act": 1, "chapter": 6 },
+    "act1_ch6_harrow_arrival":          { "file": "act1_ch6_scenes.json", "act": 1, "chapter": 6 },
+
+    "act1_ch7_harrow_investigation":    { "file": "act1_ch7_scenes.json", "act": 1, "chapter": 7 },
+    "act1_ch7_harrow_cellar":           { "file": "act1_ch7_scenes.json", "act": 1, "chapter": 7 },
+    "act1_ch7_forest_edge":             { "file": "act1_ch7_scenes.json", "act": 1, "chapter": 7 },
+    "act1_ch7_maret_follows":           { "file": "act1_ch7_scenes.json", "act": 1, "chapter": 7 },
+    "act1_ch7_maret_confession":        { "file": "act1_ch7_scenes.json", "act": 1, "chapter": 7 },
+    "act1_ch7_decision_enter":          { "file": "act1_ch7_scenes.json", "act": 1, "chapter": 7 },
+    "act1_ch7_act1_end":                { "file": "act1_ch7_scenes.json", "act": 1, "chapter": 7 },
+
+    "act2_ch1_ruins_outskirts":         { "file": "act2_ch1_scenes.json", "act": 2, "chapter": 1 },
+    "act2_ch1_first_cairn":             { "file": "act2_ch1_scenes.json", "act": 2, "chapter": 1 },
+    "act2_ch1_the_watcher_seen":        { "file": "act2_ch1_scenes.json", "act": 2, "chapter": 1 },
+    "act2_ch1_missing_person_approach": { "file": "act2_ch1_scenes.json", "act": 2, "chapter": 1 },
+    "act2_ch1_reunion":                 { "file": "act2_ch1_scenes.json", "act": 2, "chapter": 1 },
+    "act2_ch1_what_they_found":         { "file": "act2_ch1_scenes.json", "act": 2, "chapter": 1 },
+
+    "act2_ch2_inner_approach":          { "file": "act2_ch2_scenes.json", "act": 2, "chapter": 2 },
+    "act2_ch2_chamber_entrance":        { "file": "act2_ch2_scenes.json", "act": 2, "chapter": 2 },
+    "act2_ch2_source_chamber":          { "file": "act2_ch2_scenes.json", "act": 2, "chapter": 2 },
+    "act2_ch2_decision_to_return":      { "file": "act2_ch2_scenes.json", "act": 2, "chapter": 2 },
+
+    "act2_ch3_crestfall_news":          { "file": "act2_ch3_scenes.json", "act": 2, "chapter": 3 },
+    "act2_ch3_compact_checkpoint":      { "file": "act2_ch3_scenes.json", "act": 2, "chapter": 3 },
+    "act2_ch3_crestfall_changed":       { "file": "act2_ch3_scenes.json", "act": 2, "chapter": 3 },
+    "act2_ch3_aldous_update":           { "file": "act2_ch3_scenes.json", "act": 2, "chapter": 3 },
+    "act2_ch3_rootless_situation":      { "file": "act2_ch3_scenes.json", "act": 2, "chapter": 3 },
+    "act2_ch3_pol_revelation":          { "file": "act2_ch3_scenes.json", "act": 2, "chapter": 3 },
+    "act2_ch3_seriva_first_meeting":    { "file": "act2_ch3_scenes.json", "act": 2, "chapter": 3 },
+
+    "act2_ch4_vorne_meeting":           { "file": "act2_ch4_scenes.json", "act": 2, "chapter": 4 },
+    "act2_ch4_issa_crisis":             { "file": "act2_ch4_scenes.json", "act": 2, "chapter": 4 },
+    "act2_ch4_vorne_issa_negotiation":  { "file": "act2_ch4_scenes.json", "act": 2, "chapter": 4 },
+    "act2_ch4_issa_confrontation":      { "file": "act2_ch4_scenes.json", "act": 2, "chapter": 4 },
+    "act2_ch4_pol_fragment":            { "file": "act2_ch4_scenes.json", "act": 2, "chapter": 4 },
+
+    "act2_ch5_return_to_ruins":         { "file": "act2_ch5_scenes.json", "act": 2, "chapter": 5 },
+    "act2_ch5_ritual_preparation":      { "file": "act2_ch5_scenes.json", "act": 2, "chapter": 5 },
+    "act2_ch5_maret_conversation":      { "file": "act2_ch5_scenes.json", "act": 2, "chapter": 5 },
+    "act2_ch5_missing_person_private":  { "file": "act2_ch5_scenes.json", "act": 2, "chapter": 5 },
+
+    "act2_ch6_day_of_ritual":           { "file": "act2_ch6_scenes.json", "act": 2, "chapter": 6 },
+    "act2_ch6_ritual_approach":         { "file": "act2_ch6_scenes.json", "act": 2, "chapter": 6 },
+    "act2_ch6_ritual_engagement":       { "file": "act2_ch6_scenes.json", "act": 2, "chapter": 6 },
+    "act2_ch6_ritual_sealing":          { "file": "act2_ch6_scenes.json", "act": 2, "chapter": 6 },
+    "act2_ch6_aftermath":               { "file": "act2_ch6_scenes.json", "act": 2, "chapter": 6 },
+    "act2_ch6_seriva_arrives":          { "file": "act2_ch6_scenes.json", "act": 2, "chapter": 6 },
+
+    "act2_ch7_aftermath_crestfall":     { "file": "act2_ch7_scenes.json", "act": 2, "chapter": 7 },
+    "act2_ch7_crestfall_reception":     { "file": "act2_ch7_scenes.json", "act": 2, "chapter": 7 },
+    "act2_ch7_vorne_reacts":            { "file": "act2_ch7_scenes.json", "act": 2, "chapter": 7 },
+    "act2_ch7_maret_and_missing":       { "file": "act2_ch7_scenes.json", "act": 2, "chapter": 7 },
+
+    "act2_ch8_faction_reckoning":       { "file": "act2_ch8_scenes.json", "act": 2, "chapter": 8 },
+    "act2_ch8_relationship_test":       { "file": "act2_ch8_scenes.json", "act": 2, "chapter": 8 },
+    "act2_ch8_point_of_no_return":      { "file": "act2_ch8_scenes.json", "act": 2, "chapter": 8 },
+
+    "act3_ch1_new_ashenveld":           { "file": "act3_ch1_scenes.json", "act": 3, "chapter": 1 },
+    "act3_ch1_leaving":                 { "file": "act3_ch1_scenes.json", "act": 3, "chapter": 1 },
+    "act3_ch1_staying_briefly":         { "file": "act3_ch1_scenes.json", "act": 3, "chapter": 1 },
+    "act3_ch1_alone_in_ashenveld":      { "file": "act3_ch1_scenes.json", "act": 3, "chapter": 1 },
+
+    "act3_ch2_rebuilding":              { "file": "act3_ch2_scenes.json", "act": 3, "chapter": 2 },
+    "act3_ch2_on_the_road":             { "file": "act3_ch2_scenes.json", "act": 3, "chapter": 2 },
+    "act3_ch2_finishing_work":          { "file": "act3_ch2_scenes.json", "act": 3, "chapter": 2 },
+    "act3_ch2_alone_work":              { "file": "act3_ch2_scenes.json", "act": 3, "chapter": 2 },
+
+    "act3_ch3_the_long_work":           { "file": "act3_ch3_scenes.json", "act": 3, "chapter": 3 },
+    "act3_ch3_road_further":            { "file": "act3_ch3_scenes.json", "act": 3, "chapter": 3 },
+    "act3_ch3_alone_continues":         { "file": "act3_ch3_scenes.json", "act": 3, "chapter": 3 },
+
+    "act3_ch4_resolution":              { "file": "act3_ch4_scenes.json", "act": 3, "chapter": 4 },
+    "act3_ch4_resolution_road":         { "file": "act3_ch4_scenes.json", "act": 3, "chapter": 4 },
+    "act3_ch4_resolution_alone":        { "file": "act3_ch4_scenes.json", "act": 3, "chapter": 4 },
+
+    "act3_ch5_endings":                 { "file": "act3_ch5_endings.json", "act": 3, "chapter": 5 },
+    "ending_stays_together":            { "file": "act3_ch5_endings.json", "act": 3, "chapter": 5 },
+    "ending_escape_together":           { "file": "act3_ch5_endings.json", "act": 3, "chapter": 5 },
+    "ending_alone_legend":              { "file": "act3_ch5_endings.json", "act": 3, "chapter": 5 },
+    "ending_warden_of_ashenveld":       { "file": "act3_ch5_endings.json", "act": 3, "chapter": 5 },
+    "ending_the_account":               { "file": "act3_ch5_endings.json", "act": 3, "chapter": 5 }
+  },
+
+  "starting_scene": "act1_ch1_barge_arrival",
+
+  "act_summaries": {
+    "1": {
+      "title": "The Return",
+      "entry": "act1_ch1_barge_arrival",
+      "exit_scenes": ["act1_ch7_act1_end"],
+      "chapters": 7,
+      "description": "The player arrives in Crestfall, meets the three factions, discovers the missing person's trail, and crosses into the deep forest."
+    },
+    "2": {
+      "title": "The Deep",
+      "entry": "act2_ch1_ruins_outskirts",
+      "exit_scenes": ["act2_ch8_point_of_no_return"],
+      "chapters": 8,
+      "description": "The player finds the missing person, performs the ritual, returns to Crestfall during the faction escalation, and makes the final choice that determines Act III."
+    },
+    "3": {
+      "title": "The Reckoning",
+      "entry": "act3_ch1_new_ashenveld",
+      "exit_scenes": ["ending_stays_together", "ending_escape_together", "ending_alone_legend", "ending_warden_of_ashenveld", "ending_the_account"],
+      "chapters": 5,
+      "description": "The aftermath. Four branching arcs based on the Act II choice. Five endings."
+    }
+  },
+
+  "cross_file_routes": [
+    { "from": "act1_ch1_tallow_room",         "to": "act1_ch2_morning_crestfall",    "note": "End of chapter 1 to chapter 2" },
+    { "from": "act1_ch2_market_rumour_missing","to": "act1_ch3_compact_introduction", "note": "Market to faction introductions" },
+    { "from": "act1_ch2_market_rumour_missing","to": "act1_ch3_rootless_camp_approach","note": "Market to camp direct" },
+    { "from": "act1_ch2_market_rumour_missing","to": "act1_ch3_covenant_introduction", "note": "Market to covenant" },
+    { "from": "act1_ch4_maret_letter_success", "to": "act1_ch5_curse_event",          "note": "Letter obtained to ch5" },
+    { "from": "act1_ch4_maret_letter_withheld","to": "act1_ch5_curse_event",          "note": "Letter withheld path to ch5" },
+    { "from": "act1_ch5_class_specific",       "to": "act1_ch6_departure_decision",   "note": "Ch5 end to departure" },
+    { "from": "act1_ch6_harrow_arrival",       "to": "act1_ch7_harrow_investigation", "note": "Ch6 to ch7 main" },
+    { "from": "act1_ch6_harrow_arrival",       "to": "act1_ch7_forest_edge",          "note": "Ch6 to ch7 fast path" },
+    { "from": "act1_ch7_act1_end",             "to": "act2_ch1_ruins_outskirts",      "note": "Act 1 to Act 2" },
+    { "from": "act2_ch2_decision_to_return",   "to": "act2_ch3_crestfall_news",       "note": "Ch2 to ch3" },
+    { "from": "act2_ch3_seriva_first_meeting", "to": "act2_ch4_vorne_meeting",        "note": "Ch3 to ch4" },
+    { "from": "act2_ch4_pol_fragment",         "to": "act2_ch5_return_to_ruins",      "note": "Ch4 to ch5" },
+    { "from": "act2_ch5_maret_conversation",   "to": "act2_ch6_day_of_ritual",        "note": "Ch5 to ch6" },
+    { "from": "act2_ch5_missing_person_private","to": "act2_ch6_day_of_ritual",       "note": "Private scene to ritual" },
+    { "from": "act2_ch6_seriva_arrives",       "to": "act2_ch7_aftermath_crestfall",  "note": "Ch6 to ch7" },
+    { "from": "act2_ch7_maret_and_missing",    "to": "act2_ch8_faction_reckoning",    "note": "Ch7 to ch8" },
+    { "from": "act2_ch8_point_of_no_return",   "to": "act3_ch1_new_ashenveld",        "note": "Act 2 to Act 3 — stayed" },
+    { "from": "act2_ch8_point_of_no_return",   "to": "act3_ch1_leaving",              "note": "Act 2 to Act 3 — left" },
+    { "from": "act2_ch8_point_of_no_return",   "to": "act3_ch1_staying_briefly",      "note": "Act 2 to Act 3 — sent ahead" },
+    { "from": "act2_ch8_point_of_no_return",   "to": "act3_ch1_alone_in_ashenveld",   "note": "Act 2 to Act 3 — alone" },
+    { "from": "act3_ch2_rebuilding",           "to": "act3_ch3_the_long_work",        "note": "Ch2 stayed to ch3" },
+    { "from": "act3_ch2_on_the_road",          "to": "act3_ch3_road_further",         "note": "Ch2 road to ch3" },
+    { "from": "act3_ch2_finishing_work",       "to": "act3_ch3_road_further",         "note": "Ch2 brief stay to ch3" },
+    { "from": "act3_ch2_finishing_work",       "to": "act3_ch3_the_long_work",        "note": "Ch2 stays permanently to ch3" },
+    { "from": "act3_ch2_alone_work",           "to": "act3_ch3_alone_continues",      "note": "Ch2 alone to ch3" },
+    { "from": "act3_ch3_the_long_work",        "to": "act3_ch4_resolution",           "note": "Ch3 stayed to ch4" },
+    { "from": "act3_ch3_road_further",         "to": "act3_ch4_resolution_road",      "note": "Ch3 road to ch4" },
+    { "from": "act3_ch3_alone_continues",      "to": "act3_ch4_resolution_alone",     "note": "Ch3 alone to ch4" },
+    { "from": "act3_ch4_resolution",           "to": "act3_ch5_endings",              "note": "Ch4 to endings router" },
+    { "from": "act3_ch4_resolution_road",      "to": "act3_ch5_endings",              "note": "Ch4 road to endings router" },
+    { "from": "act3_ch4_resolution_alone",     "to": "act3_ch5_endings",              "note": "Ch4 alone to endings router" }
+  ],
+
+  "flag_dependencies": {
+    "act2_ch3_compact_checkpoint": { "requires_flag": "returned_to_crestfall" },
+    "act2_ch4_issa_confrontation":  { "requires_flag": "issa_confrontation_imminent" },
+    "act2_ch5_ritual_preparation":  { "requires_flag": "ritual_preparation_active" },
+    "act2_ch6_ritual_engagement":   { "requires_flag": "ritual_phase1_complete" },
+    "act2_ch6_ritual_sealing":      { "requires_flag": "ritual_phase2_complete" },
+    "act3_ch1_new_ashenveld":       { "requires_flag": "player_stays_ashenveld" },
+    "act3_ch1_leaving":             { "requires_flag": "player_leaves_ashenveld" },
+    "act3_ch1_staying_briefly":     { "requires_flag": "missing_person_sent_ahead" },
+    "act3_ch1_alone_in_ashenveld":  { "requires_flag": "player_stays_alone" },
+    "ending_the_account": {
+      "requires_flags": [
+        "seriva_admitted_guilt",
+        "knows_covenant_kills_afflicted",
+        "documentation_complete",
+        "player_stays_ashenveld"
+      ],
+      "min_relationship": { "the_missing_person": 80 }
+    }
+  },
+
+  "inventory_items": {
+    "covenant_ward":          { "description": "Stone disc with Covenant markings. Slows curse exposure effects.", "consumable": false },
+    "covenant_marker_stone":  { "description": "Carved stone for placing at the east road nexus point.", "consumable": true, "consumed_on": "covenant_marker_placed" },
+    "rootless_map":           { "description": "Hand-drawn map of the east road with Rootless exploration points. Lira drew it.", "consumable": false },
+    "rootless_provisions":    { "description": "Dried food and medicinal herbs from Maret's camp.", "consumable": true },
+    "carved_bone_figure":     { "description": "Found in Harrow. Small figure. Unknown origin.", "consumable": false },
+    "missing_person_note":    { "description": "Cloth with four words written in ink. Your name. Keep going.", "consumable": false },
+    "harrow_papers":          { "description": "The old man's records from Harrow. The last entries are the most important.", "consumable": false },
+    "cellar_map_copy":        { "description": "A copy of the carvings from Harrow's barn cellar. A guide to the ruins.", "consumable": false },
+    "maret_outskirts_notes":  { "description": "Maret's handwritten notes on safe movement through the ruins outskirts.", "consumable": false },
+    "mechanism_fragment":     { "description": "A piece of the original sealing mechanism. Warm. Remembers what it was.", "consumable": true, "consumed_on": "ritual_complete" }
+  },
+
+  "class_stat_blocks": {
+    "commander": {
+      "strength": 16, "dexterity": 11, "stamina": 14,
+      "intelligence": 11, "mana": 6, "charisma": 14, "perception": 10,
+      "unique_mechanic": "Commands through presence. Ends social conflicts before they escalate."
+    },
+    "arcane": {
+      "strength": 7, "dexterity": 10, "stamina": 9,
+      "intelligence": 16, "mana": 16, "charisma": 11, "perception": 14,
+      "unique_mechanic": "Reads magical residue. Senses curse presence on NPCs and locations."
+    },
+    "ranger": {
+      "strength": 12, "dexterity": 16, "stamina": 14,
+      "intelligence": 11, "mana": 7, "charisma": 9, "perception": 16,
+      "unique_mechanic": "Reads land and creatures. Tracks curse spread direction and rate."
+    },
+    "cipher": {
+      "strength": 8, "dexterity": 14, "stamina": 10,
+      "intelligence": 14, "mana": 9, "charisma": 16, "perception": 13,
+      "unique_mechanic": "The Read — private NPC assessment each new scene. Sees what others miss."
+    }
+  },
+
+  "relationship_archetypes": {
+    "the_missing_person": "lost_one",
+    "maret":              "mirror",
+    "lira":               "dependent",
+    "branch":             "rival",
+    "innkeeper_aldous":   "companion",
+    "pol":                "mentor",
+    "seriva":             "rival",
+    "commander_vorne":    "rival",
+    "issa_vorne":         "dependent"
+  },
+
+  "faction_reputation_thresholds": {
+    "iron_compact": {
+      "hostile":    -30,
+      "wary":       -10,
+      "neutral":     0,
+      "cooperative": 15,
+      "allied":      30
+    },
+    "ashen_covenant": {
+      "hostile":    -30,
+      "wary":       -10,
+      "neutral":     0,
+      "cooperative": 15,
+      "allied":      30
+    },
+    "rootless": {
+      "hostile":    -20,
+      "wary":        -5,
+      "neutral":      0,
+      "cooperative": 15,
+      "allied":      25,
+      "trusted":     40
+    }
+  }
+}

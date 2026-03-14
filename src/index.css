@@ -1,0 +1,75 @@
+/* ── Base reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Variables: merged from both mockups ── */
+:root {
+  /* prototype v5 palette (game shell) */
+  --black:       #000000;
+  --bg:          #050608;
+  --bg-panel:    #07080a;
+  --bg-side:     #060709;
+  --border-dim:  #131820;
+  --border:      #1c2535;
+  --border-lit:  #2a3a52;
+
+  --blue-faint:  #0e1520;
+  --blue-dim:    #1e2f48;
+  --blue-mid:    #2e4a72;
+  --blue-steel:  #4a6a9a;
+  --blue-ice:    #7a9cc8;
+  --blue-moon:   #aec4e0;
+  --white-cold:  #dce8f4;
+
+  --text-bright: #ccdaec;
+  --text-main:   #8fa8c8;
+  --text-muted:  #4a5e78;
+  --text-dim:    #2a3a50;
+
+  --red-dark:    #3a1818;
+  --red-mid:     #7a3030;
+  --red-bright:  #c04848;
+
+  --success:     #4a8a6a;
+  --success-lit: #6ab88a;
+  --partial:     #5a7aaa;
+  --partial-lit: #7aaadc;
+  --fail:        #8a3a3a;
+  --fail-lit:    #c04848;
+
+  /* creation mockup extras */
+  --panel:       #06070d;
+  --blue-deep:   #0d1828;
+  --red:         #6a2828;
+  --red-lit:     #a84040;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background: var(--black);
+  font-family: 'Lora', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  color: var(--text-main);
+}
+
+/* Game shell and title screen need centred/overflow:hidden layout.
+   Creation screen needs to scroll. We handle this per-phase via #root classes. */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#root.game, #root.title {
+  height: 100vh;
+  overflow: hidden;
+}
+
+#root.creation {
+  align-items: flex-start;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+button { font-family: inherit; cursor: pointer; }

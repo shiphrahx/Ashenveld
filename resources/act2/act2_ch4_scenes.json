@@ -1,0 +1,376 @@
+{
+  "chapter": 4,
+  "title": "The Commander",
+  "scenes": [
+    {
+      "id": "act2_ch4_vorne_meeting",
+      "act": 2, "chapter": 4,
+      "location": "crestfall_compact_post",
+      "title": "Commander Vorne",
+      "on_enter": {
+        "state_changes": { "world": { "curse_spread": 3 } },
+        "time_advance": 30
+      },
+      "requires": {},
+      "text": {
+        "default": "The Compact post in the old granary has been converted into a functional command space with the efficiency of people who have done this in other towns before. Maps on every wall. A duty roster. A communication schedule.\n\nVorne is at a table when you are admitted. He is larger than you expected from descriptions and less imposing than you expected from reputation — a man in his fifties who looks like he has not slept well for several weeks and has decided that sleeping well is not currently the priority.\n\nHe looks up from his documents when you enter. His assessment of you takes less time than Seriva's and arrives at a different place.\n\n\"Sit down,\" he says. Not an invitation — a preference stated as one. \"I have been told you went east and came back. I want to know what you found.\"",
+        "commander": "You sit across from a fellow officer — or near enough — and the conversation takes on the register of two people who know how to speak directly without explaining themselves.\n\n\"I found the east road,\" you say. \"Harrow. The forest edge.\" You pause. \"What are you looking for specifically? If I knew your objective I could tell you whether I encountered it.\"\n\nHis eyes sharpen. He respects the redirect. \"A structure,\" he says. \"Underground, below the forest. A mechanism of some kind. Evidence of pre-existing civilisation. Seriva believes it is the source of the affliction.\"",
+        "arcane": "Vorne looks at you with the assessment of a military man evaluating a civilian specialist — trying to determine if you know more than him and in what direction.\n\n\"What is your expertise?\" he asks.\n\n\"Comparative texts,\" you say. \"Old languages. Pre-kingdom material culture.\" All true. All strategically selected to sound academic rather than operational.\n\n\"Seriva said someone with that background might have gone east,\" Vorne says. He is telling you she predicted you. You note it.",
+        "ranger": "Vorne looks at you with the directness of someone who does not have time for social performance.\n\n\"You were in the forest,\" he says. \"I need to know what is in the forest. Not metaphysically. Practically. What terrain, what obstacles, what would my soldiers encounter if I sent them east?\"\n\nA military question. You can answer it partially without giving him anything operationally significant.",
+        "cipher": "Vorne is not subtle and does not try to be. He is a direct instrument — not unintelligent, but pointed in one direction.\n\nThe interesting one is Seriva, not Vorne. But Vorne is the one with thirty soldiers, which makes him the more immediate consideration."
+      },
+      "choices": [
+        {
+          "id": "tell_vorne_partial_truth",
+          "text": "Give Vorne a partial account. Enough to seem cooperative without revealing the ruins.",
+          "requires": {},
+          "roll": { "stat": "charisma", "dc": 13 },
+          "outcomes": {
+            "success": {
+              "text": "You tell him about the east road, Harrow, the forest edge. You describe the terrain — accurately, in terms that would be useful to a military commander — and you describe the curse's visible effects on the land. All of this is true and none of it tells him about the inner approach or the chamber.\n\nHe listens. He asks questions. You answer them honestly where honesty costs you nothing and around them where it does.\n\nAt the end: \"You are holding something back,\" he says. Not accusing — stating.\n\n\"Everyone holds something back,\" you say. \"The question is whether what I am holding back affects what you need to know.\"\n\nA pause. He decides to let it go. For now.",
+              "next_scene": "act2_ch4_issa_crisis",
+              "state_changes": {
+                "factions": { "iron_compact": { "reputation": 5 } }
+              }
+            },
+            "success_at_cost": {
+              "text": "You give him enough and he takes it but something in his face when you finish tells you he calculated the gap between what you knew and what you told him. He files the gap. He will come back to it.\n\n\"If you find anything else of note,\" he says, \"I want to hear it before you act on it.\"",
+              "next_scene": "act2_ch4_issa_crisis",
+              "state_changes": { "flags": { "vorne_watching_player": true } }
+            },
+            "failure": {
+              "text": "He reads the gap in your account clearly and does not try to hide that he has read it.\n\n\"You have been in the ruins,\" he says. Not a question. \"Not just the edge. Inside.\"\n\nYou do not confirm or deny. He notes the non-denial. \"I will find out what is in there,\" he says. \"With or without your help. The question is whether it will take me a day or a week.\"",
+              "next_scene": "act2_ch4_issa_crisis",
+              "state_changes": {
+                "flags": { "vorne_knows_player_was_in_ruins": true },
+                "factions": { "iron_compact": { "reputation": -10 } }
+              }
+            }
+          }
+        },
+        {
+          "id": "propose_alliance_with_vorne",
+          "text": "Propose working together. You have information he needs.",
+          "requires": {},
+          "roll": { "stat": "charisma", "dc": 15 },
+          "outcomes": {
+            "success": {
+              "text": "He listens. He is not a man who dismisses proposals reflexively — he evaluates them.\n\n\"What are you proposing specifically?\" he says.\n\nYou lay out the terms: you share what you found in the ruins, he gives you a time buffer before the Compact moves on the source, he keeps Seriva away from the Rootless camp. In exchange: the information he needs to plan whatever operation he has in mind.\n\nHe looks at you for a long moment. \"You know what is in the ruins,\" he says. Not asking.\n\n\"Yes,\" you say.\n\n\"And you will tell me.\"\n\n\"The relevant parts.\"\n\nHe extends his hand. You shake it with the understanding that this arrangement has a very specific expiration date.",
+              "next_scene": "act2_ch4_issa_crisis",
+              "state_changes": {
+                "flags": { "vorne_alliance": true },
+                "factions": { "iron_compact": { "reputation": 20 } }
+              }
+            },
+            "success_at_cost": {
+              "text": "He agrees to talk but not to commit. You have his attention and a window of time. The formal arrangement he will not sign until he knows more about what you are offering.",
+              "next_scene": "act2_ch4_issa_crisis",
+              "state_changes": { "flags": { "vorne_negotiating": true } }
+            },
+            "failure": {
+              "text": "He does not negotiate from a position of uncertainty. He needs to know what you have before he agrees to anything.\n\n\"When you decide to tell me what you actually found,\" he says, \"come back.\"",
+              "next_scene": "act2_ch4_issa_crisis",
+              "state_changes": {}
+            }
+          }
+        },
+        {
+          "id": "ask_vorne_about_issa",
+          "text": "\"Do you know where your daughter is?\"",
+          "requires": { "flags": { "knows_issa_at_camp": true } },
+          "roll": { "stat": "perception", "dc": 10 },
+          "outcomes": {
+            "success": {
+              "text": "Something in him goes very still.\n\n\"What do you know about my daughter?\" he says. The control is total but underneath it, visible to someone looking for it, is a father who has not been sleeping because his daughter is somewhere he cannot see.\n\n\"She is safe,\" you say. \"She is receiving care. She is not getting worse.\" All true.\n\nHe looks at you. \"Where?\" he says. One word. All of his authority compressed into one word.\n\n\"That depends,\" you say, \"on what you intend to do when you find out.\"",
+              "next_scene": "act2_ch4_issa_crisis",
+              "state_changes": {
+                "flags": { "vorne_knows_player_knows_issa": true },
+                "relationships": { "commander_vorne": { "closeness": 15 } }
+              }
+            },
+            "success_at_cost": {
+              "text": "His face does something complicated when you say the word daughter.\n\n\"She is being cared for,\" you say. \"Somewhere safe from the worst of the curse's effects.\" You do not name the camp.\n\nHe looks at you for a long time. \"Tell me where she is,\" he says.\n\n\"After we have spoken about what you will do when you know.\"",
+              "next_scene": "act2_ch4_issa_crisis",
+              "state_changes": {
+                "flags": { "vorne_knows_player_knows_issa": true }
+              }
+            },
+            "failure": {
+              "text": "He gives you nothing — perfect control, no tell. Either he already knows where she is, or he has decided that his response to not knowing is not something he will display in front of you.\n\n\"My family is not your concern,\" he says. You file the deflection.",
+              "next_scene": "act2_ch4_issa_crisis",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act2_ch4_issa_crisis",
+      "act": 2, "chapter": 4,
+      "location": "rootless_camp",
+      "title": "The Crisis Point",
+      "on_enter": {
+        "state_changes": { "world": { "curse_spread": 4 }, "flags": { "issa_crisis_begun": true } },
+        "time_advance": 60
+      },
+      "requires": {},
+      "text": {
+        "default": "The crisis arrives in the form of a Compact soldier at the edge of the Rootless camp.\n\nNot threatening — he has been sent alone, which is either good manners or a calculated display of confidence. He carries a note from Vorne. The note is addressed to Maret and its contents are not secret: Commander Vorne respectfully requests that his daughter be returned to the Compact post, where she will receive appropriate medical attention.\n\nBranch has the note. Maret is reading it. The camp has the specific quality of a community that has been waiting for something to happen and now that it has happened, is not sure whether to be relieved.\n\nLira is watching from across the camp with the unfocused attention of the partially afflicted, but her hands are still, which means she is paying closer attention than she appears to be.",
+        "commander": "You read the situation with military speed. Vorne has made a formal request rather than a demand, which means he has not yet decided to use force. The request is a test — of Maret's response, of the camp's position, of whether there is room for a negotiated outcome before he escalates.\n\nHe is giving them thirty minutes to decide. If there is no response by then, he will make a decision about what comes next.",
+        "arcane": "The note is diplomatic in form and a threat in substance. Vorne is not asking whether Issa will be returned — he is establishing that he knows where she is and that he considers her presence at the camp to be a situation requiring resolution.\n\nThe question is what resolution looks like to him versus what resolution looks like to Maret.",
+        "ranger": "You read the Compact soldier with the specific attention you give to anyone positioned at the edge of a space with a message.\n\nHe is uncomfortable. He was sent here because someone decided sending one soldier was less threatening than sending ten, but nobody told him what to do if the answer is no. He does not know what his instructions are for that scenario.",
+        "cipher": "Vorne is not being diplomatic. He is being strategic. The formal request establishes his position before the situation escalates — it demonstrates that he tried the reasonable approach first, which matters when you are writing after-action reports to justify what comes next.\n\nThe camp has approximately thirty minutes before the reasonable approach becomes something else."
+      },
+      "choices": [
+        {
+          "id": "help_maret_negotiate",
+          "text": "Help Maret formulate a response that buys time without conceding anything.",
+          "requires": {},
+          "roll": { "stat": "charisma", "dc": 13 },
+          "outcomes": {
+            "success": {
+              "text": "You and Maret work quickly. The response is: Issa is being cared for and is stable, the care she is receiving is more appropriate to her current condition than anything the Compact post can provide, and you request a meeting between Maret and Commander Vorne to discuss her ongoing situation.\n\nYou do not say she is not coming back. You do not say she is staying. You propose a conversation.\n\nMaret sends the response with the soldier. Thirty minutes later a runner comes back: Vorne will meet. Tomorrow morning. At the Tallow Inn.\n\nYou have bought a day.",
+              "next_scene": "act2_ch4_vorne_issa_negotiation",
+              "state_changes": {
+                "flags": { "issa_negotiation_arranged": true },
+                "relationships": { "maret": { "closeness": 15 } }
+              }
+            },
+            "success_at_cost": {
+              "text": "The response goes and Vorne accepts the meeting but the soldier's manner when he leaves suggests the acceptance has conditions. The day is bought, but narrowly.",
+              "next_scene": "act2_ch4_vorne_issa_negotiation",
+              "state_changes": {
+                "flags": { "issa_negotiation_arranged": true }
+              }
+            },
+            "failure": {
+              "text": "The response does not land the way you intended. Vorne sends back a note that is less diplomatic than the first one. He wants his daughter back today, not tomorrow. The window has narrowed.",
+              "next_scene": "act2_ch4_issa_confrontation",
+              "state_changes": {
+                "flags": { "issa_confrontation_imminent": true },
+                "factions": { "iron_compact": { "reputation": -5 } }
+              }
+            }
+          }
+        },
+        {
+          "id": "take_issa_to_vorne",
+          "text": "Take Issa to Vorne yourself. Control the meeting.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You speak to Issa first. She is having a good period — more present than yesterday, the gap between thought and expression smaller. You explain the situation plainly.\n\n\"I do not want to go back yet,\" she says. \"The camp is—\" She stops. \"It is the right place for now. I know it is.\"\n\n\"Your father is not going to wait indefinitely,\" you say.\n\nShe looks at you. \"I know.\" A pause. \"If I go, will you be there?\"\n\n\"Yes,\" you say.\n\nYou bring her to the Compact post. The look on Vorne's face when he sees her is the kind of look that exists before any of the other things he is.",
+              "next_scene": "act2_ch4_vorne_issa_negotiation",
+              "state_changes": {
+                "flags": { "issa_returned_to_vorne": true },
+                "relationships": { "commander_vorne": { "closeness": 20 }, "issa_vorne": { "closeness": 15 } }
+              }
+            }
+          }
+        },
+        {
+          "id": "tell_maret_to_refuse",
+          "text": "Counsel Maret to refuse. Issa stays at the camp.",
+          "requires": {},
+          "roll": { "stat": "charisma", "dc": 14 },
+          "outcomes": {
+            "success": {
+              "text": "Maret sends the refusal. Not hostile — precise. Issa is a patient in the camp's care and she has chosen to be here and she will leave when she is ready to leave and the camp will not surrender its patients to military authority.\n\nThe soldier takes the response and leaves. An hour later, nothing happens. Two hours later, nothing happens. Vorne has heard the refusal and chosen, for now, not to escalate.\n\nYou understand why: he cannot use force against a camp containing his daughter without the risk of harming her, and he cannot admit publicly that his daughter chose the Rootless over the Compact.\n\nThe standoff holds. For now.",
+              "next_scene": "act2_ch4_vorne_issa_negotiation",
+              "state_changes": {
+                "flags": { "issa_remains_at_camp": true },
+                "factions": { "rootless": { "reputation": 15 }, "iron_compact": { "reputation": -15 } }
+              }
+            },
+            "success_at_cost": {
+              "text": "Maret sends the refusal and Vorne does not immediately escalate but the soldier who came back looks like someone who has been given orders he did not like. The standoff holds for now. The nature of now is unclear.",
+              "next_scene": "act2_ch4_vorne_issa_negotiation",
+              "state_changes": {
+                "flags": { "issa_remains_at_camp": true },
+                "factions": { "rootless": { "reputation": 8 }, "iron_compact": { "reputation": -8 } }
+              }
+            },
+            "failure": {
+              "text": "Vorne escalates. Not with force — with a formal notice that the Compact has medical facilities and medical authority in Crestfall and that the camp is in violation of the jurisdiction notice. More soldiers appear at the camp's perimeter.\n\nNobody has been hurt. Everyone understands that nobody being hurt is a temporary condition.",
+              "next_scene": "act2_ch4_issa_confrontation",
+              "state_changes": {
+                "flags": { "issa_confrontation_imminent": true },
+                "factions": { "iron_compact": { "reputation": -20 } }
+              }
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act2_ch4_vorne_issa_negotiation",
+      "act": 2, "chapter": 4,
+      "location": "crestfall_tallow_inn",
+      "title": "Father and Daughter",
+      "on_enter": {
+        "state_changes": { "world": { "curse_spread": 3 } },
+        "time_advance": 60
+      },
+      "requires": {},
+      "text": {
+        "default": "The meeting is at the Tallow. Aldous has been asked to close for the morning, which he does without argument and without leaving — he stands behind his bar and polishes things that are already polished.\n\nVorne sits on one side of a table. Maret sits on the other. You are present, which both of them allow without explanation.\n\nIssa is not here. The meeting is about her but it is not for her.\n\nVorne begins. He is controlled but the control is doing a great deal of work. He has seen his daughter — briefly, in passing, enough to see what the affliction has done to her and what the camp's care has achieved — and he is carrying both observations with the specific weight of a father who has not been able to do the thing fathers are supposed to do.",
+        "commander": "You watch Vorne negotiate with the specific attention of someone who has negotiated across tables like this before.\n\nHe wants Issa back. He also knows Maret is right that the camp is better for her than the Compact post. These two things are in conflict and he is not a man who handles conflict between what he wants and what is right with grace.\n\nThe meeting is going to end with him making a concession he is not going to acknowledge as a concession.",
+        "arcane": "The negotiation is about Issa but the subtext is about jurisdiction and authority and who the Rootless camp answers to. Maret is establishing, through the specific way she is speaking, that the camp answers to no one in Crestfall's current power structure.\n\nVorne is trying to find a formulation that lets him accept this without it becoming a precedent he cannot live with.",
+        "ranger": "You read both of them. Vorne: love underneath the command structure, not as well hidden as he thinks. Maret: compassion underneath the practicality, also not as well hidden as she thinks.\n\nThey are having two conversations. The one they are saying and the one they actually need to have.",
+        "cipher": "This negotiation is winnable. The key is finding the formulation that lets Vorne feel he has authority over his daughter's situation without requiring Maret to surrender the camp's autonomy.\n\nThose two things are not incompatible. They just require the right framing."
+      },
+      "choices": [
+        {
+          "id": "broker_the_agreement",
+          "text": "Intervene. Propose a framework that satisfies both sides.",
+          "requires": {},
+          "roll": { "stat": "charisma", "dc": 14 },
+          "outcomes": {
+            "success": {
+              "text": "You speak. Both of them listen, which is the first surprise.\n\nYou propose: Issa remains at the camp under the camp's care. The Compact supplies the camp with medical resources, formally acknowledging its capacity. Vorne receives daily updates on Issa's condition. In exchange, the camp operates under a Compact notice of recognition — not subordination, recognition — that protects it from future jurisdictional action.\n\nVorne looks at Maret. Maret looks at Vorne. Something that is not quite trust passes between them.\n\n\"I want to see her,\" Vorne says. \"Today.\"\n\n\"Yes,\" Maret says. \"Come this afternoon.\"\n\nThe agreement is not in writing. It does not need to be. The people who made it will hold it.",
+              "next_scene": "act2_ch4_pol_fragment",
+              "state_changes": {
+                "flags": { "issa_agreement_reached": true },
+                "factions": { "rootless": { "reputation": 15 }, "iron_compact": { "reputation": 10 } },
+                "relationships": { "maret": { "closeness": 20 }, "commander_vorne": { "closeness": 20 } }
+              }
+            },
+            "success_at_cost": {
+              "text": "The framework you propose is accepted in its broad strokes but Vorne inserts a condition: a Compact medic must be permitted to assess Issa weekly. Maret accepts this. It is a small concession and it holds the peace.",
+              "next_scene": "act2_ch4_pol_fragment",
+              "state_changes": {
+                "flags": { "issa_agreement_reached": true },
+                "factions": { "rootless": { "reputation": 8 }, "iron_compact": { "reputation": 8 } }
+              }
+            },
+            "failure": {
+              "text": "The framework does not land. Vorne rejects the recognition language — he cannot formally acknowledge the camp without it becoming a political problem back in the regional capital. The meeting ends without resolution.\n\nBoth of them leave with the specific quality of people who have decided they are not done with this conversation.",
+              "next_scene": "act2_ch4_pol_fragment",
+              "state_changes": { "flags": { "issa_standoff_continues": true } }
+            }
+          }
+        },
+        {
+          "id": "let_them_negotiate",
+          "text": "Stay out of it. Let them find their own terms.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You stay quiet. They negotiate for an hour.\n\nWhat they arrive at is not elegant — it is the agreement of two stubborn people who both love the outcome they want more than they love winning the argument.\n\nIssa stays at the camp. Vorne can visit. The Compact does not move against the camp while Issa is there. Neither side puts anything in writing.\n\nIt holds because neither of them can afford for it not to hold.",
+              "next_scene": "act2_ch4_pol_fragment",
+              "state_changes": {
+                "flags": { "issa_agreement_reached": true },
+                "factions": { "rootless": { "reputation": 5 }, "iron_compact": { "reputation": 5 } }
+              }
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act2_ch4_issa_confrontation",
+      "act": 2, "chapter": 4,
+      "location": "rootless_camp",
+      "title": "When It Goes Wrong",
+      "on_enter": {
+        "state_changes": { "world": { "curse_spread": 5 }, "flags": { "issa_confrontation_occurred": true } },
+        "time_advance": 30
+      },
+      "requires": { "flags": { "issa_confrontation_imminent": true } },
+      "text": {
+        "default": "Six soldiers arrive at the camp's edge. Not thirty — six, which is either restraint or a test. They have orders that they state without hostility: Commander Vorne requests his daughter's immediate return.\n\nBranch positions himself at the camp's edge. Maret stands beside him. Lira has been moved to the centre of the camp with the other vulnerable members.\n\nThe soldiers are not drawing weapons. Neither is Branch. The situation has the specific quality of something that is still deciding what it is going to be.",
+        "commander": "You move to the front. Not to fight — to manage.\n\nSix soldiers on a request, not an order. Their body language says they are hoping this resolves without incident. They were sent here because Vorne does not want violence. He wants his daughter. There is a difference and it creates room.",
+        "arcane": "The curse's ambient effect in the camp is elevated today — more people present, more stress, the specific amplification that happens when the field interacts with emotional intensity.\n\nYou watch Lira from across the camp. The elevated ambient is affecting her. She needs the situation to resolve quickly.",
+        "ranger": "You read six positions and one objective. The soldiers want Issa. They have instructions about how to get her and instructions about what not to do to get her.\n\nThe gap between those two sets of instructions is where the resolution lives.",
+        "cipher": "Six soldiers. A request. Vorne has given himself an out — if the camp refuses, the six soldiers leave and the situation escalates through formal channels rather than through violence. He is being careful.\n\nThe question is what he does if the formal channels do not produce the outcome he wants."
+      },
+      "choices": [
+        {
+          "id": "negotiate_at_camp_edge",
+          "text": "Step forward and negotiate directly with the soldiers.",
+          "requires": {},
+          "roll": { "stat": "charisma", "dc": 14 },
+          "outcomes": {
+            "success": {
+              "text": "You step forward and speak with the soldiers' leader — a sergeant who is relieved, you can tell, to have someone to negotiate with rather than a standoff to maintain.\n\nYou arrange: the soldiers will return to Vorne and request a meeting between the commander and the camp's leadership. Formal. At the Tallow. Tomorrow morning.\n\nHe agrees. The soldiers leave. The standoff ends without anyone being hurt.\n\nBranch looks at you when they are gone. \"That was close,\" he says.\n\n\"It was not that close,\" you say.\n\n\"No,\" he says. \"But I am glad you were here.\"",
+              "next_scene": "act2_ch4_vorne_issa_negotiation",
+              "state_changes": {
+                "flags": { "issa_negotiation_arranged": true },
+                "relationships": { "branch": { "closeness": 15 } }
+              }
+            },
+            "success_at_cost": {
+              "text": "You negotiate a delay but not a meeting. The soldiers leave with the message that the camp needs time to consult. The delay is hours, not days.",
+              "next_scene": "act2_ch4_vorne_issa_negotiation",
+              "state_changes": { "flags": { "issa_negotiation_arranged": true } }
+            },
+            "failure": {
+              "text": "The negotiation fails to hold. The soldiers push past the camp's edge. Not violently — firmly. Branch does not stop them because stopping them would be violent.\n\nIssa is found in the tent. She is brought out. She does not resist — she looks at you as she passes with an expression you will spend a long time trying to interpret.\n\nShe goes to the Compact post. The camp watches her go.",
+              "next_scene": "act2_ch4_pol_fragment",
+              "state_changes": {
+                "flags": { "issa_taken_by_compact": true },
+                "factions": { "iron_compact": { "reputation": -20 }, "rootless": { "reputation": -10 } },
+                "relationships": { "commander_vorne": { "closeness": -10 }, "issa_vorne": { "closeness": -15 } }
+              }
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act2_ch4_pol_fragment",
+      "act": 2, "chapter": 4,
+      "location": "rootless_camp",
+      "title": "The Fragment",
+      "on_enter": {
+        "state_changes": { "world": { "curse_spread": 2 } },
+        "time_advance": 30
+      },
+      "requires": {},
+      "text": {
+        "default": "Pol finds you when the Issa situation has resolved enough for the camp to breathe again.\n\nShe has the fragment — she got it from Issa with Issa's consent. The piece of the sealing mechanism that Issa found in the ruins outskirts, the piece that Pol has been looking for for three years.\n\nShe holds it out. It is approximately the size of your palm, the same material as the mechanism — the dark stone-metal fusion — and it is warm. Not from Pol's hand. It has its own warmth, very faint, the warmth of something that remembers functioning.\n\n\"This is what the ritual needs,\" she says. \"Beyond the participants. A piece of the mechanism's original state, before the fracture. Something that remembers what the mechanism was supposed to do.\"",
+        "commander": "You look at the fragment and think about the operational implications. It is a required component of the original sealing ritual. It is also the kind of object that Seriva will be looking for, that the Compact will want to control if they find out it exists, and that the Rootless camp currently possesses.\n\nThe camp just became significantly more strategically important than it was this morning.",
+        "arcane": "You hold the fragment carefully, feeling its warmth, reading its residue with the same attention you have been giving to every significant object since you arrived in Ashenveld.\n\nThe residue is old and clean — older than the curse, older than the mechanism's fracture. This piece carries the memory of the mechanism in its original state, before Seriva's modification destabilised it.\n\nYou understand what the ritual does now. It uses the fragment to remind the mechanism what it was, and then uses the participants to show it what it could be again.",
+        "ranger": "The fragment is warm and you note the warmth the way you note temperature in new territory — as information, not sensation.\n\n\"How did Issa find it?\" you ask.\n\n\"She does not know,\" Pol says. \"She was in the outskirts, exploring, and she found it in the soil. The fragment surfaces sometimes. The mechanism is trying to repair itself. This piece was moving toward the source.\"\n\nYou think about what it means that a piece of broken mechanism is moving toward its origin. You think about intention. You think about whether intention is the right word for what a piece of stone does.",
+        "cipher": "The fragment changes the equation significantly. The ritual now has all three required components: the participants, the chamber, the fragment.\n\nThe question is timing. Seriva is looking for the chamber. Vorne's soldiers are on the east road. Your missing person is waiting in the ruins.\n\n\"How long do we have before Seriva finds the chamber?\" you ask Pol.\n\nPol thinks. \"She knows the general location from twenty years ago,\" she says. \"The outskirts have changed. She will find it, but it will take her time. Days. A week, possibly.\" A pause. \"We have less time than that.\""
+      },
+      "choices": [
+        {
+          "id": "take_fragment_to_ruins",
+          "text": "Take the fragment back to the ruins. Tell your missing person the ritual can proceed.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You take the fragment from Pol. She releases it with the specific quality of someone setting down something they have been carrying for a long time.\n\n\"The witness,\" she says. \"Someone needs to be outside the chamber.\"\n\n\"You,\" you say.\n\nShe nods. \"Yes. Me.\" She looks at the fragment in your hand. \"Tell them to be ready. Two days. I need to prepare and you need to prepare. Two days.\"",
+              "next_scene": "act2_ch5_return_to_ruins",
+              "state_changes": {
+                "flags": { "fragment_obtained": true, "ritual_date_set": true },
+                "inventory": ["mechanism_fragment"]
+              }
+            }
+          }
+        },
+        {
+          "id": "consult_missing_person_first",
+          "text": "Go back to the ruins first. Tell your missing person what has developed.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You leave the fragment with Pol for safekeeping and go east.\n\nThe ruins outskirts. The cairn. The gate. Your missing person sitting in the familiar spot where they have apparently spent significant portions of fourteen months, reading their journal in the grey light.\n\nThey look up when you arrive. They read your face and set the journal down.\n\n\"Tell me,\" they say.",
+              "next_scene": "act2_ch5_return_to_ruins",
+              "state_changes": { "flags": { "missing_person_updated": true } }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

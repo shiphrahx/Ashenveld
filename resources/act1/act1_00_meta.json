@@ -1,0 +1,251 @@
+{
+  "meta": {
+    "game": "Ashenveld",
+    "act": 1,
+    "title": "The Return",
+    "chapters": 7,
+    "version": "1.0",
+    "notes": "Import this file first. It contains all NPC definitions and location descriptions referenced by scene files act1_ch1 through act1_ch7."
+  },
+
+  "npcs": {
+    "innkeeper_aldous": {
+      "id": "innkeeper_aldous",
+      "name": "Aldous",
+      "role": "Innkeeper of the Tallow Inn",
+      "location": "crestfall_tallow_inn",
+      "personality": "Cautious. Tired. Knows more than he says. Was kind once.",
+      "secret": "He saw the missing person leave with a Rootless woman the night before they disappeared into the forest.",
+      "initial_closeness": 0,
+      "faction_alignment": "none"
+    },
+    "maret": {
+      "id": "maret",
+      "name": "Maret",
+      "role": "Leader of the Rootless",
+      "location": "rootless_camp",
+      "personality": "Guarded. Pragmatic. Has seen too much. Protects her people above everything.",
+      "secret": "She was the last person to see the missing person alive. She made a private arrangement with the curse to protect her people. It cost her something she will not name.",
+      "initial_closeness": 0,
+      "faction_alignment": "rootless",
+      "archetype": "mirror"
+    },
+    "lira": {
+      "id": "lira",
+      "name": "Lira",
+      "role": "Cursed young woman, Rootless member",
+      "location": "rootless_camp",
+      "personality": "Quiet. Observant. Partially afflicted — some days better than others.",
+      "secret": "She has been inside the ruins outskirts and came back changed. She will not say what she saw.",
+      "initial_closeness": 0,
+      "faction_alignment": "rootless",
+      "archetype": "dependent"
+    },
+    "branch": {
+      "id": "branch",
+      "name": "Branch",
+      "role": "Former soldier, Rootless member",
+      "location": "rootless_camp",
+      "personality": "Suspicious. Dry. Loyal to Maret above all. Does not trust outsiders and says so plainly.",
+      "secret": "He recognises the player from a military record he should not have access to.",
+      "initial_closeness": 0,
+      "faction_alignment": "rootless",
+      "archetype": "rival"
+    },
+    "lieutenant_cael": {
+      "id": "lieutenant_cael",
+      "name": "Lieutenant Cael",
+      "role": "Iron Compact officer stationed at Crestfall",
+      "location": "crestfall_gate",
+      "personality": "Professional. Polite in a way that does not reach his eyes. Following orders he half-believes in.",
+      "secret": "Commander Vorne's daughter is showing early curse symptoms. Cael knows. Vorne does not yet.",
+      "initial_closeness": 0,
+      "faction_alignment": "iron_compact"
+    },
+    "priest_edric": {
+      "id": "priest_edric",
+      "name": "Edric",
+      "role": "Ashen Covenant priest stationed in Crestfall",
+      "location": "crestfall_shrine",
+      "personality": "Devout. Precise. Believes completely. The certainty never wavers even when the facts argue against it.",
+      "secret": "The Covenant's oldest texts describe exactly what is happening. He knows the purification ritual will kill as many as the curse does.",
+      "initial_closeness": 0,
+      "faction_alignment": "ashen_covenant"
+    },
+    "dockworker_sen": {
+      "id": "dockworker_sen",
+      "name": "Sen",
+      "role": "Dockworker, lifelong Crestfall resident",
+      "location": "crestfall_docks",
+      "personality": "Weathered. Nostalgic. Frightened but will not say of what.",
+      "secret": "He saw something in the river three weeks ago that he has told no one.",
+      "initial_closeness": 10,
+      "faction_alignment": "none"
+    },
+    "corvin": {
+      "id": "corvin",
+      "name": "Corvin",
+      "role": "Old market trader, lifelong Crestfall resident",
+      "location": "crestfall_market",
+      "personality": "Eighty years old. Seen everything. Says exactly what he means in as few words as possible.",
+      "secret": "He saw the missing person and the Rootless woman together, the night before they went east.",
+      "initial_closeness": 5,
+      "faction_alignment": "none"
+    },
+    "hanna": {
+      "id": "hanna",
+      "name": "Hanna",
+      "role": "Grain seller, market square",
+      "location": "crestfall_market",
+      "personality": "Efficient. Frightened. Doing what she can for people who are worse off. Running low on optimism.",
+      "secret": "She has been supplementing the Rootless camp with grain she writes off the books. If the Compact found out she would lose her stall.",
+      "initial_closeness": 0,
+      "faction_alignment": "none"
+    },
+    "still_man_wren": {
+      "id": "still_man_wren",
+      "name": "Wren",
+      "role": "Afflicted Crestfall farmer",
+      "location": "crestfall_tallow_inn",
+      "personality": "Was warm, community-minded, the person everyone liked. Now diminished. Still present, partially.",
+      "secret": "He went to the forest edge alone six months ago, touched something, and came back changed. He has told no one.",
+      "initial_closeness": 0,
+      "faction_alignment": "none"
+    }
+  },
+
+  "locations": {
+    "crestfall_docks": {
+      "id": "crestfall_docks",
+      "name": "Crestfall Docks",
+      "region": "crestfall",
+      "description": "Rotting wood and cold water. Three barges moored. A warehouse with a broken lock. The town visible beyond — smoke from chimneys, a church spire, the market bell that does not ring anymore.",
+      "ambient_day": "Quiet. One or two dockworkers. The ferryman comes and goes.",
+      "ambient_night": "Empty except for one lamp that swings in the wind off the water."
+    },
+    "crestfall_tallow_inn": {
+      "id": "crestfall_tallow_inn",
+      "name": "The Tallow Inn",
+      "region": "crestfall",
+      "description": "Low beams. A fire that burns lower than it should. Six tables, rarely more than three occupied. Aldous behind the bar. The stairs creak on the third step — they always did.",
+      "ambient_day": "Nearly empty. Aldous wipes the bar whether it needs it or not.",
+      "ambient_night": "Quieter than an inn should be. The fire dies down before closing."
+    },
+    "crestfall_market": {
+      "id": "crestfall_market",
+      "name": "Crestfall Market Square",
+      "region": "crestfall",
+      "description": "Half the stalls empty. The ones that remain sell less than they used to. People move through without stopping to talk. The fountain in the centre has not run in months. Someone left dried flowers at its base and no one has removed them.",
+      "ambient_day": "Three stalls open in the mornings. Gone by afternoon.",
+      "ambient_night": "Empty. The square is not a place people linger after dark."
+    },
+    "crestfall_gate": {
+      "id": "crestfall_gate",
+      "name": "Crestfall East Gate",
+      "region": "crestfall",
+      "description": "A checkpoint that was not here eleven years ago. Two Iron Compact soldiers posted at all hours. The road east visible beyond the gate, turning to mud after the first cobblestones end.",
+      "ambient_day": "Staffed. Cael or his subordinates watching everyone who passes.",
+      "ambient_night": "Staffed. A lamp above the gate. Nobody passes without being noted."
+    },
+    "crestfall_shrine": {
+      "id": "crestfall_shrine",
+      "name": "Ashen Covenant Shrine",
+      "region": "crestfall",
+      "description": "The old alderman's hall, acquired by the Covenant three years ago. Inside: candles, ash bowls, a carved figure with no face. The Covenant flag above the door is grey. It was not there eleven years ago.",
+      "ambient_day": "Edric or a junior priest always present. Incense burning.",
+      "ambient_night": "Open. A single candle visible through the window."
+    },
+    "rootless_camp": {
+      "id": "rootless_camp",
+      "name": "The Rootless Camp",
+      "region": "forest_edge_west",
+      "description": "Outside the eastern edge of town, in the liminal space where the town stops managing the land and the forest has not quite claimed it. Fifteen tents. A central fire. A herb garden along the southern edge that grows too well for this soil.",
+      "ambient_day": "Work happening. People moving with purpose. Guarded but not hostile.",
+      "ambient_night": "Never fully quiet. The fire kept going. Someone always awake."
+    },
+    "east_road": {
+      "id": "east_road",
+      "name": "The East Road",
+      "region": "east_road",
+      "description": "Cobblestone for the first mile. Then packed earth. Then a habit rather than a road — the evidence of people having gone this way. The forest closes in from both sides after the second mile. Birds absent. The light grey and thin under the canopy.",
+      "ambient_day": "Empty. The occasional animal track. No travellers going east.",
+      "ambient_night": "Do not travel at night."
+    },
+    "abandoned_village_harrow": {
+      "id": "abandoned_village_harrow",
+      "name": "Harrow",
+      "region": "east_road",
+      "description": "Twelve houses. A well. A communal barn. A small shrine to a local saint, defaced. Everything in the position it was built in. Meals on three tables. Tools leaning against walls. Beds unmade. No bodies. No blood. Just the absolute absence of people who were here and then were not.",
+      "ambient_day": "Wrong silence. The kind a place makes when it used to be populated and is not.",
+      "ambient_night": "Do not stay in Harrow at night without shelter. The wrong silence gets louder."
+    },
+    "forest_edge": {
+      "id": "forest_edge",
+      "name": "The Deep Forest Edge",
+      "region": "deep_forest",
+      "description": "Where the trees stop being trees you recognise. The bark darker. The spacing too regular — as if arranged rather than grown. The ground soft despite no recent rain. The silence here is not the absence of sound but a presence of its own that takes the place of sound.",
+      "ambient_day": "The line is visible. The difference between one side and the other is immediate.",
+      "ambient_night": "Do not be here at night."
+    }
+  },
+
+  "game_state_schema": {
+    "player": {
+      "name": "",
+      "gender": "",
+      "class": "",
+      "missing_person": {
+        "name": "",
+        "relationship": ""
+      },
+      "stats": {
+        "strength": 0,
+        "dexterity": 0,
+        "stamina": 0,
+        "intelligence": 0,
+        "mana": 0,
+        "charisma": 0,
+        "perception": 0
+      },
+      "resources": {
+        "gold": 0,
+        "health": 100,
+        "max_health": 100
+      }
+    },
+    "world": {
+      "act": 1,
+      "chapter": 1,
+      "day": 1,
+      "time_of_day": "dawn",
+      "current_location": "crestfall_docks",
+      "curse_spread": 0
+    },
+    "factions": {
+      "iron_compact": { "reputation": 0 },
+      "ashen_covenant": { "reputation": 0 },
+      "rootless": { "reputation": 0 }
+    },
+    "relationships": {},
+    "flags": {},
+    "inventory": [],
+    "current_scene": "act1_ch1_barge_arrival"
+  },
+
+  "dice_rules": {
+    "system": "d20 plus stat modifier",
+    "modifier_formula": "floor((stat - 5) / 2)",
+    "outcomes": {
+      "success": "roll >= dc + 4",
+      "success_at_cost": "roll >= dc - 2 AND roll < dc + 4",
+      "failure": "roll < dc - 2"
+    },
+    "difficulty_classes": {
+      "trivial": 8,
+      "standard": 12,
+      "hard": 16,
+      "very_hard": 20,
+      "nearly_impossible": 24
+    }
+  }
+}

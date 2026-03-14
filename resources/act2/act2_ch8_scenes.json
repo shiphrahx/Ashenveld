@@ -1,0 +1,223 @@
+{
+  "chapter": 8,
+  "title": "The Reckoning",
+  "scenes": [
+    {
+      "id": "act2_ch8_faction_reckoning",
+      "act": 2, "chapter": 8,
+      "location": "crestfall_tallow_inn",
+      "title": "Three Days After",
+      "on_enter": {
+        "state_changes": { "world": { "curse_spread": -5, "day": 15 } },
+        "time_advance": 0
+      },
+      "requires": {},
+      "text": {
+        "default": "Three days after the ritual.\n\nThe curse is still present in Ashenveld — it does not evaporate in seventy-two hours. But it is no longer spreading. The ambient in Crestfall has shifted noticeably. People who have been having the episodes are having them less frequently and with shorter duration. The grey at Issa's fingertips has not disappeared but it has not progressed.\n\nThe factions are regrouping. This is the part that comes after every significant event — the negotiation of what it means and who gets credit for it and what happens next.\n\nVorne has his assessment. Seriva has hers. The Rootless camp has its position. And you have decisions to make about what happens to Ashenveld and your place in it.\n\nThe point of no return is coming.",
+        "commander": "You sit at your usual table in the Tallow and look at three forces arrayed around the question of what happens next.\n\nVorne wants control of the documentation and the ruins' status. Seriva wants the Covenant's involvement in the rebuilding formally recognised. The Rootless camp wants recognition, resources, and to be left alone.\n\nThese three things are not incompatible. They require a broker. You have been a broker before.",
+        "arcane": "Three days of observation have given you initial data on the sealing's effects.\n\nThe curse is not reversing rapidly. Affliction at early stages — like Issa, like Lira — is progressing more slowly. People at further stages show no measurable change yet.\n\nThe land itself shows the most immediate response. Birds are beginning to return to areas nearest Crestfall. Time is the question. How much.",
+        "ranger": "You have been tracking the recovery the way you track any environmental change — with patience and attention to specific signs.\n\nDirection is positive. Rate is slow. The deepest areas will take longest.\n\nBut you heard a bird this morning. In the ordinary trees, half a mile from Crestfall. A species you had not heard in Ashenveld since you arrived. You stood in the road and listened to it for longer than was strictly necessary.",
+        "cipher": "Three days. You have been running the political analysis continuously.\n\nPower in Ashenveld for the next decade will be determined by who controls the documentation of what happened and who controls the interpretation of it.\n\nThe story is still being written. You are one of the people writing it."
+      },
+      "choices": [
+        {
+          "id": "call_a_meeting",
+          "text": "Bring the three factions together. Negotiate a lasting settlement.",
+          "requires": {},
+          "roll": { "stat": "charisma", "dc": 15 },
+          "outcomes": {
+            "success": {
+              "text": "It takes most of a day to get them all in the same room.\n\nVorne. Maret. Seriva. Edric.\n\nYou broker for three hours and find the formulation that gives each party enough of what they need to accept it.\n\nVorne gets the documentation and formal credit for the Compact's stabilising role. Seriva gets the Covenant formally absolved — the story becomes that the sealing deteriorated over time, not that she damaged it. The Rootless camp gets recognition and resource access. Edric gets a limited ongoing advisory presence.\n\nIt is not justice. It is an arrangement the people in the room can live with, which is the closest thing to justice that group negotiations produce.",
+              "next_scene": "act2_ch8_relationship_test",
+              "state_changes": {
+                "flags": { "ashenveld_settlement_reached": true },
+                "factions": { "iron_compact": { "reputation": 15 }, "rootless": { "reputation": 20 }, "ashen_covenant": { "reputation": 10 } }
+              }
+            },
+            "success_at_cost": {
+              "text": "The settlement is reached but fragile. One party accepted terms they will not hold to when the situation permits abandonment.\n\nThe settlement is better than no settlement. You note its weak point and keep it in mind.",
+              "next_scene": "act2_ch8_relationship_test",
+              "state_changes": {
+                "flags": { "fragile_settlement": true },
+                "factions": { "iron_compact": { "reputation": 8 }, "rootless": { "reputation": 12 } }
+              }
+            },
+            "failure": {
+              "text": "The meeting does not produce a settlement. Vorne and Seriva disagree fundamentally about the Covenant's culpability. Maret refuses terms that require the camp to report to either faction.\n\nYou leave with three separate truces and no peace.",
+              "next_scene": "act2_ch8_relationship_test",
+              "state_changes": { "flags": { "no_settlement": true } }
+            }
+          }
+        },
+        {
+          "id": "choose_rootless_side",
+          "text": "Align with the Rootless. Help Maret secure the camp's future.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You go to the camp and tell Maret what you are doing.\n\nShe looks at you for a long moment. \"Why?\"\n\nYou tell her. The Rootless have been here since before the Compact arrived. They have been treating the afflicted when no one else would. They know the land. They know the curse. They are the most capable ongoing presence in Ashenveld and they have the least power.\n\n\"I am going to help you get the documentation,\" you say. \"And make sure the Compact's recognition of the camp happens before Vorne finds a reason to withdraw it.\"\n\nMaret is quiet. \"That will make enemies,\" she says.\n\n\"I know,\" you say.",
+              "next_scene": "act2_ch8_relationship_test",
+              "state_changes": {
+                "flags": { "rootless_aligned": true },
+                "factions": { "rootless": { "reputation": 30 }, "iron_compact": { "reputation": -15 }, "ashen_covenant": { "reputation": -10 } }
+              }
+            }
+          }
+        },
+        {
+          "id": "choose_compact_side",
+          "text": "Work with Vorne. The Compact's structure is the only thing that can stabilise Ashenveld long-term.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You go to Vorne and make your position clear.\n\nThe Compact has resources, reach, and institutional stability. What Ashenveld needs now is rebuilding, and rebuilding requires the Compact's investment.\n\nIn exchange for your support — the documentation, your testimony, your account of Seriva's role — you want specific commitments. Resources for the affected villages. Investment in Crestfall's recovery. Formal protection for the Rootless camp.\n\nVorne listens. \"You drive a harder bargain than Cael does,\" he says.\n\n\"Cael works for you,\" you say. \"I do not.\"",
+              "next_scene": "act2_ch8_relationship_test",
+              "state_changes": {
+                "flags": { "compact_aligned": true },
+                "factions": { "iron_compact": { "reputation": 30 }, "rootless": { "reputation": -10 }, "ashen_covenant": { "reputation": -15 } }
+              }
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act2_ch8_relationship_test",
+      "act": 2, "chapter": 8,
+      "location": "crestfall_tallow_inn",
+      "title": "What the Mechanism Showed You",
+      "on_enter": {
+        "state_changes": { "world": { "curse_spread": -2 } },
+        "time_advance": 60
+      },
+      "requires": {},
+      "text": {
+        "default": "You and your missing person have an evening alone — the first genuine one since you found them in the outskirts.\n\nThe Tallow. The fire is better tonight than it has been in weeks. Aldous has been burning the good wood, the kind he saves for occasions.\n\nYour missing person is sitting across from you. They look different in the Tallow's light than they looked in the chamber's light — or maybe you are seeing them differently now. The mechanism read everything. Including things you have been carrying about this person for eleven years and more.\n\nThey are looking at you with the quality of someone who went through the same reading and came out knowing things they did not choose to know.",
+        "commander": "\"The mechanism showed me why you left,\" they say. Not accusing. Stating.\n\n\"Yes,\" you say.\n\n\"The real reason. Not the war. The one underneath the war.\"\n\n\"Yes,\" you say again.\n\n\"I knew part of it,\" they say. \"I did not know the full shape of it.\" A pause. \"It does not change why I wrote the letter. It changes what the letter cost me to write.\"",
+        "arcane": "\"There is something I want to tell you,\" they say. \"That the mechanism showed me about myself, that I did not know before.\"\n\nThey tell you.\n\nWhat they say is not what you expected. Something about the fourteen months — not the ruins, not the ritual. What they understood about themselves while they were alone. What the isolation clarified.\n\nYou listen with the specific attention of someone who knows that what they are being told is being told precisely, without omission, for the first time to anyone.",
+        "ranger": "\"What did it show you?\" they ask. \"About me.\"\n\nYou think about how to answer honestly.\n\n\"That you came back to Ashenveld for the same reason you left,\" you say. \"That those two things are the same reason. That you have been trying to solve a problem about yourself for eleven years and the ruins were the first place you found where the problem felt like it might have an answer.\"\n\nThey look at you for a long time. \"Yes,\" they say. \"Does it change how you see me?\"\n\n\"No,\" you say. You mean it.",
+        "cipher": "\"I know what you did not tell me,\" they say. \"By the fire. Before the ritual.\"\n\nYou look at them.\n\n\"You let the mechanism read it,\" they say. \"You decided to let it read you rather than say it yourself. I want you to know — I know why. And I know what it was.\"\n\nA silence.\n\n\"Is it something we can talk about?\" you ask.\n\n\"Yes,\" they say. \"But not tonight. Tonight I want to just be in this room with you. Without anything needing to be resolved.\"\n\n\"All right,\" you say."
+      },
+      "choices": [
+        {
+          "id": "be_honest_about_what_you_saw",
+          "text": "Be honest about what the mechanism showed you about them.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You tell them.\n\nNot everything — there is more than one evening's worth. But the most significant thing. The one that changed how you understand the last eleven years.\n\nThey listen without interrupting. When you finish they are quiet for a long time.\n\n\"I did not know you knew that,\" they say finally.\n\n\"I did not know it until the chamber,\" you say.\n\n\"Neither did I,\" they say. \"I am glad we both know now.\"",
+              "next_scene": "act2_ch8_point_of_no_return",
+              "state_changes": {
+                "relationships": { "the_missing_person": { "closeness": 30 } }
+              }
+            }
+          }
+        },
+        {
+          "id": "keep_some_things",
+          "text": "Keep some things. Not everything needs to be said tonight.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You keep some things. They keep some things. The mechanism read everything but you are not the mechanism.\n\nWhat you have is the shape of what the ritual revealed, held between you without being fully articulated. Some things are real without being spoken. Some things speaking would diminish.\n\nYou sit by the fire and do not say everything and the not-saying is its own kind of truth.",
+              "next_scene": "act2_ch8_point_of_no_return",
+              "state_changes": {
+                "relationships": { "the_missing_person": { "closeness": 15 } }
+              }
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act2_ch8_point_of_no_return",
+      "act": 2, "chapter": 8,
+      "location": "crestfall_tallow_inn",
+      "title": "The Choice That Determines Everything",
+      "on_enter": {
+        "state_changes": { "world": { "day": 16 } },
+        "time_advance": 0
+      },
+      "requires": {},
+      "text": {
+        "default": "Morning of the sixteenth day.\n\nYou are sitting at your table in the Tallow when it becomes clear that today is the day the decisions solidify. Not made — you have been making them for days. But committed, the point past which revision requires extraordinary effort.\n\nThe factions have their positions. You have yours. Your missing person is here, and Pol, and Maret, and Branch, and Lira, and Issa, and Aldous behind his bar with the good wood still burning.\n\nThe question is not what you have done. The question is what you are going to do with what comes next.\n\nThis is the point of no return. What you choose here shapes which ending is possible.",
+        "commander": "You have been building toward a specific outcome. You know where you stand. What comes next is implementation — and implementation in Ashenveld's current state may require you to be present for a significant time. Possibly permanently.\n\nYou think about what that means. Then you decide what it means.",
+        "arcane": "You have documentation to produce. Your missing person's fourteen months of notes. Pol's fifteen years of scholarship. Your own observations.\n\nThe question is who receives it and what version of events it tells. This work will determine what Ashenveld becomes.",
+        "ranger": "Ashenveld needs time, and time is not threatened. But it also needs people who know how to read what is happening and respond to it.\n\nYou think about whether you are one of those people. You think about what it would mean to stay.",
+        "cipher": "The political situation has a shape. Remaining influence requires sustained presence — continued relationship management, continued attention to who is doing what and why.\n\nYou have done this in other places for other reasons. The question is whether you want to do it here."
+      },
+      "choices": [
+        {
+          "id": "choose_to_stay",
+          "text": "Stay in Ashenveld. This is where the work is.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You decide to stay.\n\nNot because you have to. Because Ashenveld is where the work is and you are the person who knows what the work is and how to do it.\n\nYou find your missing person and tell them.\n\nThey look at you for a moment. \"I was going to ask you,\" they say. \"But I did not want to ask you to stay for me rather than for the place.\"\n\n\"I am staying for both,\" you say. \"Both are real. Both are enough.\"\n\nThey nod. \"Then I am staying too.\"",
+              "next_scene": "act3_ch1_new_ashenveld",
+              "state_changes": {
+                "flags": { "player_stays_ashenveld": true },
+                "world": { "act": 3, "chapter": 1 }
+              }
+            }
+          }
+        },
+        {
+          "id": "choose_to_leave_with_missing",
+          "text": "Leave Ashenveld with your missing person. You came here for them. The rest is finished.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You decide to leave.\n\nThe curse is sealed. The factions have their arrangement. Ashenveld's recovery is underway and does not require your specific presence.\n\nYou came here for one reason. The reason is standing across from you.\n\nYou find your missing person and tell them you are going.\n\nSomething in their face moves — not disappointment, something more complex. \"I thought—\" they begin. Then stop. \"All right,\" they say. \"When?\"\n\n\"Now,\" you say. \"Before something else needs to be fixed.\"",
+              "next_scene": "act3_ch1_leaving",
+              "state_changes": {
+                "flags": { "player_leaves_ashenveld": true },
+                "world": { "act": 3, "chapter": 1 }
+              }
+            }
+          }
+        },
+        {
+          "id": "send_missing_person_ahead",
+          "text": "Send your missing person ahead. Stay long enough to finish what needs finishing, then follow.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "\"Go,\" you tell them. \"Get somewhere safe and ordinary and rest. I will follow.\"\n\nThey look at you with the look they have been giving you since the ruins — the specific quality of someone who has been reading you longer than you have been reading them.\n\n\"You will,\" they say. Not a question.\n\n\"Yes,\" you say.\n\nThey go. You watch them leave the Tallow, cross the market square, and turn west toward the road that goes somewhere that is not Ashenveld.\n\nYou have a week of work left. Maybe two. Then you follow.",
+              "next_scene": "act3_ch1_staying_briefly",
+              "state_changes": {
+                "flags": { "missing_person_sent_ahead": true },
+                "world": { "act": 3, "chapter": 1 }
+              }
+            }
+          }
+        },
+        {
+          "id": "stay_alone",
+          "text": "Stay in Ashenveld alone. Your missing person deserves to leave. You are not ready to.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You tell them to go without you.\n\nThe conversation that follows is not the easiest you have ever had. But you tell them what is true: you are not done here. Ashenveld is not finished with you or you with it, and you cannot leave while that is the case.\n\nThey look at you for a long time.\n\n\"Will you come when it is done?\" they ask.\n\n\"I do not know,\" you say. You owe them honesty more than comfort.\n\nThey nod. They leave. The door of the Tallow closes behind them.\n\nYou sit at your table. Aldous brings you something without being asked. The fire burns.\n\nOutside, Ashenveld is slowly beginning to remember how to be a place people can live in.",
+              "next_scene": "act3_ch1_alone_in_ashenveld",
+              "state_changes": {
+                "flags": { "player_stays_alone": true },
+                "world": { "act": 3, "chapter": 1 }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "chapter": 1,
+  "title": "Beginnings of What Comes Next",
+  "scenes": [
+    {
+      "id": "act3_ch1_new_ashenveld",
+      "act": 3, "chapter": 1,
+      "location": "crestfall_tallow_inn",
+      "title": "The Morning You Decided to Stay",
+      "on_enter": {
+        "state_changes": { "world": { "curse_spread": -3, "day": 17 } },
+        "time_advance": 0
+      },
+      "requires": { "flags": { "player_stays_ashenveld": true } },
+      "text": {
+        "default": "You wake up in Crestfall on the seventeenth day and you know, with the specific clarity that comes from decisions that have finally settled, that you are not leaving.\n\nThe decision was made last night. This morning it is simply true, the way facts become true when the deciding is done — not a question anymore, not a weight, just a condition of the world you are now operating in.\n\nYour missing person is awake before you. They are at the window looking out at the market square. The square, in the morning light, is doing something it has not done in weeks: it is busy. Not crowded — busy, which is different. People moving with the particular quality of people who have decided there are things worth doing today.",
+        "commander": "You stand beside them at the window and read the market the way you would read a position that has been secured and now requires administration rather than defence.\n\n\"We need to make a list,\" you say.\n\nThey look at you. Then, slowly, they smile — the first real one since you found them in the ruins, not the careful managed expression but the one you remember from before.\n\n\"Always,\" they say. \"Always with the lists.\"",
+        "arcane": "The ambient in Crestfall this morning is measurably different from yesterday. Not dramatically — incrementally. But the increment is in the right direction.\n\nYou make a note in your journal. Day seventeen. Baseline established.\n\nYou have decided to stay and you have decided to document everything. Ashenveld is the most significant field site you will ever have access to and you have just committed to spending the foreseeable future in it. You are aware that this is either your best decision or your worst and that the distinction may take years to become clear.",
+        "ranger": "The birds are back in the market square this morning. Two sparrows and something larger you do not immediately identify — a species that normally keeps further into the ordinary forest, moving closer now that the forest is becoming ordinary again.\n\nYou note this. You will note it again tomorrow and the day after and the day after that. The recovery of Ashenveld's wildlife will be the clearest measure of what the sealing achieved.\n\nYour missing person is at the window. You stand beside them and you watch the birds.",
+        "cipher": "You read the market this morning with the specific attention of someone who has decided to become a permanent feature of a place and needs to update their mental map from visitor to resident.\n\nDifferent things matter. Different relationships need different management. The short-term leverage you accumulated over the past weeks needs to be converted into something more durable.\n\nYou are going to be here for a while. You start thinking like it."
+      },
+      "choices": [
+        {
+          "id": "establish_first_priority",
+          "text": "Establish your first priority. What does Ashenveld need most right now?",
+          "requires": {},
+          "roll": { "stat": "intelligence", "dc": 11 },
+          "outcomes": {
+            "success": {
+              "text": "You think clearly and the answer is clear: information. What the sealing has achieved, what it has not achieved, what the afflicted people need now, what the land's recovery rate will be. None of the other work — the rebuilding, the faction management, the documentation — can be done well without knowing the actual state of things.\n\nYou and your missing person spend the first day of your new life in Ashenveld doing an assessment. Systematic. Documented. Shared.",
+              "next_scene": "act3_ch2_rebuilding",
+              "state_changes": { "flags": { "assessment_conducted": true } }
+            },
+            "success_at_cost": {
+              "text": "You identify the priorities but the list is longer than the day is. You make choices about order and some of the choices are wrong in ways you will not discover until later.\n\nThis is the work of staying somewhere. The particular incompleteness of it.",
+              "next_scene": "act3_ch2_rebuilding",
+              "state_changes": {}
+            },
+            "failure": {
+              "text": "The priorities overwhelm each other. You spend the first day of staying in Ashenveld managing competing urgencies rather than establishing order among them.\n\nIn the evening your missing person sits across from you and says: \"Tomorrow. We start again tomorrow.\" And the specific patience in their voice is one of the things you came here for.",
+              "next_scene": "act3_ch2_rebuilding",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act3_ch1_leaving",
+      "act": 3, "chapter": 1,
+      "location": "east_road",
+      "title": "The Road Going West",
+      "on_enter": {
+        "state_changes": { "world": { "day": 17 } },
+        "time_advance": 120
+      },
+      "requires": { "flags": { "player_leaves_ashenveld": true } },
+      "text": {
+        "default": "You and your missing person leave Crestfall on the seventeenth day.\n\nThe west road. The one you did not arrive on — the one that goes away from Ashenveld into the rest of the world, the part that does not have ruins under its forests or curses in its groundwater or people going quietly dim.\n\nThe morning is ordinary. Overcast. Cold in the specific way of late autumn in this part of the world.\n\nYou walk. They walk beside you. The distance between you and Crestfall grows at the rate of walking — two miles an hour, approximately, which is slow enough to see everything you are passing and fast enough that returning would require a decision.\n\nYou do not return.",
+        "commander": "You carry what you left with. Your pack. Your skills. The specific knowledge of what is in the ruins and what was done about it.\n\nYou left Crestfall without telling Vorne everything. The documentation he was promised — your missing person will send it, eventually, from wherever you end up. It will be complete. You gave your word.\n\nThe west road. Ordinary trees. You walk.",
+        "arcane": "You carry your journal. Fourteen months of your missing person's notes, copied in the days before you left, will travel with you.\n\nYou are leaving the most significant field site of your career. You are doing this because the person beside you matters more than the field site. You note both facts without resolving the tension between them.\n\nThe west road. You walk. You write as you walk, because you are you.",
+        "ranger": "The ordinary forest on the west road. Birds. Deer — the right kind, moving correctly, aware of you and making the appropriate calculation about whether you are a threat.\n\nYou are not a threat. You are two people walking away from something and toward something that does not have a name yet.\n\nThe forest is ordinary. After weeks in Ashenveld, ordinary is almost overwhelming.",
+        "cipher": "You and your missing person walking on the west road.\n\nYou are thinking about what comes next. Not Ashenveld — what comes after Ashenveld. The world is large and you have skills and you have a person beside you who has spent fourteen months in a ruined city learning things nobody else knows.\n\nThe two of you together are a significant resource. You are thinking about how to deploy that resource in ways that serve something other than the institutions that will certainly try to acquire you."
+      },
+      "choices": [
+        {
+          "id": "talk_about_what_comes_next",
+          "text": "Talk about where you are going. What comes after Ashenveld.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You walk for a mile before either of you speaks.\n\nThen your missing person says: \"I want to go somewhere I have never been.\"\n\n\"That is most places,\" you say.\n\n\"Yes,\" they say. \"That is the point.\"\n\nYou walk. The west road meets the main road at the crossroads three miles from Crestfall. Left goes north. Right goes south. Straight goes west toward the coast.\n\n\"Which one?\" they say.\n\nYou look at all three. You pick one. You do not tell the reader which one — that is the last piece of Ashenveld that belongs to you and it stays yours.",
+              "next_scene": "act3_ch2_on_the_road",
+              "state_changes": { "flags": { "departure_direction_chosen": true } }
+            }
+          }
+        },
+        {
+          "id": "walk_in_silence",
+          "text": "Walk in silence. Some departures need to be felt before they can be discussed.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You do not talk. You walk.\n\nThe silence between you is the silence of two people who have been through something significant together and have not yet found the language for what it means that it is over.\n\nAt the crossroads: you stop. They stop.\n\nYou look at each other.\n\n\"Right or left?\" they say.\n\nYou choose. You go.",
+              "next_scene": "act3_ch2_on_the_road",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act3_ch1_staying_briefly",
+      "act": 3, "chapter": 1,
+      "location": "crestfall_tallow_inn",
+      "title": "One More Week",
+      "on_enter": {
+        "state_changes": { "world": { "day": 17 } },
+        "time_advance": 0
+      },
+      "requires": { "flags": { "missing_person_sent_ahead": true } },
+      "text": {
+        "default": "They are gone. You watched them leave the Tallow and cross the market square and you are still sitting at your table.\n\nAldous brings you something without being asked. He does this — the specific competence of an innkeeper who understands that some moments require something in your hand without you having to ask for it.\n\n\"How long?\" he says.\n\n\"A week,\" you say. \"Maybe two.\"\n\nHe nods. He does not say: you said that about Ashenveld when you arrived. He is too good at his work to say that.",
+        "commander": "A week. Possibly two. You have commitments to finish — the documentation, the Compact arrangement, the Rootless camp's formal recognition. Things that will not hold if they are not properly tied off.\n\nYou have made a promise. You do not leave promises untied.",
+        "arcane": "The documentation needs to be complete before you leave. Your missing person's notes, your own observations, Pol's scholarship. The account of what happened in the ruins and what it means.\n\nThis is the work of a week. Possibly longer. You will do it in the time you have.",
+        "ranger": "The land's recovery needs to be documented at this stage. Before you leave. The baseline, the direction, the rate. Someone needs to know what to look for and how to read it.\n\nYou spend the first morning teaching Branch. He is a better student than he lets on.",
+        "cipher": "The political arrangements are fragile until they are not. You have a week, possibly two, to make them less fragile.\n\nThis is familiar work. You have left places before. You know what needs to be done before departure to minimise the probability of what you built collapsing without you."
+      },
+      "choices": [
+        {
+          "id": "prioritise_the_work",
+          "text": "Prioritise. What must be done before you can leave?",
+          "requires": {},
+          "roll": { "stat": "intelligence", "dc": 12 },
+          "outcomes": {
+            "success": {
+              "text": "You make the list. The documentation. The Compact arrangement, finalised in writing. The Rootless camp's recognition, formalised before Vorne finds a reason to delay it. A conversation with Pol about what comes next for her.\n\nSeven days of work. You have seven days. It fits, barely.",
+              "next_scene": "act3_ch2_finishing_work",
+              "state_changes": { "flags": { "departure_work_planned": true } }
+            },
+            "success_at_cost": {
+              "text": "The list is longer than seven days. You make choices about what to prioritise and what to leave for Maret and Branch to manage without you.\n\nThe choices are imperfect. Some of what you leave behind will go wrong in ways you will never know about. This is the price of leaving.",
+              "next_scene": "act3_ch2_finishing_work",
+              "state_changes": {}
+            },
+            "failure": {
+              "text": "The list is longer than the time and you cannot make it shorter. You will do what you can and leave the rest.\n\nAt some point during the second week you will look up from the work and realise you are not going to finish and you will have to decide whether to stay longer or leave unfinished. That decision is coming.",
+              "next_scene": "act3_ch2_finishing_work",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act3_ch1_alone_in_ashenveld",
+      "act": 3, "chapter": 1,
+      "location": "crestfall_tallow_inn",
+      "title": "The Door Closed",
+      "on_enter": {
+        "state_changes": { "world": { "day": 17 } },
+        "time_advance": 0
+      },
+      "requires": { "flags": { "player_stays_alone": true } },
+      "text": {
+        "default": "The door of the Tallow closes behind them and you are alone at your table.\n\nAldous does not say anything. He has been a barman long enough to know when silence is the right response.\n\nYou sit with what you chose. Not regretting it — you do not yet know if it is the kind of choice that regret applies to. It is the kind of choice that has consequences and you will discover what the consequences are by living into them.\n\nOutside, Crestfall is beginning its seventeenth day. Slowly. With the specific quality of a place that has been diminished and is discovering, incrementally, that diminishment is not the same as ending.",
+        "commander": "You made a choice. You are the kind of person who makes choices and holds them.\n\nThe person you let leave will either understand or they will not. Either way, you are here. Ashenveld is here. The work is here.\n\nYou go find Maret. You have things to discuss.",
+        "arcane": "The loneliness of the choice hits you with a delay — not in the moment, but twenty minutes later when you look up from the table and the seat across from you is empty and will be empty for the foreseeable future.\n\nYou note the feeling the way you note everything: as data. Present. Real. Worth attending to.\n\nThen you open your journal.",
+        "ranger": "You chose to stay and they chose to go and both of those things are real.\n\nYou go outside. The market square. The birds this morning. The specific quality of Crestfall in early recovery — not healed, not well, but alive and moving in the right direction.\n\nYou are part of why it is moving in the right direction. You stay because of that. The other reason — the one that is walking away on the west road — you hold separately.",
+        "cipher": "You let them go. You are staying.\n\nThe political work of Ashenveld does not disappear because your personal situation has become complicated. The work is the work. You have done harder work in worse emotional conditions.\n\nYou go find Vorne. The documentation needs to be completed. The Rootless camp needs its formal recognition. There is a week of concentrated work ahead and you are going to do it."
+      },
+      "choices": [
+        {
+          "id": "commit_to_the_choice",
+          "text": "Commit to the choice. Ashenveld is where you are. Begin the work.",
+          "requires": {},
+          "roll": { "stat": "stamina", "dc": 10 },
+          "outcomes": {
+            "success": {
+              "text": "You commit.\n\nNot with ceremony — with the specific quality of someone who has made difficult choices before and knows that the commitment is made in the continued doing rather than in a single moment of decision.\n\nYou get up. You go to the Rootless camp. You begin.",
+              "next_scene": "act3_ch2_alone_work",
+              "state_changes": { "flags": { "alone_committed": true } }
+            },
+            "success_at_cost": {
+              "text": "You commit but the commitment is expensive in ways you did not fully calculate. The first day is the hardest — the specific quality of having chosen something and not being sure yet whether you chose correctly.\n\nYou do the work anyway. The work is what you have.",
+              "next_scene": "act3_ch2_alone_work",
+              "state_changes": { "player": { "resources": { "health": -10 } } }
+            },
+            "failure": {
+              "text": "The commitment does not come easily. You sit at the table for longer than you intended, held by something you do not have a clean name for.\n\nAldous, eventually, says: \"The camp sent someone looking for you this morning.\" He sets a note on the table.\n\nThe note is from Branch. Three words: we need you.\n\nThat is enough. You go.",
+              "next_scene": "act3_ch2_alone_work",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+.titleScreen {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.titleBg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 40%, rgba(30,48,80,0.25) 0%, transparent 70%),
+    radial-gradient(ellipse 30% 50% at 20% 80%, rgba(15,25,45,0.3) 0%, transparent 60%);
+}
+
+.stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--text-muted);
+  animation: twinkle var(--dur, 4s) ease-in-out infinite var(--del, 0s);
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: var(--lo, 0.2); }
+  50%       { opacity: var(--hi, 0.7); }
+}
+
+.titleContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  animation: titleFadeIn 1.8s ease forwards;
+  opacity: 0;
+}
+
+@keyframes titleFadeIn {
+  0%   { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.titleEyebrow {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 10px;
+  letter-spacing: 0.45em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.titleName {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 72px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--white-cold);
+  line-height: 1;
+  margin-bottom: 10px;
+  text-shadow: 0 0 80px rgba(100,150,200,0.15);
+}
+
+.titleRule {
+  width: 240px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--blue-steel), transparent);
+  margin: 18px 0;
+}
+
+.titleTagline {
+  font-size: 16px;
+  font-style: italic;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 56px;
+  text-align: center;
+  max-width: 360px;
+  line-height: 1.7;
+}
+
+.titleBtn {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--blue-ice);
+  background: none;
+  border: 1px solid var(--blue-mid);
+  padding: 14px 44px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.titleBtn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--blue-deep);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.titleBtn:hover { border-color: var(--blue-steel); color: var(--white-cold); }
+.titleBtn:hover::before { transform: scaleX(1); }
+.titleBtn span { position: relative; z-index: 1; }

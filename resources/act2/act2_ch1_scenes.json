@@ -1,0 +1,362 @@
+{
+  "chapter": 1,
+  "title": "The Outskirts",
+  "scenes": [
+    {
+      "id": "act2_ch1_ruins_outskirts",
+      "act": 2, "chapter": 1,
+      "location": "ruins_outskirts",
+      "title": "The Buried City",
+      "on_enter": {
+        "state_changes": { "flags": { "act2_started": true }, "world": { "curse_spread": 2 } },
+        "time_advance": 30
+      },
+      "requires": {},
+      "text": {
+        "default": "The ruins announce themselves gradually, then all at once.\n\nFirst: stones at odd angles in the forest floor, too regular to be natural, too broken to be structural. You step over them without thinking about it. Then more of them. Then a wall — or the suggestion of one, two metres of standing stone before it ends in nothing. Then an archway with no gate and no building on either side, framing a rectangle of grey sky.\n\nThen the ground changes. The forest floor gives way to something harder beneath a thin layer of soil — a surface, worked, the ghost of a road or a floor, the memory of a place where people walked with intention.\n\nYou are in the ruins.\n\nThe silence here is different from the forest silence. Denser. More specific. The kind of silence that accumulates over centuries rather than hours.",
+        "commander": "You move through the outskirts with the systematic attention of someone clearing a position, except the position has no edges you can find and no threats you can name.\n\nThe ruins are large. Larger than the approach suggested. What is visible above ground is only the top layer — you can see, where erosion has exposed the edges of things, that the structure goes down. Deep.",
+        "arcane": "The ruins speak to you in the language of accumulated working, the residue of things done here over centuries. Not the curse — older than the curse. This place was active, purposeful, inhabited by people who understood the invisible architecture of the world in ways your tradition has only partially recovered.\n\nYou want to stay here for a year. You do not have a year. You take notes and keep moving.",
+        "ranger": "You read the outskirts the way you would read new territory — looking for paths, for the signs of recent passage, for the places where the ground is less dead than everywhere else.\n\nThere are paths here. Not made deliberately — worn, by repeated passage. Something or someone has been moving through these ruins with regularity. The paths converge. They converge toward the centre.",
+        "cipher": "The ruins are a space with a logic. You spend the first twenty minutes mapping it mentally — which areas are accessible, which are blocked, where the open ground is and where the walls create choke points.\n\nSomeone else has done this already. You can see it in the subtle signs of recent passage — a stone moved here, a gap cleared there. The ruins have been navigated. Recently and repeatedly."
+      },
+      "choices": [
+        {
+          "id": "follow_the_paths",
+          "text": "Follow the worn paths. See where they lead.",
+          "requires": {},
+          "roll": { "stat": "perception", "dc": 10 },
+          "outcomes": {
+            "success": {
+              "text": "The paths are clearer than you expected once you know what you are looking for. Three separate routes through the outskirts, each one avoiding specific areas — places where the ground is wrong in ways you have started to recognise as high-curse-density zones.\n\nSomeone mapped these paths by trial and error. Probably painful trial and error.\n\nAt the convergence point of all three paths: a cairn. Fresh. Built within the last week. On top of it: a small piece of cloth weighted with a stone. Familiar cloth.",
+              "next_scene": "act2_ch1_first_cairn",
+              "state_changes": {
+                "flags": { "found_missing_trail": true },
+                "world": { "curse_spread": 2 }
+              }
+            },
+            "success_at_cost": {
+              "text": "You find the paths but reading them costs you something — thirty minutes moving through higher-curse areas before you find the safe routes, thirty minutes during which the ambient effect is stronger than you have felt it before.\n\nYou note what high exposure feels like. The narrowing. The specific quality of diminishment. You note it and file it and keep moving.",
+              "next_scene": "act2_ch1_first_cairn",
+              "state_changes": {
+                "world": { "curse_spread": 3 },
+                "player": { "resources": { "health": -5 } }
+              }
+            },
+            "failure": {
+              "text": "You move through the outskirts without finding the pattern in the paths and you pay for it — twenty minutes in areas where the curse is denser, where the world gets slightly less interesting with each step.\n\nYou find the cairn eventually, by accident.",
+              "next_scene": "act2_ch1_first_cairn",
+              "state_changes": {
+                "world": { "curse_spread": 4 },
+                "player": { "resources": { "health": -10 } }
+              }
+            }
+          }
+        },
+        {
+          "id": "examine_ruins_carefully",
+          "text": "Stop and examine the ruins carefully before moving further.",
+          "requires": {},
+          "roll": { "stat": "intelligence", "dc": 11 },
+          "outcomes": {
+            "success": {
+              "text": "You find three things in the first careful examination.\n\nFirst: the ruins are not random. The visible structures follow a radial pattern, everything oriented toward a central point that is currently underground or collapsed. This was a city with a centre and the centre was important.\n\nSecond: the stone is wrong in a specific way — it resonates. Very slightly, at a frequency just below hearing. The curse is using the stone as a conductor.\n\nThird: someone has been here recently. Within the week. They left traces that are easy to miss and hard to explain away once you see them.",
+              "next_scene": "act2_ch1_first_cairn",
+              "state_changes": {
+                "flags": { "understands_ruins_structure": true }
+              }
+            },
+            "success_at_cost": {
+              "text": "You understand the shape of the ruins — radial, centred, oriented — but the specific details of recent passage elude you until you are almost standing on the cairn.",
+              "next_scene": "act2_ch1_first_cairn",
+              "state_changes": { "flags": { "understands_ruins_structure": true } }
+            },
+            "failure": {
+              "text": "The ruins give you scale but not understanding — you know they are large and old and oriented toward something, but the details that would make those facts useful remain out of reach. You move on.",
+              "next_scene": "act2_ch1_first_cairn",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act2_ch1_first_cairn",
+      "act": 2, "chapter": 1,
+      "location": "ruins_outskirts",
+      "title": "The Cairn",
+      "on_enter": {
+        "state_changes": { "flags": { "first_cairn_found": true }, "world": { "curse_spread": 2 } },
+        "time_advance": 20
+      },
+      "requires": {},
+      "text": {
+        "default": "The cairn is at the convergence of three paths through the outskirts, in a space that has slightly less curse-density than the surrounding area — either by coincidence or by design.\n\nOn top of it: a piece of cloth weighted with a flat stone. You recognise the cloth before you pick it up. You would recognise it anywhere.\n\nUnder the cloth, scratched into the flat stone in small careful letters:\n\n*I am below. Take the south passage. Do not touch the carved walls. Wait at the gate.*\n\nNo name. No date. But the handwriting is theirs and the instruction is clear and the south passage is — you look around and find it, a gap between two standing walls that does not look like a gap until you are at the right angle.",
+        "commander": "A military mind reads this quickly: a rendezvous point, a route, a behavioural instruction, a destination. They anticipated your arrival, or someone's arrival. They prepared.\n\nFourteen months in the ruins and they are still capable of preparation. That tells you something important.",
+        "arcane": "The message is written in plain language but the stone it is written on is not plain — it is one of the resonant stones from the ruins, chosen deliberately. The message will last longer carved here than it would on paper. They knew that.\n\nThey have been learning the properties of this place. For fourteen months. You are walking into the laboratory of someone who is further into this material than you are.",
+        "ranger": "You read the message and read the ground around the cairn. The path to the south passage is worn — more worn than the other paths. This is the most-used route. They come back here regularly. They have been maintaining the cairn.\n\nThey are not lost. They are living here.",
+        "cipher": "The message is efficient. No sentiment, no explanation, no uncertainty. Either they knew you specifically would come — which implies a level of trust in your capability that is either touching or calculated — or they have left this message for any competent person who reached this point.\n\nYou go to the south passage."
+      },
+      "choices": [
+        {
+          "id": "follow_instructions",
+          "text": "Follow the instructions. South passage, avoid the walls, wait at the gate.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You go to the south passage. You avoid the carved walls, which requires some attention — the passage is narrow and the carvings extend further than you first thought, right to the floor. You navigate carefully and emerge into a wider space.\n\nThe gate is ahead. Not a functional gate — the structure it hung in is mostly collapsed — but the frame remains, two standing stones with a lintel, and in the shadow of it: a figure, sitting, waiting.",
+              "next_scene": "act2_ch1_the_watcher_seen",
+              "state_changes": {}
+            }
+          }
+        },
+        {
+          "id": "examine_carved_walls",
+          "text": "Examine the carved walls before proceeding. They may tell you something.",
+          "requires": {},
+          "roll": { "stat": "intelligence", "dc": 13 },
+          "outcomes": {
+            "success": {
+              "text": "You look without touching. The carvings are in a script you cannot read but you can read the images — pictographic elements interspersed with the text. A sequence: something contained, something breaking, something spreading, and then — at the end of the sequence, freshly scratched in a different tool, a different hand — something stopped.\n\nThe last image was added recently. By someone who understood what the sequence meant and wanted to mark that the last step was possible.\n\nYou note this and continue.",
+              "next_scene": "act2_ch1_the_watcher_seen",
+              "state_changes": {
+                "flags": { "read_passage_carvings": true }
+              }
+            },
+            "success_at_cost": {
+              "text": "You study the carvings and touch one accidentally — not the carved surface, just the stone near it — and the effect is immediate and unpleasant: a wave of the narrowing, stronger than anything you have felt before, lasting four or five seconds.\n\nYou understand why the message said not to touch them. You continue, more carefully.",
+              "next_scene": "act2_ch1_the_watcher_seen",
+              "state_changes": {
+                "player": { "resources": { "health": -8 } },
+                "world": { "curse_spread": 2 }
+              }
+            },
+            "failure": {
+              "text": "You cannot read the carvings. The script is completely opaque. You follow the instruction and avoid them and proceed.",
+              "next_scene": "act2_ch1_the_watcher_seen",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act2_ch1_the_watcher_seen",
+      "act": 2, "chapter": 1,
+      "location": "ruins_outskirts",
+      "title": "The Figure at the Gate",
+      "on_enter": {
+        "state_changes": { "world": { "curse_spread": 2 } },
+        "time_advance": 15
+      },
+      "requires": {},
+      "text": {
+        "default": "The figure at the gate is not your missing person.\n\nYou know this immediately — the height is wrong, the posture is wrong. This is someone else. They are sitting with their back against the right-hand stone of the gate, their knees drawn up, their face turned slightly away from you.\n\nThey are wearing the clothes of someone from Harrow — the specific grey wool the village used for outdoor work. The clothes are intact. The person wearing them is less intact.\n\nThey are alive. You can see the breathing. But when you approach they do not respond — not to your footsteps, not to your voice when you try it, not to anything. Their eyes are open and fixed on something that is not in this space.\n\nThe Watcher. You have heard this term from Maret without fully understanding it. Now you understand it.",
+        "commander": "You assess the Watcher with professional speed. Alive. Unresponsive. Not threatening — the body is relaxed, not tensed. Not sleeping — the eyes are open and tracking something, just not anything you can see.\n\nThis is the furthest stage of the curse you have seen in a person who is still ambulatory. Whatever they were, they are now primarily a signal.",
+        "arcane": "The Watcher's residue is unlike anything you have encountered. Not the curse in its normal form — the Watcher has been in the ruins for long enough that the boundary between the curse and themselves has become unclear. They are not afflicted by the curse. They are, in some functional sense, part of it.\n\nThis should be more disturbing than it is. You note that it is not as disturbing as it should be and file that observation for later.",
+        "ranger": "The Watcher does not react to you the way a person would or the way a deeply afflicted person would. They react like a territorial marker — their presence here is not accidental. They are placed here.\n\nSomething placed them here. Something is using them the way you would use a marker cairn.",
+        "cipher": "The Watcher is information. Someone put them here at the gate, at the convergence point that the cairn's message was directing you toward. Whether that someone is your missing person, or the ruins themselves, or something else entirely — that is the question.\n\nYou watch the Watcher and wait."
+      },
+      "choices": [
+        {
+          "id": "try_to_reach_watcher",
+          "text": "Try to reach the Watcher. They were a person once.",
+          "requires": {},
+          "roll": { "stat": "charisma", "dc": 15 },
+          "outcomes": {
+            "success": {
+              "text": "You crouch in front of them and speak. Not their name — you do not know it. Just words, calm and direct, the words you would use with someone surfacing from very deep water.\n\nSomething in their eyes shifts. Just slightly. Just enough to feel like something returning from a long distance.\n\nThey say one word. It is your name.\n\nThen they are gone again — back to wherever they were — but the word hangs in the air of the ruins outskirts and your missing person did not leave a message on a cairn stone telling you to wait here. Someone who has been in here for a very long time told the Watcher your name. And the Watcher said it.",
+              "next_scene": "act2_ch1_missing_person_approach",
+              "state_changes": {
+                "flags": { "watcher_spoke": true },
+                "relationships": { "ruins_watcher": { "closeness": 10 } }
+              }
+            },
+            "success_at_cost": {
+              "text": "You try and something shifts in them, briefly — a slight reorientation, a moment of awareness that costs you something to look at. Then it passes. They did not speak but they saw you. Or something behind them saw you.",
+              "next_scene": "act2_ch1_missing_person_approach",
+              "state_changes": {
+                "relationships": { "ruins_watcher": { "closeness": 5 } }
+              }
+            },
+            "failure": {
+              "text": "Nothing. The Watcher is absent in a way that does not respond to address. You straighten and look at the gate. The instructions said wait at the gate. You wait.",
+              "next_scene": "act2_ch1_missing_person_approach",
+              "state_changes": {}
+            }
+          }
+        },
+        {
+          "id": "wait_at_gate",
+          "text": "Follow the instruction. Wait at the gate.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You position yourself near the gate and wait. The Watcher does not look at you. The ruins are quiet in their specific way. The time passes with the texture-less quality you first noticed when you entered the forest.\n\nThen, from somewhere deeper in the outskirts, footsteps.",
+              "next_scene": "act2_ch1_missing_person_approach",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act2_ch1_missing_person_approach",
+      "act": 2, "chapter": 1,
+      "location": "ruins_outskirts",
+      "title": "Footsteps",
+      "on_enter": {
+        "state_changes": { "world": { "curse_spread": 1 } },
+        "time_advance": 20
+      },
+      "requires": {},
+      "text": {
+        "default": "Footsteps. From deeper in the ruins, from past the gate.\n\nA pace you recognise. You have not heard it in over a year — in the time before that you heard it often enough that your body remembers it the way your body remembers anything repeated: not as a fact but as a feeling, a specific quality of presence.\n\nThey come through the gate.\n\nThey are changed. You see that immediately and note it as fact before you let yourself feel it. Thinner. The particular thinness of someone who has been eating what the environment offers rather than what they chose. Their eyes have a quality you have seen in people who have been somewhere that altered them — not the vacancy of the afflicted, something almost opposite: an excess of attention, as if they are seeing more than you are and have been for a long time.\n\nThey see you and stop.\n\nFor a moment neither of you moves.",
+        "commander": "You have had reunions before. People you thought were dead. People you went back for. You know the shape of this moment — the specific arrest of motion, the recalibration of the world around a new fact.\n\nThey are alive. They are here. They are changed.\n\nYou do the thing you always do in these moments: you move first. You cross the distance between you.",
+        "arcane": "Your reading of them takes less than a second and takes the rest of the conversation to process.\n\nThe curse is in them. Not deeply — not the vacancy, not the diminishment — but present, integrated in a way you have not seen before. They have not been afflicted by the curse. They have been learning it. The way you learn a language, gradually, until it is no longer foreign.\n\nYou do not know if that is extraordinary or catastrophic. Possibly both.",
+        "ranger": "You read them the way you read terrain after something significant has happened to it — for what has changed, for what has held, for what the change cost.\n\nThey held. That is what you see first. Fourteen months in the ruins and they held. The thing that makes them themselves is still present, still legible. Changed around the edges, sharpened in the middle.\n\nThey are looking at you the same way.",
+        "cipher": "You read them and find something unexpected: they are reading you. With the same quality of attention you use, the same calibration, the same assessment of what they see versus what they expected to see.\n\nFourteen months in the ruins has given them something. You are not sure it is something you want them to have and you are not sure it is something you can ask them to give back."
+      },
+      "choices": [
+        {
+          "id": "cross_distance",
+          "text": "Cross the distance. Reach them.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You cross the distance.\n\nThe reunion is not what reunions are in stories. It is quieter, more careful, the specific quality of two people who have been holding something for a long time and are deciding, in real time, how to set it down without breaking it.\n\nYou say their name.\n\nThey say yours.\n\nThat is enough for now. The rest will come.",
+              "next_scene": "act2_ch1_reunion",
+              "state_changes": {
+                "flags": { "missing_person_found": true },
+                "relationships": { "the_missing_person": { "closeness": 20 } }
+              }
+            }
+          }
+        },
+        {
+          "id": "wait_for_them_to_move",
+          "text": "Stay where you are. Let them come to you.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You stay. They understand — something in your stillness reads to them as: I am here, I will wait, take the time you need.\n\nThey take a breath. Then they cross the distance.\n\nThey stop a foot in front of you. Close enough that you can see exactly how the fourteen months have changed them. Close enough that you can see, underneath the changes, the person you have been carrying with you since you got on the barge in Crestfall.\n\n\"You came,\" they say.",
+              "next_scene": "act2_ch1_reunion",
+              "state_changes": {
+                "flags": { "missing_person_found": true },
+                "relationships": { "the_missing_person": { "closeness": 25 } }
+              }
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act2_ch1_reunion",
+      "act": 2, "chapter": 1,
+      "location": "ruins_outskirts",
+      "title": "Fourteen Months",
+      "on_enter": {
+        "state_changes": { "world": { "curse_spread": 1 } },
+        "time_advance": 60
+      },
+      "requires": { "flags": { "missing_person_found": true } },
+      "text": {
+        "default": "You sit together at the base of the gate stones, in the Watcher's proximity, which they seem unbothered by — they have been near the Watcher for months.\n\nThey talk. You listen first.\n\nFourteen months. They came in looking for the source of the curse, following the same trail Maret gave them. They reached the marker line and went past it. They found the inner approach and followed it down. And they found the source chamber — the original sealing mechanism, broken, radiating the curse outward through the stone and soil and water of Ashenveld.\n\nAnd they found the sealing ritual. The original text, carved into the chamber walls in full. They have spent fourteen months learning to read it.\n\n\"I can seal it,\" they say. \"I know how. But the ritual requires two people and I have been alone.\"\n\nThey look at you. The implication is clear and was clear from the moment they left the letter on the cairn and the note in the campsite and possibly from the moment they wrote the letter that brought you here.",
+        "commander": "\"You planned this,\" you say. Not accusingly. Observing.\n\n\"I hoped,\" they say. There is a distinction and you hear it. \"I hoped you would come and I hoped you would be willing and I left markers at every point that I thought would tell you what you were walking toward without telling you what I needed from you.\"\n\nA pause. \"I did not want to ask you before you knew what you were agreeing to.\"\n\nThis is, you note, either the most considerate thing anyone has ever done for you or a form of manipulation so refined it does not feel like manipulation. Possibly both.",
+        "arcane": "You process the information with the specific part of your mind that processes information about things you have been studying for eleven years.\n\nThe original sealing ritual. Two participants. They have spent fourteen months learning a ritual that requires two people while being alone.\n\n\"What does the ritual require of the second participant?\" you ask.\n\nThe pause before they answer is the most informative pause in the conversation.",
+        "ranger": "\"You have been in there,\" you say. Meaning the source chamber. \"Past the marker line, in the centre of it.\"\n\n\"Yes.\"\n\n\"For fourteen months.\"\n\n\"Yes.\"\n\nYou look at them — the whole of them, not just their face. What fourteen months in the source chamber does to a person who is not afflicted is something you are looking at for the first time. You are still deciding what you see.",
+        "cipher": "\"The letter,\" you say. \"The campsite markers. The cairn. This was all planned.\"\n\n\"Yes,\" they say. Not apologetically. They made a choice and they are owning it.\n\n\"You needed me to come here,\" you say. \"Not because you missed me. Because you needed a second person for the ritual.\"\n\nThe silence after this question is the answer. But then they add: \"Both. Both are true.\" And the way they say it makes the distinction matter."
+      },
+      "choices": [
+        {
+          "id": "ask_what_ritual_requires",
+          "text": "\"What does the ritual require of me?\"",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "They tell you.\n\nThe ritual requires two participants who are — the text uses a word they have spent months translating, and the closest they can get is *bonded*. Not in any legal or formal sense. In the sense that their lives have been shaped by each other, that they carry each other's weight, that separating one from the other changes the essential composition of both.\n\nThe ritual will work with any two such people.\n\nThey chose you specifically.\n\n\"And the risk?\" you ask.\n\nAnother pause. \"There is risk for both participants. I do not know its full extent. The text is honest about this. The people who wrote the ritual were honest about this.\" They look at you. \"I did not bring you here to kill you. But I cannot promise you will leave this the same way you came in.\"",
+              "next_scene": "act2_ch1_what_they_found",
+              "state_changes": {
+                "flags": { "ritual_explained": true }
+              }
+            }
+          }
+        },
+        {
+          "id": "ask_about_them_first",
+          "text": "\"Before anything else — are you alright?\"",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "The question catches them. They had prepared for practical questions and you asked them a human one.\n\n\"I am—\" They stop. Start again. \"I am different. I do not know if different is the same as alright. I have been inside this place for fourteen months and it has changed how I see things.\" A pause. \"Not like the affliction. Not like the dimming. More like — I have been looking at something for so long that I understand its shape now, and understanding its shape means I cannot unknow it.\"\n\nThey look at you steadily. \"I am glad you came. That is true regardless of the ritual.\"",
+              "next_scene": "act2_ch1_what_they_found",
+              "state_changes": {
+                "relationships": { "the_missing_person": { "closeness": 15 } }
+              }
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act2_ch1_what_they_found",
+      "act": 2, "chapter": 1,
+      "location": "ruins_outskirts",
+      "title": "What Fourteen Months Found",
+      "on_enter": {
+        "state_changes": { "world": { "curse_spread": 2 } },
+        "time_advance": 45
+      },
+      "requires": {},
+      "text": {
+        "default": "They tell you what they know. All of it, in the order they learned it.\n\nThe ruins are the remains of a city that was built specifically to contain the power that now leaks as the curse. The builders knew the power existed — they did not create it, they found it, in the ground, already ancient. They built the city around the containing mechanism, maintained it for generations, and then something happened. Their records stop.\n\nWhat stopped them is not in the ruins. But the mechanism is still there — broken but repairable — and the ritual for repairing it is inscribed on the chamber walls.\n\n\"How broken?\" you ask.\n\n\"Functionally broken,\" they say. \"The sealing has been failing for about twenty years. It failed completely three years ago. That is when the curse started spreading.\"\n\nTwenty years of slow failure. You think of Seriva — the Covenant scholar who was here twenty years ago. You think of what she might have been doing.",
+        "commander": "\"The Covenant knows this,\" you say. Not a question.\n\n\"Parts of it,\" they say. \"The Covenant has texts that describe the original sealing. They know the ritual exists. I think they have a partial version of it. But the full text — the version that works — is on the chamber walls. I have copied it.\"\n\nThey produce a journal, battered, densely written. Fourteen months of work.\n\n\"Anyone who gets hold of this,\" you say, \"can perform the ritual.\"\n\n\"Yes,\" they say. \"Which is why I need to perform it before anyone else does.\"",
+        "arcane": "You absorb the information with the same hunger you absorb all significant information and immediately start asking the questions that follow from it.\n\n\"The power the city was containing,\" you say. \"What is it?\"\n\nThey are quiet for a moment. \"The best I can describe it,\" they say, \"is that it is the world's original capacity for change. Not evil. Not good. Just — everything that the world could become if the existing constraints were removed.\" Another pause. \"Unsealed, it does not destroy things. It transforms them, relentlessly, into versions of themselves that are more purely themselves. The curse is what that process looks like at the margin — people becoming so purely themselves that the parts of themselves that care about external things dissolve.\"\n\nYou sit with this. It changes everything about what you thought the curse was.",
+        "ranger": "\"The animals,\" you say. \"The ones moving wrong. The deer.\"\n\n\"Yes,\" they say. \"They reach the transformation faster than people do. They have less — less of what the transformation dissolves. They become purely instinct. Purely movement. What you are seeing is a deer that is only the hunting-and-fleeing parts of deer, with no remainder.\"\n\nYou look at the Watcher. \"And people?\"\n\n\"People become purely — presence. Attention without object. Being without wanting.\" They follow your gaze. \"He is not suffering. I want you to know that. He is not in there experiencing deprivation. He is just — present. Completely.\"",
+        "cipher": "You process the information as intelligence and immediately identify the strategic implications.\n\nA working ritual exists. Your missing person has a copy. The Covenant has a partial copy. The Compact does not know it exists but will want it when they learn it does. The Rootless camp — specifically Pol, you now recall — left the Covenant after reading something in the archives.\n\n\"Pol,\" you say.\n\nThey look at you. \"You know Pol.\"\n\n\"She is at the Rootless camp. She left the Covenant fifteen years ago.\"\n\nSomething changes in their face. \"She read the full text,\" they say. \"That is the only reason to leave the Covenant.\""
+      },
+      "choices": [
+        {
+          "id": "ask_about_urgency",
+          "text": "\"How much time do we have before the curse reaches Crestfall?\"",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "\"Weeks,\" they say. \"Maybe less. The rate has been accelerating. Every time the mechanism degrades further the spread rate increases.\" They look at you steadily. \"We should do the ritual soon. Not today — you just arrived, you need to understand the chamber before you enter it. But not weeks from now either.\"\n\nThey stand. \"I will show you the inner approach. I will show you the chamber. I will show you what the ritual requires and what it risks. And then you will decide.\"",
+              "next_scene": "act2_ch2_inner_approach",
+              "state_changes": {
+                "flags": { "knows_time_limit": true }
+              }
+            }
+          }
+        },
+        {
+          "id": "tell_about_crestfall",
+          "text": "Tell them what has happened in Crestfall — the factions, the Compact, the Covenant.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You tell them. All of it — Maret, the Compact, Cael, Edric, the new arrivals you heard about before you left Crestfall. Commander Vorne. A senior Covenant scholar named Seriva.\n\nAt Seriva's name, they go still.\n\n\"Seriva,\" they say. \"She was here twenty years ago. I found references to her visit in the chamber records — the ruins keep records, in a sense, of who has been inside them.\" Their voice is careful. \"She was here when the sealing mechanism started failing. The records suggest she was inside the chamber.\"\n\nA silence.\n\n\"She caused this,\" you say.\n\n\"I do not know that,\" they say. \"But I think she knows what caused it. And I think she has been trying to fix it for twenty years in a way that does not require admitting what she did.\"",
+              "next_scene": "act2_ch2_inner_approach",
+              "state_changes": {
+                "flags": { "seriva_suspected": true }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

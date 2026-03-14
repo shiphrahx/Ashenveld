@@ -1,0 +1,143 @@
+{
+  "meta": {
+    "game": "Ashenveld",
+    "act": 2,
+    "title": "The Deep",
+    "chapters": 8,
+    "version": "1.0",
+    "notes": "Import after act1_00_meta.json. Contains all Act II NPC definitions, new locations, and updated faction mechanics. Act II begins the moment the player crosses into the deep forest at the end of Act I."
+  },
+
+  "new_npcs": {
+    "the_missing_person": {
+      "id": "the_missing_person",
+      "name": "[Player-defined name]",
+      "role": "The person the player came to Ashenveld for",
+      "location": "ruins_inner_chamber",
+      "personality": "Changed by fourteen months inside the ruins. Still themselves, but differently. The curse has not taken them — something else has happened, something harder to name.",
+      "secret": "They found the original sealing ritual in the ruins and partially performed it alone. The ritual requires a second person to complete. They have been waiting. They did not know if the player would come.",
+      "initial_closeness": 80,
+      "faction_alignment": "none",
+      "archetype": "lost_one",
+      "note": "This NPC's dialogue must reference the player-defined relationship and name from character creation."
+    },
+    "seriva": {
+      "id": "seriva",
+      "name": "Seriva",
+      "role": "Senior Ashen Covenant scholar, arrived from the capital",
+      "location": "crestfall_shrine",
+      "personality": "More dangerous than Edric. Brilliant. Has read the original texts in full. Knows the purification ritual will work and knows exactly what it costs and has decided the cost is acceptable.",
+      "secret": "She was in Ashenveld twenty years ago, before the sealing failed. She knows why it failed. She is partly responsible for why it failed. She is here to correct that.",
+      "initial_closeness": 0,
+      "faction_alignment": "ashen_covenant",
+      "archetype": "rival"
+    },
+    "commander_vorne": {
+      "id": "commander_vorne",
+      "name": "Commander Vorne",
+      "role": "Iron Compact military commander, arrived from the regional capital",
+      "location": "crestfall_compact_post",
+      "personality": "Decisive. Pragmatic. Genuinely trying to save the region. His methods are the problem, not his intentions.",
+      "secret": "His daughter Issa is at the Rootless camp. She went there three weeks ago when the curse touched her and he has been pretending he does not know where she is.",
+      "initial_closeness": 0,
+      "faction_alignment": "iron_compact",
+      "archetype": "rival"
+    },
+    "issa_vorne": {
+      "id": "issa_vorne",
+      "name": "Issa",
+      "role": "Commander Vorne's daughter, partially afflicted, at the Rootless camp",
+      "location": "rootless_camp",
+      "personality": "Seventeen. Sharper than her father knows. Frightened of the curse and more frightened of what her father will do when he finds her.",
+      "secret": "She found something in the ruins outskirts before she was afflicted — a fragment of the original sealing stone. She has been carrying it without knowing what it is.",
+      "initial_closeness": 0,
+      "faction_alignment": "none",
+      "archetype": "dependent"
+    },
+    "the_archivist": {
+      "id": "the_archivist",
+      "name": "Pol",
+      "role": "Rootless camp healer, formerly Ashen Covenant archivist",
+      "location": "rootless_camp",
+      "personality": "Quiet. Methodical. Left the Covenant fifteen years ago when she read something in the archives she was not supposed to read.",
+      "secret": "She is the only living person who has read the complete original sealing text. She left the Covenant rather than participate in what it required. She has been at the Rootless camp for three years, preparing.",
+      "initial_closeness": 5,
+      "faction_alignment": "rootless",
+      "archetype": "mentor"
+    },
+    "ruins_watcher": {
+      "id": "ruins_watcher",
+      "name": "The Watcher",
+      "role": "Unknown figure observed moving through the ruins outskirts",
+      "location": "ruins_outskirts",
+      "personality": "Does not speak. Possibly cannot. Appears at intervals. Always moving away from the player, never toward. Leads somewhere.",
+      "secret": "The Watcher is a person from Harrow who went east two years ago and reached a state of partial integration with the ruins that preserved their physical form while eliminating their individual will. They are being used as a guide by whatever animates the ruins.",
+      "initial_closeness": 0,
+      "faction_alignment": "none",
+      "archetype": "unknown"
+    }
+  },
+
+  "new_locations": {
+    "ruins_outskirts": {
+      "id": "ruins_outskirts",
+      "name": "The Ruins Outskirts",
+      "region": "deep_forest",
+      "description": "The outer ring of the buried city, visible as broken stone teeth pushing through the forest floor. Archways that lead nowhere. Walls at odd angles. The stones are a material you do not recognise — not quite granite, not quite limestone, darker and with a faint surface texture like dried salt. The curse is dense here but not uniform. There are paths through it that are safer than others.",
+      "ambient_day": "The light is grey regardless of hour. Time moves differently here — not faster or slower but with less texture.",
+      "ambient_night": "Do not be in the ruins outskirts at night. Something moves through them that does not move through them during the day."
+    },
+    "ruins_marker_line": {
+      "id": "ruins_marker_line",
+      "name": "The Marker Line",
+      "region": "deep_forest",
+      "description": "A boundary the Rootless discovered and marked with small cairns — the point past which the curse's effect intensifies sharply. The safe techniques for navigating the outskirts stop working past this line. The air tastes different. The ground sounds hollow.",
+      "ambient_day": "The cairns are still here. Someone has been maintaining them.",
+      "ambient_night": "Unknown."
+    },
+    "ruins_inner_approach": {
+      "id": "ruins_inner_approach",
+      "name": "The Inner Approach",
+      "region": "deep_forest",
+      "description": "What was once a processional road — you can see the suggestion of it in how the stones are arranged, a deliberateness to the spacing that could only be intentional. It leads downward at a very gradual angle, as if the city was built partly underground and this was how you entered it. The walls here are taller. Some of them still bear carvings.",
+      "ambient_day": "The carvings are in a script no living tradition can read. Some of them appear to have been added recently. Freshly scratched.",
+      "ambient_night": "The carvings are visible at night because they emit a very faint light. Not enough to see by. Enough to notice."
+    },
+    "ruins_source_chamber": {
+      "id": "ruins_source_chamber",
+      "name": "The Source Chamber",
+      "region": "deep_forest",
+      "description": "A large underground space, partly collapsed, partly intact. At its centre: the original sealing mechanism — a structure of fused stone and worked metal that was once much larger. What remains looks broken. The curse radiates from it the way heat radiates from a cooling forge — not hot anymore, but still significantly warm. The air here is thick. Breathing takes more effort than it should.",
+      "ambient_day": "Time is unreliable here. An hour may pass in what feels like minutes or the reverse.",
+      "ambient_night": "There is no night in the source chamber. The light does not change."
+    },
+    "crestfall_compact_post": {
+      "id": "crestfall_compact_post",
+      "name": "Iron Compact Forward Post",
+      "region": "crestfall",
+      "description": "The Compact has requisitioned the old granary on Crestfall's north side. Reinforced doors. A flag. Three soldiers posted outside. Commander Vorne arrived two days ago and the town has been quieter since.",
+      "ambient_day": "Military efficiency. People give it a wide berth.",
+      "ambient_night": "Lit. Someone is always working."
+    },
+    "ruins_hidden_passage": {
+      "id": "ruins_hidden_passage",
+      "name": "The Hidden Passage",
+      "region": "deep_forest",
+      "description": "A way through the ruins that is not on any map, not in any account, not marked by any cairn. The missing person found it. Maret suspects it exists. The Covenant does not know about it. The Compact does not know about it. It is the only route to the source chamber that does not pass through the marker line.",
+      "ambient_day": "The entrance is not visible unless you know what you are looking for.",
+      "ambient_night": "Unknown."
+    }
+  },
+
+  "act2_overview": {
+    "central_tension": "The player has entered the deep forest. Everything they built in Act I is now at a distance. The ruins are real and dangerous and contain both what they came for and what every faction wants. The missing person is alive and changed and waiting. The factions are escalating — Commander Vorne has arrived, Seriva has arrived, and the Rootless camp is in danger.",
+    "key_decisions": [
+      "Whether to go deeper into the ruins or return to Crestfall when the faction situation escalates",
+      "Whether to bring the missing person back or let them stay to finish what they started",
+      "Whether to give any faction access to the source chamber",
+      "Whether to trust Pol with what you know about the original sealing ritual"
+    ],
+    "act_end_condition": "The player must choose a faction to align with at the end of Act II. This choice cannot be reversed and determines which Act III path they take.",
+    "curse_spread_escalation": "During Act II the curse spread value increases by 2 per scene. If it reaches 100 before the end of Act II, Crestfall is partially afflicted and the ending options change."
+  }
+}

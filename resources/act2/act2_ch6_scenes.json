@@ -1,0 +1,307 @@
+{
+  "chapter": 6,
+  "title": "The Chamber",
+  "scenes": [
+    {
+      "id": "act2_ch6_day_of_ritual",
+      "act": 2, "chapter": 6,
+      "location": "ruins_outskirts",
+      "title": "The Day",
+      "on_enter": {
+        "state_changes": { "world": { "curse_spread": 3, "day": 11 } },
+        "time_advance": 60
+      },
+      "requires": { "flags": { "ritual_day_set": true } },
+      "text": {
+        "default": "Morning. The grey light comes in as it always does here — not from a direction, just present, like the light was always already there and the darkness merely pauses.\n\nPol is up first. She has the fragment and she is examining it with the focused attention she brings to everything — not nervously, just completely.\n\nYour missing person wakes and looks at you and the look is: today.\n\nYou eat. You prepare. The herbs, the ward if you have it, the specific mental state the ritual requires — present, honest, no performance. The last one is the hardest. The last one is what the two days of preparation were actually for.\n\nThe Watcher at the gate turns to watch you go past. Just slightly. Just enough to register that something is different about today.",
+        "commander": "You move through the morning with the focus of someone about to do a significant thing. Everything unnecessary is set aside. What remains is the objective, the method, and the person beside you.\n\nAt the entrance to the passage: you pause. Not hesitation — preparation. The last moment before you commit.\n\n\"Ready?\" your missing person says.\n\n\"Ready,\" you say.",
+        "arcane": "You are thinking about the carving on the passage wall — the sequence of images you read weeks ago. Contained, breaking, spreading, stopped. The last image was added recently, by someone who believed stopping was possible.\n\nYou are about to find out if they were right.\n\nAt the entrance to the passage: you pause. You feel the frequency clearly, a full note, sustained.\n\n\"Ready?\" your missing person says.\n\n\"Yes,\" you say.",
+        "ranger": "You move through the morning with the quality of attention you give to the last minutes before a significant approach — the inventory of what you carry, what you know, what you cannot know until you are inside it.\n\nAt the passage entrance: you look back at Pol, sitting in the outskirts with the fragment, with her fifteen years of waiting to be the witness.\n\n\"We will come back,\" you say to her.\n\n\"I know,\" she says. She says it the way people say things they are not entirely certain of but have decided to believe.",
+        "cipher": "The morning is final preparation. Not of the ritual — that is done. Of yourself.\n\nYou have spent your life presenting yourself carefully. The ritual requires something different. The ritual requires you to be exactly what you are, without management, without selection, without the architecture of presentation you have been building since you were old enough to understand that presentation was something people did.\n\nAt the passage entrance: you breathe. Set it down. All of it.\n\n\"Ready,\" you say."
+      },
+      "choices": [
+        {
+          "id": "enter_the_passage",
+          "text": "Enter the passage. Walk toward the chamber.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You enter the passage.\n\nThe carvings receive you. The stone is warm — warmer than the last time you were here, as if the mechanism has been building toward something and the something is today.\n\nYou walk the inner approach together, side by side where the passage is wide enough, single file where it is not. Your missing person leads the narrower sections. You follow.\n\nThe chamber entrance is ahead. The light beyond it is the wrong light, the light that comes from the stone itself, and it is brighter than it was.",
+              "next_scene": "act2_ch6_ritual_approach",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act2_ch6_ritual_approach",
+      "act": 2, "chapter": 6,
+      "location": "ruins_source_chamber",
+      "title": "The Approach Phase",
+      "on_enter": {
+        "state_changes": { "world": { "curse_spread": 2 } },
+        "time_advance": 30
+      },
+      "requires": {},
+      "text": {
+        "default": "The chamber is brighter than before. The light from the stone has intensified — not dramatically, but measurably, as if the mechanism knows something is approaching and has been preparing.\n\nThe thread rising from the fracture in the mechanism is stronger too. More visible. And it is moving — not rising and dispersing but rising and circling, slowly, as if looking for something.\n\nYour missing person stops at the threshold of the approach phase — the specific position the text describes. You stop beside them.\n\n\"The first phase,\" they say quietly, \"is acknowledgement. We acknowledge what this place is. What the mechanism was. What it became when it broke.\" They pause. \"Out loud. The text says out loud. The mechanism reads intent but sound is how intent reaches it.\"\n\nThey begin.",
+        "commander": "They speak and you listen and then you speak. The acknowledgement is not a prayer — it is a statement of fact, of what you understand about this place and what you are here to do.\n\nThe mechanism, as you speak, does something. The thread from the fracture changes direction slightly. Orienting. The first sign that the thing inside the ruins is aware of what is happening in this room.",
+        "arcane": "The acknowledgement phase is the one you understand best — it is the theoretical framework made verbal, the description of the mechanism's original purpose restated in the presence of the mechanism itself.\n\nAs you speak, you feel the frequency change. Not louder — more specific. As if the sustained note has found its original pitch.",
+        "ranger": "The acknowledgement is simpler than you expected. Not ritualistic — practical. You name what this place is, what it does, what you are going to try to do.\n\nThe mechanism is listening. You can feel it the same way you feel being watched — the specific awareness of attention that has no visible source.",
+        "cipher": "The acknowledgement is the most straightforward part. You say what you know. The mechanism reads it. The mechanism — as best you can interpret — receives it.\n\nThe thread from the fracture is moving differently. Toward you. Toward your missing person. Assessing."
+      },
+      "choices": [
+        {
+          "id": "proceed_to_engagement",
+          "text": "Complete the acknowledgement phase. Move to the engagement.",
+          "requires": {},
+          "roll": { "stat": "intelligence", "dc": 12 },
+          "outcomes": {
+            "success": {
+              "text": "The acknowledgement phase completes. The text says you will know when it is complete and they were right — there is a quality of having been heard, of the mechanism having registered what was said and having incorporated it into whatever process is underway.\n\nThe thread from the fracture has settled into a specific orientation — pointed toward the two of you, very slightly, like a compass needle that has found magnetic north.\n\n\"Phase two,\" your missing person says.",
+              "next_scene": "act2_ch6_ritual_engagement",
+              "state_changes": { "flags": { "ritual_phase1_complete": true } }
+            },
+            "success_at_cost": {
+              "text": "The acknowledgement is received but something was slightly off — a hesitation in your delivery, a moment where the mechanism's attention seemed to waver and return. Your missing person catches it and recovers smoothly.\n\n\"It is fine,\" they say quietly. \"We continue.\"",
+              "next_scene": "act2_ch6_ritual_engagement",
+              "state_changes": {
+                "flags": { "ritual_phase1_complete": true },
+                "player": { "resources": { "health": -5 } }
+              }
+            },
+            "failure": {
+              "text": "The acknowledgement phase falters. Not catastrophically — but the mechanism does not respond in the way the text describes. Your missing person says: \"We step back. We begin again.\"\n\nYou step back to the threshold. You breathe. You start again. This time, it takes.",
+              "next_scene": "act2_ch6_ritual_engagement",
+              "state_changes": {
+                "flags": { "ritual_phase1_complete": true },
+                "player": { "resources": { "health": -10 } },
+                "world": { "curse_spread": 2 }
+              }
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act2_ch6_ritual_engagement",
+      "act": 2, "chapter": 6,
+      "location": "ruins_source_chamber",
+      "title": "The Engagement",
+      "on_enter": {
+        "state_changes": { "world": { "curse_spread": 3 } },
+        "time_advance": 60
+      },
+      "requires": { "flags": { "ritual_phase1_complete": true } },
+      "text": {
+        "default": "The engagement phase is where the ritual reads you.\n\nYou and your missing person take the positions the text describes — specific locations in the chamber, specific orientations relative to the mechanism. The fragment is placed at the midpoint between you, on the floor, touching the chamber stone.\n\nThe effect begins immediately.\n\nNot painful. Not frightening. What the mechanism does in this phase is not a threat — it is the specific sensation of being seen. Completely. The parts of yourself you manage, the parts you suppress, the parts you have not looked at directly in years — all of it equally visible, equally present, equally real.\n\nAcross from you, your missing person goes through the same thing. You can see it in their face — the specific quality of someone being read by something that does not miss anything.",
+        "commander": "You have been in difficult situations before. Situations that required you to be more than you were. Situations where the outcome depended on the quality of what you brought to them.\n\nThis is different. This requires you to be exactly what you are. Nothing more and nothing added. The mechanism has no use for aspiration. It reads what is there.\n\nWhat is there — you are discovering, as the mechanism reads it — is sufficient.",
+        "arcane": "The mechanism reads with the thoroughness of a complete instrument. Everything you are, simultaneously, without sequence or priority. Your knowledge and your ignorance given equal weight. Your clarity and your confusion held in the same attention.\n\nYou have spent your professional life pursuing understanding. The mechanism understands things differently — it does not analyse, it holds. The way the original builders held the power: not by understanding it but by giving it something to be.\n\nYou understand what you are doing in this chamber for the first time.",
+        "ranger": "The reading is not comfortable. Not because it is painful — because it is complete. You do not get to choose what the mechanism reads. The things you would prefer it not to see are visible the same as everything else.\n\nBut across from you, the same thing is happening to your missing person. And what you see in their face — being read, being seen, having nothing held back — is not diminishment.\n\nIt is recognition. Someone else is in the room and the room can see them.",
+        "cipher": "The mechanism reads you and you let it. This is the thing you could not have done before the preparation, before the conversation by the fire, before the specific work of the last two days.\n\nYou let it read you.\n\nAnd then something happens that the text did not describe: the mechanism reads your missing person, across from you, through you. You feel what they are carrying. Not as your own experience — as theirs, transmitted through the mechanism's reading, the way light transmits through water.\n\nFourteen months in the ruins. What they found. What it cost them. Why they wrote the letter that brought you here.\n\nAll of it. Real. True."
+      },
+      "choices": [
+        {
+          "id": "hold_through_reading",
+          "text": "Hold steady through the reading. Stay present. Stay honest.",
+          "requires": {},
+          "roll": { "stat": "stamina", "dc": 14 },
+          "outcomes": {
+            "success": {
+              "text": "You hold. The mechanism reads and you stay — not fighting it, not performing for it, just being exactly what you are in exactly this moment with exactly this person.\n\nThe fragment at the midpoint begins to glow. Very faintly. Very warmly. The warmth is the warmth of something remembering.\n\n\"Now,\" your missing person says. \"Physical contact. The text says now.\"\n\nYou cross the space between you.",
+              "next_scene": "act2_ch6_ritual_sealing",
+              "state_changes": { "flags": { "ritual_phase2_complete": true } }
+            },
+            "success_at_cost": {
+              "text": "You hold but it costs you. The reading goes deep and what it finds in the depths is things you have not looked at in a long time and looking at them simultaneously while being looked at requires more than you expected.\n\nYou hold. The fragment glows. Your missing person says: now.\n\nYou cross the space between you. Slower than you planned.",
+              "next_scene": "act2_ch6_ritual_sealing",
+              "state_changes": {
+                "flags": { "ritual_phase2_complete": true },
+                "player": { "resources": { "health": -15 } }
+              }
+            },
+            "failure": {
+              "text": "The reading finds something and you flinch from it — not physically, but the mechanism reads the flinch the same as a physical withdrawal.\n\nThe fragment's faint warmth flickers.\n\nYour missing person says your name. Not the ritual words — your name, the one they have known longer than anything else about you. And something in the sound of it from them in this room reaches through the flinch and holds you.\n\nYou hold. The fragment's warmth returns. The phase continues.",
+              "next_scene": "act2_ch6_ritual_sealing",
+              "state_changes": {
+                "flags": { "ritual_phase2_complete": true },
+                "player": { "resources": { "health": -20 } }
+              }
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act2_ch6_ritual_sealing",
+      "act": 2, "chapter": 6,
+      "location": "ruins_source_chamber",
+      "title": "The Sealing",
+      "on_enter": {
+        "state_changes": { "world": { "curse_spread": 2 } },
+        "time_advance": 30
+      },
+      "requires": { "flags": { "ritual_phase2_complete": true } },
+      "text": {
+        "default": "You take their hand.\n\nThe moment of physical contact is also the moment the mechanism decides.\n\nYou feel it before you see it — a change in the chamber's quality, a shift in the frequency from the note you have been hearing since you entered Ashenveld to something different. The note resolves. The way a held chord resolves when the right note is finally played alongside it.\n\nThe fragment between you — no longer on the floor, it has risen, slowly, at some point during the reading that neither of you noticed — glows with a warmth that is also a light. The thread from the mechanism's fracture reaches toward it.\n\nThe mechanism is recognising the fragment. Recognising what it was. Reaching for what it could be again.",
+        "commander": "The command experience has given you this: the specific knowledge of the moment when a situation commits. When the thing that was uncertain becomes certain. When there is no longer a question about what is happening, only a question about what it will cost.\n\nYou feel the commitment in the chamber. The mechanism has committed. The question now is what it costs.",
+        "arcane": "The mechanism is not intelligent. It does not make decisions the way persons make decisions. But it has a function — an original, designed purpose — and when the right conditions are present, the function activates the way a lock activates when the right key is turned.\n\nYou and your missing person are the key. The fragment is the alignment. The chamber is the lock.\n\nThe mechanism is activating.",
+        "ranger": "You hold their hand. The fragment glows. The thread from the fracture extends.\n\nYou have tracked things to their source many times. This is the first time you have been the source of something.\n\nYou hold on.",
+        "cipher": "The chamber is completing something. The mechanism's original function — containing the power by giving it a form, by giving it something to be — is being restored.\n\nWhat form it will be given this time, the text did not specify. The text said the form is determined by the participants. By what they are. By what they bring.\n\nYou hold their hand and bring everything you have."
+      },
+      "choices": [
+        {
+          "id": "hold_through_sealing",
+          "text": "Hold on. See it through.",
+          "requires": {},
+          "roll": { "stat": "stamina", "dc": 13 },
+          "outcomes": {
+            "success": {
+              "text": "You hold.\n\nThe mechanism seals.\n\nYou do not fully understand what that means while it is happening. What you experience is: a moment of absolute presence, the specific quality of being entirely here with no distance between yourself and the room. And then a sound — not heard, felt — as something that has been vibrating for three years comes into alignment and settles.\n\nThe thread from the fracture disappears. The fragment goes dark.\n\nThe chamber is quiet.\n\nYour missing person is still holding your hand.",
+              "next_scene": "act2_ch6_aftermath",
+              "state_changes": {
+                "flags": { "ritual_complete": true, "curse_sealed": true }
+              }
+            },
+            "success_at_cost": {
+              "text": "You hold. The mechanism seals. But the cost of holding through the full reading has accumulated and when the sealing is complete you are not standing — your missing person is holding you up, which they manage, which is either a metaphor or just what happened.\n\nThe chamber is quiet. The curse is sealed.\n\nYou are going to need to sit down.",
+              "next_scene": "act2_ch6_aftermath",
+              "state_changes": {
+                "flags": { "ritual_complete": true, "curse_sealed": true },
+                "player": { "resources": { "health": -20 } }
+              }
+            },
+            "failure": {
+              "text": "You hold but not completely — something in the final moment fails to commit, a hesitation the mechanism reads as a gap in the unified intention the text describes.\n\nThe sealing is partial. Not nothing — the mechanism has responded, the fracture has narrowed, the curse's spread rate will slow dramatically. But the full seal did not take.\n\nYour missing person, when it is over, does not let go of your hand. \"It is enough,\" they say. \"It is not everything but it is enough. The Covenant's ritual cannot happen if the mechanism has partially sealed — they would need to break it open again.\" A pause. \"We bought Ashenveld time. Significant time.\"",
+              "next_scene": "act2_ch6_aftermath",
+              "state_changes": {
+                "flags": { "ritual_partial": true, "curse_slowed": true }
+              }
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act2_ch6_aftermath",
+      "act": 2, "chapter": 6,
+      "location": "ruins_source_chamber",
+      "title": "After",
+      "on_enter": {
+        "state_changes": { "world": { "curse_spread": -15 } },
+        "time_advance": 30
+      },
+      "requires": {},
+      "text": {
+        "default": "The chamber after the ritual is the same chamber. The same stone, the same light, the same dimensions. But the quality of the air has changed — the thickness is gone. Breathing is what breathing should be.\n\nThe mechanism at the centre of the chamber is still broken. The fracture is still there. But the thread from the fracture is gone, and the fragment — which fell when the sealing was complete — lies on the chamber floor, dark, cool, ordinary.\n\nYour missing person sits beside you on the chamber floor. Both of you are tired in the specific way of people who have done something that required the whole of themselves.\n\nYou are not the same as you were before you entered. You will spend some time understanding what the differences are. But you are here. Both of you.",
+        "commander": "The mission is complete. The objective was achieved. These are the facts you lead with when you are processing the aftermath of significant actions.\n\nBut underneath them, available now in a way they were not before the ritual: the specific quality of having been seen completely and found — not perfect, not without complication — but sufficient. Real. Worth the seeing.\n\nYou will think about this for a long time.",
+        "arcane": "The mechanism has sealed. You will need to study what this means for the curse's existing manifestations — the afflicted people, the afflicted animals, the afflicted land. The sealing stops the spread but the text was not clear about whether it reverses existing damage.\n\nYou have questions. Many questions. More than you had before you came into this chamber, which is the best possible outcome for someone built the way you are built.\n\nYou also have something that is harder to categorise. What the mechanism showed you about the person beside you. What they carry. Why they wrote the letter. Why they waited.\n\nYou will think about this for a long time too.",
+        "ranger": "You read the chamber the way you read territory after a significant event — for what has changed, for what has held.\n\nThe mechanism is sealed. The curse has a ceiling now — it will not spread further. What it has already done is a different question.\n\nYour missing person is beside you. Tired. Changed. Present. All three of those things in equal measure.\n\nYou have tracked many things to their source. You have not often found what you were looking for when you got there. This is different.",
+        "cipher": "The reading the mechanism performed on you — on both of you — was complete. You know things about your missing person now that they did not choose to tell you. And they know things about you.\n\nThe question of what to do with that knowledge, how to carry it, what it means for what happens next — that is not a question the chamber answered. That is a question you will have to answer in the world above, in the ordinary light of things."
+      },
+      "choices": [
+        {
+          "id": "leave_chamber",
+          "text": "Leave the chamber. Find Pol. Return to the world.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You help each other up. You leave the chamber together.\n\nThe passage is the same passage. The carvings are the same carvings. But the frequency you have been feeling since you arrived in Ashenveld — the note that started as a pressure in the back of your teeth and became, over the weeks, as familiar as your own pulse — is different now.\n\nNot gone. Changed. Quieter. The thing that was vibrating has settled.\n\nPol is waiting in the outskirts, at the gate, beside the Watcher. She looks at your faces and knows.\n\n\"It worked,\" she says. Not a question.\n\n\"Yes,\" your missing person says.\n\nPol sits down where she is standing. A very old woman sitting down in the ruins outskirts because her legs have decided that fifteen years of waiting and one morning of witnessing are enough for one day. You sit beside her.\n\nThe Watcher does not move.",
+              "next_scene": "act2_ch6_seriva_arrives",
+              "state_changes": { "flags": { "chamber_exited": true } }
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act2_ch6_seriva_arrives",
+      "act": 2, "chapter": 6,
+      "location": "ruins_outskirts",
+      "title": "Too Late or Just in Time",
+      "on_enter": {
+        "state_changes": { "world": { "curse_spread": 2 } },
+        "time_advance": 20
+      },
+      "requires": {},
+      "text": {
+        "default": "You have been sitting with Pol and your missing person for twenty minutes when you hear movement in the outskirts.\n\nMore than one person. Compact soldiers, by the sound — the specific weight and rhythm of armed people moving carefully through unfamiliar terrain. And with them, moving more confidently, someone who has been in this terrain before.\n\nSeriva comes through the outskirts from the west — from the direction of the inner approach's alternate entrance, which means she found it.\n\nShe stops when she sees you. She reads the three of you — Pol, your missing person, you — and she reads the chamber entrance behind you and she understands what has happened before anyone says a word.\n\nThe look on her face is not anger. It is something more complicated than anger.",
+        "commander": "Two soldiers with Seriva. You assess them in the first second — professionals, not aggressive, waiting for instruction.\n\nSeriva looks at you and at your missing person and at Pol and she has already calculated everything.\n\n\"The sealing ritual,\" she says. Not asking. Confirming.\n\n\"Yes,\" you say.",
+        "arcane": "You look at Seriva and you think about what Pol told you — that Seriva has been trying to fix the damage she caused for twenty years, that the Covenant's purification ritual was her alternative approach, that she came back to Ashenveld to finally execute it.\n\nAnd now the ritual she needed is unnecessary. Because the original ritual has already been performed.\n\nThe look on her face is grief. Very old grief, given a new occasion.",
+        "ranger": "Seriva reads the situation with the speed of an expert. The chamber entrance. The three of you. The fragment, dark, on the floor where Pol set it down.\n\nShe did not come in time. Or she came just in time — depending on how you measure time and what you were measuring for.",
+        "cipher": "You read Seriva reading you and for the first time since you met her, her control is not complete.\n\nShe came here to perform a ritual that would have cost Ashenveld a fifth of its people. The ritual cannot be performed now. The mechanism has been sealed by a different method.\n\nShe is free of the obligation she has been carrying for twenty years. She does not look free."
+      },
+      "choices": [
+        {
+          "id": "tell_seriva_what_happened",
+          "text": "Tell her what happened. Plainly. All of it.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You tell her.\n\nShe listens. She does not interrupt. When you finish she is quiet for a long time.\n\nThen: \"The curse will not spread further.\"\n\n\"No.\"\n\n\"The afflicted — the people already affected.\"\n\n\"We do not know yet,\" your missing person says. \"The sealing stops the progression. Whether it reverses existing damage — the text was not clear.\"\n\nSeriva nods slowly. Something in her that was very tight for twenty years has begun to release. You are watching it happen. It is not comfortable to watch.\n\n\"I was going to kill people,\" she says. Quietly. To no one in particular. \"I told myself the number was acceptable. I told myself it was necessary. I have been telling myself this for twenty years and I believed it and it was wrong.\" A pause. \"I am glad it was wrong.\"",
+              "next_scene": "act2_ch7_aftermath_crestfall",
+              "state_changes": {
+                "flags": { "seriva_reconciled": true },
+                "relationships": { "seriva": { "closeness": 20 } }
+              }
+            }
+          }
+        },
+        {
+          "id": "let_pol_speak",
+          "text": "Let Pol speak to Seriva. They have history.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "Pol stands. She is seventy years old and she stands with the specific quality of someone who has been waiting for this moment for fifteen years and has decided to meet it standing.\n\nShe and Seriva look at each other for a long moment.\n\n\"I was right,\" Pol says. She does not say it with satisfaction. She says it with the exhaustion of someone who has been right alone for a very long time.\n\n\"Yes,\" Seriva says.\n\n\"The sealing is done,\" Pol says. \"The Covenant's ritual is no longer an option. It is over.\"\n\nSeriva looks at the chamber entrance for a long moment. Then at Pol. Then at the soldiers behind her, who have been standing in an outskirts of ruined buildings trying not to listen.\n\n\"Stand down,\" she tells them. And something in her voice is different from the voice she has been using since she arrived in Crestfall.",
+              "next_scene": "act2_ch7_aftermath_crestfall",
+              "state_changes": {
+                "flags": { "seriva_stood_down": true },
+                "relationships": { "seriva": { "closeness": 10 }, "the_archivist": { "closeness": 25 } }
+              }
+            }
+          }
+        },
+        {
+          "id": "use_seriva_as_leverage",
+          "text": "Use this moment. Seriva needs something from you — your silence about what she did.",
+          "requires": {},
+          "roll": { "stat": "charisma", "dc": 14 },
+          "outcomes": {
+            "success": {
+              "text": "You see the opening and you take it.\n\nSeriva came here to fix the damage she caused without anyone knowing she caused it. That is no longer possible — Pol knows, your missing person knows, you know. The question is whether that knowledge leaves this room.\n\nYou make her an offer: the Covenant withdraws from Ashenveld. Seriva provides full documentation of the original sealing mechanism to the academic record. The Rootless camp receives Compact recognition and resources. In exchange: what she did twenty years ago stays between the people in this room.\n\nShe looks at you for a long time. Then: \"Yes,\" she says. \"Those terms are acceptable.\"\n\nThe agreement is not comfortable. But it holds.",
+              "next_scene": "act2_ch7_aftermath_crestfall",
+              "state_changes": {
+                "flags": { "seriva_agreement": true, "covenant_withdraws": true },
+                "factions": { "rootless": { "reputation": 20 }, "ashen_covenant": { "reputation": -10 } }
+              }
+            },
+            "success_at_cost": {
+              "text": "The leverage works but Seriva extracts a condition: the documentation she provides will credit the Covenant's research. You accept this. It is a small price for the withdrawal.",
+              "next_scene": "act2_ch7_aftermath_crestfall",
+              "state_changes": {
+                "flags": { "seriva_agreement": true },
+                "factions": { "rootless": { "reputation": 10 } }
+              }
+            },
+            "failure": {
+              "text": "Seriva does not take the offer. She is not someone who responds well to leverage and she does not respond well now.\n\n\"What I did twenty years ago,\" she says, \"is not your property to trade.\" She turns to the soldiers. \"We are leaving.\"\n\nShe leaves with her soldiers. The knowledge of what she did goes with her, unresolved.",
+              "next_scene": "act2_ch7_aftermath_crestfall",
+              "state_changes": { "factions": { "ashen_covenant": { "reputation": -15 } } }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

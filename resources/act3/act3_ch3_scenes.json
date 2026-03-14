@@ -1,0 +1,140 @@
+{
+  "chapter": 3,
+  "title": "The Long Work",
+  "scenes": [
+    {
+      "id": "act3_ch3_the_long_work",
+      "act": 3, "chapter": 3,
+      "location": "crestfall_market",
+      "title": "A Month In",
+      "on_enter": {
+        "state_changes": { "world": { "curse_spread": -8, "day": 30 } },
+        "time_advance": 0
+      },
+      "requires": { "flags": { "player_stays_ashenveld": true } },
+      "text": {
+        "default": "A month after the ritual. Day thirty.\n\nCrestfall is measurably different. Not healed — different. The market has six stalls now instead of three. The fountain has not started running again but someone has planted bulbs around its base. Not flowers — vegetables, which is more honest.\n\nVorne's garrison is down to eight soldiers. The remaining eight are doing things that look less like occupation and more like maintenance. The east road checkpoint has been moved a mile east and is now staffed by two people rather than five.\n\nThe Rootless camp has seventeen new members — people from the eastern villages who heard that something had changed and came toward Crestfall rather than continuing east. Maret received them with the specific efficiency of someone who has been preparing for this for three years.",
+        "commander": "You and your missing person have developed a division of labour that neither of you planned.\n\nThey work with Pol on the documentation and with Maret on the camp's organisation. You work with Vorne on the Compact arrangements and with Edric on the Covenant's restructured role.\n\nYou are, you realise, managing the institutional half of Ashenveld's recovery while they manage the human half. The two halves require different things from different people and you each turned out to be the right person for the half you ended up in.",
+        "arcane": "The documentation is complete. Three copies distributed. The knowledge is out in the world.\n\nWhat follows the documentation's completion is unexpected: you have time. Not unlimited time, not unstructured time, but the specific quality of a project finished and a next one not yet defined.\n\nYou walk out into Crestfall on day thirty and you try something you have not done in months: you observe without recording. Just watch. The market. The people. The specific quality of ordinary life reasserting itself in a damaged place.\n\nYou do it for an hour. At the end of the hour your missing person finds you and asks what you were doing.\n\n\"Looking,\" you say.\n\nThey nod as if this is the most normal thing you have said in weeks. It might be.",
+        "ranger": "The wildlife recovery is past the point where you can track it in the market square.\n\nYou spend day thirty outside the town, in the ordinary forest west of Crestfall, reading what the animals are doing. The forest is returning to normal in the specific order that ecosystems recover — the generalists first, the specialists later, the apex predators last.\n\nNo predators yet. But the prey animals are moving normally, which means they are expecting predators at the right distance and behaving accordingly. The expectation of predators means the expectation of a functioning ecosystem.\n\nYou write it down. The sentence: the prey animals expect predators. You look at it for a while. It is the most hopeful sentence you have written in a month.",
+        "cipher": "Day thirty. The political landscape has stabilised enough that you can read it clearly.\n\nVorne will withdraw within six weeks. The Compact will maintain a nominal presence — a small permanent post, two administrators, a communication line. This is the best outcome you could have achieved from their involvement.\n\nThe Rootless camp is recognised, resourced, and growing. Maret has emerged as the most significant figure in Ashenveld's actual recovery — not in the political sense, in the practical one. The camp knows what to do and is doing it.\n\nThe Covenant is the weakest position. Edric remains but his congregation has not returned in the numbers it had before. The Covenant's authority in Ashenveld may not survive Seriva's departure and the exposure of what the purification ritual would have cost."
+      },
+      "choices": [
+        {
+          "id": "assess_what_remains",
+          "text": "Make an honest assessment. What does Ashenveld still need most?",
+          "requires": {},
+          "roll": { "stat": "intelligence", "dc": 10 },
+          "outcomes": {
+            "success": {
+              "text": "You and your missing person sit down together and make the list.\n\nWhat Ashenveld still needs: time for the natural recovery to reach the deeper-affected areas. A sustainable structure for the Rootless camp's ongoing work. A way to support the people who walked east and have not come back. A clear account of what happened for the region's historical record.\n\nWhat Ashenveld does not need: another faction competition for control of the ruins. Political instability during the transition period. You leaving before the transition is stable.\n\nThe list is manageable. That is the first time in thirty days you have thought of it that way.",
+              "next_scene": "act3_ch4_resolution",
+              "state_changes": { "flags": { "clear_assessment_made": true } }
+            },
+            "success_at_cost": {
+              "text": "You make the list but some of what remains is beyond your capacity to address. You name those things anyway. Named things are less overwhelming than unnamed ones.",
+              "next_scene": "act3_ch4_resolution",
+              "state_changes": {}
+            },
+            "failure": {
+              "text": "The list is too long and you cannot find a frame that makes it manageable. Your missing person, watching you work through it, takes the list away from you.\n\n\"What is the most important thing on it?\" they ask.\n\nYou answer without thinking. They write it down. \"Start there,\" they say.",
+              "next_scene": "act3_ch4_resolution",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act3_ch3_road_further",
+      "act": 3, "chapter": 3,
+      "location": "east_road",
+      "title": "Somewhere Else",
+      "on_enter": {
+        "state_changes": { "world": { "day": 30 } },
+        "time_advance": 0
+      },
+      "requires": {},
+      "text": {
+        "default": "A month after leaving Ashenveld.\n\nYou are somewhere else entirely. The specific town does not matter — what matters is that it has nothing to do with ruins or curses or factions negotiating over broken mechanisms.\n\nYour missing person has adapted faster than you. Fourteen months in isolation inside a ruined city produced, apparently, a person who is intensely grateful for ordinary things. They speak to strangers. They eat everything on the plate. They sleep without difficulty in strange rooms.\n\nYou are the one who is still adjusting.\n\nAshenveld follows you in the specific way that significant places follow people who were changed by them. Not as regret — as something that has become part of how you read the world. Every landscape you move through, you are reading for the signs that Ashenveld taught you to read. Mostly the signs are absent. Sometimes they are not.",
+        "commander": "You received a letter from Cael three weeks out. The documentation arrived. Vorne is proceeding with the withdrawal. The Rootless camp is formally recognised.\n\nYou read the letter twice and filed it. The work is continuing without you. That is the correct outcome.\n\nYou think about whether you are done with institutional work or whether this is a period between institutional works. You have not decided yet. The question is patient.",
+        "arcane": "The academic letters have begun arriving — responses to the documentation you distributed. Colleagues from three institutions with questions, with frameworks you had not considered, with corrections to errors you made under pressure.\n\nThis is the normal life of a scholar. It follows you wherever you go.\n\nYour missing person watches you correspond and says: \"Is it strange? To be doing this in an ordinary place?\"\n\n\"Yes,\" you say. \"Good strange.\"",
+        "ranger": "You are in a town with a market and a forest and birds and animals behaving in ways you can read without filtering for contamination.\n\nIt is a relief that is also a kind of grief. You spent weeks learning to read a damaged landscape and now the reading is not necessary and you are not sure what to do with the skill.\n\nYour missing person says, watching you track a hawk's flight across the market square: \"You are doing it again.\"\n\n\"Yes,\" you say.\n\n\"It is fine,\" they say. \"I like that you do that.\"",
+        "cipher": "Out of the political environment of Ashenveld, you have discovered that you are not sure what to want.\n\nIn Ashenveld, you always knew what to want: better outcomes for specific people in a specific situation. The wanting was clear because the situation was clear.\n\nIn ordinary life, the wanting is less obvious. You are working on it. Your missing person, who has been working on it for thirty days longer than you, is occasionally patient about this and occasionally not. Both reactions are reasonable."
+      },
+      "choices": [
+        {
+          "id": "consider_returning",
+          "text": "Think honestly about whether you want to go back to Ashenveld.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You think about it for a week.\n\nThe answer shifts depending on the day. Some days the answer is yes — Ashenveld is unfinished and you are the person with the most useful knowledge of what finishing it requires. Some days the answer is no — you did what you came to do and the ongoing work belongs to the people who are living there.\n\nBy the end of the week you have an answer. The answer is: not yet. Which is different from never and different from yes and is probably the honest position.\n\nYou tell your missing person. They say: \"I know.\" They knew before you said it. The ruins apparently teach you to read people accurately at distance.",
+              "next_scene": "act3_ch4_resolution_road",
+              "state_changes": {}
+            }
+          }
+        },
+        {
+          "id": "commit_to_not_returning",
+          "text": "Commit. Ashenveld was a chapter. This is the next one.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You decide with the specific quality of someone who has been making difficult decisions for a month and has gotten better at the decisiveness.\n\nAshenveld was the work. The work is done. The next work is something else.\n\nYou say this to your missing person. They look at you for a moment.\n\n\"All right,\" they say. \"What next?\"\n\nYou think about it. You do not have a complete answer yet. But you are asking the question in the right direction.",
+              "next_scene": "act3_ch4_resolution_road",
+              "state_changes": { "flags": { "not_returning_committed": true } }
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act3_ch3_alone_continues",
+      "act": 3, "chapter": 3,
+      "location": "rootless_camp",
+      "title": "The Shape of Staying Alone",
+      "on_enter": {
+        "state_changes": { "world": { "day": 30 } },
+        "time_advance": 0
+      },
+      "requires": { "flags": { "player_stays_alone": true } },
+      "text": {
+        "default": "Day thirty.\n\nYou have been in Ashenveld a month. You have been alone in Ashenveld for two weeks — the two weeks since they left.\n\nYou are not going to lie to yourself about this: it is hard. Not the work — you have the work and the work is good and necessary and uses you well. The hard part is the specific quality of the evenings, when the work is done and the Tallow is quiet and the fire is lower than it should be.\n\nYou manage it the way you manage most difficult things: by doing the next thing. By keeping the list current. By talking to the people who are here — Maret, Branch, Lira, Pol — and finding in those conversations what ordinary evenings should contain.\n\nIt is not the same. It is enough.",
+        "commander": "Vorne sought you out last week. He offered you a formal position in the regional administration — advisory, well-resourced, meaningful.\n\nYou have been thinking about it for seven days. The position would give you institutional reach. It would also give you a reason to stay in Ashenveld that does not require you to examine too closely why staying feels necessary.\n\nYou think about whether those two things can be separated.",
+        "arcane": "The work is good. The documentation is complete and distributed. Pol has become a collaborator in the ongoing observation of the curse's recession — you are building a monitoring system that can function without you if you leave, or with you if you stay.\n\nThe question of whether you stay is one you are answering by making both options viable simultaneously. You recognise this strategy. You have used it before. It is usually what you do when you do not want to make a decision and cannot admit it.",
+        "ranger": "The Watcher at the ruins gate — the person you could not reach, who said your name once in the chamber approach — came back into the ordinary world on day twenty-seven.\n\nNot fully. Not immediately. But Branch found them at the forest edge, moving slowly, in the direction of Crestfall, and brought them to the camp.\n\nThey do not speak. They sit in the herb garden for hours. Pol tends them. Their hands have stopped being still — they move slightly now, tracking the plants, the light. Something is returning.\n\nYou visit them every morning. You do not need them to speak to you. You are glad they are here.",
+        "cipher": "Two weeks alone and you have discovered something.\n\nThe political work is more satisfying when it is for something you believe in rather than for institutional reasons. You believed in Ashenveld's recovery before you had a personal stake in it. The personal stake leaving did not change the belief.\n\nYou are here because this is where the work is and because you are good at it and because the people here need someone who is good at it. That is three reasons. Three reasons is enough."
+      },
+      "choices": [
+        {
+          "id": "consider_what_you_need",
+          "text": "Be honest with yourself. What do you actually need?",
+          "requires": {},
+          "roll": { "stat": "intelligence", "dc": 11 },
+          "outcomes": {
+            "success": {
+              "text": "You sit with the question the way the ritual taught you to sit with things — completely, without performance.\n\nWhat you need: the work, which you have. The people you are building relationships with here, which you have. The sense of contributing to something that matters, which you have.\n\nWhat you are missing: the specific person who is not here. You do not pretend this is not a missing. You do not fill it with the other things.\n\nBoth are true simultaneously. You can have most of what you need and be missing something. That is not a problem to solve. That is the shape of your current life.\n\nYou hold this honestly and you go back to work.",
+              "next_scene": "act3_ch4_resolution_alone",
+              "state_changes": { "flags": { "honest_self_assessment": true } }
+            },
+            "success_at_cost": {
+              "text": "You get partway there. You acknowledge what you are missing before you can fully acknowledge what you have.\n\nPol, watching you in the herb garden with the expression she has when she is about to say something useful, says: \"Both things can be true at the same time.\" She goes back to her plants. You sit with this.",
+              "next_scene": "act3_ch4_resolution_alone",
+              "state_changes": {}
+            },
+            "failure": {
+              "text": "You cannot fully answer the question today. It is not a good day for the question.\n\nLira, sitting nearby, says without looking up from her rope: \"You do not have to know today.\"\n\nThis is not comfort exactly. It is permission. You take it.",
+              "next_scene": "act3_ch4_resolution_alone",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashenveld</title>
+
+<style>@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap");</style>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black:      #000000;
+  --bg:         #04050a;
+  --panel:      #06070d;
+  --border-dim: #10151f;
+  --border:     #192030;
+  --border-lit: #283a58;
+
+  --blue-deep:  #0d1828;
+  --blue-mid:   #1e3050;
+  --blue-steel: #3a5a8a;
+  --blue-ice:   #6a90be;
+  --blue-moon:  #a0bcd8;
+  --white-cold: #d8e8f4;
+
+  --text-bright:#c8daea;
+  --text-main:  #7a9ab8;
+  --text-muted: #3a5068;
+  --text-dim:   #1e3048;
+
+  --red:        #6a2828;
+  --red-lit:    #a84040;
+
+  --success:    #2a6a4a;
+  --success-lit:#50a878;
+}
+
+html, body {
+  width: 100%; min-height: 100vh;
+  background: var(--black);
+  font-family: 'Lora', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+/* ── TITLE SCREEN ── */
+#titleScreen {
+  width: 100%; height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.title-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 40%, rgba(30,48,80,0.25) 0%, transparent 70%),
+    radial-gradient(ellipse 30% 50% at 20% 80%, rgba(15,25,45,0.3) 0%, transparent 60%);
+}
+
+/* star field */
+.stars {
+  position: absolute; inset: 0;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--text-muted);
+  animation: twinkle var(--dur, 4s) ease-in-out infinite var(--del, 0s);
+}
+
+@keyframes twinkle {
+  0%,100% { opacity: var(--lo, 0.2); }
+  50%      { opacity: var(--hi, 0.7); }
+}
+
+.title-content {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 0;
+  animation: titleFadeIn 1.8s ease forwards;
+  opacity: 0;
+}
+
+@keyframes titleFadeIn {
+  0%   { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.title-eyebrow {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 10px;
+  letter-spacing: 0.45em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.title-name {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 72px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--white-cold);
+  line-height: 1;
+  margin-bottom: 10px;
+  text-shadow: 0 0 80px rgba(100,150,200,0.15);
+}
+
+.title-rule {
+  width: 240px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--blue-steel), transparent);
+  margin: 18px 0;
+}
+
+.title-tagline {
+  font-size: 16px;
+  font-style: italic;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 56px;
+  text-align: center;
+  max-width: 360px;
+  line-height: 1.7;
+}
+
+.title-btn {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--blue-ice);
+  background: none;
+  border: 1px solid var(--blue-mid);
+  padding: 14px 44px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.title-btn::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: var(--blue-deep);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.title-btn:hover { border-color: var(--blue-steel); color: var(--white-cold); }
+.title-btn:hover::before { transform: scaleX(1); }
+.title-btn span { position: relative; z-index: 1; }
+
+/* ── CREATION SCREEN ── */
+#creationScreen {
+  display: none;
+  width: 100%; min-height: 100vh;
+  padding: 0;
+  position: relative;
+}
+
+#creationScreen.show { display: block; }
+
+/* step system */
+.step { display: none; min-height: 100vh; }
+.step.active { display: flex; flex-direction: column; }
+
+/* shared step layout */
+.step-inner {
+  flex: 1;
+  display: flex; flex-direction: column;
+  align-items: center;
+  padding: 56px 24px 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.step-header {
+  text-align: center;
+  margin-bottom: 48px;
+  animation: stepIn 0.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes stepIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.step-num {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.step-title {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--white-cold);
+  margin-bottom: 12px;
+}
+
+.step-sub {
+  font-size: 16px;
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ── STEP 1: GENDER ── */
+.gender-row {
+  display: flex; gap: 24px;
+  animation: stepIn 0.5s ease 0.1s forwards; opacity: 0;
+}
+
+.gender-card {
+  width: 220px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  padding: 36px 24px;
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.18s, background 0.18s;
+  position: relative;
+  overflow: hidden;
+}
+
+.gender-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: var(--blue-deep);
+  opacity: 0;
+  transition: opacity 0.18s;
+}
+
+.gender-card:hover { border-color: var(--blue-steel); }
+.gender-card:hover::after { opacity: 1; }
+
+.gender-card.selected {
+  border-color: var(--blue-ice);
+  background: var(--blue-deep);
+}
+
+.gender-card.selected::after { opacity: 0; }
+
+.gender-icon {
+  width: 48px; height: 48px;
+  margin: 0 auto 18px;
+  position: relative; z-index: 1;
+}
+
+.gender-icon svg {
+  width: 100%; height: 100%;
+  stroke: var(--blue-steel);
+  fill: none;
+  stroke-width: 1;
+  transition: stroke 0.18s;
+}
+
+.gender-card:hover .gender-icon svg,
+.gender-card.selected .gender-icon svg { stroke: var(--blue-ice); }
+
+.gender-label {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  position: relative; z-index: 1;
+  transition: color 0.18s;
+}
+
+.gender-card:hover .gender-label,
+.gender-card.selected .gender-label { color: var(--white-cold); }
+
+.gender-card .check {
+  position: absolute; top: 12px; right: 12px;
+  width: 16px; height: 16px;
+  border: 1px solid var(--border-lit);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1;
+  transition: all 0.18s;
+}
+
+.gender-card.selected .check {
+  background: var(--blue-steel);
+  border-color: var(--blue-ice);
+}
+
+.gender-card.selected .check::after {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--white-cold);
+}
+
+/* ── STEP 2: CLASS ── */
+.class-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+  animation: stepIn 0.5s ease 0.1s forwards; opacity: 0;
+}
+
+.class-card {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  padding: 28px;
+  cursor: pointer;
+  transition: border-color 0.18s, background 0.18s;
+  position: relative;
+  overflow: hidden;
+  display: flex; flex-direction: column; gap: 14px;
+}
+
+.class-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 2px; height: 100%;
+  background: var(--blue-steel);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.22s ease;
+}
+
+.class-card:hover { border-color: var(--border-lit); }
+.class-card:hover::before { transform: scaleY(1); }
+
+.class-card.selected {
+  border-color: var(--blue-ice);
+  background: var(--blue-deep);
+}
+
+.class-card.selected::before { transform: scaleY(1); background: var(--blue-ice); }
+
+.class-top {
+  display: flex; justify-content: space-between; align-items: flex-start;
+}
+
+.class-name {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--white-cold);
+  transition: color 0.18s;
+}
+
+.class-archetype {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.class-card.selected .class-name { color: var(--blue-moon); }
+
+.class-tag {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid var(--border-lit);
+  color: var(--text-muted);
+  padding: 3px 10px;
+  flex-shrink: 0;
+  transition: all 0.18s;
+}
+
+.class-card.selected .class-tag {
+  border-color: var(--blue-steel);
+  color: var(--blue-ice);
+}
+
+.class-quote {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--blue-ice);
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.class-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+.class-stats {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.stat-pill {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  padding: 3px 9px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  transition: all 0.18s;
+}
+
+.stat-pill.peak {
+  border-color: var(--blue-mid);
+  color: var(--blue-ice);
+}
+
+.stat-pill.low {
+  border-color: var(--red);
+  color: var(--red-lit);
+}
+
+.class-card.selected .stat-pill { border-color: var(--border-lit); }
+.class-card.selected .stat-pill.peak { border-color: var(--blue-steel); color: var(--blue-moon); }
+
+/* ── STEP 3: MISSING PERSON ── */
+.missing-form {
+  width: 100%; max-width: 560px;
+  display: flex; flex-direction: column; gap: 28px;
+  animation: stepIn 0.5s ease 0.1s forwards; opacity: 0;
+}
+
+.field-group { display: flex; flex-direction: column; gap: 10px; }
+
+.field-label {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 9.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.field-input {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text-bright);
+  font-family: 'Lora', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  font-size: 17px;
+  padding: 13px 16px;
+  outline: none;
+  transition: border-color 0.15s;
+  width: 100%;
+}
+
+.field-input:focus { border-color: var(--blue-steel); }
+.field-input::placeholder { color: var(--text-dim); font-style: italic; }
+
+.relation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.rel-btn {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-family: 'Lora', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  font-size: 14px;
+  padding: 12px 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s;
+  font-style: italic;
+}
+
+.rel-btn:hover { border-color: var(--border-lit); color: var(--text-main); }
+
+.rel-btn.selected {
+  border-color: var(--blue-ice);
+  background: var(--blue-deep);
+  color: var(--white-cold);
+}
+
+.missing-preview {
+  border: 1px solid var(--border-dim);
+  padding: 20px 22px;
+  background: rgba(13,24,40,0.5);
+}
+
+.preview-text {
+  font-size: 15px;
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.preview-text strong { color: var(--blue-moon); font-style: normal; font-weight: 400; }
+
+/* ── STEP 4: YOUR NAME ── */
+.name-form {
+  width: 100%; max-width: 480px;
+  display: flex; flex-direction: column; gap: 24px;
+  animation: stepIn 0.5s ease 0.1s forwards; opacity: 0;
+}
+
+.name-preview {
+  border-left: 2px solid var(--blue-mid);
+  padding: 16px 20px;
+  margin-top: 8px;
+}
+
+.name-preview-text {
+  font-size: 15px;
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.name-preview-text strong { color: var(--blue-moon); font-style: normal; }
+
+/* ── NAVIGATION ── */
+.step-nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 40px 32px;
+  max-width: 1000px; margin: 0 auto; width: 100%;
+  animation: stepIn 0.5s ease 0.2s forwards; opacity: 0;
+}
+
+.nav-back {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 10px; letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  background: none; border: none; cursor: pointer;
+  padding: 10px 0;
+  transition: color 0.15s;
+  display: flex; align-items: center; gap: 10px;
+}
+
+.nav-back:hover { color: var(--text-muted); }
+.nav-back:disabled { opacity: 0; pointer-events: none; }
+
+.nav-progress {
+  display: flex; gap: 8px; align-items: center;
+}
+
+.prog-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--border-lit);
+  transition: all 0.25s;
+}
+
+.prog-dot.done { background: var(--blue-steel); }
+.prog-dot.active {
+  background: var(--blue-ice);
+  width: 20px; border-radius: 3px;
+}
+
+.nav-next {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 10px; letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blue-ice);
+  background: none;
+  border: 1px solid var(--blue-mid);
+  padding: 12px 32px;
+  cursor: pointer;
+  transition: all 0.18s;
+  position: relative; overflow: hidden;
+}
+
+.nav-next::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: var(--blue-deep);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.nav-next:hover { border-color: var(--blue-steel); color: var(--white-cold); }
+.nav-next:hover::before { transform: scaleX(1); }
+.nav-next span { position: relative; z-index: 1; }
+.nav-next:disabled { opacity: 0.3; pointer-events: none; }
+
+/* ── FINAL: BEGIN ── */
+#finalScreen {
+  display: none;
+  width: 100%; height: 100vh;
+  flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: 40px;
+  animation: titleFadeIn 1s ease forwards;
+}
+
+#finalScreen.show { display: flex; }
+
+.final-summary {
+  max-width: 520px;
+  margin-bottom: 48px;
+}
+
+.final-class {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 11px; letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.final-name {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 40px; font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--white-cold);
+  margin-bottom: 8px;
+}
+
+.final-rule {
+  width: 160px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--blue-steel), transparent);
+  margin: 20px auto;
+}
+
+.final-text {
+  font-size: 17px; font-style: italic;
+  color: var(--text-muted); line-height: 1.85;
+}
+
+.final-text strong { color: var(--blue-moon); font-style: normal; font-weight: 400; }
+
+.begin-btn {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 12px; letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--white-cold);
+  background: var(--blue-mid);
+  border: 1px solid var(--blue-steel);
+  padding: 16px 52px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.begin-btn:hover {
+  background: var(--blue-steel);
+  border-color: var(--blue-ice);
+}
+</style>
+</head>
+<body>
+
+<!-- ══ TITLE ══ -->
+<div id="titleScreen">
+  <div class="title-bg"></div>
+  <div class="stars" id="stars"></div>
+  <div class="title-content">
+    <div class="title-eyebrow">A story of return</div>
+    <div class="title-name">Ashenveld</div>
+    <div class="title-rule"></div>
+    <div class="title-tagline">You left this place behind.<br>Now something you love has disappeared into it.</div>
+    <button class="title-btn" onclick="startCreation()"><span>Begin</span></button>
+  </div>
+</div>
+
+<!-- ══ CREATION ══ -->
+<div id="creationScreen">
+
+  <!-- STEP 1: GENDER -->
+  <div class="step active" id="step1">
+    <div class="step-inner">
+      <div class="step-header">
+        <div class="step-num">Step 1 of 4</div>
+        <div class="step-title">Who are you?</div>
+        <div class="step-sub">The world of Ashenveld treats you the same either way. This is only about how you see yourself.</div>
+      </div>
+
+      <div class="gender-row">
+        <div class="gender-card" onclick="selectGender('man', this)">
+          <div class="check"></div>
+          <div class="gender-icon">
+            <svg viewBox="0 0 48 48"><circle cx="24" cy="16" r="10"/><path d="M10 46c0-7.73 6.27-14 14-14s14 6.27 14 14"/></svg>
+          </div>
+          <div class="gender-label">Man</div>
+        </div>
+        <div class="gender-card" onclick="selectGender('woman', this)">
+          <div class="check"></div>
+          <div class="gender-icon">
+            <svg viewBox="0 0 48 48"><circle cx="24" cy="16" r="10"/><path d="M10 46c0-7.73 6.27-14 14-14s14 6.27 14 14"/></svg>
+          </div>
+          <div class="gender-label">Woman</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-nav">
+      <button class="nav-back" disabled>← Back</button>
+      <div class="nav-progress">
+        <div class="prog-dot active" id="d1"></div>
+        <div class="prog-dot" id="d2"></div>
+        <div class="prog-dot" id="d3"></div>
+        <div class="prog-dot" id="d4"></div>
+      </div>
+      <button class="nav-next" id="next1" disabled onclick="goTo(2)"><span>Next →</span></button>
+    </div>
+  </div>
+
+  <!-- STEP 2: CLASS -->
+  <div class="step" id="step2">
+    <div class="step-inner">
+      <div class="step-header">
+        <div class="step-num">Step 2 of 4</div>
+        <div class="step-title">When things get hard, who are you?</div>
+        <div class="step-sub">Your class shapes how you move through Ashenveld — what you notice, what doors open, what the darkness does to you.</div>
+      </div>
+
+      <div class="class-grid">
+
+        <div class="class-card" onclick="selectClass('commander', this)">
+          <div class="class-top">
+            <div>
+              <div class="class-name">The Commander</div>
+              <div class="class-archetype">Knight · Lord · Warlord</div>
+            </div>
+            <div class="class-tag">Courage</div>
+          </div>
+          <div class="class-quote">"I protect the people I love."</div>
+          <div class="class-desc">You command through presence. Rooms reorganise around you. You don't just win fights — you end them before they start. Ashenveld will test whether the people worth protecting still trust you to do it.</div>
+          <div class="class-stats">
+            <span class="stat-pill peak">STR ▲</span>
+            <span class="stat-pill peak">STA ▲</span>
+            <span class="stat-pill peak">CHA ▲</span>
+            <span class="stat-pill low">MAN ▼</span>
+          </div>
+        </div>
+
+        <div class="class-card" onclick="selectClass('arcane', this)">
+          <div class="class-top">
+            <div>
+              <div class="class-name">The Arcane</div>
+              <div class="class-archetype">Mage · Seer · Cursed blood</div>
+            </div>
+            <div class="class-tag">Intellect</div>
+          </div>
+          <div class="class-quote">"I need to understand why."</div>
+          <div class="class-desc">You read what others cannot see — the residue of old magic, the invisible architecture of a room, what happened here before the people left. The curse spreading across Ashenveld speaks a language you almost recognise.</div>
+          <div class="class-stats">
+            <span class="stat-pill peak">INT ▲</span>
+            <span class="stat-pill peak">MAN ▲</span>
+            <span class="stat-pill peak">PER ▲</span>
+            <span class="stat-pill low">STR ▼</span>
+          </div>
+        </div>
+
+        <div class="class-card" onclick="selectClass('ranger', this)">
+          <div class="class-top">
+            <div>
+              <div class="class-name">The Ranger</div>
+              <div class="class-archetype">Hunter · Tracker · Wilderness</div>
+            </div>
+            <div class="class-tag">Instinct</div>
+          </div>
+          <div class="class-quote">"I follow my instincts."</div>
+          <div class="class-desc">You read land and creature the way others read faces. You move through hostile terrain without being seen, find things that don't want to be found, and survive conditions that would kill anyone else. Ashenveld's forests remember you.</div>
+          <div class="class-stats">
+            <span class="stat-pill peak">DEX ▲</span>
+            <span class="stat-pill peak">STA ▲</span>
+            <span class="stat-pill peak">PER ▲</span>
+            <span class="stat-pill low">CHA ▼</span>
+          </div>
+        </div>
+
+        <div class="class-card" onclick="selectClass('cipher', this)">
+          <div class="class-top">
+            <div>
+              <div class="class-name">The Cipher</div>
+              <div class="class-archetype">Spy · Courtesan · Shadow noble</div>
+            </div>
+            <div class="class-tag">Resilience</div>
+          </div>
+          <div class="class-quote">"I survived. I'm still here."</div>
+          <div class="class-desc">You read people like open books — their fears, their wants, the small betrayals their faces make before their mouths catch up. In a land where everyone is hiding something, this is the most dangerous skill of all.</div>
+          <div class="class-stats">
+            <span class="stat-pill peak">CHA ▲</span>
+            <span class="stat-pill peak">INT ▲</span>
+            <span class="stat-pill peak">DEX ▲</span>
+            <span class="stat-pill low">STR ▼</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="step-nav">
+      <button class="nav-back" onclick="goTo(1)">← Back</button>
+      <div class="nav-progress">
+        <div class="prog-dot done"></div>
+        <div class="prog-dot active"></div>
+        <div class="prog-dot"></div>
+        <div class="prog-dot"></div>
+      </div>
+      <button class="nav-next" id="next2" disabled onclick="goTo(3)"><span>Next →</span></button>
+    </div>
+  </div>
+
+  <!-- STEP 3: MISSING PERSON -->
+  <div class="step" id="step3">
+    <div class="step-inner">
+      <div class="step-header">
+        <div class="step-num">Step 3 of 4</div>
+        <div class="step-title">Who did you lose?</div>
+        <div class="step-sub">They disappeared into Ashenveld over a year ago. You received one letter after that. Then nothing. You came back for them.</div>
+      </div>
+
+      <div class="missing-form">
+        <div class="field-group">
+          <div class="field-label">Their name</div>
+          <input class="field-input" type="text" id="missingName" placeholder="The name you say when no one is listening" maxlength="32" oninput="updatePreview()">
+        </div>
+
+        <div class="field-group">
+          <div class="field-label">Your relationship</div>
+          <div class="relation-grid">
+            <button class="rel-btn" onclick="selectRelation('childhood friend', this)">Childhood friend</button>
+            <button class="rel-btn" onclick="selectRelation('former lover', this)">Former lover</button>
+            <button class="rel-btn" onclick="selectRelation('sibling', this)">Sibling</button>
+            <button class="rel-btn" onclick="selectRelation('mentor', this)">Mentor</button>
+            <button class="rel-btn" onclick="selectRelation('parent', this)">Parent</button>
+            <button class="rel-btn" onclick="selectRelation('the one who got away', this)">The one who got away</button>
+          </div>
+        </div>
+
+        <div class="missing-preview" id="missingPreview" style="display:none">
+          <div class="preview-text" id="previewText"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-nav">
+      <button class="nav-back" onclick="goTo(2)">← Back</button>
+      <div class="nav-progress">
+        <div class="prog-dot done"></div>
+        <div class="prog-dot done"></div>
+        <div class="prog-dot active"></div>
+        <div class="prog-dot"></div>
+      </div>
+      <button class="nav-next" id="next3" disabled onclick="goTo(4)"><span>Next →</span></button>
+    </div>
+  </div>
+
+  <!-- STEP 4: YOUR NAME -->
+  <div class="step" id="step4">
+    <div class="step-inner">
+      <div class="step-header">
+        <div class="step-num">Step 4 of 4</div>
+        <div class="step-title">What is your name?</div>
+        <div class="step-sub">The name you left Ashenveld with. The name some people here still remember.</div>
+      </div>
+
+      <div class="name-form">
+        <div class="field-group">
+          <div class="field-label">Your name</div>
+          <input class="field-input" type="text" id="playerName" placeholder="Your name" maxlength="32" oninput="updateNamePreview()">
+        </div>
+
+        <div class="name-preview" id="namePreview" style="display:none">
+          <div class="name-preview-text" id="namePreviewText"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-nav">
+      <button class="nav-back" onclick="goTo(3)">← Back</button>
+      <div class="nav-progress">
+        <div class="prog-dot done"></div>
+        <div class="prog-dot done"></div>
+        <div class="prog-dot done"></div>
+        <div class="prog-dot active"></div>
+      </div>
+      <button class="nav-next" id="next4" disabled onclick="finish()"><span>Enter Ashenveld →</span></button>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══ FINAL ══ -->
+<div id="finalScreen">
+  <div class="final-summary">
+    <div class="final-class" id="finalClass"></div>
+    <div class="final-name" id="finalNameDisplay"></div>
+    <div class="final-rule"></div>
+    <div class="final-text" id="finalText"></div>
+  </div>
+  <button class="begin-btn" onclick="alert('Game would begin here — ready to build Act I.')">Enter Ashenveld</button>
+</div>
+
+<script>
+// ── State ──
+const state = {
+  gender: null,
+  playerClass: null,
+  missingName: '',
+  relation: null,
+  playerName: ''
+};
+
+// ── Stars ──
+const starsEl = document.getElementById('stars');
+for (let i = 0; i < 80; i++) {
+  const s = document.createElement('div');
+  s.className = 'star';
+  const size = Math.random() * 1.5 + 0.5;
+  s.style.cssText = `
+    width:${size}px; height:${size}px;
+    top:${Math.random()*100}%;
+    left:${Math.random()*100}%;
+    --dur:${3+Math.random()*5}s;
+    --del:${Math.random()*6}s;
+    --lo:${0.1+Math.random()*0.2};
+    --hi:${0.4+Math.random()*0.5};
+  `;
+  starsEl.appendChild(s);
+}
+
+// ── Title → Creation ──
+function startCreation() {
+  document.getElementById('titleScreen').style.opacity = '0';
+  document.getElementById('titleScreen').style.transition = 'opacity 0.6s ease';
+  setTimeout(() => {
+    document.getElementById('titleScreen').style.display = 'none';
+    document.getElementById('creationScreen').classList.add('show');
+  }, 600);
+}
+
+// ── Step navigation ──
+function goTo(n) {
+  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+  document.getElementById('step' + n).classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+// ── Gender ──
+function selectGender(g, el) {
+  state.gender = g;
+  document.querySelectorAll('.gender-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('next1').disabled = false;
+  updateNamePreview();
+}
+
+// ── Class ──
+const classLabels = {
+  commander: 'The Commander',
+  arcane: 'The Arcane',
+  ranger: 'The Ranger',
+  cipher: 'The Cipher'
+};
+
+function selectClass(c, el) {
+  state.playerClass = c;
+  document.querySelectorAll('.class-card').forEach(x => x.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('next2').disabled = false;
+}
+
+// ── Missing person ──
+function selectRelation(r, el) {
+  state.relation = r;
+  document.querySelectorAll('.rel-btn').forEach(b => b.classList.remove('selected'));
+  el.classList.add('selected');
+  checkStep3();
+  updatePreview();
+}
+
+function checkStep3() {
+  const ready = state.missingName.trim().length > 1 && state.relation;
+  document.getElementById('next3').disabled = !ready;
+}
+
+function updatePreview() {
+  state.missingName = document.getElementById('missingName').value;
+  checkStep3();
+  const name = state.missingName.trim();
+  const rel  = state.relation;
+  const prev = document.getElementById('missingPreview');
+  const txt  = document.getElementById('previewText');
+
+  if (!name && !rel) { prev.style.display = 'none'; return; }
+
+  prev.style.display = 'block';
+
+  const nameStr = name ? `<strong>${name}</strong>` : '<strong>them</strong>';
+  const relStr  = rel  ? `your ${rel}` : 'someone you loved';
+
+  txt.innerHTML = `You grew up with ${nameStr} in Ashenveld — ${relStr}. When you left, you told yourself you would come back for them. You didn't. Then their letter arrived, and you understood that leaving had been the mistake that made everything else possible.`;
+}
+
+// ── Player name ──
+function updateNamePreview() {
+  state.playerName = document.getElementById('playerName').value;
+  const ready = state.playerName.trim().length > 1;
+  document.getElementById('next4').disabled = !ready;
+
+  const name = state.playerName.trim();
+  const prev = document.getElementById('namePreview');
+  const txt  = document.getElementById('namePreviewText');
+
+  if (!name) { prev.style.display = 'none'; return; }
+
+  prev.style.display = 'block';
+  const gender  = state.gender === 'woman' ? 'She' : 'He';
+  const pronoun = state.gender === 'woman' ? 'her' : 'his';
+  const cls     = state.playerClass ? classLabels[state.playerClass] : 'a traveller';
+
+  txt.innerHTML = `<strong>${name}</strong>. ${gender} left Ashenveld eleven years ago and built another life somewhere else. ${gender} was ${cls}. ${gender} kept ${pronoun} reasons for leaving to ${pronoun}self. Now ${gender} is coming back.`;
+}
+
+// ── Finish ──
+function finish() {
+  const name    = state.playerName.trim();
+  const missing = state.missingName.trim();
+  const cls     = classLabels[state.playerClass] || '';
+  const rel     = state.relation || 'someone you loved';
+  const gender  = state.gender === 'woman' ? 'she' : 'he';
+  const pronoun = state.gender === 'woman' ? 'her' : 'his';
+
+  document.getElementById('finalClass').textContent = cls + ' · ' + (state.gender === 'woman' ? 'Woman' : 'Man');
+  document.getElementById('finalNameDisplay').textContent = name;
+  document.getElementById('finalText').innerHTML =
+    `${gender === 'she' ? 'She' : 'He'} came back to Ashenveld for <strong>${missing || 'them'}</strong> — ${pronoun} ${rel}. Over a year missing. One letter. Then silence.<br><br>The river barge docks at Crestfall before dawn. The town is quieter than ${gender === 'she' ? 'she' : 'he'} remembers.`;
+
+  document.getElementById('creationScreen').style.opacity = '0';
+  document.getElementById('creationScreen').style.transition = 'opacity 0.6s ease';
+  setTimeout(() => {
+    document.getElementById('creationScreen').style.display = 'none';
+    document.getElementById('finalScreen').classList.add('show');
+  }, 600);
+}
+</script>
+</body>
+</html>

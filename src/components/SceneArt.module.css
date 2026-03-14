@@ -1,0 +1,49 @@
+.scenePanel {
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  background: var(--black);
+  overflow: hidden;
+}
+
+.sceneArt {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.sceneArt svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.moonGlow {
+  animation: moonPulse 6s ease-in-out infinite;
+}
+
+@keyframes moonPulse {
+  0%, 100% { opacity: 0.85; }
+  50%       { opacity: 1; }
+}
+
+.fogLayer {
+  animation: fogDrift 18s linear infinite alternate;
+}
+
+@keyframes fogDrift {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-40px); }
+}
+
+.sceneFooter {
+  padding: 8px 14px;
+  border-top: 1px solid var(--border-dim);
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  background: var(--bg);
+  flex-shrink: 0;
+}

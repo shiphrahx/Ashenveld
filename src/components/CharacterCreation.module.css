@@ -1,0 +1,566 @@
+/* ── Shared base ── */
+.creationScreen {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.step {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* shared step layout */
+.stepInner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 56px 24px 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.stepHeader {
+  text-align: center;
+  margin-bottom: 48px;
+  animation: stepIn 0.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes stepIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.stepNum {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.stepTitle {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--white-cold);
+  margin-bottom: 12px;
+}
+
+.stepSub {
+  font-size: 16px;
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ── STEP 1: GENDER ── */
+.genderRow {
+  display: flex;
+  gap: 24px;
+  animation: stepIn 0.5s ease 0.1s forwards;
+  opacity: 0;
+}
+
+.genderCard {
+  width: 220px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  padding: 36px 24px;
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.18s, background 0.18s;
+  position: relative;
+  overflow: hidden;
+}
+
+.genderCard::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--blue-deep);
+  opacity: 0;
+  transition: opacity 0.18s;
+}
+
+.genderCard:hover { border-color: var(--blue-steel); }
+.genderCard:hover::after { opacity: 1; }
+
+.genderCard.selected {
+  border-color: var(--blue-ice);
+  background: var(--blue-deep);
+}
+
+.genderCard.selected::after { opacity: 0; }
+
+.genderIcon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.genderIcon svg {
+  width: 100%;
+  height: 100%;
+  stroke: var(--blue-steel);
+  fill: none;
+  stroke-width: 1;
+  transition: stroke 0.18s;
+}
+
+.genderCard:hover .genderIcon svg,
+.genderCard.selected .genderIcon svg { stroke: var(--blue-ice); }
+
+.genderLabel {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  position: relative;
+  z-index: 1;
+  transition: color 0.18s;
+}
+
+.genderCard:hover .genderLabel,
+.genderCard.selected .genderLabel { color: var(--white-cold); }
+
+.check {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--border-lit);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transition: all 0.18s;
+}
+
+.genderCard.selected .check {
+  background: var(--blue-steel);
+  border-color: var(--blue-ice);
+}
+
+.genderCard.selected .check::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--white-cold);
+}
+
+/* ── STEP 2: CLASS ── */
+.classGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+  animation: stepIn 0.5s ease 0.1s forwards;
+  opacity: 0;
+}
+
+.classCard {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  padding: 28px;
+  cursor: pointer;
+  transition: border-color 0.18s, background 0.18s;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: left;
+}
+
+.classCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: var(--blue-steel);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.22s ease;
+}
+
+.classCard:hover { border-color: var(--border-lit); }
+.classCard:hover::before { transform: scaleY(1); }
+
+.classCard.selected {
+  border-color: var(--blue-ice);
+  background: var(--blue-deep);
+}
+
+.classCard.selected::before {
+  transform: scaleY(1);
+  background: var(--blue-ice);
+}
+
+.classTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.className {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--white-cold);
+  transition: color 0.18s;
+}
+
+.classArchetype {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.classCard.selected .className { color: var(--blue-moon); }
+
+.classTag {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid var(--border-lit);
+  color: var(--text-muted);
+  padding: 3px 10px;
+  flex-shrink: 0;
+  transition: all 0.18s;
+}
+
+.classCard.selected .classTag {
+  border-color: var(--blue-steel);
+  color: var(--blue-ice);
+}
+
+.classQuote {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--blue-ice);
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.classDesc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+.classStats {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.statPill {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  padding: 3px 9px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  transition: all 0.18s;
+}
+
+.statPill.peak {
+  border-color: var(--blue-mid);
+  color: var(--blue-ice);
+}
+
+.statPill.low {
+  border-color: var(--red);
+  color: var(--red-lit);
+}
+
+.classCard.selected .statPill { border-color: var(--border-lit); }
+.classCard.selected .statPill.peak { border-color: var(--blue-steel); color: var(--blue-moon); }
+
+/* ── STEP 3: MISSING PERSON ── */
+.missingForm {
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  animation: stepIn 0.5s ease 0.1s forwards;
+  opacity: 0;
+}
+
+.fieldGroup { display: flex; flex-direction: column; gap: 10px; }
+
+.fieldLabel {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 9.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.fieldInput {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text-bright);
+  font-family: 'Lora', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  font-size: 17px;
+  padding: 13px 16px;
+  outline: none;
+  transition: border-color 0.15s;
+  width: 100%;
+}
+
+.fieldInput:focus { border-color: var(--blue-steel); }
+.fieldInput::placeholder { color: var(--text-dim); font-style: italic; }
+
+.relationGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.relBtn {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-family: 'Lora', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  font-size: 14px;
+  padding: 12px 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s;
+  font-style: italic;
+}
+
+.relBtn:hover { border-color: var(--border-lit); color: var(--text-main); }
+
+.relBtn.selected {
+  border-color: var(--blue-ice);
+  background: var(--blue-deep);
+  color: var(--white-cold);
+}
+
+.missingPreview {
+  border: 1px solid var(--border-dim);
+  padding: 20px 22px;
+  background: rgba(13,24,40,0.5);
+}
+
+.previewText {
+  font-size: 15px;
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.previewText strong { color: var(--blue-moon); font-style: normal; font-weight: 400; }
+
+/* ── STEP 4: YOUR NAME ── */
+.nameForm {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: stepIn 0.5s ease 0.1s forwards;
+  opacity: 0;
+}
+
+.namePreview {
+  border-left: 2px solid var(--blue-mid);
+  padding: 16px 20px;
+  margin-top: 8px;
+}
+
+.namePreviewText {
+  font-size: 15px;
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.namePreviewText strong { color: var(--blue-moon); font-style: normal; }
+
+/* ── NAVIGATION ── */
+.stepNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  animation: stepIn 0.5s ease 0.2s forwards;
+  opacity: 0;
+}
+
+.navBack {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 0;
+  transition: color 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navBack:hover { color: var(--text-muted); }
+.navBack:disabled { opacity: 0; pointer-events: none; }
+
+.navProgress {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.progDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--border-lit);
+  transition: all 0.25s;
+}
+
+.progDot.done { background: var(--blue-steel); }
+.progDot.active {
+  background: var(--blue-ice);
+  width: 20px;
+  border-radius: 3px;
+}
+
+.navNext {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blue-ice);
+  background: none;
+  border: 1px solid var(--blue-mid);
+  padding: 12px 32px;
+  cursor: pointer;
+  transition: all 0.18s;
+  position: relative;
+  overflow: hidden;
+}
+
+.navNext::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--blue-deep);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.navNext:hover { border-color: var(--blue-steel); color: var(--white-cold); }
+.navNext:hover::before { transform: scaleX(1); }
+.navNext span { position: relative; z-index: 1; }
+.navNext:disabled { opacity: 0.3; pointer-events: none; }
+
+/* ── FINAL SCREEN ── */
+.finalScreen {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  animation: titleFadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes titleFadeIn {
+  0%   { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.finalSummary {
+  max-width: 520px;
+  margin-bottom: 48px;
+}
+
+.finalClass {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.finalName {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--white-cold);
+  margin-bottom: 8px;
+}
+
+.finalRule {
+  width: 160px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--blue-steel), transparent);
+  margin: 20px auto;
+}
+
+.finalText {
+  font-size: 17px;
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.85;
+}
+
+.finalText strong { color: var(--blue-moon); font-style: normal; font-weight: 400; }
+
+.beginBtn {
+  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--white-cold);
+  background: var(--blue-mid);
+  border: 1px solid var(--blue-steel);
+  padding: 16px 52px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.beginBtn:hover {
+  background: var(--blue-steel);
+  border-color: var(--blue-ice);
+}

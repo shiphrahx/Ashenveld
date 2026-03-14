@@ -1,0 +1,285 @@
+{
+  "chapter": 2,
+  "title": "The Work",
+  "scenes": [
+    {
+      "id": "act3_ch2_rebuilding",
+      "act": 3, "chapter": 2,
+      "location": "crestfall_market",
+      "title": "What Staying Looks Like",
+      "on_enter": {
+        "state_changes": { "world": { "curse_spread": -4, "day": 20 } },
+        "time_advance": 0
+      },
+      "requires": { "flags": { "player_stays_ashenveld": true } },
+      "text": {
+        "default": "Day twenty. The third week.\n\nThe curse is still present but measurably diminishing. The episodes in the market — the stillness, the vacancy — have become infrequent enough that when one occurs it draws attention again rather than being ignored. People are noticing because they have started to expect that people will not stop in the street, which means they have started expecting something better.\n\nThat is the specific shape of recovery in a place like Crestfall. Not dramatic improvement. The return of expectations. The belief, held tentatively at first and then more firmly, that tomorrow might be slightly better than today.\n\nYou and your missing person are part of the mechanism of that belief. You move through the town every day, doing the unglamorous work of a place trying to remember how to function.",
+        "commander": "You have established a rhythm. Mornings: the documentation work with your missing person and Pol. Afternoons: the political work — the Compact arrangements, the Covenant's reduced presence, the Rootless camp's growing formal role.\n\nVorne has reduced his garrison to twelve soldiers. The remaining twelve are doing useful things: road repair, supply distribution, the practical work of stabilisation that soldiers are good at when they are not being used for something more violent.\n\nYou and Vorne have found, through the friction of working in the same space, something that is not quite respect and is more useful than friendship.",
+        "arcane": "The documentation is comprehensive. You have been working with your missing person for three days on the account of the sealing ritual, the mechanism's structure, the curse's properties and progression.\n\nPol is the most valuable collaborator — fifteen years of preparation have given her a precision that neither you nor your missing person can match individually. The three of you together produce something that is both academically rigorous and practically useful.\n\nYou will send copies to three separate institutions when it is complete. Not because you trust any single institution. Because distributing the knowledge is the only way to ensure no single institution controls it.",
+        "ranger": "The wildlife recovery is documenting itself in ways you read every morning.\n\nDay seventeen: two sparrow species in the market square.\nDay eighteen: a fox sighting on the north road.\nDay nineteen: the cat that had been sheltering under the north porch moved back inside.\nDay twenty: birdsong before dawn.\n\nThe land is coming back. Slowly, in the specific order that recovery happens — the smallest and most adaptable first, the larger and more complex later.\n\nYou write it all down. Every morning, every observation. The record will matter when someone needs to understand what the curse was and what the sealing achieved.",
+        "cipher": "Three weeks into the new arrangement and the political landscape is settling into a shape you recognise.\n\nVorne is managing Crestfall's formal recovery with the Compact's resources. Seriva has left — she departed quietly four days after the ritual, without announcing her departure. Edric remains at the shrine, smaller in scope now but genuine in his pastoral function.\n\nThe Rootless camp has the most precarious position of the three. Their formal recognition is real but fragile — dependent on Vorne's goodwill, which is dependent on Issa's continued recovery.\n\nIssa is recovering. Slowly, measurably, in the specific direction that matters."
+      },
+      "choices": [
+        {
+          "id": "focus_on_afflicted_recovery",
+          "text": "Focus your energy on the afflicted. The people the curse touched most deeply.",
+          "requires": {},
+          "roll": { "stat": "charisma", "dc": 11 },
+          "outcomes": {
+            "success": {
+              "text": "You work with Maret and the camp's healers on a systematic approach to supporting the afflicted through the recovery period.\n\nThe sealing has stopped progression. What it has not done is reverse damage already done. Lira's partial recovery is real but uneven — some days she is nearly herself, others she is far away. Issa is moving steadily in the right direction. Wren, who went east weeks ago, has not come back.\n\nYou find three other people who went east and did not come back. You go looking for them. You find one of them at the forest edge — sitting, not moving, but alive. You bring them back.\n\nThe camp takes them in. Maret looks at you when you arrive with this person and says nothing, which is her way of saying everything.",
+              "next_scene": "act3_ch3_the_long_work",
+              "state_changes": {
+                "flags": { "began_recovery_work": true },
+                "factions": { "rootless": { "reputation": 15 } }
+              }
+            },
+            "success_at_cost": {
+              "text": "You work on the recovery and make genuine progress, but the scale of what the curse left behind is larger than any single person's capacity. You help the people in front of you and accept that the people beyond your reach are beyond your reach.\n\nThis is a lesson Ashenveld teaches repeatedly. The shape of help is finite.",
+              "next_scene": "act3_ch3_the_long_work",
+              "state_changes": { "flags": { "began_recovery_work": true } }
+            },
+            "failure": {
+              "text": "The work is beyond you in ways you did not expect. Not for lack of skill — for lack of knowledge. The curse's residual effects resist approaches that should work.\n\nPol finds you at the end of a difficult day and says: \"Sit down. I want to tell you something about patience.\" And she does, for an hour, in a way that is the most useful thing anyone says to you in the third week.",
+              "next_scene": "act3_ch3_the_long_work",
+              "state_changes": {}
+            }
+          }
+        },
+        {
+          "id": "focus_on_documentation",
+          "text": "Focus on completing the documentation. The knowledge must be preserved and distributed.",
+          "requires": {},
+          "roll": { "stat": "intelligence", "dc": 12 },
+          "outcomes": {
+            "success": {
+              "text": "Two weeks of concentrated work with your missing person and Pol produce something neither of you expected: a complete account that is also, somehow, a readable one.\n\nYour missing person has fourteen months of observations. Pol has fifteen years of scholarship. You have the synthesising instinct. The three of you together produce a document that describes what the ruins are, what the curse was, what the ritual required, and what it achieved.\n\nYou send the first copy to the university in the capital. The second to a specific scholar your missing person trusts. The third you keep.\n\nThe knowledge is no longer a secret. It is no longer a weapon anyone can use exclusively.",
+              "next_scene": "act3_ch3_the_long_work",
+              "state_changes": {
+                "flags": { "documentation_complete": true },
+                "factions": { "iron_compact": { "reputation": 10 } }
+              }
+            },
+            "success_at_cost": {
+              "text": "The documentation is complete but took longer than planned. The delay cost you — some of the political arrangements you were managing deteriorated while your attention was elsewhere.\n\nYou file this as the cost of prioritisation. You made a choice. The choice had a cost. The document is real and distributed.",
+              "next_scene": "act3_ch3_the_long_work",
+              "state_changes": { "flags": { "documentation_complete": true } }
+            },
+            "failure": {
+              "text": "The documentation is not complete within the timeframe you set. Your missing person says: \"This is not a deadline. This is Ashenveld. We have time now.\"\n\nYou are not good at not having deadlines. But you hear what they are saying and you try to work at a different pace.",
+              "next_scene": "act3_ch3_the_long_work",
+              "state_changes": {}
+            }
+          }
+        },
+        {
+          "id": "focus_on_faction_settlement",
+          "text": "Focus on making the faction settlement permanent before Vorne's garrison leaves.",
+          "requires": {},
+          "roll": { "stat": "charisma", "dc": 13 },
+          "outcomes": {
+            "success": {
+              "text": "You spend three weeks in the specific work of turning informal agreements into formal ones.\n\nThe Rootless camp's recognition is formalised in a regional charter — not a Compact document, a regional one, which means it survives Vorne's eventual departure. Edric signs as Covenant witness. Maret signs as camp representative. Vorne signs as Compact authority. You witness.\n\nIt is not perfect. But it is written down and witnessed and the witnesses are alive and present in the world.\n\nMaret, after the signing, stands outside the shrine in the autumn light and looks at the market square and says nothing for a long time.\n\nThen: \"Thank you.\"\n\nTwo words. Everything in them.",
+              "next_scene": "act3_ch3_the_long_work",
+              "state_changes": {
+                "flags": { "camp_formally_recognised": true },
+                "factions": { "rootless": { "reputation": 25 }, "iron_compact": { "reputation": 15 } },
+                "relationships": { "maret": { "closeness": 25 } }
+              }
+            },
+            "success_at_cost": {
+              "text": "The settlement is formalised but with conditions that make it less stable than you wanted. The camp's recognition is real. The conditions attached to it give Vorne more ongoing authority than you intended.\n\nMaret accepts the terms because the alternative is nothing formalised at all. You accept them for the same reason.",
+              "next_scene": "act3_ch3_the_long_work",
+              "state_changes": {
+                "flags": { "camp_conditionally_recognised": true },
+                "factions": { "rootless": { "reputation": 15 } }
+              }
+            },
+            "failure": {
+              "text": "The settlement does not reach formal status before Vorne's timeline compresses. He withdraws most of the garrison with the informal understanding intact but nothing in writing.\n\nMaret says: \"Informal is how we have always operated. We are still here.\" She says it with a steadiness you would not be capable of in her position.",
+              "next_scene": "act3_ch3_the_long_work",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act3_ch2_on_the_road",
+      "act": 3, "chapter": 2,
+      "location": "east_road",
+      "title": "Distance",
+      "on_enter": {
+        "state_changes": { "world": { "day": 20 } },
+        "time_advance": 0
+      },
+      "requires": { "flags": { "player_leaves_ashenveld": true } },
+      "text": {
+        "default": "Three days out from Crestfall.\n\nThe road has become ordinary in a way the road into Ashenveld never was. No checkpoint. No wrong silence. No trees leaning in with attention they should not have.\n\nYou and your missing person walk through a landscape that does not require interpretation. This is more disorienting than you expected.\n\nThey are adjusting to the open world in ways you watch without commenting on. They look at things — ordinary things, a market in a village, people arguing over a fence line, a dog sleeping in the sun — with an attention that is not anxious, just intense. Fourteen months without ordinary things means they are relearning what ordinary is.\n\nYou let them relearn it. You have nothing better to do.",
+        "commander": "The road is a decompression chamber between what you were in Ashenveld and whatever you will be next.\n\nYou think, as you walk, about the work you left unfinished. You made commitments you cannot complete from this distance. You will fulfil them remotely, through letters, through the documentation when it is sent.\n\nYou think about whether leaving was the right decision. You arrive at the same answer each time: it was not the only right decision. It was one right decision among several. You made it and you walk.",
+        "arcane": "You are writing as you travel. Not the documentation — that can wait. Something else. The account of what the ritual was like from inside. What the mechanism showed you. What the experience of unified intention actually felt like.\n\nNo text describes this from the inside. You are the first person in the documented record to have done the original sealing ritual and survived to describe it.\n\nYou write carefully. The words you choose for this will be the words that shape how it is understood for as long as the record survives.",
+        "ranger": "You are reading the landscape as you travel and the landscape is reading normally.\n\nThat sounds like a small thing. It is not a small thing. Three weeks in Ashenveld with a corrupted ambient made reading the land a different kind of work — everything had to be filtered through what the curse might be doing to it before you could understand what the land itself was doing.\n\nOrdinary landscape. Ordinary reading. You find yourself grateful for the simplicity in a way you would not have predicted three weeks ago.",
+        "cipher": "You are out of the political environment of Ashenveld and into a road with your missing person and the shift in context is producing unexpected effects.\n\nYou do not have anything to manage. No faction to monitor. No information to curate. No position to maintain.\n\nYou are not sure what you are without those things. You are spending the walk finding out."
+      },
+      "choices": [
+        {
+          "id": "ask_them_about_the_ruins",
+          "text": "Ask your missing person about the fourteen months. What they actually experienced.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You walk for most of a day and they talk.\n\nThey tell you things they did not tell you in the ruins — not because they were hiding them, but because there was not time and the context was wrong and some things need ordinary road and ordinary light to be said in.\n\nThe loneliness. Not the difficulty of it — they knew it would be difficult. The specific quality of being alone in a place that was more present than most people are. The way the ruins were company of a kind, even as they were a threat.\n\n\"I talked to the Watcher,\" they say. \"For months. I knew they could not answer. I talked anyway.\" A pause. \"I do not know if that is sad or practical.\"\n\n\"Both,\" you say. \"Both are true.\"",
+              "next_scene": "act3_ch3_road_further",
+              "state_changes": {
+                "relationships": { "the_missing_person": { "closeness": 25 } }
+              }
+            }
+          }
+        },
+        {
+          "id": "give_them_space",
+          "text": "Give them space. Let them process the return to the world without being asked to narrate it.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You walk beside them and you do not ask questions.\n\nThis is harder than it sounds. You are someone who gathers information and you are walking beside someone who has fourteen months of information you do not have.\n\nBut you remember what they said when you offered them the choice in the Tallow — I want to just be in this room with you — and you understand that what they need right now is the same thing in a different location.\n\nYou walk. The road is good. The weather holds. The distance from Ashenveld increases at the rate of walking.",
+              "next_scene": "act3_ch3_road_further",
+              "state_changes": {
+                "relationships": { "the_missing_person": { "closeness": 15 } }
+              }
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act3_ch2_finishing_work",
+      "act": 3, "chapter": 2,
+      "location": "crestfall_tallow_inn",
+      "title": "One Week Becomes Two",
+      "on_enter": {
+        "state_changes": { "world": { "day": 20 } },
+        "time_advance": 0
+      },
+      "requires": { "flags": { "missing_person_sent_ahead": true } },
+      "text": {
+        "default": "Day twenty. The third week.\n\nYou said one week. Possibly two. The second week is ending and the list is not finished.\n\nThis is the specific shape of Ashenveld — it requires more than you plan for. Every task completed reveals two more that needed doing. Every arrangement formalised surfaces another that is less formal than it should be.\n\nYou are not unhappy here. That is the thing you did not expect. You are doing work that matters to people you respect and the work is hard enough to be interesting and you are not unhappy.\n\nThere is a letter on your table. Your missing person has been writing — they write every three days, from whatever ordinary place they have reached. The letters are not asking you to hurry. They are just there.",
+        "commander": "The work is real and it is taking the time it takes.\n\nYou read the letter. Then you put it with the others and go back to the Compact arrangements. You will finish when the work is finished. You said a week. You meant: until it is done.",
+        "arcane": "The documentation is almost complete. Two more days, possibly three. Then you can go.\n\nYou read the letter. Your missing person describes an ordinary afternoon in a village two days west of Ashenveld. The specificity of it — what the light was like, what they ate, what they overheard two people arguing about — makes you understand what it means that they are somewhere ordinary and you are still here.\n\nYou work faster. Not sloppily. Faster.",
+        "ranger": "The work on the land recovery documentation is done. The Rootless camp's instruction — teaching Branch to read the signs you read — is done.\n\nThe remaining work is political. Not your strongest competence. But you do it because it needs to be done and you are here.\n\nYou read the letter. Your missing person describes a forest they passed through. Birds you both know. You finish reading it twice and then go find Maret.",
+        "cipher": "The political arrangements are as solid as you can make them in the time you have.\n\nYou read the letter. Your missing person does not pressure you. They describe a market, a conversation, a meal. They are telling you what ordinary is like and asking you, implicitly, when you are coming to be ordinary with them.\n\nYou finish reading it. You make a list of what remains. You calculate: four days. You write back: four days."
+      },
+      "choices": [
+        {
+          "id": "commit_to_leaving_date",
+          "text": "Set a specific leaving date and hold to it regardless.",
+          "requires": {},
+          "roll": { "stat": "stamina", "dc": 12 },
+          "outcomes": {
+            "success": {
+              "text": "You set the date: four days from now. You work as if the date is immovable, which means you make choices about what to prioritise that you would not make with an open timeline.\n\nThings you cannot finish you hand to people who can continue them. Maret, for the camp work. Branch, for the land monitoring. Pol, for the documentation's remaining sections.\n\nOn the fourth day, you pack.\n\nAldous gives you bread for the road without being asked, charges you three coins less than the posted rate, and does not say: you said one week.",
+              "next_scene": "act3_ch3_road_further",
+              "state_changes": {
+                "flags": { "player_left_ashenveld_late": true }
+              }
+            },
+            "success_at_cost": {
+              "text": "You hold to the date but it costs you — some things are left less finished than you wanted. The list in your journal has three items with lines through them that are not as clean as you would prefer.\n\nYou go anyway. Unfinished is not the same as undone.",
+              "next_scene": "act3_ch3_road_further",
+              "state_changes": { "flags": { "player_left_ashenveld_late": true } }
+            },
+            "failure": {
+              "text": "The fourth day arrives and there is something that cannot wait another week and you stay another week.\n\nYou write to your missing person: one more week. They write back: I know. The patience in those two words is something you will think about for a long time.",
+              "next_scene": "act3_ch3_road_further",
+              "state_changes": {
+                "world": { "day": 27 }
+              }
+            }
+          }
+        },
+        {
+          "id": "realise_you_are_staying",
+          "text": "Acknowledge what is becoming clear: you are staying in Ashenveld.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You sit with the letter and you are honest with yourself for the first time in two weeks.\n\nYou are not finishing the work so you can leave. You are finding more work because you are not ready to leave. The distinction matters.\n\nYou write back. Not the letter you planned — a different one. An honest one. You tell them what you have realised. You ask them what they want to do with the information.\n\nThe letter goes west. You wait for the reply. You work while you wait, because that is what you do.",
+              "next_scene": "act3_ch3_the_long_work",
+              "state_changes": {
+                "flags": { "player_stays_permanently": true }
+              }
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "act3_ch2_alone_work",
+      "act": 3, "chapter": 2,
+      "location": "rootless_camp",
+      "title": "The Work Without Them",
+      "on_enter": {
+        "state_changes": { "world": { "day": 20 } },
+        "time_advance": 0
+      },
+      "requires": { "flags": { "player_stays_alone": true } },
+      "text": {
+        "default": "Day twenty.\n\nYou have settled into a rhythm that has nothing to do with the person who is no longer here and everything to do with the people who are.\n\nMornings at the camp with Maret and Branch. Afternoons in town, in the Compact post or the shrine or the market, doing the work of rebuilding that requires someone to move between the different parts of Crestfall's power structure without being captured by any of them.\n\nYou are good at this. You have always been good at this. You are doing it alone, which is not new, and doing it in a place you care about, which is.\n\nThe absence of your missing person is present. You carry it the way you carry a weight you have decided to carry — consciously, without pretending it is not there.",
+        "commander": "Vorne respects you. Not warmly — professionally. He has seen what you did in the ruins, what you achieved in the negotiations, what you have done in the three weeks since.\n\nHe offers you a formal position in the Compact's regional administration. Not a military one. An advisory role. Access to resources, to the Compact's communication network, to the institutional reach that makes the work you are doing more effective.\n\nYou think about what it would cost. What it would give. You do not decide today.",
+        "arcane": "Pol has become the closest thing you have to a collaborator in the work since your missing person left.\n\nShe is methodical where you are ambitious. She corrects your overclaiming with the specific precision of someone who has spent forty years distinguishing between what is known and what is believed. Working with her is humbling in the best possible way.\n\nYou are producing work in Ashenveld that will matter. That is not nothing. You hold onto it on the days when what you have given up is loudest.",
+        "ranger": "The land is recovering. You document it every morning.\n\nDay twenty: three bird species in the market square. The deer south of the forest edge moving normally. Lira went to the market alone for the first time yesterday and came back with bread and a particular expression — not happiness exactly, but the direction happiness moves in.\n\nThe work is visible. That helps on the days when other things are not visible.",
+        "cipher": "You work alone and you are good at working alone. This is both an asset and the thing you are most careful about — the ease with which alone becomes permanent when you are skilled enough to make alone functional.\n\nBranch, of all people, says to you one afternoon: \"You should write to them.\" He does not explain who he means. He does not need to. \"Not asking them to come back. Just writing.\"",
+        "maret_note": "If Maret is at the camp: she checks on you every three days. Not obviously. Just in the same space at the same time. Occasionally with a cup of something. This is her version of care and you accept it as such."
+      },
+      "choices": [
+        {
+          "id": "write_to_missing_person",
+          "text": "Write to your missing person. Not asking them to return. Just writing.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You write.\n\nIt takes two attempts. The first one asks them to come back without using those words. You recognise it for what it is and start again.\n\nThe second letter tells them what Ashenveld looks like in the third week. The birds. Lira going to the market alone. The specific quality of the light this time of year, which is different from how you remember it from before.\n\nYou seal it and give it to the post rider. Then you go back to work.\n\nFourteen days later a letter arrives from a town two weeks west of Ashenveld. They are fine. They describe ordinary things with the specific attention of someone who has not had ordinary things for a long time and is grateful for them.\n\nAt the end: I am glad you are there. I mean both things in that sentence.",
+              "next_scene": "act3_ch3_alone_continues",
+              "state_changes": {
+                "relationships": { "the_missing_person": { "closeness": 20 } }
+              }
+            }
+          }
+        },
+        {
+          "id": "focus_on_lira",
+          "text": "Spend time with Lira. Her recovery is the clearest measure of what the sealing achieved.",
+          "requires": {},
+          "roll": { "stat": "charisma", "dc": 9 },
+          "outcomes": {
+            "success": {
+              "text": "You and Lira sit in the herb garden every morning for two weeks.\n\nShe talks as her capacity returns — not all at once, not linearly, but in the specific way of someone recovering from something that affected their ability to connect thought to word. Some days clear, some days behind glass.\n\nOn day twenty-eight she tells you a complete story without losing the thread of it. A story from before the curse, from when she was living in the eastern village, about a festival and a particular person and something funny that happened.\n\nShe finishes it and looks at you and says: \"I have not been able to remember that for two years.\" She is not crying. She is cataloguing — the way the camp has taught her to catalogue, the way she holds things carefully because the holding matters.\n\nYou file it as the most significant data point of the third week.",
+              "next_scene": "act3_ch3_alone_continues",
+              "state_changes": {
+                "flags": { "lira_significant_recovery": true },
+                "relationships": { "lira": { "closeness": 30 } }
+              }
+            },
+            "success_at_cost": {
+              "text": "You spend time with Lira and the time is good but the progress is slower than you hoped. Recovery is not linear. Some days are worse than the day before. You learn to read the difference between worse-than-yesterday and not-recovering, which are not the same thing.",
+              "next_scene": "act3_ch3_alone_continues",
+              "state_changes": { "relationships": { "lira": { "closeness": 15 } } }
+            },
+            "failure": {
+              "text": "Today is not a good day for Lira. You sit with her anyway, in the herb garden, saying nothing, which is what she needs even if it does not feel like much.\n\nBranch, passing by, says: \"You are doing the right thing.\" This is so unusual — Branch volunteering positive assessment — that you believe him.",
+              "next_scene": "act3_ch3_alone_continues",
+              "state_changes": { "relationships": { "lira": { "closeness": 8 } } }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
