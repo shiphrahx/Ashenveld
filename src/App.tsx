@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react'
-import type { GameState, Scene, Outcome } from './types'
+import type { GameState, Scene, Outcome, JournalEntry } from './types'
 import { initLoader, resolveScene, getActMeta } from './loader'
 import {
   createFreshState,
@@ -14,6 +14,7 @@ import {
 import TitleScreen from './components/TitleScreen'
 import StarField from './components/StarField'
 import GameOver from './components/GameOver'
+import Journal from './components/Journal'
 import CharacterCreation, { type CreationResult } from './components/CharacterCreation'
 import SceneView from './components/SceneView'
 import SceneArt from './components/SceneArt'
@@ -39,6 +40,7 @@ export default function App() {
   const [gameState, setGameState] = useState<GameState | null>(null)
   const [currentScene, setCurrentScene] = useState<Scene | null>(null)
   const [saveExists, setSaveExists] = useState(false)
+  const [journalOpen, setJournalOpen] = useState(false)
 
   useEffect(() => { setRootClass(phase) }, [phase])
 
@@ -134,9 +136,10 @@ export default function App() {
   }, [])
 
   // ── Choice resolved ───────────────────────────────────────────────────────────
-  const handleChoice = useCallback(async (outcome: Outcome) => {
+  const handleChoice = useCallback(async (outcome: Outcome, entry: JournalEntry) => {
     if (!gameState) return
-    const next = applyStateChanges(gameState, outcome.state_changes)
+    let next = applyStateChanges(gameState, outcome.state_changes)
+    next = { ...next, journal: [...(next.journal ?? []), entry] }
     await navigateTo(outcome.next_scene, next)
   }, [gameState, navigateTo])
 
@@ -199,7 +202,10 @@ export default function App() {
         <div className={styles.shell}>
           <SceneArt locationName={locationName()} />
           <SceneView scene={currentScene} state={gameState} onChoice={handleChoice} />
-          <Sidebar state={gameState} />
+          <Sidebar state={gameState} onJournal={() => setJournalOpen(true)} />
+          {journalOpen && (
+            <Journal entries={gameState.journal ?? []} onClose={() => setJournalOpen(false)} />
+          )}
         </div>
       </>
     )

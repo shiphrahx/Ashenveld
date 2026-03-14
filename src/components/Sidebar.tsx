@@ -2,7 +2,10 @@ import React from 'react'
 import type { GameState } from '../types'
 import styles from './Sidebar.module.css'
 
-interface Props { state: GameState }
+interface Props {
+  state: GameState
+  onJournal: () => void
+}
 
 const STAT_KEYS: Array<[keyof GameState['player']['stats'], string, string]> = [
   ['strength',     'STR', 'Strength — Raw physical power. Determines your ability to force, carry, break, and endure through brute effort.'],
@@ -48,7 +51,7 @@ const CLASS_LABELS: Record<string, string> = {
   cipher:    'The Cipher',
 }
 
-export default function Sidebar({ state }: Props) {
+export default function Sidebar({ state, onJournal }: Props) {
   const { player, world, factions } = state
   const hpPct = Math.max(0, Math.min(100, (player.resources.health / player.resources.max_health) * 100))
   const classLabel = CLASS_LABELS[player.class] ?? player.class
@@ -116,7 +119,7 @@ export default function Sidebar({ state }: Props) {
 
       {/* ── Action buttons — exact icons from prototype ── */}
       <div className={styles.acts}>
-        <button className={styles.ab}>
+        <button className={styles.ab} onClick={onJournal}>
           <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="8" y1="7" x2="15" y2="7"/><line x1="8" y1="11" x2="15" y2="11"/><line x1="8" y1="15" x2="12" y2="15"/></svg>
           <span className={styles.al}>Journal</span>
           <span className={styles.tip}>Journal</span>

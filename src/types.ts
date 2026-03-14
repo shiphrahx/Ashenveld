@@ -168,6 +168,20 @@ export interface GameState {
   flags: Record<string, boolean | string | number>
   inventory: string[]
   current_scene: string
+  journal: JournalEntry[]
+}
+
+// ─── Journal ──────────────────────────────────────────────────────────────────
+
+export interface JournalEntry {
+  sceneId: string
+  sceneTitle: string
+  location: string
+  timeOfDay: string
+  day: number
+  text: string          // resolved scene text for the player's class
+  choiceText: string    // the choice the player made
+  outcomeText: string   // the outcome text shown
 }
 
 // ─── Dice roll result ─────────────────────────────────────────────────────────

@@ -58,6 +58,7 @@ export function createFreshState(
     flags: {},
     inventory: [],
     current_scene: 'act1_ch1_barge_arrival',
+    journal: [],
   }
 }
 

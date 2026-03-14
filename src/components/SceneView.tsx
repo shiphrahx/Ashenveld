@@ -1,5 +1,5 @@
-import React, { useState, useCallback } from 'react'
-import type { Scene, GameState, Choice, Outcome, RollResult } from '../types'
+import React, { useState, useCallback, useRef } from 'react'
+import type { Scene, GameState, Choice, Outcome, RollResult, JournalEntry } from '../types'
 import { rollDice, difficultyLabel } from '../dice'
 import DiceOverlay from './DiceOverlay'
 import styles from './SceneView.module.css'
@@ -7,7 +7,7 @@ import styles from './SceneView.module.css'
 interface Props {
   scene: Scene
   state: GameState
-  onChoice: (outcome: Outcome) => void
+  onChoice: (outcome: Outcome, entry: JournalEntry) => void
 }
 
 // Roman numerals for choice markers, matching the prototype
@@ -74,6 +74,7 @@ export default function SceneView({ scene, state, onChoice }: Props) {
   const [rollResult, setRollResult] = useState<RollResult | null>(null)
   const [activeChoice, setActiveChoice] = useState<Choice | null>(null)
   const [shownOutcome, setShownOutcome] = useState<{ outcome: Outcome; css: string } | null>(null)
+  const activeChoiceText = useRef<string | null>(null)
 
   const narrative = resolveText(scene.text, state.player.class)
   const paragraphs = narrative.split('\n\n').filter(Boolean)
@@ -85,6 +86,7 @@ export default function SceneView({ scene, state, onChoice }: Props) {
   }
 
   const handleChoiceClick = useCallback((choice: Choice) => {
+    activeChoiceText.current = replacePlaceholder(choice.text)
     if (choice.roll) {
       const result = rollDice(choice.roll, state)
       setActiveChoice(choice)
@@ -106,11 +108,22 @@ export default function SceneView({ scene, state, onChoice }: Props) {
   }, [rollResult, activeChoice])
 
   const handleOutcomeContinue = useCallback(() => {
-    if (shownOutcome) {
-      onChoice(shownOutcome.outcome)
+    if (shownOutcome && activeChoiceText.current) {
+      const entry: JournalEntry = {
+        sceneId: scene.id,
+        sceneTitle: scene.title,
+        location: scene.location,
+        timeOfDay: state.world.time_of_day,
+        day: state.world.day,
+        text: narrative,
+        choiceText: activeChoiceText.current,
+        outcomeText: shownOutcome.outcome.text,
+      }
+      onChoice(shownOutcome.outcome, entry)
       setShownOutcome(null)
+      activeChoiceText.current = null
     }
-  }, [shownOutcome, onChoice])
+  }, [shownOutcome, onChoice, scene, state, narrative])
 
   // Crumb: "Act I · Chapter I · Night, Day 1"
   const timeDisplay = state.world.time_of_day
