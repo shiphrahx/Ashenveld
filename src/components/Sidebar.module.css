@@ -160,3 +160,9 @@
   z-index: 200;
 }
 .ab:hover .tip { opacity: 1; }
+
+.tipWide {
+  white-space: normal;
+  width: 160px;
+  text-align: center;
+}
