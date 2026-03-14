@@ -13,19 +13,20 @@ import {
 } from './gameState'
 import TitleScreen from './components/TitleScreen'
 import StarField from './components/StarField'
+import GameOver from './components/GameOver'
 import CharacterCreation, { type CreationResult } from './components/CharacterCreation'
 import SceneView from './components/SceneView'
 import SceneArt from './components/SceneArt'
 import Sidebar from './components/Sidebar'
 import styles from './App.module.css'
 
-type AppPhase = 'loading' | 'title' | 'creation' | 'game' | 'error'
+type AppPhase = 'loading' | 'title' | 'creation' | 'game' | 'gameover' | 'error'
 
 // Keep #root class in sync with phase so CSS can adjust overflow/height
 function setRootClass(phase: AppPhase) {
   const root = document.getElementById('root')
   if (!root) return
-  root.className = phase === 'game' || phase === 'loading' || phase === 'error'
+  root.className = phase === 'game' || phase === 'loading' || phase === 'error' || phase === 'gameover'
     ? 'game'
     : phase === 'creation'
     ? 'creation'
@@ -68,6 +69,13 @@ export default function App() {
       }
       next = { ...next, world: { ...next.world, current_location: scene.location } }
       next = checkCurse(next)
+
+      if (next.player.resources.health <= 0) {
+        deleteSave()
+        setGameState(next)
+        setPhase('gameover')
+        return
+      }
 
       setGameState(next)
       setCurrentScene(scene)
@@ -115,6 +123,15 @@ export default function App() {
     setPhase('game')
     await navigateTo('act1_ch1_barge_arrival', state)
   }, [navigateTo])
+
+  // ── Game over ─────────────────────────────────────────────────────────────────
+  const handleRestart = useCallback(() => {
+    deleteSave()
+    setSaveExists(false)
+    setGameState(null)
+    setCurrentScene(null)
+    setPhase('title')
+  }, [])
 
   // ── Choice resolved ───────────────────────────────────────────────────────────
   const handleChoice = useCallback(async (outcome: Outcome) => {
@@ -164,6 +181,15 @@ export default function App() {
 
   if (phase === 'creation') {
     return <CharacterCreation onComplete={handleCreationComplete} />
+  }
+
+  if (phase === 'gameover' && gameState) {
+    return (
+      <GameOver
+        playerName={gameState.player.name}
+        onRestart={handleRestart}
+      />
+    )
   }
 
   if (phase === 'game' && gameState && currentScene) {

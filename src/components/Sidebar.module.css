@@ -46,7 +46,38 @@
 
 /* stat pips */
 .statRow { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
-.sn { font-size: 11px; color: var(--text-main); letter-spacing: 0.04em; }
+
+.sn {
+  font-size: 11px;
+  color: var(--text-main);
+  letter-spacing: 0.04em;
+  position: relative;
+  cursor: default;
+}
+
+.statTip {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 10px;
+  width: 220px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-lit);
+  color: var(--text-main);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.6;
+  padding: 10px 12px;
+  pointer-events: none;
+  z-index: 300;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.6);
+}
+
+.sn:hover .statTip { display: block; }
 .pips { display: flex; gap: 2px; }
 .pip { width: 5px; height: 5px; border-radius: 1px; background: var(--border-dim); }
 .pip.on { background: var(--blue-dim); }

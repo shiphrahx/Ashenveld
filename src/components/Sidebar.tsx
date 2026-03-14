@@ -4,14 +4,14 @@ import styles from './Sidebar.module.css'
 
 interface Props { state: GameState }
 
-const STAT_KEYS: Array<[keyof GameState['player']['stats'], string]> = [
-  ['strength',     'STR'],
-  ['dexterity',    'DEX'],
-  ['stamina',      'STA'],
-  ['intelligence', 'INT'],
-  ['mana',         'MAN'],
-  ['charisma',     'CHA'],
-  ['perception',   'PER'],
+const STAT_KEYS: Array<[keyof GameState['player']['stats'], string, string]> = [
+  ['strength',     'STR', 'Strength — Raw physical power. Determines your ability to force, carry, break, and endure through brute effort.'],
+  ['dexterity',    'DEX', 'Dexterity — Speed, precision, and coordination. Used for stealth, ranged attacks, sleight of hand, and fine motor tasks.'],
+  ['stamina',      'STA', 'Stamina — Endurance and resilience. Governs how long you can exert yourself and how quickly you recover from strain.'],
+  ['intelligence', 'INT', 'Intelligence — Reasoning and recall. Used for reading situations, understanding lore, solving problems, and resisting mental influence.'],
+  ['mana',         'MAN', 'Mana — Attunement to the unseen. Required to perceive, channel, or resist arcane forces. Depletes with use and recovers with rest.'],
+  ['charisma',     'CHA', 'Charisma — Force of personality. Determines how people respond to you — whether they trust, fear, follow, or open up.'],
+  ['perception',   'PER', 'Perception — Awareness and instinct. Used to notice what others miss: hidden things, changes in behaviour, danger before it arrives.'],
 ]
 
 const FACTION_KEYS: Array<[keyof GameState['factions'], string]> = [
@@ -73,12 +73,15 @@ export default function Sidebar({ state }: Props) {
       {/* ── Stats (class label as section header) ── */}
       <div className={styles.sb}>
         <div className={styles.sbl}>{classLabel}</div>
-        {STAT_KEYS.map(([key, label]) => {
+        {STAT_KEYS.map(([key, label, desc]) => {
           const val = player.stats[key]
           const filled = statPips(val)
           return (
             <div key={key} className={styles.statRow}>
-              <span className={styles.sn}>{label}</span>
+              <span className={styles.sn}>
+                {label}
+                <span className={styles.statTip}>{desc}</span>
+              </span>
               <div className={styles.pips}>
                 {Array.from({ length: MAX_PIPS }, (_, i) => (
                   <div key={i} className={pipClass(val, i, filled)} />
