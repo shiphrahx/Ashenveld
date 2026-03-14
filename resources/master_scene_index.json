@@ -100,6 +100,7 @@
     "act2_ch2_decision_to_return":      { "file": "act2_ch2_scenes.json", "act": 2, "chapter": 2 },
 
     "act2_ch3_crestfall_news":          { "file": "act2_ch3_scenes.json", "act": 2, "chapter": 3 },
+    "act2_ch3_missing_person_teaching": { "file": "act2_ch3_scenes.json", "act": 2, "chapter": 3 },
     "act2_ch3_compact_checkpoint":      { "file": "act2_ch3_scenes.json", "act": 2, "chapter": 3 },
     "act2_ch3_crestfall_changed":       { "file": "act2_ch3_scenes.json", "act": 2, "chapter": 3 },
     "act2_ch3_aldous_update":           { "file": "act2_ch3_scenes.json", "act": 2, "chapter": 3 },

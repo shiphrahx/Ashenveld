@@ -70,6 +70,67 @@
     },
 
     {
+      "id": "act2_ch3_missing_person_teaching",
+      "act": 2, "chapter": 3,
+      "location": "ruins_outskirts",
+      "title": "The First Lesson",
+      "on_enter": {
+        "state_changes": { "world": { "curse_spread": 2 }, "flags": { "ritual_preparation_begun": true } },
+        "time_advance": 60
+      },
+      "requires": {},
+      "text": {
+        "default": "The outskirts are quieter now. The last sounds of the ordinary world — a distant cart, a bird that had not yet learned to avoid the forest — fade as the morning settles.\n\nYour missing person sits across from you with their journal open on their knees. They have been preparing this moment for fourteen months. You can see it in the way they hold themselves: someone who has rehearsed something so many times that the rehearsal has worn through and become something else.\n\n\"I need to explain what this is,\" they say. \"Not the mechanics. What it actually is. Because if you understand what you are agreeing to, everything else follows from that.\"\n\nThey begin.\n\nThe sealing mechanism was not built to contain the curse. It was built to complete something — to close a loop that was left open by people who intended to come back and never did. The curse is the incomplete work leaking through the gap. The ritual does not destroy the curse. It finishes what was started. It closes the gap from the inside.\n\n\"Which means the participants have to go inside,\" you say.\n\n\"Yes,\" they say. \"And come back out. That is the part that is not guaranteed.\"",
+        "commander": "You listen to this with the part of your mind that assesses tactical situations and the part that does not. Both parts are engaged.\n\n\"What determines whether we come back out?\"\n\nThey look at their notes. \"The mechanism reads whether the participants understand what they are completing. Not intellectually — it reads it the way a lock reads a key. The shape has to match. If we are in the chamber and the mechanism reads us as insufficient — as not the right participants — it will hold us.\" A pause. \"It will not be unkind about it. But it will hold us.\"\n\nYou process this. The risk is real. The mission is still the mission.",
+        "arcane": "The mechanism reading the participants. You have been thinking about this since your missing person first described the ritual.\n\n\"What does the mechanism read, specifically?\" you ask. \"What constitutes a match?\"\n\nThey spend twenty minutes trying to translate the old text into language that carries the original meaning. When they finish, you understand that the mechanism reads something like: the weight of what two people mean to each other, measured against the weight of what brought them here. A ratio. A resonance.\n\n\"The original participants were bonded,\" they say. \"And they chose to complete the work because the work mattered more than the alternatives. Both conditions must be present.\"",
+        "ranger": "You are thinking about the chamber as a space — what it contains, what it does not, what the exit route looks like.\n\n\"How long do we need to be in the chamber?\"\n\n\"The text says until the mechanism completes its reading. An hour at minimum. Possibly longer if the mechanism's state is degraded.\" They pause. \"From the outside, there is no way to know when the reading is complete. You will know from the inside. The text says it is unmistakable — the sensation of something settling that has been unsettled for a very long time.\"\n\nYou note the lack of external indicator. Pol, waiting outside, will have to trust you to know when it is done.",
+        "cipher": "You are listening for what your missing person is not saying.\n\n\"There is a risk you have not mentioned,\" you say.\n\nA pause. \"Yes.\"\n\n\"If the mechanism reads us and decides we are not sufficient — not that we are wrong participants, but that our bond is insufficient — what happens?\"\n\nThey look at their hands. \"The text is ambiguous on that point. Deliberately, I think. The people who wrote it did not want to discourage participants from trying.\" They look up. \"I have been thinking about it for fourteen months. My best interpretation is: the mechanism closes anyway. With us inside it.\" A pause. \"Permanently.\""
+      },
+      "choices": [
+        {
+          "id": "continue_the_lesson",
+          "text": "\"Tell me everything. All of it. We have time today.\"",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "They teach you through the morning and into the afternoon.\n\nNot the ritual words — those come later, when you are ready to hold them. Today is the foundation: what the mechanism is, how it reads, what the chamber will feel like, what you will need to remain present for when the reading begins. The sensation of being seen completely by something that has been waiting for exactly this.\n\nAt one point they stop and look at you as if they are asking a question without asking it.\n\n\"I am still here,\" you say.\n\nSomething in them settles. \"I know,\" they say. \"I just needed to see it.\"\n\nThey continue teaching. Outside, the forest is very quiet. The curse has not reached this specific clearing in a way that is measurable yet. You have days. You are going to use them.",
+              "next_scene": "act2_ch3_crestfall_news",
+              "state_changes": {
+                "flags": { "ritual_lesson_complete": true },
+                "relationships": { "missing_person": { "closeness": 20 } }
+              }
+            }
+          }
+        },
+        {
+          "id": "ask_about_the_cost_to_them",
+          "text": "\"What does this cost you? Not theoretically. What does it cost you personally?\"",
+          "requires": {},
+          "roll": { "stat": "charisma", "dc": 10 },
+          "outcomes": {
+            "success": {
+              "text": "They are quiet for a long time.\n\n\"Fourteen months,\" they say finally. \"I have been in this forest for fourteen months and I have been — not alone, exactly, but alone in the specific way of someone who is waiting for the one person who can complete something with them.\" A pause. \"The cost to me is not the ritual. The cost to me was the fourteen months. The ritual is what the fourteen months were for.\"\n\nYou look at them. The weight of a year and two months of waiting is visible in them if you know what to look for. They have carried it so long they have stopped being able to put it down.\n\n\"Then let's not waste what you paid,\" you say.\n\nThey nod. They begin the lesson again, and this time there is something different in the way they hold themselves — lighter, perhaps. Something set down.",
+              "next_scene": "act2_ch3_crestfall_news",
+              "state_changes": {
+                "flags": { "ritual_lesson_complete": true },
+                "relationships": { "missing_person": { "closeness": 30 } }
+              }
+            },
+            "failure": {
+              "text": "They deflect the question with the ease of someone who has been deflecting it from themselves for fourteen months.\n\n\"The cost is manageable,\" they say. \"Let us continue.\"\n\nYou let it go. There will be time for that conversation — or there won't be, and then it won't matter.\n\nThey continue the lesson.",
+              "next_scene": "act2_ch3_crestfall_news",
+              "state_changes": {
+                "flags": { "ritual_lesson_complete": true },
+                "relationships": { "missing_person": { "closeness": 10 } }
+              }
+            }
+          }
+        }
+      ]
+    },
+
+    {
       "id": "act2_ch3_compact_checkpoint",
       "act": 2, "chapter": 3,
       "location": "east_road",

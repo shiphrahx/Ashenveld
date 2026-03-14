@@ -22,7 +22,7 @@
           "outcomes": {
             "default": {
               "text": "The story finds its end.",
-              "next_scene": "ending_router",
+              "next_scene": "ending_stays_together",
               "state_changes": {}
             }
           },
