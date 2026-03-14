@@ -13,9 +13,9 @@
   justify-content: space-between;
   align-items: center;
   font-family: 'Cinzel', serif;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.14em;
-  color: var(--blue-steel);
+  color: var(--blue-ice);
   background: var(--bg-panel);
   flex-shrink: 0;
 }

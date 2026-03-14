@@ -40,9 +40,9 @@
   padding: 8px 14px;
   border-top: 1px solid var(--border-dim);
   font-family: 'Cinzel', serif;
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.22em;
-  color: var(--text-dim);
+  color: var(--text-main);
   text-transform: uppercase;
   background: var(--bg);
   flex-shrink: 0;

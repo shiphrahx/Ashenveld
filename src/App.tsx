@@ -12,6 +12,7 @@ import {
   deleteSave,
 } from './gameState'
 import TitleScreen from './components/TitleScreen'
+import StarField from './components/StarField'
 import CharacterCreation, { type CreationResult } from './components/CharacterCreation'
 import SceneView from './components/SceneView'
 import SceneArt from './components/SceneArt'
@@ -167,11 +168,14 @@ export default function App() {
 
   if (phase === 'game' && gameState && currentScene) {
     return (
-      <div className={styles.shell}>
-        <SceneArt locationName={locationName()} />
-        <SceneView scene={currentScene} state={gameState} onChoice={handleChoice} />
-        <Sidebar state={gameState} />
-      </div>
+      <>
+        <StarField />
+        <div className={styles.shell}>
+          <SceneArt locationName={locationName()} />
+          <SceneView scene={currentScene} state={gameState} onChoice={handleChoice} />
+          <Sidebar state={gameState} />
+        </div>
+      </>
     )
   }
 

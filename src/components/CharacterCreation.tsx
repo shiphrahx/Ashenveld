@@ -100,8 +100,8 @@ export default function CharacterCreation({ onComplete }: Props) {
     }, 800)
   }
 
-  const genderPronoun = gender === 'woman' ? 'She' : 'He'
-  const genderPossessive = gender === 'woman' ? 'her' : 'his'
+  const genderPronoun = gender === 'Woman' ? 'She' : 'He'
+  const genderPossessive = gender === 'Woman' ? 'her' : 'his'
   const cls = playerClass ? CLASS_LABELS[playerClass] : 'a traveller'
 
   // ── Final screen ──
