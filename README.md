@@ -60,6 +60,12 @@ Your class shapes how scenes read, which choices are available to you, and how t
 
 ---
 
+## Play
+
+**[Play Ashenveld in your browser →](https://shiphrahx.github.io/Ashenveld/)**
+
+---
+
 ## Getting Started
 
 ```bash
