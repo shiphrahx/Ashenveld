@@ -8,6 +8,7 @@ interface Props {
   onItems: () => void
   onPeople: () => void
   onMenu: () => void
+  onMap: () => void
 }
 
 const STAT_KEYS: Array<[keyof GameState['player']['stats'], string, string]> = [
@@ -54,7 +55,7 @@ const CLASS_LABELS: Record<string, string> = {
   cipher:    'The Cipher',
 }
 
-export default function Sidebar({ state, onJournal, onItems, onPeople, onMenu }: Props) {
+export default function Sidebar({ state, onJournal, onItems, onPeople, onMenu, onMap }: Props) {
   const { player, world, factions } = state
   const hpPct = Math.max(0, Math.min(100, (player.resources.health / player.resources.max_health) * 100))
   const classLabel = CLASS_LABELS[player.class] ?? player.class
@@ -133,7 +134,7 @@ export default function Sidebar({ state, onJournal, onItems, onPeople, onMenu }:
           <span className={styles.al}>Items</span>
           <span className={styles.tip}>Inventory</span>
         </button>
-        <button className={styles.ab}>
+        <button className={styles.ab} onClick={onMap}>
           <svg viewBox="0 0 24 24"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
           <span className={styles.al}>Map</span>
           <span className={styles.tip}>Map</span>

@@ -1,0 +1,181 @@
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.18s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.panel {
+  width: min(92vw, 900px);
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  animation: scaleIn 0.2s ease forwards;
+  max-height: 90vh;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.97); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--white-cold);
+}
+
+.close {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 6px;
+  transition: color 0.13s;
+  line-height: 1;
+}
+.close:hover { color: var(--white-cold); }
+
+.body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+}
+
+/* ── Region labels ── */
+.regionLabels {
+  position: relative;
+  height: 20px;
+}
+
+.regionLabel {
+  position: absolute;
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ── SVG map ── */
+.svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Region dividers */
+.divider {
+  stroke: var(--border-dim);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+}
+
+/* Edges */
+.edgeVisited {
+  stroke: var(--blue-dim);
+  stroke-width: 1.5;
+}
+
+.edgeUnvisited {
+  stroke: var(--border-dim);
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+}
+
+/* Nodes */
+.node {
+  fill: var(--blue-dim);
+  stroke: var(--blue-steel);
+  stroke-width: 1.5;
+}
+
+.node_crestfall { fill: var(--blue-dim);  stroke: var(--blue-steel); }
+.node_forest    { fill: var(--blue-faint); stroke: var(--blue-mid); }
+.node_ruins     { fill: var(--red-dark);  stroke: var(--red-mid); }
+
+.nodeUnvisited {
+  fill: var(--bg-panel);
+  stroke: var(--border-lit);
+  stroke-width: 1;
+  stroke-dasharray: 2 2;
+}
+
+.nodeCurrent {
+  fill: var(--blue-ice);
+  stroke: var(--white-cold);
+  stroke-width: 2;
+}
+
+.nodeCurrentPulse {
+  fill: none;
+  stroke: var(--blue-steel);
+  stroke-width: 1;
+  opacity: 0.4;
+}
+
+/* Labels */
+.label {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  fill: var(--text-main);
+  letter-spacing: 0.05em;
+}
+
+.labelUnvisited {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  fill: var(--border-lit);
+  letter-spacing: 0.05em;
+}
+
+.labelCurrent {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  fill: var(--white-cold);
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+/* ── Legend ── */
+.legend {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding-top: 4px;
+  border-top: 1px solid var(--border-dim);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.legendItem svg { flex-shrink: 0; overflow: visible; }
