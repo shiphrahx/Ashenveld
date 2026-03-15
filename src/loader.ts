@@ -18,7 +18,7 @@ const chapterCache: Record<string, ChapterFile> = {}
 // ─── Path helpers ─────────────────────────────────────────────────────────────
 
 function actPath(act: number): string {
-  return `/resources/act${act}/`
+  return `${import.meta.env.BASE_URL}resources/act${act}/`
 }
 
 function metaFilename(act: number): string {
@@ -31,7 +31,7 @@ function metaFilename(act: number): string {
 export async function initLoader(): Promise<MasterIndex> {
   if (masterIndex) return masterIndex
 
-  const res = await fetch('/resources/master_scene_index.json')
+  const res = await fetch(`${import.meta.env.BASE_URL}resources/master_scene_index.json`)
   if (!res.ok) throw new Error('Failed to load master_scene_index.json')
   masterIndex = (await res.json()) as MasterIndex
 
