@@ -91,6 +91,7 @@ export default function Sidebar({ state, onJournal, onItems, onPeople }: Props) 
                 {Array.from({ length: MAX_PIPS }, (_, i) => (
                   <div key={i} className={pipClass(val, i, filled)} />
                 ))}
+                <span className={styles.statVal}>{val}</span>
               </div>
             </div>
           )

@@ -78,7 +78,8 @@
 }
 
 .sn:hover .statTip { display: block; }
-.pips { display: flex; gap: 2px; }
+.pips { display: flex; gap: 2px; align-items: center; }
+.statVal { font-size: 0.65rem; color: var(--text-muted); margin-left: 4px; min-width: 1.2em; text-align: right; }
 .pip { width: 5px; height: 5px; border-radius: 1px; background: var(--border-dim); }
 .pip.on { background: var(--blue-dim); }
 .pip.on.hi { background: var(--blue-steel); }
