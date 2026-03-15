@@ -7,6 +7,7 @@ interface Props {
   onJournal: () => void
   onItems: () => void
   onPeople: () => void
+  onMenu: () => void
 }
 
 const STAT_KEYS: Array<[keyof GameState['player']['stats'], string, string]> = [
@@ -53,7 +54,7 @@ const CLASS_LABELS: Record<string, string> = {
   cipher:    'The Cipher',
 }
 
-export default function Sidebar({ state, onJournal, onItems, onPeople }: Props) {
+export default function Sidebar({ state, onJournal, onItems, onPeople, onMenu }: Props) {
   const { player, world, factions } = state
   const hpPct = Math.max(0, Math.min(100, (player.resources.health / player.resources.max_health) * 100))
   const classLabel = CLASS_LABELS[player.class] ?? player.class
@@ -147,7 +148,7 @@ export default function Sidebar({ state, onJournal, onItems, onPeople }: Props) 
           <span className={styles.al}>Rest</span>
           <span className={`${styles.tip} ${styles.tipWide}`}>Rest when your surroundings allow it.</span>
         </button>
-        <button className={styles.ab}>
+        <button className={styles.ab} onClick={onMenu}>
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
           <span className={styles.al}>Menu</span>
           <span className={styles.tip}>Save / options</span>

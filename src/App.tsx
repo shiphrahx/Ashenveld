@@ -17,6 +17,7 @@ import GameOver from './components/GameOver'
 import Journal from './components/Journal'
 import Items from './components/Items'
 import People from './components/People'
+import Menu from './components/Menu'
 import CharacterCreation, { type CreationResult } from './components/CharacterCreation'
 import SceneView from './components/SceneView'
 import SceneArt from './components/SceneArt'
@@ -45,6 +46,7 @@ export default function App() {
   const [journalOpen, setJournalOpen] = useState(false)
   const [itemsOpen, setItemsOpen] = useState(false)
   const [peopleOpen, setPeopleOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
   const [gameEnded, setGameEnded] = useState(false)
 
   useEffect(() => { setRootClass(phase) }, [phase])
@@ -208,7 +210,7 @@ export default function App() {
         <div className={styles.shell}>
           <SceneArt locationName={locationName()} />
           <SceneView scene={currentScene} state={gameState} onChoice={handleChoice} ended={gameEnded} />
-          <Sidebar state={gameState} onJournal={() => setJournalOpen(true)} onItems={() => setItemsOpen(true)} onPeople={() => setPeopleOpen(true)} />
+          <Sidebar state={gameState} onJournal={() => setJournalOpen(true)} onItems={() => setItemsOpen(true)} onPeople={() => setPeopleOpen(true)} onMenu={() => setMenuOpen(true)} />
           {journalOpen && (
             <Journal entries={gameState.journal ?? []} onClose={() => setJournalOpen(false)} />
           )}
@@ -217,6 +219,13 @@ export default function App() {
           )}
           {peopleOpen && (
             <People state={gameState} onClose={() => setPeopleOpen(false)} />
+          )}
+          {menuOpen && (
+            <Menu
+              state={gameState}
+              onClose={() => setMenuOpen(false)}
+              onReturnToTitle={() => { setMenuOpen(false); setPhase('title') }}
+            />
           )}
         </div>
       </>
