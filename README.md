@@ -8,6 +8,8 @@
 
 ---
 
+▶️ 🗡️ **[Play Ashenveld in your browser →](https://shiphrahx.github.io/Ashenveld/)**
+
 # Ashenveld
 
 Ashenveld is a web-based narrative RPG set in a cursed town and the ancient forest that is consuming it. It is a game about returning to a place you thought you were done with, and about what it costs to go looking for someone who may not want to be found.
@@ -57,23 +59,6 @@ You choose who you are before you enter Crestfall. Four archetypes, each with di
 - **Cipher** — you find what is hidden in what people say and what they do not
 
 Your class shapes how scenes read, which choices are available to you, and how the dice favour you.
-
----
-
-## Play
-
-**[Play Ashenveld in your browser →](https://shiphrahx.github.io/Ashenveld/)**
-
----
-
-## Getting Started
-
-```bash
-npm install
-npm run dev
-```
-
-Open `http://localhost:5173` in your browser.
 
 ---
 
