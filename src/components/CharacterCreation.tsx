@@ -14,6 +14,11 @@ interface Props {
   onComplete: (result: CreationResult) => void
 }
 
+const PILL_STAT_KEY: Record<string, string> = {
+  STR: 'strength', DEX: 'dexterity', STA: 'stamina',
+  INT: 'intelligence', MAN: 'mana', CHA: 'charisma', PER: 'perception',
+}
+
 const CLASS_DATA = [
   {
     id: 'commander',
@@ -24,6 +29,7 @@ const CLASS_DATA = [
     desc: 'You command through presence. Rooms reorganise around you. You don\'t just win fights — you end them before they start. Ashenveld will test whether the people worth protecting still trust you to do it.',
     peaks: ['STR ▲', 'STA ▲', 'CHA ▲'],
     lows:  ['MAN ▼'],
+    stats: { strength: 16, dexterity: 11, stamina: 14, intelligence: 11, mana: 6, charisma: 14, perception: 10 },
   },
   {
     id: 'arcane',
@@ -34,6 +40,7 @@ const CLASS_DATA = [
     desc: 'You read what others cannot see — the residue of old magic, the invisible architecture of a room, what happened here before the people left. The curse spreading across Ashenveld speaks a language you almost recognise.',
     peaks: ['INT ▲', 'MAN ▲', 'PER ▲'],
     lows:  ['STR ▼'],
+    stats: { strength: 7, dexterity: 10, stamina: 9, intelligence: 16, mana: 16, charisma: 11, perception: 14 },
   },
   {
     id: 'ranger',
@@ -44,6 +51,7 @@ const CLASS_DATA = [
     desc: 'You read land and creature the way others read faces. You move through hostile terrain without being seen, find things that don\'t want to be found, and survive conditions that would kill anyone else. Ashenveld\'s forests remember you.',
     peaks: ['DEX ▲', 'STA ▲', 'PER ▲'],
     lows:  ['CHA ▼'],
+    stats: { strength: 12, dexterity: 16, stamina: 14, intelligence: 11, mana: 7, charisma: 9, perception: 16 },
   },
   {
     id: 'cipher',
@@ -54,6 +62,7 @@ const CLASS_DATA = [
     desc: 'You read people like open books — their fears, their wants, the small betrayals their faces make before their mouths catch up. In a land where everyone is hiding something, this is the most dangerous skill of all.',
     peaks: ['CHA ▲', 'INT ▲', 'DEX ▲'],
     lows:  ['STR ▼'],
+    stats: { strength: 8, dexterity: 14, stamina: 10, intelligence: 14, mana: 9, charisma: 16, perception: 13 },
   },
 ]
 
@@ -212,12 +221,22 @@ export default function CharacterCreation({ onComplete }: Props) {
                   <div className={styles.classQuote}>{c.quote}</div>
                   <div className={styles.classDesc}>{c.desc}</div>
                   <div className={styles.classStats}>
-                    {c.peaks.map(s => (
-                      <span key={s} className={`${styles.statPill} ${styles.peak}`}>{s}</span>
-                    ))}
-                    {c.lows.map(s => (
-                      <span key={s} className={`${styles.statPill} ${styles.low}`}>{s}</span>
-                    ))}
+                    {c.peaks.map(s => {
+                      const val = c.stats[PILL_STAT_KEY[s.slice(0, 3)] as keyof typeof c.stats]
+                      return (
+                        <span key={s} className={`${styles.statPill} ${styles.peak}`}>
+                          {s} <span className={styles.pillVal}>{val}</span>
+                        </span>
+                      )
+                    })}
+                    {c.lows.map(s => {
+                      const val = c.stats[PILL_STAT_KEY[s.slice(0, 3)] as keyof typeof c.stats]
+                      return (
+                        <span key={s} className={`${styles.statPill} ${styles.low}`}>
+                          {s} <span className={styles.pillVal}>{val}</span>
+                        </span>
+                      )
+                    })}
                   </div>
                 </div>
               ))}
