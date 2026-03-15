@@ -45,6 +45,7 @@ export default function App() {
   const [journalOpen, setJournalOpen] = useState(false)
   const [itemsOpen, setItemsOpen] = useState(false)
   const [peopleOpen, setPeopleOpen] = useState(false)
+  const [gameEnded, setGameEnded] = useState(false)
 
   useEffect(() => { setRootClass(phase) }, [phase])
 
@@ -144,7 +145,7 @@ export default function App() {
     if (!gameState) return
     let next = applyStateChanges(gameState, outcome.state_changes)
     next = { ...next, journal: [...(next.journal ?? []), entry] }
-    if (!outcome.next_scene) return  // ending reached — stay on current scene
+    if (!outcome.next_scene) { setGameEnded(true); return }  // ending reached — stay on current scene
     await navigateTo(outcome.next_scene, next)
   }, [gameState, navigateTo])
 
@@ -206,7 +207,7 @@ export default function App() {
         <StarField />
         <div className={styles.shell}>
           <SceneArt locationName={locationName()} />
-          <SceneView scene={currentScene} state={gameState} onChoice={handleChoice} />
+          <SceneView scene={currentScene} state={gameState} onChoice={handleChoice} ended={gameEnded} />
           <Sidebar state={gameState} onJournal={() => setJournalOpen(true)} onItems={() => setItemsOpen(true)} onPeople={() => setPeopleOpen(true)} />
           {journalOpen && (
             <Journal entries={gameState.journal ?? []} onClose={() => setJournalOpen(false)} />

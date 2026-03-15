@@ -8,6 +8,7 @@ interface Props {
   scene: Scene
   state: GameState
   onChoice: (outcome: Outcome, entry: JournalEntry) => void
+  ended?: boolean
 }
 
 // Roman numerals for choice markers, matching the prototype
@@ -70,7 +71,7 @@ function outcomeClass(rollResult: RollResult, choice: Choice): string {
 
 // ── Component ─────────────────────────────────────────────────────────────────
 
-export default function SceneView({ scene, state, onChoice }: Props) {
+export default function SceneView({ scene, state, onChoice, ended = false }: Props) {
   const [rollResult, setRollResult] = useState<RollResult | null>(null)
   const [activeChoice, setActiveChoice] = useState<Choice | null>(null)
   const [shownOutcome, setShownOutcome] = useState<{ outcome: Outcome; css: string } | null>(null)
@@ -165,7 +166,7 @@ export default function SceneView({ scene, state, onChoice }: Props) {
 
       {/* ── Choices ── */}
       <div className={styles.choices}>
-        {shownOutcome ? (
+        {ended && !shownOutcome ? null : shownOutcome ? (
           <button className={styles.ch} onClick={handleOutcomeContinue}>
             <span className={styles.mk}>›</span>
             <span className={styles.lb}>Continue</span>
