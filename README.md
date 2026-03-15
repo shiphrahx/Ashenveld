@@ -41,14 +41,6 @@ People who have nowhere else to go — the afflicted, the displaced, those the C
 
 ---
 
-## The Characters
-
-The people of Crestfall are not aligned with the factions that have claimed the town. Aldous runs the Tallow Inn and knows more than he says. Sen on the docks saw something in the river three weeks ago and has told no one. Corvin in the market has been there for eighty years and says exactly what he means. Wren, who used to be the person everyone liked, went to the forest edge six months ago and touched something and came back changed.
-
-Everyone in Crestfall is waiting for something. Most of them are hoping you are not the one who makes it worse.
-
----
-
 ## The Classes
 
 You choose who you are before you enter Crestfall. Four archetypes, each with different skills, different ways of reading a room, and different ways of being read by the people inside it.
@@ -59,6 +51,16 @@ You choose who you are before you enter Crestfall. Four archetypes, each with di
 - **Cipher** — you find what is hidden in what people say and what they do not
 
 Your class shapes how scenes read, which choices are available to you, and how the dice favour you.
+
+![Classes](classes.png)
+
+---
+
+## The Characters
+
+The people of Crestfall are not aligned with the factions that have claimed the town. Aldous runs the Tallow Inn and knows more than he says. Sen on the docks saw something in the river three weeks ago and has told no one. Corvin in the market has been there for eighty years and says exactly what he means. Wren, who used to be the person everyone liked, went to the forest edge six months ago and touched something and came back changed.
+
+Everyone in Crestfall is waiting for something. Most of them are hoping you are not the one who makes it worse.
 
 ---
 
