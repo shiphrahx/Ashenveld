@@ -18,6 +18,32 @@
   display: block;
 }
 
+.locationImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 400ms ease;
+}
+
+.placeholder {
+  position: absolute;
+  inset: 0;
+  background: #1a1a1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholderText {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: #3a3a45;
+  text-transform: uppercase;
+}
+
 .moonGlow {
   animation: moonPulse 6s ease-in-out infinite;
 }

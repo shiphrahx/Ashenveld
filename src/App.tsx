@@ -210,7 +210,7 @@ export default function App() {
       <>
         <StarField />
         <div className={styles.shell}>
-          <SceneArt locationName={locationName()} />
+          <SceneArt locationName={locationName()} gameState={gameState} />
           <SceneView scene={currentScene} state={gameState} onChoice={handleChoice} ended={gameEnded} />
           <Sidebar state={gameState} onJournal={() => setJournalOpen(true)} onItems={() => setItemsOpen(true)} onPeople={() => setPeopleOpen(true)} onMenu={() => setMenuOpen(true)} onMap={() => setMapOpen(true)} />
           {journalOpen && (
