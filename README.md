@@ -1,3 +1,5 @@
+<div align="center">
+  
 ![Ashenveld](banner.png)
 
 ![Status](https://img.shields.io/badge/status-in%20development-blue?style=flat-square)
@@ -9,6 +11,7 @@
 ---
 
 ▶️ 🗡️ **[Play Ashenveld in your browser →](https://shiphrahx.github.io/Ashenveld/)**
+</div>
 
 # Ashenveld
 
