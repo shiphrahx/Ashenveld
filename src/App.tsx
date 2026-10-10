@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react'
+import React, { useEffect, useState, useCallback, useRef } from 'react'
 import type { GameState, Scene, Outcome, JournalEntry } from './types'
 import { initLoader, resolveScene, locationName } from './loader'
 import {
@@ -11,6 +11,7 @@ import {
   hasSave,
   deleteSave,
   recordEnding,
+  diffState,
 } from './gameState'
 import { meets } from './conditions'
 import { resolveRich } from './text'
@@ -33,6 +34,8 @@ import Panel from './components/Panel'
 import Settings from './components/Settings'
 import KeysHelp from './components/KeysHelp'
 import { useHotkeys } from './hooks/useHotkeys'
+import Toasts, { type Toast } from './components/Toasts'
+import { useSettings } from './settings'
 import styles from './App.module.css'
 
 type AppPhase = 'loading' | 'title' | 'creation' | 'game' | 'ended' | 'gameover' | 'error'
@@ -55,6 +58,30 @@ export default function App() {
   const [saveExists, setSaveExists] = useState(false)
   const [savedEnded, setSavedEnded] = useState(false)
   const [panel, setPanel] = useState<PanelId | null>(null)
+  const [toasts, setToasts] = useState<Toast[]>([])
+  const [flash, setFlash] = useState<string[]>([])
+  const toastId = useRef(0)
+  const { settings } = useSettings()
+  const toastsOn = useRef(settings.toasts)
+  toastsOn.current = settings.toasts
+  const dropToast = useCallback((id: number) => setToasts(t => t.filter(x => x.id !== id)), [])
+
+  // U7: the bar that moved gets a short highlight.
+  const prevState = useRef<GameState | null>(null)
+  useEffect(() => {
+    const a = prevState.current, b = gameState
+    prevState.current = gameState
+    if (!a || !b) return
+    const keys: string[] = []
+    if (a.player.resources.health !== b.player.resources.health) keys.push('health')
+    if (a.player.resources.gold !== b.player.resources.gold) keys.push('gold')
+    for (const f of Object.keys(b.factions) as Array<keyof GameState['factions']>)
+      if (a.factions[f].reputation !== b.factions[f].reputation) keys.push(f)
+    if (!keys.length) return
+    setFlash(keys)
+    const t = setTimeout(() => setFlash([]), 700)
+    return () => clearTimeout(t)
+  }, [gameState])
   const [lastOutcome, setLastOutcome] = useState<string>('')
 
   const refreshSaveInfo = useCallback(() => {
@@ -86,8 +113,14 @@ export default function App() {
       next.world.chapter = scene.chapter
       next.world.current_location = scene.location
       if (scene.when) next = applyWhen(next, scene.when)
+      const beforeEntry = next
       next = applyStateChanges(next, scene.on_enter?.state_changes ?? {})
       next = checkCurse(next)
+      // U7: entry changes have no outcome to sit under, so they show as toasts.
+      if (toastsOn.current) {
+        const lines = diffState(beforeEntry, next, journalKeys).map(c => c.text)
+        if (lines.length) setToasts(t => [...t, ...lines.map(text => ({ id: ++toastId.current, text }))].slice(-3))
+      }
 
       if (next.player.resources.health <= 0) {
         setGameState(next)
@@ -256,7 +289,7 @@ export default function App() {
             <SceneView scene={currentScene} state={gameState} onChoice={handleChoice} />
           </main>
           <div className={styles.areaSide}>
-            <Sidebar state={gameState} onOpen={openPanel} hideClock={hideClock} journalDot={journalDot} />
+            <Sidebar state={gameState} onOpen={openPanel} hideClock={hideClock} journalDot={journalDot} flash={flash} />
           </div>
           <div className={styles.areaTabs}>
             <TabBar onOpen={openPanel} journalDot={journalDot} />
@@ -280,6 +313,7 @@ export default function App() {
           )}
           {panel === 'settings' && <Settings onClose={closePanel} />}
           {panel === 'keys' && <KeysHelp onClose={closePanel} />}
+          <Toasts toasts={toasts} onDone={dropToast} />
         </div>
       </>
     )

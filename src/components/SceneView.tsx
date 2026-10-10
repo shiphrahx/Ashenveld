@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useRef, useEffect } from 'react'
+import React, { useState, useCallback, useRef, useEffect, useMemo } from 'react'
 import type { Scene, GameState, Choice, Outcome, RollResult, JournalEntry, DiceOutcome, OutcomeKey } from '../types'
 import { rollDice, difficultyLabel } from '../dice'
 import { meets } from '../conditions'
@@ -6,6 +6,8 @@ import { sceneText, resolveRich, CLASS_LABELS } from '../text'
 import { Inline } from './Inline'
 import DiceOverlay from './DiceOverlay'
 import { useMediaQuery } from '../hooks/useMediaQuery'
+import { applyStateChanges, diffState } from '../gameState'
+import { journalKeys } from './Journal'
 import styles from './SceneView.module.css'
 
 interface Props {
@@ -65,6 +67,11 @@ export default function SceneView({ scene, state, onChoice }: Props) {
   const { main, aside } = sceneText(scene, state)
   const visibleChoices = scene.choices.filter(c => isChoiceVisible(c, state, scene.id))
   const outcomeText = shownOutcome ? resolveRich(shownOutcome.outcome.text, state) : ''
+  // U7: what this outcome changes, shown under it so cause and effect stay together.
+  const changes = useMemo(
+    () => shownOutcome ? diffState(state, applyStateChanges(state, shownOutcome.outcome.state_changes), journalKeys) : [],
+    [shownOutcome, state],
+  )
 
   const handleChoiceClick = useCallback((choice: Choice) => {
     activeChoiceText.current = resolveRich(choice.text, state)
@@ -218,6 +225,11 @@ export default function SceneView({ scene, state, onChoice }: Props) {
               {outcomeText.split(/\n{2,}/).filter(Boolean).map((p, i) => (
                 <p key={i} style={{ marginBottom: '0.8em' }}><Inline text={p} /></p>
               ))}
+              {changes.length > 0 && (
+                <ul className={styles.chips} aria-label="What changed">
+                  {changes.map((c, i) => <li key={i} className={styles.chip}>{c.text}</li>)}
+                </ul>
+              )}
             </div>
           )}
 

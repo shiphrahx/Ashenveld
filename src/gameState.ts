@@ -7,6 +7,7 @@
 
 import type { GameState, StateChanges, MetaStore, DayPart, SceneWhen } from './types'
 import { getMasterIndex, getNpc } from './loader'
+import { closenessTier, factionTier, FACTION_NAMES, WORN_THIN } from './rules'
 
 const SAVE_KEY = 'ashenveld_save'
 const META_KEY = 'ashenveld_meta'
@@ -225,4 +226,54 @@ export function recordEnding(state: GameState): void {
   const meta = loadMeta()
   if (!meta.endings.includes(state.ended.id)) meta.endings.push(state.ended.id)
   saveMeta(meta)
+}
+
+// ─── What changed ─────────────────────────────────────────────────────────────
+
+export interface Change { text: string; key: string }
+
+/**
+ * The player-facing list of what moved between two states: items, coin,
+ * health, closeness, reputation tiers and new journal entries.
+ */
+export function diffState(prev: GameState, next: GameState, journalKeys?: (s: GameState) => string[]): Change[] {
+  const out: Change[] = []
+  const items = getMasterIndex().inventory_items
+  const itemName = (id: string) => items[id]?.name ?? id.replace(/_/g, ' ')
+
+  for (const id of next.inventory) if (!prev.inventory.includes(id)) out.push({ text: `${itemName(id)} added`, key: 'items' })
+  for (const id of prev.inventory) if (!next.inventory.includes(id)) out.push({ text: `${itemName(id)} used`, key: 'items' })
+
+  const dg = next.player.resources.gold - prev.player.resources.gold
+  if (dg) out.push({ text: `${dg > 0 ? '+' : '−'}${Math.abs(dg)} coin`, key: 'gold' })
+
+  const ph = prev.player.resources.health, nh = next.player.resources.health
+  if (nh !== ph) {
+    out.push({ text: `Health ${nh > ph ? '+' : '−'}${Math.abs(nh - ph)}`, key: 'health' })
+    if (ph >= WORN_THIN && nh < WORN_THIN) out.push({ text: 'You are worn thin', key: 'health' })
+  }
+
+  for (const [id, rel] of Object.entries(next.relationships)) {
+    const before = prev.relationships[id]?.closeness ?? getNpc(id)?.initial_closeness ?? 0
+    const d = rel.closeness - before
+    if (!d) continue
+    const name = id === 'the_missing_person' ? (next.player.missing_person.name || 'They') : (getNpc(id)?.name ?? id)
+    const line = d < 0 ? `${name} trusts you less.` : d >= 20 ? `${name} trusts you a great deal more.` : d >= 10 ? `${name} trusts you more.` : `${name} notes it.`
+    out.push({ text: line, key: `rel:${id}` })
+    const t0 = closenessTier(before), t1 = closenessTier(rel.closeness)
+    if (t0 !== t1) out.push({ text: `${name}: ${t1}`, key: `rel:${id}` })
+  }
+
+  for (const f of Object.keys(next.factions) as Array<keyof GameState['factions']>) {
+    const a = prev.factions[f].reputation, b = next.factions[f].reputation
+    if (a === b) continue
+    const t0 = factionTier(f, a), t1 = factionTier(f, b)
+    if (t0 !== t1) out.push({ text: `${FACTION_NAMES[f]}: ${t1}`, key: f })
+  }
+
+  if (journalKeys) {
+    const before = new Set(journalKeys(prev))
+    if (journalKeys(next).some(k => !before.has(k))) out.push({ text: 'Noted in your journal', key: 'journal' })
+  }
+  return out
 }

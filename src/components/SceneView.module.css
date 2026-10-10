@@ -210,3 +210,15 @@
 :global(:root[data-reveal="instant"]) .nd,
 :global(:root[data-reveal="instant"]) .lens,
 :global(:root[data-reveal="instant"]) .outcomeBlock { animation: none; opacity: 1; transform: none; }
+
+/* U7: what changed, under the outcome */
+.chips { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.chip {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: var(--text-main);
+  border: 1px solid var(--border-lit);
+  padding: 3px 9px;
+}
