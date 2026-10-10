@@ -77,3 +77,14 @@
   animation: dayStamp 2.5s ease forwards;
 }
 @keyframes dayStamp { 0% { opacity: 0; } 20% { opacity: 1; } 75% { opacity: 1; } 100% { opacity: 0; } }
+
+/* E8: the art breathes. A slow push in and back over 45s, and the pointer parallax. Transform only. */
+.layer {
+  position: absolute;
+  inset: -8px;
+  transform: translate(var(--px, 0px), var(--py, 0px));
+  transition: transform 600ms ease-out;
+}
+.drift .locationImg { animation: drift 45s ease-in-out infinite alternate; }
+@keyframes drift { from { transform: scale(1); } to { transform: scale(1.05); } }
+.frozen .locationImg { animation-play-state: paused; }

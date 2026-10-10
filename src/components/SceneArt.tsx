@@ -17,6 +17,26 @@ interface Props {
 
 export default function SceneArt({ locationName, gameState, alt = '', frozen = false }: Props) {
   const { settings } = useSettings()
+  const moving = motionAllowed(settings)
+
+  // E8: on wide screens with a mouse, the art moves up to 6px against the pointer.
+  const layerRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    if (!moving || !matchMedia('(min-width: 1100px) and (pointer: fine)').matches) return
+    let raf = 0, x = 0, y = 0
+    const move = (e: PointerEvent) => {
+      x = (e.clientX / window.innerWidth - 0.5) * -12
+      y = (e.clientY / window.innerHeight - 0.5) * -12
+      if (raf) return
+      raf = requestAnimationFrame(() => {
+        raf = 0
+        layerRef.current?.style.setProperty('--px', `${x.toFixed(1)}px`)
+        layerRef.current?.style.setProperty('--py', `${y.toFixed(1)}px`)
+      })
+    }
+    window.addEventListener('pointermove', move, { passive: true })
+    return () => { window.removeEventListener('pointermove', move); cancelAnimationFrame(raf) }
+  }, [moving])
   const locationId = gameState.world.current_location
   const imageSrc = useLocationImage(locationId, gameState)
 
@@ -82,6 +102,7 @@ export default function SceneArt({ locationName, gameState, alt = '', frozen = f
           </div>
         )}
 
+        <div className={`${styles.layer} ${moving ? styles.drift : ''} ${frozen ? styles.frozen : ''}`} ref={layerRef}>
         {displayed !== null && (
           <img
             key={displayed}
@@ -104,11 +125,12 @@ export default function SceneArt({ locationName, gameState, alt = '', frozen = f
             onError={handleIncomingError}
           />
         )}
+        </div>
 
         {stamp && <div key={stamp} className={styles.dayStamp} data-day-stamp>{stamp}</div>}
 
         <Atmosphere kind={getLocation(locationId)?.atmosphere ?? 'none'} dimming={gameState.world.curse_spread}
-          moving={motionAllowed(settings)} frozen={frozen} />
+          moving={moving} frozen={frozen} />
       </div>
       <div className={styles.sceneFooter} data-location-name>{locationName}</div>
     </div>
