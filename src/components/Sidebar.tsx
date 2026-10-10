@@ -154,7 +154,7 @@ export default function Sidebar({ state, onOpen, hideClock = false, variant = 'c
 
       <div className={styles.acts}>
         {variant === 'column' && ACTIONS.map(([id, label, tip]) => (
-          <button key={id} className={styles.ab} onClick={() => onOpen(id)} aria-label={tip}>
+          <button key={id} className={styles.ab} onClick={() => onOpen(id)} aria-label={id === 'journal' && journalDot ? 'Journal, something new' : undefined}>
             <Icon name={id} />
             <span className={styles.al}>{label}</span>
             {id === 'journal' && journalDot && <span className={styles.dot} />}
