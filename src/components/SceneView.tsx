@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useRef } from 'react'
-import type { Scene, GameState, Choice, Outcome, RollResult, JournalEntry } from '../types'
+import type { Scene, GameState, Choice, Outcome, RollResult, JournalEntry, DiceOutcome } from '../types'
 import { rollDice, difficultyLabel } from '../dice'
 import { meets } from '../conditions'
 import { sceneText, resolveRich, CLASS_LABELS } from '../text'
@@ -81,8 +81,13 @@ export default function SceneView({ scene, state, onChoice }: Props) {
 
   const handleDiceContinue = useCallback(() => {
     if (!rollResult || !activeChoice) return
-    const key = rollResult.outcome
-    const outcome = activeChoice.outcomes[key] ?? activeChoice.outcomes.default
+    // Never leave the player without an outcome: fall back to the nearest result.
+    const order: Record<DiceOutcome, DiceOutcome[]> = {
+      success: ['success', 'success_at_cost', 'failure'],
+      success_at_cost: ['success_at_cost', 'success', 'failure'],
+      failure: ['failure', 'success_at_cost', 'success'],
+    }
+    const outcome = order[rollResult.outcome].map(k => activeChoice.outcomes[k]).find(Boolean) ?? activeChoice.outcomes.default
     const css = outcomeClass(rollResult, activeChoice)
     setRollResult(null)
     setActiveChoice(null)
