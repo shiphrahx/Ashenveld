@@ -830,7 +830,31 @@
             "text": "You stood under this window once with [missing person], waiting out the rain. Neither of you said anything the whole time. You have thought about that silence more than most things anyone has said to you."
           },
           "You are back in Crestfall. The town is wrong in ways that go past what eleven years of absence would explain. Someone you came here for was here fourteen months ago and is not here now. A woman named Maret may know where they went. The forest to the east is the direction everything points.",
-          "Outside the window, the wind moves through a town that has stopped making most of its sounds. You try to remember what Crestfall sounded like at this hour and find that you can, mostly. That makes the present silence louder.",
+          "Outside the window, the wind moves through a town that has stopped making most of its sounds. You try to remember what Crestfall sounded like at this hour and find that you can, mostly. That makes the present silence louder."
+        ]
+      },
+      "choices": [
+        {
+          "id": "go_on",
+          "text": "Go on.",
+          "outcomes": {
+            "default": {
+              "text": "",
+              "next_scene": "act1_ch1_tallow_room_on",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "act1_ch1_tallow_room_on",
+      "act": 1,
+      "chapter": 1,
+      "location": "crestfall_tallow_inn",
+      "title": "Night in Crestfall",
+      "text": {
+        "default": [
           "You take the letter out again. You do not need to. You know it by heart.",
           {
             "when": {
@@ -923,7 +947,10 @@
           }
         }
       ],
-      "rest": true
+      "rest": true,
+      "when": {
+        "part": "night"
+      }
     },
     {
       "id": "act1_collapse",

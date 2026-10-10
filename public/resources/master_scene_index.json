@@ -610,6 +610,91 @@
       "file": "act3_ch2_scenes.json",
       "act": 3,
       "chapter": 2
+    },
+    "ending_escape_together_on": {
+      "file": "act3_ch5_endings.json",
+      "act": 3,
+      "chapter": 5
+    },
+    "ending_alone_legend_on": {
+      "file": "act3_ch5_endings.json",
+      "act": 3,
+      "chapter": 5
+    },
+    "ending_stays_together_on": {
+      "file": "act3_ch5_endings.json",
+      "act": 3,
+      "chapter": 5
+    },
+    "act2_ch2_source_chamber_on": {
+      "file": "act2_ch2_scenes.json",
+      "act": 2,
+      "chapter": 2
+    },
+    "act2_ch1_what_they_found_on": {
+      "file": "act2_ch1_scenes.json",
+      "act": 2,
+      "chapter": 1
+    },
+    "act3_ch2_on_the_road_on": {
+      "file": "act3_ch2_scenes.json",
+      "act": 3,
+      "chapter": 2
+    },
+    "act2_ch7_aftermath_crestfall_on": {
+      "file": "act2_ch7_scenes.json",
+      "act": 2,
+      "chapter": 7
+    },
+    "act2_ch1_missing_person_approach_on": {
+      "file": "act2_ch1_scenes.json",
+      "act": 2,
+      "chapter": 1
+    },
+    "act2_ch2_inner_approach_on": {
+      "file": "act2_ch2_scenes.json",
+      "act": 2,
+      "chapter": 2
+    },
+    "act2_ch2_decision_to_return_on": {
+      "file": "act2_ch2_scenes.json",
+      "act": 2,
+      "chapter": 2
+    },
+    "act3_ch2_alone_work_on": {
+      "file": "act3_ch2_scenes.json",
+      "act": 3,
+      "chapter": 2
+    },
+    "act2_ch1_reunion_on": {
+      "file": "act2_ch1_scenes.json",
+      "act": 2,
+      "chapter": 1
+    },
+    "act2_ch6_ritual_engagement_on": {
+      "file": "act2_ch6_scenes.json",
+      "act": 2,
+      "chapter": 6
+    },
+    "act3_ch3_alone_continues_on": {
+      "file": "act3_ch3_scenes.json",
+      "act": 3,
+      "chapter": 3
+    },
+    "act1_ch1_tallow_room_on": {
+      "file": "act1_ch1_scenes.json",
+      "act": 1,
+      "chapter": 1
+    },
+    "act3_ch3_the_long_work_on": {
+      "file": "act3_ch3_scenes.json",
+      "act": 3,
+      "chapter": 3
+    },
+    "act3_ch2_rebuilding_on": {
+      "file": "act3_ch2_scenes.json",
+      "act": 3,
+      "chapter": 2
     }
   },
   "starting_scene": "act1_ch1_barge_arrival",

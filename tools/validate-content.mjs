@@ -232,8 +232,9 @@ for (const n of journalNotes.notes) {
 
 // ── The ending list on the title screen ─────────────────────────────────────
 for (const e of index.endings ?? []) {
-  const s = scenes.get(e.id)?.scene
-  if (!s?.ending) err(`master index endings: "${e.id}" is not an ending scene`)
+  // Matched on the ending's id: a long ending can open with a "Go on." step (G15).
+  const s = [...scenes.values()].find(x => x.scene.ending?.id === e.id)?.scene
+  if (!s) err(`master index endings: "${e.id}" is not an ending scene`)
   else if (s.ending.title !== e.title) err(`master index endings: "${e.id}" is titled "${e.title}" but the scene says "${s.ending.title}"`)
 }
 

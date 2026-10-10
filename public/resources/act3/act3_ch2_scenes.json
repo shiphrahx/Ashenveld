@@ -45,10 +45,31 @@
               }
             },
             "text": "Lira runs the herb stall on market days now."
-          },
-          "On the twentieth morning three people come back out of the forest to the east gate. Two men and a woman, thin and barefoot, blinking at the cobbles as if they had forgotten them. They went east months ago. They do not know what month it is.",
-          "The soldiers have them sitting on the ground already. Vorne's sergeant wants them held at the post until somebody can say what they are. Maret has come down from the camp with blankets and will not leave without them."
-        ],
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "go_on",
+          "text": "Go on.",
+          "outcomes": {
+            "default": {
+              "text": "",
+              "next_scene": "act3_ch2_rebuilding_on",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "act3_ch2_rebuilding_on",
+      "act": 3,
+      "chapter": 2,
+      "location": "crestfall_market",
+      "title": "What Staying Looks Like",
+      "text": {
+        "default": "On the twentieth morning three people come back out of the forest to the east gate. Two men and a woman, thin and barefoot, blinking at the cobbles as if they had forgotten them. They went east months ago. They do not know what month it is.\n\nThe soldiers have them sitting on the ground already. Vorne's sergeant wants them held at the post until somebody can say what they are. Maret has come down from the camp with blankets and will not leave without them.",
         "commander": "You have established a rhythm. Mornings: the documentation work with [missing person] and Pol. Afternoons: the political work. The Compact arrangements, the Covenant's reduced presence, the Rootless camp's growing formal role.\n\nVorne has reduced his garrison to twelve soldiers. The remaining twelve are doing useful things: road repair, supply distribution, the practical work of stabilisation that soldiers are good at when they are not being used for something more violent.\n\nYou and Vorne have found, through the friction of working in the same space, something that is not quite respect and is more useful than friendship.",
         "arcane": "The documentation is comprehensive. You have been working with [missing person] for three days on the account of the sealing ritual, the mechanism's structure, the curse's properties and progression.\n\nPol is the most valuable collaborator. Fifteen years of preparation have given her a precision that neither you nor [missing person] can match individually. The three of you together produce something that is both academically rigorous and practically useful.\n\nYou will send copies to three separate institutions when it is complete. Not because you trust any single institution. Because distributing the knowledge is the only way to ensure no single institution controls it.",
         "ranger": "The wildlife recovery is documenting itself in ways you read every morning.\n\nDay seventeen: two sparrow species in the market square.\nDay eighteen: a fox sighting on the north road.\nDay nineteen: the cat that had been sheltering under the north porch moved back inside.\nDay twenty: birdsong before dawn.\n\nThe land is coming back. Slowly, in the order that recovery happens. The smallest and most adaptable first, the larger and more complex later.\n\nYou write it all down. Every morning, every observation. The record will matter when someone needs to understand what the curse was and what the sealing achieved.",
@@ -227,7 +248,10 @@
           }
         }
       ],
-      "objective": "Stay and rebuild."
+      "objective": "Stay and rebuild.",
+      "when": {
+        "part": "morning"
+      }
     },
     {
       "id": "act3_ch2_rebuilding_work",
@@ -448,15 +472,30 @@
         }
       },
       "text": {
-        "default": [
-          "Three days out from Crestfall.",
-          "The road has become ordinary in a way the road into Ashenveld never was. No checkpoint. No wrong silence. No trees leaning in with attention they should not have.",
-          "You and [missing person] walk through a landscape that does not require interpretation. This is more disorienting than you expected.",
-          "They are adjusting to the open world in ways you watch without commenting on. They look at things. Ordinary things, a market in a village, people arguing over a fence line, a dog sleeping in the sun. With an attention that is not anxious, just intense. Fourteen months without ordinary things means they are relearning what ordinary is.",
-          "You let them relearn it. You have nothing better to do.",
-          "On the twentieth morning you wake and they are not beside you. You find them a hundred yards on, sitting upright in the middle of the road, facing east. Their eyes are open. When you say their name they look at you, then at the road, and ask how they got there.",
-          "The traveller on the east road told you the same thing happened to him."
-        ],
+        "default": "Three days out from Crestfall.\n\nThe road has become ordinary in a way the road into Ashenveld never was. No checkpoint. No wrong silence. No trees leaning in with attention they should not have.\n\nYou and [missing person] walk through a landscape that does not require interpretation. This is more disorienting than you expected.\n\nThey are adjusting to the open world in ways you watch without commenting on. They look at things. Ordinary things, a market in a village, people arguing over a fence line, a dog sleeping in the sun. With an attention that is not anxious, just intense. Fourteen months without ordinary things means they are relearning what ordinary is.\n\nYou let them relearn it. You have nothing better to do."
+      },
+      "choices": [
+        {
+          "id": "go_on",
+          "text": "Go on.",
+          "outcomes": {
+            "default": {
+              "text": "",
+              "next_scene": "act3_ch2_on_the_road_on",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "act3_ch2_on_the_road_on",
+      "act": 3,
+      "chapter": 2,
+      "location": "west_road_leaving",
+      "title": "Distance",
+      "text": {
+        "default": "On the twentieth morning you wake and they are not beside you. You find them a hundred yards on, sitting upright in the middle of the road, facing east. Their eyes are open. When you say their name they look at you, then at the road, and ask how they got there.\n\nThe traveller on the east road told you the same thing happened to him.",
         "commander": "The road is a decompression chamber between what you were in Ashenveld and whatever you will be next.\n\nYou think, as you walk, about the work you left unfinished. You made commitments you cannot complete from this distance. You will fulfil them remotely, through letters, through the documentation when it is sent.\n\nYou think about whether leaving was the right decision. You arrive at the same answer each time: it was not the only right decision. It was one right decision among several. You made it and you walk.",
         "arcane": "You are writing as you travel. Not the documentation. That can wait. Something else. The account of what the ritual was like from inside. What the mechanism showed you. What the experience of unified intention actually felt like.\n\nNo text describes this from the inside. You are the first person in the documented record to have done the original sealing ritual and survived to describe it.\n\nYou write carefully. The words you choose for this will be the words that shape how it is understood for as long as the record survives.",
         "ranger": "You are reading the landscape as you travel and the landscape is reading normally.\n\nThat sounds like a small thing. It is not a small thing. Three weeks in Ashenveld with a corrupted ambient made reading the land a different kind of work. Everything had to be filtered through what the curse might be doing to it before you could understand what the land itself was doing.\n\nOrdinary landscape. Ordinary reading. You find yourself grateful for the simplicity in a way you would not have predicted three weeks ago.",
@@ -634,7 +673,10 @@
           }
         }
       ],
-      "objective": "Go west."
+      "objective": "Go west.",
+      "when": {
+        "part": "midday"
+      }
     },
     {
       "id": "act3_ch2_finishing_work",
@@ -858,15 +900,30 @@
         }
       },
       "text": {
-        "default": [
-          "Day twenty.",
-          "You have settled into a rhythm that has nothing to do with the person who is no longer here and everything to do with the people who are.",
-          "Mornings at the camp with Maret and Branch. Afternoons in town, in the Compact post or the shrine or the market, doing the work of rebuilding that requires someone to move between the different parts of Crestfall's power structure without being captured by any of them.",
-          "You are good at this. You have always been good at this. You are doing it alone, which is not new, and doing it in a place you care about, which is.",
-          "The absence of [missing person] is present. You carry it the way you carry a weight you have decided to carry. Consciously, without pretending it is not there.",
-          "Maret checks on you every three days. Not obviously. She is in the same place you are, at the same time, sometimes with a cup of something. You let her.",
-          "On the twentieth day Branch and two others carry the Watcher in from the gate stones on a litter. He does not resist. Pol puts him in the tent nearest the fire, and he sits in it exactly as he sat against the stone, knees drawn up, face turned away."
-        ],
+        "default": "Day twenty.\n\nYou have settled into a rhythm that has nothing to do with the person who is no longer here and everything to do with the people who are.\n\nMornings at the camp with Maret and Branch. Afternoons in town, in the Compact post or the shrine or the market, doing the work of rebuilding that requires someone to move between the different parts of Crestfall's power structure without being captured by any of them.\n\nYou are good at this. You have always been good at this. You are doing it alone, which is not new, and doing it in a place you care about, which is.\n\nThe absence of [missing person] is present. You carry it the way you carry a weight you have decided to carry. Consciously, without pretending it is not there.\n\nMaret checks on you every three days. Not obviously. She is in the same place you are, at the same time, sometimes with a cup of something. You let her."
+      },
+      "choices": [
+        {
+          "id": "go_on",
+          "text": "Go on.",
+          "outcomes": {
+            "default": {
+              "text": "",
+              "next_scene": "act3_ch2_alone_work_on",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "act3_ch2_alone_work_on",
+      "act": 3,
+      "chapter": 2,
+      "location": "rootless_camp",
+      "title": "The Work Without Them",
+      "text": {
+        "default": "On the twentieth day Branch and two others carry the Watcher in from the gate stones on a litter. He does not resist. Pol puts him in the tent nearest the fire, and he sits in it exactly as he sat against the stone, knees drawn up, face turned away.",
         "commander": "Vorne respects you. Not warmly. Professionally. He has seen what you did in the ruins, what you achieved in the negotiations, what you have done in the three weeks since.\n\nHe offers you a formal position in the Compact's regional administration. Not a military one. An advisory role. Access to resources, to the Compact's communication network, to the institutional reach that makes the work you are doing more effective.\n\nYou think about what it would cost. What it would give. You do not decide today.",
         "arcane": "Pol has become the closest thing you have to a collaborator in the work since [missing person] left.\n\nShe is methodical where you are ambitious. She corrects your overclaiming with the precision of someone who has spent forty years distinguishing between what is known and what is believed. Working with her is humbling in the best possible way.\n\nYou are producing work in Ashenveld that will matter. That is not nothing. You hold onto it on the days when what you have given up is loudest.",
         "ranger": "The land is recovering. You document it every morning.\n\nDay twenty: three bird species in the market square. The deer south of the forest edge moving normally. Lira went to the market alone for the first time yesterday and came back with bread and a particular expression. Not happiness exactly, but the direction happiness moves in.\n\nThe work is visible. That helps on the days when other things are not visible.",
@@ -1024,7 +1081,10 @@
         }
       ],
       "objective": "Carry on alone.",
-      "rest": true
+      "rest": true,
+      "when": {
+        "part": "morning"
+      }
     }
   ]
 }

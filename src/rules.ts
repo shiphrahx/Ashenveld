@@ -230,7 +230,8 @@ export const traitsOf = (flags: Record<string, unknown>) => Object.values(TRAITS
 export function traitBonuses(flags: Record<string, unknown>, scene: string, stat: string): Array<{ value: number; label: string }> {
   const out: Array<{ value: number; label: string }> = []
   const S = TRAIT_SCENES
-  const inScene = (list: string[]) => list.includes(scene)
+  const base = (scene ?? '').replace(/_on$/, '')                 // the second half of a split scene (G15)
+  const inScene = (list: string[]) => list.includes(base)
   if (hasTrait(flags, 'listener') && stat === 'charisma' && inScene(S.afflicted)) out.push({ value: 1, label: 'Listener' })
   if (hasTrait(flags, 'blunt') && inScene(S.compact)) out.push({ value: 1, label: 'Blunt' })
   if (hasTrait(flags, 'blunt') && inScene(S.maret)) out.push({ value: -1, label: 'Blunt' })

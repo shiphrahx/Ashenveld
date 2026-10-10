@@ -103,7 +103,32 @@
             },
             "text": "You and [missing person] live in the house on the north lane. Goran's old recommendation, which became available two years after you decided to stay. You have been in it since.",
             "else": "You and [missing person] live in the house on the north lane with the blue door, which became available two years after you decided to stay. You have been in it since."
-          },
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "go_on",
+          "text": "Go on.",
+          "outcomes": {
+            "default": {
+              "text": "",
+              "next_scene": "ending_stays_together_on",
+              "state_changes": {}
+            }
+          }
+        }
+      ],
+      "stage": "ending"
+    },
+    {
+      "id": "ending_stays_together_on",
+      "act": 3,
+      "chapter": 5,
+      "location": "crestfall_market",
+      "title": "The Warden Stays",
+      "text": {
+        "default": [
           "This morning: the market. The fountain. A quality of light that this time of year produces over Crestfall. Not warm exactly, something more honest than warm. You are standing in it and so is [missing person] and the day has not yet told you what it needs.",
           {
             "when": {
@@ -214,7 +239,11 @@
         "id": "ending_stays_together",
         "title": "The Warden Stays"
       },
-      "stage": "ending"
+      "stage": "ending",
+      "when": {
+        "part": "morning",
+        "hide_clock": true
+      }
     },
     {
       "id": "ending_escape_together",
@@ -235,11 +264,31 @@
       },
       "requires": {},
       "text": {
+        "default": "A morning, some time later. Not years. Months. Long enough for things to settle into a pattern.\n\nYou are in a place that does not know your name and does not need to. The quality of anonymity that comes from being somewhere that has not been shaped by anything you did.\n\n[missing person] is beside you. They are having breakfast in a market town they chose because they heard the birds here are interesting. The birds are interesting. They were right.\n\nThe letters from Ashenveld arrive every two weeks. From Maret, from Branch, from Pol. The recovery is ongoing. The work continues without you. This is what you built: something that can continue without you."
+      },
+      "choices": [
+        {
+          "id": "go_on",
+          "text": "Go on.",
+          "outcomes": {
+            "default": {
+              "text": "",
+              "next_scene": "ending_escape_together_on",
+              "state_changes": {}
+            }
+          }
+        }
+      ],
+      "stage": "ending"
+    },
+    {
+      "id": "ending_escape_together_on",
+      "act": 3,
+      "chapter": 5,
+      "location": "west_road_leaving",
+      "title": "The Road West",
+      "text": {
         "default": [
-          "A morning, some time later. Not years. Months. Long enough for things to settle into a pattern.",
-          "You are in a place that does not know your name and does not need to. The quality of anonymity that comes from being somewhere that has not been shaped by anything you did.",
-          "[missing person] is beside you. They are having breakfast in a market town they chose because they heard the birds here are interesting. The birds are interesting. They were right.",
-          "The letters from Ashenveld arrive every two weeks. From Maret, from Branch, from Pol. The recovery is ongoing. The work continues without you. This is what you built: something that can continue without you.",
           "Across the table, [missing person] is eating bread and butter, slowly, as if it were a feast.",
           "You watch them eat breakfast in a market town they chose. This is not what you expected your life to look like. You are not sure what you expected. You are here.",
           {
@@ -360,7 +409,11 @@
         "id": "ending_escape_together",
         "title": "The Road West"
       },
-      "stage": "ending"
+      "stage": "ending",
+      "when": {
+        "part": "morning",
+        "hide_clock": true
+      }
     },
     {
       "id": "ending_alone_legend",
@@ -381,13 +434,31 @@
       },
       "requires": {},
       "text": {
+        "default": "A morning, several years later.\n\nCrestfall. The market square. The fountain running. It has been running for two years now. Nine stalls. Children who do not remember the curse as anything other than a story their parents tell.\n\nThe children call you the Warden. Not a title anyone assigned. A name that accumulated the way names do in small places, from the accumulation of someone always being there, always doing the thing that needed doing, always knowing the answer to the question the town was asking.\n\nYou are not sure you like the name. You have stopped trying to change it.\n\nThis morning: the market. The fountain. The children who do not know what the wrong silence sounded like because they were too young or not yet born. The Rootless camp, now a formal institution with a building and a sign and Lira on the staff. Branch, somewhere on the perimeter, doing whatever Branch does on perimeters.\n\nMaret, crossing the square, who sees you and raises a hand in greeting. The shorthand of two people who have worked together long enough that full greeting is unnecessary."
+      },
+      "choices": [
+        {
+          "id": "go_on",
+          "text": "Go on.",
+          "outcomes": {
+            "default": {
+              "text": "",
+              "next_scene": "ending_alone_legend_on",
+              "state_changes": {}
+            }
+          }
+        }
+      ],
+      "stage": "ending"
+    },
+    {
+      "id": "ending_alone_legend_on",
+      "act": 3,
+      "chapter": 5,
+      "location": "crestfall_market",
+      "title": "The Warden Alone",
+      "text": {
         "default": [
-          "A morning, several years later.",
-          "Crestfall. The market square. The fountain running. It has been running for two years now. Nine stalls. Children who do not remember the curse as anything other than a story their parents tell.",
-          "The children call you the Warden. Not a title anyone assigned. A name that accumulated the way names do in small places, from the accumulation of someone always being there, always doing the thing that needed doing, always knowing the answer to the question the town was asking.",
-          "You are not sure you like the name. You have stopped trying to change it.",
-          "This morning: the market. The fountain. The children who do not know what the wrong silence sounded like because they were too young or not yet born. The Rootless camp, now a formal institution with a building and a sign and Lira on the staff. Branch, somewhere on the perimeter, doing whatever Branch does on perimeters.",
-          "Maret, crossing the square, who sees you and raises a hand in greeting. The shorthand of two people who have worked together long enough that full greeting is unnecessary.",
           {
             "when": {
               "relationship_type": [
@@ -503,7 +574,11 @@
         "id": "ending_alone_legend",
         "title": "The Warden Alone"
       },
-      "stage": "ending"
+      "stage": "ending",
+      "when": {
+        "part": "morning",
+        "hide_clock": true
+      }
     },
     {
       "id": "ending_warden_of_ashenveld",

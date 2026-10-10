@@ -544,7 +544,32 @@
               }
             },
             "text": "Maret takes two steps back."
-          },
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "go_on",
+          "text": "Go on.",
+          "outcomes": {
+            "default": {
+              "text": "",
+              "next_scene": "act2_ch1_missing_person_approach_on",
+              "state_changes": {}
+            }
+          }
+        }
+      ],
+      "stage": "reunion"
+    },
+    {
+      "id": "act2_ch1_missing_person_approach_on",
+      "act": 2,
+      "chapter": 1,
+      "location": "ruins_gate",
+      "title": "Footsteps",
+      "text": {
+        "default": [
           "They come through the gate.",
           "They are changed. You see that immediately and note it as fact before you let yourself feel it. Thinner. They have been eating what the forest gave them. Their eyes have a quality you have seen in people who have been somewhere that altered them. Not the vacancy of the afflicted, something almost opposite: an excess of attention, as if they are seeing more than you are and have been for a long time.",
           {
@@ -658,7 +683,10 @@
           }
         }
       ],
-      "stage": "reunion"
+      "stage": "reunion",
+      "when": {
+        "part": "afternoon"
+      }
     },
     {
       "id": "act2_ch1_reunion",
@@ -694,10 +722,32 @@
           },
           "They talk. You listen first.",
           "Fourteen months. They came in looking for the source of the curse, following the same trail Maret gave them. They reached the marker line and went past it. They found the inner approach and followed it down. And they found the source chamber. The original sealing mechanism, broken, radiating the curse outward through the stone and soil and water of Ashenveld.",
-          "And they found the sealing ritual. The original text, carved into the chamber walls in full. They have spent fourteen months learning to read it.",
-          "\"I can seal it,\" they say. \"I know how. But the ritual requires two people and I have been alone.\"",
-          "They look at you. The implication is clear and was clear from the moment they left the letter on the cairn and the note in the campsite and possibly from the moment they wrote the letter that brought you here."
-        ],
+          "And they found the sealing ritual. The original text, carved into the chamber walls in full. They have spent fourteen months learning to read it."
+        ]
+      },
+      "choices": [
+        {
+          "id": "go_on",
+          "text": "Go on.",
+          "outcomes": {
+            "default": {
+              "text": "",
+              "next_scene": "act2_ch1_reunion_on",
+              "state_changes": {}
+            }
+          }
+        }
+      ],
+      "stage": "reunion"
+    },
+    {
+      "id": "act2_ch1_reunion_on",
+      "act": 2,
+      "chapter": 1,
+      "location": "ruins_gate",
+      "title": "Fourteen Months",
+      "text": {
+        "default": "\"I can seal it,\" they say. \"I know how. But the ritual requires two people and I have been alone.\"\n\nThey look at you. The implication is clear and was clear from the moment they left the letter on the cairn and the note in the campsite and possibly from the moment they wrote the letter that brought you here.",
         "commander": "\"You planned this,\" you say. Not accusingly. Observing.\n\n\"I hoped,\" they say. There is a distinction and you hear it. \"I hoped you would come and I hoped you would be willing and I left markers at every point that I thought would tell you what you were walking toward without telling you what I needed from you.\"\n\nA pause. \"I did not want to ask you before you knew what you were agreeing to.\"\n\nThis is, you note, either the most considerate thing anyone has ever done for you or a form of manipulation so refined it does not feel like manipulation. Possibly both.",
         "arcane": "Part of your mind has been studying this for eleven years, and it takes the information in whole. The original sealing ritual. Two participants. Fourteen months learning a ritual for two, alone.\n\n\"What does the ritual require of the second participant?\" you ask.\n\nThe pause before they answer tells you more than anything else they say.",
         "ranger": "\"You have been in there,\" you say. Meaning the source chamber. \"Past the marker line, in the centre of it.\"\n\n\"Yes.\"\n\n\"For fourteen months.\"\n\n\"Yes.\"\n\nYou look at them. The whole of them, not just their face. What fourteen months in the source chamber does to a person who is not afflicted is something you are looking at for the first time. You are still deciding what you see.",
@@ -851,7 +901,10 @@
           "locked_hint": "Needs the cloth from the campsite"
         }
       ],
-      "stage": "reunion"
+      "stage": "reunion",
+      "when": {
+        "part": "afternoon"
+      }
     },
     {
       "id": "act2_ch1_what_they_found",
@@ -871,10 +924,30 @@
       },
       "requires": {},
       "text": {
+        "default": "They tell you what they know. All of it, in the order they learned it.\n\nThe ruins are the remains of a city that was built to contain the power that now leaks as the curse. The builders knew the power existed. They did not create it, they found it, in the ground, already ancient. They built the city around the containing mechanism, maintained it for generations, and then something happened. Their records stop.\n\nWhat stopped them is not in the ruins. But the mechanism is still there, broken but repairable, and the ritual for repairing it is inscribed on the chamber walls."
+      },
+      "choices": [
+        {
+          "id": "go_on",
+          "text": "Go on.",
+          "outcomes": {
+            "default": {
+              "text": "",
+              "next_scene": "act2_ch1_what_they_found_on",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "act2_ch1_what_they_found_on",
+      "act": 2,
+      "chapter": 1,
+      "location": "ruins_gate",
+      "title": "What Fourteen Months Found",
+      "text": {
         "default": [
-          "They tell you what they know. All of it, in the order they learned it.",
-          "The ruins are the remains of a city that was built to contain the power that now leaks as the curse. The builders knew the power existed. They did not create it, they found it, in the ground, already ancient. They built the city around the containing mechanism, maintained it for generations, and then something happened. Their records stop.",
-          "What stopped them is not in the ruins. But the mechanism is still there, broken but repairable, and the ritual for repairing it is inscribed on the chamber walls.",
           "\"How broken?\" you ask.",
           "\"Functionally broken,\" they say. \"The sealing has been failing for about twenty years. It failed completely three years ago. That is when the curse started spreading.\"",
           {
@@ -958,7 +1031,10 @@
             }
           }
         }
-      ]
+      ],
+      "when": {
+        "part": "evening"
+      }
     },
     {
       "id": "act2_collapse",

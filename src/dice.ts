@@ -22,7 +22,7 @@ export function resolveRoll(roll: Roll, s: GameState): { stat: string; modifier:
   const stat = stats.reduce((a, b) => modifierFor(s, b) > modifierFor(s, a) ? b : a)
   const bonuses = (roll.bonus ?? []).filter(b => meets(b.when, s))
   // Traits earned at the act breaks (G14).
-  for (const t of traitBonuses(s.flags, s.current_scene, stat)) bonuses.push({ when: {}, ...t })
+  for (const t of traitBonuses(s.flags ?? {}, s.current_scene, stat)) bonuses.push({ when: {}, ...t })
   // Worn thin: low Resolve makes enduring and sensing harder (G9).
   if (s.player.resources.health <= WORN_THIN && (stat === 'stamina' || stat === 'mana'))
     bonuses.push({ when: {}, value: -2, label: 'You are worn thin' })

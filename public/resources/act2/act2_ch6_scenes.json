@@ -262,11 +262,31 @@
         }
       },
       "text": {
+        "default": "The engagement phase is where the ritual reads you.\n\nYou and [missing person] take the positions the text describes. Locations in the chamber, facing the mechanism just so. The fragment is placed at the midpoint between you, on the floor, touching the chamber stone.\n\nThe effect begins immediately.\n\nNot painful. Not frightening. What the mechanism does in this phase is not a threat. It is the sensation of being seen. Completely. The parts of yourself you manage, the parts you suppress, the parts you have not looked at directly in years. All of it equally visible, equally present, equally real."
+      },
+      "choices": [
+        {
+          "id": "go_on",
+          "text": "Go on.",
+          "outcomes": {
+            "default": {
+              "text": "",
+              "next_scene": "act2_ch6_ritual_engagement_on",
+              "state_changes": {}
+            }
+          }
+        }
+      ],
+      "stage": "ritual"
+    },
+    {
+      "id": "act2_ch6_ritual_engagement_on",
+      "act": 2,
+      "chapter": 6,
+      "location": "ruins_source_chamber",
+      "title": "The Engagement",
+      "text": {
         "default": [
-          "The engagement phase is where the ritual reads you.",
-          "You and [missing person] take the positions the text describes. Locations in the chamber, facing the mechanism just so. The fragment is placed at the midpoint between you, on the floor, touching the chamber stone.",
-          "The effect begins immediately.",
-          "Not painful. Not frightening. What the mechanism does in this phase is not a threat. It is the sensation of being seen. Completely. The parts of yourself you manage, the parts you suppress, the parts you have not looked at directly in years. All of it equally visible, equally present, equally real.",
           {
             "when": {
               "relationship_type": [
@@ -612,7 +632,10 @@
           }
         }
       ],
-      "stage": "ritual"
+      "stage": "ritual",
+      "when": {
+        "part": "midday"
+      }
     },
     {
       "id": "act2_ch6_ritual_sealing",

@@ -56,7 +56,31 @@
               "lowest_faction": "rootless"
             },
             "text": "The settlement held until a Compact patrol walked through the camp at night. Branch walked them back out to the road. Nobody has called a meeting since."
-          },
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "go_on",
+          "text": "Go on.",
+          "outcomes": {
+            "default": {
+              "text": "",
+              "next_scene": "act3_ch3_the_long_work_on",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "act3_ch3_the_long_work_on",
+      "act": 3,
+      "chapter": 3,
+      "location": "crestfall_market",
+      "title": "A Month In",
+      "text": {
+        "default": [
           {
             "when": {
               "flags": {
@@ -143,7 +167,10 @@
           }
         }
       ],
-      "objective": "Stay and rebuild."
+      "objective": "Stay and rebuild.",
+      "when": {
+        "part": "morning"
+      }
     },
     {
       "id": "act3_ch3_road_further",
@@ -272,16 +299,30 @@
         }
       },
       "text": {
-        "default": [
-          "Day thirty.",
-          "You have been in Ashenveld a month. You have been alone in Ashenveld for two weeks. The two weeks since they left.",
-          "You are not going to lie to yourself about this: it is hard. Not the work. You have the work and the work is good and necessary and uses you well. The hard part is the quality of the evenings, when the work is done and the Tallow is quiet and the fire is lower than it should be.",
-          "You manage it the way you manage most difficult things: by doing the next thing. By keeping the list current. By talking to the people who are here, Maret, Branch, Lira, Pol, and finding in those conversations what ordinary evenings should contain.",
-          "It is not the same. It is enough.",
-          "On the thirtieth day Joren speaks. A whole sentence, in a voice that has not been used for a year, to Pol, who is changing the water by his bed.",
-          "\"Is there anyone left in Harrow?\"",
-          "Pol looks at you. Somebody has to answer him."
-        ],
+        "default": "Day thirty.\n\nYou have been in Ashenveld a month. You have been alone in Ashenveld for two weeks. The two weeks since they left.\n\nYou are not going to lie to yourself about this: it is hard. Not the work. You have the work and the work is good and necessary and uses you well. The hard part is the quality of the evenings, when the work is done and the Tallow is quiet and the fire is lower than it should be.\n\nYou manage it the way you manage most difficult things: by doing the next thing. By keeping the list current. By talking to the people who are here, Maret, Branch, Lira, Pol, and finding in those conversations what ordinary evenings should contain.\n\nIt is not the same. It is enough."
+      },
+      "choices": [
+        {
+          "id": "go_on",
+          "text": "Go on.",
+          "outcomes": {
+            "default": {
+              "text": "",
+              "next_scene": "act3_ch3_alone_continues_on",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "act3_ch3_alone_continues_on",
+      "act": 3,
+      "chapter": 3,
+      "location": "rootless_camp",
+      "title": "The Shape of Staying Alone",
+      "text": {
+        "default": "On the thirtieth day Joren speaks. A whole sentence, in a voice that has not been used for a year, to Pol, who is changing the water by his bed.\n\n\"Is there anyone left in Harrow?\"\n\nPol looks at you. Somebody has to answer him.",
         "commander": "Vorne sought you out last week. He offered you a formal position in the regional administration. Advisory, well-resourced, meaningful.\n\nYou have been thinking about it for seven days. The position would give you institutional reach. It would also give you a reason to stay in Ashenveld that does not require you to examine too closely why staying feels necessary.\n\nYou think about whether those two things can be separated.",
         "arcane": "The work is good. The documentation is complete and distributed. Pol has become a collaborator in the ongoing observation of the curse's recession. You are building a monitoring system that can function without you if you leave, or with you if you stay.\n\nThe question of whether you stay is one you are answering by making both options viable simultaneously. You recognise this strategy. You have used it before. It is usually what you do when you do not want to make a decision and cannot admit it.",
         "ranger": "The Watcher at the ruins gate, the person you could not reach, who said your name once in the chamber approach, came back into the ordinary world on day twenty-seven.\n\nNot fully. Not immediately. But Branch found them at the forest edge, moving slowly, in the direction of Crestfall, and brought them to the camp.\n\nThey do not speak. They sit in the herb garden for hours. Pol tends them. Their hands have stopped being still. They move slightly now, tracking the plants, the light. Something is returning.\n\nYou visit them every morning. You do not need them to speak to you. You are glad they are here.",
@@ -354,7 +395,10 @@
         }
       ],
       "objective": "Carry on alone.",
-      "rest": true
+      "rest": true,
+      "when": {
+        "part": "morning"
+      }
     }
   ]
 }

@@ -21,10 +21,30 @@
       },
       "requires": {},
       "text": {
+        "default": "You walk the east road back to Crestfall.\n\nThree of you: you, [missing person], Pol. Seriva and her soldiers took a different route. Not avoiding you exactly, but not walking with you either.\n\n[missing person] is walking in ordinary daylight for the first time in fourteen months. They do not say this. They do not need to. You can see it in how they look at the light coming through the ordinary trees. The trees that are normal, the trees with birds in them, the trees whose bark is the right colour."
+      },
+      "choices": [
+        {
+          "id": "go_on",
+          "text": "Go on.",
+          "outcomes": {
+            "default": {
+              "text": "",
+              "next_scene": "act2_ch7_aftermath_crestfall_on",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "act2_ch7_aftermath_crestfall_on",
+      "act": 2,
+      "chapter": 7,
+      "location": "east_road_return",
+      "title": "Walking Back",
+      "text": {
         "default": [
-          "You walk the east road back to Crestfall.",
-          "Three of you: you, [missing person], Pol. Seriva and her soldiers took a different route. Not avoiding you exactly, but not walking with you either.",
-          "[missing person] is walking in ordinary daylight for the first time in fourteen months. They do not say this. They do not need to. You can see it in how they look at the light coming through the ordinary trees. The trees that are normal, the trees with birds in them, the trees whose bark is the right colour.",
           "Somewhere, two miles back, the deep forest begins. It is still wrong in there. The sealing stops the spread but it does not reverse fourteen months of transformation overnight. The Watcher is still at the gate. The ruins are still ruins.",
           {
             "when": {
@@ -78,7 +98,10 @@
             }
           }
         }
-      ]
+      ],
+      "when": {
+        "part": "morning"
+      }
     },
     {
       "id": "act2_ch7_crestfall_reception",

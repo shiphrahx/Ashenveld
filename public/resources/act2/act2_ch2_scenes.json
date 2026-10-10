@@ -25,7 +25,30 @@
         }
       },
       "text": {
-        "default": "They lead you through the outskirts with the ease of someone who has done this hundreds of times. They know which stones to avoid, which routes are denser with the curse's effect, which areas are safer. Fourteen months of learning this place the hard way.\n\nThe inner approach begins at a point. What appears from the outside to be a collapsed wall turns out, from the right angle, to be the entrance to a downward passage. The ground slopes gradually. The walls close in. The stone here is older than the stone above. Darker, smoother, the texture that comes from centuries of human hands.\n\nThe carvings begin here.\n\nThey cover every surface. Walls, ceiling, even sections of the floor. Dense, deliberate, a text that has no white space, as if whoever wrote it was working against time and needed every surface. You cannot read a word of it. [missing person] can read some of it, incompletely, the way you might read a language learned in adulthood. Halting, approximate, missing idiom.",
+        "default": "They lead you through the outskirts with the ease of someone who has done this hundreds of times. They know which stones to avoid, which routes are denser with the curse's effect, which areas are safer. Fourteen months of learning this place the hard way.\n\nThe inner approach begins at a point. What appears from the outside to be a collapsed wall turns out, from the right angle, to be the entrance to a downward passage. The ground slopes gradually. The walls close in. The stone here is older than the stone above. Darker, smoother, the texture that comes from centuries of human hands."
+      },
+      "choices": [
+        {
+          "id": "go_on",
+          "text": "Go on.",
+          "outcomes": {
+            "default": {
+              "text": "",
+              "next_scene": "act2_ch2_inner_approach_on",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "act2_ch2_inner_approach_on",
+      "act": 2,
+      "chapter": 2,
+      "location": "ruins_inner_approach",
+      "title": "Going Down",
+      "text": {
+        "default": "The carvings begin here.\n\nThey cover every surface. Walls, ceiling, even sections of the floor. Dense, deliberate, a text that has no white space, as if whoever wrote it was working against time and needed every surface. You cannot read a word of it. [missing person] can read some of it, incompletely, the way you might read a language learned in adulthood. Halting, approximate, missing idiom.",
         "commander": "You walk the approach as you would walk any unfamiliar position. Reading it for tactical information, for cover, for sight lines, for the places where you would want to be if something came from either direction.\n\nThe approach is a corridor and corridors are bad. But the carvings create uneven surfaces that would complicate any mass movement through here. Whoever built this was not expecting to defend it with military force. They were expecting to defend it with knowledge.",
         "arcane": "The carvings are consuming your peripheral attention even as you walk. You are reading them the way you read things when you are not supposed to be reading them. Catching fragments, building partial translations, trying to hold them all simultaneously.\n\nThe language is old. Older than any tradition you know. But it shares structural features with several dead languages you have studied, and from those features you can extract. Not words, but principles. The way sentences work. The way causation is expressed.\n\nYou will need to come back here with proper time.",
         "ranger": "You walk the approach with your hand off the wall, you learned from the outskirts passage that the stone here is not neutral, and read the space the way you would read a burrow or a den.\n\nSomething has lived in this passage. Not recently. The signs are old. But before the ruins were abandoned, this was inhabited space. The wear patterns on the floor suggest regular traffic over centuries. This was not a ritual entrance. It was a corridor people used every day.",
@@ -81,7 +104,10 @@
             }
           }
         }
-      ]
+      ],
+      "when": {
+        "part": "morning"
+      }
     },
     {
       "id": "act2_ch2_hidden_passage",
@@ -303,7 +329,30 @@
       },
       "requires": {},
       "text": {
-        "default": "The chamber is large and mostly intact.\n\nThe ceiling has collapsed in one section, leaving a gap through which you can see no sky. Just more stone, deeper layers of the buried city above. The walls are carved from floor to the collapsed section, the same dense text as the passage but supplemented here with diagrams, schematics, the visual language of engineering applied to something that is not quite engineering.\n\nAt the centre: the mechanism.\n\nIt is approximately three metres across, made of a fused material that is neither fully stone nor fully metal, and it is broken. You can see the break. A catastrophic fracture through its primary element, the kind of damage that does not happen from age or erosion. Something struck it. Something very deliberately struck it.\n\nFrom the break, very faintly visible in the chamber's light, a thread of something. Not smoke. Not light. Something that has no analogue in your experience of the visible world, rising from the fracture and dispersing into the air of the chamber and from there, you now understand, outward through every geological connection this place has with the wider world.",
+        "default": "The chamber is large and mostly intact.\n\nThe ceiling has collapsed in one section, leaving a gap through which you can see no sky. Just more stone, deeper layers of the buried city above. The walls are carved from floor to the collapsed section, the same dense text as the passage but supplemented here with diagrams, schematics, the visual language of engineering applied to something that is not quite engineering."
+      },
+      "choices": [
+        {
+          "id": "go_on",
+          "text": "Go on.",
+          "outcomes": {
+            "default": {
+              "text": "",
+              "next_scene": "act2_ch2_source_chamber_on",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "act2_ch2_source_chamber_on",
+      "act": 2,
+      "chapter": 2,
+      "location": "ruins_source_chamber",
+      "title": "The Source",
+      "text": {
+        "default": "At the centre: the mechanism.\n\nIt is approximately three metres across, made of a fused material that is neither fully stone nor fully metal, and it is broken. You can see the break. A catastrophic fracture through its primary element, the kind of damage that does not happen from age or erosion. Something struck it. Something very deliberately struck it.\n\nFrom the break, very faintly visible in the chamber's light, a thread of something. Not smoke. Not light. Something that has no analogue in your experience of the visible world, rising from the fracture and dispersing into the air of the chamber and from there, you now understand, outward through every geological connection this place has with the wider world.",
         "commander": "You assess the mechanism the way you would assess a damaged fortification. The break is intentional. The angle of the fracture, the distribution of the damage, all consistent with a precise and deliberate strike rather than an accident or structural failure.\n\nSomeone broke this on purpose. Deliberately, carefully, knowing what they were doing and doing it anyway.\n\nYou look at the mechanism and think of Seriva.",
         "arcane": "You stand at the safe distance [missing person] indicated and read the chamber walls with everything you have.\n\nThe mechanism is a binding of the first order. Not a cage, not a container, but a transformation. The builders did not seal the power away. They gave it a form. The city itself, the life of the city, the continuous human activity of maintenance and ritual and presence. The power was not imprisoned. It was given something to be.\n\nWhen the city was abandoned, the form dissolved. And the power reverted to what it was before the form was given: formless, directionless, transforming everything it touched into the purest version of itself.\n\nYou understand the curse completely for the first time. And you understand why the ritual requires two people.",
         "ranger": "The chamber smells like nothing you have ever encountered. Not bad. Not good. The smell of something very old that has been operating continuously and has never had occasion to develop an odour because it has never stopped to be anything other than what it is.\n\nYou track the mechanism the way you track anything potentially dangerous. From a respectful distance, reading its behaviour, looking for the patterns that would tell you when it is safe to move closer and when it is not.\n\nIt breathes. In a sense. A pulse, slow, like the mechanism is doing something that corresponds to breathing.",
@@ -494,7 +543,10 @@
             }
           }
         }
-      ]
+      ],
+      "when": {
+        "part": "midday"
+      }
     },
     {
       "id": "act2_ch2_decision_to_return",
@@ -514,10 +566,30 @@
       },
       "requires": {},
       "text": {
+        "default": "You have been in the chamber for over an hour. [missing person] is watching you with the attention of someone monitoring for the first signs of overexposure.\n\n\"We should leave,\" they say. \"For today.\"\n\nYou feel the effects of the chamber. Not acutely, not dangerously, but present. A slight narrowing at the edges. A quality of distance between yourself and the things that usually feel immediate."
+      },
+      "choices": [
+        {
+          "id": "go_on",
+          "text": "Go on.",
+          "outcomes": {
+            "default": {
+              "text": "",
+              "next_scene": "act2_ch2_decision_to_return_on",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "act2_ch2_decision_to_return_on",
+      "act": 2,
+      "chapter": 2,
+      "location": "ruins_source_chamber",
+      "title": "We Need to Go Back",
+      "text": {
         "default": [
-          "You have been in the chamber for over an hour. [missing person] is watching you with the attention of someone monitoring for the first signs of overexposure.",
-          "\"We should leave,\" they say. \"For today.\"",
-          "You feel the effects of the chamber. Not acutely, not dangerously, but present. A slight narrowing at the edges. A quality of distance between yourself and the things that usually feel immediate.",
           "\"The ritual,\" you say. \"Are we doing it?\"",
           "They look at you for a moment. \"I would like to,\" they say. \"But you came here for me and I am asking you to risk yourself for Ashenveld. Those are different things. I want you to choose it, not be led into it.\" A pause. \"We go back to the outskirts. You sleep. Tomorrow you tell me what you want to do.\"",
           {
@@ -577,7 +649,10 @@
             }
           }
         }
-      ]
+      ],
+      "when": {
+        "part": "afternoon"
+      }
     }
   ]
 }
