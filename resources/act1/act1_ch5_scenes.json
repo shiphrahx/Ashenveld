@@ -21,11 +21,11 @@
       },
       "requires": {},
       "text": {
-        "default": "You are crossing the market square when it happens.\n\nA woman near the fountain stops walking. Not gradually — she simply stops, between one step and the next, as if the thought that was powering the walking completed and no other thought came to replace it. She stands with one foot slightly ahead of the other, her shopping basket held in both hands, her eyes open and fixed on nothing in particular.\n\nThree people nearby see it. Two of them look away immediately, with the practised efficiency of people who have developed the reflex of not seeing. One — an older man — takes a step toward her and then stops himself.\n\nYou do not look away.",
-        "commander": "You cross to her directly. Not running — running attracts attention and attention does not help her.\n\nClose up, the stillness is total. Her breathing is normal. Her eyes track — slightly, infinitesimally — when you move in front of her. She is in there. Just somewhere behind the expression that has stopped.\n\n\"Can you hear me?\" you say.",
-        "arcane": "You feel the event before you see it — a pulse in the ambient, a moment where the curse's frequency intensifies and then subsides. Then the woman stops.\n\nYou cross to her and read her carefully, letting your perception extend. The curse is dense on her — months of exposure, accumulated and unaddressed. What you are seeing is not the beginning. It is a transition point.",
-        "ranger": "Your instinct fires before your understanding catches up — you have been reading this town's patterns for three days and you know that what just happened to the woman is the thing that happens, the specific thing.\n\nYou go to her. Your hands know how to approach something that might startle.",
-        "cipher": "You read the room in the two seconds after it happens. Two people who looked away — they have seen this before, they have developed the specific numbness of people who cannot fix something and have decided not to feel it. The older man who stepped forward — he knows her.\n\nYou go to her because going to her puts you at the centre of what happens next, which is where information is."
+        "default": "You are crossing the market square when it happens.\n\nA woman near the fountain stops walking. Not gradually. She simply stops, between one step and the next, as if the thought that was powering the walking completed and no other thought came to replace it. She stands with one foot slightly ahead of the other, her shopping basket held in both hands, her eyes open and fixed on nothing in particular.\n\nThree people nearby see it. Two of them look away immediately, with the practised efficiency of people who have developed the reflex of not seeing. One, an older man, takes a step toward her and then stops himself.\n\nYou do not look away.",
+        "commander": "You cross to her directly. Not running. Running attracts attention and attention does not help her.\n\nClose up, the stillness is total. Her breathing is normal. Her eyes track, slightly, infinitesimally, when you move in front of her. She is in there. Just somewhere behind the expression that has stopped.\n\n\"Can you hear me?\" you say.",
+        "arcane": "You feel the event before you see it. A pulse in the ambient, a moment where the curse's frequency intensifies and then subsides. Then the woman stops.\n\nYou cross to her and read her carefully, letting your perception extend. The curse is dense on her — months of exposure, accumulated and unaddressed. What you are seeing is not the beginning. It is a transition point.",
+        "ranger": "Your instinct fires before your understanding catches up. You have been reading this town's patterns for three days and you know that what just happened to the woman is the thing that happens, the thing.\n\nYou go to her. Your hands know how to approach something that might startle.",
+        "cipher": "You read the room in the two seconds after it happens. Two people who looked away. They have seen this before, they have developed the numbness of people who cannot fix something and have decided not to feel it. The older man who stepped forward. He knows her.\n\nYou go to her because going to her puts you at the centre of what happens next, which is where information is."
       },
       "choices": [
         {
@@ -38,7 +38,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "The older man gives you her name. You use it.\n\nSomething in her responds — not movement, not speech, but a shifting of attention, the curse's distance contracting slightly. You talk to her. You say her name twice more. You tell her she is in the market square and it is morning and the basket in her hands is heavy and she should probably put it down.\n\nShe puts it down. Then she blinks. Then she looks at you with the specific bewilderment of someone surfacing from somewhere cold.\n\n\"I am sorry,\" she says. She does not know what she is apologising for.",
+              "text": "The older man gives you her name. You use it.\n\nSomething in her responds. Not movement, not speech, but a shifting of attention, the curse's distance contracting slightly. You talk to her. You say her name twice more. You tell her she is in the market square and it is morning and the basket in her hands is heavy and she should probably put it down.\n\nShe puts it down. Then she blinks. Then she looks at you with the bewilderment of someone surfacing from somewhere cold.\n\n\"I am sorry,\" she says. She does not know what she is apologising for.",
               "next_scene": "act1_ch5_faction_responses",
               "state_changes": {
                 "flags": {
@@ -52,7 +52,7 @@
               }
             },
             "success_at_cost": {
-              "text": "You talk to her. She does not fully surface — but the episode ends on its own after several minutes. She comes back to herself in stages, not fully, and looks at the basket in her hands as if surprised to be holding it.\n\nYou were there. That is something, even if the something is small.",
+              "text": "You talk to her. She does not fully surface. But the episode ends on its own after several minutes. She comes back to herself in stages, not fully, and looks at the basket in her hands as if surprised to be holding it.\n\nYou were there. That is something, even if the something is small.",
               "next_scene": "act1_ch5_faction_responses",
               "state_changes": {}
             },
@@ -138,7 +138,7 @@
               "state_changes": {}
             },
             "failure": {
-              "text": "You watch but the curse event is ordinary enough to the market that the specific information it carries is lost in the backdrop of normalcy. Something happened. The town notes nothing.",
+              "text": "You watch but the curse event is ordinary enough to the market that the information it carries is lost in the backdrop of normalcy. Something happened. The town notes nothing.",
               "next_scene": "act1_ch5_faction_responses",
               "state_changes": {}
             }
@@ -162,8 +162,8 @@
       "text": {
         "default": [
           "In the hour after the episode in the market, you see all three factions respond to the same event in ways that tell you exactly who they are.",
-          "Two Compact soldiers arrive seven minutes after the woman recovers. They ask questions — efficient, recorded, impersonal. They want to know how long, whether she has had episodes before, who her family is. They write things down. They leave.",
-          "A Covenant priest arrives twelve minutes after that. He speaks to the woman's neighbour — not to the woman herself — and leaves a small parcel of herbs with specific instructions. He does not charge. He also does not say whether the herbs will help.",
+          "Two Compact soldiers arrive seven minutes after the woman recovers. They ask questions. Efficient, recorded, impersonal. They want to know how long, whether she has had episodes before, who her family is. They write things down. They leave.",
+          "A Covenant priest arrives twelve minutes after that. He speaks to the woman's neighbour, not to the woman herself, and leaves a small parcel of herbs with specific instructions. He does not charge. He also does not say whether the herbs will help.",
           "A young man from the Rootless camp arrives twenty minutes after the episode ended. He does not ask questions. He sits with the woman for forty minutes and then helps her carry her basket home.",
           {
             "when": {
@@ -175,9 +175,9 @@
           }
         ],
         "commander": "You watch all three responses with the tactical eye.\n\nThe Compact is gathering data. The Covenant is offering palliative treatment. The Rootless are doing the human thing, which is also the least scalable thing, which is also the most immediately useful thing.\n\nAll three are genuine. All three are inadequate. The question is which inadequacy you can work with.",
-        "arcane": "Three responses. Each contains information about what that faction actually believes.\n\nThe Compact's questions are about pattern — they are looking for data across cases. The Covenant's herbs are from a specific tradition that suggests they have a text-based knowledge of the curse's effect. The Rootless response is experiential — they know what helps and the knowledge is embodied rather than documented.\n\nYou want access to all three knowledge bases. You probably cannot have all three without complications.",
+        "arcane": "Three responses. Each contains information about what that faction actually believes.\n\nThe Compact's questions are about pattern. They are looking for data across cases. The Covenant's herbs are from a tradition that suggests they have a text-based knowledge of the curse's effect. The Rootless response is experiential. They know what helps and the knowledge is embodied rather than documented.\n\nYou want access to all three knowledge bases. You probably cannot have all three without complications.",
         "ranger": "Three responses. Each one an advertisement for their own approach.\n\nCompact: organised, systematic. Covenant: certain, prepared, working from a playbook. Rootless: adaptive, present, doing what is in front of them.\n\nYou know which kind of approach survives in hostile territory. The Rootless have been here longest and are still here.",
-        "cipher": "Three factions. Three responses. Each one an advertisement for their own approach.\n\nNone of them are actually stopping the curse. They are all responding to it. That gap — between response and solution — is where the game is."
+        "cipher": "Three factions. Three responses. Each one an advertisement for their own approach.\n\nNone of them are actually stopping the curse. They are all responding to it. That gap, between response and solution, is where the game is."
       },
       "choices": [
         {
@@ -190,7 +190,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "One of them — older, more senior — gives you a surprisingly direct answer.\n\n\"We are tracking the progression rate,\" he says. \"How quickly episodes become permanent. Whether there are environmental factors that accelerate or slow the process.\" He looks at his notes. \"The answer to your next question is: we do not know yet what we will do with the data. Commander Vorne is waiting for enough data to act.\"\n\nThe specific quality of waiting for enough data in a town that is getting worse: you note it.",
+              "text": "One of them, older, more senior, gives you a surprisingly direct answer.\n\n\"We are tracking the progression rate,\" he says. \"How quickly episodes become permanent. Whether there are environmental factors that accelerate or slow the process.\" He looks at his notes. \"The answer to your next question is: we do not know yet what we will do with the data. Commander Vorne is waiting for enough data to act.\"\n\nThe quality of waiting for enough data in a town that is getting worse: you note it.",
               "next_scene": "act1_ch5_player_curse_touch",
               "state_changes": {
                 "flags": {
@@ -256,7 +256,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "He walks back through the trees at a pace that suggests he does this regularly. When you catch up he does not seem surprised.\n\n\"You watched,\" he says. Not accusing.\n\n\"I wanted to understand what you were doing.\"\n\n\"Sitting,\" he says. \"Just sitting.\" He pauses. \"Maret says the worst part of it is feeling alone in it. So we try not to let them be alone in it. Even if sitting does not fix anything.\"\n\nHe shrugs. It is a specific kind of shrug — the one that contains the whole of a position held in the face of its own inadequacy.",
+              "text": "He walks back through the trees at a pace that suggests he does this regularly. When you catch up he does not seem surprised.\n\n\"You watched,\" he says. Not accusing.\n\n\"I wanted to understand what you were doing.\"\n\n\"Sitting,\" he says. \"Just sitting.\" He pauses. \"Maret says the worst part of it is feeling alone in it. So we try not to let them be alone in it. Even if sitting does not fix anything.\"\n\nHe shrugs. It is a kind of shrug. The one that contains the whole of a position held in the face of its own inadequacy.",
               "next_scene": "act1_ch5_player_curse_touch",
               "state_changes": {
                 "factions": {
@@ -301,9 +301,9 @@
       },
       "requires": {},
       "text": {
-        "default": "It happens that evening in the Tallow, without warning or ceremony.\n\nYou are sitting at your usual table going over what you know, and you touch the wall beside you — a reflex, adjusting your balance — and the wall is wrong.\n\nNot structurally. Not visibly. But your hand registers something under the surface of it, a cold that is not cold, a vibration that is not movement, a sense of a note being held somewhere below the audible range. It is in the wall. It is in the building. It is in the ground under the building.\n\nFor three or four seconds, everything that is not the note becomes slightly less interesting.\n\nThen it passes. You lift your hand from the wall. The room comes back to full volume.",
-        "commander": "You sit with it for a moment after it passes. A soldier learns to catalogue unusual sensory experiences rather than react to them.\n\nYou noted the content: a diminishment of interest in everything external. Not unpleasant. That is the part worth remembering — it was not unpleasant. It would be easy to touch the wall again.\n\nYou do not touch the wall again.",
-        "arcane": "You sit with your hand raised and read what you just felt with the precision of someone trained to do exactly this.\n\nThe curse is in the infrastructure of the town. Not the air — the ground, the stone, the accumulated material of a place that has been standing in its vicinity for long enough that the boundary between inside and outside has blurred.\n\nYou write: first personal contact with the active effect. Duration: three to four seconds. Subjective quality: a narrowing of attention. Not painful. Significantly easier to understand why people do not resist it.",
+        "default": "It happens that evening in the Tallow, without warning or ceremony.\n\nYou are sitting at your usual table going over what you know, and you touch the wall beside you, a reflex, adjusting your balance, and the wall is wrong.\n\nNot structurally. Not visibly. But your hand registers something under the surface of it, a cold that is not cold, a vibration that is not movement, a sense of a note being held somewhere below the audible range. It is in the wall. It is in the building. It is in the ground under the building.\n\nFor three or four seconds, everything that is not the note becomes slightly less interesting.\n\nThen it passes. You lift your hand from the wall. The room comes back to full volume.",
+        "commander": "You sit with it for a moment after it passes. A soldier learns to catalogue unusual sensory experiences rather than react to them.\n\nYou noted the content: a diminishment of interest in everything external. Not unpleasant. That is the part worth remembering. It was not unpleasant. It would be easy to touch the wall again.\n\nYou do not touch the wall again.",
+        "arcane": "You sit with your hand raised and read what you just felt with the precision of someone trained to do exactly this.\n\nThe curse is in the infrastructure of the town. Not the air. The ground, the stone, the accumulated material of a place that has been standing in its vicinity for long enough that the boundary between inside and outside has blurred.\n\nYou write: first personal contact with the active effect. Duration: three to four seconds. Subjective quality: a narrowing of attention. Not painful. Significantly easier to understand why people do not resist it.",
         "ranger": "Your instinct fires immediately. Something touched you through the wall.\n\nYou move away from the wall without deciding to. Your body decided first. You sit in the centre of the room and note that the centre of the room feels different from the edges. The edges are where the building meets the ground, and the ground is where it is.\n\nYou stop touching walls.",
         "cipher": "You note the experience with the detachment of someone cataloguing intelligence.\n\nDuration: three to four seconds. Subjective quality: a reduction in the importance of everything outside the experience. Not painful. Not frightening, which is the significant part. You can understand how this becomes habitual. How someone, in a difficult life in a difficult place, would choose the moment of reduced importance over and over until the choosing became the thing they were.\n\nYou do not touch the wall again."
       },
@@ -405,9 +405,9 @@
       "requires": {},
       "text": {
         "default": "The night passes. You sit with what you now know and what you still do not know, and you make a list.\n\nYou know: [missing person] was here fourteen months ago, went east, left a letter with Maret. You know the curse is real and you have felt it. You know the ruins are the source. You know three factions each want something from that source. You know Maret has an arrangement she will not fully explain.\n\nYou do not know: what is actually in the ruins. What happened to [missing person] specifically. Whether the letter they left is a warning, an invitation, or both.\n\nThe east road. Tomorrow.",
-        "commander": "You run the list the way you would run a mission briefing. Known. Unknown. Resources. Risks.\n\nKnown: direction, destination, approximate timeline, three factional agendas.\nUnknown: what is in the ruins. Where [missing person] is now.\nResources: whatever you were paid, your skills, two factional relationships you have not fully committed to.\nRisks: the curse, the forest, the factions working at cross-purposes, and the specific risk of caring too much about the outcome.\n\nThe last one is the one you can not quantify. You note it and set it aside.",
+        "commander": "You run the list the way you would run a mission briefing. Known. Unknown. Resources. Risks.\n\nKnown: direction, destination, approximate timeline, three factional agendas.\nUnknown: what is in the ruins. Where [missing person] is now.\nResources: whatever you were paid, your skills, two factional relationships you have not fully committed to.\nRisks: the curse, the forest, the factions working at cross-purposes, and the risk of caring too much about the outcome.\n\nThe last one is the one you can not quantify. You note it and set it aside.",
         "arcane": "You write a final entry before the lamp goes out.\n\nThe frequency I have been feeling since arriving in Ashenveld is strongest in the east. It is consistent with a single stationary source radiating outward. The ruins.\n\nThe curse is not malevolent in the way a person is malevolent. It simply exists and its existence has consequences. The question is not what it wants. The question is what we do with something that does not want anything and is destroying everything anyway.\n\nI am going to find out.",
-        "ranger": "You check your pack in the dark, by feel. Everything in order. Everything necessary.\n\nThe east road will be different from the roads you know. The terrain is hostile in a way that is not just weather or predators — the land itself has been changed by whatever is in the ruins. You will need to read it differently.\n\nYou have read things differently before. You will manage.",
+        "ranger": "You check your pack in the dark, by feel. Everything in order. Everything necessary.\n\nThe east road will be different from the roads you know. The terrain is hostile in a way that is not just weather or predators. The land itself has been changed by whatever is in the ruins. You will need to read it differently.\n\nYou have read things differently before. You will manage.",
         "cipher": "One final catalogue before sleep.\n\nPeople who know things: Maret, Aldous, Edric, Corvin. Each one has given you something and kept something back.\n\nPeople who want things from you: Cael, Edric, possibly Maret.\n\nPeople who might matter most: Lira, Branch, the old woman in the market who fed her daughter.\n\n[missing person]: east, fourteen months ago, smiling when they went in.\n\nYou. Going east tomorrow."
       },
       "choices": [
@@ -570,7 +570,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You put out the lamp and sleep with the specific discipline of someone who has learned that rest before a difficult day is a resource, not an indulgence.",
+              "text": "You put out the lamp and sleep with the discipline of someone who has learned that rest before a difficult day is a resource, not an indulgence.",
               "next_scene": "act1_ch6_departure_decision",
               "state_changes": {
                 "world": {

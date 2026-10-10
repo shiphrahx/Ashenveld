@@ -39,7 +39,7 @@
                 ]
               }
             },
-            "text": "You pack what you have. At the Tallow's bar, Aldous gives you bread for the road without being asked and charges you three coins less than the posted rate, which is his specific language for: I hope you come back."
+            "text": "You pack what you have. At the Tallow's bar, Aldous gives you bread for the road without being asked and charges you three coins less than the posted rate, which is his language for: I hope you come back."
           },
           {
             "when": {
@@ -163,7 +163,7 @@
                 ]
               }
             },
-            "text": "What you have now: a direction, a destination, a letter that may or may not be a warning, and the specific quality of purpose that comes from having assembled enough pieces to see the shape of a thing, even if the thing itself is still dark."
+            "text": "What you have now: a direction, a destination, a letter that may or may not be a warning, and the quality of purpose that comes from having assembled enough pieces to see the shape of a thing, even if the thing itself is still dark."
           },
           {
             "when": {
@@ -190,8 +190,8 @@
         ],
         "commander": "Before leaving, you have made your commitments. The Compact message, if you took it. The covenant ward, if you wear it. The relationships with the Rootless.\n\nYou are not beholden to any single answer. You are going east to find the truth of it.",
         "arcane": "Before leaving, you spend an hour at the Tallow's writing table going over your notes from three days. You are better prepared than [missing person] was, you think. You have more information, more context, more theoretical framework.\n\nYou hope that makes a difference. You know it might not.",
-        "ranger": "Before leaving, you check your pack with automatic thoroughness. Everything in order. Everything necessary.\n\nYou check the east road from the market square — empty this early, which is either good or suspicious, and you need to decide which before you are a mile in.",
-        "cipher": "Before leaving, you say goodbye to no one, which is the goodbye that costs least and protects most. If you fail to come back, no one will remember it as a choice you made in their presence.\n\nThis is either wisdom or the specific kind of loneliness that has become strategy. You have stopped distinguishing between the two."
+        "ranger": "Before leaving, you check your pack with automatic thoroughness. Everything in order. Everything necessary.\n\nYou check the east road from the market square. Empty this early, which is either good or suspicious, and you need to decide which before you are a mile in.",
+        "cipher": "Before leaving, you say goodbye to no one, which is the goodbye that costs least and protects most. If you fail to come back, no one will remember it as a choice you made in their presence.\n\nThis is either wisdom or the kind of loneliness that has become strategy. You have stopped distinguishing between the two."
       },
       "choices": [
         {
@@ -206,7 +206,7 @@
           "outcomes": {
             "default": {
               "text": [
-                "Cael is at the gate. He nods when he sees you. The nod means: you are doing what you said you would. He gives you one addition — a contact point, a passphrase, a way to send information back if you find something significant.",
+                "Cael is at the gate. He nods when he sees you. The nod means: you are doing what you said you would. He gives you one addition. A contact point, a passphrase, a way to send information back if you find something significant.",
                 "\"Be thorough, [sir/ma'am],\" he says. \"Whatever is in those ruins, Commander Vorne needs to know exactly what it is before he can act.\"",
                 "The word act. You note it.",
                 {
@@ -290,10 +290,10 @@
       "requires": {},
       "text": {
         "default": [
-          "The cobblestone lasts for a mile. Then packed earth. Then the path becomes a habit rather than a road — the evidence of people having gone this way rather than any deliberate construction for the purpose.",
-          "The forest closes in from both sides after the second mile. Not dramatically — gradually, the way a room changes when the light changes. First the trees are at a distance and you can see sky. Then the trees are closer and the sky is framed. Then the trees are overhead and the sky is a theory.",
+          "The cobblestone lasts for a mile. Then packed earth. Then the path becomes a habit rather than a road. The evidence of people having gone this way rather than any deliberate construction for the purpose.",
+          "The forest closes in from both sides after the second mile. Not dramatically. Gradually, the way a room changes when the light changes. First the trees are at a distance and you can see sky. Then the trees are closer and the sky is framed. Then the trees are overhead and the sky is a theory.",
           "You walk.",
-          "The silence here is wrong in the way you have started to understand — not the absence of sound but the presence of something that has taken the place of sound. Birds are absent. Insects are absent. The wind moves the branches above you without making the sound that wind makes in branches.",
+          "The silence here is wrong in the way you have started to understand. Not the absence of sound but the presence of something that has taken the place of sound. Birds are absent. Insects are absent. The wind moves the branches above you without making the sound that wind makes in branches.",
           {
             "when": {
               "flags": {
@@ -303,10 +303,10 @@
             "text": "You read this road at midnight. It holds no surprises yet."
           }
         ],
-        "commander": "You walk the road with the assessment of a military advance — looking at the terrain, the angles, the places where something could be waiting. The road is tactically poor: flanked on both sides, limited sight lines, one direction of travel.\n\nYou keep moving. The answer to poor tactical ground is to not stop in it.",
-        "arcane": "The frequency you have been feeling since arriving in Ashenveld is stronger out here. Not dramatically — incrementally, with each half mile. Your notebook is open as you walk.\n\nYou write: the effect intensifies linearly with proximity, not exponentially. This is consistent with a single stationary source rather than a distributed field. The source is ahead. The source is specific.",
-        "ranger": "You walk and read the land as you walk. The curse's effect on the terrain is visible to you in ways it would not be to someone less trained — the particular angle at which the grass grows, the distribution of fungi along the root systems, the places where the soil has a slightly different colour.\n\nThe curse came from the east and moved west. You can see the direction in the land itself.",
-        "cipher": "You walk and pay attention to your own attention — what it is drawn to, what it is not drawn to, what seems more interesting than it should and what seems less. The curse, even at this distance, creates an ambient effect. You want to be sure you are noticing it rather than being moved by it without noticing."
+        "commander": "You walk the road with the assessment of a military advance. Looking at the terrain, the angles, the places where something could be waiting. The road is tactically poor: flanked on both sides, limited sight lines, one direction of travel.\n\nYou keep moving. The answer to poor tactical ground is to not stop in it.",
+        "arcane": "The frequency you have been feeling since arriving in Ashenveld is stronger out here. Not dramatically. Incrementally, with each half mile. Your notebook is open as you walk.\n\nYou write: the effect intensifies linearly with proximity, not exponentially. This is consistent with a single stationary source rather than a distributed field. The source is ahead. The source is specific.",
+        "ranger": "You walk and read the land as you walk. The curse's effect on the terrain is visible to you in ways it would not be to someone less trained. The particular angle at which the grass grows, the distribution of fungi along the root systems, the places where the soil has a slightly different colour.\n\nThe curse came from the east and moved west. You can see the direction in the land itself.",
+        "cipher": "You walk and pay attention to your own attention. What it is drawn to, what it is not drawn to, what seems more interesting than it should and what seems less. The curse, even at this distance, creates an ambient effect. You want to be sure you are noticing it rather than being moved by it without noticing."
       },
       "choices": [
         {
@@ -356,7 +356,7 @@
       "requires": {},
       "text": {
         "default": [
-          "The point Edric described is identifiable if you are looking for it — the angle of the tree line on the left side changes by approximately thirty degrees over the course of ten metres, creating a specific notch in the canopy. Not natural. Or perhaps natural, and the Covenant has been watching this spot long enough to give it meaning.",
+          "The point Edric described is identifiable if you are looking for it. The angle of the tree line on the left side changes by approximately thirty degrees over the course of ten metres, creating a notch in the canopy. Not natural. Or perhaps natural, and the Covenant has been watching this spot long enough to give it meaning.",
           {
             "when": {
               "inventory": [
@@ -366,12 +366,12 @@
             "text": "Edric's stone is heavy in your pocket.",
             "else": "You are not carrying Edric's stone. You stop anyway."
           },
-          "There is something about this location — a quality in the air, a stillness different from the surrounding stillness. If the Covenant's scholars identified this as a nexus point, they identified something real."
+          "There is something about this location. A quality in the air, a stillness different from the surrounding stillness. If the Covenant's scholars identified this as a nexus point, they identified something real."
         ],
-        "commander": "The location is real. Something is different here — not threatening exactly, but concentrated. You file it and move on or you place the marker, depending on what you decided in Crestfall.",
-        "arcane": "The ambient here is dense. You stand in the notch and extend your perception and feel the specific quality of a place where several of the curse's channels converge near the surface — like the confluence of rivers, except the rivers are invisible and what they carry is worse than water.\n\nThe Covenant's scholars are competent. That is useful information.",
-        "ranger": "The animals that are left in this forest have been avoiding this spot specifically. You can see it in the tracks — paths that approach and then veer off, over and over, worn into the soil by repeated circumvention. Whatever is concentrated here, the local fauna has been giving it a wide berth for months.",
-        "cipher": "The spot is real. The Covenant identified something genuine here. That tells you their scholars have actual knowledge of the curse's mechanics — not just doctrine, but mapped understanding. That changes how dangerous they are and how useful they could be."
+        "commander": "The location is real. Something is different here. Not threatening exactly, but concentrated. You file it and move on or you place the marker, depending on what you decided in Crestfall.",
+        "arcane": "The ambient here is dense. You stand in the notch and extend your perception and feel the quality of a place where several of the curse's channels converge near the surface. Like the confluence of rivers, except the rivers are invisible and what they carry is worse than water.\n\nThe Covenant's scholars are competent. That is useful information.",
+        "ranger": "The animals that are left in this forest have been avoiding this spot specifically. You can see it in the tracks. Paths that approach and then veer off, over and over, worn into the soil by repeated circumvention. Whatever is concentrated here, the local fauna has been giving it a wide berth for months.",
+        "cipher": "The spot is real. The Covenant identified something genuine here. That tells you their scholars have actual knowledge of the curse's mechanics. Not just doctrine, but mapped understanding. That changes how dangerous they are and how useful they could be."
       },
       "choices": [
         {
@@ -385,7 +385,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You place the stone where Edric instructed. You stand back and wait. Nothing visible happens — no light, no sound, no perceptible change.\n\nEither it is working on a scale you cannot perceive or it is doing nothing. Either way, the obligation is fulfilled and the Covenant owes you something small.",
+              "text": "You place the stone where Edric instructed. You stand back and wait. Nothing visible happens. No light, no sound, no perceptible change.\n\nEither it is working on a scale you cannot perceive or it is doing nothing. Either way, the obligation is fulfilled and the Covenant owes you something small.",
               "next_scene": "act1_ch6_waystation_route",
               "state_changes": {
                 "flags": {
@@ -698,11 +698,11 @@
       },
       "requires": {},
       "text": {
-        "default": "You hear it before you see it — not the sound itself but the wrong quality of the sound. Movement through undergrowth with the rhythm slightly off. Like something that learned to move through forest by watching something else do it rather than by being born to it.\n\nIt comes through the trees on your left: a deer.\n\nExcept it is wrong. The gait is wrong — the legs move in the right pattern but the timing is off, a half-beat delay between front legs and back legs that makes the whole thing look mechanical. Its eyes are open but not tracking. Its head is at an angle that does not serve any purpose — not scenting, not watching, just held at that angle.\n\nIt crosses the road thirty metres ahead of you and goes into the trees on the other side without pausing.",
-        "commander": "You watch it cross with the specific alertness of someone who has learned to be alarmed by things that are wrong in new ways.\n\nAn afflicted animal. The curse has gotten into the local fauna, which means the affected area is broader than the ruins themselves. You mark the location in your mind — the distance from Crestfall, the direction.",
-        "arcane": "The residue on the deer is dense — months, possibly longer. The curse in animals progresses differently than in humans: humans retain enough of themselves to suffer the gap between what they were and what they are becoming. Animals seem to lose the gap more completely.\n\nThe deer is, in some meaningful sense, no longer there.",
+        "default": "You hear it before you see it. Not the sound itself but the wrong quality of the sound. Movement through undergrowth with the rhythm slightly off. Like something that learned to move through forest by watching something else do it rather than by being born to it.\n\nIt comes through the trees on your left: a deer.\n\nExcept it is wrong. The gait is wrong. The legs move in the right pattern but the timing is off, a half-beat delay between front legs and back legs that makes the whole thing look mechanical. Its eyes are open but not tracking. Its head is at an angle that does not serve any purpose. Not scenting, not watching, just held at that angle.\n\nIt crosses the road thirty metres ahead of you and goes into the trees on the other side without pausing.",
+        "commander": "You watch it cross with the alertness of someone who has learned to be alarmed by things that are wrong in new ways.\n\nAn afflicted animal. The curse has gotten into the local fauna, which means the affected area is broader than the ruins themselves. You mark the location in your mind. The distance from Crestfall, the direction.",
+        "arcane": "The residue on the deer is dense. Months, possibly longer. The curse in animals progresses differently than in humans: humans retain enough of themselves to suffer the gap between what they were and what they are becoming. Animals seem to lose the gap more completely.\n\nThe deer is, in some meaningful sense, no longer there.",
         "ranger": "You have tracked deer in a dozen different forests. You have never seen one move like that.\n\nThe wrongness of it is specific: a prey animal that has stopped being afraid. The fear response in deer is so deeply embedded that removing it requires removing the animal. Whatever the curse does to awareness, it does it all the way down to the oldest levels.\n\nYou wait for two minutes after it is gone, listening for anything that might have been following it.",
-        "cipher": "The deer is a data point. The curse affects animals as well as people, with what appears to be a similar progression — the removal of normal responsiveness, the maintenance of baseline physical function without the animating attention.\n\nYou note the location, the approximate stage of affliction, and continue."
+        "cipher": "The deer is a data point. The curse affects animals as well as people, with what appears to be a similar progression. The removal of normal responsiveness, the maintenance of baseline physical function without the animating attention.\n\nYou note the location, the approximate stage of affliction, and continue."
       },
       "choices": [
         {
@@ -738,7 +738,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "You track it through fifty metres of undergrowth. It is standing in a small clearing, doing nothing. Not eating, not drinking, not resting — just standing with that wrong head angle, breathing normally.\n\nAround it, in a radius of about ten metres, the ground is slightly different. The grass lower. The soil darker. You crouch and look at the boundary of the radius. The curse is concentrated here — the deer has apparently returned to this spot repeatedly. There are tracks from multiple visits.\n\nThe deer chose this place. Whatever the curse does to wanting, it does not eliminate it — it redirects it.",
+              "text": "You track it through fifty metres of undergrowth. It is standing in a small clearing, doing nothing. Not eating, not drinking, not resting. Just standing with that wrong head angle, breathing normally.\n\nAround it, in a radius of about ten metres, the ground is slightly different. The grass lower. The soil darker. You crouch and look at the boundary of the radius. The curse is concentrated here. The deer has apparently returned to this spot repeatedly. There are tracks from multiple visits.\n\nThe deer chose this place. Whatever the curse does to wanting, it does not eliminate it. It redirects it.",
               "next_scene": "act1_ch6_road_traveller",
               "state_changes": {
                 "flags": {
@@ -747,12 +747,12 @@
               }
             },
             "success_at_cost": {
-              "text": "You follow it far enough to confirm it is doing nothing — just standing in the trees. You come back to the road feeling like you have looked at something you cannot quite describe.",
+              "text": "You follow it far enough to confirm it is doing nothing. Just standing in the trees. You come back to the road feeling like you have looked at something you cannot quite describe.",
               "next_scene": "act1_ch6_road_traveller",
               "state_changes": {}
             },
             "failure": {
-              "text": "You follow it and lose it quickly — it moves in a pattern your tracking instinct cannot quite predict. You return to the road. You were in the trees long enough for the road to feel like a relief.",
+              "text": "You follow it and lose it quickly. It moves in a pattern your tracking instinct cannot quite predict. You return to the road. You were in the trees long enough for the road to feel like a relief.",
               "next_scene": "act1_ch6_road_traveller",
               "state_changes": {
                 "resources": {
@@ -864,11 +864,11 @@
       },
       "requires": {},
       "text": {
-        "default": "A figure coming toward you on the road — moving fast, not running but close to it. A man, middle-aged, carrying more than he should be carrying for someone moving at that speed. He has the quality of someone who has decided that distance from a place is more valuable than comfort in transit.\n\nHe sees you and does not slow down. If anything he speeds up slightly.\n\nYou step to the side of the road so he can pass if he wants to. He almost does. Then, two metres past you, he stops.",
+        "default": "A figure coming toward you on the road. Moving fast, not running but close to it. A man, middle-aged, carrying more than he should be carrying for someone moving at that speed. He has the quality of someone who has decided that distance from a place is more valuable than comfort in transit.\n\nHe sees you and does not slow down. If anything he speeds up slightly.\n\nYou step to the side of the road so he can pass if he wants to. He almost does. Then, two metres past you, he stops.",
         "commander": "He turns back with the face of a man who has decided something and already regrets it.\n\n\"You are going the wrong way,\" he says.",
-        "arcane": "He stops and turns and looks at you with the specific assessment of someone measuring how much you might want to know versus how much he wants to tell.\n\n\"You are going east,\" he says. It is not a question.",
-        "ranger": "He stops and turns. His pack is military in origin — the straps, the frame. He is not military anymore. His boots are worn on the outside of the heel, a specific gait, something about his history you cannot place yet.\n\n\"Going to Harrow?\" he says.",
-        "cipher": "He stops and turns and you read him quickly. Running from something. Not afraid of you specifically — afraid of what is behind him, and you happen to be coming from the wrong direction.\n\n\"Turn around,\" he says. No pleasantry, no preamble."
+        "arcane": "He stops and turns and looks at you with the assessment of someone measuring how much you might want to know versus how much he wants to tell.\n\n\"You are going east,\" he says. It is not a question.",
+        "ranger": "He stops and turns. His pack is military in origin. The straps, the frame. He is not military anymore. His boots are worn on the outside of the heel, a gait, something about his history you cannot place yet.\n\n\"Going to Harrow?\" he says.",
+        "cipher": "He stops and turns and you read him quickly. Running from something. Not afraid of you specifically. Afraid of what is behind him, and you happen to be coming from the wrong direction.\n\n\"Turn around,\" he says. No pleasantry, no preamble."
       },
       "choices": [
         {
@@ -881,7 +881,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "He tells you. He was trying to get through Ashenveld to the coast — the east road was the fastest route. He camped a mile past Harrow last night and at some point during the night he woke up in the middle of the road, sitting upright, facing east.\n\nHe had not walked there. He does not sleepwalk. He has no memory of moving.\n\n\"I was facing east,\" he says. \"Like something wanted me to look.\"\n\nHe hands you something without being asked — a small carved bone figure he found in Harrow. \"Do not know why I took it,\" he says. \"Do not want it.\"",
+              "text": "He tells you. He was trying to get through Ashenveld to the coast. The east road was the fastest route. He camped a mile past Harrow last night and at some point during the night he woke up in the middle of the road, sitting upright, facing east.\n\nHe had not walked there. He does not sleepwalk. He has no memory of moving.\n\n\"I was facing east,\" he says. \"Like something wanted me to look.\"\n\nHe hands you something without being asked. A small carved bone figure he found in Harrow. \"Do not know why I took it,\" he says. \"Do not want it.\"",
               "next_scene": "act1_ch6_missing_person_campsite",
               "state_changes": {
                 "flags": {
@@ -948,15 +948,15 @@
                 "mentor"
               ]
             },
-            "text": "You know the arrangement. You have seen it before. The ring of stones is three flat, one angled — a marker, a habit, something you noticed years ago when you watched the person who taught it to you do it for the first time.",
-            "else": "You know the arrangement. You have seen it before. The ring of stones is three flat, one angled — a marker, a habit, a habit the two of you shared."
+            "text": "You know the arrangement. You have seen it before. The ring of stones is three flat, one angled. A marker, a habit, something you noticed years ago when you watched the person who taught it to you do it for the first time.",
+            "else": "You know the arrangement. You have seen it before. The ring of stones is three flat, one angled. A marker, and a habit the two of you shared."
           },
           "[missing person] was here. Fourteen months ago. Moving east."
         ],
-        "commander": "You assess the campsite with systematic attention. Duration of stay: one night. Direction of departure: east, based on the site's orientation. Condition when they were here: functional — the camp is tidy, the fire correctly built. Not someone in crisis.",
+        "commander": "You assess the campsite with systematic attention. Duration of stay: one night. Direction of departure: east, based on the site's orientation. Condition when they were here: functional. The camp is tidy, the fire correctly built. Not someone in crisis.",
         "arcane": "The residue here is clear enough to read. One person, one night, not deeply afflicted when they left. Present and aware.\n\nYou feel something that is probably relief, and is also fear.",
-        "ranger": "You read the campsite with the efficiency of a tracker. One person, one night. The fire stones are arranged in a specific way you have not seen anyone else use. The cleared area is exactly the size of a bedroll.\n\nThe departure direction is east and the tracks, faint on this ground, confirm it. Fourteen months ago. Moving east.",
-        "cipher": "The arrangement of the fire stones. You know that arrangement. It is not a coincidence — the specific angle of the angled stone, the spacing, the choice of this particular clearing. Someone was here recently and they wanted you — specifically you, if you came — to know it was them."
+        "ranger": "You read the campsite with the efficiency of a tracker. One person, one night. The fire stones are arranged in a way you have not seen anyone else use. The cleared area is exactly the size of a bedroll.\n\nThe departure direction is east and the tracks, faint on this ground, confirm it. Fourteen months ago. Moving east.",
+        "cipher": "The arrangement of the fire stones. You know that arrangement. It is not a coincidence. The angle of the angled stone, the spacing, the choice of this particular clearing. Someone was here recently and they wanted you, you, if you came, to know it was them."
       },
       "choices": [
         {
@@ -981,7 +981,7 @@
               }
             },
             "success_at_cost": {
-              "text": "You find a scuff in the soil at the campsite's edge — foot traffic, recent, east. Just the confirmation of direction. Nothing left for you to find.",
+              "text": "You find a scuff in the soil at the campsite's edge. Foot traffic, recent, east. Just the confirmation of direction. Nothing left for you to find.",
               "next_scene": "act1_ch6_harrow_arrival",
               "state_changes": {}
             },
@@ -1029,11 +1029,11 @@
       },
       "requires": {},
       "text": {
-        "default": "Harrow.\n\nTwelve houses. A well. A shrine. A communal barn. Everything in the position it was built in and should still be in.\n\nNothing moving.\n\nThe silence here is different from the road's silence — denser, the specific quality of a place that used to have people in it and no longer does. Not ruin. Harrow is not ruined. The houses are intact. A door hangs open on one of them but not because of violence — because someone left in a way that did not include closing the door behind them.\n\nYou walk into the main street and your footsteps are the only sound.\n\nThere are meals on three tables in the houses you can see through their windows. Set meals, not interrupted ones — the kind of placement that goes before sitting, not after leaving.",
+        "default": "Harrow.\n\nTwelve houses. A well. A shrine. A communal barn. Everything in the position it was built in and should still be in.\n\nNothing moving.\n\nThe silence here is different from the road's silence. Denser, the quality of a place that used to have people in it and no longer does. Not ruin. Harrow is not ruined. The houses are intact. A door hangs open on one of them but not because of violence. Because someone left in a way that did not include closing the door behind them.\n\nYou walk into the main street and your footsteps are the only sound.\n\nThere are meals on three tables in the houses you can see through their windows. Set meals, not interrupted ones. The kind of placement that goes before sitting, not after leaving.",
         "commander": "You move through Harrow with the tactical sweep of clearing a position. House by house, quick looks, assessing for threats and useful intelligence.\n\nNo threats. No bodies. No blood. No sign of panic.\n\nEvery indication points to people who left calmly. The food on the tables is months old. They left as if they were going somewhere for the day and intending to return for dinner.",
-        "arcane": "The curse's residue in Harrow is saturating — the kind of density that accumulates over months of sustained exposure in a closed space.\n\nYou read the history of it. The curse built slowly here and then, at some point, reached a threshold. Above the threshold: everyone in Harrow stopped wanting to stay. Below the threshold: everything remaining exactly as it was.\n\nYou understand now how this happens. The curse does not force anyone to do anything. It changes what seems preferable. And eventually, the forest seemed preferable. To everyone. At approximately the same time.",
-        "ranger": "You read Harrow as you would read a territory after something happened to it.\n\nDoors left open in calm — not panic. Food prepared and never eaten. A child's toy beside a doorstep, placed there as if to mark the leaving rather than forgotten.\n\nThe tracks leading out of Harrow go east. All of them. Staggered over days and weeks, each person going when the time came, but all going the same direction.",
-        "cipher": "Harrow is a document. You read it.\n\nNo signs of violence. No signs of flight. Signs of departure — calm, sequential, individual. People left Harrow the way people leave places they no longer want to be. Over time. One at a time. Until there was no one left.\n\nThe question is not what happened here. The question is what made staying seem worse than going east."
+        "arcane": "The curse's residue in Harrow is saturating. The kind of density that accumulates over months of sustained exposure in a closed space.\n\nYou read the history of it. The curse built slowly here and then, at some point, reached a threshold. Above the threshold: everyone in Harrow stopped wanting to stay. Below the threshold: everything remaining exactly as it was.\n\nYou understand now how this happens. The curse does not force anyone to do anything. It changes what seems preferable. And eventually, the forest seemed preferable. To everyone. At approximately the same time.",
+        "ranger": "You read Harrow as you would read a territory after something happened to it.\n\nDoors left open in calm. Not panic. Food prepared and never eaten. A child's toy beside a doorstep, placed there as if to mark the leaving rather than forgotten.\n\nThe tracks leading out of Harrow go east. All of them. Staggered over days and weeks, each person going when the time came, but all going the same direction.",
+        "cipher": "Harrow is a document. You read it.\n\nNo signs of violence. No signs of flight. Signs of departure. Calm, sequential, individual. People left Harrow the way people leave places they no longer want to be. Over time. One at a time. Until there was no one left.\n\nThe question is not what happened here. The question is what made staying seem worse than going east."
       },
       "choices": [
         {
@@ -1060,7 +1060,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You move through Harrow at pace and out the other side. The forest edge is visible from the village's eastern wall — the dark line of where the trees begin in earnest. A mile, maybe less.\n\nYou camp in Harrow's barn. Better to sleep in a structure tonight.",
+              "text": "You move through Harrow at pace and out the other side. The forest edge is visible from the village's eastern wall. The dark line of where the trees begin in earnest. A mile, maybe less.\n\nYou camp in Harrow's barn. Better to sleep in a structure tonight.",
               "next_scene": "act1_ch7_forest_edge",
               "state_changes": {
                 "world": {

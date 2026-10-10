@@ -23,7 +23,7 @@
       "text": {
         "default": [
           "Morning in the outskirts. The grey light that passes for dawn here.",
-          "You wake to find [missing person] already up, sitting near the remnants of last night's fire, reading from their journal — the fourteen months of notes, translations, observations. They look like someone who has forgotten what mornings used to involve.",
+          "You wake to find [missing person] already up, sitting near the remnants of last night's fire, reading from their journal. The fourteen months of notes, translations, observations. They look like someone who has forgotten what mornings used to involve.",
           {
             "when": {
               "flags": {
@@ -46,7 +46,7 @@
         "commander": "Thirty soldiers. A forward command established in the granary. A scholarly resource travelling with military protection.\n\nVorne is not here to assess. He is here to act. The period of patience has ended and the Compact has decided it has collected enough data.\n\nYou think about what Cael told you — Commander Vorne is waiting for enough data to act. Vorne has decided he has enough.",
         "arcane": "Seriva. You have been thinking about Seriva since [missing person] mentioned her name in connection with the mechanism's fracture.\n\nA senior Covenant scholar travelling with the Iron Compact is not a natural alliance. The Covenant and the Compact have been in institutional competition for the region's resources for decades. For Seriva to be working with Vorne means either she has been working with him for a long time, or the situation has changed dramatically enough that old competitors have become temporary allies.\n\nOr she is not working with him. She is using him.",
         "ranger": "Thirty soldiers on the east road means the east road is closed. Which means anyone in the ruins who wants to return to Crestfall will have to explain their presence to the Compact. Which means you will have to explain your presence to the Compact.\n\nYou begin thinking about alternative routes out of the ruins that avoid the east road entirely.",
-        "cipher": "The notice is strategic. Vorne is not concerned about who is going east — he is concerned about controlling what comes back from the east. Information. Artefacts. People.\n\nHe wants to be the first to know what is in the ruins. The notice is not a security measure. It is an information monopoly."
+        "cipher": "The notice is strategic. Vorne is not concerned about who is going east. He is concerned about controlling what comes back from the east. Information. Artefacts. People.\n\nHe wants to be the first to know what is in the ruins. The notice is not a security measure. It is an information monopoly."
       },
       "choices": [
         {
@@ -57,7 +57,7 @@
           "outcomes": {
             "default": {
               "text": [
-                "[missing person] looks at you when you say this. Something in their face moves — not objection, something more complicated.",
+                "[missing person] looks at you when you say this. Something in their face moves. Not objection, something more complicated.",
                 "\"If you go back,\" they say, \"and the Compact closes the road properly, you may not be able to return.\"",
                 "\"I know,\" you say.",
                 "A pause. \"Then go,\" they say. \"Come back. I will be here.\"",
@@ -91,7 +91,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "Maret is already thinking the same thing. \"Someone needs to know what is in here,\" she says. \"And someone needs to know what Vorne is doing.\" She looks at [missing person] — the first long look between them since the reunion. Something passes between them that you cannot fully read. \"I will go back. I will keep the camp safe. I will send word if Vorne moves on the road.\"\n\nShe leaves. You watch her go through the outskirts until the ordinary forest takes her.",
+              "text": "Maret is already thinking the same thing. \"Someone needs to know what is in here,\" she says. \"And someone needs to know what Vorne is doing.\" She looks at [missing person]. The first long look between them since the reunion. Something passes between them that you cannot fully read. \"I will go back. I will keep the camp safe. I will send word if Vorne moves on the road.\"\n\nShe leaves. You watch her go through the outskirts until the ordinary forest takes her.",
               "next_scene": "act2_ch3_missing_person_teaching",
               "state_changes": {
                 "flags": {
@@ -147,10 +147,10 @@
       },
       "requires": {},
       "text": {
-        "default": "The outskirts are quieter now. The last sounds of the ordinary world — a distant cart, a bird that had not yet learned to avoid the forest — fade as the morning settles.\n\n[missing person] sits across from you with their journal open on their knees. They have been preparing this moment for fourteen months. You can see it in the way they hold themselves: someone who has rehearsed something so many times that the rehearsal has worn through and become something else.\n\n\"I need to explain what this is,\" they say. \"Not the mechanics. What it actually is. Because if you understand what you are agreeing to, everything else follows from that.\"\n\nThey begin.\n\nThe sealing mechanism was not built to contain the curse. It was built to complete something — to close a loop that was left open by people who intended to come back and never did. The curse is the incomplete work leaking through the gap. The ritual does not destroy the curse. It finishes what was started. It closes the gap from the inside.\n\n\"Which means the participants have to go inside,\" you say.\n\n\"Yes,\" they say. \"And come back out. That is the part that is not guaranteed.\"",
+        "default": "The outskirts are quieter now. The last sounds of the ordinary world, a distant cart, a bird that had not yet learned to avoid the forest, fade as the morning settles.\n\n[missing person] sits across from you with their journal open on their knees. They have been preparing this moment for fourteen months. You can see it in the way they hold themselves: someone who has rehearsed something so many times that the rehearsal has worn through and become something else.\n\n\"I need to explain what this is,\" they say. \"Not the mechanics. What it actually is. Because if you understand what you are agreeing to, everything else follows from that.\"\n\nThey begin.\n\nThe sealing mechanism was not built to contain the curse. It was built to complete something. To close a loop that was left open by people who intended to come back and never did. The curse is the incomplete work leaking through the gap. The ritual does not destroy the curse. It finishes what was started. It closes the gap from the inside.\n\n\"Which means the participants have to go inside,\" you say.\n\n\"Yes,\" they say. \"And come back out. That is the part that is not guaranteed.\"",
         "commander": "You listen to this with the part of your mind that assesses tactical situations and the part that does not. Both parts are engaged.\n\n\"What determines whether we come back out?\"\n\nThey look at their notes. \"The mechanism reads whether the participants understand what they are completing. Not intellectually — it reads it the way a lock reads a key. The shape has to match. If we are in the chamber and the mechanism reads us as insufficient — as not the right participants — it will hold us.\" A pause. \"It will not be unkind about it. But it will hold us.\"\n\nYou process this. The risk is real. The mission is still the mission.",
         "arcane": "The mechanism reading the participants. You have been thinking about this since [missing person] first described the ritual.\n\n\"What does the mechanism read, specifically?\" you ask. \"What constitutes a match?\"\n\nThey spend twenty minutes trying to translate the old text into language that carries the original meaning. When they finish, you understand that the mechanism reads something like: the weight of what two people mean to each other, measured against the weight of what brought them here. A ratio. A resonance.\n\n\"The original participants were bonded,\" they say. \"And they chose to complete the work because the work mattered more than the alternatives. Both conditions must be present.\"",
-        "ranger": "You are thinking about the chamber as a space — what it contains, what it does not, what the exit route looks like.\n\n\"How long do we need to be in the chamber?\"\n\n\"The text says until the mechanism completes its reading. An hour at minimum. Possibly longer if the mechanism's state is degraded.\" They pause. \"From the outside, there is no way to know when the reading is complete. You will know from the inside. The text says it is unmistakable — the sensation of something settling that has been unsettled for a very long time.\"\n\nYou note the lack of external indicator. Pol, waiting outside, will have to trust you to know when it is done.",
+        "ranger": "You are thinking about the chamber as a space. What it contains, what it does not, what the exit route looks like.\n\n\"How long do we need to be in the chamber?\"\n\n\"The text says until the mechanism completes its reading. An hour at minimum. Possibly longer if the mechanism's state is degraded.\" They pause. \"From the outside, there is no way to know when the reading is complete. You will know from the inside. The text says it is unmistakable — the sensation of something settling that has been unsettled for a very long time.\"\n\nYou note the lack of external indicator. Pol, waiting outside, will have to trust you to know when it is done.",
         "cipher": "You are listening for what [missing person] is not saying.\n\n\"There is a risk you have not mentioned,\" you say.\n\nA pause. \"Yes.\"\n\n\"If the mechanism reads us and decides we are not sufficient — not that we are wrong participants, but that our bond is insufficient — what happens?\"\n\nThey look at their hands. \"The text is ambiguous on that point. Deliberately, I think. The people who wrote it did not want to discourage participants from trying.\" They look up. \"I have been thinking about it for fourteen months. My best interpretation is: the mechanism closes anyway. With us inside it.\" A pause. \"Permanently.\""
       },
       "choices": [
@@ -161,7 +161,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "They teach you through the morning and into the afternoon.\n\nNot the ritual words — those come later, when you are ready to hold them. Today is the foundation: what the mechanism is, how it reads, what the chamber will feel like, what you will need to remain present for when the reading begins. The sensation of being seen completely by something that has been waiting for exactly this.\n\nAt one point they stop and look at you as if they are asking a question without asking it.\n\n\"I am still here,\" you say.\n\nSomething in them settles. \"I know,\" they say. \"I just needed to see it.\"\n\nThey continue teaching. Outside, the forest is very quiet. The curse has not reached this specific clearing in a way that is measurable yet. You have days. You are going to use them.",
+              "text": "They teach you through the morning and into the afternoon.\n\nNot the ritual words. Those come later, when you are ready to hold them. Today is the foundation: what the mechanism is, how it reads, what the chamber will feel like, what you will need to remain present for when the reading begins. The sensation of being seen completely by something that has been waiting for exactly this.\n\nAt one point they stop and look at you as if they are asking a question without asking it.\n\n\"I am still here,\" you say.\n\nSomething in them settles. \"I know,\" they say. \"I just needed to see it.\"\n\nThey continue teaching. Outside, the forest is very quiet. The curse has not reached this clearing in a way that is measurable yet. You have days. You are going to use them.",
               "next_scene": "act2_ch3_compact_checkpoint",
               "state_changes": {
                 "flags": {
@@ -188,7 +188,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "They are quiet for a long time.\n\n\"Fourteen months,\" they say finally. \"I have been in this forest for fourteen months and I have been — not alone, exactly, but alone in the specific way of someone who is waiting for the one person who can complete something with them.\" A pause. \"The cost to me is not the ritual. The cost to me was the fourteen months. The ritual is what the fourteen months were for.\"\n\nYou look at them. The weight of a year and two months of waiting is visible in them if you know what to look for. They have carried it so long they have stopped being able to put it down.\n\n\"Then let's not waste what you paid,\" you say.\n\nThey nod. They begin the lesson again, and this time there is something different in the way they hold themselves — lighter, perhaps. Something set down.",
+              "text": "They are quiet for a long time.\n\n\"Fourteen months,\" they say finally. \"I have been in this forest for fourteen months and I have been — not alone, exactly, but alone in the way of someone who is waiting for the one person who can complete something with them.\" A pause. \"The cost to me is not the ritual. The cost to me was the fourteen months. The ritual is what the fourteen months were for.\"\n\nYou look at them. The weight of a year and two months of waiting is visible in them if you know what to look for. They have carried it so long they have stopped being able to put it down.\n\n\"Then let's not waste what you paid,\" you say.\n\nThey nod. They begin the lesson again, and this time there is something different in the way they hold themselves. Lighter, perhaps. Something set down.",
               "next_scene": "act2_ch3_compact_checkpoint",
               "state_changes": {
                 "flags": {
@@ -220,7 +220,7 @@
               }
             },
             "failure": {
-              "text": "They deflect the question with the ease of someone who has been deflecting it from themselves for fourteen months.\n\n\"The cost is manageable,\" they say. \"Let us continue.\"\n\nYou let it go. There will be time for that conversation — or there won't be, and then it won't matter.\n\nThey continue the lesson.",
+              "text": "They deflect the question with the ease of someone who has been deflecting it from themselves for fourteen months.\n\n\"The cost is manageable,\" they say. \"Let us continue.\"\n\nYou let it go. There will be time for that conversation. Or there won't be, and then it won't matter.\n\nThey continue the lesson.",
               "next_scene": "act2_ch3_compact_checkpoint",
               "state_changes": {
                 "flags": {
@@ -271,7 +271,7 @@
             },
             "text": "You stayed a day longer in the ruins than was wise. The barricade is taller than the runner described."
           },
-          "They see you before you see them, which means they were watching. When you get close enough to talk, one of them steps forward with the specific posture of someone following a procedure.",
+          "They see you before you see them, which means they were watching. When you get close enough to talk, one of them steps forward with the posture of someone following a procedure.",
           "\"East road is under Compact jurisdiction, [sir/ma'am],\" he says. \"State your name, your origin, and your purpose for travel.\"",
           {
             "when": {
@@ -283,10 +283,10 @@
             "text": "\"Cael is asking about a packet,\" the other soldier says, to nobody in particular."
           }
         ],
-        "commander": "You assess the checkpoint in the first three seconds. Two soldiers visible, probably two more within call. The barricade is solid but not permanent — it is designed to be moved, which means it is also designed to be passed under the right conditions.\n\nYou give your name. You state your origin and purpose in terms that are true but selective. The soldier writes things down.",
+        "commander": "You assess the checkpoint in the first three seconds. Two soldiers visible, probably two more within call. The barricade is solid but not permanent. It is designed to be moved, which means it is also designed to be passed under the right conditions.\n\nYou give your name. You state your origin and purpose in terms that are true but selective. The soldier writes things down.",
         "arcane": "Someone chose this spot. It is not the most defensible point on the road. It is the most visible, from both directions.\n\nThis checkpoint is not about security. It is about being seen.",
         "ranger": "You approach the checkpoint at a pace that communicates: I know you are there, I am not trying to avoid you, I have nothing to hide. This pace is not natural to you in most situations. You adopt it consciously.\n\nThe soldier steps forward. You note the second soldier's hand position relative to their weapon. Relaxed. This is not an aggressive deployment.",
-        "cipher": "You had sixty seconds to prepare your account before you reached the checkpoint. The account is ready — true in its components, structured in the order most likely to produce the outcome you want.\n\nThe soldier asks for name, origin, purpose. You give all three."
+        "cipher": "You had sixty seconds to prepare your account before you reached the checkpoint. The account is ready. True in its components, structured in the order most likely to produce the outcome you want.\n\nThe soldier asks for name, origin, purpose. You give all three."
       },
       "choices": [
         {
@@ -337,7 +337,7 @@
               }
             },
             "success_at_cost": {
-              "text": "The soldier accepts your account but he asks a follow-up question you were not expecting — whether you encountered anyone else east of Harrow. You navigate it. You do not think he believed everything you said. You do not think he disbelieved it either.\n\nYou walk through. Cael will want to speak with you.",
+              "text": "The soldier accepts your account but he asks a follow-up question you were not expecting. Whether you encountered anyone else east of Harrow. You navigate it. You do not think he believed everything you said. You do not think he disbelieved it either.\n\nYou walk through. Cael will want to speak with you.",
               "next_scene": "act2_ch3_crestfall_changed",
               "state_changes": {
                 "flags": {
@@ -346,7 +346,7 @@
               }
             },
             "failure": {
-              "text": "He holds you at the checkpoint for forty minutes. More questions. A second soldier brought in. Eventually a note taken and sent toward town.\n\nYou are not detained. But you walk through the checkpoint with the specific feeling of someone whose account has been filed as requiring follow-up.",
+              "text": "He holds you at the checkpoint for forty minutes. More questions. A second soldier brought in. Eventually a note taken and sent toward town.\n\nYou are not detained. But you walk through the checkpoint with the feeling of someone whose account has been filed as requiring follow-up.",
               "next_scene": "act2_ch3_crestfall_changed",
               "state_changes": {
                 "flags": {
@@ -442,7 +442,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "The mention of Cael's name changes the dynamic immediately. The soldier's posture relaxes — not all the way, but enough.\n\n\"Cael said to expect you,\" he says, which means Cael has been preparing for your return. \"He wants to see you directly when you get in. The Compact post, north side of town.\"",
+              "text": "The mention of Cael's name changes the dynamic immediately. The soldier's posture relaxes. Not all the way, but enough.\n\n\"Cael said to expect you,\" he says, which means Cael has been preparing for your return. \"He wants to see you directly when you get in. The Compact post, north side of town.\"",
               "next_scene": "act2_ch3_crestfall_changed",
               "state_changes": {}
             }
@@ -517,10 +517,10 @@
       "requires": {},
       "text": {
         "default": [
-          "Crestfall has changed in the days you were gone. The change is not dramatic but it is visible — the way a room changes when the person in charge of it changes.",
+          "Crestfall has changed in the days you were gone. The change is not dramatic but it is visible. The way a room changes when the person in charge of it changes.",
           "Thirty Compact soldiers occupy the town with the practised efficiency of people who have done this before in other towns. They are not aggressive. They are orderly. They have requisitioned three buildings, posted schedules, established a supply distribution point at the old market fountain.",
           "The town has responded the way small frightened communities always respond to organised authority: with a mixture of relief and resentment that is not yet sure which one is stronger.",
-          "The curse is worse. You can feel it the moment you enter the town limits — the ambient effect is stronger than when you left, the grey quality more pronounced. Whatever the mechanism's degradation rate is, it has not slowed.",
+          "The curse is worse. You can feel it the moment you enter the town limits. The ambient effect is stronger than when you left, the grey quality more pronounced. Whatever the mechanism's degradation rate is, it has not slowed.",
           {
             "when": {
               "min_curse": 25,
@@ -535,10 +535,10 @@
             "text": "Two stalls are open. The rest are bare frames, and nobody has taken the frames down."
           }
         ],
-        "commander": "Thirty soldiers change a town. The balance of power has shifted. The Covenant's visible presence has been reduced — their shrine is still open but they no longer have the streets. The Rootless camp outside town is, according to the soldier at the checkpoint, still there. For now.\n\nVorne has not moved against the camp yet. That he has not moved against it yet tells you something about either his restraint or his priorities.",
-        "arcane": "You feel Seriva before you see her. Not literally — but her influence on the town's information environment is measurable. People are talking less. The specific topics that were freely discussed three days ago are now being discussed in lower voices, if at all.\n\nInformation consolidation. Someone is controlling what people share and with whom. That is Seriva's work, or the work of someone following her instructions.",
+        "commander": "Thirty soldiers change a town. The balance of power has shifted. The Covenant's visible presence has been reduced. Their shrine is still open but they no longer have the streets. The Rootless camp outside town is, according to the soldier at the checkpoint, still there. For now.\n\nVorne has not moved against the camp yet. That he has not moved against it yet tells you something about either his restraint or his priorities.",
+        "arcane": "You feel Seriva before you see her. Not literally. But her influence on the town's information environment is measurable. People are talking less. The topics that were freely discussed three days ago are now being discussed in lower voices, if at all.\n\nInformation consolidation. Someone is controlling what people share and with whom. That is Seriva's work, or the work of someone following her instructions.",
         "ranger": "There are fewer animals than when you left. The cat under the north porch has gone. You look for tracks and find nothing recent.\n\nYou read it the way you read weather in the birds. When the animals leave, the storm has already committed.",
-        "cipher": "You read the changed Crestfall and update your map of it in real time. Compact soldiers at seven visible positions. Covenant influence reduced. Three new faces you do not recognise — Compact-adjacent, not soldiers, probably scholars or analysts.\n\nAnd one face you do not recognise but immediately categorise as significant: a woman in her sixties moving through the market with the unhurried certainty of someone who knows exactly where everything is even though she arrived three days ago."
+        "cipher": "You read the changed Crestfall and update your map of it in real time. Compact soldiers at seven visible positions. Covenant influence reduced. Three new faces you do not recognise. Compact-adjacent, not soldiers, probably scholars or analysts.\n\nAnd one face you do not recognise but immediately categorise as significant: a woman in her sixties moving through the market with the unhurried certainty of someone who knows exactly where everything is even though she arrived three days ago."
       },
       "choices": [
         {
@@ -548,7 +548,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "Aldous is behind his bar when you enter, which is where Aldous always is. He looks up when you come in and something in him relaxes — the specific relief of someone who had categorised you as lost and has been revised.\n\n\"You came back,\" he says.\n\n\"I said I would.\"\n\nHe pours something without being asked. \"It has been a strange few days,\" he says. This is Aldous for: everything has changed and none of it is good.",
+              "text": "Aldous is behind his bar when you enter, which is where Aldous always is. He looks up when you come in and something in him relaxes. The relief of someone who had categorised you as lost and has been revised.\n\n\"You came back,\" he says.\n\n\"I said I would.\"\n\nHe pours something without being asked. \"It has been a strange few days,\" he says. This is Aldous for: everything has changed and none of it is good.",
               "next_scene": "act2_ch3_aldous_update",
               "state_changes": {
                 "relationships": {
@@ -568,7 +568,7 @@
           "outcomes": {
             "default": {
               "text": [
-                "The camp is still there — you were not sure it would be. Maret is already there. Branch is at the edge, watching the town with the quality of someone who has been watching for a while and does not like what they see."
+                "The camp is still there. You were not sure it would be. Maret is already there. Branch is at the edge, watching the town with the quality of someone who has been watching for a while and does not like what they see."
               ],
               "next_scene": "act2_ch3_rootless_situation",
               "state_changes": {}
@@ -585,7 +585,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "You locate her at the Covenant shrine, which she appears to be using as her operational base despite Edric's obvious discomfort. She is examining a map when you arrive — a detailed map, old, of the region east of Crestfall.\n\nShe looks up when you enter and her assessment of you takes approximately three seconds. Thorough. Professional. The assessment of someone who is very good at reading what they see.",
+              "text": "You locate her at the Covenant shrine, which she appears to be using as her operational base despite Edric's obvious discomfort. She is examining a map when you arrive. A detailed map, old, of the region east of Crestfall.\n\nShe looks up when you enter and her assessment of you takes approximately three seconds. Thorough. Professional. The assessment of someone who is very good at reading what they see.",
               "next_scene": "act2_ch3_seriva_first_meeting",
               "state_changes": {
                 "flags": {
@@ -747,7 +747,7 @@
       "text": {
         "default": [
           "Aldous tells you what he has seen in three days with the precision of a man who has been keeping a careful record in his head.",
-          "Vorne arrived with thirty soldiers and the Covenant woman — Seriva — travelling as what he called an adviser. The Compact took three buildings without asking. They issued the east road notice within six hours of arrival.",
+          "Vorne arrived with thirty soldiers and the Covenant woman, Seriva, travelling as what he called an adviser. The Compact took three buildings without asking. They issued the east road notice within six hours of arrival.",
           "Seriva has been to the shrine twice. Each time she and Edric had a conversation that Edric visibly did not enjoy.",
           {
             "when": {
@@ -755,7 +755,7 @@
                 "knows_still_man_is_wren": true
               }
             },
-            "text": "Wren — the still man who used to sit by the fire — is gone. He walked east two days ago, the morning after Vorne arrived, as if the commotion stirred something in him that directed him toward the forest. Nobody tried to stop him. Nobody knew what to do.",
+            "text": "Wren, the still man who used to sit by the fire, is gone. He walked east two days ago, the morning after Vorne arrived, as if the commotion stirred something in him that directed him toward the forest. Nobody tried to stop him. Nobody knew what to do.",
             "else": "The still man by the fire is gone. You never learned his name. Aldous tells it to you now: Wren. He walked east two days ago, the morning after Vorne arrived, as if the commotion stirred something in him that directed him toward the forest. Nobody tried to stop him. Nobody knew what to do."
           },
           "\"How many others?\" you ask.",
@@ -767,8 +767,8 @@
             "text": "He pours you a drink you did not ask for. When you point at it he looks at the glass for a while, as if it belongs to somebody else."
           }
         ],
-        "commander": "Six people in five days. The rate is accelerating faster than the timeline [missing person] described.\n\nEither the mechanism is degrading faster than their estimates, or the Compact's arrival has introduced something that is accelerating the exposure — large groups of people in a small area, the stress of occupation, or something Seriva brought with her.",
-        "arcane": "Six people in five days. The mechanism's degradation is accelerating. The timeline you were given in the chamber was too optimistic.\n\nYou think about what Seriva's arrival might mean for the mechanism's behaviour. If she was the one who fractured it twenty years ago — if she performed a specific operation on it at the moment of fracture — then her proximity to Ashenveld now might be interacting with whatever she did then.",
+        "commander": "Six people in five days. The rate is accelerating faster than the timeline [missing person] described.\n\nEither the mechanism is degrading faster than their estimates, or the Compact's arrival has introduced something that is accelerating the exposure. Large groups of people in a small area, the stress of occupation, or something Seriva brought with her.",
+        "arcane": "Six people in five days. The mechanism's degradation is accelerating. The timeline you were given in the chamber was too optimistic.\n\nYou think about what Seriva's arrival might mean for the mechanism's behaviour. If she was the one who fractured it twenty years ago, if she performed an operation on it at the moment of fracture, then her proximity to Ashenveld now might be interacting with whatever she did then.",
         "ranger": "Six people walking east. Each one representing a family and a history and a future that is now moving in a direction nobody can follow.\n\nWren was the first. You knew Wren. Briefly, inadequately, but enough to know he was a good man with a wife who loved him and a farm he cared about. Whatever is east of the marker line has Wren now.",
         "cipher": "Six people. Aldous has been counting carefully, which means he is afraid and has decided that counting is the form his response to fear takes.\n\n\"Seriva,\" you say. \"What is she doing here specifically? Not as an Covenant adviser. What is she actually doing?\"\n\nAldous looks at you. \"I do not know,\" he says. \"But she asked Edric to show her the Covenant's files on the last twenty years in Ashenveld. He showed her what he had. She spent six hours reading them. When she finished she burned the copies.\""
       },
@@ -800,7 +800,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "Aldous tells you. Every detail he has catalogued with the barman's instinct for detail: the way she moves through spaces as if she has been in them before, the specific questions she asked Edric, the way she looked at the east road when she thought no one was watching her.\n\n\"She is not advising Vorne,\" Aldous says. \"She is directing him. He asks her where to post soldiers and she tells him. He is the authority. She is the knowledge. Together they are something I do not have a word for.\"\n\nHe pauses. \"She has been to Ashenveld before. I would bet everything I own on it.\"",
+              "text": "Aldous tells you. Every detail he has catalogued with the barman's instinct for detail: the way she moves through spaces as if she has been in them before, the questions she asked Edric, the way she looked at the east road when she thought no one was watching her.\n\n\"She is not advising Vorne,\" Aldous says. \"She is directing him. He asks her where to post soldiers and she tells him. He is the authority. She is the knowledge. Together they are something I do not have a word for.\"\n\nHe pauses. \"She has been to Ashenveld before. I would bet everything I own on it.\"",
               "next_scene": "act2_ch3_seriva_first_meeting",
               "state_changes": {
                 "flags": {
@@ -809,7 +809,7 @@
               }
             },
             "success_at_cost": {
-              "text": "Aldous gives you what he has. She is directing Vorne, not advising him. She has been in Ashenveld before — he thinks.",
+              "text": "Aldous gives you what he has. She is directing Vorne, not advising him. She has been in Ashenveld before. He thinks.",
               "next_scene": "act2_ch3_seriva_first_meeting",
               "state_changes": {}
             },
@@ -842,10 +842,10 @@
       "requires": {},
       "text": {
         "default": [
-          "The Rootless camp is tense in the specific way of a community that has been threatened without being threatened directly.",
-          "Branch is at the perimeter. Lira is at the centre of the camp with two other partially afflicted members, maintaining the routine that Maret has established for them. And in the corner of the camp, in a tent that has been made as comfortable as any tent in this collection can be, is a girl of about seventeen with grey at her fingertips and the specific vacant quality of early curse exposure.",
+          "The Rootless camp is tense in the way of a community that has been threatened without being threatened directly.",
+          "Branch is at the perimeter. Lira is at the centre of the camp with two other partially afflicted members, maintaining the routine that Maret has established for them. And in the corner of the camp, in a tent that has been made as comfortable as any tent in this collection can be, is a girl of about seventeen with grey at her fingertips and the vacant quality of early curse exposure.",
           "Issa Vorne. Commander Vorne's daughter.",
-          "She does not know who you are. She looks at you when you approach with the unfocused attention of the early stages — not gone, not present, somewhere in between.",
+          "She does not know who you are. She looks at you when you approach with the unfocused attention of the early stages. Not gone, not present, somewhere in between.",
           "The herb garden has started to yellow along one edge. Branch has noticed. He has laid a row of stones along it, as if that would help.",
           {
             "when": {
@@ -856,8 +856,8 @@
             "text": "Maret, without looking up: \"You were right to send me back. I have not forgiven you for it.\""
           }
         ],
-        "commander": "You assess Issa with the professional eye. Early stage affliction — the fingertips, the attention. Not beyond treatment, possibly. Maret's methods have slowed the progression in others at this stage.\n\nBut Issa Vorne at the Rootless camp is a political problem of the first order. If Vorne knows she is here, his next action will be shaped by it entirely. If he does not know she is here, someone will tell him soon.",
-        "arcane": "The affliction on Issa is readable. Recent — the past two weeks, not longer. The density is low enough that it is still in the stage where external intervention can slow the progression.\n\nThe relevant question is whether Commander Vorne knows that the Rootless camp is the safest place for his daughter right now, and whether knowing it would change his behaviour toward the camp.",
+        "commander": "You assess Issa with the professional eye. Early stage affliction. The fingertips, the attention. Not beyond treatment, possibly. Maret's methods have slowed the progression in others at this stage.\n\nBut Issa Vorne at the Rootless camp is a political problem of the first order. If Vorne knows she is here, his next action will be shaped by it entirely. If he does not know she is here, someone will tell him soon.",
+        "arcane": "The affliction on Issa is readable. Recent. The past two weeks, not longer. The density is low enough that it is still in the stage where external intervention can slow the progression.\n\nThe relevant question is whether Commander Vorne knows that the Rootless camp is the safest place for his daughter right now, and whether knowing it would change his behaviour toward the camp.",
         "ranger": "Issa's look is not the vacancy you have seen in the other afflicted. It is distance. She is still in there, further back than she should be at her age and at this stage, but present.\n\n\"You came from the east,\" she says. She can see it somehow.",
         "cipher": "Issa Vorne is the most strategically significant person in the Rootless camp. The daughter of the regional military commander, afflicted, at the camp of a faction the commander has not yet moved against.\n\nShe is simultaneously an opportunity, a liability, and a person who is frightened and ill and has come somewhere that felt safe. You note all three of these facts and try to weight them appropriately."
       },
@@ -872,7 +872,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "She talks to you. Slowly, with the care of someone who has to rebuild each sentence from its component parts before they can say it.\n\nShe came to the camp because she knew about it — she had seen Lira in town before Lira came to the camp and Lira had told her about it, in the brief period when Lira was still functioning well enough to have a conversation in the market. When the affliction touched Issa, she knew where to go.\n\n\"My father,\" she says, and stops. \"He will fix it. That is what he does.\" A pause that contains something complicated. \"Or he will try to fix it in a way that makes it worse. He does that too.\"\n\nAnd then, carefully: \"I found something. In the ruins outskirts, the day before the affliction started. I have it here.\"\n\nShe produces a fragment of stone. The surface is worked, carved, familiar. Part of the sealing mechanism.",
+              "text": "She talks to you. Slowly, with the care of someone who has to rebuild each sentence from its component parts before they can say it.\n\nShe came to the camp because she knew about it. She had seen Lira in town before Lira came to the camp and Lira had told her about it, in the brief period when Lira was still functioning well enough to have a conversation in the market. When the affliction touched Issa, she knew where to go.\n\n\"My father,\" she says, and stops. \"He will fix it. That is what he does.\" A pause that contains something complicated. \"Or he will try to fix it in a way that makes it worse. He does that too.\"\n\nAnd then, carefully: \"I found something. In the ruins outskirts, the day before the affliction started. I have it here.\"\n\nShe produces a fragment of stone. The surface is worked, carved, familiar. Part of the sealing mechanism.",
               "next_scene": "act2_ch3_pol_revelation",
               "state_changes": {
                 "flags": {
@@ -901,7 +901,7 @@
               }
             },
             "failure": {
-              "text": "She does not respond meaningfully to your approach — the affliction is in a trough today, the periods of distance more pronounced than yesterday. Maret says to try again tomorrow.\n\nBut you see the fragment of stone in her hand, the way she holds it.",
+              "text": "She does not respond meaningfully to your approach. The affliction is in a trough today, the periods of distance more pronounced than yesterday. Maret says to try again tomorrow.\n\nBut you see the fragment of stone in her hand, the way she holds it.",
               "next_scene": "act2_ch3_pol_revelation",
               "state_changes": {}
             }
@@ -945,8 +945,8 @@
       },
       "requires": {},
       "text": {
-        "default": "Pol, the camp's healer, is in the herb garden. She is seventy and has said perhaps ten words to you. She is working with the focused attention she brings to everything — not the absence of awareness but the management of it, attention directed precisely where it needs to go.\n\nShe looks up when you approach. She looks at you the way she looks at plants she is assessing for health — completely, without performance.\n\n\"You were in the ruins,\" she says. Not a question.\n\n\"Yes.\"\n\n\"You found the person you were looking for.\"\n\n\"Yes.\"\n\nA pause. \"They found the sealing text.\"\n\nYou stop. She knows this. She knows this before you told her, which means she knew it was possible, which means she knows about the text.",
-        "commander": "\"You left the Covenant because of what you read in the archives,\" you say.\n\n\"Yes,\" she says.\n\n\"The full sealing text.\"\n\n\"Yes.\"\n\nYou look at her. Sixty years old. The herb garden. Three years at the Rootless camp. Fifteen years after leaving the Covenant. All of it adding up to a woman who has been waiting in a specific place for a specific thing to become possible.\n\n\"You have been preparing,\" you say.",
+        "default": "Pol, the camp's healer, is in the herb garden. She is seventy and has said perhaps ten words to you. She is working with the focused attention she brings to everything. Not the absence of awareness but the management of it, attention directed precisely where it needs to go.\n\nShe looks up when you approach. She looks at you the way she looks at plants she is assessing for health. Completely, without performance.\n\n\"You were in the ruins,\" she says. Not a question.\n\n\"Yes.\"\n\n\"You found the person you were looking for.\"\n\n\"Yes.\"\n\nA pause. \"They found the sealing text.\"\n\nYou stop. She knows this. She knows this before you told her, which means she knew it was possible, which means she knows about the text.",
+        "commander": "\"You left the Covenant because of what you read in the archives,\" you say.\n\n\"Yes,\" she says.\n\n\"The full sealing text.\"\n\n\"Yes.\"\n\nYou look at her. Sixty years old. The herb garden. Three years at the Rootless camp. Fifteen years after leaving the Covenant. All of it adding up to a woman who has been waiting in a place for a thing to become possible.\n\n\"You have been preparing,\" you say.",
         "arcane": "You sit across from her in the herb garden and you do not speak for a moment, both of you recognising that the conversation you are about to have is not a casual one.\n\n\"The text requires two participants,\" you say.\n\n\"Yes,\" she says.\n\n\"Participants who are bonded.\"\n\n\"The word is more specific than that,\" she says. \"The original language refers to people whose formative experiences are shared — who shaped each other in the period when shaping was possible. The mechanism reads the relationship, not just the intention.\"\n\nYou think about this. \"My missing person chose me specifically.\"\n\n\"Yes,\" Pol says. \"For exactly the reason the text describes.\"",
         "ranger": "You sit across from Pol and let her lead the conversation at her pace, which turns out to be efficient.\n\n\"The sealing text,\" she says, \"requires two participants and a third element — something that was part of the original mechanism. A piece of it. Something that remembers its original function.\"\n\nYou think of Issa and the fragment of stone.\n\n\"The fragment Issa found,\" you say.\n\nPol nods. \"I have been looking for it for three years.\"",
         "cipher": "Pol reads you reading her and decides to give you what she has directly rather than in stages.\n\n\"I left the Covenant because the full sealing text describes what the ritual costs,\" she says. \"Not the participants. The Covenant. The purification ritual the Covenant intends to perform is not the sealing ritual. It is a different ritual that uses the same mechanism but produces a different outcome.\"\n\nShe looks at you steadily. \"The Covenant's ritual seals the mechanism by destroying everything the power has touched. The original ritual seals it by fulfilling the power's original purpose.\" A pause. \"They are not trying to seal the curse. They are trying to end it by eliminating its effects. The difference matters enormously.\""
@@ -1007,7 +1007,7 @@
               }
             },
             "failure": {
-              "text": "\"Ask Seriva,\" Pol says. \"She will not tell you the truth but the specific way she avoids it will tell you something.\"",
+              "text": "\"Ask Seriva,\" Pol says. \"She will not tell you the truth but the way she avoids it will tell you something.\"",
               "next_scene": "act2_ch3_seriva_first_meeting",
               "state_changes": {}
             }
@@ -1039,7 +1039,7 @@
       "text": {
         "default": [
           "Seriva is at the shrine when you find her, or she allows herself to be found there, which amounts to the same thing.",
-          "She is in her sixties, compact, with the bearing of someone who has spent decades in rooms where other people defer to them and has stopped needing the deference to feel it is owed. She looks at you when you enter with the specific quality of someone completing an assessment they began the moment you arrived in Crestfall.",
+          "She is in her sixties, compact, with the bearing of someone who has spent decades in rooms where other people defer to them and has stopped needing the deference to feel it is owed. She looks at you when you enter with the quality of someone completing an assessment they began the moment you arrived in Crestfall.",
           "Edric is in the room. He stands when Seriva sits, and stays standing.",
           {
             "when": {
@@ -1055,7 +1055,7 @@
         "commander": "You give her nothing she is looking for and everything that is true in what you say.\n\n\"I went to Harrow,\" you say. \"Explored the forest edge. Came back.\"\n\nShe looks at you. She does not believe this is the complete account. She also cannot prove it is not the complete account.\n\n\"Harrow is interesting,\" she says. \"What did you find there?\"",
         "arcane": "You look at her and she looks at you and you both understand that this is a conversation between two people who know more than they are going to say and are assessing how much the other knows.\n\n\"You have been in Ashenveld before,\" you say. It is not a question.\n\n\"Twenty years ago,\" she says, without hesitation. Acknowledging it before you can use it as a reveal. \"I was conducting research on behalf of the Covenant.\"\n\n\"On the ruins.\"\n\n\"On the region,\" she says. The distinction is deliberate.",
         "ranger": "You read her in the first thirty seconds and what you read is: control. This is a person who has had information about Ashenveld and the ruins for twenty years and has been managing it carefully for twenty years, releasing only what serves her purposes.\n\n\"You know what is in the ruins,\" you say.\n\n\"I know what was in the ruins twenty years ago,\" she says. \"Things change.\"",
-        "cipher": "She is very good. You are watching her run the same assessment on you that you are running on her, and she is doing it with the ease of someone who has been doing it longer.\n\n\"You are here because the sealing failed,\" you say. \"And you are here specifically because you know why it failed.\"\n\nA pause. \"Everyone knows the sealing has been failing,\" she says.\n\n\"Not everyone,\" you say. \"Specifically you.\"\n\nThe pause before her response is her telling you that you are right."
+        "cipher": "She is very good. You are watching her run the same assessment on you that you are running on her, and she is doing it with the ease of someone who has been doing it longer.\n\n\"You are here because the sealing failed,\" you say. \"And you are here because you know why it failed.\"\n\nA pause. \"Everyone knows the sealing has been failing,\" she says.\n\n\"Not everyone,\" you say. \"Specifically you.\"\n\nThe pause before her response is her telling you that you are right."
       },
       "choices": [
         {
@@ -1101,7 +1101,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "She looks at you for a long time.\n\nThen she sits down. The first time you have seen her choose to sit — she has been standing since you arrived.\n\n\"Yes,\" she says. Quietly. Completely. \"I broke it. Not through carelessness. I believed what I was doing would strengthen it. I was wrong.\" She looks at her hands. \"I have spent twenty years trying to repair the damage I caused. The Covenant's purification ritual will work. It is not the original ritual — it is a different approach to the same problem — but it will stop the curse.\"\n\n\"At what cost?\" you ask.\n\n\"At the cost the situation requires,\" she says. And now she sounds like herself again — the admission is over, the control is back. But the admission happened. You have it.",
+              "text": "She looks at you for a long time.\n\nThen she sits down. The first time you have seen her choose to sit. She has been standing since you arrived.\n\n\"Yes,\" she says. Quietly. Completely. \"I broke it. Not through carelessness. I believed what I was doing would strengthen it. I was wrong.\" She looks at her hands. \"I have spent twenty years trying to repair the damage I caused. The Covenant's purification ritual will work. It is not the original ritual — it is a different approach to the same problem — but it will stop the curse.\"\n\n\"At what cost?\" you ask.\n\n\"At the cost the situation requires,\" she says. And now she sounds like herself again. The admission is over, the control is back. But the admission happened. You have it.",
               "next_scene": "act2_ch4_vorne_meeting",
               "state_changes": {
                 "flags": {
@@ -1124,7 +1124,7 @@
               }
             },
             "failure": {
-              "text": "She deflects with the ease of someone who has been deflecting this specific accusation — or the fear of it — for twenty years. You have overplayed and she has closed.\n\n\"The Covenant's ritual is the appropriate response to the current situation,\" she says. \"I am here to ensure it is performed correctly and quickly.\"",
+              "text": "She deflects with the ease of someone who has been deflecting this accusation, or the fear of it, for twenty years. You have overplayed and she has closed.\n\n\"The Covenant's ritual is the appropriate response to the current situation,\" she says. \"I am here to ensure it is performed correctly and quickly.\"",
               "next_scene": "act2_ch4_vorne_meeting",
               "state_changes": {
                 "factions": {
@@ -1219,7 +1219,7 @@
               }
             },
             "failure": {
-              "text": "She gives you the doctrinal answer — purification is necessary, the cost is proportional to the situation, the Covenant has the expertise to perform it with minimal impact. You do not believe the last part and cannot prove it.",
+              "text": "She gives you the doctrinal answer. Purification is necessary, the cost is proportional to the situation, the Covenant has the expertise to perform it with minimal impact. You do not believe the last part and cannot prove it.",
               "next_scene": "act2_ch4_vorne_meeting",
               "state_changes": {}
             }
