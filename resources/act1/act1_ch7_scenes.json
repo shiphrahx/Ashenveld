@@ -80,7 +80,8 @@
             }
           }
         }
-      ]
+      ],
+      "stage": "quiet"
     },
     {
       "id": "act1_ch7_harrow_cellar",

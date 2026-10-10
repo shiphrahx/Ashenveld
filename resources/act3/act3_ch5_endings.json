@@ -213,7 +213,8 @@
       "ending": {
         "id": "ending_stays_together",
         "title": "The Warden Stays"
-      }
+      },
+      "stage": "ending"
     },
     {
       "id": "ending_escape_together",
@@ -358,7 +359,8 @@
       "ending": {
         "id": "ending_escape_together",
         "title": "The Road West"
-      }
+      },
+      "stage": "ending"
     },
     {
       "id": "ending_alone_legend",
@@ -500,7 +502,8 @@
       "ending": {
         "id": "ending_alone_legend",
         "title": "The Warden Alone"
-      }
+      },
+      "stage": "ending"
     },
     {
       "id": "ending_warden_of_ashenveld",
@@ -626,7 +629,8 @@
       "ending": {
         "id": "ending_warden_of_ashenveld",
         "title": "The Camp Endures"
-      }
+      },
+      "stage": "ending"
     },
     {
       "id": "ending_the_account",
@@ -756,7 +760,8 @@
       "ending": {
         "id": "ending_the_account",
         "title": "The Account"
-      }
+      },
+      "stage": "ending"
     }
   ]
 }

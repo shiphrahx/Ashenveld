@@ -203,3 +203,10 @@ export function fadeOut(seconds: number): void {
 }
 
 export const cueParts = () => ctx ? { ctx, bedsBus, noteBus, noteOscs, noteTarget, setNote, out: duckGain } : null
+
+/** Undo any fade, duck or cut left over from the last game. */
+export function resetMix(): void {
+  if (!ctx) return
+  bedsBus.gain.setTargetAtTime(1, ctx.currentTime, 0.3)
+  release()
+}

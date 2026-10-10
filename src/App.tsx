@@ -45,11 +45,16 @@ import Credits from './components/Credits'
 import { useHotkeys } from './hooks/useHotkeys'
 import Toasts, { type Toast } from './components/Toasts'
 import { useSettings, motionAllowed } from './settings'
-import { unlock, replay, setScene, setVolume, setMuted, setAmbience } from './audio/engine'
+import { unlock, replay, setScene, setVolume, setMuted, setAmbience, duck, hold, release, fadeOut, resetMix } from './audio/engine'
 import { playCue } from './audio/cues'
 import styles from './App.module.css'
 
 type AppPhase = 'loading' | 'title' | 'creation' | 'game' | 'ended' | 'error'
+
+/** E9 'touch': grey over 600ms, hold 3s, back over 1s. */
+const TOUCH_MS = 4600
+/** E9 'ritual': the warm glow at the art's focal point grows with each scene, and goes after the seal. */
+const RITUAL_GLOW: Record<string, number> = { act2_ch6_ritual_approach: 1, act2_ch6_ritual_engagement: 2, act2_ch6_ritual_sealing: 3 }
 
 /** Where you wake if you collapse before you have rested anywhere. */
 function defaultRestLocation(act: number): string {
@@ -88,6 +93,37 @@ export default function App() {
   const [actCard, setActCard] = useState<{ act: number; title: string } | null>(null)
   const [chapterNote, setChapterNote] = useState<{ title: string; key: number } | null>(null)
   const [storyFade, setStoryFade] = useState<'out' | 'in' | null>(null)
+
+  // ── E9: staged scenes ────────────────────────────────────────────────────────
+  const [engaged, setEngaged] = useState(false)          // a choice has been made in this scene
+  const [frozenArt, setFrozenArt] = useState(false)      // 'stopped': everything that moves holds still
+  const [touching, setTouching] = useState(false)        // 'touch': the shell greys and comes back
+  const [closing, setClosing] = useState(false)          // the last fade before the end screen
+  const effectsOn = useRef(settings.screenEffects && motionAllowed(settings))
+  effectsOn.current = settings.screenEffects && motionAllowed(settings)
+  const stage = currentScene?.stage
+  const stageScene = currentScene ? `${currentScene.id}:${gameState?.visited[currentScene.id] ?? 0}` : ''
+  useEffect(() => {
+    if (!stageScene) return
+    setEngaged(false)
+    if (stage === 'stopped') {
+      setFrozenArt(true)
+      const t = setTimeout(() => setFrozenArt(false), 2000)
+      return () => clearTimeout(t)
+    }
+    if (stage === 'touch' && effectsOn.current) {
+      setTouching(true)
+      const t = setTimeout(() => setTouching(false), TOUCH_MS)
+      return () => clearTimeout(t)
+    }
+    if (stage === 'ending') fadeOut(5)
+    if (stageScene.startsWith('act2_ch1_missing_person_approach:')) duck(0, 3000, 1)
+  }, [stageScene])
+  // Quiet scenes: the bed sits at half until you choose.
+  useEffect(() => {
+    if (stage === 'quiet' && !engaged) hold(0.5)
+    else release()
+  }, [stage, engaged, stageScene])
   useEffect(() => {
     if (!chapterNote) return
     const t = setTimeout(() => setChapterNote(null), 3000)
@@ -215,7 +251,6 @@ export default function App() {
       setCurrentScene(scene)
       saveGame(next)
       playCue(scene.cue)
-      if (scene.ending) playCue('end')
     } catch (err) {
       setError(`Failed to load scene "${sceneId}": ${err}`)
       setPhase('error')
@@ -237,10 +272,10 @@ export default function App() {
 
   // ── Title actions ─────────────────────────────────────────────────────────────
   // The first click on Begin or Continue is what lets sound start (E3).
-  const handleNewGame = useCallback(() => { unlock(); replay(); setPhase('creation') }, [])   // no delete here
+  const handleNewGame = useCallback(() => { unlock(); resetMix(); replay(); setPhase('creation') }, [])   // no delete here
 
   const handleContinue = useCallback(async () => {
-    unlock(); replay()
+    unlock(); resetMix(); replay()
     const saved = loadGame()
     if (!saved) { setPhase('creation'); return }
     if (saved.ended) {
@@ -297,6 +332,13 @@ export default function App() {
       recordEnding(next)
       setGameState(next)
       setLastOutcome(resolveRich(outcome.text, next))
+      // E9: the story fades to the end screen over two seconds, with one soft tone.
+      playCue('end')
+      if (motionOn.current) {
+        setClosing(true)
+        await new Promise(r => setTimeout(r, 2000))
+        setClosing(false)
+      }
       setPhase('ended')
       return
     }
@@ -407,7 +449,7 @@ export default function App() {
   }
 
   if (phase === 'game' && gameState && currentScene) {
-    const hideClock = currentScene.when?.hide_clock ?? false
+    const hideClock = (currentScene.when?.hide_clock ?? false) || stage === 'ending'
     // E4: the curse greys the art and closes in from the edges. Story text never changes.
     const dimRaw = Math.min(1, gameState.world.curse_spread / 100)
     const dim = !settings.screenEffects ? 0 : gameState.flags.ritual_partial ? Math.max(0.3, dimRaw) : dimRaw
@@ -421,17 +463,26 @@ export default function App() {
     return (
       <>
         <div className={styles.backdrop} aria-hidden="true" />
-        <div className={styles.shell} style={shellVars} data-dim={dim.toFixed(2)}>
+        <div className={[
+            styles.shell,
+            (stage === 'quiet' || stage === 'reunion') && !engaged ? styles.stageQuiet : '',
+            stage === 'ritual' ? styles.stageRitual : '',
+            touching ? styles.touching : '',
+            closing ? styles.closing : '',
+          ].join(' ')} style={shellVars} data-dim={dim.toFixed(2)} data-stage={stage}
+          inert={closing} data-leaving={closing ? '' : undefined}>
           <div className={styles.areaArt}>
             <SceneArt locationName={locationName(gameState.world.current_location)} gameState={gameState}
-              alt={getLocation(gameState.world.current_location)?.description ?? locationName(gameState.world.current_location)} />
+              alt={getLocation(gameState.world.current_location)?.description ?? locationName(gameState.world.current_location)}
+              frozen={frozenArt} glow={settings.screenEffects && motionAllowed(settings) ? RITUAL_GLOW[currentScene.id] ?? 0 : 0} />
           </div>
           <header className={styles.areaStatus}>
             <StatusStrip state={gameState} hideClock={hideClock} onOpen={() => openPanel('status')} />
           </header>
           <main className={`${styles.areaStory} ${storyFade === 'out' ? styles.storyOut : storyFade === 'in' ? styles.storyIn : ''}`}
             inert={storyFade === 'out'} data-leaving={storyFade === 'out' ? '' : undefined}>
-            <SceneView scene={currentScene} state={gameState} onChoice={handleChoice} seenBefore={seenBefore} chapterNote={chapterNote} />
+            <SceneView scene={currentScene} state={gameState} onChoice={handleChoice} seenBefore={seenBefore} chapterNote={chapterNote}
+              onEngage={() => setEngaged(true)} holdChoicesMs={touching ? TOUCH_MS : 0} />
           </main>
           <div className={styles.areaSide}>
             <Sidebar state={gameState} onOpen={openPanel} hideClock={hideClock} journalDot={journalDot} flash={flash} rest={rest} onRest={onRestPressed} dimmingDelta={dimmingDelta} />

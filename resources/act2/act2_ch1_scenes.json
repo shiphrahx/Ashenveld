@@ -630,7 +630,8 @@
             }
           }
         }
-      ]
+      ],
+      "stage": "reunion"
     },
     {
       "id": "act2_ch1_reunion",
@@ -819,7 +820,8 @@
           },
           "locked_hint": "Needs the cloth from the campsite"
         }
-      ]
+      ],
+      "stage": "reunion"
     },
     {
       "id": "act2_ch1_what_they_found",

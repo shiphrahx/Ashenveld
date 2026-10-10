@@ -726,7 +726,8 @@
           }
         }
       ],
-      "rest": true
+      "rest": true,
+      "stage": "quiet"
     },
     {
       "id": "act1_ch1_tallow_room",

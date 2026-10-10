@@ -234,7 +234,8 @@
             }
           }
         }
-      ]
+      ],
+      "stage": "ritual"
     },
     {
       "id": "act2_ch6_ritual_engagement",
@@ -607,7 +608,8 @@
             }
           }
         }
-      ]
+      ],
+      "stage": "ritual"
     },
     {
       "id": "act2_ch6_ritual_sealing",
@@ -745,7 +747,8 @@
             }
           }
         }
-      ]
+      ],
+      "stage": "ritual"
     },
     {
       "id": "act2_ch6_aftermath",
@@ -825,7 +828,8 @@
             }
           }
         }
-      ]
+      ],
+      "stage": "ritual"
     },
     {
       "id": "act2_ch6_seriva_arrives",

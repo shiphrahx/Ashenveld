@@ -88,3 +88,14 @@
 .drift .locationImg { animation: drift 45s ease-in-out infinite alternate; }
 @keyframes drift { from { transform: scale(1); } to { transform: scale(1.05); } }
 .frozen .locationImg { animation-play-state: paused; }
+
+/* E9: the ritual's warm glow, a slow 6s pulse, brighter in each scene, gone after the seal */
+.glow {
+  position: absolute; inset: 0; z-index: 3; pointer-events: none;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 176, 96, 0.55), rgba(255, 140, 60, 0.12) 35%, transparent 60%);
+  mix-blend-mode: screen;
+  opacity: calc(var(--glow, 0) * 0.7);
+  transition: opacity 3s ease;
+  animation: glow 6s ease-in-out infinite;
+}
+@keyframes glow { 0%, 100% { filter: brightness(0.8); } 50% { filter: brightness(1.2); } }

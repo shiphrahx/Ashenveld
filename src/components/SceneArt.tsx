@@ -13,9 +13,11 @@ interface Props {
   alt?: string
   /** E9: hold the moving layers still. */
   frozen?: boolean
+  /** E9 'ritual': a warm glow at the focal point, 0 to 3. */
+  glow?: number
 }
 
-export default function SceneArt({ locationName, gameState, alt = '', frozen = false }: Props) {
+export default function SceneArt({ locationName, gameState, alt = '', frozen = false, glow = 0 }: Props) {
   const { settings } = useSettings()
   const moving = motionAllowed(settings)
 
@@ -126,6 +128,8 @@ export default function SceneArt({ locationName, gameState, alt = '', frozen = f
           />
         )}
         </div>
+
+        <div className={styles.glow} style={{ '--glow': String(glow / 3) } as React.CSSProperties} aria-hidden="true" data-glow={glow} />
 
         {stamp && <div key={stamp} className={styles.dayStamp} data-day-stamp>{stamp}</div>}
 

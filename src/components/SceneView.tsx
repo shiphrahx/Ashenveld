@@ -24,6 +24,10 @@ interface Props {
   seenBefore?: boolean
   /** E6: the chapter's title, for three seconds after it changes. */
   chapterNote?: { title: string; key: number } | null
+  /** E9: told when the player first picks something here. */
+  onEngage?: () => void
+  /** E9 'touch': the choices wait this long whatever happens. */
+  holdChoicesMs?: number
 }
 
 // Roman numerals for choice markers, matching the prototype
@@ -83,7 +87,7 @@ function outcomeClass(rollResult: RollResult, choice: Choice): string {
 
 // ── Component ─────────────────────────────────────────────────────────────────
 
-export default function SceneView({ scene, state, onChoice, seenBefore = false, chapterNote = null }: Props) {
+export default function SceneView({ scene, state, onChoice, seenBefore = false, chapterNote = null, onEngage, holdChoicesMs = 0 }: Props) {
   const { settings } = useSettings()
   const [rollResult, setRollResult] = useState<RollResult | null>(null)
   const [activeChoice, setActiveChoice] = useState<Choice | null>(null)
@@ -112,6 +116,7 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false, 
 
   const handleChoiceClick = useCallback((choice: Choice) => {
     choiceTick()
+    onEngage?.()
     activeChoiceText.current = resolveRich(choice.text, state)
     activeChoiceId.current = choice.id
     if (choice.roll) {
@@ -122,7 +127,7 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false, 
       const outcome = choice.outcomes.default
       if (outcome) { setShownOutcome({ outcome, css: '', key: 'default' }); playCue(outcome.cue) }
     }
-  }, [state])
+  }, [state, onEngage])
 
   // Counters the outcome should also apply: Command used, a Cipher read shown.
   const extraChanges = useRef<Record<string, number>>({})
@@ -193,6 +198,22 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false, 
   const [revealed, setRevealed] = useState(instantReveal)
   const [choicesReady, setChoicesReady] = useState(instantReveal)
   const finishReveal = useCallback(() => { setRevealed(true); setChoicesReady(true) }, [])
+  const [held, setHeld] = useState(false)
+  useEffect(() => {
+    if (!holdChoicesMs) { setHeld(false); return }
+    setHeld(true)
+    const t = setTimeout(() => setHeld(false), holdChoicesMs)
+    return () => clearTimeout(t)
+  }, [holdChoicesMs, scene.id])
+  // E9: when the seal holds, Continue waits two seconds.
+  const [sealHold, setSealHold] = useState(false)
+  useEffect(() => {
+    if (shownOutcome?.outcome.cue !== 'resolve') return
+    setSealHold(true)
+    const t = setTimeout(() => setSealHold(false), 2000)
+    return () => clearTimeout(t)
+  }, [shownOutcome])
+  const ready = choicesReady && !held && !sealHold
   const storyRef = useRef<HTMLDivElement>(null)
   const outcomeRef = useRef<HTMLDivElement>(null)
   const titleRef = useRef<HTMLHeadingElement>(null)
@@ -349,12 +370,12 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false, 
             </div>
           )}
 
-          {inlineChoices && <div className={`${styles.choices} ${styles.choicesInline} ${choicesReady ? '' : styles.waiting}`} data-waiting={choicesReady ? undefined : ''} inert={!choicesReady}>{choiceButtons}</div>}
+          {inlineChoices && <div className={`${styles.choices} ${styles.choicesInline} ${ready ? '' : styles.waiting}`} data-waiting={ready ? undefined : ''} inert={!ready}>{choiceButtons}</div>}
         </div>
       </div>
 
       {/* ── Choices ── */}
-      {!inlineChoices && <div className={`${styles.choices} ${choicesReady ? '' : styles.waiting}`} data-waiting={choicesReady ? undefined : ''} inert={!choicesReady}>{choiceButtons}</div>}
+      {!inlineChoices && <div className={`${styles.choices} ${ready ? '' : styles.waiting}`} data-waiting={ready ? undefined : ''} inert={!ready}>{choiceButtons}</div>}
 
       {/* ── Dice overlay ── */}
       {rollResult && (

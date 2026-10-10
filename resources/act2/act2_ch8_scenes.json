@@ -384,7 +384,8 @@
           }
         }
       ],
-      "rest": true
+      "rest": true,
+      "stage": "quiet"
     },
     {
       "id": "act2_ch8_point_of_no_return",

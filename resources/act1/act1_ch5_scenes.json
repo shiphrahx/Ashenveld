@@ -145,7 +145,8 @@
           }
         }
       ],
-      "cue": "stopped"
+      "cue": "stopped",
+      "stage": "stopped"
     },
     {
       "id": "act1_ch5_faction_responses",
@@ -390,7 +391,8 @@
         }
       ],
       "rest": true,
-      "cue": "touch"
+      "cue": "touch",
+      "stage": "touch"
     },
     {
       "id": "act1_ch5_class_specific",

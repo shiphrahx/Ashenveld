@@ -50,3 +50,22 @@
 .storyOut { opacity: 0; transition: opacity 200ms ease; }
 .storyIn { animation: storyIn 300ms ease; }
 @keyframes storyIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* ── E9: staged scenes ── */
+.areaSide, .areaTabs, .areaStatus { transition: opacity 600ms ease; }
+.stageQuiet .areaSide, .stageQuiet .areaTabs, .stageQuiet .areaStatus { opacity: 0.35; }
+/* The ritual: the sidebar steps away on wide screens and the story widens. */
+@media (min-width: 1024px) {
+  .stageRitual { grid-template-columns: minmax(260px, 30%) minmax(0, 1fr) 0; }
+  .stageRitual .areaSide { visibility: hidden; border-left: 0; }
+}
+/* The touch: the whole shell greys, holds, and comes back. */
+.touching { animation: touch 4.6s ease forwards; }
+@keyframes touch {
+  0% { filter: saturate(1); }
+  13% { filter: saturate(0.15); }
+  78% { filter: saturate(0.15); }
+  100% { filter: saturate(1); }
+}
+/* The last fade before the end screen. */
+.closing { opacity: 0; transition: opacity 2s ease; }
