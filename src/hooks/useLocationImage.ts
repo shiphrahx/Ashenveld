@@ -20,6 +20,7 @@ export function useLocationImage(
     const filename = imageMap[resolvedId]
     if (!filename) return null
 
+    // Without the size and extension; SceneArt adds @1x.webp and @2x.webp (B22).
     return `${BASE}resources/images/${filename}`
   }, [locationId, gameState.world.act, gameState.flags.ritual_complete])
 }

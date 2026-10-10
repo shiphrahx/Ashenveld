@@ -17,6 +17,9 @@ interface Props {
   glow?: number
 }
 
+/** B22: the art column is about a third of a wide screen and the whole width of a phone. */
+const IMG_SIZES = '(max-width: 720px) 100vw, 34vw'
+
 export default function SceneArt({ locationName, gameState, alt = '', frozen = false, glow = 0 }: Props) {
   const { settings } = useSettings()
   const moving = motionAllowed(settings)
@@ -108,7 +111,9 @@ export default function SceneArt({ locationName, gameState, alt = '', frozen = f
         {displayed !== null && (
           <img
             key={displayed}
-            src={displayed}
+            src={`${displayed}@1x.webp`}
+            srcSet={`${displayed}@1x.webp 640w, ${displayed}@2x.webp 1280w`}
+            sizes={IMG_SIZES}
             alt={alt}
             className={styles.locationImg}
             style={{ opacity: fading ? 0 : 1 }}
@@ -118,7 +123,9 @@ export default function SceneArt({ locationName, gameState, alt = '', frozen = f
         {incoming !== null && (
           <img
             key={incoming}
-            src={incoming}
+            src={`${incoming}@1x.webp`}
+            srcSet={`${incoming}@1x.webp 640w, ${incoming}@2x.webp 1280w`}
+            sizes={IMG_SIZES}
             alt=""
             aria-hidden="true"
             className={styles.locationImg}
