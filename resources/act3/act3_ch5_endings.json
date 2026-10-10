@@ -156,6 +156,14 @@
           {
             "when": {
               "flags": {
+                "covenant_aligned": true
+              }
+            },
+            "text": "Once a month a keeper in plain grey walks the east road to the chamber and back. Edric has stopped saying \"cleansed\"."
+          },
+          {
+            "when": {
+              "flags": {
                 "crestfall_afflicted": true
               }
             },
@@ -272,6 +280,14 @@
               }
             },
             "text": "Pol walks east to the chamber every new moon and writes to you what she finds. The letters are short. Holding, they say. Not finished."
+          },
+          {
+            "when": {
+              "flags": {
+                "covenant_aligned": true
+              }
+            },
+            "text": "Once a month a keeper in plain grey walks the east road to the chamber and back. Edric has stopped saying \"cleansed\"."
           },
           {
             "when": {
@@ -396,6 +412,14 @@
           {
             "when": {
               "flags": {
+                "covenant_aligned": true
+              }
+            },
+            "text": "Once a month a keeper in plain grey walks the east road to the chamber and back. Edric has stopped saying \"cleansed\"."
+          },
+          {
+            "when": {
+              "flags": {
                 "crestfall_afflicted": true
               }
             },
@@ -510,6 +534,14 @@
               }
             },
             "text": "The camp keeps a rota for the walk east. Branch goes most months. He comes back and says \"Holding,\" and nothing else."
+          },
+          {
+            "when": {
+              "flags": {
+                "covenant_aligned": true
+              }
+            },
+            "text": "Once a month a keeper in plain grey walks the east road to the chamber and back. Edric has stopped saying \"cleansed\"."
           },
           {
             "when": {
@@ -632,6 +664,14 @@
               }
             },
             "text": "The account's last page says who checks the seal: Pol, and Lira after her, once a month. It says the seal is partial. It says so plainly."
+          },
+          {
+            "when": {
+              "flags": {
+                "covenant_aligned": true
+              }
+            },
+            "text": "Once a month a keeper in plain grey walks the east road to the chamber and back. Edric has stopped saying \"cleansed\"."
           },
           {
             "when": {

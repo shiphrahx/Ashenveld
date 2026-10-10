@@ -1040,6 +1040,7 @@
         "default": [
           "Seriva is at the shrine when you find her, or she allows herself to be found there, which amounts to the same thing.",
           "She is in her sixties, compact, with the bearing of someone who has spent decades in rooms where other people defer to them and has stopped needing the deference to feel it is owed. She looks at you when you enter with the specific quality of someone completing an assessment they began the moment you arrived in Crestfall.",
+          "Edric is in the room. He stands when Seriva sits, and stays standing.",
           {
             "when": {
               "inventory": [
@@ -1129,6 +1130,33 @@
                 "factions": {
                   "ashen_covenant": {
                     "reputation": -10
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "ask_the_number",
+          "text": "Ask her for the number for Crestfall, out loud, so Edric hears it.",
+          "requires": {
+            "flags": {
+              "knows_covenant_kills_afflicted": true
+            }
+          },
+          "once": true,
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "\"How many,\" you say, \"in Crestfall?\"\n\nSeriva looks at Edric before she answers, which is the first unguarded thing you have seen her do. \"At the present rate,\" she says, \"a fifth.\"\n\nEdric has known the doctrine for thirty years. He has preached it. You watch him hear the count for the town he lives in, for the first time. He sits down.",
+              "next_scene": "act2_ch3_seriva_first_meeting",
+              "state_changes": {
+                "flags": {
+                  "edric_heard_the_count": true
+                },
+                "factions": {
+                  "ashen_covenant": {
+                    "reputation": -5
                   }
                 }
               }

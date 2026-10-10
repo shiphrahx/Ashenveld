@@ -234,11 +234,34 @@
           "requires": {},
           "roll": {
             "stat": "charisma",
-            "dc": 12
+            "dc": 12,
+            "bonus": [
+              {
+                "when": {
+                  "flags": {
+                    "edric_heard_the_count": true
+                  }
+                },
+                "value": 3,
+                "label": "Edric will help"
+              }
+            ]
           },
           "outcomes": {
             "success": {
-              "text": "Pol can carry a message back to the camp before she returns to witness the ritual. You compose something brief — the Rootless camp has resources that Seriva will need to requisition through Vorne, and Vorne's daughter is at the camp, and Maret can make that requisition complicated enough to cost Seriva a day.\n\nPol takes the message and goes. She will be back before morning.\n\nYou have bought possibly another day. It may not be needed. It may make all the difference.",
+              "text": [
+                "Pol can carry a message back to the camp before she returns to witness the ritual. You compose something brief — the Rootless camp has resources that Seriva will need to requisition through Vorne, and Vorne's daughter is at the camp, and Maret can make that requisition complicated enough to cost Seriva a day.",
+                "Pol takes the message and goes. She will be back before morning.",
+                "You have bought possibly another day. It may not be needed. It may make all the difference.",
+                {
+                  "when": {
+                    "flags": {
+                      "edric_heard_the_count": true
+                    }
+                  },
+                  "text": "The message goes to Edric as well. He locks the shrine's map room, and Seriva loses a day finding another copy."
+                }
+              ],
               "next_scene": "act2_ch5_missing_person_private",
               "state_changes": {
                 "flags": {
@@ -276,7 +299,19 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "Pol can carry a message back to the camp before she returns to witness the ritual. You compose something brief — the Rootless camp has resources that Seriva will need to requisition through Vorne, and Vorne's daughter is at the camp, and Maret can make that requisition complicated enough to cost Seriva a day.\n\nPol takes the message and goes. She will be back before morning.\n\nYou have bought possibly another day. It may not be needed. It may make all the difference.",
+              "text": [
+                "Pol can carry a message back to the camp before she returns to witness the ritual. You compose something brief — the Rootless camp has resources that Seriva will need to requisition through Vorne, and Vorne's daughter is at the camp, and Maret can make that requisition complicated enough to cost Seriva a day.",
+                "Pol takes the message and goes. She will be back before morning.",
+                "You have bought possibly another day. It may not be needed. It may make all the difference.",
+                {
+                  "when": {
+                    "flags": {
+                      "edric_heard_the_count": true
+                    }
+                  },
+                  "text": "The message goes to Edric as well. He locks the shrine's map room, and Seriva loses a day finding another copy."
+                }
+              ],
               "next_scene": "act2_ch5_missing_person_private",
               "state_changes": {
                 "flags": {

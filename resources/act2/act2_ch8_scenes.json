@@ -214,6 +214,48 @@
               }
             }
           }
+        },
+        {
+          "id": "ask_edric_to_keep_the_seal",
+          "text": "Ask Edric to keep the seal.",
+          "roll": null,
+          "requires": {
+            "any": [
+              {
+                "min_faction": {
+                  "ashen_covenant": 10
+                }
+              },
+              {
+                "flags": {
+                  "edric_heard_the_count": true
+                }
+              }
+            ]
+          },
+          "locked_hint": "Needs the Covenant, or Edric, on your side",
+          "outcomes": {
+            "default": {
+              "text": "You find him at the shrine with the candles. You ask him to keep it: to walk east every month and listen, and write down what he hears, and keep doing it after you are gone.\n\nHe is quiet for a long while. \"We were made to seal it,\" he says. \"Not like this. But we were made to seal it.\" He gives Pol the purification texts that afternoon, all of them, in a box tied with string, and does not ask for them back.",
+              "next_scene": "act2_ch8_relationship_test",
+              "state_changes": {
+                "flags": {
+                  "covenant_aligned": true
+                },
+                "factions": {
+                  "ashen_covenant": {
+                    "reputation": 30
+                  },
+                  "iron_compact": {
+                    "reputation": -10
+                  },
+                  "rootless": {
+                    "reputation": -5
+                  }
+                }
+              }
+            }
+          }
         }
       ],
       "rest": true
