@@ -308,3 +308,13 @@ Branch `step-8-threads-companion`, stacked on step 7.
 - N6 asks Maret to grant `maret_letter_obtained` from text, which text can't do. Both outcomes of the forest-edge scene set it instead.
 - N7's three-sentence kit (herbs, ward, nothing) has to be three paragraphs, because guarded parts are joined as paragraphs.
 - I cut six "for a long time"s that had crept into my own new lines.
+
+## Step 9 — N9 to N18 (IN PROGRESS, not ticked)
+
+Branch `step-9-voice-endings`, stacked on step 8. Pushed, no PR yet.
+
+**Done so far**: N9 (timeline, `docs/story-bible.md`, README dates), N11 (four Act 3 path conflicts), N12 (fiction breaks, act-end scene removed, titles), N13 (class stub, 12 class-only choices, Act 3 class options), N14 (Covenant path), N15 (both letters; U14 paragraph kinds brought forward to render them), N16 (endings), N17 (Neither option, `[sir/ma'am]`; pronoun conversion not done, needs your say-so), N18 (roles, items, README). N10 mechanical pass: "specific" 231 → 39, em dashes 829 → 112.
+
+**Left for step 9**: the N10 hand edits ("of someone who" 78 → 15, "specific" 39 → 25, the Not-tags 16 → 6, "You note/file" 28 → 6, "You read" openers, contractions for Aldous, Sen, Hanna, Lira, Issa and the soldiers), a full e2e run, prose stats in the PR, ticking this step and opening the PR.
+
+**Not started**: steps 10, 11, 12.
