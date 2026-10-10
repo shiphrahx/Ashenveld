@@ -45,6 +45,8 @@ import Credits from './components/Credits'
 import { useHotkeys } from './hooks/useHotkeys'
 import Toasts, { type Toast } from './components/Toasts'
 import { useSettings } from './settings'
+import { unlock, replay, setScene, setVolume, setMuted, setAmbience } from './audio/engine'
+import { playCue } from './audio/cues'
 import styles from './App.module.css'
 
 type AppPhase = 'loading' | 'title' | 'creation' | 'game' | 'ended' | 'error'
@@ -79,6 +81,23 @@ export default function App() {
   const toastId = useRef(0)
   const { settings } = useSettings()
   const toastsOn = useRef(settings.toasts)
+
+  // ── Sound (E3) ────────────────────────────────────────────────────────────────
+  useEffect(() => { setVolume(settings.volume) }, [settings.volume])
+  useEffect(() => { setMuted(settings.muted) }, [settings.muted])
+  useEffect(() => { setAmbience(settings.ambience) }, [settings.ambience])
+  const soundKey = gameState && phase === 'game'
+    ? [gameState.world.current_location, gameState.world.curse_spread, gameState.flags.ritual_complete, gameState.flags.ritual_partial, gameState.player.class].join('|')
+    : ''
+  useEffect(() => {
+    if (!gameState || phase !== 'game') return
+    const loc = gameState.world.current_location
+    const bed = getLocation(loc)?.ambience ?? 'town'
+    const seal = gameState.flags.ritual_complete ? 'full' : gameState.flags.ritual_partial ? 'partial' : null
+    const homeward = loc === 'east_road_return' || loc === 'west_road_leaving'
+    const birds = homeward || ((bed === 'road' || bed === 'town') && seal) ? (seal === 'partial' ? 0.5 : 1) : 0
+    setScene({ bed, dimming: gameState.world.curse_spread, arcane: gameState.player.class === 'arcane', seal, birds })
+  }, [soundKey])
   toastsOn.current = settings.toasts
   const dropToast = useCallback((id: number) => setToasts(t => t.filter(x => x.id !== id)), [])
 
@@ -163,6 +182,8 @@ export default function App() {
       setGameState(next)
       setCurrentScene(scene)
       saveGame(next)
+      playCue(scene.cue)
+      if (scene.ending) playCue('end')
     } catch (err) {
       setError(`Failed to load scene "${sceneId}": ${err}`)
       setPhase('error')
@@ -183,9 +204,11 @@ export default function App() {
   }, [])
 
   // ── Title actions ─────────────────────────────────────────────────────────────
-  const handleNewGame = useCallback(() => { setPhase('creation') }, [])   // no delete here
+  // The first click on Begin or Continue is what lets sound start (E3).
+  const handleNewGame = useCallback(() => { unlock(); replay(); setPhase('creation') }, [])   // no delete here
 
   const handleContinue = useCallback(async () => {
+    unlock(); replay()
     const saved = loadGame()
     if (!saved) { setPhase('creation'); return }
     if (saved.ended) {

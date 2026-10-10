@@ -286,7 +286,8 @@
                   "crossed_into_forest_first": true,
                   "maret_followed": true
                 }
-              }
+              },
+              "cue": "silence_falls"
             }
           }
         },
@@ -559,7 +560,8 @@
             }
           }
         }
-      ]
+      ],
+      "cue": "silence_falls"
     }
   ]
 }

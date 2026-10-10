@@ -8,6 +8,8 @@ import { sceneText, resolveRich, CLASS_LABELS } from '../text'
 import { Inline } from './Inline'
 import Para from './Para'
 import DiceOverlay from './DiceOverlay'
+import { choiceTick, journalNote } from '../audio/ui'
+import { playCue } from '../audio/cues'
 import { useMediaQuery } from '../hooks/useMediaQuery'
 import { applyStateChanges, diffState } from '../gameState'
 import { getNpc } from '../loader'
@@ -107,6 +109,7 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
   )
 
   const handleChoiceClick = useCallback((choice: Choice) => {
+    choiceTick()
     activeChoiceText.current = resolveRich(choice.text, state)
     activeChoiceId.current = choice.id
     if (choice.roll) {
@@ -115,7 +118,7 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
       setRollResult(result)
     } else {
       const outcome = choice.outcomes.default
-      if (outcome) setShownOutcome({ outcome, css: '', key: 'default' })
+      if (outcome) { setShownOutcome({ outcome, css: '', key: 'default' }); playCue(outcome.cue) }
     }
   }, [state])
 
@@ -145,11 +148,14 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
     setRollResult(null)
     setActiveChoice(null)
     const word = { success: 'Success', success_at_cost: 'At a cost', failure: 'Failed' }[rollResult.outcome]
-    if (outcome) setShownOutcome({ outcome, css, key, tag: `${STAT_NAMES[rollResult.statName] ?? rollResult.statName} · ${word}` })
+    choiceTick()
+    if (outcome) { setShownOutcome({ outcome, css, key, tag: `${STAT_NAMES[rollResult.statName] ?? rollResult.statName} · ${word}` }); playCue(outcome.cue) }
   }, [rollResult, activeChoice])
 
   const handleOutcomeContinue = useCallback(() => {
     if (shownOutcome && activeChoiceText.current) {
+      choiceTick()
+      if (changes.some(c => c.key === 'journal')) journalNote()
       const entry: JournalEntry = {
         sceneId: scene.id,
         choiceId: activeChoiceId.current ?? '',
@@ -167,7 +173,7 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
       activeChoiceText.current = null
       activeChoiceId.current = null
     }
-  }, [shownOutcome, onChoice, scene, state])
+  }, [shownOutcome, onChoice, scene, state, changes])
 
   // Crumb: "Act II · Chapter 3" and "Day 7 · Evening"
   const place = `Act ${toRoman(state.world.act)} · Chapter ${state.world.chapter}`

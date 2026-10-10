@@ -1,4 +1,5 @@
 import React, { useEffect, useId, useRef } from 'react'
+import { panelTick } from '../audio/ui'
 import styles from './Panel.module.css'
 
 interface Props {
@@ -23,7 +24,8 @@ export default function Panel({ title, onClose, wide = false, children }: Props)
     const opener = document.activeElement as HTMLElement | null
     const first = ref.current?.querySelector<HTMLElement>(FOCUSABLE)
     first?.focus()
-    return () => { opener?.focus?.() }
+    panelTick()
+    return () => { panelTick(); opener?.focus?.() }
   }, [])
 
   function onKeyDown(e: React.KeyboardEvent) {

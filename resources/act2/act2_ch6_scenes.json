@@ -713,7 +713,8 @@
                   "curse_sealed": true,
                   "ritual_done": true
                 }
-              }
+              },
+              "cue": "resolve"
             },
             "success_at_cost": {
               "text": "You hold. The mechanism seals. But the cost of holding through the full reading has accumulated and when the sealing is complete you are not standing. [missing person] is holding you up, which they manage, which is either a metaphor or just what happened.\n\nThe chamber is quiet. The curse is sealed.\n\nYou are going to need to sit down.",
@@ -727,7 +728,8 @@
                 "resources": {
                   "health": -20
                 }
-              }
+              },
+              "cue": "resolve"
             },
             "failure": {
               "text": "You hold but not completely. Something in the final moment fails to commit, a hesitation the mechanism reads as a gap in the unified intention the text describes.\n\nThe sealing is partial. Not nothing. The mechanism has responded, the fracture has narrowed, the curse's spread rate will slow dramatically. But the full seal did not take.\n\n[missing person], when it is over, does not let go of your hand. \"It is enough,\" they say. \"It is not everything but it is enough. The Covenant's ritual cannot happen if the mechanism has partially sealed — they would need to break it open again.\" A pause. \"We bought Ashenveld time. Significant time.\"",
@@ -738,7 +740,8 @@
                   "curse_slowed": true,
                   "ritual_done": true
                 }
-              }
+              },
+              "cue": "resolve_partial"
             }
           }
         }
