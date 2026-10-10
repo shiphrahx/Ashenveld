@@ -21,10 +21,10 @@ const read = p => JSON.parse(fs.readFileSync(p, 'utf8'))
 // ── Allowed shapes ──────────────────────────────────────────────────────────
 const KEYS = {
   scene: ['id', 'act', 'chapter', 'location', 'title', 'when', 'on_enter', 'requires', 'text', 'choices',
-    'text_mode', 'route', 'ending', 'rest', 'objective'],
+    'text_mode', 'route', 'ending', 'rest', 'objective', 'cue', 'stage'],
   choice: ['id', 'text', 'requires', 'roll', 'outcomes', 'once', 'locked_hint'],
   outcomes: ['default', 'success', 'success_at_cost', 'failure'],
-  outcome: ['text', 'next_scene', 'state_changes'],
+  outcome: ['text', 'next_scene', 'state_changes', 'cue'],
   on_enter: ['state_changes'],
   state_changes: ['flags', 'resources', 'relationships', 'factions', 'inventory', 'inventory_remove', 'world', 'counters'],
   resources: ['gold', 'health', 'max_health'],
@@ -65,6 +65,15 @@ const npcs = {}
 for (const m of metas) {
   Object.assign(locations, m.locations ?? {}, m.new_locations ?? {}, m.new_locations_act3 ?? {})
   Object.assign(npcs, m.npcs ?? {}, m.new_npcs ?? {})
+}
+// E3, E5, E9: the sound, the art layer and the staging each place and scene may name
+const BEDS = ['river', 'hearth', 'town', 'road', 'deep', 'chamber']
+const ATMOSPHERES = ['mist', 'embers', 'ash', 'motes', 'none']
+const CUES = ['silence_falls', 'touch', 'stopped', 'resolve', 'resolve_partial', 'end']
+const STAGES = ['quiet', 'reunion', 'ritual', 'touch', 'stopped', 'ending']
+for (const [id, l] of Object.entries(locations)) {
+  if (!BEDS.includes(l.ambience)) err(`location ${id}: ambience "${l.ambience}" is not one of ${BEDS.join(', ')}`)
+  if (!ATMOSPHERES.includes(l.atmosphere)) err(`location ${id}: atmosphere "${l.atmosphere}" is not one of ${ATMOSPHERES.join(', ')}`)
 }
 const items = index.inventory_items ?? {}
 
@@ -159,6 +168,8 @@ for (const [id, { scene: s }] of scenes) {
     for (const p of [s.when.part].flat()) if (!PARTS.includes(p)) err(`${id}: when.part "${p}" is not a day part`)
   }
   if (!locations[s.location]) err(`${id}: unknown location "${s.location}"`)   // 6
+  if (s.cue && !CUES.includes(s.cue)) err(`${id}: unknown cue "${s.cue}"`)
+  if (s.stage && !STAGES.includes(s.stage)) err(`${id}: unknown stage "${s.stage}"`)
   checkKeys(s.on_enter, 'on_enter', id)
   checkChanges(s.on_enter?.state_changes, `${id}:on_enter`)
   checkCondition(s.requires, `${id}:requires`)
@@ -197,6 +208,7 @@ for (const [id, { scene: s }] of scenes) {
     for (const [k, o] of Object.entries(c.outcomes)) {
       const ow = `${cw}:${k}`
       checkKeys(o, 'outcome', ow)
+      if (o.cue && !CUES.includes(o.cue)) err(`${ow}: unknown cue "${o.cue}"`)
       walkRich(o.text, `${ow}:text`)
       checkChanges(o.state_changes, ow)
       // "@return" goes back to wherever a collapse interrupted you (G9).

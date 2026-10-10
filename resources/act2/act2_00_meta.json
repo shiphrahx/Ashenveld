@@ -89,7 +89,9 @@
       "region": "deep_forest",
       "description": "The outer ring of the buried city, visible as broken stone teeth pushing through the forest floor. Archways that lead nowhere. Walls at odd angles. The stones are a material you do not recognise — not quite granite, not quite limestone, darker and with a faint surface texture like dried salt. The curse is dense here but not uniform. There are paths through it that are safer than others.",
       "ambient_day": "The light is grey regardless of hour. Time moves differently here — not faster or slower but with less texture.",
-      "ambient_night": "Do not be in the ruins outskirts at night. Something moves through them that does not move through them during the day."
+      "ambient_night": "Do not be in the ruins outskirts at night. Something moves through them that does not move through them during the day.",
+      "ambience": "deep",
+      "atmosphere": "ash"
     },
     "ruins_marker_line": {
       "id": "ruins_marker_line",
@@ -97,7 +99,9 @@
       "region": "deep_forest",
       "description": "A boundary the Rootless discovered and marked with small cairns — the point past which the curse's effect intensifies sharply. The safe techniques for navigating the outskirts stop working past this line. The air tastes different. The ground sounds hollow.",
       "ambient_day": "The cairns are still here. Someone has been maintaining them.",
-      "ambient_night": "Unknown."
+      "ambient_night": "Unknown.",
+      "ambience": "deep",
+      "atmosphere": "ash"
     },
     "ruins_inner_approach": {
       "id": "ruins_inner_approach",
@@ -105,7 +109,9 @@
       "region": "deep_forest",
       "description": "What was once a processional road — you can see the suggestion of it in how the stones are arranged, a deliberateness to the spacing that could only be intentional. It leads downward at a very gradual angle, as if the city was built partly underground and this was how you entered it. The walls here are taller. Some of them still bear carvings.",
       "ambient_day": "The carvings are in a script no living tradition can read. Some of them appear to have been added recently. Freshly scratched.",
-      "ambient_night": "The carvings are visible at night because they emit a very faint light. Not enough to see by. Enough to notice."
+      "ambient_night": "The carvings are visible at night because they emit a very faint light. Not enough to see by. Enough to notice.",
+      "ambience": "deep",
+      "atmosphere": "motes"
     },
     "ruins_source_chamber": {
       "id": "ruins_source_chamber",
@@ -113,7 +119,9 @@
       "region": "deep_forest",
       "description": "A large underground space, partly collapsed, partly intact. At its centre: the original sealing mechanism — a structure of fused stone and worked metal that was once much larger. What remains looks broken. The curse radiates from it the way heat radiates from a cooling forge — not hot anymore, but still significantly warm. The air here is thick. Breathing takes more effort than it should.",
       "ambient_day": "Time is unreliable here. An hour may pass in what feels like minutes or the reverse.",
-      "ambient_night": "There is no night in the source chamber. The light does not change."
+      "ambient_night": "There is no night in the source chamber. The light does not change.",
+      "ambience": "chamber",
+      "atmosphere": "motes"
     },
     "crestfall_compact_post": {
       "id": "crestfall_compact_post",
@@ -121,7 +129,9 @@
       "region": "crestfall",
       "description": "The Compact has requisitioned the old granary on Crestfall's north side. Reinforced doors. A flag. Three soldiers posted outside. Commander Vorne arrived two days ago and the town has been quieter since.",
       "ambient_day": "Military efficiency. People give it a wide berth.",
-      "ambient_night": "Lit. Someone is always working."
+      "ambient_night": "Lit. Someone is always working.",
+      "ambience": "town",
+      "atmosphere": "none"
     },
     "ruins_hidden_passage": {
       "id": "ruins_hidden_passage",
@@ -129,19 +139,25 @@
       "region": "deep_forest",
       "description": "A way through the ruins that is not on any map, not in any account, not marked by any cairn. The missing person found it. Maret suspects it exists. The Covenant does not know about it. The Compact does not know about it. It is the only route to the source chamber that does not pass through the marker line.",
       "ambient_day": "The entrance is not visible unless you know what you are looking for.",
-      "ambient_night": "Unknown."
+      "ambient_night": "Unknown.",
+      "ambience": "deep",
+      "atmosphere": "none"
     },
     "ruins_gate": {
       "id": "ruins_gate",
       "name": "The Gate Stones",
       "region": "deep_forest",
-      "description": "Two standing stones and a lintel. The Watcher sits against the right-hand stone."
+      "description": "Two standing stones and a lintel. The Watcher sits against the right-hand stone.",
+      "ambience": "deep",
+      "atmosphere": "ash"
     },
     "east_road_return": {
       "id": "east_road_return",
       "name": "The East Road",
       "region": "east_road",
-      "description": "The same road, walked west. There are birds in the trees again."
+      "description": "The same road, walked west. There are birds in the trees again.",
+      "ambience": "road",
+      "atmosphere": "mist"
     }
   },
   "act2_overview": {
