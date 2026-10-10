@@ -21,7 +21,21 @@
       },
       "requires": {},
       "text": {
-        "default": "The east road. The checkpoint — you have your account ready and you use it and you pass. Harrow. The forest edge.\n\nThe ruins receive you back with the specific quality of a place that has not changed while you have. The grey light. The silence with mass. The Watcher at the gate, unchanged, who says your name again when you pass — the same word, the same flat tone, as if the fourteen months inside the ruins have reduced language to its simplest possible functions.\n\n[missing person] is where you left them. They look up when they hear your steps in the outskirts with the specific attention of someone who has spent months listening for footsteps and has learned to read everything about a person from the sound of them walking.\n\n\"Two days,\" you say.\n\nThey nod. \"Two days is enough.\"",
+        "default": [
+          "The east road. The checkpoint — you have your account ready and you use it and you pass. Harrow. The forest edge.",
+          {
+            "when": {
+              "flags": {
+                "watcher_spoke": true
+              }
+            },
+            "text": "The ruins receive you back with the specific quality of a place that has not changed while you have. The grey light. The silence with mass. The Watcher at the gate, unchanged, who says \"[player]\" again when you pass. The same word, the same flat tone.",
+            "else": "The ruins receive you back with the specific quality of a place that has not changed while you have. The grey light. The silence with mass. The Watcher at the gate, unchanged, who does not turn."
+          },
+          "[missing person] is where you left them. They look up when they hear your steps in the outskirts with the specific attention of someone who has spent months listening for footsteps and has learned to read everything about a person from the sound of them walking.",
+          "\"Two days,\" you say.",
+          "They nod. \"Two days is enough.\""
+        ],
         "commander": "You sit across from them in the outskirts and brief them on Crestfall the way you would brief a fellow officer. The Compact's position, Seriva's presence, Vorne's daughter, the fragment, Pol.\n\nThey listen with complete attention. When you finish: \"The window is closing,\" they say.\n\n\"Yes,\" you say.\n\n\"Then we spend two days making sure we do this correctly,\" they say. \"Not fast. Correctly.\"",
         "arcane": "You tell them about Pol's revelation — the distinction between the Covenant's purification ritual and the original sealing ritual, the specific nature of each, the cost of each.\n\nThey are quiet for a moment. \"I knew there was another ritual,\" they say. \"The chamber walls reference it. A second approach, described as the lesser path because it does not require the same quality of relationship between the participants.\" A pause. \"The Covenant's ritual will work. It will stop the curse. And it will be catastrophic.\"\n\n\"Yes,\" you say.\n\n\"Then we do the right one,\" they say.",
         "ranger": "You brief them efficiently. They ask the relevant questions — the Compact's strength, Seriva's location, the fragment, Pol's readiness.\n\nThen: \"How are you?\" they ask.\n\nThe question catches you. You have been moving and assessing and managing since you left the ruins and the question — simple, direct, the question people ask each other and mean — arrives like something from before.\n\n\"Functioning,\" you say.\n\nThey almost smile. \"That is what I expected you to say. Rest tonight. We start tomorrow.\"",

@@ -297,7 +297,7 @@
               }
             },
             "failure": {
-              "text": "The reading finds something and you flinch from it — not physically, but the mechanism reads the flinch the same as a physical withdrawal.\n\nThe fragment's faint warmth flickers.\n\n[missing person] says your name. Not the ritual words — your name, the one they have known longer than anything else about you. And something in the sound of it from them in this room reaches through the flinch and holds you.\n\nYou hold. The fragment's warmth returns. The phase continues.",
+              "text": "The reading finds something and you flinch from it — not physically, but the mechanism reads the flinch the same as a physical withdrawal.\n\nThe fragment's faint warmth flickers.\n\n[missing person] says, \"[player].\" Not the ritual words. Your name, the one they have known longer than anything else about you. And something in the sound of it from them in this room reaches through the flinch and holds you.\n\nYou hold. The fragment's warmth returns. The phase continues.",
               "next_scene": "act2_ch6_ritual_sealing",
               "state_changes": {
                 "flags": {
@@ -381,7 +381,7 @@
               }
             },
             "failure": {
-              "text": "The reading finds something and you flinch from it — not physically, but the mechanism reads the flinch the same as a physical withdrawal.\n\nThe fragment's faint warmth flickers.\n\n[missing person] says your name. Not the ritual words — your name, the one they have known longer than anything else about you. And something in the sound of it from them in this room reaches through the flinch and holds you.\n\nYou hold. The fragment's warmth returns. The phase continues.",
+              "text": "The reading finds something and you flinch from it — not physically, but the mechanism reads the flinch the same as a physical withdrawal.\n\nThe fragment's faint warmth flickers.\n\n[missing person] says, \"[player].\" Not the ritual words. Your name, the one they have known longer than anything else about you. And something in the sound of it from them in this room reaches through the flinch and holds you.\n\nYou hold. The fragment's warmth returns. The phase continues.",
               "next_scene": "act2_ch6_ritual_sealing",
               "state_changes": {
                 "flags": {
@@ -465,7 +465,7 @@
               }
             },
             "failure": {
-              "text": "The reading finds something and you flinch from it — not physically, but the mechanism reads the flinch the same as a physical withdrawal.\n\nThe fragment's faint warmth flickers.\n\n[missing person] says your name. Not the ritual words — your name, the one they have known longer than anything else about you. And something in the sound of it from them in this room reaches through the flinch and holds you.\n\nYou hold. The fragment's warmth returns. The phase continues.",
+              "text": "The reading finds something and you flinch from it — not physically, but the mechanism reads the flinch the same as a physical withdrawal.\n\nThe fragment's faint warmth flickers.\n\n[missing person] says, \"[player].\" Not the ritual words. Your name, the one they have known longer than anything else about you. And something in the sound of it from them in this room reaches through the flinch and holds you.\n\nYou hold. The fragment's warmth returns. The phase continues.",
               "next_scene": "act2_ch6_ritual_sealing",
               "state_changes": {
                 "flags": {
