@@ -7,3 +7,6 @@ dist/
 # Claude Code (local only)
 CLAUDE.md
 .claude/
+
+# Validator output
+tools/out/
