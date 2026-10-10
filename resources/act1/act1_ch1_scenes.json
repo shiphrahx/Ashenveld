@@ -799,6 +799,55 @@
           },
           "You are back in Crestfall. The town is wrong in ways that go past what eleven years of absence would explain. Someone you came here for was here fourteen months ago and is not here now. A woman named Maret may know where they went. The forest to the east is the direction everything points.",
           "Outside the window, the wind moves through a town that has stopped making most of its sounds. You try to remember what Crestfall sounded like at this hour and find that you can, mostly. That makes the present silence louder.",
+          "You take the letter out again. You do not need to. You know it by heart.",
+          {
+            "when": {
+              "relationship_type": [
+                "childhood friend"
+              ]
+            },
+            "text": "> [player],\n> I am in Crestfall. The east field fence is still standing. Nobody walks it.\n> There is something under the forest and I think I can find it.\n> I am not asking you to come.\n> [missing person]"
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "former lover"
+              ]
+            },
+            "text": "> [player],\n> I am in Crestfall. I did not know whether to write. I am writing.\n> There is something under the forest and I think I can find it.\n> I am not asking you to come.\n> [missing person]"
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "sibling"
+              ]
+            },
+            "text": "> [player],\n> I am in Crestfall. The house has new shutters. I let it go in the end.\n> There is something under the forest and I think I can find it.\n> I am not asking you to come.\n> [missing person]"
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "mentor"
+              ]
+            },
+            "text": "> [player],\n> I am in Crestfall. You will want to know I was right about the forest.\n> There is something under the forest and I think I can find it.\n> I am not asking you to come.\n> [missing person]"
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "parent"
+              ]
+            },
+            "text": "> [player],\n> I am in Crestfall. I have not stopped being angry. I wanted you to know where I am anyway.\n> There is something under the forest and I think I can find it.\n> I am not asking you to come.\n> [missing person]"
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "the one who got away"
+              ]
+            },
+            "text": "> [player],\n> I am in Crestfall. I have started this letter eleven times.\n> There is something under the forest and I think I can find it.\n> I am not asking you to come.\n> [missing person]"
+          },
           "You put out the lamp. Sleep comes eventually."
         ],
         "commander": "You run the situation the way you would run any position assessment. What you know: the name, the destination, the time elapsed. What you do not know: everything else. What resources you have: yourself, what you carried, and the credibility that comes from being exactly what you appear to be.\n\nYou sleep with the soldier's ability to rest in hostile terrain.",

@@ -760,7 +760,13 @@
       },
       "requires": {},
       "text": {
-        "default": "The next morning Maret finds you before you go looking for her. She has a letter.\n\nNot the letter — the one sent to you, the one that brought you here. This is a different letter. Shorter. [missing person] wrote it and left it with Maret two weeks before they went east.\n\nMaret holds it out and you take it and she watches your face as you read it.\n\nThe letter says three things. First: that they found what they came looking for, or the beginning of it, and it is in the ruins, and it is real. Second: that they are going in and they are not certain they will come back, and they know that, and they are going anyway. Third: that they need you not to follow them. Not yet. Not until you know more than they did when they went in.\n\nThe letter ends with one word. [player]. Written in the way people write names when the name is the whole thing they want to say.",
+        "default": [
+          "The next morning Maret finds you before you go looking for her. She has a letter.",
+          "Not the letter — the one sent to you, the one that brought you here. This is a different letter. Shorter. [missing person] wrote it and left it with Maret two weeks before they went east.",
+          "Maret holds it out and you take it and she watches your face as you read it.",
+          "> I found it. It is real and it is below the ruins.\n> I am going in. I may not come out. I know that.\n> Do not follow me. Not until you know more than I did.\n> [player].",
+          "Your name at the bottom is written the way people write a name when it is the whole thing they want to say."
+        ],
         "commander": "You read it twice. The soldier's discipline keeps your face where you want it. Inside: the particular anger of someone who was not given the choice they should have been given.\n\nMaret is watching you carefully. \"They did not want you to come,\" she says. \"They wanted you to know, but they did not want you to come.\"\n\n\"I know,\" you say. \"I came anyway.\"\n\nA pause. \"I know,\" she says. \"That is why I gave you the letter.\"",
         "arcane": "The handwriting is theirs. You would know it anywhere.\n\nWhat catches you is that they found what they came looking for. They came looking for something in particular, and you never knew. They knew more than they told you before they left.\n\n\"What did they know?\" you ask Maret. \"Before they went in.\"",
         "ranger": "You read it standing. Sitting down for it would feel like giving in.\n\nEach line is a fact, delivered without softening. That was always how they talked to you. Not yet, it says. Not until you know more.\n\nYou are here. You know enough. You fold the letter.",
