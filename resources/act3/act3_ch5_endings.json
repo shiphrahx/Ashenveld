@@ -7,109 +7,66 @@
       "act": 3,
       "chapter": 5,
       "location": "crestfall_market",
-      "title": "The Router",
+      "title": "",
       "on_enter": {
         "state_changes": {},
         "time_advance": 0
       },
       "requires": {},
       "text": {
-        "default": "This scene routes to the appropriate ending based on player choices throughout the game.",
-        "note": "Engine should evaluate flags here and route to the correct ending scene."
+        "default": ""
       },
-      "choices": [
+      "choices": [],
+      "route": [
         {
-          "id": "route_to_ending",
-          "text": "Continue.",
-          "requires": {},
-          "roll": null,
-          "outcomes": {
-            "default": {
-              "text": "The story finds its end.",
-              "next_scene": "ending_stays_together",
-              "state_changes": {}
+          "when": {
+            "flags": {
+              "player_stays_alone": true
             }
           },
-          "routing_logic": {
-            "if_flags": [
+          "next": "ending_alone_legend"
+        },
+        {
+          "when": {
+            "any": [
               {
-                "condition": {
-                  "flags": {
-                    "player_stays_ashenveld": true,
-                    "rootless_aligned": true
-                  }
-                },
-                "next_scene": "ending_warden_of_ashenveld"
+                "flags": {
+                  "player_leaves_ashenveld": true
+                }
               },
               {
-                "condition": {
-                  "flags": {
-                    "player_stays_ashenveld": true,
-                    "compact_aligned": true
-                  }
-                },
-                "next_scene": "ending_compact_warden"
-              },
-              {
-                "condition": {
-                  "flags": {
-                    "player_stays_ashenveld": true,
-                    "ashenveld_settlement_reached": true,
-                    "documentation_complete": true
-                  },
-                  "min_relationship": {
-                    "the_missing_person": 60,
-                    "maret": 40
-                  }
-                },
-                "next_scene": "ending_stays_together"
-              },
-              {
-                "condition": {
-                  "flags": {
-                    "player_stays_ashenveld": true,
-                    "seriva_admitted_guilt": true,
-                    "knows_covenant_kills_afflicted": true,
-                    "documentation_complete": true
-                  },
-                  "min_relationship": {
-                    "the_missing_person": 80
-                  }
-                },
-                "next_scene": "ending_the_account"
-              },
-              {
-                "condition": {
-                  "flags": {
-                    "player_leaves_ashenveld": true
-                  }
-                },
-                "next_scene": "ending_escape_together"
-              },
-              {
-                "condition": {
-                  "flags": {
-                    "player_stays_alone": true,
-                    "alone_committed": true
-                  }
-                },
-                "next_scene": "ending_alone_legend"
-              },
-              {
-                "condition": {
-                  "flags": {
-                    "player_stays_alone": true
-                  },
-                  "health_below": 20
-                },
-                "next_scene": "ending_what_remains"
-              },
-              {
-                "default": true,
-                "next_scene": "ending_stays_together"
+                "flags": {
+                  "missing_person_sent_ahead": true,
+                  "player_stays_permanently": false
+                }
               }
             ]
-          }
+          },
+          "next": "ending_escape_together"
+        },
+        {
+          "when": {
+            "flags": {
+              "seriva_admitted_guilt": true,
+              "knows_covenant_kills_afflicted": true,
+              "documentation_complete": true
+            },
+            "min_relationship": {
+              "the_missing_person": 80
+            }
+          },
+          "next": "ending_the_account"
+        },
+        {
+          "when": {
+            "flags": {
+              "rootless_aligned": true
+            }
+          },
+          "next": "ending_warden_of_ashenveld"
+        },
+        {
+          "next": "ending_stays_together"
         }
       ]
     },
@@ -153,14 +110,18 @@
             }
           }
         }
-      ]
+      ],
+      "ending": {
+        "id": "ending_stays_together",
+        "title": "The Warden Stays"
+      }
     },
     {
       "id": "ending_escape_together",
       "act": 3,
       "chapter": 5,
       "location": "east_road",
-      "title": "The Warden Escapes",
+      "title": "The Road West",
       "on_enter": {
         "state_changes": {
           "flags": {
@@ -195,14 +156,18 @@
             }
           }
         }
-      ]
+      ],
+      "ending": {
+        "id": "ending_escape_together",
+        "title": "The Road West"
+      }
     },
     {
       "id": "ending_alone_legend",
       "act": 3,
       "chapter": 5,
       "location": "crestfall_market",
-      "title": "The Warden of Ashenveld",
+      "title": "The Warden Alone",
       "on_enter": {
         "state_changes": {
           "flags": {
@@ -237,14 +202,18 @@
             }
           }
         }
-      ]
+      ],
+      "ending": {
+        "id": "ending_alone_legend",
+        "title": "The Warden Alone"
+      }
     },
     {
       "id": "ending_warden_of_ashenveld",
       "act": 3,
       "chapter": 5,
       "location": "crestfall_market",
-      "title": "The Warden",
+      "title": "The Camp Endures",
       "on_enter": {
         "state_changes": {
           "flags": {
@@ -279,7 +248,11 @@
             }
           }
         }
-      ]
+      ],
+      "ending": {
+        "id": "ending_warden_of_ashenveld",
+        "title": "The Camp Endures"
+      }
     },
     {
       "id": "ending_the_account",
@@ -321,7 +294,11 @@
             }
           }
         }
-      ]
+      ],
+      "ending": {
+        "id": "ending_the_account",
+        "title": "The Account"
+      }
     }
   ]
 }
