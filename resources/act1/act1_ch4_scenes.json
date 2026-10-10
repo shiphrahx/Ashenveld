@@ -504,7 +504,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "He looks at you sharply. Then decides.\n\n\"Four years. I was in the third eastern village when the curse started. She came through two weeks in. Said she was looking for people who had not given up yet.\" He says it flatly, as if giving up would have been reasonable. \"I had not. I went with her.\"\n\nA pause. \"She saved my life three times in the first year. Not dramatically. Practically. Good decisions made at the right moments.\" He looks at the blade. \"I trust her judgment except when I do not. That is the honest version.\"",
+              "text": "He looks at you sharply. Then decides.\n\n\"Three years. I was in the third eastern village when the curse started. She came through two weeks in. Said she was looking for people who had not given up yet.\" He says it flatly, as if giving up would have been reasonable. \"I had not. I went with her.\"\n\nA pause. \"She saved my life three times in the first year. Not dramatically. Practically. Good decisions made at the right moments.\" He looks at the blade. \"I trust her judgment except when I do not. That is the honest version.\"",
               "next_scene": "act1_ch4_rootless_camp_stay",
               "state_changes": {
                 "flags": {
@@ -565,7 +565,7 @@
         "default": [
           "The camp settles for the evening and Maret comes to sit by the fire. She does it in the specific way of someone who has made a decision about you — not completely, but enough to move the next step.",
           "She asks you a question you were not expecting.",
-          "\"Why did you leave?\" she says. \"Ashenveld. You were born here. You left when you were — what, seventeen? Eighteen? Why?\"",
+          "\"Why did you leave?\" she says. \"Ashenveld. You were born here. You left. Why?\"",
           "She is not asking to be polite. She is asking because the answer will tell her something she needs to know about you.",
           {
             "when": {

@@ -241,7 +241,7 @@
         "commander": "\"The mechanism showed me why you left,\" they say. Not accusing. Stating.\n\n\"Yes,\" you say.\n\n\"The real reason. Not the war. The one underneath the war.\"\n\n\"Yes,\" you say again.\n\n\"I knew part of it,\" they say. \"I did not know the full shape of it.\" A pause. \"It does not change why I wrote the letter. It changes what the letter cost me to write.\"",
         "arcane": "\"There is something I want to tell you,\" they say. \"That the mechanism showed me about myself, that I did not know before.\"\n\nThey tell you.\n\nWhat they say is not what you expected. Something about the fourteen months — not the ruins, not the ritual. What they understood about themselves while they were alone. What the isolation clarified.\n\nYou listen with the specific attention of someone who knows that what they are being told is being told precisely, without omission, for the first time to anyone.",
         "ranger": "\"What did it show you?\" they ask. \"About me.\"\n\nYou think about how to answer honestly.\n\n\"That you came back to Ashenveld for the same reason you left,\" you say. \"That those two things are the same reason. That you have been trying to solve a problem about yourself for eleven years and the ruins were the first place you found where the problem felt like it might have an answer.\"\n\nThey look at you for a long time. \"Yes,\" they say. \"Does it change how you see me?\"\n\n\"No,\" you say. You mean it.",
-        "cipher": "\"I know what you did not tell me,\" they say. \"By the fire. Before the ritual.\"\n\nYou look at them.\n\n\"You let the mechanism read it,\" they say. \"You decided to let it read you rather than say it yourself. I want you to know — I know why. And I know what it was.\"\n\nA silence.\n\n\"Is it something we can talk about?\" you ask.\n\n\"Yes,\" they say. \"But not tonight. Tonight I want to just be in this room with you. Without anything needing to be resolved.\"\n\n\"All right,\" you say."
+        "cipher": "\"I know what you did not tell me,\" they say. \"By the fire. Before the ritual.\"\n\nYou look at them.\n\n\"You let the mechanism read it,\" they say. \"You decided to let it read you rather than say it yourself. I want you to know — I know why. And I know what it was.\"\n\nA silence.\n\n\"Is it something we can talk about?\" you ask.\n\n\"Yes,\" they say. \"But not tonight.\"\n\n\"All right,\" you say."
       },
       "choices": [
         {
@@ -325,7 +325,12 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You keep some things. They keep some things. The mechanism read everything but you are not the mechanism.\n\nWhat you have is the shape of what the ritual revealed, held between you without being fully articulated. Some things are real without being spoken. Some things speaking would diminish.\n\nYou sit by the fire and do not say everything and the not-saying is its own kind of truth.",
+              "text": [
+                "You keep some things. They keep some things. The mechanism read everything but you are not the mechanism.",
+                "What you have is the shape of what the ritual revealed, held between you without being fully articulated. Some things are real without being spoken. Some things speaking would diminish.",
+                "You sit by the fire and do not say everything and the not-saying is its own kind of truth.",
+                "\"Tonight I want to just be in this room with you,\" they say. \"Without anything needing to be resolved.\""
+              ],
               "next_scene": "act2_ch8_point_of_no_return",
               "state_changes": {
                 "relationships": {

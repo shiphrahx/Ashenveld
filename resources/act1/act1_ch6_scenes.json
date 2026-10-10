@@ -235,7 +235,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "She knows you are leaving. She has packed something for you — dried food from the camp's stores, a specific herb Pol prepared, and a hand-drawn map of the east road with the camp's known exploration points marked.\n\n\"Lira drew it,\" Maret says. \"She remembers the outskirts in more detail than the rest of us. The marks there are hers.\"\n\nShe gives it to you without asking for anything in return. Which means the debt is implicit, and both of you know it.",
+              "text": "She knows you are leaving. She has packed something for you — dried food from the camp's stores, a bitter herb prepared by Pol, the camp's healer, and a hand-drawn map of the east road with the camp's known exploration points marked.\n\n\"Lira drew it,\" Maret says. \"She remembers the outskirts in more detail than the rest of us. The marks there are hers.\"\n\nShe gives it to you without asking for anything in return. Which means the debt is implicit, and both of you know it.",
               "next_scene": "act1_ch6_departure_decision",
               "state_changes": {
                 "flags": {
@@ -262,7 +262,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You leave Crestfall the way you arrived — before dawn, alone, moving east while the town is still deciding whether to be awake.",
+              "text": "You leave Crestfall alone, before dawn, moving east while the town is still deciding whether to be awake.",
               "next_scene": "act1_ch6_east_road_start",
               "state_changes": {}
             }
@@ -855,7 +855,7 @@
       "text": {
         "default": [
           "Half a mile further and the road shows you something.",
-          "A campsite — recent, a few days old. Used once, by one person, not the traveller you just passed. A ring of stones for a fire. A cleared ground space. The careful arrangement of someone who knows how to camp and habitually tidies before leaving.",
+          "A campsite. Old. More than a year of leaf-fall has settled in the fire ring, and still nobody has kicked the stones apart. Used once, by one person, not the traveller you just passed. A ring of stones for a fire. A cleared ground space. The careful arrangement of someone who knows how to camp and habitually tidies before leaving.",
           {
             "when": {
               "relationship_type": [
@@ -866,11 +866,11 @@
             "text": "You know the arrangement. You have seen it before. The ring of stones is three flat, one angled — a marker, a habit, something you noticed years ago when you watched the person who taught it to you do it for the first time.",
             "else": "You know the arrangement. You have seen it before. The ring of stones is three flat, one angled — a marker, a habit, a habit the two of you shared."
           },
-          "[missing person] was here. Three to five days ago. Moving east."
+          "[missing person] was here. Fourteen months ago. Moving east."
         ],
         "commander": "You assess the campsite with systematic attention. Duration of stay: one night. Direction of departure: east, based on the site's orientation. Condition when they were here: functional — the camp is tidy, the fire correctly built. Not someone in crisis.",
         "arcane": "The residue here is clear enough to read. One person, one night, not deeply afflicted when they left. Present and aware.\n\nYou feel something that is probably relief, and is also fear.",
-        "ranger": "You read the campsite with the efficiency of a tracker. One person, one night. The fire stones are arranged in a specific way you have not seen anyone else use. The cleared area is exactly the size of a bedroll.\n\nThe departure direction is east and the tracks, faint on this ground, confirm it. Three to five days old. Moving steadily.",
+        "ranger": "You read the campsite with the efficiency of a tracker. One person, one night. The fire stones are arranged in a specific way you have not seen anyone else use. The cleared area is exactly the size of a bedroll.\n\nThe departure direction is east and the tracks, faint on this ground, confirm it. Fourteen months ago. Moving east.",
         "cipher": "The arrangement of the fire stones. You know that arrangement. It is not a coincidence — the specific angle of the angled stone, the spacing, the choice of this particular clearing. Someone was here recently and they wanted you — specifically you, if you came — to know it was them."
       },
       "choices": [
@@ -914,7 +914,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You leave the campsite without disturbing anything and continue east. Faster than before. The distance between you and [missing person] is measured in days, not months.",
+              "text": "You leave the campsite without disturbing anything and continue east. Faster than before. The trail is fourteen months cold and it is still a trail.",
               "next_scene": "act1_ch6_harrow_arrival",
               "state_changes": {
                 "flags": {

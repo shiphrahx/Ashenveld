@@ -283,7 +283,20 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You walk beside them and you do not ask questions.\n\nThis is harder than it sounds. You are someone who gathers information and you are walking beside someone who has fourteen months of information you do not have.\n\nBut you remember what they said when you offered them the choice in the Tallow — I want to just be in this room with you — and you understand that what they need right now is the same thing in a different location.\n\nYou walk. The road is good. The weather holds. The distance from Ashenveld increases at the rate of walking.",
+              "text": [
+                "You walk beside them and you do not ask questions.",
+                "This is harder than it sounds. You are someone who gathers information and you are walking beside someone who has fourteen months of information you do not have.",
+                {
+                  "when": {
+                    "taken": [
+                      "act2_ch8_relationship_test:keep_some_things"
+                    ]
+                  },
+                  "text": "But you remember what they said when you offered them the choice in the Tallow — I want to just be in this room with you — and you understand that what they need right now is the same thing in a different location.",
+                  "else": "But you remember the night in the Tallow, when neither of you needed anything resolved, and you understand that what they need right now is the same thing in a different location."
+                },
+                "You walk. The road is good. The weather holds. The distance from Ashenveld increases at the rate of walking."
+              ],
               "next_scene": "act3_ch3_road_further",
               "state_changes": {
                 "relationships": {

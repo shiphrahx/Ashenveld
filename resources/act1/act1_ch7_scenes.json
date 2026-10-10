@@ -490,8 +490,8 @@
                 "maret_letter_obtained": true
               }
             },
-            "text": "Behind you: Crestfall, three days' walk. Maret's camp. Three factions each with their version of what this place is and what should be done about it. The letter, folded inside your coat. The things you built in three days and left in the care of the people you built them with.",
-            "else": "Behind you: Crestfall, three days' walk. Maret's camp. Three factions each with their version of what this place is and what should be done about it. The letter Maret would not give you. The things you built in three days and left in the care of the people you built them with."
+            "text": "Behind you: Crestfall, a day's walk. Maret's camp. Three factions each with their version of what this place is and what should be done about it. The letter, folded inside your coat. The things you built in three days and left in the care of the people you built them with.",
+            "else": "Behind you: Crestfall, a day's walk. Maret's camp. Three factions each with their version of what this place is and what should be done about it. The letter Maret would not give you. The things you built in three days and left in the care of the people you built them with."
           },
           "Ahead: the ruins, under the dark forest. [missing person], fourteen months in. The source of the curse. The knowledge of what was sealed here and why.",
           "You stand at the threshold. Not deciding — you already decided. Locating yourself. The way you do when you want to be sure you know where you started before you go somewhere you might not come back from.",

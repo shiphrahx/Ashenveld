@@ -92,7 +92,7 @@
       },
       "requires": {},
       "text": {
-        "default": "Three stalls in a square that was built for fifteen. The gaps between them feel like missing teeth.\n\nA grain seller, a woman with cloth, and an old man with preserved food — dried fish, smoked meat, things that last. The grain seller sees you approaching and makes a decision with her eyes that you cannot quite read — not hostile, not welcoming, somewhere between.\n\nThey are doing business with each other more than with the town at this point. The economy of a place that has been quietly preparing for something without admitting it is preparing.",
+        "default": "Three stalls in a square that was built for twelve. The gaps between them feel like missing teeth.\n\nA grain seller, a woman with cloth, and an old man with preserved food — dried fish, smoked meat, things that last. The grain seller sees you approaching and makes a decision with her eyes that you cannot quite read — not hostile, not welcoming, somewhere between.\n\nThey are doing business with each other more than with the town at this point. The economy of a place that has been quietly preparing for something without admitting it is preparing.",
         "commander": "Three stalls. The grain seller is the one in charge of the three — you can see it in how the others orient toward her, small unconscious shifts of posture. She is the one to talk to.",
         "arcane": "Three stalls. The old man with the preserved food is watching you with the specific attention of someone who has seen things and is trying to decide if you are another thing to see. You make a note to speak to him.",
         "ranger": "Three stalls. The gaps where the others used to be are more informative than the stalls themselves — the ground is worn differently there, the patterns of foot traffic still running to where people used to be.",
@@ -118,7 +118,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "Her name is Hanna. She tells you things about Crestfall with the efficiency of someone who has been answering the same questions for months.\n\nThe curse started two years ago in the eastern villages. Moved west slowly. Three families from Harrow — the village on the east road — arrived in Crestfall six months ago. They left because Harrow emptied. Not because of violence. One by one, everyone in Harrow stopped wanting to stay and walked east into the forest and did not come back.\n\n\"They do not come back,\" she says. \"But they are not dead. Or — nobody knows. Nobody has found bodies.\"",
+              "text": "Her name is Hanna. She tells you things about Crestfall with the efficiency of someone who has been answering the same questions for months.\n\nThe curse started three years ago in the eastern villages. Moved west slowly. Three families from Harrow — the village on the east road — arrived in Crestfall six months ago. They left because Harrow emptied. Not because of violence. One by one, everyone in Harrow stopped wanting to stay and walked east into the forest and did not come back.\n\n\"They do not come back,\" she says. \"But they are not dead. Or — nobody knows. Nobody has found bodies.\"",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {
                 "flags": {

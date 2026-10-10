@@ -483,7 +483,7 @@
       "act": 2,
       "chapter": 3,
       "location": "crestfall_market",
-      "title": "Crestfall in Week Two",
+      "title": "Crestfall, Occupied",
       "when": {
         "part": "evening"
       },
@@ -726,7 +726,7 @@
       "requires": {},
       "text": {
         "default": [
-          "Aldous tells you what he has seen in four days with the precision of a man who has been keeping a careful record in his head.",
+          "Aldous tells you what he has seen in three days with the precision of a man who has been keeping a careful record in his head.",
           "Vorne arrived with thirty soldiers and the Covenant woman — Seriva — travelling as what he called an adviser. The Compact took three buildings without asking. They issued the east road notice within six hours of arrival.",
           "Seriva has been to the shrine twice. Each time she and Edric had a conversation that Edric visibly did not enjoy.",
           {
@@ -735,8 +735,8 @@
                 "knows_still_man_is_wren": true
               }
             },
-            "text": "Wren — the still man who used to sit by the fire — is gone. He walked east four days ago, the morning after the Compact arrived, as if the commotion stirred something in him that directed him toward the forest. Nobody tried to stop him. Nobody knew what to do.",
-            "else": "The still man by the fire is gone. You never learned his name. Aldous tells it to you now: Wren. He walked east four days ago, the morning after the Compact arrived, as if the commotion stirred something in him that directed him toward the forest. Nobody tried to stop him. Nobody knew what to do."
+            "text": "Wren — the still man who used to sit by the fire — is gone. He walked east two days ago, the morning after Vorne arrived, as if the commotion stirred something in him that directed him toward the forest. Nobody tried to stop him. Nobody knew what to do.",
+            "else": "The still man by the fire is gone. You never learned his name. Aldous tells it to you now: Wren. He walked east two days ago, the morning after Vorne arrived, as if the commotion stirred something in him that directed him toward the forest. Nobody tried to stop him. Nobody knew what to do."
           },
           "\"How many others?\" you ask.",
           "Aldous sets down his cloth. \"Since you left? Six. All east.\"",
@@ -760,7 +760,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "\"Not yet,\" Aldous says. \"But—\" He pauses. \"There is a girl at the camp. Young. She arrived four days ago, just before the Compact did. She is—\" He hesitates. \"She is showing the early signs. The dimming. And she is Vorne's daughter.\"\n\nYou process this.\n\n\"Does he know she is there?\"\n\n\"I do not know what he knows,\" Aldous says. \"I know that if he finds out, the camp is in trouble. Either he tries to take her back, which Maret will not allow, or he tries to take the camp apart because his daughter went to them instead of to him.\"",
+              "text": "\"Not yet,\" Aldous says. \"But—\" He pauses. \"There is a girl at the camp. Young. She came to the camp three days ago, the night before Vorne rode in. She is—\" He hesitates. \"She is showing the early signs. The dimming. And she is Vorne's daughter.\"\n\nYou process this.\n\n\"Does he know she is there?\"\n\n\"I do not know what he knows,\" Aldous says. \"I know that if he finds out, the camp is in trouble. Either he tries to take her back, which Maret will not allow, or he tries to take the camp apart because his daughter went to them instead of to him.\"",
               "next_scene": "act2_ch3_rootless_situation",
               "state_changes": {
                 "flags": {
@@ -789,7 +789,7 @@
               }
             },
             "success_at_cost": {
-              "text": "Aldous gives you what he has. She is directing Vorne, not advising him. She has been in Ashenveld before — he thinks. She burned the Covenant's files, which means she was hiding something from Edric.",
+              "text": "Aldous gives you what he has. She is directing Vorne, not advising him. She has been in Ashenveld before — he thinks.",
               "next_scene": "act2_ch3_seriva_first_meeting",
               "state_changes": {}
             },
@@ -925,7 +925,7 @@
       },
       "requires": {},
       "text": {
-        "default": "Pol is in the herb garden when you find her. She is working with the focused attention she brings to everything — not the absence of awareness but the management of it, attention directed precisely where it needs to go.\n\nShe looks up when you approach. She looks at you the way she looks at plants she is assessing for health — completely, without performance.\n\n\"You were in the ruins,\" she says. Not a question.\n\n\"Yes.\"\n\n\"You found the person you were looking for.\"\n\n\"Yes.\"\n\nA pause. \"They found the sealing text.\"\n\nYou stop. She knows this. She knows this before you told her, which means she knew it was possible, which means she knows about the text.",
+        "default": "Pol, the camp's healer, is in the herb garden. She is seventy and has said perhaps ten words to you. She is working with the focused attention she brings to everything — not the absence of awareness but the management of it, attention directed precisely where it needs to go.\n\nShe looks up when you approach. She looks at you the way she looks at plants she is assessing for health — completely, without performance.\n\n\"You were in the ruins,\" she says. Not a question.\n\n\"Yes.\"\n\n\"You found the person you were looking for.\"\n\n\"Yes.\"\n\nA pause. \"They found the sealing text.\"\n\nYou stop. She knows this. She knows this before you told her, which means she knew it was possible, which means she knows about the text.",
         "commander": "\"You left the Covenant because of what you read in the archives,\" you say.\n\n\"Yes,\" she says.\n\n\"The full sealing text.\"\n\n\"Yes.\"\n\nYou look at her. Sixty years old. The herb garden. Three years at the Rootless camp. Fifteen years after leaving the Covenant. All of it adding up to a woman who has been waiting in a specific place for a specific thing to become possible.\n\n\"You have been preparing,\" you say.",
         "arcane": "You sit across from her in the herb garden and you do not speak for a moment, both of you recognising that the conversation you are about to have is not a casual one.\n\n\"The text requires two participants,\" you say.\n\n\"Yes,\" she says.\n\n\"Participants who are bonded.\"\n\n\"The word is more specific than that,\" she says. \"The original language refers to people whose formative experiences are shared — who shaped each other in the period when shaping was possible. The mechanism reads the relationship, not just the intention.\"\n\nYou think about this. \"My missing person chose me specifically.\"\n\n\"Yes,\" Pol says. \"For exactly the reason the text describes.\"",
         "ranger": "You sit across from Pol and let her lead the conversation at her pace, which turns out to be efficient.\n\n\"The sealing text,\" she says, \"requires two participants and a third element — something that was part of the original mechanism. A piece of it. Something that remembers its original function.\"\n\nYou think of Issa and the fragment of stone.\n\n\"The fragment Issa found,\" you say.\n\nPol nods. \"I have been looking for it for three years.\"",
