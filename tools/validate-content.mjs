@@ -43,7 +43,7 @@ const CLASSES = ['commander', 'arcane', 'ranger', 'cipher']
 const STATS = ['strength', 'dexterity', 'stamina', 'intelligence', 'mana', 'charisma', 'perception']
 const FACTIONS = ['iron_compact', 'ashen_covenant', 'rootless']
 const PARTS = ['dawn', 'morning', 'midday', 'afternoon', 'evening', 'night']
-const TOKENS = ['[missing person]', '[player]', '[relationship]']
+const TOKENS = ['[missing person]', '[player]', '[relationship]', "[sir/ma'am]"]
 const ENGINE_FLAGS = ['crestfall_afflicted', 'last_rest_place']   // set by the engine, not the data
 const STAGE_PHRASES = ['if you have', 'if you carry', 'if she came', 'whichever', 'the reader', 'your missing person']
 // Known duplicate images, kept until the new art lands (docs/06-art.md A5).

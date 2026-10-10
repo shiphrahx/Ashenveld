@@ -23,6 +23,7 @@ export function applyTokens(t: string, s: GameState): string {
     .replace(/\[missing person\]/g, mp.name || 'them')
     .replace(/\[player\]/g, s.player.name || 'you')
     .replace(/\[relationship\]/g, REL_LABEL[mp.relationship] ?? 'someone you loved')
+    .replace(/\[sir\/ma'am\]/g, s.player.gender === 'Woman' ? "ma'am" : s.player.gender === 'Man' ? 'sir' : 'traveller')
 }
 
 export const paragraphs = (t: string) => t.split(/\n{2,}/).map(p => p.trim()).filter(Boolean)

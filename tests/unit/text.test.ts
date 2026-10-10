@@ -15,3 +15,18 @@ describe('paragraph kinds (U14)', () => {
     expect(paragraphs('one\n\n\ntwo\n\n')).toEqual(['one', 'two'])
   })
 })
+
+import { applyTokens } from '../../src/text'
+import type { GameState } from '../../src/types'
+const who = (gender: string) => ({ player: { name: 'Tam', gender, missing_person: { name: 'Ines', relationship: 'sibling' } } }) as unknown as GameState
+
+describe('tokens', () => {
+  it('fills in the names and the relationship', () => {
+    expect(applyTokens('[player], [missing person], your [relationship].', who('Woman'))).toBe('Tam, Ines, your sibling.')
+  })
+  it("addresses the player by the gender chosen (N17)", () => {
+    expect(applyTokens('Yes, [sir/ma\'am].', who('Woman'))).toBe("Yes, ma'am.")
+    expect(applyTokens('Yes, [sir/ma\'am].', who('Man'))).toBe('Yes, sir.')
+    expect(applyTokens('Yes, [sir/ma\'am].', who('Neither'))).toBe('Yes, traveller.')
+  })
+})

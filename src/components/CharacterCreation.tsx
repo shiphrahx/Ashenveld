@@ -115,8 +115,12 @@ export default function CharacterCreation({ onComplete, onBack }: Props) {
     })
   }
 
-  const genderPronoun = gender === 'Woman' ? 'She' : 'He'
-  const genderPossessive = gender === 'Woman' ? 'her' : 'his'
+  // Neither reads as they/their. The game is in the second person, so this only shapes the summary.
+  const genderPronoun = gender === 'Woman' ? 'She' : gender === 'Man' ? 'He' : 'They'
+  const genderPossessive = gender === 'Woman' ? 'her' : gender === 'Man' ? 'his' : 'their'
+  const genderSelf = gender === 'Woman' ? 'herself' : gender === 'Man' ? 'himself' : 'themself'
+  const was = genderPronoun === 'They' ? 'were' : 'was'
+  const is = genderPronoun === 'They' ? 'are' : 'is'
   const cls = playerClass ? CLASS_LABELS[playerClass] : 'a traveller'
 
   // ── Final screen ──
@@ -135,7 +139,7 @@ export default function CharacterCreation({ onComplete, onBack }: Props) {
             {genderPossessive} {(relation ?? '').toLowerCase()}.
             Over a year missing. One letter. Then silence.<br /><br />
             The river barge docks at Crestfall at nightfall.
-            The town is quieter than {genderPronoun === 'She' ? 'she' : 'he'} remembers.
+            The town is quieter than {genderPronoun.toLowerCase()} {genderPronoun === 'They' ? 'remember' : 'remembers'}.
           </div>
         </div>
         <button className={styles.beginBtn} onClick={enter} autoFocus>Enter Ashenveld</button>
@@ -162,7 +166,7 @@ export default function CharacterCreation({ onComplete, onBack }: Props) {
             </div>
 
             <div className={styles.genderRow} role="radiogroup" aria-label="Who are you?">
-              {(['Man', 'Woman'] as const).map(g => (
+              {(['Woman', 'Man', 'Neither'] as const).map(g => (
                 <div
                   key={g}
                   role="radio"
@@ -380,9 +384,9 @@ export default function CharacterCreation({ onComplete, onBack }: Props) {
                   <div className={styles.namePreviewText}>
                     <strong>{playerName.trim()}</strong>.{' '}
                     {genderPronoun} left Ashenveld eleven years ago and built another life
-                    somewhere else. {genderPronoun} was {cls}.{' '}
+                    somewhere else. {genderPronoun} {was} {cls}.{' '}
                     {genderPronoun} kept {genderPossessive} reasons for leaving to{' '}
-                    {genderPossessive}self. Now {genderPronoun === 'She' ? 'she' : 'he'} is coming back.
+                    {genderSelf}. Now {genderPronoun.toLowerCase()} {is} coming back.
                   </div>
                 </div>
               )}
