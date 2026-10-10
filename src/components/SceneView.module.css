@@ -296,3 +296,12 @@
 .lens { animation-duration: var(--reveal, 0.55s); }
 .choices { transition: opacity 200ms ease; }
 .waiting { opacity: 0; pointer-events: none; }
+
+/* E6: the chapter's title under the scene's, for three seconds */
+.chapterNote {
+  display: block; margin-top: 4px;
+  font-family: var(--font-ui); font-size: 13px; letter-spacing: 0.04em; text-transform: none;
+  color: var(--text-main);
+  animation: chapterNote 3s ease forwards;
+}
+@keyframes chapterNote { 0% { opacity: 0; } 15% { opacity: 1; } 75% { opacity: 1; } 100% { opacity: 0; } }

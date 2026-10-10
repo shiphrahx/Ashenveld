@@ -22,6 +22,8 @@ interface Props {
   onChoice: (outcome: Outcome, entry: JournalEntry, choiceId: string) => void
   /** The player has read this scene before, in this run or another (G13). */
   seenBefore?: boolean
+  /** E6: the chapter's title, for three seconds after it changes. */
+  chapterNote?: { title: string; key: number } | null
 }
 
 // Roman numerals for choice markers, matching the prototype
@@ -81,7 +83,7 @@ function outcomeClass(rollResult: RollResult, choice: Choice): string {
 
 // ── Component ─────────────────────────────────────────────────────────────────
 
-export default function SceneView({ scene, state, onChoice, seenBefore = false }: Props) {
+export default function SceneView({ scene, state, onChoice, seenBefore = false, chapterNote = null }: Props) {
   const { settings } = useSettings()
   const [rollResult, setRollResult] = useState<RollResult | null>(null)
   const [activeChoice, setActiveChoice] = useState<Choice | null>(null)
@@ -283,6 +285,7 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
         <h1 className={styles.sceneTitle} ref={titleRef} tabIndex={-1}>
           {scene.title}
           {seenBefore && <span className={styles.seenMark}>seen before</span>}
+          {chapterNote && <span key={chapterNote.key} className={styles.chapterNote} data-chapter-note>{chapterNote.title}</span>}
         </h1>
         <span className={styles.crumb}>
           <span>{place}</span>

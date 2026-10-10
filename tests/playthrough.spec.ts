@@ -66,6 +66,8 @@ async function pickChoice(page: Page, choiceId: string) {
     if (await cont.count()) {
       await cont.first().click()
       await expect(cont).toHaveCount(0)
+      // A change of place fades the old scene out first (E6).
+      await expect(page.locator('[data-leaving]')).toHaveCount(0)
       return
     }
     await page.waitForTimeout(20)
@@ -194,11 +196,20 @@ test('keyboard only, from the title into the story and through choices', async (
   await page.keyboard.press('Enter')
   await expect(page.getByRole('button', { name: /enter ashenveld/i })).toBeFocused()
   await page.keyboard.press('Enter')
+  // The Act I card (E6) takes focus on its Continue.
+  await expect(page.locator('[data-act-card] button')).toBeFocused()
+  await page.keyboard.press('Enter')
   await expect(page.locator('[data-scene-id]')).toBeVisible()
 
   for (let i = 0; i < 6; i++) {
+    await expect(page.locator('[data-leaving]')).toHaveCount(0)
     await page.keyboard.press('1')
-    for (let k = 0; k < 3; k++) {
+    // While the text is still arriving, the first key only finishes it (E7).
+    if (!(await page.locator('[data-choice-id="continue"], [data-dice-phase]').count())) {
+      await page.waitForTimeout(100)
+      await page.keyboard.press('1')
+    }
+    for (let k = 0; k < 4; k++) {
       await page.waitForTimeout(150)
       await page.keyboard.press('Enter')
       if (!(await page.locator('[data-choice-id="continue"], [data-dice-continue]').count())) break

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react'
 import type { GameState, Scene, Outcome, JournalEntry } from './types'
-import { initLoader, resolveScene, locationName, peekScene, getMasterIndex, getLocation } from './loader'
+import { initLoader, resolveScene, locationName, peekScene, getMasterIndex, getLocation, getChapterOf } from './loader'
+import ActCard from './components/ActCard'
 import LoadingScreen from './components/LoadingScreen'
 import ErrorScreen from './components/ErrorScreen'
 import { DIMMING, REST, restOption, type RestOption } from './rules'
@@ -43,7 +44,7 @@ import KeysHelp from './components/KeysHelp'
 import Credits from './components/Credits'
 import { useHotkeys } from './hooks/useHotkeys'
 import Toasts, { type Toast } from './components/Toasts'
-import { useSettings } from './settings'
+import { useSettings, motionAllowed } from './settings'
 import { unlock, replay, setScene, setVolume, setMuted, setAmbience } from './audio/engine'
 import { playCue } from './audio/cues'
 import styles from './App.module.css'
@@ -80,6 +81,23 @@ export default function App() {
   const toastId = useRef(0)
   const { settings } = useSettings()
   const toastsOn = useRef(settings.toasts)
+  const motionOn = useRef(motionAllowed(settings))
+  motionOn.current = motionAllowed(settings)
+
+  // ── E6: act cards, chapter titles, the story fading round a change of place ──
+  const [actCard, setActCard] = useState<{ act: number; title: string } | null>(null)
+  const [chapterNote, setChapterNote] = useState<{ title: string; key: number } | null>(null)
+  const [storyFade, setStoryFade] = useState<'out' | 'in' | null>(null)
+  useEffect(() => {
+    if (!chapterNote) return
+    const t = setTimeout(() => setChapterNote(null), 3000)
+    return () => clearTimeout(t)
+  }, [chapterNote])
+  useEffect(() => {
+    if (storyFade !== 'in') return
+    const t = setTimeout(() => setStoryFade(null), 300)
+    return () => clearTimeout(t)
+  }, [storyFade])
 
   // ── Sound (E3) ────────────────────────────────────────────────────────────────
   useEffect(() => { setVolume(settings.volume) }, [settings.volume])
@@ -175,7 +193,22 @@ export default function App() {
         if (lines.length) setToasts(t => [...t, ...lines.map(text => ({ id: ++toastId.current, text }))].slice(-3))
       }
 
+      const story = !scene.id.endsWith('_collapse')
+      const newAct = story && (scene.act > state.world.act || Object.keys(state.visited).length === 0)
+      const newChapter = story && (scene.chapter !== state.world.chapter || scene.act !== state.world.act)
+      const moved = scene.location !== state.world.current_location && Object.keys(state.visited).length > 0
+      if (moved && !newAct && motionOn.current) {
+        setStoryFade('out')
+        await new Promise(r => setTimeout(r, 200))
+      }
+
       recordCheckpoint(state, next)
+      if (newAct) setActCard({ act: scene.act, title: getMasterIndex().act_summaries?.[String(scene.act)]?.title ?? '' })
+      if (newChapter) {
+        const title = getChapterOf(scene.id)?.title
+        if (title) setChapterNote({ title, key: Date.now() })
+      }
+      if (moved) setStoryFade(motionOn.current ? 'in' : null)
       setSeenBefore(loadMeta().seenScenes.includes(scene.id))
       markSeen(scene.id)
       setGameState(next)
@@ -364,6 +397,15 @@ export default function App() {
     )
   }
 
+  if (phase === 'game' && gameState && currentScene && actCard) {
+    return (
+      <>
+        <div className={styles.backdrop} aria-hidden="true" />
+        <ActCard act={actCard.act} title={actCard.title} onContinue={() => setActCard(null)} />
+      </>
+    )
+  }
+
   if (phase === 'game' && gameState && currentScene) {
     const hideClock = currentScene.when?.hide_clock ?? false
     // E4: the curse greys the art and closes in from the edges. Story text never changes.
@@ -387,8 +429,9 @@ export default function App() {
           <header className={styles.areaStatus}>
             <StatusStrip state={gameState} hideClock={hideClock} onOpen={() => openPanel('status')} />
           </header>
-          <main className={styles.areaStory}>
-            <SceneView scene={currentScene} state={gameState} onChoice={handleChoice} seenBefore={seenBefore} />
+          <main className={`${styles.areaStory} ${storyFade === 'out' ? styles.storyOut : storyFade === 'in' ? styles.storyIn : ''}`}
+            inert={storyFade === 'out'} data-leaving={storyFade === 'out' ? '' : undefined}>
+            <SceneView scene={currentScene} state={gameState} onChoice={handleChoice} seenBefore={seenBefore} chapterNote={chapterNote} />
           </main>
           <div className={styles.areaSide}>
             <Sidebar state={gameState} onOpen={openPanel} hideClock={hideClock} journalDot={journalDot} flash={flash} rest={rest} onRest={onRestPressed} dimmingDelta={dimmingDelta} />

@@ -1,0 +1,27 @@
+.card {
+  width: var(--shell-w);
+  height: var(--shell-h);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.inner {
+  display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center;
+  opacity: 0; animation: actIn 1.2s ease forwards;
+}
+@keyframes actIn { to { opacity: 1; } }
+.eyebrow { font-family: var(--font-display); font-size: 14px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--text-main); }
+.title { font-family: var(--font-display); font-weight: 400; font-size: clamp(30px, 6vw, 48px); letter-spacing: 0.14em; color: var(--white-cold); }
+.rule { width: 240px; max-width: 70vw; height: 1px; background: linear-gradient(90deg, transparent, var(--blue-steel), transparent); }
+.trait { font-size: 16px; color: var(--text-bright); line-height: 1.7; max-width: 420px; }
+.trait strong { color: var(--white-cold); font-weight: 400; font-family: var(--font-display); letter-spacing: 0.08em; }
+.btn {
+  margin-top: 10px;
+  font-family: var(--font-display); font-size: var(--fs-small); letter-spacing: 0.22em; text-transform: uppercase;
+  background: none; border: 1px solid var(--border-lit); color: var(--blue-ice); padding: 12px 34px; min-height: 44px;
+}
+.btn:hover { border-color: var(--blue-steel); color: var(--white-cold); }
+.btn:focus-visible { outline: var(--focus); outline-offset: 3px; }

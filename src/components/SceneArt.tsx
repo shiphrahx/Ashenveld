@@ -26,6 +26,21 @@ export default function SceneArt({ locationName, gameState, alt = '', frozen = f
   const [fading, setFading] = useState(false)
   const incomingRef = useRef<string | null>(null)
 
+  // E6: a new day is stamped across the top of the art for 2.5 seconds.
+  const [stamp, setStamp] = useState<string | null>(null)
+  const lastDay = useRef(gameState.world.day)
+  useEffect(() => {
+    const day = gameState.world.day
+    if (day > lastDay.current) {
+      const part = gameState.world.time_of_day
+      setStamp(`Day ${day} · ${part.charAt(0).toUpperCase()}${part.slice(1)}`)
+      const t = setTimeout(() => setStamp(null), 2500)
+      lastDay.current = day
+      return () => clearTimeout(t)
+    }
+    lastDay.current = day
+  }, [gameState.world.day])
+
   useEffect(() => {
     if (imageSrc === displayed) return
 
@@ -49,7 +64,7 @@ export default function SceneArt({ locationName, gameState, alt = '', frozen = f
       setDisplayed(incomingRef.current)
       setIncoming(null)
       setFading(false)
-    }, 400)
+    }, 700)
   }
 
   function handleIncomingError() {
@@ -89,6 +104,8 @@ export default function SceneArt({ locationName, gameState, alt = '', frozen = f
             onError={handleIncomingError}
           />
         )}
+
+        {stamp && <div key={stamp} className={styles.dayStamp} data-day-stamp>{stamp}</div>}
 
         <Atmosphere kind={getLocation(locationId)?.atmosphere ?? 'none'} dimming={gameState.world.curse_spread}
           moving={motionAllowed(settings)} frozen={frozen} />

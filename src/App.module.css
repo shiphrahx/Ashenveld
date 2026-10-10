@@ -45,3 +45,8 @@
 
 /* E5: behind the game, flat black and one faint glow. Stars stay on the title, creation and end screens. */
 .backdrop { position: fixed; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(ellipse 70% 60% at 50% 45%, rgba(46, 74, 114, 0.10), transparent 70%), var(--black); }
+
+/* E6: the story fades round a change of place. Opacity only, no movement. */
+.storyOut { opacity: 0; transition: opacity 200ms ease; }
+.storyIn { animation: storyIn 300ms ease; }
+@keyframes storyIn { from { opacity: 0; } to { opacity: 1; } }
