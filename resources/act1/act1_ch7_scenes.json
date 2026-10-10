@@ -437,7 +437,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You move deeper into the different forest, together. The light has changed — not dimmer, but greyer, as if the colour has been removed from it. Behind you, through the trees, you can no longer see the ordinary forest.\n\nAct I is ending. Whatever comes next is already beginning.",
+              "text": "You move deeper into the different forest, together. The light has changed — not dimmer, but greyer, as if the colour has been removed from it. Behind you, through the trees, you can no longer see the ordinary forest.",
               "next_scene": "act1_ch7_decision_enter",
               "state_changes": {}
             }
@@ -469,7 +469,7 @@
       "act": 1,
       "chapter": 7,
       "location": "forest_edge",
-      "title": "The Point of No Return",
+      "title": "The Line",
       "when": {
         "part": "morning"
       },
@@ -511,49 +511,22 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "The trees close behind you.\n\nCrestfall is gone.",
-              "next_scene": "act1_ch7_act1_end",
-              "state_changes": {}
-            }
-          }
-        }
-      ]
-    },
-    {
-      "id": "act1_ch7_act1_end",
-      "act": 1,
-      "chapter": 7,
-      "location": "forest_edge",
-      "title": "End of Act I",
-      "when": {
-        "part": "morning"
-      },
-      "on_enter": {
-        "state_changes": {
-          "flags": {
-            "act1_complete": true
-          }
-        }
-      },
-      "requires": {},
-      "text": {
-        "default": "The silence of the deep forest is total.\n\nThe trees here are wrong in every way. The light is wrong. The ground under your feet is wrong — too soft, too even. The air tastes like the air in a room that has been closed for a very long time.\n\nYou keep moving.\n\nSomewhere in the ruins ahead, in a place fourteen months of letters and silence and one name written at the end of a note have been pointing you toward, someone is waiting. Or was waiting. Or wanted you to come. Or wanted you to stay away and wrote it in a way that made staying away impossible.\n\nYou will know which when you find them.\n\nYou keep moving.",
-        "commander": "The forest is ahead and you are in it. Whatever comes next will be met with what you have.\n\nYou have enough. You tell yourself this. You keep moving.",
-        "arcane": "The ruins are below the forest floor. You can feel them, the weight of something enormous and old under the soil and the roots and the silence. The curse comes up from it like heat from stone.\n\nYou are standing on the surface of something that has been gathering for a very long time.",
-        "ranger": "The forest here has a different quality than any forest you have moved through. The wrongness of it is consistent — not threatening exactly, but alien in the specific way of a place that was not made for you.\n\nYou move through it anyway. You are good at moving through places not made for you.\n\nYou keep moving.",
-        "cipher": "You have walked into the most difficult reading environment you have ever encountered — a place where your skills are at their most necessary and their most uncertain.\n\nWhatever reads people may or may not read you back here.\n\nYou keep moving."
-      },
-      "choices": [
-        {
-          "id": "continue_to_act2",
-          "text": "Continue — Act II: The Deep.",
-          "requires": {},
-          "roll": null,
-          "outcomes": {
-            "default": {
-              "text": "The deep forest closes around you.\n\n— End of Act I —",
+              "text": [
+                "The trees close behind you.",
+                "Crestfall is gone.",
+                "The silence of the deep forest is total.",
+                "The trees here are wrong in every way. The light is wrong. The ground under your feet is wrong — too soft, too even. The air tastes like the air in a room that has been closed for a very long time.",
+                "You keep moving.",
+                "Somewhere in the ruins ahead, in a place fourteen months of letters and silence and one name written at the end of a note have been pointing you toward, someone is waiting. Or was waiting. Or wanted you to come. Or wanted you to stay away and wrote it in a way that made staying away impossible.",
+                "You will know which when you find them.",
+                "You keep moving."
+              ],
               "next_scene": "act2_ch1_ruins_outskirts",
-              "state_changes": {}
+              "state_changes": {
+                "flags": {
+                  "act1_complete": true
+                }
+              }
             }
           }
         }

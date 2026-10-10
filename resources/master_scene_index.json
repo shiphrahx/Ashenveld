@@ -261,11 +261,6 @@
       "act": 1,
       "chapter": 7
     },
-    "act1_ch7_act1_end": {
-      "file": "act1_ch7_scenes.json",
-      "act": 1,
-      "chapter": 7
-    },
     "act2_ch1_ruins_outskirts": {
       "file": "act2_ch1_scenes.json",
       "act": 2,
@@ -618,7 +613,7 @@
       "title": "The Return",
       "entry": "act1_ch1_barge_arrival",
       "exit_scenes": [
-        "act1_ch7_act1_end"
+        "act1_ch7_decision_enter"
       ],
       "chapters": 7,
       "description": "The player arrives in Crestfall, meets the three factions, discovers the missing person's trail, and crosses into the deep forest."
@@ -741,11 +736,6 @@
       "from": "act1_ch6_harrow_arrival",
       "to": "act1_ch7_forest_edge",
       "note": "Ch6 to ch7 fast path"
-    },
-    {
-      "from": "act1_ch7_act1_end",
-      "to": "act2_ch1_ruins_outskirts",
-      "note": "Act 1 to Act 2"
     },
     {
       "from": "act2_ch1_what_they_found",
@@ -881,6 +871,11 @@
       "from": "act3_ch4_resolution_alone",
       "to": "act3_ch5_endings",
       "note": "Ch4 alone to endings router"
+    },
+    {
+      "from": "act1_ch7_decision_enter",
+      "to": "act2_ch1_ruins_outskirts",
+      "note": "Act 1 to Act 2"
     }
   ],
   "flag_dependencies": {

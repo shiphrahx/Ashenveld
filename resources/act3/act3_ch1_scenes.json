@@ -183,7 +183,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You walk for a mile before either of you speaks.\n\nThen [missing person] says: \"I want to go somewhere I have never been.\"\n\n\"That is most places,\" you say.\n\n\"Yes,\" they say. \"That is the point.\"\n\nYou walk. The west road meets the main road at the crossroads three miles from Crestfall. Left goes north. Right goes south. Straight goes west toward the coast.\n\n\"Which one?\" they say.\n\nYou look at all three. You pick one. You do not tell the reader which one — that is the last piece of Ashenveld that belongs to you and it stays yours.",
+              "text": "You walk for a mile before either of you speaks.\n\nThen [missing person] says: \"I want to go somewhere I have never been.\"\n\n\"That is most places,\" you say.\n\n\"Yes,\" they say. \"That is the point.\"\n\nYou walk. The west road meets the main road at the crossroads three miles from Crestfall. Left goes north. Right goes south. Straight goes west toward the coast.\n\n\"Which one?\" they say.\n\nYou look at all three. You pick one. You do not say why.",
               "next_scene": "act3_ch2_on_the_road",
               "state_changes": {
                 "flags": {

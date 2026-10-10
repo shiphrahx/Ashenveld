@@ -454,7 +454,7 @@
           "Years have passed. Crestfall has a name in the region now — not a famous one, but a known one. The town where the curse stopped. The town with the camp that knows what to do when someone comes in from the forest changed.",
           "The Rootless camp is not called the Rootless camp anymore. It has a formal name — the Ashenveld Recovery Centre, a name that took three meetings to agree on and that nobody uses except on official documents. Unofficially it is still the camp. Maret is still Maret.",
           "You and [missing person] are in it. In all of it — the work, the place, the specific texture of a life built in a hard place with the people who stayed.",
-          "This is the Rootless ending. Not the easiest path. Not the one the institutions wanted. The one that put the people who knew the most about the curse in charge of what came after it.",
+          "Not the easiest path. Not the one the institutions wanted. The one that put the people who knew the most about the curse in charge of what came after it.",
           {
             "when": {
               "relationship_type": [
@@ -576,7 +576,7 @@
           "The formal responses mattered less than the informal ones. The people who lived through the curse now had a complete account of what happened to them and who made which decisions while it was happening.",
           "No faction emerged from the account with full credit. No faction emerged cleanly. What emerged was the truth, distributed, which was what you intended.",
           "Ashenveld did not collapse. It fractured — into smaller independent settlements, each organised around the most trustworthy local figures. Maret's camp became the centre of a loose network of communities that operated without central authority and, after the first difficult years, without needing one.",
-          "The ending is the loneliest one. It is also the one where the most people know the truth.",
+          "It was lonely work. More people know the truth because of it.",
           {
             "when": {
               "relationship_type": [

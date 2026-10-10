@@ -151,7 +151,7 @@
       "act": 1,
       "chapter": 5,
       "location": "crestfall_market",
-      "title": "How Each Faction Responds",
+      "title": "Three Answers",
       "when": {
         "part": "afternoon"
       },
@@ -395,7 +395,7 @@
       "act": 1,
       "chapter": 5,
       "location": "crestfall_tallow_inn",
-      "title": "What You Notice",
+      "title": "The List",
       "when": {
         "part": "night"
       },

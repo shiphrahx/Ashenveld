@@ -42,8 +42,7 @@
             },
             "text": "Seriva's bargain is already working. The grey flag is down from the alderman's hall."
           },
-          "Vorne has his assessment. Seriva has hers. The Rootless camp has its position. And you have decisions to make about what happens to Ashenveld and your place in it.",
-          "The point of no return is coming."
+          "Vorne has his assessment. Seriva has hers. The Rootless camp has its position. And you have decisions to make about what happens to Ashenveld and your place in it."
         ],
         "commander": "You sit at your usual table in the Tallow and look at three forces arrayed around the question of what happens next.\n\nVorne wants control of the documentation and the ruins' status. Seriva wants the Covenant's involvement in the rebuilding formally recognised. The Rootless camp wants recognition, resources, and to be left alone.\n\nThese three things are not incompatible. They require a broker. You have been a broker before.",
         "arcane": "Three days of observation have given you initial data on the sealing's effects.\n\nThe curse is not reversing rapidly. Affliction at early stages — like Issa, like Lira — is progressing more slowly. People at further stages show no measurable change yet.\n\nThe land itself shows the most immediate response. Birds are beginning to return to areas nearest Crestfall. Time is the question. How much.",
@@ -224,7 +223,7 @@
       "act": 2,
       "chapter": 8,
       "location": "crestfall_tallow_inn",
-      "title": "What the Mechanism Showed You",
+      "title": "The Good Wood",
       "when": {
         "part": "evening"
       },
@@ -350,7 +349,7 @@
       "act": 2,
       "chapter": 8,
       "location": "crestfall_tallow_inn",
-      "title": "The Choice That Determines Everything",
+      "title": "The Sixteenth Morning",
       "when": {
         "part": "morning",
         "day": 16
@@ -360,7 +359,7 @@
       },
       "requires": {},
       "text": {
-        "default": "Morning of the sixteenth day.\n\nYou are sitting at your table in the Tallow when it becomes clear that today is the day the decisions solidify. Not made — you have been making them for days. But committed, the point past which revision requires extraordinary effort.\n\nThe factions have their positions. You have yours. [missing person] is here, and Pol, and Maret, and Branch, and Lira, and Issa, and Aldous behind his bar with the good wood still burning.\n\nThe question is not what you have done. The question is what you are going to do with what comes next.\n\nThis is the point of no return. What you choose here shapes which ending is possible.",
+        "default": "Morning of the sixteenth day.\n\nYou are sitting at your table in the Tallow when it becomes clear that today is the day the decisions solidify. Not made — you have been making them for days. But committed, the point past which revision requires extraordinary effort.\n\nThe factions have their positions. You have yours. [missing person] is here, and Pol, and Maret, and Branch, and Lira, and Issa, and Aldous behind his bar with the good wood still burning.\n\nThe question is not what you have done. The question is what you are going to do with what comes next.",
         "commander": "You have been building toward a specific outcome. You know where you stand. What comes next is implementation — and implementation in Ashenveld's current state may require you to be present for a significant time. Possibly permanently.\n\nYou think about what that means. Then you decide what it means.",
         "arcane": "You have documentation to produce. [missing person]'s fourteen months of notes. Pol's fifteen years of scholarship. Your own observations.\n\nThe question is who receives it and what version of events it tells. This work will determine what Ashenveld becomes.",
         "ranger": "Ashenveld needs time, and time is not threatened. But it also needs people who know how to read what is happening and respond to it.\n\nYou think about whether you are one of those people. You think about what it would mean to stay.",
