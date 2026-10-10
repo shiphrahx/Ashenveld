@@ -20,7 +20,29 @@
       },
       "requires": {},
       "text": {
-        "default": "You pack what you have. At the Tallow's bar, Aldous gives you bread for the road without being asked and charges you three coins less than the posted rate, which is his specific language for: I hope you come back.\n\nYou have been in Crestfall for three days. You know more than you did and less than you need and the gap is east.\n\nThree factions have asked things of you or offered things to you and you have navigated between them with whatever you have navigated with. What you have now: a direction, a destination, a letter that may or may not be a warning, and the specific quality of purpose that comes from having assembled enough pieces to see the shape of a thing, even if the thing itself is still dark.\n\nYou leave before the market opens.",
+        "default": [
+          {
+            "when": {
+              "not": {
+                "any": [
+                  {
+                    "taken": [
+                      "act1_ch6_departure_decision:visit_compact_before_leaving"
+                    ]
+                  },
+                  {
+                    "taken": [
+                      "act1_ch6_departure_decision:visit_maret_before_leaving"
+                    ]
+                  }
+                ]
+              }
+            },
+            "text": "You pack what you have. At the Tallow's bar, Aldous gives you bread for the road without being asked and charges you three coins less than the posted rate, which is his specific language for: I hope you come back.\n\nYou have been in Crestfall for three days. You know more than you did and less than you need and the gap is east.\n\nThree factions have asked things of you or offered things to you and you have navigated between them with whatever you have navigated with. What you have now: a direction, a destination, a letter that may or may not be a warning, and the specific quality of purpose that comes from having assembled enough pieces to see the shape of a thing, even if the thing itself is still dark.",
+            "else": "The light is coming up. The east road is waiting."
+          },
+          "You leave before the market opens."
+        ],
         "commander": "Before leaving, you have made your commitments. The Compact message, if you took it. The covenant ward, if you wear it. The relationships with the Rootless.\n\nYou are not beholden to any single answer. You are going east to find the truth of it.",
         "arcane": "Before leaving, you spend an hour at the Tallow's writing table going over your notes from three days. You are better prepared than your missing person was, you think. You have more information, more context, more theoretical framework.\n\nYou hope that makes a difference. You know it might not.",
         "ranger": "Before leaving, you check your pack with automatic thoroughness. Everything in order. Everything necessary.\n\nYou check the east road from the market square — empty this early, which is either good or suspicious, and you need to decide which before you are a mile in.",
@@ -39,14 +61,15 @@
           "outcomes": {
             "default": {
               "text": "Cael is at the gate. He nods when he sees you. The nod means: you are doing what you said you would. He gives you one addition — a contact point, a passphrase, a way to send information back if you find something significant.\n\n\"Be thorough,\" he says. \"Whatever is in those ruins, Commander Vorne needs to know exactly what it is before he can act.\"\n\nThe word act. You note it.",
-              "next_scene": "act1_ch6_visit_maret_departure",
+              "next_scene": "act1_ch6_departure_decision",
               "state_changes": {
                 "flags": {
                   "compact_task_confirmed": true
                 }
               }
             }
-          }
+          },
+          "once": true
         },
         {
           "id": "visit_maret_before_leaving",
@@ -56,7 +79,7 @@
           "outcomes": {
             "default": {
               "text": "She knows you are leaving. She has packed something for you — dried food from the camp's stores, a specific herb Pol prepared, and a hand-drawn map of the east road with the camp's known exploration points marked.\n\n\"Lira drew it,\" Maret says. \"She remembers the outskirts in more detail than the rest of us. The marks there are hers.\"\n\nShe gives it to you without asking for anything in return. Which means the debt is implicit, and both of you know it.",
-              "next_scene": "act1_ch6_east_road_start",
+              "next_scene": "act1_ch6_departure_decision",
               "state_changes": {
                 "flags": {
                   "maret_gave_supplies": true
@@ -72,11 +95,12 @@
                 }
               }
             }
-          }
+          },
+          "once": true
         },
         {
           "id": "leave_directly",
-          "text": "Leave without stopping. The road is what matters now.",
+          "text": "Take the east road.",
           "requires": {},
           "roll": null,
           "outcomes": {
@@ -84,52 +108,6 @@
               "text": "You leave Crestfall the way you arrived — before dawn, alone, moving east while the town is still deciding whether to be awake.",
               "next_scene": "act1_ch6_east_road_start",
               "state_changes": {}
-            }
-          }
-        }
-      ]
-    },
-    {
-      "id": "act1_ch6_visit_maret_departure",
-      "act": 1,
-      "chapter": 6,
-      "location": "rootless_camp",
-      "title": "Maret's Supplies",
-      "when": {
-        "part": "morning"
-      },
-      "on_enter": {
-        "state_changes": {}
-      },
-      "requires": {},
-      "text": {
-        "default": "She knows you are leaving. She has packed something for you — dried food from the camp's stores, a specific herb Pol prepared, and a hand-drawn map of the east road with the camp's known exploration points marked.\n\n\"Lira drew it,\" Maret says. \"She remembers the outskirts in more detail than the rest of us. The marks there are hers.\"\n\nShe gives it to you without asking for anything in return. Which means the debt is implicit, and both of you know it.\n\nBranch is nearby, sharpening something, saying nothing. He looks up when you go and does not say anything, which is his version of: good luck.",
-        "commander": "\"One thing,\" Maret says, before you leave. \"The Compact will try to use whatever you find. The Covenant will try to destroy it. Neither of those outcomes—\" She stops. \"You know what you are looking for. Do not let either of them decide what happens when you find it.\"",
-        "arcane": "Pol approaches as you are leaving and presses a small bundle into your hands — additional herbs, tightly wrapped, with a written note in a hand you do not recognise.\n\nThe note says: these suppress the effect of sustained exposure. Take one morning and one evening if you are inside the ruins for more than a day.\n\nYou thank Pol. She nods and goes back to her garden.",
-        "ranger": "Lira appears at the camp's edge as you are about to leave. She holds out the rope with the ward-knot she was working the first day you spoke.\n\n\"It is finished,\" she says. \"I do not know if it works. But I know how to make them and something is better than nothing.\"\n\nYou take it. The knot is careful and precise. Whatever Lira is now, her hands still know what they are doing.",
-        "cipher": "Before you leave, Branch stops beside you. He does not look at you — he is watching the tree line.\n\n\"She trusts you,\" he says. Meaning Maret. \"She does not trust people quickly and she trusts you. I do not know if that is your virtue or her vulnerability.\"\n\nHe walks away. That is the closest he gets to saying: be careful with her."
-      },
-      "choices": [
-        {
-          "id": "head_east",
-          "text": "Head east. The road begins.",
-          "requires": {},
-          "roll": null,
-          "outcomes": {
-            "default": {
-              "text": "You go. The camp falls behind you. The trees thin and then give way to the edge of Crestfall and then to the cobblestone that begins the east road.",
-              "next_scene": "act1_ch6_east_road_start",
-              "state_changes": {
-                "inventory": [
-                  "rootless_map",
-                  "rootless_provisions"
-                ],
-                "factions": {
-                  "rootless": {
-                    "reputation": 10
-                  }
-                }
-              }
             }
           }
         }

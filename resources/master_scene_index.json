@@ -201,11 +201,6 @@
       "act": 1,
       "chapter": 6
     },
-    "act1_ch6_visit_maret_departure": {
-      "file": "act1_ch6_scenes.json",
-      "act": 1,
-      "chapter": 6
-    },
     "act1_ch6_east_road_start": {
       "file": "act1_ch6_scenes.json",
       "act": 1,
