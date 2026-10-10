@@ -53,7 +53,11 @@ You choose who you are before you enter Crestfall. Four archetypes, each with di
 - **Ranger** — you move through difficult terrain without being noticed
 - **Cipher** — you find what is hidden in what people say and what they do not
 
-Your class shapes how scenes read, which choices are available to you, and how the dice favour you.
+Your class adds its own read to every scene, opens choices no other class has, and decides which stats the dice favour.
+
+## Five Endings
+
+Where you are at the end, and who is with you, decides how it ends. There are five endings, and the road to each one remembers what you did on the way.
 
 ![Classes](classes.png)
 
