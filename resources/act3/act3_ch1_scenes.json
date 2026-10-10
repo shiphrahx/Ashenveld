@@ -70,7 +70,7 @@
         "commander": "You stand beside them at the window and read the market the way you would read a position that has been secured and now requires administration rather than defence.\n\n\"We need to make a list,\" you say.\n\nThey look at you. Then, slowly, they smile. The first real one since you found them in the ruins, not the careful managed expression but the one you remember from before.\n\n\"Always,\" they say. \"Always with the lists.\"",
         "arcane": "The ambient in Crestfall this morning is measurably different from yesterday. Not dramatically. Incrementally. But the increment is in the right direction.\n\nYou make a note in your journal. Day seventeen. Baseline established.\n\nYou have decided to stay and you have decided to document everything. Ashenveld is the most significant field site you will ever have access to and you have just committed to spending the foreseeable future in it. You are aware that this is either your best decision or your worst and that the distinction may take years to become clear.",
         "ranger": "The birds are back in the market square this morning. Two sparrows and something larger you do not immediately identify. A species that normally keeps further into the ordinary forest, moving closer now that the forest is becoming ordinary again.\n\nYou note this. You will note it again tomorrow and the day after and the day after that. The recovery of Ashenveld's wildlife will be the clearest measure of what the sealing achieved.\n\n[missing person] is at the window. You stand beside them and you watch the birds.",
-        "cipher": "You read the market this morning with the attention of someone who has decided to become a permanent feature of a place and needs to update their mental map from visitor to resident.\n\nDifferent things matter. Different relationships need different management. The short-term leverage you accumulated over the past weeks needs to be converted into something more durable.\n\nYou are going to be here for a while. You start thinking like it."
+        "cipher": "You walk the market this morning as someone who lives here now, and see it differently.\n\nDifferent things matter. Different relationships need different management. The short-term leverage you accumulated over the past weeks needs to be converted into something more durable.\n\nYou are going to be here for a while. You start thinking like it."
       },
       "choices": [
         {
@@ -390,7 +390,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "You commit.\n\nNot with ceremony. With the quality of someone who has made difficult choices before and knows that the commitment is made in the continued doing rather than in a single moment of decision.\n\nYou get up. You go to the Rootless camp. You begin.",
+              "text": "You commit.\n\nNot with ceremony. You have made hard choices before. They are made in the doing, day after day, not once.\n\nYou get up. You go to the Rootless camp. You begin.",
               "next_scene": "act3_ch2_alone_work",
               "state_changes": {
                 "flags": {

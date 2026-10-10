@@ -61,7 +61,7 @@
                 "\"If you go back,\" they say, \"and the Compact closes the road properly, you may not be able to return.\"",
                 "\"I know,\" you say.",
                 "A pause. \"Then go,\" they say. \"Come back. I will be here.\"",
-                "They say it simply, with the quality of someone who has spent fourteen months waiting and has become good at it. You leave the outskirts and head west.",
+                "They say it simply. They have had fourteen months of practice at waiting. You leave the outskirts and head west.",
                 {
                   "when": {
                     "flags": {
@@ -346,7 +346,7 @@
               }
             },
             "failure": {
-              "text": "He holds you at the checkpoint for forty minutes. More questions. A second soldier brought in. Eventually a note taken and sent toward town.\n\nYou are not detained. But you walk through the checkpoint with the feeling of someone whose account has been filed as requiring follow-up.",
+              "text": "He holds you at the checkpoint for forty minutes. More questions. A second soldier brought in. Eventually a note taken and sent toward town.\n\nYou are not detained. But you walk through the checkpoint knowing your account has been filed for follow-up.",
               "next_scene": "act2_ch3_crestfall_changed",
               "state_changes": {
                 "flags": {
@@ -538,7 +538,7 @@
         "commander": "Thirty soldiers change a town. The balance of power has shifted. The Covenant's visible presence has been reduced. Their shrine is still open but they no longer have the streets. The Rootless camp outside town is, according to the soldier at the checkpoint, still there. For now.\n\nVorne has not moved against the camp yet. That he has not moved against it yet tells you something about either his restraint or his priorities.",
         "arcane": "You feel Seriva before you see her. Not literally. But her influence on the town's information environment is measurable. People are talking less. The topics that were freely discussed three days ago are now being discussed in lower voices, if at all.\n\nInformation consolidation. Someone is controlling what people share and with whom. That is Seriva's work, or the work of someone following her instructions.",
         "ranger": "There are fewer animals than when you left. The cat under the north porch has gone. You look for tracks and find nothing recent.\n\nYou read it the way you read weather in the birds. When the animals leave, the storm has already committed.",
-        "cipher": "You read the changed Crestfall and update your map of it in real time. Compact soldiers at seven visible positions. Covenant influence reduced. Three new faces you do not recognise. Compact-adjacent, not soldiers, probably scholars or analysts.\n\nAnd one face you do not recognise but immediately categorise as significant: a woman in her sixties moving through the market with the unhurried certainty of someone who knows exactly where everything is even though she arrived three days ago."
+        "cipher": "You read the changed Crestfall and update your map of it in real time. Compact soldiers at seven visible positions. Covenant influence reduced. Three new faces you do not recognise. Compact-adjacent, not soldiers, probably scholars or analysts.\n\nAnd one face you do not recognise but immediately categorise as significant: a woman in her sixties moving through the market as if she knows where everything is, though she is meant to have arrived three days ago."
       },
       "choices": [
         {
@@ -548,7 +548,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "Aldous is behind his bar when you enter, which is where Aldous always is. He looks up when you come in and something in him relaxes. The relief of someone who had categorised you as lost and has been revised.\n\n\"You came back,\" he says.\n\n\"I said I would.\"\n\nHe pours something without being asked. \"It has been a strange few days,\" he says. This is Aldous for: everything has changed and none of it is good.",
+              "text": "Aldous is behind his bar when you enter, which is where Aldous always is. He looks up when you come in and something in him relaxes. He had you down as lost.\n\n\"You came back,\" he says.\n\n\"I said I would.\"\n\nHe pours something without being asked. \"It has been a strange few days,\" he says. This is Aldous for: everything has changed and none of it is good.",
               "next_scene": "act2_ch3_aldous_update",
               "state_changes": {
                 "relationships": {
@@ -568,7 +568,7 @@
           "outcomes": {
             "default": {
               "text": [
-                "The camp is still there. You were not sure it would be. Maret is already there. Branch is at the edge, watching the town with the quality of someone who has been watching for a while and does not like what they see."
+                "The camp is still there. You were not sure it would be. Maret is already there. Branch is at the edge, watching the town. He has been watching it a while and does not like it."
               ],
               "next_scene": "act2_ch3_rootless_situation",
               "state_changes": {}
@@ -585,7 +585,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "You locate her at the Covenant shrine, which she appears to be using as her operational base despite Edric's obvious discomfort. She is examining a map when you arrive. A detailed map, old, of the region east of Crestfall.\n\nShe looks up when you enter and her assessment of you takes approximately three seconds. Thorough. Professional. The assessment of someone who is very good at reading what they see.",
+              "text": "You locate her at the Covenant shrine, which she appears to be using as her operational base despite Edric's obvious discomfort. She is examining a map when you arrive. A detailed map, old, of the region east of Crestfall.\n\nShe looks up when you enter and her assessment of you takes approximately three seconds. Thorough. Professional. She is good at this.",
               "next_scene": "act2_ch3_seriva_first_meeting",
               "state_changes": {
                 "flags": {
@@ -603,7 +603,7 @@
               }
             },
             "failure": {
-              "text": "You look for her and she finds you. She has been watching you since you came through the town gate. She approaches you in the market square with the unhurried confidence of someone who has decided how this conversation will go.",
+              "text": "You look for her and she finds you. She has been watching you since you came through the town gate. She approaches you in the market square unhurried. She has already decided how this will go.",
               "next_scene": "act2_ch3_seriva_first_meeting",
               "state_changes": {
                 "flags": {
@@ -872,7 +872,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "She talks to you. Slowly, with the care of someone who has to rebuild each sentence from its component parts before they can say it.\n\nShe came to the camp because she knew about it. She had seen Lira in town before Lira came to the camp and Lira had told her about it, in the brief period when Lira was still functioning well enough to have a conversation in the market. When the affliction touched Issa, she knew where to go.\n\n\"My father,\" she says, and stops. \"He will fix it. That is what he does.\" A pause that contains something complicated. \"Or he will try to fix it in a way that makes it worse. He does that too.\"\n\nAnd then, carefully: \"I found something. In the ruins outskirts, the day before the affliction started. I have it here.\"\n\nShe produces a fragment of stone. The surface is worked, carved, familiar. Part of the sealing mechanism.",
+              "text": "She talks to you. Slowly. She builds each sentence before she says it.\n\nShe came to the camp because she knew about it. She had seen Lira in town before Lira came to the camp and Lira had told her about it, in the brief period when Lira was still functioning well enough to have a conversation in the market. When the affliction touched Issa, she knew where to go.\n\n\"My father,\" she says, and stops. \"He will fix it. That is what he does.\" A pause that contains something complicated. \"Or he will try to fix it in a way that makes it worse. He does that too.\"\n\nAnd then, carefully: \"I found something. In the ruins outskirts, the day before the affliction started. I have it here.\"\n\nShe produces a fragment of stone. The surface is worked, carved, familiar. Part of the sealing mechanism.",
               "next_scene": "act2_ch3_pol_revelation",
               "state_changes": {
                 "flags": {
@@ -1039,7 +1039,7 @@
       "text": {
         "default": [
           "Seriva is at the shrine when you find her, or she allows herself to be found there, which amounts to the same thing.",
-          "She is in her sixties, compact, with the bearing of someone who has spent decades in rooms where other people defer to them and has stopped needing the deference to feel it is owed. She looks at you when you enter with the quality of someone completing an assessment they began the moment you arrived in Crestfall.",
+          "She is in her sixties, compact, used to rooms where people defer to her, and long past needing them to. She looks at you when you enter with the quality of someone completing an assessment they began the moment you arrived in Crestfall.",
           "Edric is in the room. He stands when Seriva sits, and stays standing.",
           {
             "when": {
@@ -1055,7 +1055,7 @@
         "commander": "You give her nothing she is looking for and everything that is true in what you say.\n\n\"I went to Harrow,\" you say. \"Explored the forest edge. Came back.\"\n\nShe looks at you. She does not believe this is the complete account. She also cannot prove it is not the complete account.\n\n\"Harrow is interesting,\" she says. \"What did you find there?\"",
         "arcane": "You look at her and she looks at you and you both understand that this is a conversation between two people who know more than they are going to say and are assessing how much the other knows.\n\n\"You have been in Ashenveld before,\" you say. It is not a question.\n\n\"Twenty years ago,\" she says, without hesitation. Acknowledging it before you can use it as a reveal. \"I was conducting research on behalf of the Covenant.\"\n\n\"On the ruins.\"\n\n\"On the region,\" she says. The distinction is deliberate.",
         "ranger": "You read her in the first thirty seconds and what you read is: control. This is a person who has had information about Ashenveld and the ruins for twenty years and has been managing it carefully for twenty years, releasing only what serves her purposes.\n\n\"You know what is in the ruins,\" you say.\n\n\"I know what was in the ruins twenty years ago,\" she says. \"Things change.\"",
-        "cipher": "She is very good. You are watching her run the same assessment on you that you are running on her, and she is doing it with the ease of someone who has been doing it longer.\n\n\"You are here because the sealing failed,\" you say. \"And you are here because you know why it failed.\"\n\nA pause. \"Everyone knows the sealing has been failing,\" she says.\n\n\"Not everyone,\" you say. \"Specifically you.\"\n\nThe pause before her response is her telling you that you are right."
+        "cipher": "She is very good. You are watching her run the same assessment on you that you are running on her, and she has been doing it longer.\n\n\"You are here because the sealing failed,\" you say. \"And you are here because you know why it failed.\"\n\nA pause. \"Everyone knows the sealing has been failing,\" she says.\n\n\"Not everyone,\" you say. \"Specifically you.\"\n\nThe pause before her response is her telling you that you are right."
       },
       "choices": [
         {
@@ -1201,7 +1201,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "She is quiet for a moment. Then she answers with the precision of someone who has thought about this answer for a very long time.\n\n\"The purification ritual seals the mechanism by eliminating everything the power has sufficiently transformed. People. Animals. Structures. The further the transformation has progressed, the more completely the ritual eliminates it.\" A pause. \"In Crestfall, given the current spread rate, the ritual would affect perhaps a fifth of the population. In the eastern villages — in Harrow — there would be no remainder.\"\n\nShe holds your gaze. \"This is why it must be performed before the spread reaches the point where a fifth becomes a third becomes a half.\"",
+              "text": "She is quiet for a moment. Then she answers. She has had this answer ready for years.\n\n\"The purification ritual seals the mechanism by eliminating everything the power has sufficiently transformed. People. Animals. Structures. The further the transformation has progressed, the more completely the ritual eliminates it.\" A pause. \"In Crestfall, given the current spread rate, the ritual would affect perhaps a fifth of the population. In the eastern villages — in Harrow — there would be no remainder.\"\n\nShe holds your gaze. \"This is why it must be performed before the spread reaches the point where a fifth becomes a third becomes a half.\"",
               "next_scene": "act2_ch4_vorne_meeting",
               "state_changes": {
                 "flags": {

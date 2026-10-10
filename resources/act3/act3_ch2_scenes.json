@@ -880,7 +880,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You write.\n\nIt takes two attempts. The first one asks them to come back without using those words. You recognise it for what it is and start again.\n\nThe second letter tells them what Ashenveld looks like in the third week. The birds. Lira going to the market alone. The quality of the light this time of year, which is different from how you remember it from before.\n\nYou seal it and give it to the post rider. Then you go back to work.\n\nFourteen days later a letter arrives from a town two weeks west of Ashenveld. They are fine. They describe ordinary things with the attention of someone who has not had ordinary things for a long time and is grateful for them.\n\nAt the end: I am glad you are there. I mean both things in that sentence.",
+              "text": "You write.\n\nIt takes two attempts. The first one asks them to come back without using those words. You recognise it for what it is and start again.\n\nThe second letter tells them what Ashenveld looks like in the third week. The birds. Lira going to the market alone. The quality of the light this time of year, which is different from how you remember it from before.\n\nYou seal it and give it to the post rider. Then you go back to work.\n\nFourteen days later a letter arrives from a town two weeks west of Ashenveld. They are fine. They write about ordinary things, slowly, as if each one were new.\n\nAt the end: I am glad you are there. I mean both things in that sentence.",
               "next_scene": "act3_ch3_alone_continues",
               "state_changes": {
                 "relationships": {

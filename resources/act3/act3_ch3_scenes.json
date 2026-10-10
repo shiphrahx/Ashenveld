@@ -240,7 +240,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You decide with the quality of someone who has been making difficult decisions for a month and has gotten better at the decisiveness.\n\nAshenveld was the work. The work is done. The next work is something else.\n\nYou say this to [missing person]. They look at you for a moment.\n\n\"All right,\" they say. \"What next?\"\n\nYou think about it. You do not have a complete answer yet. But you are asking the question in the right direction.",
+              "text": "You decide quickly. A month of hard decisions has made you quicker at them.\n\nAshenveld was the work. The work is done. The next work is something else.\n\nYou say this to [missing person]. They look at you for a moment.\n\n\"All right,\" they say. \"What next?\"\n\nYou think about it. You do not have a complete answer yet. But you are asking the question in the right direction.",
               "next_scene": "act3_ch4_resolution_road",
               "state_changes": {
                 "flags": {

@@ -315,7 +315,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "He listens without the expression of someone who is surprised.\n\n\"The building has been standing here for sixty years,\" he says. \"Ground has been soaking for three.\" He wipes the bar. \"Keeps mostly to the edges. I moved the tables to the centre two years ago.\"\n\nHe looks at the wall. \"Wren — the man by the fire — touched the wall by his usual chair three times a day for a year before I moved the chair. I thought it was habit.\" A pause. \"It was habit.\"",
+              "text": "He listens. He does not look surprised.\n\n\"The building has been standing here for sixty years,\" he says. \"Ground has been soaking for three.\" He wipes the bar. \"Keeps mostly to the edges. I moved the tables to the centre two years ago.\"\n\nHe looks at the wall. \"Wren — the man by the fire — touched the wall by his usual chair three times a day for a year before I moved the chair. I thought it was habit.\" A pause. \"It was habit.\"",
               "next_scene": "act1_ch5_class_specific",
               "state_changes": {
                 "flags": {
@@ -570,7 +570,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You put out the lamp and sleep with the discipline of someone who has learned that rest before a difficult day is a resource, not an indulgence.",
+              "text": "You put out the lamp and make yourself sleep. Tomorrow will need it.",
               "next_scene": "act1_ch6_departure_decision",
               "state_changes": {
                 "world": {

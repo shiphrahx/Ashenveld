@@ -104,7 +104,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "Something in his face moves. Relief, or the exhaustion of someone who has been holding information and wanted to give it to the right person.\n\n\"I know who you mean,\" he says. \"Everyone here does.\" He looks around the docks. \"They came through about fourteen months ago. Asking questions. Then they stopped asking questions and started going into the forest instead.\" He pauses. \"Nobody goes into the forest.\"\n\nHe gives you a name. Maret. The woman at the camp outside town. He says it quickly, like a package he wants out of his hands.",
+              "text": "Something in his face moves. Relief, or just tiredness. He has been holding on to this.\n\n\"I know who you mean,\" he says. \"Everyone here does.\" He looks around the docks. \"They came through about fourteen months ago. Asking questions. Then they stopped asking questions and started going into the forest instead.\" He pauses. \"Nobody goes into the forest.\"\n\nHe gives you a name. Maret. The woman at the camp outside town. He says it quickly, like a package he wants out of his hands.",
               "next_scene": "act1_ch1_tallow_arrival",
               "state_changes": {
                 "flags": {
@@ -199,7 +199,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You nod and go. You feel his attention on your back for twenty metres. The attention of someone who has more to say and has decided you do not want to hear it yet.",
+              "text": "You nod and go. You feel his attention on your back for twenty metres. He has more to say. He has decided you do not want to hear it yet.",
               "next_scene": "act1_ch1_tallow_arrival",
               "state_changes": {}
             }
@@ -317,7 +317,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "You sit. You watch.\n\nThe three men at separate tables are regulars. You can tell from the way they occupy their chairs, the grooves of habit. They have simply stopped talking. Whatever they shared before, they are not sharing it now.\n\nThe man nearest the fire has not moved in seven minutes. His drink is untouched. His eyes are open and fixed on something that is not in the room.\n\nAldous watches him too, when he thinks no one is looking. There is worry in it. And something else. The look of someone who has decided there is nothing to be done.",
+              "text": "You sit. You watch.\n\nThe three men at separate tables are regulars. You can tell from the way they occupy their chairs, the grooves of habit. They have simply stopped talking. Whatever they shared before, they are not sharing it now.\n\nThe man nearest the fire has not moved in seven minutes. His drink is untouched. His eyes are open and fixed on something that is not in the room.\n\nAldous watches him too, when he thinks no one is looking. There is worry in it. And something else. He has decided there is nothing to be done.",
               "next_scene": "act1_ch1_still_man",
               "state_changes": {
                 "flags": {
@@ -385,7 +385,7 @@
       },
       "text": {
         "default": "You sit at the bar and Aldous talks. Not freely, he measures everything, but he talks.\n\nFourteen months ago. [missing person] arrived and spent a week in town asking questions nobody wanted to answer about the ruins to the east and the old city under the forest. Then they found the Rootless camp, the survivors outside town, and spent the remaining two weeks there.\n\n\"The woman at the camp,\" Aldous says. \"Maret. She knew them better than I did by the end. She might tell you something. Or she might not.\" He refills his own glass for the first time tonight. \"She tends not to.\"\n\nHe looks at you. \"Whatever you are looking for — I hope you find it. I hope it is still what you think it is when you do.\"",
-        "commander": "Aldous tells you what he knows because you asked the right way. Direct, without pressure, the tone of someone who has been owed information before and knows how to receive it.\n\nFourteen months ago. Military bearing. He noticed. The right questions. Three weeks. Gone one morning without a word.\n\n\"Maret would know more,\" he says. \"She is careful who she talks to but she is not unkind.\"",
+        "commander": "Aldous tells you what he knows because you asked the right way. Direct, without pressure. You have been owed information before.\n\nFourteen months ago. Military bearing. He noticed. The right questions. Three weeks. Gone one morning without a word.\n\n\"Maret would know more,\" he says. \"She is careful who she talks to but she is not unkind.\"",
         "arcane": "Aldous tells you what he knows, which is more than he thought he knew when he started talking. You notice the way memory works on people. They begin with what they are sure of and end somewhere they did not expect to be.\n\nFourteen months ago. Questions about the ruins. Three weeks of conversations with Maret at the Rootless camp. Then gone. But not fled. More like concluded. Like they had made a decision.\n\n\"Whatever they were looking for,\" Aldous says slowly, \"I think they found the beginning of it, at least.\"",
         "ranger": "Aldous talks and you listen the way you listen to terrain. For the shape of things, the direction the information is flowing.\n\nFourteen months ago. [missing person] arrived, asked about the ruins, spent three weeks at the Rootless camp, then went east without telling anyone.\n\n\"Maret,\" Aldous says. \"At the camp. She is the one to find.\" He adds flatly: \"Do not go into the forest alone.\"",
         "cipher": "Aldous tells you what he knows. You listen to what he does not say as much as what he does.\n\nFourteen months ago. Three weeks. The Rootless camp. Maret. Gone east.\n\nWhat he does not say: whether he tried to stop them. Whether the Rootless camp is as innocent as he is making it sound. The gaps in his account are not dishonesty. They are the shape of things he has decided are yours to find rather than his to give away."
@@ -609,7 +609,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You sleep with the discipline of someone who has learned to rest even when their mind is elsewhere. In the morning, Crestfall.",
+              "text": "You sleep anyway. You learned how a long time ago. In the morning, Crestfall.",
               "next_scene": "act1_ch2_morning_crestfall",
               "state_changes": {
                 "world": {
@@ -673,7 +673,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "He tells you. Slowly, with the care of someone who has been trying to find the words for a long time and is grateful to have an audience willing to hear them.\n\nIt started as tiredness. Then a quality of distance. Like watching your own life through glass. The wanting things stopped first. Then the caring about things. Then the noticing. He can still think but the thoughts feel borrowed, like wearing someone else's clothes.\n\n\"I do not want to go further in,\" he says. \"But I do not know how to go back, either.\" He looks at the fire. \"Some people go further in and they look peaceful. I think about that sometimes.\"",
+              "text": "He tells you. Slowly. He has been looking for the words a long while, and he is glad of someone to hear them.\n\nIt started as tiredness. Then a quality of distance. Like watching your own life through glass. The wanting things stopped first. Then the caring about things. Then the noticing. He can still think but the thoughts feel borrowed, like wearing someone else's clothes.\n\n\"I do not want to go further in,\" he says. \"But I do not know how to go back, either.\" He looks at the fire. \"Some people go further in and they look peaceful. I think about that sometimes.\"",
               "next_scene": "act1_ch1_tallow_room",
               "state_changes": {
                 "flags": {

@@ -246,7 +246,7 @@
       },
       "requires": {},
       "text": {
-        "default": "The shrine is the old alderman's hall. You remember it differently, with a different flag above the door and a different kind of authority inside. The Ashen Covenant's flag is grey, which might be a statement or might just be the colour they settled on.\n\nEdric is outside when you arrive, as if he knew you were coming, which he probably did. In a town this size, word of a stranger travels at the speed of a glance across a street.\n\nHe is a composed man in his fifties with the quality of someone who has found their answer and is at peace with it. Not smug. Just settled.\n\n\"You arrived last night,\" he says. Not accusing. Simply establishing that he knows.",
+        "default": "The shrine is the old alderman's hall. You remember it differently, with a different flag above the door and a different kind of authority inside. The Ashen Covenant's flag is grey, which might be a statement or might just be the colour they settled on.\n\nEdric is outside when you arrive, as if he knew you were coming, which he probably did. In a town this size, word of a stranger travels at the speed of a glance across a street.\n\nHe is a composed man in his fifties. He found his answer a long time ago. Not smug. Just settled.\n\n\"You arrived last night,\" he says. Not accusing. Simply establishing that he knows.",
         "commander": "Edric takes you in with the assessment of someone trained to read people. Not the military read, the spiritual one. He is looking for something in your bearing that will tell him where to place you.\n\n\"A soldier,\" he says. Correct. \"And something more than a soldier now.\" Also correct, in the way that vague truths are correct.",
         "arcane": "Edric looks at you and you look at him and there is a brief moment where you both understand that you each know more about the other's field than is comfortable.\n\nHe has ritual knowledge. Old knowledge. The Covenant's texts go back further than most of the kingdom's official history. And he has been near the curse for long enough that the residue of his resistance to it is visible on him like a patina.\n\n\"Scholar,\" he says. \"Or mage. The Covenant does not distinguish between the categories, in practice.\"",
         "ranger": "Edric watches you come across the square with the patience of someone who has been watching people approach him for thirty years. He reads your movement. You read his stillness.\n\n\"Hunter,\" he says, which is not wrong. \"From outside Ashenveld.\" Also not wrong. He tilts his head slightly. \"The ones who come from outside always look at the forest differently. Less familiarity. More instinct.\"",
@@ -322,7 +322,7 @@
       "requires": {},
       "text": {
         "default": "Inside the shrine, Edric shows you the ward they have built around the building. Not visible to the eye, but he explains it: herbs in the threshold, specific arrangements of stone, a chant maintained by the priests in three-hour shifts. It has been keeping the worst of the curse's effects off the shrine and the people in it.\n\n\"The forest contains something that should be contained,\" he says. \"An ancient working — a power sealed away by the people who lived here before history. The sealing deteriorated. Three years ago it failed.\"\n\nHe looks at you. \"The Covenant knows how to reseal it. We have the texts. We know the ritual.\"\n\nHe pauses. \"The ritual requires the source to be purified. Everything the power has touched — deeply touched — must be cleansed. Completely.\"\n\nThe word cleansed sits in the air between you.",
-        "commander": "\"Purified,\" you say. \"How?\"\n\nHe tells you. Calmly. The way doctors describe procedures that will hurt. With the detachment of someone who has separated the necessity from the cost.\n\nYou keep your face neutral. This is what the Covenant considers a solution.",
+        "commander": "\"Purified,\" you say. \"How?\"\n\nHe tells you. Calmly. The way doctors describe procedures that will hurt. He says it evenly. The necessity and the cost are kept in different rooms.\n\nYou keep your face neutral. This is what the Covenant considers a solution.",
         "arcane": "You parse his language carefully. Purified. Cleansed. The ritual vocabulary of an organisation that has a technical meaning for those words and is using them now instead of saying what those words mean in practice.\n\n\"What does cleansing entail?\" you ask.",
         "ranger": "\"Who decides what has been touched deeply enough to need cleansing?\" you ask.\n\nHe considers the question for longer than the answer should require. \"The Covenant determines the threshold,\" he says finally. \"Based on the texts. It is not arbitrary.\"\n\nYou note that he answered the second question and not the first.",
         "cipher": "The word cleansed. You let it sit where he put it and watch his face as he watches yours.\n\nHe believes it. That is the thing that matters. He is not cynical. He is not hiding a monstrous agenda behind a pleasant face. He genuinely believes the ritual is necessary and that the cost is the cost.\n\nThis makes him more dangerous than someone who knows they are doing harm."
@@ -467,7 +467,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You take the stone. Edric nods with the satisfaction of someone who has added you to a set of moving parts without asking too much of any single one.\n\n\"Safe travel,\" he says. He means it.",
+              "text": "You take the stone. Edric nods. You are one more moving part, and he has not asked too much of you.\n\n\"Safe travel,\" he says. He means it.",
               "next_scene": "act1_ch3_after_faction",
               "state_changes": {
                 "flags": {
@@ -492,7 +492,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "\"Of course,\" Edric says. The composure is absolute. He was not counting on you. He puts the stone away with the care of someone who has plenty of other options.\n\n\"The ward is still yours,\" he says. \"No conditions.\"",
+              "text": "\"Of course,\" Edric says. The composure is absolute. He was not counting on you. He puts the stone away. He has other people to ask.\n\n\"The ward is still yours,\" he says. \"No conditions.\"",
               "next_scene": "act1_ch3_after_faction",
               "state_changes": {}
             }
@@ -659,7 +659,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "He looks at you for a long moment and makes a decision.\n\n\"Wait here,\" he says. He goes back into the camp. Three minutes later, a woman comes out.\n\nMaret is not what you expected. Not in any way you can immediately specify. She is approximately your age, with the quality of someone who has been outside in difficult conditions for long enough that the conditions have become her natural state. She looks at you the way she probably looks at most things. Fully, without performance.\n\n\"Branch says you are looking for someone,\" she says.",
+              "text": "He looks at you for a long moment and makes a decision.\n\n\"Wait here,\" he says. He goes back into the camp. Three minutes later, a woman comes out.\n\nMaret is not what you expected. Not in any way you can immediately specify. She is approximately your age, weathered, as if she has lived out of doors for years and stopped noticing. She looks at you the way she probably looks at most things. Fully, without performance.\n\n\"Branch says you are looking for someone,\" she says.",
               "next_scene": "act1_ch3_maret_first_meeting",
               "state_changes": {
                 "relationships": {
@@ -814,7 +814,7 @@
             "text": "You have had her name from three mouths. None of them said it lightly."
           },
           "\"Sit down,\" she says, gesturing to a log bench at the camp's edge. \"I will hear what you have to say.\"",
-          "She sits across from you. Branch positions himself nearby in the way of someone who has been asked to be nearby. The camp around you continues its business. People moving, a child's voice somewhere, the smell of something cooking.",
+          "She sits across from you. Branch stands nearby. Someone asked him to. The camp around you continues its business. People moving, a child's voice somewhere, the smell of something cooking.",
           "\"You are looking for someone,\" Maret says. Not a question."
         ],
         "commander": "She takes in how you stand like someone who has dealt with commanders before and has finished taking their orders. She is not hostile about it. She is clear about the terms.",

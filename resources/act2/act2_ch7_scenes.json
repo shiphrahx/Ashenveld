@@ -151,7 +151,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "You move through the Tallow and through the market with the efficiency of someone who understands that the first hour after significant news is the hour that shapes everything that follows.\n\nYou give Aldous the version that Crestfall needs. You send word to the Rootless camp through the fastest available means. You go to the Compact post and ask to speak with Vorne directly before Seriva reaches him.\n\nBy the time Seriva arrives back in Crestfall, the version of events that serves Ashenveld best is already established in three separate locations. She can modify it. She cannot replace it.",
+              "text": "You move through the Tallow and through the market fast. The first hour after news like this decides everything after it.\n\nYou give Aldous the version that Crestfall needs. You send word to the Rootless camp through the fastest available means. You go to the Compact post and ask to speak with Vorne directly before Seriva reaches him.\n\nBy the time Seriva arrives back in Crestfall, the version of events that serves Ashenveld best is already established in three separate locations. She can modify it. She cannot replace it.",
               "next_scene": "act2_ch7_vorne_reacts",
               "state_changes": {
                 "flags": {
@@ -202,7 +202,7 @@
       "requires": {},
       "text": {
         "default": [
-          "Vorne receives the news with the controlled expression of someone whose understanding of the situation has been fundamentally revised and who is processing the revision while maintaining the appearance of having expected it.",
+          "Vorne takes the news as if he had expected it. He had not.",
           "He has you brought to the post. He listens to what you tell him, the ritual, the sealing, the mechanism, Seriva's presence and her response, without interrupting.",
           "When you finish:",
           {

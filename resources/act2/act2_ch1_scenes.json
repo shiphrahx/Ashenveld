@@ -242,7 +242,7 @@
           "No name. No date. But the handwriting is theirs and the instruction is clear and the south passage is — you look around and find it, a gap between two standing walls that does not look like a gap until you are at the right angle."
         ],
         "commander": "A military mind reads this quickly: a rendezvous point, a route, a behavioural instruction, a destination. They anticipated your arrival, or someone's arrival. They prepared.\n\nFourteen months in the ruins and they are still capable of preparation. That tells you something important.",
-        "arcane": "The message is written in plain language but the stone it is written on is not plain. It is one of the resonant stones from the ruins, chosen deliberately. The message will last longer carved here than it would on paper. They knew that.\n\nThey have been learning the properties of this place. For fourteen months. You are walking into the laboratory of someone who is further into this material than you are.",
+        "arcane": "The message is written in plain language but the stone it is written on is not plain. It is one of the resonant stones from the ruins, chosen deliberately. The message will last longer carved here than it would on paper. They knew that.\n\nThey have been learning the properties of this place. For fourteen months. Somebody has been working here, and they are further in than you.",
         "ranger": "You read the message and read the ground around the cairn. The path to the south passage is worn. More worn than the other paths. This is the most-used route. They come back here regularly. They have been maintaining the cairn.\n\nThey are not lost. They are living here.",
         "cipher": "The message is efficient. No sentiment, no explanation, no uncertainty. Either they knew you would come. Which implies a level of trust in your capability that is either touching or calculated. Or they have left this message for any competent person who reached this point.\n\nYou go to the south passage."
       },
@@ -522,7 +522,7 @@
             "text": "Maret takes two steps back."
           },
           "They come through the gate.",
-          "They are changed. You see that immediately and note it as fact before you let yourself feel it. Thinner. The particular thinness of someone who has been eating what the environment offers rather than what they chose. Their eyes have a quality you have seen in people who have been somewhere that altered them. Not the vacancy of the afflicted, something almost opposite: an excess of attention, as if they are seeing more than you are and have been for a long time.",
+          "They are changed. You see that immediately and note it as fact before you let yourself feel it. Thinner. They have been eating what the forest gave them. Their eyes have a quality you have seen in people who have been somewhere that altered them. Not the vacancy of the afflicted, something almost opposite: an excess of attention, as if they are seeing more than you are and have been for a long time.",
           {
             "when": {
               "relationship_type": [
