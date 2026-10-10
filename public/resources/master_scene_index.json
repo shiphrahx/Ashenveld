@@ -695,6 +695,21 @@
       "file": "act3_ch2_scenes.json",
       "act": 3,
       "chapter": 2
+    },
+    "ending_the_account_on": {
+      "file": "act3_ch5_endings.json",
+      "act": 3,
+      "chapter": 5
+    },
+    "act3_ch3_road_further_on": {
+      "file": "act3_ch3_scenes.json",
+      "act": 3,
+      "chapter": 3
+    },
+    "act2_ch3_missing_person_teaching_on": {
+      "file": "act2_ch3_scenes.json",
+      "act": 2,
+      "chapter": 3
     }
   },
   "starting_scene": "act1_ch1_barge_arrival",

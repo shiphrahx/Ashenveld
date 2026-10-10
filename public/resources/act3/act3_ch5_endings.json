@@ -726,13 +726,31 @@
       },
       "requires": {},
       "text": {
+        "default": "The account was published in the second year.\n\nNot the academic documentation. That went to universities. The account was different. A complete record of what happened in Ashenveld, what each faction did and why, what the Covenant's purification ritual would have cost, what Seriva did twenty years ago and what it caused, what the Compact's operations actually consisted of, what the Rootless camp accomplished without resources or recognition.\n\nEvery name. Every decision. Every hidden thing made visible.\n\nAshenveld read it. The region read it. The Compact responded formally. The Covenant responded formally. Seriva did not respond.\n\nThe formal responses mattered less than the informal ones. The people who lived through the curse now had a complete account of what happened to them and who made which decisions while it was happening.\n\nNo faction emerged from the account with full credit. No faction emerged cleanly. What emerged was the truth, distributed, which was what you intended."
+      },
+      "choices": [
+        {
+          "id": "go_on",
+          "text": "Go on.",
+          "outcomes": {
+            "default": {
+              "text": "",
+              "next_scene": "ending_the_account_on",
+              "state_changes": {}
+            }
+          }
+        }
+      ],
+      "stage": "ending"
+    },
+    {
+      "id": "ending_the_account_on",
+      "act": 3,
+      "chapter": 5,
+      "location": "crestfall_market",
+      "title": "The Account",
+      "text": {
         "default": [
-          "The account was published in the second year.",
-          "Not the academic documentation. That went to universities. The account was different. A complete record of what happened in Ashenveld, what each faction did and why, what the Covenant's purification ritual would have cost, what Seriva did twenty years ago and what it caused, what the Compact's operations actually consisted of, what the Rootless camp accomplished without resources or recognition.",
-          "Every name. Every decision. Every hidden thing made visible.",
-          "Ashenveld read it. The region read it. The Compact responded formally. The Covenant responded formally. Seriva did not respond.",
-          "The formal responses mattered less than the informal ones. The people who lived through the curse now had a complete account of what happened to them and who made which decisions while it was happening.",
-          "No faction emerged from the account with full credit. No faction emerged cleanly. What emerged was the truth, distributed, which was what you intended.",
           "Ashenveld did not collapse. It fractured. Into smaller independent settlements, each organised around the most trustworthy local figures. Maret's camp became the centre of a loose network of communities that operated without central authority and, after the first difficult years, without needing one.",
           "It was lonely work. More people know the truth because of it.",
           {
@@ -836,7 +854,11 @@
         "id": "ending_the_account",
         "title": "The Account"
       },
-      "stage": "ending"
+      "stage": "ending",
+      "when": {
+        "part": "morning",
+        "hide_clock": true
+      }
     }
   ]
 }

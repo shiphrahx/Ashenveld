@@ -187,12 +187,30 @@
       },
       "requires": {},
       "text": {
+        "default": "A month after leaving Ashenveld.\n\nYou are somewhere else entirely. The town does not matter. What matters is that it has nothing to do with ruins or curses or factions negotiating over broken mechanisms.\n\n[missing person] has adapted faster than you. Fourteen months in isolation inside a ruined city produced, apparently, a person who is intensely grateful for ordinary things. They speak to strangers. They eat everything on the plate. They sleep without difficulty in strange rooms.\n\nYou are the one who is still adjusting.\n\nAshenveld follows you in the way that significant places follow people who were changed by them. Not as regret. As something that has become part of how you read the world. Every landscape you move through, you are reading for the signs that Ashenveld taught you to read. Mostly the signs are absent. Sometimes they are not."
+      },
+      "choices": [
+        {
+          "id": "go_on",
+          "text": "Go on.",
+          "outcomes": {
+            "default": {
+              "text": "",
+              "next_scene": "act3_ch3_road_further_on",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "act3_ch3_road_further_on",
+      "act": 3,
+      "chapter": 3,
+      "location": "west_road_leaving",
+      "title": "Somewhere Else",
+      "text": {
         "default": [
-          "A month after leaving Ashenveld.",
-          "You are somewhere else entirely. The town does not matter. What matters is that it has nothing to do with ruins or curses or factions negotiating over broken mechanisms.",
-          "[missing person] has adapted faster than you. Fourteen months in isolation inside a ruined city produced, apparently, a person who is intensely grateful for ordinary things. They speak to strangers. They eat everything on the plate. They sleep without difficulty in strange rooms.",
-          "You are the one who is still adjusting.",
-          "Ashenveld follows you in the way that significant places follow people who were changed by them. Not as regret. As something that has become part of how you read the world. Every landscape you move through, you are reading for the signs that Ashenveld taught you to read. Mostly the signs are absent. Sometimes they are not.",
           {
             "when": {
               "flags": {
@@ -278,7 +296,10 @@
           }
         }
       ],
-      "objective": "Go west."
+      "objective": "Go west.",
+      "when": {
+        "part": "morning"
+      }
     },
     {
       "id": "act3_ch3_alone_continues",
