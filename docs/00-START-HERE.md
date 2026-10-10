@@ -23,7 +23,7 @@ Item IDs (B1, N4, …) are stable. Use them in commit messages and PR titles.
 - Entry: `src/main.tsx` → `src/App.tsx`.
 - Engine: `src/loader.ts` (fetches JSON), `src/gameState.ts` (state, save, time), `src/dice.ts`, `src/types.ts`.
 - Screens and panels: `src/components/*` (`TitleScreen`, `CharacterCreation`, `SceneView`, `SceneArt`, `Sidebar`, `DiceOverlay`, `Journal`, `Items`, `People`, `Map`, `Menu`, `GameOver`, `StarField`).
-- Content: `resources/master_scene_index.json`, `resources/act{1,2,3}/*_meta.json`, 20 chapter files, 108 scenes.
+- Content: `public/resources/master_scene_index.json`, `public/resources/act{1,2,3}/*_meta.json`, 20 chapter files, 108 scenes.
 - Images: `resources/images/*.png` (22 files), mapped in `src/data/imageMap.ts`, chosen in `src/hooks/useLocationImage.ts`.
 - Deploy: `.github/workflows/deploy.yml` builds, then runs `cp -r resources dist/resources`. Base path is `/Ashenveld/`.
 - Save: one `localStorage` key, `ashenveld_save`, holding the whole `GameState`.
