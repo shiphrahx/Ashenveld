@@ -52,6 +52,9 @@ import styles from './App.module.css'
 
 type AppPhase = 'loading' | 'title' | 'creation' | 'game' | 'ended' | 'error'
 
+/** G15: the id of the one-choice step that splits a long scene. */
+const GO_ON = 'go_on'
+
 /** E9 'touch': grey over 600ms, hold 3s, back over 1s. */
 const TOUCH_MS = 4600
 /** E9 'ritual': the warm glow at the art's focal point grows with each scene, and goes after the seal. */
@@ -354,7 +357,9 @@ export default function App() {
   const handleChoice = useCallback(async (outcome: Outcome, entry: JournalEntry, choiceId: string) => {
     if (!gameState || !currentScene) return
     let next = applyStateChanges(gameState, outcome.state_changes)
-    next = { ...next, journal: [...(next.journal ?? []), entry], taken: { ...next.taken, [`${currentScene.id}:${choiceId}`]: true } }
+    // A "Go on." step (G15) isn't a choice worth a journal line.
+    const journal = choiceId === GO_ON ? next.journal ?? [] : [...(next.journal ?? []), entry]
+    next = { ...next, journal, taken: { ...next.taken, [`${currentScene.id}:${choiceId}`]: true } }
     let target = outcome.next_scene
     if (target === '@return') target = next.collapse_return ?? null
     // Resolve at zero: no game over. You collapse, and wake where you last rested (G9).
@@ -512,7 +517,7 @@ export default function App() {
           <div className={styles.areaArt}>
             <SceneArt locationName={locationName(gameState.world.current_location)} gameState={gameState}
               alt={getLocation(gameState.world.current_location)?.description ?? locationName(gameState.world.current_location)}
-              frozen={frozenArt} glow={settings.screenEffects && motionAllowed(settings) ? RITUAL_GLOW[currentScene.id] ?? 0 : 0} />
+              frozen={frozenArt} glow={settings.screenEffects && motionAllowed(settings) ? RITUAL_GLOW[currentScene.id.replace(/_on$/, '')] ?? 0 : 0} />
           </div>
           <header className={styles.areaStatus}>
             <StatusStrip state={gameState} hideClock={hideClock} onOpen={() => openPanel('status')} />
