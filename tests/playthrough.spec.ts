@@ -52,6 +52,9 @@ const sceneId = (page: Page) => page.locator('[data-scene-id]').first().getAttri
 
 /** Click a choice, continue through the dice panel and the outcome. */
 async function pickChoice(page: Page, choiceId: string) {
+  // Choices wait for the text to finish arriving; a click on the story finishes it (E7).
+  const waiting = page.locator('[data-waiting]')
+  if (await waiting.count()) await page.locator('[data-narrative]').click({ position: { x: 4, y: 4 } }).catch(() => {})
   await page.locator(`[data-choice-id="${choiceId}"]`).click()
   for (let i = 0; i < 400; i++) {
     // A click during the roll skips to the verdict (E2).
@@ -278,4 +281,18 @@ test('the map grows as you go, and People says where you saw them (U10, U11)', a
   await page.getByRole('button', { name: /^people$/i }).first().click()
   await expect(page.locator('[data-person]').first()).toBeVisible()
   expect(errors).toEqual([])
+})
+
+test('a click finishes the text fade and the choices wait for it (E7)', async ({ page }) => {
+  await stubRandom(page, 0.95)
+  await createCharacter(page, 'Ranger')
+  await pickChoice(page, 'move_to_town')
+  // A fresh scene: choices are held back until the text has arrived.
+  await expect(page.locator('[data-waiting]')).toHaveCount(1)
+  await page.locator('[data-narrative]').click({ position: { x: 4, y: 4 } })
+  await expect(page.locator('[data-waiting]')).toHaveCount(0)
+  // And never more than 1.2 seconds even without a click.
+  await pickChoice(page, (await page.locator('[data-choice-id]:not([disabled])').first().getAttribute('data-choice-id'))!)
+  await page.waitForTimeout(1300)
+  await expect(page.locator('[data-waiting]')).toHaveCount(0)
 })

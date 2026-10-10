@@ -2,7 +2,7 @@ import React, { useState, useCallback, useRef, useEffect, useMemo } from 'react'
 import type { Scene, GameState, Choice, Outcome, RollResult, JournalEntry, DiceOutcome, OutcomeKey } from '../types'
 import { rollDice, resolveRoll, odds } from '../dice'
 import { oddsWord, STAT_NAMES } from '../rules'
-import { useSettings } from '../settings'
+import { motionAllowed, useSettings } from '../settings'
 import { meets } from '../conditions'
 import { sceneText, resolveRich, CLASS_LABELS } from '../text'
 import { Inline } from './Inline'
@@ -185,6 +185,12 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
 
   // U2: when an outcome shows, the scene text collapses to its last paragraph.
   const [showScene, setShowScene] = useState(false)
+
+  // ── E7: the text fade, capped, and skippable ────────────────────────────────
+  const instantReveal = settings.textReveal === 'instant' || seenBefore || !motionAllowed(settings)
+  const [revealed, setRevealed] = useState(instantReveal)
+  const [choicesReady, setChoicesReady] = useState(instantReveal)
+  const finishReveal = useCallback(() => { setRevealed(true); setChoicesReady(true) }, [])
   const storyRef = useRef<HTMLDivElement>(null)
   const outcomeRef = useRef<HTMLDivElement>(null)
   const titleRef = useRef<HTMLHeadingElement>(null)
@@ -209,6 +215,26 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
   const collapsed = (Boolean(shownOutcome) || skipping) && !showScene
   const shownMain = collapsed ? (aside.length ? [] : main.slice(-1)) : main
   const shownAside = collapsed ? aside.slice(-1) : aside
+
+  // Every paragraph, of every kind, in one sequence that takes at most a second to start.
+  const revealCount = shownMain.length + (shownAside.length ? 1 : 0)
+  const revealStep = Math.min(0.14, 1.0 / Math.max(1, revealCount))
+  const dimNow = settings.screenEffects ? Math.min(1, state.world.curse_spread / 100) : 0
+  const revealSecs = 0.5 + 0.5 * dimNow                       // E4: slower as The Dimming rises
+  useEffect(() => {
+    const instant = instantReveal || collapsed
+    setRevealed(instant)
+    setChoicesReady(instant)
+    if (instant) return
+    const total = (revealCount - 1) * revealStep + revealSecs
+    const a = setTimeout(() => setRevealed(true), total * 1000)
+    const b = setTimeout(() => setChoicesReady(true), Math.min(total, 1.2) * 1000)
+    // A key press anywhere completes it.
+    const key = (e: KeyboardEvent) => { if (!['Tab', 'Shift', 'Control', 'Alt', 'Meta'].includes(e.key)) finishReveal() }
+    window.addEventListener('keydown', key)
+    return () => { clearTimeout(a); clearTimeout(b); window.removeEventListener('keydown', key) }
+  // Once per scene entry.
+  }, [scene.id, state.visited[scene.id]])
 
   const choiceButtons = shownOutcome ? (
     <button className={styles.ch} data-choice-id="continue" onClick={handleOutcomeContinue}>
@@ -265,21 +291,23 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
       </div>
 
       {/* ── Narrative ── */}
-      <div className={`${styles.narrative} ${seenBefore ? styles.seen : ''}`} key={scene.id} ref={storyRef}>
+      <div className={`${styles.narrative} ${seenBefore ? styles.seen : ''} ${revealed ? styles.revealed : ''}`} key={scene.id} ref={storyRef}
+        data-narrative onClick={revealed ? undefined : finishReveal}
+        style={{ '--reveal': `${revealSecs}s` } as React.CSSProperties}>
         <div className={styles.measure}>
           {collapsed && (
             <button className={styles.showScene} onClick={() => setShowScene(true)}>Show the scene again</button>
           )}
           <div className={collapsed ? styles.faded : undefined}>
             {shownMain.map((p, i) => (
-              <Para key={i} text={p} className={styles.np} style={{ animationDelay: `${0.04 + i * 0.14}s` }} />
+              <Para key={i} text={p} className={styles.np} style={{ animationDelay: `${i * revealStep}s` }} />
             ))}
 
             {shownAside.length > 0 && (
               <aside
                 className={styles.lens}
                 aria-label={`${CLASS_LABELS[state.player.class]}: your read`}
-                style={{ animationDelay: `${0.04 + shownMain.length * 0.14}s` }}
+                style={{ animationDelay: `${shownMain.length * revealStep}s` }}
               >
                 <div className={styles.lensLabel}>{CLASS_LABELS[state.player.class]}</div>
                 {shownAside.map((p, i) => <Para key={i} text={p} />)}
@@ -318,12 +346,12 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
             </div>
           )}
 
-          {inlineChoices && <div className={`${styles.choices} ${styles.choicesInline}`}>{choiceButtons}</div>}
+          {inlineChoices && <div className={`${styles.choices} ${styles.choicesInline} ${choicesReady ? '' : styles.waiting}`} data-waiting={choicesReady ? undefined : ''} inert={!choicesReady}>{choiceButtons}</div>}
         </div>
       </div>
 
       {/* ── Choices ── */}
-      {!inlineChoices && <div className={styles.choices}>{choiceButtons}</div>}
+      {!inlineChoices && <div className={`${styles.choices} ${choicesReady ? '' : styles.waiting}`} data-waiting={choicesReady ? undefined : ''} inert={!choicesReady}>{choiceButtons}</div>}
 
       {/* ── Dice overlay ── */}
       {rollResult && (
