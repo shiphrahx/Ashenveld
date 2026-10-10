@@ -45,12 +45,211 @@
               }
             },
             "text": "Lira runs the herb stall on market days now."
-          }
+          },
+          "On the twentieth morning three people come back out of the forest to the east gate. Two men and a woman, thin and barefoot, blinking at the cobbles as if they had forgotten them. They went east months ago. They do not know what month it is.",
+          "The soldiers have them sitting on the ground already. Vorne's sergeant wants them held at the post until somebody can say what they are. Maret has come down from the camp with blankets and will not leave without them."
         ],
         "commander": "You have established a rhythm. Mornings: the documentation work with [missing person] and Pol. Afternoons: the political work — the Compact arrangements, the Covenant's reduced presence, the Rootless camp's growing formal role.\n\nVorne has reduced his garrison to twelve soldiers. The remaining twelve are doing useful things: road repair, supply distribution, the practical work of stabilisation that soldiers are good at when they are not being used for something more violent.\n\nYou and Vorne have found, through the friction of working in the same space, something that is not quite respect and is more useful than friendship.",
         "arcane": "The documentation is comprehensive. You have been working with [missing person] for three days on the account of the sealing ritual, the mechanism's structure, the curse's properties and progression.\n\nPol is the most valuable collaborator — fifteen years of preparation have given her a precision that neither you nor [missing person] can match individually. The three of you together produce something that is both academically rigorous and practically useful.\n\nYou will send copies to three separate institutions when it is complete. Not because you trust any single institution. Because distributing the knowledge is the only way to ensure no single institution controls it.",
         "ranger": "The wildlife recovery is documenting itself in ways you read every morning.\n\nDay seventeen: two sparrow species in the market square.\nDay eighteen: a fox sighting on the north road.\nDay nineteen: the cat that had been sheltering under the north porch moved back inside.\nDay twenty: birdsong before dawn.\n\nThe land is coming back. Slowly, in the specific order that recovery happens — the smallest and most adaptable first, the larger and more complex later.\n\nYou write it all down. Every morning, every observation. The record will matter when someone needs to understand what the curse was and what the sealing achieved.",
         "cipher": "Three weeks into the new arrangement and the political landscape is settling into a shape you recognise.\n\nVorne is managing Crestfall's formal recovery with the Compact's resources. Seriva has left — she departed quietly four days after the ritual, without announcing her departure. Edric remains at the shrine, smaller in scope now but genuine in his pastoral function.\n\nThe Rootless camp has the most precarious position of the three. Their formal recognition is real but fragile — dependent on Vorne's goodwill, which is dependent on Issa's continued recovery.\n\nIssa is recovering. Slowly, measurably, in the specific direction that matters."
+      },
+      "choices": [
+        {
+          "id": "send_them_to_the_camp",
+          "text": "Send them to the camp with Maret.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "Maret puts a blanket round the woman first. The sergeant writes it all down, slowly, so you will know he has. Then he lets them go.",
+              "next_scene": "act3_ch2_rebuilding_work",
+              "state_changes": {
+                "flags": {
+                  "returned_went_to_camp": true
+                },
+                "factions": {
+                  "rootless": {
+                    "reputation": 5
+                  },
+                  "iron_compact": {
+                    "reputation": -5
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "let_the_compact_hold_them",
+          "text": "Let the Compact hold them at the post, for now.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "Maret looks at you for a while. Then she gives the sergeant the blankets and walks back up to the camp alone.",
+              "next_scene": "act3_ch2_rebuilding_work",
+              "state_changes": {
+                "flags": {
+                  "returned_held_by_compact": true
+                },
+                "factions": {
+                  "iron_compact": {
+                    "reputation": 5
+                  },
+                  "rootless": {
+                    "reputation": -5
+                  }
+                },
+                "relationships": {
+                  "maret": {
+                    "closeness": -10
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "sign_for_them",
+          "text": "Take them into your charge. Sign the sergeant's book.",
+          "requires": {
+            "class": "commander"
+          },
+          "roll": null,
+          "locked_hint": "Commander only",
+          "outcomes": {
+            "default": {
+              "text": "You write your name in his book under the date, in the column for the officer responsible. He reads it twice. Then he stands his men back, and Maret takes them up the hill.",
+              "next_scene": "act3_ch2_rebuilding_work",
+              "state_changes": {
+                "flags": {
+                  "returned_went_to_camp": true,
+                  "returned_settled_well": true
+                },
+                "factions": {
+                  "rootless": {
+                    "reputation": 5
+                  },
+                  "iron_compact": {
+                    "reputation": -5
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "read_what_the_forest_left",
+          "text": "Read what the forest left in them before anyone moves them.",
+          "requires": {
+            "class": "arcane"
+          },
+          "roll": null,
+          "locked_hint": "Arcane only",
+          "outcomes": {
+            "default": {
+              "text": "You kneel in front of the woman and listen. The note is in her, faint, the way a smell stays in a coat. It is fading. There is nothing in her that will spread. You say so, loudly enough for the sergeant, and he lets them go.",
+              "next_scene": "act3_ch2_rebuilding_work",
+              "state_changes": {
+                "flags": {
+                  "returned_went_to_camp": true,
+                  "returned_settled_well": true
+                },
+                "factions": {
+                  "rootless": {
+                    "reputation": 5
+                  },
+                  "iron_compact": {
+                    "reputation": -5
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "read_where_they_walked",
+          "text": "Read where they walked from, and show the sergeant.",
+          "requires": {
+            "class": "ranger"
+          },
+          "roll": null,
+          "locked_hint": "Ranger only",
+          "outcomes": {
+            "default": {
+              "text": "You walk him fifty yards back along their tracks to where they came out of the trees. Three sets, side by side, not one of them stumbling. \"They walked out,\" you say. \"They knew the way.\" He looks at the tracks for a while and lets them go.",
+              "next_scene": "act3_ch2_rebuilding_work",
+              "state_changes": {
+                "flags": {
+                  "returned_went_to_camp": true,
+                  "returned_settled_well": true
+                },
+                "factions": {
+                  "rootless": {
+                    "reputation": 5
+                  },
+                  "iron_compact": {
+                    "reputation": -5
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "what_the_sergeant_fears",
+          "text": "Find out what the sergeant is actually afraid of.",
+          "requires": {
+            "class": "cipher"
+          },
+          "roll": null,
+          "locked_hint": "Cipher only",
+          "outcomes": {
+            "default": {
+              "text": "It takes two questions. He is not afraid of them. He is afraid of being the man who let them go if it goes wrong. You give him a sentence to put in his report that makes it someone else's decision. He writes it down, word for word, and lets them go.",
+              "next_scene": "act3_ch2_rebuilding_work",
+              "state_changes": {
+                "flags": {
+                  "returned_went_to_camp": true,
+                  "returned_settled_well": true
+                },
+                "factions": {
+                  "rootless": {
+                    "reputation": 5
+                  },
+                  "iron_compact": {
+                    "reputation": -5
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "objective": "Stay and rebuild."
+    },
+    {
+      "id": "act3_ch2_rebuilding_work",
+      "act": 3,
+      "chapter": 2,
+      "location": "crestfall_market",
+      "title": "The Work",
+      "when": {
+        "part": "morning",
+        "day": 20
+      },
+      "on_enter": {
+        "state_changes": {}
+      },
+      "requires": {
+        "flags": {
+          "player_stays_ashenveld": true
+        }
+      },
+      "objective": "Stay and rebuild.",
+      "text": {
+        "default": "That leaves the rest of the work, and more of it than there are hours. You have to choose where to put yourself."
       },
       "choices": [
         {
@@ -228,8 +427,7 @@
             }
           }
         }
-      ],
-      "objective": "Stay and rebuild."
+      ]
     },
     {
       "id": "act3_ch2_on_the_road",

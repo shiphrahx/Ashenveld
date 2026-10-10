@@ -80,6 +80,22 @@
               }
             },
             "text": "The notice nailed to the dry fountain is the camp's rota for the well, in Branch's square capitals."
+          },
+          {
+            "when": {
+              "flags": {
+                "returned_went_to_camp": true
+              }
+            },
+            "text": "One of the three from the gate is Wren. The camp knew him by the second day. He has started carrying water with the midwife. He has not said a word yet, and he is carrying water."
+          },
+          {
+            "when": {
+              "flags": {
+                "returned_held_by_compact": true
+              }
+            },
+            "text": "One of the three held at the post is Wren. Nobody at the post knew him. Aldous went down and told them, and now they let him sit with Wren in the yard for an hour a day."
           }
         ],
         "commander": "You and [missing person] have developed a division of labour that neither of you planned.\n\nThey work with Pol on the documentation and with Maret on the camp's organisation. You work with Vorne on the Compact arrangements and with Edric on the Covenant's restructured role.\n\nYou are, you realise, managing the institutional half of Ashenveld's recovery while they manage the human half. The two halves require different things from different people and you each turned out to be the right person for the half you ended up in.",

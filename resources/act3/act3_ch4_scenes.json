@@ -37,7 +37,23 @@
             "else": "The fountain in the market square is running again. Not strongly — a thin stream, a technical victory rather than a celebration. But the water is clear and cold and it is coming from the ground without the wrongness the well-water had."
           },
           "Somebody put a cup on the fountain's edge. Then somebody else put another cup. By the end of the day there are seven cups and a child drinking from one of them.",
-          "You and [missing person] watch this from across the square. Neither of you says anything. The cups say it."
+          "You and [missing person] watch this from across the square. Neither of you says anything. The cups say it.",
+          {
+            "when": {
+              "flags": {
+                "returned_went_to_camp": true
+              }
+            },
+            "text": "Wren is at the fountain with a cup. He fills it and gives it to the child, and goes back for another."
+          },
+          {
+            "when": {
+              "flags": {
+                "returned_held_by_compact": true
+              }
+            },
+            "text": "The two men from the gate were sent on to the capital in the end, under escort. The woman stayed. She keeps the ledger at the post now, because nobody else wanted to."
+          }
         ],
         "commander": "Vorne leaves on day forty-three. He takes twenty-two soldiers with him and leaves six — a skeleton presence, formally occupying, functionally symbolic.\n\nHe shakes your hand before he goes. He shakes [missing person]'s hand. He shakes Maret's hand, which requires visible effort from both of them, but they manage it.\n\nHe does not shake Pol's hand. Pol does not offer it. They stand in the same space for a moment and look at each other with the mutual assessment of two people who know they handled the same situation differently and are deciding what to do with that.\n\nThen Vorne leaves. The six remaining soldiers are well-behaved and useful and nobody resents their presence much.",
         "arcane": "The documentation's reception has exceeded what you expected.\n\nTwo universities have written requesting the full version. A colleague in the capital has proposed a symposium — the first formal academic engagement with the curse as a documented phenomenon. A researcher you have never heard of in a distant city has written to say they have been studying similar phenomena and may have connected evidence.\n\nAshenveld is no longer an isolated mystery. It is a named and documented event in the world's understanding of itself.\n\nYou sit in the Tallow and read these letters and [missing person] sits across from you doing something with their hands — the knot Lira taught them, the same ward-knot — and the ordinary quality of the moment is extraordinary.",
