@@ -236,7 +236,8 @@ export interface GameState {
     ashen_covenant: { reputation: number }
     rootless: { reputation: number }
   }
-  relationships: Record<string, { closeness: number }>
+  /** seen: where and when closeness last changed, for the People panel (U11). Older saves lack it. */
+  relationships: Record<string, { closeness: number; seen?: { day: number; location: string; at: number } }>
   flags: Record<string, boolean | string | number>
   inventory: string[]
   current_scene: string
