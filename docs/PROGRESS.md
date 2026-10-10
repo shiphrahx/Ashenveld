@@ -12,7 +12,7 @@ One step per branch and pull request. Each tick lists what was done, what was sk
 - [x] 8. docs/02 N5 to N8
 - [x] 9. docs/02 N9 to N18
 - [x] 10. docs/04 U8 to U20
-- [ ] 11. docs/05 E1 to E10
+- [x] 11. docs/05 E1 to E10
 - [ ] 12. docs/01 B22, B23. docs/03 G14, G15
 
 ---
@@ -399,4 +399,41 @@ Branch `step-10-ui-polish`, stacked on step 9. U14 was done in step 9 for the le
 - U12 says the stat tooltip overflowed the shell. The real cause was the sidebar's `overflow-y: auto`, which also clipped anything opening sideways.
 - The contrast test couldn't read `color-mix()` (browsers report it as `color(srgb …)`), so the step 9 narration colour is a plain rgba now.
 
-**Not started**: steps 11, 12.
+## Step 11 — E1 to E10
+
+Branch `step-11-effects`, stacked on step 10.
+
+**AUTHOR DECISION defaults used**: none came up in this step.
+
+**Done**
+
+- E1: was already in from step 4 (the `data-motion` rule, the Motion setting). Checked every new effect against it. The chapter title and day stamp were vanishing instantly with motion off; they now show still and a timer removes them.
+- E2: opaque dice surface; 700ms roll that slows at the end, 150ms land with a 4% overshoot, 300ms of chips, then verdict and Continue (focused). Click, Space or Enter skips. One `aria-live` sentence. Face ticks and verdict sounds.
+- E3: `src/audio/` (engine, beds, interface sounds, cues), all Web Audio, no files. Six beds, the note, birds after the seal, six cues, seven interface sounds. `ambience` on every location. Volume, ambience and mute in Settings, and a mute button in the sidebar and status strip. Nothing plays before Begin or Continue; the context suspends when the tab is hidden. Checked in a browser: no context before the click, running after, mute instant.
+- E4: `--dim` and `--deep` on the shell; the art desaturates, darkens and vignettes; 4s back after the seal; partial seal floors at 0.3; screen effects off pins it to 0.
+- E5: scanlines and the in-game star field gone, unused moon and fog CSS deleted, `Atmosphere.tsx` canvas with mist, embers, ash and motes from `atmosphere` on each location. 30fps cap, ≤40 particles, paused when hidden, one frame with motion off, embers halve at Dimming 75.
+- E6: `ActCard` for each act and for Act I after creation; chapter title for three seconds; day stamp on the art; 700ms art cross-fade; story fades out 200ms and in 300ms on a change of place.
+- E7: reveal capped at a second, one sequence for every paragraph kind, click or key finishes it, choices wait for it (never past 1.2s), instant for seen scenes, 'At once' and motion off, and it reads `--reveal` from The Dimming. e2e test added.
+- E8: 45s push-in drift and 6px pointer parallax on wide screens.
+- E9: `stage` on 18 scenes, with all six treatments, the sound cues and the sidebar dimming kept when effects are off.
+- E10: stat row lights with its modifier when a rolled choice is hovered or focused; Resolve and the Arcane's Dimming number count to their new value; pressed state on every button. The bar flash and the journal dot were already there.
+- Validator: knows the beds, atmospheres, cues and stages.
+
+**Checks**: validate 0 errors (4 warnings), unit 25 passed, e2e 13 passed. No prose changed, so the prose stats are as in step 9.
+
+**Skipped or deferred**
+
+- E8 light flicker, as you asked: it needs the art manifest.
+- E8 time-of-day grading: file 06 says to tune it against the new images and skip images with the light baked in, and you asked for the current images not to be restyled. Waits for the new art.
+- E8 drift towards the focal point: no manifest yet, so it scales from the centre.
+- E4's `--accent-sat` for the blue accents isn't used. It needs `color-mix()`, which the contrast test can't read (see step 9).
+- E6 trait line on the act card: the card takes a `trait`, but G14 is step 12.
+
+**Plan was wrong or unclear**
+
+- E6's 200ms fade-out and E9's 2s fade to the end screen both left the old scene clickable while it faded, so a quick second click could pick a choice from a scene you'd already left. Both are `inert` while fading.
+- E9 'touch' holds the choices for the length of the effect. The first version never let them back, because the hold's own cleanup cancelled its timer when the effect ended. Caught by the e2e run.
+- E3 says play `end` on entry to any ending, and E9 says play it after the last choice. It plays after the last choice, with the 2s fade, and the ending's entry starts the 5s fade-out of the bed.
+- E3's sent-ahead and ending fades can leave the mix silent for the next game; Begin and Continue reset it.
+
+**Not started**: step 12.
