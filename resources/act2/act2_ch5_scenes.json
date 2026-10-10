@@ -108,10 +108,8 @@
                 "flags": {
                   "ritual_preparation_complete": true
                 },
-                "player": {
-                  "resources": {
-                    "health": 15
-                  }
+                "resources": {
+                  "health": 15
                 }
               }
             },

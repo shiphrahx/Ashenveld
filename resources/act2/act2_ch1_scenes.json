@@ -56,10 +56,8 @@
                 "world": {
                   "curse_spread": 3
                 },
-                "player": {
-                  "resources": {
-                    "health": -5
-                  }
+                "resources": {
+                  "health": -5
                 }
               }
             },
@@ -70,10 +68,8 @@
                 "world": {
                   "curse_spread": 4
                 },
-                "player": {
-                  "resources": {
-                    "health": -10
-                  }
+                "resources": {
+                  "health": -10
                 }
               }
             }
@@ -176,13 +172,11 @@
               "text": "You study the carvings and touch one accidentally — not the carved surface, just the stone near it — and the effect is immediate and unpleasant: a wave of the narrowing, stronger than anything you have felt before, lasting four or five seconds.\n\nYou understand why the message said not to touch them. You continue, more carefully.",
               "next_scene": "act2_ch1_the_watcher_seen",
               "state_changes": {
-                "player": {
-                  "resources": {
-                    "health": -8
-                  }
-                },
                 "world": {
                   "curse_spread": 2
+                },
+                "resources": {
+                  "health": -8
                 }
               }
             },

@@ -133,10 +133,8 @@
                 "flags": {
                   "chamber_prepared": true
                 },
-                "player": {
-                  "resources": {
-                    "health": 10
-                  }
+                "resources": {
+                  "health": 10
                 }
               }
             }

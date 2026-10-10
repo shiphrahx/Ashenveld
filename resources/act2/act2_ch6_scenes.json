@@ -93,10 +93,8 @@
                 "flags": {
                   "ritual_phase1_complete": true
                 },
-                "player": {
-                  "resources": {
-                    "health": -5
-                  }
+                "resources": {
+                  "health": -5
                 }
               }
             },
@@ -107,13 +105,11 @@
                 "flags": {
                   "ritual_phase1_complete": true
                 },
-                "player": {
-                  "resources": {
-                    "health": -10
-                  }
-                },
                 "world": {
                   "curse_spread": 2
+                },
+                "resources": {
+                  "health": -10
                 }
               }
             }
@@ -176,10 +172,8 @@
                 "flags": {
                   "ritual_phase2_complete": true
                 },
-                "player": {
-                  "resources": {
-                    "health": -15
-                  }
+                "resources": {
+                  "health": -15
                 }
               }
             },
@@ -190,10 +184,8 @@
                 "flags": {
                   "ritual_phase2_complete": true
                 },
-                "player": {
-                  "resources": {
-                    "health": -20
-                  }
+                "resources": {
+                  "health": -20
                 }
               }
             }
@@ -255,10 +247,8 @@
                   "ritual_complete": true,
                   "curse_sealed": true
                 },
-                "player": {
-                  "resources": {
-                    "health": -20
-                  }
+                "resources": {
+                  "health": -20
                 }
               }
             },

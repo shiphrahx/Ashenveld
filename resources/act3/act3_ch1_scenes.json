@@ -232,10 +232,8 @@
               "text": "You commit but the commitment is expensive in ways you did not fully calculate. The first day is the hardest — the specific quality of having chosen something and not being sure yet whether you chose correctly.\n\nYou do the work anyway. The work is what you have.",
               "next_scene": "act3_ch2_alone_work",
               "state_changes": {
-                "player": {
-                  "resources": {
-                    "health": -10
-                  }
+                "resources": {
+                  "health": -10
                 }
               }
             },
