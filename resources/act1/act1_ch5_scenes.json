@@ -209,7 +209,7 @@
               "state_changes": {}
             },
             "failure": {
-              "text": "\"Compact business,\" the younger one says. You are not Compact. You get nothing.",
+              "text": "\"Compact business, [sir/ma'am],\" the younger one says. You are not Compact. You get nothing.",
               "next_scene": "act1_ch5_player_curse_touch",
               "state_changes": {}
             }

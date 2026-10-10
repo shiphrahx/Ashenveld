@@ -207,7 +207,7 @@
             "default": {
               "text": [
                 "Cael is at the gate. He nods when he sees you. The nod means: you are doing what you said you would. He gives you one addition — a contact point, a passphrase, a way to send information back if you find something significant.",
-                "\"Be thorough,\" he says. \"Whatever is in those ruins, Commander Vorne needs to know exactly what it is before he can act.\"",
+                "\"Be thorough, [sir/ma'am],\" he says. \"Whatever is in those ruins, Commander Vorne needs to know exactly what it is before he can act.\"",
                 "The word act. You note it.",
                 {
                   "when": {
@@ -586,7 +586,7 @@
                 ]
               }
             },
-            "text": "Where the road dips towards a stream there is a lean-to of planks and canvas, and a mule tied to the post in front of it. A woman in a Compact coat sits on an upturned crate, eating bread with one hand. A crossbow lies across her knees.\n\nShe stands when she sees you. She does not raise the crossbow. Her hands are not quite steady.\n\n\"Sera,\" she says. \"Quartermaster. The lieutenant said someone might come along with a packet.\" She looks past you, up the road, then into the trees. \"Nobody else has. Not for a while.\"",
+            "text": "Where the road dips towards a stream there is a lean-to of planks and canvas, and a mule tied to the post in front of it. A woman in a Compact coat sits on an upturned crate, eating bread with one hand. A crossbow lies across her knees.\n\nShe stands when she sees you. She does not raise the crossbow. Her hands are not quite steady.\n\n\"Sera,\" she says. \"Quartermaster. The lieutenant said someone might come along with a packet, [sir/ma'am].\" She looks past you, up the road, then into the trees. \"Nobody else has. Not for a while.\"",
             "else": "Sera is still by the mule, not looking at you."
           }
         ]
