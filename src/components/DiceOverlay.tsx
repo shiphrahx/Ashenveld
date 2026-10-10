@@ -63,7 +63,7 @@ export default function DiceOverlay({ result, onContinue }: Props) {
         <strong>{OUTCOME_LABELS[result.outcome]}</strong>
       </div>
 
-      <button className={styles.dBtn} onClick={onContinue}>Continue</button>
+      <button className={styles.dBtn} data-dice-continue onClick={onContinue}>Continue</button>
     </div>
   )
 }
