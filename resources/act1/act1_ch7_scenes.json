@@ -305,7 +305,22 @@
         }
       },
       "text": {
-        "default": "She followed you.\n\nShe stands at the forest edge — on whichever side of the line you are — and looks at you and at the trees. Her pack is full. She is dressed for several days of travel.\n\n\"Why are you here?\" you say.\n\nShe takes a breath. \"Because I sent them in,\" she says. \"Because it has been fourteen months and I have been telling myself they made their choice and I had to respect it. And because I woke up this morning and could not respect it anymore.\"\n\nShe looks at the line. \"I know this place. I have been to the outskirts. I know more about what is in there than anyone except the people who went in and did not come back.\" She looks at you. \"You need that. And I owe it.\"",
+        "default": [
+          "She followed you.",
+          {
+            "when": {
+              "flags": {
+                "saw_maret_at_line": true
+              }
+            },
+            "text": "You watched her talk to the trees a moment ago. She knows you did."
+          },
+          "She stands at the forest edge — on whichever side of the line you are — and looks at you and at the trees. Her pack is full. She is dressed for several days of travel.",
+          "\"Why are you here?\" you say.",
+          "She takes a breath. \"Because I sent them in,\" she says. \"Because it has been fourteen months and I have been telling myself they made their choice and I had to respect it. And because I woke up this morning and could not respect it anymore.\"",
+          "She looks at the line. \"I know this place. I have been to the outskirts. I know more about what is in there than anyone except the people who went in and did not come back.\" She looks at you. \"You need that. And I owe it.\"",
+          "It is new moon tomorrow. She should be at the tree line by the camp."
+        ],
         "commander": "\"You are not a soldier,\" you say.\n\n\"No,\" she says. \"But I have kept twenty-three people alive in a camp next to the worst outbreak zone in this region for three years. I know how to manage difficult ground.\" A pause. \"And I know when a decision I made needs to be corrected.\"\n\nShe waits for you to decide.",
         "arcane": "\"You made an arrangement,\" you say. \"With whatever is in here. Does that not make this complicated?\"\n\n\"Yes,\" she says. \"It makes it very complicated. I am telling you that before we go in rather than after, which is my version of being honest about it.\"\n\nYou weigh the complication against the information she carries. It is not a close calculation.",
         "ranger": "\"You will slow me down,\" you say. Not hostile — factual.\n\n\"Maybe,\" she says. \"But I know the terrain inside the outskirts and you do not. And I know—\" she pauses, and something in her face is harder now. \"I know the thing that is inside responds to certain people differently. I am one of those people. Having me present changes the calculation.\"",

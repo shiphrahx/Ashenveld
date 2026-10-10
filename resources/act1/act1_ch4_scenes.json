@@ -336,7 +336,13 @@
           },
           "outcomes": {
             "success": {
-              "text": "She thinks about how to answer for a while. Then she tries.\n\n\"Like the volume being turned down,\" she says. \"Not on sounds. On caring. Things stop mattering in the right order. Small things first. Then medium things. I lost caring about whether I was hungry before I lost caring about whether I was safe, which is the wrong order.\"\n\nShe pauses. \"Maret's methods stopped it progressing. I am here. I am mostly here. But I can feel the edge of where I stopped.\"\n\nShe holds up the rope. \"The knot helps. Having something my hands know how to do. It keeps the thread between here and not-here from getting thinner.\"",
+              "text": [
+                "She thinks about how to answer for a while. Then she tries.",
+                "\"Like the volume being turned down,\" she says. \"Not on sounds. On caring. Things stop mattering in the right order. Small things first. Then medium things. I lost caring about whether I was hungry before I lost caring about whether I was safe, which is the wrong order.\"",
+                "You know the feeling she means. You left a town over it.",
+                "She pauses. \"Maret's methods stopped it progressing. I am here. I am mostly here. But I can feel the edge of where I stopped.\"",
+                "She holds up the rope. \"The knot helps. Having something my hands know how to do. It keeps the thread between here and not-here from getting thinner.\""
+              ],
               "next_scene": "act1_ch4_rootless_camp_stay",
               "state_changes": {
                 "flags": {
@@ -724,12 +730,13 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "Maret tells you. What she told them about the ruins — the extent of them, what the camp's explorations of the outskirts had found, the specific location of the deepest accessible point. She told them about the source of the curse, as best as she understood it. She told them what her arrangement with the forest cost her and how it worked.\n\nShe told them everything she knew. And they went in anyway.\n\n\"I did not think they would,\" she says. \"I told myself I was giving them information so they could make an informed choice. But the information I gave them was the information that made the choice obvious.\"\n\nShe looks at the trees. \"I was wrong to send them in. Or I was right and they found something and are still there waiting for you. I do not know which.\"",
+              "text": "Maret tells you. What she told them about the ruins — the extent of them, what the camp's explorations of the outskirts had found, the specific location of the deepest accessible point. She told them about the source of the curse, as best as she understood it. She told them about her arrangement with the forest.\n\nThen she takes a folded paper from inside her coat and gives it to you. A list in her hand, numbered. Thirty-eight lines.\n\nYou read three of them. My daughter's voice, at the top. The name of the village, about halfway down. What I was going to say to Branch, the last.\n\n\"Each new moon I walk to the tree line and give it one,\" she says. \"It keeps the camp shallow. The garden grows.\" She takes the list back. \"I write them down so I know what I no longer have.\"\n\nShe told them everything she knew. And they went in anyway.\n\n\"I did not think they would,\" she says. \"I told myself I was giving them information so they could make an informed choice. But the information I gave them was the information that made the choice obvious.\"\n\nShe looks at the trees. \"I was wrong to send them in. Or I was right and they found something and are still there waiting for you. I do not know which.\"",
               "next_scene": "act1_ch5_curse_event",
               "state_changes": {
                 "flags": {
                   "maret_told_everything": true,
-                  "knows_ruins_deepest_point": true
+                  "knows_ruins_deepest_point": true,
+                  "seen_marets_list": true
                 },
                 "relationships": {
                   "maret": {
@@ -747,12 +754,13 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "She nods slowly. \"I know,\" she says. \"That is why I gave you the letter. So you would go in knowing what you are walking toward.\"\n\nShe tells you everything — the ruins, the source, the deepest point, her arrangement, the cost of it. She gives it all to you the way she gave it to [missing person] — with the specific honesty of someone who has decided the danger of ignorance is greater than the danger of knowledge.",
+              "text": "She nods slowly. \"I know,\" she says. \"That is why I gave you the letter. So you would go in knowing what you are walking toward.\"\n\nShe tells you everything: the ruins, the source, the deepest point.\n\nThen she takes a folded paper from inside her coat and gives it to you. A list in her hand, numbered. Thirty-eight lines.\n\nYou read three of them. My daughter's voice, at the top. The name of the village, about halfway down. What I was going to say to Branch, the last.\n\n\"Each new moon I walk to the tree line and give it one,\" she says. \"It keeps the camp shallow. The garden grows.\" She takes the list back. \"I write them down so I know what I no longer have.\"\n\nShe gives it all to you the way she gave it to [missing person] — with the specific honesty of someone who has decided the danger of ignorance is greater than the danger of knowledge.",
               "next_scene": "act1_ch5_curse_event",
               "state_changes": {
                 "flags": {
                   "maret_told_everything": true,
-                  "knows_ruins_deepest_point": true
+                  "knows_ruins_deepest_point": true,
+                  "seen_marets_list": true
                 },
                 "relationships": {
                   "maret": {
@@ -784,7 +792,19 @@
       },
       "requires": {},
       "text": {
-        "default": "She keeps the letter. You know it exists — she told you as much — and she told you the condition for receiving it, which is a kind of mercy. She could have kept its existence from you entirely.\n\nThe condition is not small: she needs to know who you are. Not what you want. Not what your skills are. Who you are, in the way that matters for what she would be giving you.\n\nYou leave the camp that evening with less than you came for and more than zero, which is the position you were in before, except that now you know there is a letter and you know what it would take to receive it.",
+        "default": [
+          "She keeps the letter. You know it exists — she told you as much — and she told you the condition for receiving it, which is a kind of mercy. She could have kept its existence from you entirely.",
+          "The condition is not small: she needs to know who you are. Not what you want. Not what your skills are. Who you are, in the way that matters for what she would be giving you.",
+          "You leave the camp that evening with less than you came for and more than zero, which is the position you were in before, except that now you know there is a letter and you know what it would take to receive it.",
+          {
+            "when": {
+              "min_faction": {
+                "rootless": 40
+              }
+            },
+            "text": "Before you go, she shows you something else instead. A list in her hand, thirty-eight lines, of what she has given the forest to keep the camp safe. My daughter's voice is the first. \"You have earned that much,\" she says."
+          }
+        ],
         "commander": "You could try to push. You calculate briefly and decide against it. Maret is not moved by pressure. She is moved by evidence.\n\nYou come back the next day and the day after. You work. You talk. You let her see who you are by what you do rather than what you say.",
         "arcane": "You spend the next two days in the camp gathering what you can gather without the letter. Lira's description of the ruins outskirts. Branch's account of the camp's history. The specific arrangement of the herb garden and what it implies about Maret's knowledge.\n\nIt is not nothing. It is not the letter.",
         "ranger": "Two days moving between the camp and the forest edge, reading both. The curse's movement. The direction it came from. The point from which it radiates.\n\nYou know approximately where the source is before Maret tells you.",

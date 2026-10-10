@@ -400,6 +400,41 @@
               "state_changes": {}
             }
           }
+        },
+        {
+          "id": "ask_about_the_list",
+          "text": "Ask Maret about the list.",
+          "roll": null,
+          "requires": {
+            "any": [
+              {
+                "flags": {
+                  "seen_marets_list": true
+                }
+              },
+              {
+                "min_faction": {
+                  "rootless": 40
+                }
+              }
+            ]
+          },
+          "outcomes": {
+            "default": {
+              "text": "Maret takes the list out. It is softer than it was, from folding.\n\n\"I have not been to the tree line since the seal,\" she says. \"There is nothing to pay. I thought something might come back.\" She looks at the first line. \"Nothing has.\"\n\nShe reads it to you anyway. \"My daughter's voice.\" Then she folds the paper and puts it away.",
+              "next_scene": "act2_ch8_faction_reckoning",
+              "state_changes": {
+                "relationships": {
+                  "maret": {
+                    "closeness": 10
+                  }
+                },
+                "flags": {
+                  "maret_stopped_paying": true
+                }
+              }
+            }
+          }
         }
       ],
       "rest": true
