@@ -113,7 +113,7 @@
               "next_scene": "act2_ch1_first_cairn",
               "state_changes": {
                 "world": {
-                  "curse_spread": 3
+                  "curse_spread": 2
                 },
                 "resources": {
                   "health": -5
@@ -125,7 +125,7 @@
               "next_scene": "act2_ch1_first_cairn",
               "state_changes": {
                 "world": {
-                  "curse_spread": 4
+                  "curse_spread": 3
                 },
                 "resources": {
                   "health": -10

@@ -15,7 +15,7 @@
       "on_enter": {
         "state_changes": {
           "world": {
-            "curse_spread": 4
+            "curse_spread": 3
           }
         }
       },
@@ -81,7 +81,7 @@
       "on_enter": {
         "state_changes": {
           "world": {
-            "curse_spread": 6
+            "curse_spread": 5
           }
         }
       },
@@ -134,7 +134,7 @@
               "state_changes": {
                 "world": {
                   "skip_days": 1,
-                  "curse_spread": 3
+                  "curse_spread": 2
                 }
               }
             }

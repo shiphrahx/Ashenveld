@@ -633,7 +633,8 @@
               "next_scene": "act1_ch3_camp_second_try",
               "state_changes": {
                 "world": {
-                  "time_of_day": "evening"
+                  "time_of_day": "evening",
+                  "curse_spread": 2
                 }
               }
             }
@@ -670,7 +671,11 @@
             "failure": {
               "text": "\"Maret has enough people with skills,\" Branch says. He does not send you away. He also does not go to get her. You are in a holding pattern until tomorrow.",
               "next_scene": "act1_ch3_camp_second_try",
-              "state_changes": {}
+              "state_changes": {
+                "world": {
+                  "curse_spread": 2
+                }
+              }
             }
           }
         }

@@ -91,7 +91,21 @@
       },
       "requires": {},
       "text": {
-        "default": "A specific morning, some years later.\n\nCrestfall. The market square. The fountain running properly now — someone fixed it in the second year, a project that took three weeks and which the whole town had an opinion about and which Aldous funded half of and will not admit to funding.\n\nThe market has nine stalls. The ninth is new — a woman from one of the eastern villages who walked back out of the forest eighteen months after walking in, confused and thin and eventually, gradually, herself again. She sells dried herbs now. Some of them are from Maret's garden. Some of them are varieties nobody recognised until she started growing them.\n\nYou and your missing person live in the house on the north lane — Goran's old recommendation, which became available two years after you decided to stay. You have been in it since.\n\nThis morning: the market. The fountain. A specific quality of light that this time of year produces over Crestfall — not warm exactly, something more honest than warm. You are standing in it and so is your missing person and the day has not yet told you what it needs.",
+        "default": [
+          "A specific morning, some years later.",
+          "Crestfall. The market square. The fountain running properly now — someone fixed it in the second year, a project that took three weeks and which the whole town had an opinion about and which Aldous funded half of and will not admit to funding.",
+          "The market has nine stalls. The ninth is new — a woman from one of the eastern villages who walked back out of the forest eighteen months after walking in, confused and thin and eventually, gradually, herself again. She sells dried herbs now. Some of them are from Maret's garden. Some of them are varieties nobody recognised until she started growing them.",
+          "You and your missing person live in the house on the north lane — Goran's old recommendation, which became available two years after you decided to stay. You have been in it since.",
+          "This morning: the market. The fountain. A specific quality of light that this time of year produces over Crestfall — not warm exactly, something more honest than warm. You are standing in it and so is your missing person and the day has not yet told you what it needs.",
+          {
+            "when": {
+              "flags": {
+                "crestfall_afflicted": true
+              }
+            },
+            "text": "Crestfall went still once, before the seal held. Most of it came back. Aldous sits by the fire most evenings now, and somebody else keeps the bar."
+          }
+        ],
         "commander": "You have a formal role now — not the Compact's offer, something more particular. The regional recovery authority, a small organisation with a large remit. You chair it. Maret sits on it. Pol advises it. Branch does not sit on it because Branch does not sit on things but is always available.\n\nYou have done harder work with less. You have done less meaningful work with more. This is the right work at the right scale with the right people and you have the specific satisfaction of someone doing a thing they are built for.",
         "arcane": "The documentation became a text. The text has been in print for two years. You receive letters about it from scholars in four countries and from ordinary people who read it because they heard there was a book about what happened in Ashenveld.\n\nYour missing person, who spent fourteen months making the core findings possible, is credited on the cover. They accept this with the equanimity of someone who stopped needing certain things while they were in the ruins and has not fully recovered the need.",
         "ranger": "The forest east of Crestfall is different now from the forest of three years ago. Not restored — you would not use that word, it implies a return to a fixed state, and forests do not return, they continue — but functioning. The apex predators came back in the third year. The ecosystem is a working ecosystem.\n\nYou still read it every morning. The record you have been keeping is the most complete account of a damaged ecosystem's recovery from a novel cause that exists anywhere.\n\nSome mornings your missing person comes with you. They read the landscape with you the way you read people — looking for what is true underneath what is presented. They are not bad at it.",
@@ -140,7 +154,22 @@
       },
       "requires": {},
       "text": {
-        "default": "A specific morning, some time later. Not years — months. Long enough for things to settle into a pattern.\n\nYou are in a place that does not know your name and does not need to. The specific quality of anonymity that comes from being somewhere that has not been shaped by anything you did.\n\nYour missing person is beside you. They are having breakfast in a market town they chose because they heard the birds here are interesting. The birds are interesting. They were right.\n\nThe letters from Ashenveld arrive every two weeks — from Maret, from Branch, from Pol. The recovery is ongoing. The work continues without you. This is what you built: something that can continue without you.\n\nAcross the table, your missing person is eating something ordinary with the specific attention of someone who has not had ordinary things for a long time and has not yet stopped being grateful for them.\n\nYou watch them eat breakfast in a market town they chose. This is not what you expected your life to look like. You are not sure what you expected. You are here.",
+        "default": [
+          "A specific morning, some time later. Not years — months. Long enough for things to settle into a pattern.",
+          "You are in a place that does not know your name and does not need to. The specific quality of anonymity that comes from being somewhere that has not been shaped by anything you did.",
+          "Your missing person is beside you. They are having breakfast in a market town they chose because they heard the birds here are interesting. The birds are interesting. They were right.",
+          "The letters from Ashenveld arrive every two weeks — from Maret, from Branch, from Pol. The recovery is ongoing. The work continues without you. This is what you built: something that can continue without you.",
+          "Across the table, your missing person is eating something ordinary with the specific attention of someone who has not had ordinary things for a long time and has not yet stopped being grateful for them.",
+          "You watch them eat breakfast in a market town they chose. This is not what you expected your life to look like. You are not sure what you expected. You are here.",
+          {
+            "when": {
+              "flags": {
+                "crestfall_afflicted": true
+              }
+            },
+            "text": "Crestfall went still once, before the seal held. Most of it came back. Aldous sits by the fire most evenings now, and somebody else keeps the bar."
+          }
+        ],
         "commander": "You are not currently in command of anything. This is a new condition.\n\nYou are discovering that the capacity for command does not disappear when there is nothing to command. It becomes something else — attention, precision, the ability to read situations quickly. These things are useful in ordinary life too. They are just useful differently.",
         "arcane": "You are writing. Not the Ashenveld documentation — that is complete. Something new. The beginning of a longer work about what the ruins were, what the power was, what the ritual means for the understanding of phenomena that have been observed in other places and not yet understood.\n\nAshenveld is not unique. You knew this theoretically. You are beginning to understand it practically.\n\nYour missing person reads your drafts and asks questions that improve them. They spent fourteen months in the most concentrated field site for your area of study that has existed in recorded history. They are, if they wanted to be, a significant scholarly collaborator.\n\nYou ask them if they want to be. They think about it. They say: sometimes.",
         "ranger": "The forest in this region is different from Ashenveld's forest — ordinary, undamaged, the specific richness of a landscape that has not been through what Ashenveld went through.\n\nYou read it every morning anyway. You cannot stop reading landscapes. You have accepted this about yourself.\n\nYour missing person has started coming with you. They are learning to read landscapes the way you read them — for what is true underneath what is presented. They are not bad at it. They are the person who spent fourteen months reading one of the most complex landscapes on record. The skill transferred.",
@@ -189,7 +218,22 @@
       },
       "requires": {},
       "text": {
-        "default": "A specific morning, several years later.\n\nCrestfall. The market square. The fountain running — it has been running for two years now. Nine stalls. Children who do not remember the curse as anything other than a story their parents tell.\n\nThe children call you the Warden. Not a title anyone assigned — a name that accumulated the way names do in small places, from the specific accumulation of someone always being there, always doing the thing that needed doing, always knowing the answer to the question the town was asking.\n\nYou are not sure you like the name. You have stopped trying to change it.\n\nThis morning: the market. The fountain. The children who do not know what the wrong silence sounded like because they were too young or not yet born. The Rootless camp, now a formal institution with a building and a sign and Lira on the staff. Branch, somewhere on the perimeter, doing whatever Branch does on perimeters.\n\nMaret, crossing the square, who sees you and raises a hand in greeting — the specific shorthand of two people who have worked together long enough that full greeting is unnecessary.",
+        "default": [
+          "A specific morning, several years later.",
+          "Crestfall. The market square. The fountain running — it has been running for two years now. Nine stalls. Children who do not remember the curse as anything other than a story their parents tell.",
+          "The children call you the Warden. Not a title anyone assigned — a name that accumulated the way names do in small places, from the specific accumulation of someone always being there, always doing the thing that needed doing, always knowing the answer to the question the town was asking.",
+          "You are not sure you like the name. You have stopped trying to change it.",
+          "This morning: the market. The fountain. The children who do not know what the wrong silence sounded like because they were too young or not yet born. The Rootless camp, now a formal institution with a building and a sign and Lira on the staff. Branch, somewhere on the perimeter, doing whatever Branch does on perimeters.",
+          "Maret, crossing the square, who sees you and raises a hand in greeting — the specific shorthand of two people who have worked together long enough that full greeting is unnecessary.",
+          {
+            "when": {
+              "flags": {
+                "crestfall_afflicted": true
+              }
+            },
+            "text": "Crestfall went still once, before the seal held. Most of it came back. Aldous sits by the fire most evenings now, and somebody else keeps the bar."
+          }
+        ],
         "commander": "You took the Compact's offer eventually. Modified it. Restructured it into something you could accept without surrendering the independence the work requires.\n\nThe regional recovery authority exists because you built it. It works because Maret runs the human side and you run the institutional side and the two sides, improbably, trust each other.\n\nYou have not made peace with being here alone. You have made peace with the work being worth it regardless.",
         "arcane": "The documentation became a text. The text is taught in three universities. You receive letters from students who have read it and want to know more.\n\nSome years ago a letter arrived from a town three weeks west of Ashenveld. Not from who you thought it might be from — from a scholar your missing person had sent it to, who wanted to connect with you about a related phenomenon in their region.\n\nYou wrote back. You have been corresponding since. The work extends further than Ashenveld. This is either comfort or distraction. You have decided it is both and that both are acceptable.",
         "ranger": "The hawk's descendants have territories now. You know three individuals from the original hawk's line by their markings and their specific territories.\n\nThe forest east of Crestfall is functioning. Not as it was before the curse — differently. New species that were not here before. The curse changed the land and the land kept changing after the curse stopped. What it became is not a restoration. It is a continuation.\n\nYou read it every morning. You have read it every morning for several years. You are the person who knows this land most completely. When you are gone, the record you have kept will be what remains of that knowledge.\n\nThis concerns you sometimes. You have been training Branch's youngest to read the forest. He is not bad at it.",
@@ -238,7 +282,20 @@
       },
       "requires": {},
       "text": {
-        "default": "Years have passed. Crestfall has a name in the region now — not a famous one, but a known one. The town where the curse stopped. The town with the camp that knows what to do when someone comes in from the forest changed.\n\nThe Rootless camp is not called the Rootless camp anymore. It has a formal name — the Ashenveld Recovery Centre, a name that took three meetings to agree on and that nobody uses except on official documents. Unofficially it is still the camp. Maret is still Maret.\n\nYou and your missing person are in it. In all of it — the work, the place, the specific texture of a life built in a hard place with the people who stayed.\n\nThis is the Rootless ending. Not the easiest path. Not the one the institutions wanted. The one that put the people who knew the most about the curse in charge of what came after it.",
+        "default": [
+          "Years have passed. Crestfall has a name in the region now — not a famous one, but a known one. The town where the curse stopped. The town with the camp that knows what to do when someone comes in from the forest changed.",
+          "The Rootless camp is not called the Rootless camp anymore. It has a formal name — the Ashenveld Recovery Centre, a name that took three meetings to agree on and that nobody uses except on official documents. Unofficially it is still the camp. Maret is still Maret.",
+          "You and your missing person are in it. In all of it — the work, the place, the specific texture of a life built in a hard place with the people who stayed.",
+          "This is the Rootless ending. Not the easiest path. Not the one the institutions wanted. The one that put the people who knew the most about the curse in charge of what came after it.",
+          {
+            "when": {
+              "flags": {
+                "crestfall_afflicted": true
+              }
+            },
+            "text": "Crestfall went still once, before the seal held. Most of it came back. Aldous sits by the fire most evenings now, and somebody else keeps the bar."
+          }
+        ],
         "commander": "The regional authority reports to a civilian board rather than to the Compact. This was the negotiation that took the longest and cost the most political capital and was the one that mattered most.\n\nVorne, who moved on to a different region three years ago, sends letters occasionally. They are formal and occasional and warm in the way military correspondence is warm — acknowledging what was accomplished without dwelling on it.\n\nYou write back in the same register. You were adversaries and collaborators and neither of those things cleanly and the correspondence reflects this.",
         "arcane": "The knowledge of what the ruins are and what the sealing did is public and complete. Nobody controls it. This was your most important achievement and the one most likely to be forgotten — not the content of the knowledge, but the act of ensuring no single entity held it exclusively.\n\nYou teach, now, alongside the documentation. Students come to Ashenveld. The site is the text. You are the most knowledgeable person about the text who is also willing to stand in it with students and let them ask questions.\n\nThis is the best version of academic work you have done.",
         "ranger": "The camp has a garden that produces things the surrounding villages need. Lira designed the garden. She knows which plants absorb the curse's residual effects, which ones help the afflicted who are still recovering, which ones are simply good for people to grow and tend.\n\nYou helped with the initial land assessment. The garden is Lira's.\n\nThis is how the work goes, done correctly: you do your part and step back and the people who know their part do theirs and what results is better than any single person's vision of it.",
@@ -287,7 +344,24 @@
       },
       "requires": {},
       "text": {
-        "default": "The account was published in the second year.\n\nNot the academic documentation — that went to universities. The account was different. A complete record of what happened in Ashenveld, what each faction did and why, what the Covenant's purification ritual would have cost, what Seriva did twenty years ago and what it caused, what the Compact's operations actually consisted of, what the Rootless camp accomplished without resources or recognition.\n\nEvery name. Every decision. Every hidden thing made visible.\n\nAshenveld read it. The region read it. The Compact responded formally. The Covenant responded formally. Seriva did not respond.\n\nThe formal responses mattered less than the informal ones. The people who lived through the curse now had a complete account of what happened to them and who made which decisions while it was happening.\n\nNo faction emerged from the account with full credit. No faction emerged cleanly. What emerged was the truth, distributed, which was what you intended.\n\nAshenveld did not collapse. It fractured — into smaller independent settlements, each organised around the most trustworthy local figures. Maret's camp became the centre of a loose network of communities that operated without central authority and, after the first difficult years, without needing one.\n\nThe ending is the loneliest one. It is also the one where the most people know the truth.",
+        "default": [
+          "The account was published in the second year.",
+          "Not the academic documentation — that went to universities. The account was different. A complete record of what happened in Ashenveld, what each faction did and why, what the Covenant's purification ritual would have cost, what Seriva did twenty years ago and what it caused, what the Compact's operations actually consisted of, what the Rootless camp accomplished without resources or recognition.",
+          "Every name. Every decision. Every hidden thing made visible.",
+          "Ashenveld read it. The region read it. The Compact responded formally. The Covenant responded formally. Seriva did not respond.",
+          "The formal responses mattered less than the informal ones. The people who lived through the curse now had a complete account of what happened to them and who made which decisions while it was happening.",
+          "No faction emerged from the account with full credit. No faction emerged cleanly. What emerged was the truth, distributed, which was what you intended.",
+          "Ashenveld did not collapse. It fractured — into smaller independent settlements, each organised around the most trustworthy local figures. Maret's camp became the centre of a loose network of communities that operated without central authority and, after the first difficult years, without needing one.",
+          "The ending is the loneliest one. It is also the one where the most people know the truth.",
+          {
+            "when": {
+              "flags": {
+                "crestfall_afflicted": true
+              }
+            },
+            "text": "Crestfall went still once, before the seal held. Most of it came back. Aldous sits by the fire most evenings now, and somebody else keeps the bar."
+          }
+        ],
         "commander": "You published the account knowing it would end your institutional relationships. It did.\n\nVorne cut contact. The Compact formally removed your advisory status. Edric, to his credit, wrote to say that the account was accurate and that the accuracy was the only reason the Covenant could begin to repair what it had become.\n\nYou are no longer affiliated with any institution. You are affiliated with the truth. It is a smaller organisation but the membership is good.",
         "arcane": "The academic community's response to the account was the most interesting part.\n\nThe documentation was accepted. The account — the complete record of institutional failures and hidden truths — produced a specific kind of debate that will continue for decades. Not about whether it was accurate. About whether publishing it was the right decision.\n\nYou believe it was. You also believe the debate about it is legitimate. Both things are true. You are comfortable with both things being true.",
         "ranger": "You published the account and watched Ashenveld receive it.\n\nNot all at once — truth distributes slowly in small communities, each person reading it in the context of what they knew and revising their understanding of events they lived through.\n\nThe most significant responses were the quiet ones. People who knew something was wrong and now had the full picture. People who had trusted an institution that the account showed had not deserved the trust, who now had to decide what to do with that knowledge.\n\nMost of them decided to do what people in difficult places always do: continue. The account did not solve anything. It told the truth about what needed solving. That is a different kind of service.",

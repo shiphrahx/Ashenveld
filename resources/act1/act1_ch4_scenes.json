@@ -139,7 +139,8 @@
               "next_scene": "act1_ch4_rootless_camp_stay",
               "state_changes": {
                 "world": {
-                  "time_of_day": "evening"
+                  "time_of_day": "evening",
+                  "curse_spread": 2
                 }
               }
             }

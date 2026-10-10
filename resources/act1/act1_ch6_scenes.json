@@ -624,7 +624,11 @@
             "default": {
               "text": "You take time in Harrow. The afternoon light is going and you want to be inside something before dark.",
               "next_scene": "act1_ch7_harrow_investigation",
-              "state_changes": {}
+              "state_changes": {
+                "world": {
+                  "curse_spread": 2
+                }
+              }
             }
           }
         },

@@ -15,7 +15,7 @@
       "on_enter": {
         "state_changes": {
           "world": {
-            "curse_spread": 3
+            "curse_spread": 2
           }
         }
       },
@@ -219,7 +219,7 @@
             "source_chamber_seen": true
           },
           "world": {
-            "curse_spread": 5
+            "curse_spread": 4
           }
         }
       },
@@ -349,7 +349,7 @@
                   "health": -15
                 },
                 "world": {
-                  "curse_spread": 3
+                  "curse_spread": 2
                 }
               }
             }

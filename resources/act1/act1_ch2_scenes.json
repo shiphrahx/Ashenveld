@@ -92,7 +92,16 @@
           "requires": {},
           "roll": {
             "stat": "charisma",
-            "dc": 10
+            "dc": 10,
+            "bonus": [
+              {
+                "when": {
+                  "min_curse": 50
+                },
+                "value": -1,
+                "label": "The town has gone quiet"
+              }
+            ]
           },
           "outcomes": {
             "success": {
@@ -127,7 +136,16 @@
           "requires": {},
           "roll": {
             "stat": "perception",
-            "dc": 11
+            "dc": 11,
+            "bonus": [
+              {
+                "when": {
+                  "min_curse": 50
+                },
+                "value": -1,
+                "label": "The town has gone quiet"
+              }
+            ]
           },
           "outcomes": {
             "success": {
@@ -265,7 +283,8 @@
               "next_scene": "act1_ch3_rootless_camp_approach",
               "state_changes": {
                 "world": {
-                  "time_of_day": "afternoon"
+                  "time_of_day": "afternoon",
+                  "curse_spread": 2
                 }
               }
             }
