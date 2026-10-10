@@ -190,11 +190,12 @@
               }
             },
             "failure": {
-              "text": "\"The packet stays sealed,\" Cael says. The smile does not move. \"That is the arrangement or there is not one.\" He waits.",
-              "next_scene": "act1_ch3_covenant_introduction",
+              "text": "\"The packet stays sealed,\" Cael says. The smile does not move. \"That is the arrangement or there is not one.\" He waits.\n\nCael waits. The offer is still on the table, and it is the same offer.",
+              "next_scene": "act1_ch3_compact_offer",
               "state_changes": {}
             }
-          }
+          },
+          "once": true
         }
       ]
     },

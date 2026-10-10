@@ -61,7 +61,11 @@
               "next_scene": "act1_ch5_faction_responses",
               "state_changes": {
                 "flags": {
-                  "knows_episodes_shorten": true
+                  "knows_episodes_shorten": true,
+                  "could_not_reach_her": true
+                },
+                "resources": {
+                  "health": -5
                 }
               }
             }

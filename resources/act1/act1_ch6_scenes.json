@@ -351,7 +351,15 @@
             "failure": {
               "text": "You follow it and lose it quickly — it moves in a pattern your tracking instinct cannot quite predict. You return to the road. You were in the trees long enough for the road to feel like a relief.",
               "next_scene": "act1_ch6_road_traveller",
-              "state_changes": {}
+              "state_changes": {
+                "resources": {
+                  "health": -5
+                },
+                "world": {
+                  "curse_spread": 2,
+                  "time_of_day": "afternoon"
+                }
+              }
             }
           }
         },

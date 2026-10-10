@@ -143,7 +143,11 @@
             "failure": {
               "text": "The carvings are too complex in too little time. You capture what you can — the major landmarks, some of the symbols — but the connections between them elude you. You commit what you can to memory.",
               "next_scene": "act1_ch7_forest_edge",
-              "state_changes": {}
+              "state_changes": {
+                "resources": {
+                  "health": -5
+                }
+              }
             }
           }
         },
@@ -232,12 +236,9 @@
           "id": "wait_sense_behind",
           "text": "Wait. Something behind you.",
           "requires": {},
-          "roll": {
-            "stat": "perception",
-            "dc": 11
-          },
+          "roll": null,
           "outcomes": {
-            "success": {
+            "default": {
               "text": "You heard her before she intended to be heard — footsteps on the road behind you, a measured pace, someone moving with purpose and some haste.\n\nMaret comes out of the Harrow tree line. She is carrying a pack. She looks at you at the forest edge and does not look surprised to see you standing there.",
               "next_scene": "act1_ch7_maret_follows",
               "state_changes": {
@@ -245,22 +246,22 @@
                   "maret_followed": true
                 }
               }
-            },
-            "success_at_cost": {
-              "text": "You hear something a second before she steps out of the trees. Not enough warning to do more than turn.",
+            }
+          }
+        },
+        {
+          "id": "watch_who_follows",
+          "text": "Step off the road and watch who is following.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You step back into the last of the ordinary trees and wait.\n\nIt is Maret. She comes along the road with a pack on her back, fast, and stops short of the line. She does not see you. She stands facing the dark trees with her hands at her sides and says something to them, too quietly to carry. She waits, as if for an answer.\n\nThen she turns, and finds you watching.",
               "next_scene": "act1_ch7_maret_follows",
               "state_changes": {
                 "flags": {
-                  "maret_followed": true
-                }
-              }
-            },
-            "failure": {
-              "text": "She steps out of the trees behind you and you turn at the sound. For a moment you are both still.",
-              "next_scene": "act1_ch7_maret_follows",
-              "state_changes": {
-                "flags": {
-                  "maret_followed": true
+                  "maret_followed": true,
+                  "saw_maret_at_line": true
                 }
               }
             }

@@ -290,6 +290,9 @@
                   "iron_compact": {
                     "reputation": -10
                   }
+                },
+                "world": {
+                  "time_of_day": "evening"
                 }
               }
             }
