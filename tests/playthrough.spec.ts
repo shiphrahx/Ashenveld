@@ -125,6 +125,11 @@ for (const run of ENDINGS) {
     expect(repeated, 'scenes visited more than three times').toEqual([])
     expect(errors).toEqual([])
     await expect(page.getByText('An ending', { exact: true })).toBeVisible()
+    // G14: the act breaks award two traits over a full run.
+    const flags = await page.evaluate(() => JSON.parse(localStorage.getItem('ashenveld_save')!).flags)
+    const traits = Object.keys(flags).filter(k => k.startsWith('trait_'))
+    expect(traits.length, `traits: ${traits.join(', ')}`).toBeGreaterThanOrEqual(1)
+    console.log(`${run.cls}: ${traits.join(', ')}`)
   })
 }
 

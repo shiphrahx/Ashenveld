@@ -5,7 +5,7 @@ import ActCard from './components/ActCard'
 import { imageFor, srcSetFor, IMG_SIZES } from './hooks/useLocationImage'
 import LoadingScreen from './components/LoadingScreen'
 import ErrorScreen from './components/ErrorScreen'
-import { DIMMING, REST, restOption, type RestOption } from './rules'
+import { DIMMING, REST, restOption, traitEarned, TRAIT_RULES, type RestOption, type Trait } from './rules'
 import {
   createFreshState,
   applyStateChanges,
@@ -91,7 +91,7 @@ export default function App() {
   motionOn.current = motionAllowed(settings)
 
   // ── E6: act cards, chapter titles, the story fading round a change of place ──
-  const [actCard, setActCard] = useState<{ act: number; title: string } | null>(null)
+  const [actCard, setActCard] = useState<{ act: number; title: string; trait?: Trait | null } | null>(null)
   const [chapterNote, setChapterNote] = useState<{ title: string; key: number } | null>(null)
   const [storyFade, setStoryFade] = useState<'out' | 'in' | null>(null)
 
@@ -263,8 +263,21 @@ export default function App() {
         await new Promise(r => setTimeout(r, 200))
       }
 
+      // G14: the end of Acts 1 and 2 awards a trait from how you played.
+      let trait: Trait | null = null
+      if (newAct && scene.act > state.world.act && Object.keys(state.visited).length > 0) {
+        trait = traitEarned(next)
+        if (trait) {
+          next.flags[`trait_${trait.id}`] = true
+          if (trait.id === 'worn') {
+            next.player.resources.max_health = Math.min(next.player.resources.max_health, TRAIT_RULES.wornMaxResolve)
+            next.player.resources.health = Math.min(next.player.resources.health, next.player.resources.max_health)
+          }
+        }
+      }
+
       recordCheckpoint(state, next)
-      if (newAct) setActCard({ act: scene.act, title: getMasterIndex().act_summaries?.[String(scene.act)]?.title ?? '' })
+      if (newAct) setActCard({ act: scene.act, title: getMasterIndex().act_summaries?.[String(scene.act)]?.title ?? '', trait })
       if (newChapter) {
         const title = getChapterOf(scene.id)?.title
         if (title) setChapterNote({ title, key: Date.now() })
@@ -468,7 +481,7 @@ export default function App() {
     return (
       <>
         <div className={styles.backdrop} aria-hidden="true" />
-        <ActCard act={actCard.act} title={actCard.title} onContinue={() => setActCard(null)} />
+        <ActCard act={actCard.act} title={actCard.title} trait={actCard.trait ?? undefined} onContinue={() => setActCard(null)} />
       </>
     )
   }

@@ -4,7 +4,7 @@ import { CLASS_LABELS } from '../text'
 import { Icon, PartGlyph, FactionMark } from './icons'
 import MuteButton from './MuteButton'
 import CountTo from './CountTo'
-import { dimmingBand, maxResolve, factionTier, modifierForStat, STAT_NAMES, STAT_TIPS, TIER_ORDER, TIER_EFFECT, type RestOption } from '../rules'
+import { dimmingBand, maxResolve, traitsOf, factionTier, modifierForStat, STAT_NAMES, STAT_TIPS, TIER_ORDER, TIER_EFFECT, type RestOption } from '../rules'
 import type { PanelId } from './TabBar'
 import styles from './Sidebar.module.css'
 
@@ -102,6 +102,15 @@ export default function Sidebar({ state, onOpen, hideClock = false, variant = 'c
       {/* ── Stats (class label as section header) ── */}
       <div className={styles.sb}>
         <div className={styles.sbl}>{classLabel}</div>
+        {traitsOf(state.flags).length > 0 && (
+          <div className={styles.traits} data-traits>
+            {traitsOf(state.flags).map(t => (
+              <span key={t.id} className={styles.trait} tabIndex={0} aria-label={`${t.name}: ${t.effect}`}>
+                {t.name}<span className={styles.statTip} role="tooltip">{t.effect}</span>
+              </span>
+            ))}
+          </div>
+        )}
         {STAT_KEYS.map(([key, label]) => {
           const val = player.stats[key]
           const filled = statPips(val)
