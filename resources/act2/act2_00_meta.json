@@ -7,7 +7,6 @@
     "version": "1.0",
     "notes": "Import after act1_00_meta.json. Contains all Act II NPC definitions, new locations, and updated faction mechanics. Act II begins the moment the player crosses into the deep forest at the end of Act I."
   },
-
   "new_npcs": {
     "the_missing_person": {
       "id": "the_missing_person",
@@ -77,7 +76,6 @@
       "archetype": "unknown"
     }
   },
-
   "new_locations": {
     "ruins_outskirts": {
       "id": "ruins_outskirts",
@@ -128,7 +126,6 @@
       "ambient_night": "Unknown."
     }
   },
-
   "act2_overview": {
     "central_tension": "The player has entered the deep forest. Everything they built in Act I is now at a distance. The ruins are real and dangerous and contain both what they came for and what every faction wants. The missing person is alive and changed and waiting. The factions are escalating — Commander Vorne has arrived, Seriva has arrived, and the Rootless camp is in danger.",
     "key_decisions": [

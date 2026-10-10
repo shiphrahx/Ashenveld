@@ -6,12 +6,20 @@ export interface SceneRef {
   chapter: number
 }
 
+export interface ItemDef {
+  name?: string
+  description: string
+  consumable: boolean
+  consumed_on?: string
+}
+
 export interface MasterIndex {
   scene_index: Record<string, SceneRef>
   starting_scene: string
-  inventory_items: Record<string, { description: string; consumable: boolean; consumed_on?: string }>
+  inventory_items: Record<string, ItemDef>
   class_stat_blocks: Record<string, StatBlock>
   faction_reputation_thresholds: Record<string, Record<string, number>>
+  act_summaries?: Record<string, { title: string; entry: string; exit_scenes: string[]; chapters: number; description: string }>
 }
 
 export interface StatBlock {
@@ -57,16 +65,46 @@ export interface LocationDef {
   description: string
 }
 
+// ─── Conditions and text ──────────────────────────────────────────────────────
+
+/** One shape for every "is this allowed / shown" test. */
+export interface Condition {
+  flags?: Record<string, boolean | string | number>
+  inventory?: string[]                       // all must be held
+  class?: string | string[]
+  min_relationship?: Record<string, number>  // npc id → closeness
+  max_relationship?: Record<string, number>
+  min_faction?: Record<string, number>       // faction id → reputation
+  max_faction?: Record<string, number>
+  min_stat?: Record<string, number>
+  relationship_type?: string[]               // player.missing_person.relationship, lower case
+  visited?: string[]                         // scene ids already entered
+  not_visited?: string[]
+  taken?: string[]                           // "sceneId:choiceId"
+  min_curse?: number
+  max_curse?: number
+  health_below?: number
+  any?: Condition[]                          // at least one matches
+  not?: Condition
+}
+/** @deprecated use Condition */
+export type ChoiceRequires = Condition
+
+/** A string, or a list of paragraph blocks, each optionally guarded. */
+export type TextPart = string | { when: Condition; text: string; else?: string }
+export type RichText = string | TextPart[]
+
 // ─── Scene data ───────────────────────────────────────────────────────────────
 
-export type PlayerClass = 'commander' | 'arcane' | 'ranger' | 'cipher' | 'default'
+export type PlayerClass = 'commander' | 'arcane' | 'ranger' | 'cipher'
+export type ClassKey = PlayerClass
 
 export interface SceneText {
-  default: string
-  commander?: string
-  arcane?: string
-  ranger?: string
-  cipher?: string
+  default: RichText
+  commander?: RichText
+  arcane?: RichText
+  ranger?: RichText
+  cipher?: RichText
 }
 
 export interface StateChanges {
@@ -80,7 +118,7 @@ export interface StateChanges {
 }
 
 export interface Outcome {
-  text: string
+  text: RichText
   next_scene: string | null
   state_changes: StateChanges
 }
@@ -90,17 +128,13 @@ export interface Roll {
   dc: number
 }
 
-export interface ChoiceRequires {
-  flags?: Record<string, boolean>
-  inventory?: string[]
-  class?: string
-}
-
 export interface Choice {
   id: string
-  text: string
-  requires: ChoiceRequires
+  text: RichText
+  requires: Condition
   roll: Roll | null
+  once?: boolean          // hidden after it has been taken in this save
+  locked_hint?: string    // shown when requires fails
   outcomes: {
     default?: Outcome
     success?: Outcome
@@ -114,6 +148,9 @@ export interface OnEnter {
   time_advance: number
 }
 
+export type DayPart = 'dawn' | 'morning' | 'midday' | 'afternoon' | 'evening' | 'night'
+export interface SceneWhen { part: DayPart; day?: number; skip_days?: number; hide_clock?: boolean }
+
 export interface Scene {
   id: string
   act: number
@@ -121,9 +158,15 @@ export interface Scene {
   location: string
   title: string
   on_enter: OnEnter
-  requires: ChoiceRequires
+  requires: Condition
   text: SceneText
   choices: Choice[]
+  when?: SceneWhen
+  text_mode?: Partial<Record<PlayerClass, 'append' | 'replace'>>
+  route?: Array<{ when?: Condition; next: string }>   // never rendered
+  ending?: { id: string; title: string }
+  rest?: boolean
+  objective?: string
 }
 
 export interface ChapterFile {
@@ -135,6 +178,7 @@ export interface ChapterFile {
 // ─── Game state ───────────────────────────────────────────────────────────────
 
 export interface GameState {
+  version: 2
   player: {
     name: string
     gender: string
@@ -169,6 +213,9 @@ export interface GameState {
   inventory: string[]
   current_scene: string
   journal: JournalEntry[]
+  visited: Record<string, number>        // scene id → times entered
+  taken: Record<string, true>            // "sceneId:choiceId"
+  ended?: { id: string; title: string }  // set when an ending is reached
 }
 
 // ─── Journal ──────────────────────────────────────────────────────────────────
@@ -182,6 +229,13 @@ export interface JournalEntry {
   text: string          // resolved scene text for the player's class
   choiceText: string    // the choice the player made
   outcomeText: string   // the outcome text shown
+}
+
+// ─── Meta store (survives new games) ──────────────────────────────────────────
+
+export interface MetaStore {
+  endings: string[]
+  seenScenes: string[]
 }
 
 // ─── Dice roll result ─────────────────────────────────────────────────────────

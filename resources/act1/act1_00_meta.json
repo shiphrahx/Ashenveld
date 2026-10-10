@@ -7,7 +7,6 @@
     "version": "1.0",
     "notes": "Import this file first. It contains all NPC definitions and location descriptions referenced by scene files act1_ch1 through act1_ch7."
   },
-
   "npcs": {
     "innkeeper_aldous": {
       "id": "innkeeper_aldous",
@@ -113,7 +112,6 @@
       "faction_alignment": "none"
     }
   },
-
   "locations": {
     "crestfall_docks": {
       "id": "crestfall_docks",
@@ -188,7 +186,6 @@
       "ambient_night": "Do not be here at night."
     }
   },
-
   "game_state_schema": {
     "player": {
       "name": "",
@@ -222,16 +219,21 @@
       "curse_spread": 0
     },
     "factions": {
-      "iron_compact": { "reputation": 0 },
-      "ashen_covenant": { "reputation": 0 },
-      "rootless": { "reputation": 0 }
+      "iron_compact": {
+        "reputation": 0
+      },
+      "ashen_covenant": {
+        "reputation": 0
+      },
+      "rootless": {
+        "reputation": 0
+      }
     },
     "relationships": {},
     "flags": {},
     "inventory": [],
     "current_scene": "act1_ch1_barge_arrival"
   },
-
   "dice_rules": {
     "system": "d20 plus stat modifier",
     "modifier_formula": "floor((stat - 5) / 2)",

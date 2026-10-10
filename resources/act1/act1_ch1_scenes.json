@@ -4,10 +4,18 @@
   "scenes": [
     {
       "id": "act1_ch1_barge_arrival",
-      "act": 1, "chapter": 1,
+      "act": 1,
+      "chapter": 1,
       "location": "crestfall_docks",
       "title": "Arrival",
-      "on_enter": { "state_changes": { "flags": { "act1_started": true } }, "time_advance": 0 },
+      "on_enter": {
+        "state_changes": {
+          "flags": {
+            "act1_started": true
+          }
+        },
+        "time_advance": 0
+      },
       "requires": {},
       "text": {
         "default": "The barge docks before dawn and the ferryman ties off without a word. You have been watching the town grow from a smear of lamplight on the water into something recognisable for the last hour, and now that it is fully in front of you, you wish you had looked away sooner.\n\nCrestfall. You left eleven years ago and told yourself you were not coming back. You told yourself that so many times it almost became true.\n\nThe docks smell of rot and cold water. A warehouse door hangs open on a broken hinge. Somewhere in the town a dog is barking at something that is not answering. You pick up your pack, step off the barge, and stand for a moment on the pier.\n\nYou are back.",
@@ -34,12 +42,19 @@
           "id": "stand_and_observe",
           "text": "Stand on the pier and take stock of what has changed.",
           "requires": {},
-          "roll": { "stat": "perception", "dc": 10 },
+          "roll": {
+            "stat": "perception",
+            "dc": 10
+          },
           "outcomes": {
             "success": {
               "text": "You count seven things wrong before you start moving. The Compact soldier at the gate. The missing market lights. The silence where the river birds should be. The boarded windows on the east side. The shrine moved from where it stood for forty years. The smell of something burnt that is not woodsmoke. The dog that has not stopped.\n\nSeven things. You write none of them down. You remember everything.",
               "next_scene": "act1_ch1_docks_encounter",
-              "state_changes": { "flags": { "observed_arrival_details": true } }
+              "state_changes": {
+                "flags": {
+                  "observed_arrival_details": true
+                }
+              }
             },
             "success_at_cost": {
               "text": "You catch some of it — the Compact soldier, the missing lights, the silence where birds should be. Enough to know the town is different in ways that are not just time passing. You are tired from the crossing. You stop counting and start walking.",
@@ -53,15 +68,24 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "commander": "replace",
+        "arcane": "replace",
+        "ranger": "replace",
+        "cipher": "replace"
+      }
     },
-
     {
       "id": "act1_ch1_docks_encounter",
-      "act": 1, "chapter": 1,
+      "act": 1,
+      "chapter": 1,
       "location": "crestfall_docks",
       "title": "A Face From Before",
-      "on_enter": { "state_changes": {}, "time_advance": 15 },
+      "on_enter": {
+        "state_changes": {},
+        "time_advance": 15
+      },
       "requires": {},
       "text": {
         "default": "A man is coiling rope near the warehouse — or pretending to. He has been watching you since you stepped off the barge. When you get close enough, he straightens and you recognise him from the before-time, the part of your life that ended when you got on a barge going the other direction.\n\nSen. Older now. Greyer. The kind of weathering that comes from staying somewhere difficult rather than leaving it.\n\n\"Didn't think you'd come back,\" he says. Not unkind. Just honest. \"Nobody comes back.\"\n\nHe looks at the town behind him the way you look at something that worries you.",
@@ -75,29 +99,49 @@
           "id": "ask_about_missing",
           "text": "\"I am looking for someone. You might have seen them.\"",
           "requires": {},
-          "roll": { "stat": "charisma", "dc": 11 },
+          "roll": {
+            "stat": "charisma",
+            "dc": 11
+          },
           "outcomes": {
             "success": {
               "text": "Something in his face moves — relief, or the exhaustion of someone who has been holding information and wanted to give it to the right person.\n\n\"I know who you mean,\" he says. \"Everyone here does.\" He looks around the docks. \"They came through about fourteen months ago. Asking questions. Then they stopped asking questions and started going into the forest instead.\" He pauses. \"Nobody goes into the forest.\"\n\nHe gives you a name — Maret. The woman at the camp outside town. He says it quickly, like a package he wants out of his hands.",
               "next_scene": "act1_ch1_tallow_arrival",
               "state_changes": {
-                "flags": { "sen_spoke_freely": true, "knows_maret_name": true },
-                "relationships": { "dockworker_sen": { "closeness": 20 } }
+                "flags": {
+                  "sen_spoke_freely": true,
+                  "knows_maret_name": true
+                },
+                "relationships": {
+                  "dockworker_sen": {
+                    "closeness": 20
+                  }
+                }
               }
             },
             "success_at_cost": {
               "text": "He nods slowly. \"Fourteen months back, roughly. Asking around town about the old ruins. Then they were not asking anymore.\" He stops there. \"Find Maret,\" he adds, and will say no more than that.",
               "next_scene": "act1_ch1_tallow_arrival",
               "state_changes": {
-                "flags": { "knows_maret_name": true },
-                "relationships": { "dockworker_sen": { "closeness": 10 } }
+                "flags": {
+                  "knows_maret_name": true
+                },
+                "relationships": {
+                  "dockworker_sen": {
+                    "closeness": 10
+                  }
+                }
               }
             },
             "failure": {
               "text": "He goes careful on you. The openness closes over like water. \"Can't say I remember anyone specific,\" he says, which is not the same as saying he does not. \"Lots of people pass through.\"",
               "next_scene": "act1_ch1_tallow_arrival",
               "state_changes": {
-                "relationships": { "dockworker_sen": { "closeness": -5 } }
+                "relationships": {
+                  "dockworker_sen": {
+                    "closeness": -5
+                  }
+                }
               }
             }
           }
@@ -106,22 +150,37 @@
           "id": "ask_about_town",
           "text": "\"What happened to this place?\"",
           "requires": {},
-          "roll": { "stat": "charisma", "dc": 9 },
+          "roll": {
+            "stat": "charisma",
+            "dc": 9
+          },
           "outcomes": {
             "success": {
               "text": "He looks at the town for a long time before answering.\n\n\"It started with the animals,\" he says. \"Two years ago. Moving wrong. Then the crops. Then people started going quiet. Not sad. Just quiet. Like something was turned down in them.\"\n\nHe looks at the river. \"Some of them came back from it. Some of them did not.\"",
               "next_scene": "act1_ch1_tallow_arrival",
               "state_changes": {
-                "flags": { "knows_curse_basics": true },
-                "relationships": { "dockworker_sen": { "closeness": 15 } }
+                "flags": {
+                  "knows_curse_basics": true
+                },
+                "relationships": {
+                  "dockworker_sen": {
+                    "closeness": 15
+                  }
+                }
               }
             },
             "success_at_cost": {
               "text": "\"Things change,\" he says. Then, quieter: \"The forest started coming closer. That is how it felt. Like the trees were paying more attention than they used to.\" He shakes his head. \"Get yourself a room at the Tallow. Do not go east.\"",
               "next_scene": "act1_ch1_tallow_arrival",
               "state_changes": {
-                "flags": { "warned_about_east": true },
-                "relationships": { "dockworker_sen": { "closeness": 8 } }
+                "flags": {
+                  "warned_about_east": true
+                },
+                "relationships": {
+                  "dockworker_sen": {
+                    "closeness": 8
+                  }
+                }
               }
             },
             "failure": {
@@ -144,15 +203,28 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "commander": "replace",
+        "arcane": "replace",
+        "ranger": "replace",
+        "cipher": "replace"
+      }
     },
-
     {
       "id": "act1_ch1_tallow_arrival",
-      "act": 1, "chapter": 1,
+      "act": 1,
+      "chapter": 1,
       "location": "crestfall_tallow_inn",
       "title": "The Tallow Inn",
-      "on_enter": { "state_changes": { "flags": { "tallow_visited": true } }, "time_advance": 20 },
+      "on_enter": {
+        "state_changes": {
+          "flags": {
+            "tallow_visited": true
+          }
+        },
+        "time_advance": 20
+      },
       "requires": {},
       "text": {
         "default": "The inn is quieter than you remember. The Tallow used to be loud on a cold night — arguments about harvest weights, a fiddle badly played near the fire, the particular laughter of people who have known each other too long. Now three men sit at separate tables and say nothing to each other, and the fire is lower than it should be for the hour.\n\nThe innkeeper looks up when you enter. Something crosses his face — recognition, then something harder to name. He knows you. Or he knew who you were, eleven years ago, and is not sure what to make of the person standing in your place.\n\n\"Didn't think we'd see you back here,\" he says. Not warmly. Not coldly either. The way you would say it about weather returning out of season.\n\nYou set your pack down by the door. The floorboards are the same. The low beam you always had to duck is the same. Everything is the same and none of it feels the way it did.",
@@ -166,29 +238,48 @@
           "id": "ask_about_missing_person",
           "text": "\"I am looking for someone. Their name is [missing person].\"",
           "requires": {},
-          "roll": { "stat": "charisma", "dc": 12 },
+          "roll": {
+            "stat": "charisma",
+            "dc": 12
+          },
           "outcomes": {
             "success": {
               "text": "He sets down the cloth he was using to wipe the bar. A deliberate pause.\n\n\"I know that name,\" he says finally. \"Came through about fourteen months ago. Asking about the old ruins to the east. Stayed three weeks. Made friends with the Rootless camp — the people outside town. Then one morning they were gone and nobody saw them leave.\"\n\nHe pours something and sets it in front of you without being asked. \"You family?\"\n\n\"Something like that,\" you could say. Or the truth.",
               "next_scene": "act1_ch1_innkeeper_success",
               "state_changes": {
-                "flags": { "aldous_spoke_about_missing": true },
-                "relationships": { "innkeeper_aldous": { "closeness": 20 } }
+                "flags": {
+                  "aldous_spoke_about_missing": true
+                },
+                "relationships": {
+                  "innkeeper_aldous": {
+                    "closeness": 20
+                  }
+                }
               }
             },
             "success_at_cost": {
               "text": "He goes still for a moment. Then picks up his cloth and keeps wiping.\n\n\"Name means something,\" he says carefully. \"Can't say more than that tonight. You just arrived. Get some sleep. Things are clearer in the morning.\"\n\nHe names a room price. It is too high. He knows it is too high. He is not refusing you. He is making you wait. There is a difference.",
               "next_scene": "act1_ch1_innkeeper_cost",
               "state_changes": {
-                "flags": { "aldous_heard_missing_name": true },
-                "relationships": { "innkeeper_aldous": { "closeness": 8 } }
+                "flags": {
+                  "aldous_heard_missing_name": true
+                },
+                "relationships": {
+                  "innkeeper_aldous": {
+                    "closeness": 8
+                  }
+                }
               }
             },
             "failure": {
               "text": "Something closes in his face. Not fear — more like a door shut gently but firmly.\n\n\"Can't say I know that name,\" he says. Which is a specific thing to say. Not that he does not know it. That he cannot say it.\n\nHe slides a key across the bar without looking at you.",
               "next_scene": "act1_ch1_innkeeper_failure",
               "state_changes": {
-                "relationships": { "innkeeper_aldous": { "closeness": -5 } }
+                "relationships": {
+                  "innkeeper_aldous": {
+                    "closeness": -5
+                  }
+                }
               }
             }
           }
@@ -197,24 +288,38 @@
           "id": "watch_the_room",
           "text": "Say nothing. Take a seat by the fire and watch.",
           "requires": {},
-          "roll": { "stat": "perception", "dc": 10 },
+          "roll": {
+            "stat": "perception",
+            "dc": 10
+          },
           "outcomes": {
             "success": {
               "text": "You sit. You watch.\n\nThe three men at separate tables are regulars — you can tell from the way they occupy their chairs, the grooves of habit. They have simply stopped talking. Whatever they shared before, they are not sharing it now.\n\nThe man nearest the fire has not moved in seven minutes. His drink is untouched. His eyes are open and fixed on something that is not in the room.\n\nAldous watches him too, when he thinks no one is looking. There is worry in it. And something else — the look of someone who has decided there is nothing to be done.",
               "next_scene": "act1_ch1_still_man",
               "state_changes": {
-                "flags": { "noticed_still_man": true, "noticed_aldous_worried": true }
+                "flags": {
+                  "noticed_still_man": true,
+                  "noticed_aldous_worried": true
+                }
               }
             },
             "success_at_cost": {
               "text": "You sit and the room gives you something. The man by the fire is wrong — too still, too fixed. Aldous watches him with an expression you cannot fully read from this distance. You catch the shape of something without catching the thing itself.",
               "next_scene": "act1_ch1_still_man",
-              "state_changes": { "flags": { "noticed_still_man": true } }
+              "state_changes": {
+                "flags": {
+                  "noticed_still_man": true
+                }
+              }
             },
             "failure": {
               "text": "You sit. The fire is low. Three men drink in silence. Aldous wipes the bar. You are too tired to read anything tonight. You go to the bar and pay for a room.",
               "next_scene": "act1_ch1_tallow_room",
-              "state_changes": { "resources": { "gold": -3 } }
+              "state_changes": {
+                "resources": {
+                  "gold": -3
+                }
+              }
             }
           }
         },
@@ -227,20 +332,37 @@
             "default": {
               "text": "\"Four coins,\" Aldous says. Too much and he says it anyway. You pay. He slides the key across the bar and goes back to whatever he was doing.\n\nYou take the stairs.",
               "next_scene": "act1_ch1_tallow_room",
-              "state_changes": { "resources": { "gold": -4 } }
+              "state_changes": {
+                "resources": {
+                  "gold": -4
+                }
+              }
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "commander": "replace",
+        "arcane": "replace",
+        "ranger": "replace",
+        "cipher": "replace"
+      }
     },
-
     {
       "id": "act1_ch1_innkeeper_success",
-      "act": 1, "chapter": 1,
+      "act": 1,
+      "chapter": 1,
       "location": "crestfall_tallow_inn",
       "title": "What Aldous Knows",
-      "on_enter": { "state_changes": {}, "time_advance": 25 },
-      "requires": { "flags": { "aldous_spoke_about_missing": true } },
+      "on_enter": {
+        "state_changes": {},
+        "time_advance": 25
+      },
+      "requires": {
+        "flags": {
+          "aldous_spoke_about_missing": true
+        }
+      },
       "text": {
         "default": "You sit at the bar and Aldous talks. Not freely — he measures everything — but he talks.\n\nFourteen months ago. The missing person arrived and spent a week in town asking questions nobody wanted to answer about the ruins to the east and the old city under the forest. Then they found the Rootless camp — the survivors outside town — and spent the remaining two weeks there.\n\n\"The woman at the camp,\" Aldous says. \"Maret. She knew them better than I did by the end. She might tell you something. Or she might not.\" He refills his own glass for the first time tonight. \"She tends not to.\"\n\nHe looks at you. \"Whatever you are looking for — I hope you find it. I hope it is still what you think it is when you do.\"",
         "commander": "Aldous tells you what he knows because you asked the right way — direct, without pressure, the tone of someone who has been owed information before and knows how to receive it.\n\nFourteen months ago. Military bearing — he noticed. The right questions. Three weeks. Gone one morning without a word.\n\n\"Maret would know more,\" he says. \"She is careful who she talks to but she is not unkind.\"",
@@ -253,14 +375,23 @@
           "id": "ask_about_maret",
           "text": "\"Tell me about Maret.\"",
           "requires": {},
-          "roll": { "stat": "charisma", "dc": 10 },
+          "roll": {
+            "stat": "charisma",
+            "dc": 10
+          },
           "outcomes": {
             "success": {
               "text": "He considers. \"She came to Crestfall about three years ago with six people and a cart. Said they were travelling. They never left. The camp grew.\" He pauses. \"She has a way of finding the people the town does not know what to do with — the cursed ones, the ones whose families stopped speaking to them. She takes them in.\"\n\nA longer pause. \"People say things about her. That she made some kind of arrangement with whatever is in the forest. I do not know if that is true. I know her people are alive when others are not.\"",
               "next_scene": "act1_ch1_tallow_room",
               "state_changes": {
-                "flags": { "knows_maret_background": true },
-                "relationships": { "innkeeper_aldous": { "closeness": 10 } }
+                "flags": {
+                  "knows_maret_background": true
+                },
+                "relationships": {
+                  "innkeeper_aldous": {
+                    "closeness": 10
+                  }
+                }
               }
             },
             "success_at_cost": {
@@ -279,14 +410,24 @@
           "id": "ask_about_forest",
           "text": "\"What is it in the forest? What is causing all this?\"",
           "requires": {},
-          "roll": { "stat": "charisma", "dc": 13 },
+          "roll": {
+            "stat": "charisma",
+            "dc": 13
+          },
           "outcomes": {
             "success": {
               "text": "He pours another drink. A long one.\n\n\"Nobody knows. Or nobody agrees. The Covenant says it is punishment. The Compact says it is a resource to be managed. The Rootless say it is something that was always there and something cracked open and let it out.\" He drinks. \"I have lived here forty years. The forest was never friendly. But it was quiet. It knew its limits.\" His voice drops. \"Two years ago it stopped knowing its limits.\"",
               "next_scene": "act1_ch1_tallow_room",
               "state_changes": {
-                "flags": { "knows_curse_factions": true, "knows_curse_timeline": true },
-                "relationships": { "innkeeper_aldous": { "closeness": 15 } }
+                "flags": {
+                  "knows_curse_factions": true,
+                  "knows_curse_timeline": true
+                },
+                "relationships": {
+                  "innkeeper_aldous": {
+                    "closeness": 15
+                  }
+                }
               }
             },
             "success_at_cost": {
@@ -310,19 +451,26 @@
             "default": {
               "text": "\"Three coins,\" he says — cheaper than the posted rate, which is the closest Aldous gets to generosity. You take the key and the stairs.",
               "next_scene": "act1_ch1_tallow_room",
-              "state_changes": { "resources": { "gold": -3 } }
+              "state_changes": {
+                "resources": {
+                  "gold": -3
+                }
+              }
             }
           }
         }
       ]
     },
-
     {
       "id": "act1_ch1_innkeeper_cost",
-      "act": 1, "chapter": 1,
+      "act": 1,
+      "chapter": 1,
       "location": "crestfall_tallow_inn",
       "title": "Not Tonight",
-      "on_enter": { "state_changes": {}, "time_advance": 10 },
+      "on_enter": {
+        "state_changes": {},
+        "time_advance": 10
+      },
       "requires": {},
       "text": {
         "default": "You take the room. Four coins — too much and you both know it and neither of you says so.\n\nAldous gives you the key with the particular efficiency of a man who has made a decision and is executing it. The decision is: not tonight. The name landed in him like a stone in water and he watched the ripples and chose not to follow them.\n\nYou carry your pack upstairs. The second floor hallway smells of old wood and uneven heat. Your room: a bed, a window facing the street, a lamp. Adequate.\n\nYou sit on the bed and listen to the inn's sounds. The three men downstairs. The fire settling. Aldous moving behind the bar doing nothing in particular. Outside, the wind, and under the wind, something that might be nothing.",
@@ -341,7 +489,11 @@
             "default": {
               "text": "You sleep badly and wake before dawn with the alertness that means your body gave up on rest before your mind did. You dress and go downstairs.",
               "next_scene": "act1_ch1_tallow_room",
-              "state_changes": { "world": { "time_of_day": "morning" } }
+              "state_changes": {
+                "world": {
+                  "time_of_day": "morning"
+                }
+              }
             }
           }
         },
@@ -349,40 +501,69 @@
           "id": "go_back_down",
           "text": "Go back downstairs and try again while the inn is still open.",
           "requires": {},
-          "roll": { "stat": "charisma", "dc": 14 },
+          "roll": {
+            "stat": "charisma",
+            "dc": 14
+          },
           "outcomes": {
             "success": {
               "text": "He is surprised to see you back. The surprise opens a gap and you use it — not manipulation, just timing. You ask the question again, differently, and this time he answers.\n\n\"Fourteen months,\" he says. \"Maret at the camp would know more than me.\" He says it like he is glad to be rid of it.",
               "next_scene": "act1_ch1_tallow_room",
               "state_changes": {
-                "flags": { "knows_maret_name": true, "aldous_spoke_about_missing": true },
-                "relationships": { "innkeeper_aldous": { "closeness": 10 } }
+                "flags": {
+                  "knows_maret_name": true,
+                  "aldous_spoke_about_missing": true
+                },
+                "relationships": {
+                  "innkeeper_aldous": {
+                    "closeness": 10
+                  }
+                }
               }
             },
             "success_at_cost": {
               "text": "He looks up when you come back down. He mentions the Rootless camp. He mentions Maret. He does not mention how he knows she knew your missing person.",
               "next_scene": "act1_ch1_tallow_room",
               "state_changes": {
-                "flags": { "knows_maret_name": true },
-                "relationships": { "innkeeper_aldous": { "closeness": 5 } }
+                "flags": {
+                  "knows_maret_name": true
+                },
+                "relationships": {
+                  "innkeeper_aldous": {
+                    "closeness": 5
+                  }
+                }
               }
             },
             "failure": {
               "text": "He has already decided and you cannot undo it tonight. He offers you a drink on the house. He does not give you anything else. You go back upstairs.",
               "next_scene": "act1_ch1_tallow_room",
-              "state_changes": { "relationships": { "innkeeper_aldous": { "closeness": -3 } } }
+              "state_changes": {
+                "relationships": {
+                  "innkeeper_aldous": {
+                    "closeness": -3
+                  }
+                }
+              }
             }
           }
         }
       ]
     },
-
     {
       "id": "act1_ch1_innkeeper_failure",
-      "act": 1, "chapter": 1,
+      "act": 1,
+      "chapter": 1,
       "location": "crestfall_tallow_inn",
       "title": "The Door Closed",
-      "on_enter": { "state_changes": { "flags": { "aldous_closed_off": true } }, "time_advance": 5 },
+      "on_enter": {
+        "state_changes": {
+          "flags": {
+            "aldous_closed_off": true
+          }
+        },
+        "time_advance": 5
+      },
       "requires": {},
       "text": {
         "default": "The key is in your hand. Aldous has found something behind the bar that requires his complete attention. The three men at their separate tables have the stillness of people pretending they did not hear anything.\n\nYou take the stairs.\n\nThe room is four coins of silence and a window that looks out onto a street that is not moving. You sit on the bed. The name — your missing person's name — is sitting in this inn somewhere between Aldous's teeth and his conscience, and tonight it is staying there.\n\nYou have been back in Crestfall for less than an hour and you have already made a mistake. You file it. You will not make it the same way twice.",
@@ -401,20 +582,31 @@
             "default": {
               "text": "You sleep with the discipline of someone who has learned to rest even when their mind is elsewhere. In the morning, Crestfall.",
               "next_scene": "act1_ch1_tallow_room",
-              "state_changes": { "world": { "time_of_day": "morning" } }
+              "state_changes": {
+                "world": {
+                  "time_of_day": "morning"
+                }
+              }
             }
           }
         }
       ]
     },
-
     {
       "id": "act1_ch1_still_man",
-      "act": 1, "chapter": 1,
+      "act": 1,
+      "chapter": 1,
       "location": "crestfall_tallow_inn",
       "title": "The Man By The Fire",
-      "on_enter": { "state_changes": {}, "time_advance": 20 },
-      "requires": { "flags": { "noticed_still_man": true } },
+      "on_enter": {
+        "state_changes": {},
+        "time_advance": 20
+      },
+      "requires": {
+        "flags": {
+          "noticed_still_man": true
+        }
+      },
       "text": {
         "default": "You approach the man by the fire carefully — not sneaking, just not announcing yourself, leaving him the option to ignore you if he wants it.\n\nHe does not take the option. His eyes track to you when you get close enough, which means he is aware of you, which means whatever this is, it is not sleep.\n\nHe is in his forties. A farmer's hands. His ale has gone completely flat and cold. He has been sitting here for a very long time.\n\n\"Evening,\" you say.\n\nHe opens his mouth. Closes it. Opens it again. \"Evening,\" he says, finally, like a word retrieved from somewhere deep and distant. His voice is perfectly normal. That makes it worse somehow.",
         "commander": "You take the direct approach. Pull a chair across from him and sit down.\n\nHe registers you. Takes a moment to find you, like something surfacing. His voice, when it comes, is entirely normal — the voice of a man who has forgotten how to modulate it to the situation.\n\n\"I know what you are looking at,\" he says quietly. \"My wife asks me the same way. With her eyes.\"\n\nHe looks at his hands. \"I can feel it, mostly. Like sitting in very cold water. After a while you stop noticing the cold.\"",
@@ -427,21 +619,33 @@
           "id": "ask_about_curse",
           "text": "Ask him what it feels like from inside.",
           "requires": {},
-          "roll": { "stat": "charisma", "dc": 9 },
+          "roll": {
+            "stat": "charisma",
+            "dc": 9
+          },
           "outcomes": {
             "success": {
               "text": "He tells you. Slowly, with the care of someone who has been trying to find the words for a long time and is grateful to have an audience willing to hear them.\n\nIt started as tiredness. Then a quality of distance — like watching your own life through glass. The wanting things stopped first. Then the caring about things. Then the noticing. He can still think but the thoughts feel borrowed, like wearing someone else's clothes.\n\n\"I do not want to go further in,\" he says. \"But I do not know how to go back, either.\" He looks at the fire. \"Some people go further in and they look peaceful. I think about that sometimes.\"",
               "next_scene": "act1_ch1_tallow_room",
               "state_changes": {
-                "flags": { "understands_curse_symptoms": true, "knows_still_man_is_wren": true },
-                "relationships": { "still_man_wren": { "closeness": 20 } }
+                "flags": {
+                  "understands_curse_symptoms": true,
+                  "knows_still_man_is_wren": true
+                },
+                "relationships": {
+                  "still_man_wren": {
+                    "closeness": 20
+                  }
+                }
               }
             },
             "success_at_cost": {
               "text": "He tries. Tiredness. Distance. Things that mattered stopping mattering. He trails off before he finishes and you are not sure if he forgot what he was saying or decided against finishing it.\n\n\"You should get your room,\" he says finally. \"Aldous keeps good rooms.\"",
               "next_scene": "act1_ch1_tallow_room",
               "state_changes": {
-                "flags": { "understands_curse_symptoms": true }
+                "flags": {
+                  "understands_curse_symptoms": true
+                }
               }
             },
             "failure": {
@@ -461,21 +665,34 @@
               "text": "You stand and go to the bar. Aldous watches you come. \"He has been like that for two months,\" he says quietly, without you asking. \"His name is Wren. He is a good man.\" A pause. \"Was. Is.\" He does not know which word is right.",
               "next_scene": "act1_ch1_tallow_room",
               "state_changes": {
-                "flags": { "knows_still_man_is_wren": true },
-                "relationships": { "innkeeper_aldous": { "closeness": 8 } }
+                "flags": {
+                  "knows_still_man_is_wren": true
+                },
+                "relationships": {
+                  "innkeeper_aldous": {
+                    "closeness": 8
+                  }
+                }
               }
             }
           }
         }
       ]
     },
-
     {
       "id": "act1_ch1_tallow_room",
-      "act": 1, "chapter": 1,
+      "act": 1,
+      "chapter": 1,
       "location": "crestfall_tallow_inn",
       "title": "Night in Crestfall",
-      "on_enter": { "state_changes": { "flags": { "first_night_complete": true } }, "time_advance": 360 },
+      "on_enter": {
+        "state_changes": {
+          "flags": {
+            "first_night_complete": true
+          }
+        },
+        "time_advance": 360
+      },
       "requires": {},
       "text": {
         "default": "The room is small and adequate. A bed, a window, a lamp with enough oil for two more hours if you are careful. The street below is empty.\n\nYou sit on the bed and let the day settle.\n\nYou are back in Crestfall. The town is wrong in ways that go past what eleven years of absence would explain. Someone you came here for was here fourteen months ago and is not here now. A woman named Maret may know where they went. The forest to the east is the direction everything points.\n\nOutside the window, the wind moves through a town that has stopped making most of its sounds. You try to remember what Crestfall sounded like at this hour and find that you can, mostly. That makes the present silence louder.\n\nYou put out the lamp. Sleep comes eventually.",
@@ -494,11 +711,20 @@
             "default": {
               "text": "You wake before dawn. Aldous is already behind the bar with a cup of something he does not offer to share. You take bread from the board by the door and step out into Crestfall.",
               "next_scene": "act1_ch2_morning_crestfall",
-              "state_changes": { "world": { "time_of_day": "morning", "day": 2 } }
+              "state_changes": {
+                "world": {
+                  "time_of_day": "morning",
+                  "day": 2
+                }
+              }
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "arcane": "replace",
+        "cipher": "replace"
+      }
     }
   ]
 }

@@ -60,6 +60,28 @@
   animation: npIn 0.55s ease 0.28s forwards;
 }
 
+/* class aside: a second voice, not a separate feature */
+.lens {
+  border-left: 1px solid var(--blue-mid);
+  padding-left: 20px;
+  margin: 4px 0 24px;
+  color: var(--text-main);
+  font-size: 17px;
+  line-height: 1.9;
+  opacity: 0;
+  animation: npIn 0.55s ease forwards;
+}
+.lens p { margin-bottom: 14px; }
+.lens p:last-child { margin-bottom: 0; }
+.lens em { color: var(--blue-ice); font-style: italic; }
+.lensLabel {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--blue-ice);
+  margin-bottom: 8px;
+}
+
 /* outcome block */
 .outcomeBlock {
   font-size: 17px;

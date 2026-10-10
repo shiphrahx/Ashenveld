@@ -4,11 +4,17 @@
   "scenes": [
     {
       "id": "act2_ch7_aftermath_crestfall",
-      "act": 2, "chapter": 7,
+      "act": 2,
+      "chapter": 7,
       "location": "east_road",
       "title": "Walking Back",
       "on_enter": {
-        "state_changes": { "world": { "curse_spread": -5, "day": 12 } },
+        "state_changes": {
+          "world": {
+            "curse_spread": -5,
+            "day": 12
+          }
+        },
         "time_advance": 120
       },
       "requires": {},
@@ -30,7 +36,11 @@
               "text": "You talk as you walk. Not about the ritual — about what happens next. Where they go from here. What Ashenveld looks like now that the sealing is done.\n\n\"I am not going back in,\" they say. \"The chamber. The ruins. I am done with it.\" A pause. \"I am ready to be done with it.\"\n\n\"Where do you want to go?\" you ask.\n\nThey think about this for a long time. The east road moves under your feet. The ordinary forest is around you.\n\n\"I do not know yet,\" they say. \"That might be the best thing that has happened to me in a year. Not knowing where I want to go.\"",
               "next_scene": "act2_ch7_crestfall_reception",
               "state_changes": {
-                "relationships": { "the_missing_person": { "closeness": 15 } }
+                "relationships": {
+                  "the_missing_person": {
+                    "closeness": 15
+                  }
+                }
               }
             }
           }
@@ -48,16 +58,23 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "cipher": "replace"
+      }
     },
-
     {
       "id": "act2_ch7_crestfall_reception",
-      "act": 2, "chapter": 7,
+      "act": 2,
+      "chapter": 7,
       "location": "crestfall_tallow_inn",
       "title": "Crestfall Learns",
       "on_enter": {
-        "state_changes": { "world": { "curse_spread": -3 } },
+        "state_changes": {
+          "world": {
+            "curse_spread": -3
+          }
+        },
         "time_advance": 30
       },
       "requires": {},
@@ -79,7 +96,11 @@
               "text": "You bring them upstairs. Aldous gives you the room at the end of the hall without being asked — he sees the fourteen months in your missing person's face and makes the immediate and correct assessment that what they need is not questions.\n\nYou close the door. The room is ordinary. The bed is ordinary. The window looks out onto the market square, which is beginning to receive the news in the specific way Crestfall receives things — slowly, then all at once.\n\nYour missing person sits on the bed and looks at the ordinary room for a long moment.\n\n\"It is very loud out there,\" they say.\n\n\"Yes,\" you say. \"You have been somewhere very quiet.\"\n\n\"For fourteen months,\" they say. And then, quietly: \"Thank you for coming.\"",
               "next_scene": "act2_ch7_vorne_reacts",
               "state_changes": {
-                "relationships": { "the_missing_person": { "closeness": 20 } }
+                "relationships": {
+                  "the_missing_person": {
+                    "closeness": 20
+                  }
+                }
               }
             }
           }
@@ -88,14 +109,23 @@
           "id": "manage_the_information",
           "text": "Manage the information. Get ahead of the story before the factions shape it.",
           "requires": {},
-          "roll": { "stat": "charisma", "dc": 12 },
+          "roll": {
+            "stat": "charisma",
+            "dc": 12
+          },
           "outcomes": {
             "success": {
               "text": "You move through the Tallow and through the market with the efficiency of someone who understands that the first hour after significant news is the hour that shapes everything that follows.\n\nYou give Aldous the version that Crestfall needs. You send word to the Rootless camp through the fastest available means. You go to the Compact post and ask to speak with Vorne directly before Seriva reaches him.\n\nBy the time Seriva arrives back in Crestfall, the version of events that serves Ashenveld best is already established in three separate locations. She can modify it. She cannot replace it.",
               "next_scene": "act2_ch7_vorne_reacts",
               "state_changes": {
-                "flags": { "information_managed": true },
-                "factions": { "rootless": { "reputation": 10 } }
+                "flags": {
+                  "information_managed": true
+                },
+                "factions": {
+                  "rootless": {
+                    "reputation": 10
+                  }
+                }
               }
             },
             "success_at_cost": {
@@ -106,20 +136,28 @@
             "failure": {
               "text": "The information environment moves faster than you do. By the time you are thinking about management, Seriva's soldiers have already debriefed with Vorne. The story in the Compact post is Seriva's story.\n\nYou will need to correct it. That is harder than preventing it.",
               "next_scene": "act2_ch7_vorne_reacts",
-              "state_changes": { "flags": { "seriva_version_established": true } }
+              "state_changes": {
+                "flags": {
+                  "seriva_version_established": true
+                }
+              }
             }
           }
         }
       ]
     },
-
     {
       "id": "act2_ch7_vorne_reacts",
-      "act": 2, "chapter": 7,
+      "act": 2,
+      "chapter": 7,
       "location": "crestfall_compact_post",
       "title": "Vorne's Response",
       "on_enter": {
-        "state_changes": { "world": { "curse_spread": 2 } },
+        "state_changes": {
+          "world": {
+            "curse_spread": 2
+          }
+        },
         "time_advance": 30
       },
       "requires": {},
@@ -135,28 +173,52 @@
           "id": "propose_compact_withdrawal",
           "text": "Propose that the Compact's work here is complete. They can withdraw.",
           "requires": {},
-          "roll": { "stat": "charisma", "dc": 14 },
+          "roll": {
+            "stat": "charisma",
+            "dc": 14
+          },
           "outcomes": {
             "success": {
               "text": "You lay it out for him plainly.\n\nThe curse is sealed. The Compact's stated objective — stopping the spread — has been achieved. The mechanism is secured in the sense that it is no longer dangerous. There is nothing for thirty soldiers to do in Crestfall that thirty soldiers need to do.\n\nHe is quiet for a long time.\n\n\"My daughter,\" he says.\n\n\"The Rootless camp is the best place for her,\" you say. \"The sealing has changed her prognosis. With time and the camp's methods, she may recover fully. But she needs to be there, not here, and she chose to be there.\"\n\nHe sits with this. Then: \"I will reduce the garrison. Keep ten soldiers here for stability during the transition. The rest will withdraw within the week.\"\n\nNot everything you asked for. More than you expected.",
               "next_scene": "act2_ch7_maret_and_missing",
               "state_changes": {
-                "flags": { "compact_partial_withdrawal": true },
-                "factions": { "iron_compact": { "reputation": 10 }, "rootless": { "reputation": 15 } }
+                "flags": {
+                  "compact_partial_withdrawal": true
+                },
+                "factions": {
+                  "iron_compact": {
+                    "reputation": 10
+                  },
+                  "rootless": {
+                    "reputation": 15
+                  }
+                }
               }
             },
             "success_at_cost": {
               "text": "He agrees to reduce the presence but not to withdraw. Ten soldiers become twenty. The checkpoint on the east road remains. The post remains. He is not leaving until Issa's situation is resolved.\n\n\"When she is recovered or clearly not going to recover,\" he says, \"I will withdraw fully.\"",
               "next_scene": "act2_ch7_maret_and_missing",
               "state_changes": {
-                "flags": { "compact_reduced_presence": true },
-                "factions": { "iron_compact": { "reputation": 5 } }
+                "flags": {
+                  "compact_reduced_presence": true
+                },
+                "factions": {
+                  "iron_compact": {
+                    "reputation": 5
+                  }
+                }
               }
             },
             "failure": {
               "text": "He does not accept the proposal. He is not leaving until he has a complete assessment of the ruins and the mechanism — what it is, what it contains, what risk it continues to pose in its sealed state.\n\n\"The Compact has a responsibility to this region,\" he says. \"That responsibility does not end because one element of the threat has been addressed.\"",
               "next_scene": "act2_ch7_maret_and_missing",
-              "state_changes": { "factions": { "iron_compact": { "reputation": -5 } } }
+              "state_changes": {
+                "factions": {
+                  "iron_compact": {
+                    "reputation": -5
+                  }
+                }
+              }
             }
           }
         },
@@ -170,22 +232,33 @@
               "text": "This he considers differently. Documentation — the detailed account of what is in the ruins, what the mechanism is, the sealing ritual and its requirements — this has value to the Compact beyond the military mission. It is the kind of information that justifies the deployment retrospectively.\n\n\"Everything,\" he says. \"Complete documentation. The ritual. The mechanism's specifications. The language of the original text.\"\n\n\"Yes,\" you say. Your missing person has fourteen months of notes. Pol has fifteen years of scholarship. Between the two of them, the documentation will be complete.\n\n\"Two weeks,\" he says. \"I will withdraw when the documentation is delivered.\"\n\nYou shake his hand.",
               "next_scene": "act2_ch7_maret_and_missing",
               "state_changes": {
-                "flags": { "documentation_deal": true, "compact_withdrawal_agreed": true },
-                "factions": { "iron_compact": { "reputation": 20 } }
+                "flags": {
+                  "documentation_deal": true,
+                  "compact_withdrawal_agreed": true
+                },
+                "factions": {
+                  "iron_compact": {
+                    "reputation": 20
+                  }
+                }
               }
             }
           }
         }
       ]
     },
-
     {
       "id": "act2_ch7_maret_and_missing",
-      "act": 2, "chapter": 7,
+      "act": 2,
+      "chapter": 7,
       "location": "rootless_camp",
       "title": "The Reunion at the Camp",
       "on_enter": {
-        "state_changes": { "world": { "curse_spread": -2 } },
+        "state_changes": {
+          "world": {
+            "curse_spread": -2
+          }
+        },
         "time_advance": 60
       },
       "requires": {},
@@ -207,7 +280,11 @@
               "text": "Issa is in the tent that has become hers. She is awake — more awake than you have seen her, the gap between thought and expression smaller today.\n\n\"Something changed,\" she says when she sees you. Not a question.\n\n\"Yes,\" you say. \"The source of the curse has been sealed. It will not spread further. And what is already in you—\" you pause. \"The camp's methods can work with less resistance now.\"\n\nShe looks at her hands. The grey at her fingertips is still there. You do not lie about whether it will go away.\n\n\"My father came this morning,\" she says. \"He looked at me and he did not say anything. He just — looked.\"\n\n\"Yes,\" you say. \"That sounds like him.\"",
               "next_scene": "act2_ch8_faction_reckoning",
               "state_changes": {
-                "relationships": { "issa_vorne": { "closeness": 20 } }
+                "relationships": {
+                  "issa_vorne": {
+                    "closeness": 20
+                  }
+                }
               }
             }
           }
@@ -216,14 +293,23 @@
           "id": "speak_to_lira",
           "text": "Speak to Lira. Find out what the sealing feels like from the inside.",
           "requires": {},
-          "roll": { "stat": "charisma", "dc": 9 },
+          "roll": {
+            "stat": "charisma",
+            "dc": 9
+          },
           "outcomes": {
             "success": {
               "text": "Lira sits with you in the herb garden.\n\n\"It is quieter,\" she says. Not the curse's effect — she means the ambient, the quality of the air. \"For three years it has been—\" She stops. \"Like a noise you get used to. You do not notice it until it changes.\" A pause. \"It changed this morning. It is quieter. I noticed.\"\n\nShe looks at the plants. \"I remembered something today that I have not remembered in two years,\" she says. \"My mother's face. I had forgotten what she looked like. This morning I remembered.\"\n\nShe does not cry. She says it the way she says most things — as a fact, as data, as something she is holding carefully because the holding matters.",
               "next_scene": "act2_ch8_faction_reckoning",
               "state_changes": {
-                "flags": { "lira_recovering": true },
-                "relationships": { "lira": { "closeness": 20 } }
+                "flags": {
+                  "lira_recovering": true
+                },
+                "relationships": {
+                  "lira": {
+                    "closeness": 20
+                  }
+                }
               }
             },
             "success_at_cost": {
@@ -238,7 +324,10 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "ranger": "replace"
+      }
     }
   ]
 }
