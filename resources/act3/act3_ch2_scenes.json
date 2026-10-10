@@ -864,7 +864,8 @@
           "Mornings at the camp with Maret and Branch. Afternoons in town, in the Compact post or the shrine or the market, doing the work of rebuilding that requires someone to move between the different parts of Crestfall's power structure without being captured by any of them.",
           "You are good at this. You have always been good at this. You are doing it alone, which is not new, and doing it in a place you care about, which is.",
           "The absence of [missing person] is present. You carry it the way you carry a weight you have decided to carry — consciously, without pretending it is not there.",
-          "Maret checks on you every three days. Not obviously. She is in the same place you are, at the same time, sometimes with a cup of something. You let her."
+          "Maret checks on you every three days. Not obviously. She is in the same place you are, at the same time, sometimes with a cup of something. You let her.",
+          "On the twentieth day Branch and two others carry the Watcher in from the gate stones on a litter. He does not resist. Pol puts him in the tent nearest the fire, and he sits in it exactly as he sat against the stone, knees drawn up, face turned away."
         ],
         "commander": "Vorne respects you. Not warmly — professionally. He has seen what you did in the ruins, what you achieved in the negotiations, what you have done in the three weeks since.\n\nHe offers you a formal position in the Compact's regional administration. Not a military one. An advisory role. Access to resources, to the Compact's communication network, to the institutional reach that makes the work you are doing more effective.\n\nYou think about what it would cost. What it would give. You do not decide today.",
         "arcane": "Pol has become the closest thing you have to a collaborator in the work since [missing person] left.\n\nShe is methodical where you are ambitious. She corrects your overclaiming with the specific precision of someone who has spent forty years distinguishing between what is known and what is believed. Working with her is humbling in the best possible way.\n\nYou are producing work in Ashenveld that will matter. That is not nothing. You hold onto it on the days when what you have given up is loudest.",
@@ -936,6 +937,86 @@
                   "lira": {
                     "closeness": 8
                   }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "give_him_a_task",
+          "text": "Give him a task, as you would a new recruit.",
+          "requires": {
+            "class": "commander"
+          },
+          "roll": null,
+          "locked_hint": "Commander only",
+          "outcomes": {
+            "default": {
+              "text": "You put a basket of kindling beside him every morning and tell him the fire needs it by noon. On the fourth day the basket is empty and the kindling is stacked by the fire, crosswise, the way they stack it in Harrow.",
+              "next_scene": "act3_ch3_alone_continues",
+              "state_changes": {
+                "flags": {
+                  "joren_reached": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "listen_for_what_is_left",
+          "text": "Sit with him and listen for what the ruins left.",
+          "requires": {
+            "class": "arcane"
+          },
+          "roll": null,
+          "locked_hint": "Arcane only",
+          "outcomes": {
+            "default": {
+              "text": "The note in him is loud, louder than in anyone, and under it, very small, something else. A tune. Somebody's mother sang it. You hum it back to him, badly, and his head turns.",
+              "next_scene": "act3_ch3_alone_continues",
+              "state_changes": {
+                "flags": {
+                  "joren_reached": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "walk_the_perimeter_with_him",
+          "text": "Walk him round the camp's edge every morning.",
+          "requires": {
+            "class": "ranger"
+          },
+          "roll": null,
+          "locked_hint": "Ranger only",
+          "outcomes": {
+            "default": {
+              "text": "You take his arm and walk. He comes. After a week he stops at the same place every morning, on the east side, where you can see down to the road, and looks at it.",
+              "next_scene": "act3_ch3_alone_continues",
+              "state_changes": {
+                "flags": {
+                  "joren_reached": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "watch_what_he_looks_at",
+          "text": "Watch what he looks at when he thinks nobody sees.",
+          "requires": {
+            "class": "cipher"
+          },
+          "roll": null,
+          "locked_hint": "Cipher only",
+          "outcomes": {
+            "default": {
+              "text": "Not the forest. Not the fire. Lira's hands, when she ties her knots. He watches them every time. You ask Lira to teach him. She does.",
+              "next_scene": "act3_ch3_alone_continues",
+              "state_changes": {
+                "flags": {
+                  "joren_reached": true
                 }
               }
             }

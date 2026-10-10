@@ -177,13 +177,57 @@
         }
       },
       "text": {
-        "default": "Six weeks alone in Ashenveld.\n\nThis is the accounting you make on day forty-five:\n\nThe Rootless camp is the strongest institution in Ashenveld's recovery. Maret is the most important person in the region. Branch has become someone who can do what you do in specific contexts. Lira is recovering — slowly, unevenly, but the direction is real.\n\nThe Watcher from the ruins gate is at the camp. They have a name now. Joren. You found it in the old man's papers from Harrow. They respond to it sometimes. Not reliably. But sometimes.\n\nThe fountain is running.\n\nYou did all of this. With everyone here, but also because you stayed and used yourself in service of it. That is real. That counts.",
+        "default": [
+          "Six weeks alone in Ashenveld.",
+          "This is the accounting you make on day forty-five:",
+          "The Rootless camp is the strongest institution in Ashenveld's recovery. Maret is the most important person in the region. Branch has become someone who can do what you do in specific contexts. Lira is recovering — slowly, unevenly, but the direction is real.",
+          "The Watcher from the ruins gate is at the camp. They have a name now. Joren. You found it in the old man's papers from Harrow. They respond to it sometimes. Not reliably. But sometimes.",
+          "The fountain is running.",
+          "You did all of this. With everyone here, but also because you stayed and used yourself in service of it. That is real. That counts.",
+          "In the sixth week Maret finds you in the garden with a folded paper in her hand. The list. It is softer than it was.",
+          "\"Keep it,\" she says. \"I am afraid that one morning I will forget it matters. If you have it, somebody will remember.\""
+        ],
         "commander": "Vorne's offer is still on the table. You have been thinking about it for a month.\n\nThe formal position in the regional administration would give you institutional reach and institutional constraints simultaneously. The reach is useful. The constraints are real.\n\nYou make the decision. You will tell Vorne tomorrow.\n\nWhat you decide is yours — it is yours.",
         "arcane": "You have built something in Ashenveld that will continue without you if you leave. The monitoring system. The documentation. The relationships with Pol and Branch and Lira.\n\nYou have also built something in yourself that will continue wherever you go. The knowledge of what the ritual required. What the mechanism showed you. What it means to be seen completely by something that does not judge.\n\nBoth things are real. Both are yours.",
         "ranger": "The hawk has a territory. The fountain is running. Lira went to the market alone twice in the last two weeks and came back with things she wanted rather than things she needed.\n\nThe world is recovering. You are part of why.\n\nYou think about the person you let leave. You think about the letter you wrote. You think about the letters they have sent back — ordinary, warm, describing places you have not been.\n\nYou think about these things and then you go check on the Watcher, because they are here and they need you to check on them, and being needed by someone who is here is what today contains.",
         "cipher": "Six weeks alone. Here is the honest accounting:\n\nYou are not unhappy. That was the first surprise.\n\nYou are doing meaningful work with people you respect in a place that matters. The person who is not here is not here, and that is real, and it coexists with the rest of it.\n\nThe second surprise: you are not done with Ashenveld. You thought you might be, at some point. You are not. There is more work here than you have capacity for. This is, you have decided, a good problem."
       },
       "choices": [
+        {
+          "id": "take_the_list",
+          "text": "Take the list.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You take it. She watches it go into your coat and lets out a breath.\n\n\"The first one,\" she says. \"Read me the first one, at new moon. That is all.\"",
+              "next_scene": "act3_ch5_endings",
+              "state_changes": {
+                "flags": {
+                  "holds_marets_list": true,
+                  "accounting_made": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "refuse_the_list",
+          "text": "Tell her to keep it. It is hers.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "\"It is yours,\" you say. \"You will not forget it matters. You wrote it down.\"\n\nShe looks at the paper for a long while, then puts it back inside her coat.",
+              "next_scene": "act3_ch5_endings",
+              "state_changes": {
+                "flags": {
+                  "accounting_made": true
+                }
+              }
+            }
+          }
+        },
         {
           "id": "make_the_accounting",
           "text": "Make the accounting. Honestly. Everything gained. Everything lost.",
