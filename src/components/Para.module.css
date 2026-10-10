@@ -1,5 +1,5 @@
 /* body: narration a touch quieter than speech */
-.body { color: color-mix(in srgb, var(--text-bright) 92%, transparent); }
+.body { color: rgba(204, 218, 236, 0.92); }   /* --text-bright at 92%; a plain rgba so contrast checks can read it */
 .said { quotes: none; color: var(--white-cold); }
 
 /* a letter: indented, a rule, italic */
