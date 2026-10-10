@@ -595,6 +595,21 @@
       "file": "act3_ch1_scenes.json",
       "act": 3,
       "chapter": 1
+    },
+    "act1_ch6_waystation_route": {
+      "file": "act1_ch6_scenes.json",
+      "act": 1,
+      "chapter": 6
+    },
+    "act1_ch6_waystation": {
+      "file": "act1_ch6_scenes.json",
+      "act": 1,
+      "chapter": 6
+    },
+    "act2_ch3_sen_river": {
+      "file": "act2_ch3_scenes.json",
+      "act": 2,
+      "chapter": 3
     }
   },
   "starting_scene": "act1_ch1_barge_arrival",

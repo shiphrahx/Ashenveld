@@ -100,7 +100,12 @@
       },
       "requires": {},
       "text": {
-        "default": "The barn has a cellar. Most barns do. This one has a cellar that was locked from the inside — not by a mechanism, by arrangement. Boxes stacked in a pattern that blocks the door and can only have been arranged by someone already inside.\n\nYou move the boxes. The cellar smells of old root vegetables and something else — a specific scent that you will later learn to associate with places where people stayed for a long time in a small space.\n\nThe cellar was occupied. Recently — within the last month or two. Someone lived down here while Harrow emptied above them. They stayed longer than anyone else. Long enough to carve things into the cellar wall.",
+        "default": [
+          "The barn has a cellar. Most barns do. This one has a cellar that was locked from the inside — not by a mechanism, by arrangement. Boxes stacked in a pattern that blocks the door and can only have been arranged by someone already inside.",
+          "You move the boxes. The cellar smells of old root vegetables and something else — a specific scent that you will later learn to associate with places where people stayed for a long time in a small space.",
+          "The cellar was occupied. Recently — within the last month or two. Someone lived down here while Harrow emptied above them. They stayed longer than anyone else. Long enough to carve things into the cellar wall.",
+          "Among the marks on the wall are figures. Small ones, the size of a thumb, a head and a body and no face, carved over and over. Dozens of them."
+        ],
         "commander": "The carvings are a map. You recognise it as such immediately — the spatial logic of it is military, the way significant points are marked, the proportions kept consistent.\n\nA map of the ruins. The accessible areas, the deeper areas. Points marked with small symbols you do not know the meaning of yet.\n\nSomeone made a detailed survey of the ruins and then came back to Harrow and drew it from memory in a cellar wall before eventually going east again.",
         "arcane": "The carvings are a schematic. Not a map — a diagram of the power structure of the ruins. Someone with significant working knowledge has mapped the curse's source, the channels through which it spreads, the points where it concentrates.\n\nThe symbols are from a tradition you half-recognise — older than any active school of practice, pre-Covenant. Someone read the old texts and used what they found.",
         "ranger": "The carvings are a guide. Not a map — a survival guide. This location is safe, this location is not. This path stays outside the deepest effect. This point is where the ground starts to feel wrong. This is where the animals gather.\n\nSomeone spent time in those ruins learning how to move through them and then came here to write down what they learned.",
@@ -315,10 +320,27 @@
             },
             "text": "You watched her talk to the trees a moment ago. She knows you did."
           },
-          "She stands at the forest edge — on whichever side of the line you are — and looks at you and at the trees. Her pack is full. She is dressed for several days of travel.",
+          {
+            "when": {
+              "flags": {
+                "crossed_into_forest_first": true
+              }
+            },
+            "text": "She stops on the ordinary side of the line and looks at you standing in the silence. Her pack is full. She is dressed for several days of travel.",
+            "else": "She stops beside you, an arm's length short of the line, and looks at the trees. Her pack is full. She is dressed for several days of travel."
+          },
           "\"Why are you here?\" you say.",
           "She takes a breath. \"Because I sent them in,\" she says. \"Because it has been fourteen months and I have been telling myself they made their choice and I had to respect it. And because I woke up this morning and could not respect it anymore.\"",
           "She looks at the line. \"I know this place. I have been to the outskirts. I know more about what is in there than anyone except the people who went in and did not come back.\" She looks at you. \"You need that. And I owe it.\"",
+          {
+            "when": {
+              "flags": {
+                "maret_letter_withheld": true,
+                "maret_letter_obtained": false
+              }
+            },
+            "text": "She is holding the letter. \"This is yours,\" she says. \"I was wrong to keep it.\""
+          },
           "It is new moon tomorrow. She should be at the tree line by the camp."
         ],
         "commander": "\"You are not a soldier,\" you say.\n\n\"No,\" she says. \"But I have kept twenty-three people alive in a camp next to the worst outbreak zone in this region for three years. I know how to manage difficult ground.\" A pause. \"And I know when a decision I made needs to be corrected.\"\n\nShe waits for you to decide.",
@@ -342,7 +364,8 @@
               "next_scene": "act1_ch7_maret_confession",
               "state_changes": {
                 "flags": {
-                  "maret_joined": true
+                  "maret_joined": true,
+                  "maret_letter_obtained": true
                 },
                 "relationships": {
                   "maret": {
@@ -365,7 +388,8 @@
               "next_scene": "act1_ch7_decision_enter",
               "state_changes": {
                 "flags": {
-                  "maret_sent_back": true
+                  "maret_sent_back": true,
+                  "maret_letter_obtained": true
                 },
                 "inventory": [
                   "maret_outskirts_notes"
@@ -458,7 +482,22 @@
       },
       "requires": {},
       "text": {
-        "default": "This is where you are.\n\nBehind you: Crestfall, three days' walk. Maret's camp. Three factions each with their version of what this place is and what should be done about it. The letter, if you have it. The things you built in three days and left in the care of the people you built them with.\n\nAhead: the ruins, under the dark forest. [missing person], fourteen months in. The source of the curse. The knowledge of what was sealed here and why.\n\nYou stand at the threshold. Not deciding — you already decided. Locating yourself. The way you do when you want to be sure you know where you started before you go somewhere you might not come back from.\n\nYou know where you started.\n\nYou go forward.",
+        "default": [
+          "This is where you are.",
+          {
+            "when": {
+              "flags": {
+                "maret_letter_obtained": true
+              }
+            },
+            "text": "Behind you: Crestfall, three days' walk. Maret's camp. Three factions each with their version of what this place is and what should be done about it. The letter, folded inside your coat. The things you built in three days and left in the care of the people you built them with.",
+            "else": "Behind you: Crestfall, three days' walk. Maret's camp. Three factions each with their version of what this place is and what should be done about it. The letter Maret would not give you. The things you built in three days and left in the care of the people you built them with."
+          },
+          "Ahead: the ruins, under the dark forest. [missing person], fourteen months in. The source of the curse. The knowledge of what was sealed here and why.",
+          "You stand at the threshold. Not deciding — you already decided. Locating yourself. The way you do when you want to be sure you know where you started before you go somewhere you might not come back from.",
+          "You know where you started.",
+          "You go forward."
+        ],
         "commander": "The last thought before you move is the same thought you have before every significant action: the objective is clear, the resources are what they are, and hesitation now costs more than proceeding.\n\nYou proceed.",
         "arcane": "The last entry in your journal, written while there is still enough light:\n\nThe source is ahead. The effect on the ambient intensifies with every step. Whatever was sealed here was sealed for good reason. I am going in to find out what the reason was and whether the sealing can be restored.\n\nI am also going in because someone I came back to Ashenveld for is in there and I am not the kind of person who can leave that alone.\n\nBoth of those things are true. I note that both are true.\n\nYou close the journal and go forward.",
         "ranger": "You go forward the way you enter any unknown territory: alert to everything, committed to nothing except the direction, reading as you move rather than standing and reading before you move.\n\nThe objective is in there. You are the person who is going to find it.",

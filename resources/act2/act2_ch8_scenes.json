@@ -34,6 +34,14 @@
             "else": "The curse is still present in Ashenveld — it does not evaporate in seventy-two hours. But it is no longer spreading. The ambient in Crestfall has shifted noticeably. People who have been having the episodes are having them less frequently and with shorter duration. The grey at Issa's fingertips has not disappeared but it has not progressed."
           },
           "The factions are regrouping. This is the part that comes after every significant event — the negotiation of what it means and who gets credit for it and what happens next.",
+          {
+            "when": {
+              "flags": {
+                "seriva_agreement": true
+              }
+            },
+            "text": "Seriva's bargain is already working. The grey flag is down from the alderman's hall."
+          },
           "Vorne has his assessment. Seriva has hers. The Rootless camp has its position. And you have decisions to make about what happens to Ashenveld and your place in it.",
           "The point of no return is coming."
         ],
@@ -91,7 +99,21 @@
           },
           "outcomes": {
             "success": {
-              "text": "It takes most of a day to get them all in the same room.\n\nVorne. Maret. Seriva. Edric.\n\nYou broker for three hours and find the formulation that gives each party enough of what they need to accept it.\n\nVorne gets the documentation and formal credit for the Compact's stabilising role. Seriva gets the Covenant formally absolved — the story becomes that the sealing deteriorated over time, not that she damaged it. The Rootless camp gets recognition and resource access. Edric gets a limited ongoing advisory presence.\n\nIt is not justice. It is an arrangement the people in the room can live with, which is the closest thing to justice that group negotiations produce.",
+              "text": [
+                "It takes most of a day to get them all in the same room.",
+                "Vorne. Maret. Seriva. Edric.",
+                "You broker for three hours and find the formulation that gives each party enough of what they need to accept it.",
+                {
+                  "when": {
+                    "flags": {
+                      "seriva_admitted_guilt": true
+                    }
+                  },
+                  "text": "Vorne gets the documentation and formal credit for the Compact's stabilising role. Seriva admits it in the room, in front of all of them: she broke the seal twenty years ago. Nobody absolves the Covenant of anything. The Rootless camp gets recognition and resource access. Edric gets a limited ongoing advisory presence.",
+                  "else": "Vorne gets the documentation and formal credit for the Compact's stabilising role. Seriva gets the Covenant formally absolved — the story becomes that the sealing deteriorated over time, not that she damaged it. The Rootless camp gets recognition and resource access. Edric gets a limited ongoing advisory presence."
+                },
+                "It is not justice. It is an arrangement the people in the room can live with, which is the closest thing to justice that group negotiations produce."
+              ],
               "next_scene": "act2_ch8_relationship_test",
               "state_changes": {
                 "flags": {

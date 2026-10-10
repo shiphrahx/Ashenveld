@@ -17,7 +17,8 @@
       "secret": "He saw the missing person leave with a Rootless woman the night before they disappeared into the forest.",
       "initial_closeness": 0,
       "faction_alignment": "none",
-      "read": "He watches the door more than the room. Whatever he is waiting for, it is not a customer."
+      "read": "He watches the door more than the room. Whatever he is waiting for, it is not a customer.",
+      "secret_unused": true
     },
     "maret": {
       "id": "maret",
@@ -41,7 +42,8 @@
       "initial_closeness": 0,
       "faction_alignment": "rootless",
       "archetype": "dependent",
-      "read": "Her hands keep working while she talks. When they stop, she has lost the thread."
+      "read": "Her hands keep working while she talks. When they stop, she has lost the thread.",
+      "secret_unused": true
     },
     "branch": {
       "id": "branch",
@@ -97,7 +99,8 @@
       "secret": "He saw the missing person and the Rootless woman together, the night before they went east.",
       "initial_closeness": 5,
       "faction_alignment": "none",
-      "read": "He tells you more than he means to, and he knows exactly how much."
+      "read": "He tells you more than he means to, and he knows exactly how much.",
+      "secret_unused": true
     },
     "hanna": {
       "id": "hanna",
@@ -108,7 +111,8 @@
       "secret": "She has been supplementing the Rootless camp with grain she writes off the books. If the Compact found out she would lose her stall.",
       "initial_closeness": 0,
       "faction_alignment": "none",
-      "read": "She weighs the grain twice. She does not trust her own hands any more."
+      "read": "She weighs the grain twice. She does not trust her own hands any more.",
+      "secret_unused": true
     },
     "still_man_wren": {
       "id": "still_man_wren",
@@ -119,7 +123,8 @@
       "secret": "He went to the forest edge alone six months ago, touched something, and came back changed. He has told no one.",
       "initial_closeness": 0,
       "faction_alignment": "none",
-      "read": "Somebody is still in there. He turns his cup so the handle faces the fire."
+      "read": "Somebody is still in there. He turns his cup so the handle faces the fire.",
+      "secret_unused": true
     }
   },
   "locations": {

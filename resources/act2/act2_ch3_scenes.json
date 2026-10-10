@@ -21,7 +21,28 @@
       },
       "requires": {},
       "text": {
-        "default": "Morning in the outskirts. The grey light that passes for dawn here.\n\nYou wake to find [missing person] already up, sitting near the remnants of last night's fire, reading from their journal — the fourteen months of notes, translations, observations. They look like someone who has forgotten what mornings used to involve.\n\nMaret — if she came with you — has news from the camp. A runner arrived during the night. Someone from Crestfall, moving fast.\n\nIf Maret is not with you: [missing person]'s expression when you wake tells you something has changed. They have been up for hours and they have been thinking.\n\nEither way, the news is the same: Commander Vorne has arrived in Crestfall. He has brought thirty soldiers and a scholar — a woman named Seriva — and he has issued a notice to the town that the east road is now under Compact control. Nobody goes east without Compact authorisation.",
+        "default": [
+          "Morning in the outskirts. The grey light that passes for dawn here.",
+          "You wake to find [missing person] already up, sitting near the remnants of last night's fire, reading from their journal — the fourteen months of notes, translations, observations. They look like someone who has forgotten what mornings used to involve.",
+          {
+            "when": {
+              "flags": {
+                "maret_joined": true
+              }
+            },
+            "text": "Maret is crouched at the edge of the clearing with a boy from the camp. He ran most of the night. She listens, sends him to the fire, and comes to you.",
+            "else": "A boy from the Rootless camp is sitting by the fire with a blanket round his shoulders. Maret sent him. He ran most of the night."
+          },
+          "The news: Commander Vorne has arrived in Crestfall. He has brought thirty soldiers and a scholar, a woman named Seriva, and he has issued a notice to the town that the east road is now under Compact control. Nobody goes east without Compact authorisation.",
+          {
+            "when": {
+              "flags": {
+                "knows_vorne_is_coming": true
+              }
+            },
+            "text": "You knew. You read the order on the road."
+          }
+        ],
         "commander": "Thirty soldiers. A forward command established in the granary. A scholarly resource travelling with military protection.\n\nVorne is not here to assess. He is here to act. The period of patience has ended and the Compact has decided it has collected enough data.\n\nYou think about what Cael told you — Commander Vorne is waiting for enough data to act. Vorne has decided he has enough.",
         "arcane": "Seriva. You have been thinking about Seriva since [missing person] mentioned her name in connection with the mechanism's fracture.\n\nA senior Covenant scholar travelling with the Iron Compact is not a natural alliance. The Covenant and the Compact have been in institutional competition for the region's resources for decades. For Seriva to be working with Vorne means either she has been working with him for a long time, or the situation has changed dramatically enough that old competitors have become temporary allies.\n\nOr she is not working with him. She is using him.",
         "ranger": "Thirty soldiers on the east road means the east road is closed. Which means anyone in the ruins who wants to return to Crestfall will have to explain their presence to the Compact. Which means you will have to explain your presence to the Compact.\n\nYou begin thinking about alternative routes out of the ruins that avoid the east road entirely.",
@@ -35,7 +56,21 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "[missing person] looks at you when you say this. Something in their face moves — not objection, something more complicated.\n\n\"If you go back,\" they say, \"and the Compact closes the road properly, you may not be able to return.\"\n\n\"I know,\" you say.\n\nA pause. \"Then go,\" they say. \"Come back. I will be here.\"\n\nThey say it simply, with the quality of someone who has spent fourteen months waiting and has become good at it. You leave the outskirts and head west.",
+              "text": [
+                "[missing person] looks at you when you say this. Something in their face moves — not objection, something more complicated.",
+                "\"If you go back,\" they say, \"and the Compact closes the road properly, you may not be able to return.\"",
+                "\"I know,\" you say.",
+                "A pause. \"Then go,\" they say. \"Come back. I will be here.\"",
+                "They say it simply, with the quality of someone who has spent fourteen months waiting and has become good at it. You leave the outskirts and head west.",
+                {
+                  "when": {
+                    "flags": {
+                      "maret_joined": true
+                    }
+                  },
+                  "text": "Maret shoulders her pack without being asked. \"I am coming,\" she says. \"My people are under that notice.\""
+                }
+              ],
               "next_scene": "act2_ch3_compact_checkpoint",
               "state_changes": {
                 "flags": {
@@ -226,7 +261,28 @@
         }
       },
       "text": {
-        "default": "The Compact checkpoint is two miles east of Crestfall, at the point where the cobblestone begins. A barricade of timber, two soldiers, a small fire.\n\nThey see you before you see them, which means they were watching. When you get close enough to talk, one of them steps forward with the specific posture of someone following a procedure.\n\n\"East road is under Compact jurisdiction,\" he says. \"State your name, your origin, and your purpose for travel.\"",
+        "default": [
+          "The Compact checkpoint is two miles east of Crestfall, at the point where the cobblestone begins. A barricade of timber, two soldiers, a small fire.",
+          {
+            "when": {
+              "flags": {
+                "stayed_for_lesson": true
+              }
+            },
+            "text": "You stayed a day longer in the ruins than was wise. The barricade is taller than the runner described."
+          },
+          "They see you before you see them, which means they were watching. When you get close enough to talk, one of them steps forward with the specific posture of someone following a procedure.",
+          "\"East road is under Compact jurisdiction,\" he says. \"State your name, your origin, and your purpose for travel.\"",
+          {
+            "when": {
+              "flags": {
+                "compact_allied": true,
+                "compact_message_delivered": false
+              }
+            },
+            "text": "\"Cael is asking about a packet,\" the other soldier says, to nobody in particular."
+          }
+        ],
         "commander": "You assess the checkpoint in the first three seconds. Two soldiers visible, probably two more within call. The barricade is solid but not permanent — it is designed to be moved, which means it is also designed to be passed under the right conditions.\n\nYou give your name. You state your origin and purpose in terms that are true but selective. The soldier writes things down.",
         "arcane": "Someone chose this spot. It is not the most defensible point on the road. It is the most visible, from both directions.\n\nThis checkpoint is not about security. It is about being seen.",
         "ranger": "You approach the checkpoint at a pace that communicates: I know you are there, I am not trying to avoid you, I have nothing to hide. This pace is not natural to you in most situations. You adopt it consciously.\n\nThe soldier steps forward. You note the second soldier's hand position relative to their weapon. Relaxed. This is not an aggressive deployment.",
@@ -258,6 +314,15 @@
                 },
                 "value": -2,
                 "label": "The Compact does not trust you"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "compact_message_undelivered": true
+                  }
+                },
+                "value": -2,
+                "label": "Cael is still waiting for his packet"
               }
             ]
           },
@@ -318,7 +383,7 @@
               }
             },
             "success_at_cost": {
-              "text": "You get round, but not cleanly. A branch cracks and one of the soldiers turns and looks at the trees for a long time. You wait in the wet until he turns back. By the time you reach the cobbles the light is going.",
+              "text": "You get round, but not cleanly. A branch cracks and one of the soldiers turns and stares into the trees. You wait in the wet until he turns back. By the time you reach the cobbles the light is going.",
               "next_scene": "act2_ch3_crestfall_changed",
               "state_changes": {
                 "flags": {
@@ -351,7 +416,7 @@
           "text": "Invoke your existing relationship with the Compact. You have been working with Cael.",
           "requires": {
             "flags": {
-              "compact_allied": true
+              "compact_message_delivered": true
             }
           },
           "roll": null,
@@ -362,7 +427,7 @@
               "state_changes": {}
             }
           },
-          "locked_hint": "Needs Cael's commission"
+          "locked_hint": "Needs Cael's packet delivered"
         },
         {
           "id": "waved_through",
@@ -482,7 +547,9 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "The camp is still there — you were not sure it would be. Maret, if she came back with you, is already there. Branch is at the edge, watching the town with the quality of someone who has been watching for a while and does not like what they see.",
+              "text": [
+                "The camp is still there — you were not sure it would be. Maret is already there. Branch is at the edge, watching the town with the quality of someone who has been watching for a while and does not like what they see."
+              ],
               "next_scene": "act2_ch3_rootless_situation",
               "state_changes": {}
             }
@@ -526,6 +593,117 @@
               }
             }
           }
+        },
+        {
+          "id": "find_sen",
+          "text": "Find Sen at the docks.",
+          "requires": {
+            "min_relationship": {
+              "dockworker_sen": 15
+            }
+          },
+          "roll": null,
+          "locked_hint": "Needs Sen to trust you",
+          "outcomes": {
+            "default": {
+              "text": "The docks are empty except for one figure at the end of the pier.",
+              "next_scene": "act2_ch3_sen_river",
+              "state_changes": {}
+            }
+          }
+        },
+        {
+          "id": "report_to_cael",
+          "text": "Report to Cael.",
+          "requires": {
+            "flags": {
+              "compact_allied": true
+            }
+          },
+          "roll": null,
+          "locked_hint": "Needs Cael's commission",
+          "outcomes": {
+            "default": {
+              "text": "Cael is at the granary door. He listens to as much as you choose to tell him and pays you the forty without counting it twice.\n\n\"The Commander will want to hear this himself,\" he says. \"He likes to know who has been where.\"",
+              "next_scene": "act2_ch3_aldous_update",
+              "state_changes": {
+                "resources": {
+                  "gold": 40
+                },
+                "factions": {
+                  "iron_compact": {
+                    "reputation": 10
+                  }
+                },
+                "flags": {
+                  "vorne_knows_player_was_in_ruins": true
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "act2_ch3_sen_river",
+      "act": 2,
+      "chapter": 3,
+      "location": "crestfall_docks",
+      "title": "What the River Saw",
+      "when": {
+        "part": "evening"
+      },
+      "on_enter": {
+        "state_changes": {}
+      },
+      "requires": {},
+      "text": {
+        "default": "Sen is on the end of the pier with a line in the water and no bait on it. He doesn't look round.\n\n\"Thought you'd come,\" he says. \"Or I hoped. One of those.\"\n\nYou sit on the edge beside him. The river goes by, black and slow.\n\n\"Three weeks before you came,\" he says. \"Bit more. There was a boat. Covered, no lamp. It didn't come in to the docks, it put in up there, by the old willows.\" He nods upstream without taking his eyes off the water. \"One person got off. A woman. Grey coat. She stood on the bank and looked at the town like she was counting it.\"\n\nHe winds the line in.\n\n\"I saw her in the square yesterday. With Vorne's lot. Walking like she'd only just got here.\""
+      },
+      "choices": [
+        {
+          "id": "thank_sen",
+          "text": "Thank him. Go and find Aldous.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "\"Don't thank me,\" he says. \"I didn't do anything. That's the trouble with this town.\"",
+              "next_scene": "act2_ch3_aldous_update",
+              "state_changes": {
+                "flags": {
+                  "knows_seriva_came_early": true
+                },
+                "relationships": {
+                  "dockworker_sen": {
+                    "closeness": 10
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "ask_why_he_kept_it",
+          "text": "\"Why didn't you tell anyone?\"",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "\"Who'd I tell?\" He looks at the water. \"Cael? He'd write it down. Edric? He'd pray about it.\" He casts the empty line again. \"You're the first one who's come back. I thought I'd wait for someone who came back.\"",
+              "next_scene": "act2_ch3_aldous_update",
+              "state_changes": {
+                "flags": {
+                  "knows_seriva_came_early": true
+                },
+                "relationships": {
+                  "dockworker_sen": {
+                    "closeness": 15
+                  }
+                }
+              }
+            }
+          }
         }
       ]
     },
@@ -551,7 +729,15 @@
           "Aldous tells you what he has seen in four days with the precision of a man who has been keeping a careful record in his head.",
           "Vorne arrived with thirty soldiers and the Covenant woman — Seriva — travelling as what he called an adviser. The Compact took three buildings without asking. They issued the east road notice within six hours of arrival.",
           "Seriva has been to the shrine twice. Each time she and Edric had a conversation that Edric visibly did not enjoy.",
-          "Wren — the still man who used to sit by the fire — is gone. He walked east four days ago, the morning after the Compact arrived, as if the commotion stirred something in him that directed him toward the forest. Nobody tried to stop him. Nobody knew what to do.",
+          {
+            "when": {
+              "flags": {
+                "knows_still_man_is_wren": true
+              }
+            },
+            "text": "Wren — the still man who used to sit by the fire — is gone. He walked east four days ago, the morning after the Compact arrived, as if the commotion stirred something in him that directed him toward the forest. Nobody tried to stop him. Nobody knew what to do.",
+            "else": "The still man by the fire is gone. You never learned his name. Aldous tells it to you now: Wren. He walked east four days ago, the morning after the Compact arrived, as if the commotion stirred something in him that directed him toward the forest. Nobody tried to stop him. Nobody knew what to do."
+          },
           "\"How many others?\" you ask.",
           "Aldous sets down his cloth. \"Since you left? Six. All east.\"",
           {
@@ -640,7 +826,15 @@
           "Branch is at the perimeter. Lira is at the centre of the camp with two other partially afflicted members, maintaining the routine that Maret has established for them. And in the corner of the camp, in a tent that has been made as comfortable as any tent in this collection can be, is a girl of about seventeen with grey at her fingertips and the specific vacant quality of early curse exposure.",
           "Issa Vorne. Commander Vorne's daughter.",
           "She does not know who you are. She looks at you when you approach with the unfocused attention of the early stages — not gone, not present, somewhere in between.",
-          "The herb garden has started to yellow along one edge. Branch has noticed. He has laid a row of stones along it, as if that would help."
+          "The herb garden has started to yellow along one edge. Branch has noticed. He has laid a row of stones along it, as if that would help.",
+          {
+            "when": {
+              "flags": {
+                "maret_sent_back": true
+              }
+            },
+            "text": "Maret, without looking up: \"You were right to send me back. I have not forgiven you for it.\""
+          }
         ],
         "commander": "You assess Issa with the professional eye. Early stage affliction — the fingertips, the attention. Not beyond treatment, possibly. Maret's methods have slowed the progression in others at this stage.\n\nBut Issa Vorne at the Rootless camp is a political problem of the first order. If Vorne knows she is here, his next action will be shaped by it entirely. If he does not know she is here, someone will tell him soon.",
         "arcane": "The affliction on Issa is readable. Recent — the past two weeks, not longer. The density is low enough that it is still in the stage where external intervention can slow the progression.\n\nThe relevant question is whether Commander Vorne knows that the Rootless camp is the safest place for his daughter right now, and whether knowing it would change his behaviour toward the camp.",
@@ -823,7 +1017,20 @@
       },
       "requires": {},
       "text": {
-        "default": "Seriva is at the shrine when you find her, or she allows herself to be found there, which amounts to the same thing.\n\nShe is in her sixties, compact, with the bearing of someone who has spent decades in rooms where other people defer to them and has stopped needing the deference to feel it is owed. She looks at you when you enter with the specific quality of someone completing an assessment they began the moment you arrived in Crestfall.\n\n\"You went east,\" she says. \"You came back. Most people who go east do not come back.\" A pause. \"Which tells me either you are exceptionally capable or exceptionally fortunate, or you have found whatever you were looking for and it was not in the deepest part of the ruins.\"\n\nShe is watching to see which of those possibilities you will confirm.",
+        "default": [
+          "Seriva is at the shrine when you find her, or she allows herself to be found there, which amounts to the same thing.",
+          "She is in her sixties, compact, with the bearing of someone who has spent decades in rooms where other people defer to them and has stopped needing the deference to feel it is owed. She looks at you when you enter with the specific quality of someone completing an assessment they began the moment you arrived in Crestfall.",
+          {
+            "when": {
+              "inventory": [
+                "covenant_ward"
+              ]
+            },
+            "text": "Her eyes go to the cord at your neck. \"Edric gave you one of mine,\" she says. \"I made those. Twenty years ago.\""
+          },
+          "\"You went east,\" she says. \"You came back. Most people who go east do not come back.\" A pause. \"Which tells me either you are exceptionally capable or exceptionally fortunate, or you have found whatever you were looking for and it was not in the deepest part of the ruins.\"",
+          "She is watching to see which of those possibilities you will confirm."
+        ],
         "commander": "You give her nothing she is looking for and everything that is true in what you say.\n\n\"I went to Harrow,\" you say. \"Explored the forest edge. Came back.\"\n\nShe looks at you. She does not believe this is the complete account. She also cannot prove it is not the complete account.\n\n\"Harrow is interesting,\" she says. \"What did you find there?\"",
         "arcane": "You look at her and she looks at you and you both understand that this is a conversation between two people who know more than they are going to say and are assessing how much the other knows.\n\n\"You have been in Ashenveld before,\" you say. It is not a question.\n\n\"Twenty years ago,\" she says, without hesitation. Acknowledging it before you can use it as a reveal. \"I was conducting research on behalf of the Covenant.\"\n\n\"On the ruins.\"\n\n\"On the region,\" she says. The distinction is deliberate.",
         "ranger": "You read her in the first thirty seconds and what you read is: control. This is a person who has had information about Ashenveld and the ruins for twenty years and has been managing it carefully for twenty years, releasing only what serves her purposes.\n\n\"You know what is in the ruins,\" you say.\n\n\"I know what was in the ruins twenty years ago,\" she says. \"Things change.\"",
@@ -859,6 +1066,15 @@
                 },
                 "value": -2,
                 "label": "She found you first"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "knows_seriva_came_early": true
+                  }
+                },
+                "value": 2,
+                "label": "Sen saw her come early"
               }
             ]
           },
@@ -894,6 +1110,28 @@
                   "ashen_covenant": {
                     "reputation": -10
                   }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "ask_why_she_came_early",
+          "text": "\"You have been here three weeks longer than Vorne. Why?\"",
+          "requires": {
+            "flags": {
+              "knows_seriva_came_early": true
+            }
+          },
+          "once": true,
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "She does not ask how you know.\n\n\"I wished to see the threshold for myself before anyone arrived to argue about it,\" she says. \"I had been there before, a long time ago. I needed to know how far it had come.\" She folds her hands. \"That is all I will say about it in this room.\"\n\nIt is enough to say the rest for her.",
+              "next_scene": "act2_ch3_seriva_first_meeting",
+              "state_changes": {
+                "flags": {
+                  "seriva_responsible_confirmed": true
                 }
               }
             }

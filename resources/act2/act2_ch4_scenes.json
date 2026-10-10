@@ -21,7 +21,28 @@
       },
       "requires": {},
       "text": {
-        "default": "The Compact post in the old granary has been converted into a functional command space with the efficiency of people who have done this in other towns before. Maps on every wall. A duty roster. A communication schedule.\n\nVorne is at a table when you are admitted. He is larger than you expected from descriptions and less imposing than you expected from reputation — a man in his fifties who looks like he has not slept well for several weeks and has decided that sleeping well is not currently the priority.\n\nHe looks up from his documents when you enter. His assessment of you takes less time than Seriva's and arrives at a different place.\n\n\"Sit down,\" he says. Not an invitation — a preference stated as one. \"I have been told you went east and came back. I want to know what you found.\"",
+        "default": [
+          "The Compact post in the old granary has been converted into a functional command space with the efficiency of people who have done this in other towns before. Maps on every wall. A duty roster. A communication schedule.",
+          "Vorne is at a table when you are admitted. He is larger than you expected from descriptions and less imposing than you expected from reputation — a man in his fifties who looks like he has not slept well for several weeks and has decided that sleeping well is not currently the priority.",
+          "He looks up from his documents when you enter. His assessment of you takes less time than Seriva's and arrives at a different place.",
+          "\"Sit down,\" he says. Not an invitation — a preference stated as one. \"I have been told you went east and came back. I want to know what you found.\"",
+          {
+            "when": {
+              "flags": {
+                "vorne_knows_player_was_in_ruins": true
+              }
+            },
+            "text": "He starts with the ruins. He already knows."
+          },
+          {
+            "when": {
+              "flags": {
+                "compact_suspicious": true
+              }
+            },
+            "text": "\"My checkpoint sergeant thinks you lied to him,\" he says."
+          }
+        ],
         "commander": "You sit across from a fellow officer — or near enough — and the conversation takes on the register of two people who know how to speak directly without explaining themselves.\n\n\"I found the east road,\" you say. \"Harrow. The forest edge.\" You pause. \"What are you looking for specifically? If I knew your objective I could tell you whether I encountered it.\"\n\nHis eyes sharpen. He respects the redirect. \"A structure,\" he says. \"Underground, below the forest. A mechanism of some kind. Evidence of pre-existing civilisation. Seriva believes it is the source of the affliction.\"",
         "arcane": "Vorne looks at you with the assessment of a military man evaluating a civilian specialist — trying to determine if you know more than him and in what direction.\n\n\"What is your expertise?\" he asks.\n\n\"Comparative texts,\" you say. \"Old languages. Pre-kingdom material culture.\" All true. All strategically selected to sound academic rather than operational.\n\n\"Seriva said someone with that background might have gone east,\" Vorne says. He is telling you she predicted you. You note it.",
         "ranger": "Vorne looks at you with the directness of someone who does not have time for social performance.\n\n\"You were in the forest,\" he says. \"I need to know what is in the forest. Not metaphysically. Practically. What terrain, what obstacles, what would my soldiers encounter if I sent them east?\"\n\nA military question. You can answer it partially without giving him anything operationally significant.",

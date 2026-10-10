@@ -32,6 +32,14 @@
             "text": "The ruins receive you back with the specific quality of a place that has not changed while you have. The grey light. The silence with mass. The Watcher at the gate, unchanged, who says \"[player]\" again when you pass. The same word, the same flat tone.",
             "else": "The ruins receive you back with the specific quality of a place that has not changed while you have. The grey light. The silence with mass. The Watcher at the gate, unchanged, who does not turn."
           },
+          {
+            "when": {
+              "flags": {
+                "watcher_holds_figure": true
+              }
+            },
+            "text": "They are turning the bone figure over and over in their hands."
+          },
           "[missing person] is where you left them. They look up when they hear your steps in the outskirts with the specific attention of someone who has spent months listening for footsteps and has learned to read everything about a person from the sound of them walking.",
           "\"Two days,\" you say.",
           "They nod. \"Two days is enough.\""
@@ -39,8 +47,7 @@
         "commander": "You sit across from them in the outskirts and brief them on Crestfall the way you would brief a fellow officer. The Compact's position, Seriva's presence, Vorne's daughter, the fragment, Pol.\n\nThey listen with complete attention. When you finish: \"The window is closing,\" they say.\n\n\"Yes,\" you say.\n\n\"Then we spend two days making sure we do this correctly,\" they say. \"Not fast. Correctly.\"",
         "arcane": "You tell them about Pol's revelation — the distinction between the Covenant's purification ritual and the original sealing ritual, the specific nature of each, the cost of each.\n\nThey are quiet for a moment. \"I knew there was another ritual,\" they say. \"The chamber walls reference it. A second approach, described as the lesser path because it does not require the same quality of relationship between the participants.\" A pause. \"The Covenant's ritual will work. It will stop the curse. And it will be catastrophic.\"\n\n\"Yes,\" you say.\n\n\"Then we do the right one,\" they say.",
         "ranger": "You brief them efficiently. They ask the relevant questions — the Compact's strength, Seriva's location, the fragment, Pol's readiness.\n\nThen: \"How are you?\" they ask.\n\nThe question catches you. You have been moving and assessing and managing since you left the ruins and the question — simple, direct, the question people ask each other and mean — arrives like something from before.\n\n\"Functioning,\" you say.\n\nThey almost smile. \"That is what I expected you to say. Rest tonight. We start tomorrow.\"",
-        "cipher": "You give them the full picture. All of it, in the order that makes strategic sense — the threats, the timeline, the resources, the risks.\n\nThey listen and then say: \"You did not tell me how any of this made you feel.\"\n\n\"That is not the relevant information,\" you say.\n\nThey look at you for a long moment. \"For the ritual,\" they say, \"it is the only relevant information. The mechanism reads what is real. Not what you present. What you actually carry.\"\n\nA pause. \"So: how are you?\"",
-        "maret_note": "If Maret is with the player: this is also the scene where Maret and the missing person have their first extended conversation since the reunion. The player can choose to be present for it or give them space."
+        "cipher": "You give them the full picture. All of it, in the order that makes strategic sense — the threats, the timeline, the resources, the risks.\n\nThey listen and then say: \"You did not tell me how any of this made you feel.\"\n\n\"That is not the relevant information,\" you say.\n\nThey look at you for a long moment. \"For the ritual,\" they say, \"it is the only relevant information. The mechanism reads what is real. Not what you present. What you actually carry.\"\n\nA pause. \"So: how are you?\""
       },
       "choices": [
         {

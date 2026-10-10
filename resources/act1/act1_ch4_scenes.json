@@ -562,7 +562,23 @@
       },
       "requires": {},
       "text": {
-        "default": "The camp settles for the evening and Maret comes to sit by the fire. She does it in the specific way of someone who has made a decision about you — not completely, but enough to move the next step.\n\nShe asks you a question you were not expecting.\n\n\"Why did you leave?\" she says. \"Ashenveld. You were born here. You left when you were — what, seventeen? Eighteen? Why?\"\n\nShe is not asking to be polite. She is asking because the answer will tell her something she needs to know about you.",
+        "default": [
+          "The camp settles for the evening and Maret comes to sit by the fire. She does it in the specific way of someone who has made a decision about you — not completely, but enough to move the next step.",
+          "She asks you a question you were not expecting.",
+          "\"Why did you leave?\" she says. \"Ashenveld. You were born here. You left when you were — what, seventeen? Eighteen? Why?\"",
+          "She is not asking to be polite. She is asking because the answer will tell her something she needs to know about you.",
+          {
+            "when": {
+              "flags": {
+                "lira_met": true
+              },
+              "taken": [
+                "act1_ch4_lira:just_sit_with_lira"
+              ]
+            },
+            "text": "\"Lira says you sat with her and asked nothing,\" Maret says. \"That is rare.\""
+          }
+        ],
         "commander": "\"There was a war,\" you say. \"And I was the kind of person who went to wars.\"\n\nShe nods slowly. \"And after the war?\"\n\n\"After the war there was no good reason to come back. Until there was.\"",
         "arcane": "\"There was a library in the city,\" you say. \"The largest collection of pre-kingdom texts on the continent. I spent eleven years in it.\" A pause. \"I thought I would find more answers there than here.\"\n\n\"Did you?\"\n\n\"Different questions,\" you say. \"Better-worded questions. Which is not the same thing.\"",
         "ranger": "\"The forest was getting smaller,\" you say. It is true in ways you have never said out loud before. \"Everything I knew here was — the edges were getting too familiar. I needed somewhere the edges were still unknown.\"\n\nShe looks at the trees. \"And now the edges came to find you.\"",

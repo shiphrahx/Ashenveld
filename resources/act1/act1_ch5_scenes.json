@@ -30,7 +30,7 @@
       "choices": [
         {
           "id": "try_to_reach_her",
-          "text": "Try to reach her. Use her name if someone gives it to you.",
+          "text": "Ask the old man her name. Try to reach her.",
           "requires": {},
           "roll": {
             "stat": "charisma",
@@ -160,7 +160,20 @@
       },
       "requires": {},
       "text": {
-        "default": "In the hour after the episode in the market, you see all three factions respond to the same event in ways that tell you exactly who they are.\n\nTwo Compact soldiers arrive seven minutes after the woman recovers. They ask questions — efficient, recorded, impersonal. They want to know how long, whether she has had episodes before, who her family is. They write things down. They leave.\n\nA Covenant priest arrives twelve minutes after that. He speaks to the woman's neighbour — not to the woman herself — and leaves a small parcel of herbs with specific instructions. He does not charge. He also does not say whether the herbs will help.\n\nA young man from the Rootless camp arrives twenty minutes after the episode ended. He does not ask questions. He sits with the woman for forty minutes and then helps her carry her basket home.",
+        "default": [
+          "In the hour after the episode in the market, you see all three factions respond to the same event in ways that tell you exactly who they are.",
+          "Two Compact soldiers arrive seven minutes after the woman recovers. They ask questions — efficient, recorded, impersonal. They want to know how long, whether she has had episodes before, who her family is. They write things down. They leave.",
+          "A Covenant priest arrives twelve minutes after that. He speaks to the woman's neighbour — not to the woman herself — and leaves a small parcel of herbs with specific instructions. He does not charge. He also does not say whether the herbs will help.",
+          "A young man from the Rootless camp arrives twenty minutes after the episode ended. He does not ask questions. He sits with the woman for forty minutes and then helps her carry her basket home.",
+          {
+            "when": {
+              "flags": {
+                "helped_cursed_woman_market": true
+              }
+            },
+            "text": "The Rootless man nods to you. He saw what you did."
+          }
+        ],
         "commander": "You watch all three responses with the tactical eye.\n\nThe Compact is gathering data. The Covenant is offering palliative treatment. The Rootless are doing the human thing, which is also the least scalable thing, which is also the most immediately useful thing.\n\nAll three are genuine. All three are inadequate. The question is which inadequacy you can work with.",
         "arcane": "Three responses. Each contains information about what that faction actually believes.\n\nThe Compact's questions are about pattern — they are looking for data across cases. The Covenant's herbs are from a specific tradition that suggests they have a text-based knowledge of the curse's effect. The Rootless response is experiential — they know what helps and the knowledge is embodied rather than documented.\n\nYou want access to all three knowledge bases. You probably cannot have all three without complications.",
         "ranger": "Three responses. Each one an advertisement for their own approach.\n\nCompact: organised, systematic. Covenant: certain, prepared, working from a playbook. Rootless: adaptive, present, doing what is in front of them.\n\nYou know which kind of approach survives in hostile territory. The Rootless have been here longest and are still here.",

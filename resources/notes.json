@@ -1,58 +1,282 @@
 {
   "leads": [
-    { "when": { "flags": { "knows_maret_name": true, "maret_met": false } }, "text": "Find Maret at the camp outside town." },
-    { "when": { "inventory": ["covenant_marker_stone"] }, "text": "Place Edric's stone where the tree line bends." },
-    { "when": { "flags": { "found_missing_campsite": true }, "not_visited": ["act1_ch6_harrow_arrival"] }, "text": "The trail goes east, towards Harrow." },
-    { "when": { "flags": { "knows_time_limit": true, "ritual_done": false } }, "text": "The seal has weeks left. Maybe less." },
-    { "when": { "flags": { "issa_has_fragment": true, "fragment_obtained": false } }, "text": "Issa is holding a piece of the mechanism." }
+    {
+      "when": {
+        "flags": {
+          "knows_maret_name": true,
+          "maret_met": false
+        }
+      },
+      "text": "Find Maret at the camp outside town."
+    },
+    {
+      "when": {
+        "flags": {
+          "carrying_compact_message": true,
+          "compact_message_delivered": false,
+          "compact_message_undelivered": false
+        }
+      },
+      "text": "Deliver Cael's packet to Sera on the east road."
+    },
+    {
+      "when": {
+        "inventory": [
+          "covenant_marker_stone"
+        ]
+      },
+      "text": "Place Edric's stone where the tree line bends."
+    },
+    {
+      "when": {
+        "flags": {
+          "found_missing_campsite": true
+        },
+        "not_visited": [
+          "act1_ch6_harrow_arrival"
+        ]
+      },
+      "text": "The trail goes east, towards Harrow."
+    },
+    {
+      "when": {
+        "flags": {
+          "knows_time_limit": true,
+          "ritual_done": false
+        }
+      },
+      "text": "The seal has weeks left. Maybe less."
+    },
+    {
+      "when": {
+        "flags": {
+          "issa_has_fragment": true,
+          "fragment_obtained": false
+        }
+      },
+      "text": "Issa is holding a piece of the mechanism."
+    }
   ],
   "notes": [
-    { "flag": "knows_maret_name", "group": "People", "text": "A woman called Maret runs the camp outside town. [missing person] went to her." },
-    { "flag": "knows_maret_background", "group": "People", "text": "Maret came to Crestfall three years ago with six people and a cart. She takes in the people the town turns away." },
-    { "flag": "knows_maret_sent_missing_east", "group": "People", "text": "Corvin says Maret is the one who pointed [missing person] east." },
-    { "flag": "knows_missing_looked_purposeful", "group": "People", "text": "The woman in your old house saw [missing person] walk east alone, fourteen months ago. They looked like they knew where they were going." },
-    { "flag": "knows_missing_was_purposeful", "group": "People", "text": "Goran talked with [missing person] about the old city under the forest. Not frightened. Purposeful." },
-    { "flag": "knows_maret_trusted_missing", "group": "People", "text": "Branch says Maret trusted [missing person] faster than she trusts anyone. It worried him." },
-    { "flag": "knows_branch_maret_history", "group": "People", "text": "Branch came out of the eastern villages with Maret in the first weeks of the curse. She saved his life three times that year." },
-    { "flag": "knows_still_man_is_wren", "group": "People", "text": "The still man by the Tallow's fire is Wren." },
-    { "flag": "maret_letter_obtained", "group": "People", "text": "[missing person] left a letter with Maret. It says not to follow." },
-    { "flag": "knows_issa_at_camp", "group": "People", "text": "There is a girl at the camp showing the early signs. She is Vorne's daughter." },
-
-    { "flag": "knows_curse_basics", "group": "The Curse", "text": "It began with the animals, then the crops, then people going quiet." },
-    { "flag": "understands_curse_symptoms", "group": "The Curse", "text": "Wanting goes first. Then caring. Then noticing." },
-    { "flag": "knows_curse_factions", "group": "The Curse", "text": "The Covenant calls it punishment. The Compact calls it a resource. The Rootless say something cracked open." },
-    { "flag": "knows_curse_timeline", "group": "The Curse", "text": "Aldous says the forest stopped knowing its limits two years ago." },
-    { "flag": "knows_harrow", "group": "The Curse", "text": "Harrow emptied. Its people walked east one by one. Nobody found bodies." },
-    { "flag": "knows_curse_movement", "group": "The Curse", "text": "It started in the eastern villages and has been moving west, slowly." },
-    { "flag": "knows_episodes_shorten", "group": "The Curse", "text": "The woman in the market stopped for fifteen minutes. Last week it was thirty. She does not remember them." },
-    { "flag": "understands_curse_episodes", "group": "The Curse", "text": "An episode ends on its own, without warning. The town has stopped reacting to them." },
-    { "flag": "knows_building_affected", "group": "The Curse", "text": "The ground under the Tallow has been soaking it up for three years. Aldous moved the tables away from the walls." },
-    { "flag": "found_concentrated_curse_point", "group": "The Curse", "text": "Off the east road, the deer stands in a ring of darker soil where the curse is thicker." },
-    { "flag": "knows_curse_moves_sleepers", "group": "The Curse", "text": "A traveller woke in the middle of the road past Harrow, sitting up, facing east. He had not walked there." },
-    { "flag": "knows_harrow_empty", "group": "The Curse", "text": "Harrow is empty. The traveller said not to go in." },
-    { "flag": "understands_curse_progression", "group": "The Curse", "text": "The Harrow entries get shorter as the writer stops caring. The last one is about remembering why it mattered." },
-    { "flag": "found_pre_departure_insight", "group": "The Curse", "text": "Something in what you were told in Crestfall changes what you are looking for in the east." },
-
-    { "flag": "knows_ruins_are_ancient", "group": "The Ruins", "text": "The ruins are older than anything recorded here. The power in them has leaked for three years." },
-    { "flag": "knows_ruins_deepest_point", "group": "The Ruins", "text": "Maret told [missing person] where the deepest point in the ruins is. They went in anyway." },
-    { "flag": "found_missing_note", "group": "The Ruins", "text": "At the campsite on the east road, [missing person] left a cloth under a fire stone, with your name on it." },
-    { "flag": "found_missing_campsite", "group": "The Ruins", "text": "You found [missing person]'s old campsite on the east road." },
-    { "flag": "read_harrow_records", "group": "The Ruins", "text": "The old man's records from Harrow. Entry 62: Joren went east and did not come back." },
-    { "flag": "found_missing_trail", "group": "The Ruins", "text": "Three safe paths cross the outskirts. They meet at a fresh cairn." },
-    { "flag": "understands_ruins_structure", "group": "The Ruins", "text": "The ruins were a city built around a centre. The stone hums just below hearing." },
-    { "flag": "read_passage_carvings", "group": "The Ruins", "text": "The carvings show something held, then breaking, then spreading. Someone recently added an image of it stopping." },
-    { "flag": "ritual_explained", "group": "The Ruins", "text": "The seal can be repaired by two people whose lives have shaped each other." },
-    { "flag": "knows_time_limit", "group": "The Ruins", "text": "The spread is speeding up as the mechanism fails. Weeks, maybe less." },
-    { "flag": "understands_carving_structure", "group": "The Ruins", "text": "The chamber walls hold the city's history, the upkeep of the mechanism, and the ritual itself." },
-    { "flag": "understands_fracture", "group": "The Ruins", "text": "The mechanism was not broken by accident. It was struck, with a tool made for the job." },
-
-    { "flag": "knows_covenant_doctrine", "group": "The Factions", "text": "The Covenant believes the curse came from disturbing something sealed, and from forgetting the old ways." },
-    { "flag": "knows_covenant_kills_afflicted", "group": "The Factions", "text": "The Covenant's cleansing kills the deeply afflicted." },
-    { "flag": "compact_believes_ruins_are_signal", "group": "The Factions", "text": "The Compact's scholars think the curse is a signal, not a sickness." },
-    { "flag": "compact_task_confirmed", "group": "The Factions", "text": "Cael gave you a passphrase and a way to send word back. Vorne wants to know what is in the ruins before he acts." },
-    { "flag": "seriva_suspected", "group": "The Factions", "text": "Seriva was inside the ruins twenty years ago, when the seal began to fail." },
-    { "flag": "seriva_responsible_confirmed", "group": "The Factions", "text": "Pol says the Covenant approved Seriva's experiment on the seal twenty years ago." },
-    { "flag": "knows_purification_cost", "group": "The Factions", "text": "Seriva's purification seals the mechanism by destroying everything the power has changed. People included." },
-    { "flag": "knows_purification_kills", "group": "The Factions", "text": "The late-stage afflicted would not survive Seriva's ritual." }
+    {
+      "flag": "knows_maret_name",
+      "group": "People",
+      "text": "A woman called Maret runs the camp outside town. [missing person] went to her."
+    },
+    {
+      "flag": "knows_maret_background",
+      "group": "People",
+      "text": "Maret came to Crestfall three years ago with six people and a cart. She takes in the people the town turns away."
+    },
+    {
+      "flag": "knows_maret_sent_missing_east",
+      "group": "People",
+      "text": "Corvin says Maret is the one who pointed [missing person] east."
+    },
+    {
+      "flag": "knows_missing_looked_purposeful",
+      "group": "People",
+      "text": "The woman in your old house saw [missing person] walk east alone, fourteen months ago. They looked like they knew where they were going."
+    },
+    {
+      "flag": "knows_missing_was_purposeful",
+      "group": "People",
+      "text": "Goran talked with [missing person] about the old city under the forest. Not frightened. Purposeful."
+    },
+    {
+      "flag": "knows_maret_trusted_missing",
+      "group": "People",
+      "text": "Branch says Maret trusted [missing person] faster than she trusts anyone. It worried him."
+    },
+    {
+      "flag": "knows_branch_maret_history",
+      "group": "People",
+      "text": "Branch came out of the eastern villages with Maret in the first weeks of the curse. She saved his life three times that year."
+    },
+    {
+      "flag": "knows_still_man_is_wren",
+      "group": "People",
+      "text": "The still man by the Tallow's fire is Wren."
+    },
+    {
+      "flag": "maret_letter_obtained",
+      "group": "People",
+      "text": "[missing person] left a letter with Maret. It says not to follow."
+    },
+    {
+      "flag": "knows_issa_at_camp",
+      "group": "People",
+      "text": "There is a girl at the camp showing the early signs. She is Vorne's daughter."
+    },
+    {
+      "flag": "knows_curse_basics",
+      "group": "The Curse",
+      "text": "It began with the animals, then the crops, then people going quiet."
+    },
+    {
+      "flag": "understands_curse_symptoms",
+      "group": "The Curse",
+      "text": "Wanting goes first. Then caring. Then noticing."
+    },
+    {
+      "flag": "knows_curse_factions",
+      "group": "The Curse",
+      "text": "The Covenant calls it punishment. The Compact calls it a resource. The Rootless say something cracked open."
+    },
+    {
+      "flag": "knows_curse_timeline",
+      "group": "The Curse",
+      "text": "Aldous says the forest stopped knowing its limits two years ago."
+    },
+    {
+      "flag": "knows_harrow",
+      "group": "The Curse",
+      "text": "Harrow emptied. Its people walked east one by one. Nobody found bodies."
+    },
+    {
+      "flag": "knows_curse_movement",
+      "group": "The Curse",
+      "text": "It started in the eastern villages and has been moving west, slowly."
+    },
+    {
+      "flag": "knows_episodes_shorten",
+      "group": "The Curse",
+      "text": "The woman in the market stopped for fifteen minutes. Last week it was thirty. She does not remember them."
+    },
+    {
+      "flag": "understands_curse_episodes",
+      "group": "The Curse",
+      "text": "An episode ends on its own, without warning. The town has stopped reacting to them."
+    },
+    {
+      "flag": "knows_building_affected",
+      "group": "The Curse",
+      "text": "The ground under the Tallow has been soaking it up for three years. Aldous moved the tables away from the walls."
+    },
+    {
+      "flag": "found_concentrated_curse_point",
+      "group": "The Curse",
+      "text": "Off the east road, the deer stands in a ring of darker soil where the curse is thicker."
+    },
+    {
+      "flag": "knows_curse_moves_sleepers",
+      "group": "The Curse",
+      "text": "A traveller woke in the middle of the road past Harrow, sitting up, facing east. He had not walked there."
+    },
+    {
+      "flag": "knows_harrow_empty",
+      "group": "The Curse",
+      "text": "Harrow is empty. The traveller said not to go in."
+    },
+    {
+      "flag": "understands_curse_progression",
+      "group": "The Curse",
+      "text": "The Harrow entries get shorter as the writer stops caring. The last one is about remembering why it mattered."
+    },
+    {
+      "flag": "found_pre_departure_insight",
+      "group": "The Curse",
+      "text": "Something in what you were told in Crestfall changes what you are looking for in the east."
+    },
+    {
+      "flag": "knows_ruins_are_ancient",
+      "group": "The Ruins",
+      "text": "The ruins are older than anything recorded here. The power in them has leaked for three years."
+    },
+    {
+      "flag": "knows_ruins_deepest_point",
+      "group": "The Ruins",
+      "text": "Maret told [missing person] where the deepest point in the ruins is. They went in anyway."
+    },
+    {
+      "flag": "found_missing_note",
+      "group": "The Ruins",
+      "text": "At the campsite on the east road, [missing person] left a cloth under a fire stone, with your name on it."
+    },
+    {
+      "flag": "found_missing_campsite",
+      "group": "The Ruins",
+      "text": "You found [missing person]'s old campsite on the east road."
+    },
+    {
+      "flag": "read_harrow_records",
+      "group": "The Ruins",
+      "text": "The old man's records from Harrow. Entry 62: Joren went east and did not come back."
+    },
+    {
+      "flag": "found_missing_trail",
+      "group": "The Ruins",
+      "text": "Three safe paths cross the outskirts. They meet at a fresh cairn."
+    },
+    {
+      "flag": "understands_ruins_structure",
+      "group": "The Ruins",
+      "text": "The ruins were a city built around a centre. The stone hums just below hearing."
+    },
+    {
+      "flag": "read_passage_carvings",
+      "group": "The Ruins",
+      "text": "The carvings show something held, then breaking, then spreading. Someone recently added an image of it stopping."
+    },
+    {
+      "flag": "ritual_explained",
+      "group": "The Ruins",
+      "text": "The seal can be repaired by two people whose lives have shaped each other."
+    },
+    {
+      "flag": "knows_time_limit",
+      "group": "The Ruins",
+      "text": "The spread is speeding up as the mechanism fails. Weeks, maybe less."
+    },
+    {
+      "flag": "understands_carving_structure",
+      "group": "The Ruins",
+      "text": "The chamber walls hold the city's history, the upkeep of the mechanism, and the ritual itself."
+    },
+    {
+      "flag": "understands_fracture",
+      "group": "The Ruins",
+      "text": "The mechanism was not broken by accident. It was struck, with a tool made for the job."
+    },
+    {
+      "flag": "knows_covenant_doctrine",
+      "group": "The Factions",
+      "text": "The Covenant believes the curse came from disturbing something sealed, and from forgetting the old ways."
+    },
+    {
+      "flag": "knows_covenant_kills_afflicted",
+      "group": "The Factions",
+      "text": "The Covenant's cleansing kills the deeply afflicted."
+    },
+    {
+      "flag": "compact_believes_ruins_are_signal",
+      "group": "The Factions",
+      "text": "The Compact's scholars think the curse is a signal, not a sickness."
+    },
+    {
+      "flag": "compact_task_confirmed",
+      "group": "The Factions",
+      "text": "Cael gave you a passphrase and a way to send word back. Vorne wants to know what is in the ruins before he acts."
+    },
+    {
+      "flag": "seriva_suspected",
+      "group": "The Factions",
+      "text": "Seriva was inside the ruins twenty years ago, when the seal began to fail."
+    },
+    {
+      "flag": "seriva_responsible_confirmed",
+      "group": "The Factions",
+      "text": "Pol says the Covenant approved Seriva's experiment on the seal twenty years ago."
+    },
+    {
+      "flag": "knows_purification_cost",
+      "group": "The Factions",
+      "text": "Seriva's purification seals the mechanism by destroying everything the power has changed. People included."
+    },
+    {
+      "flag": "knows_purification_kills",
+      "group": "The Factions",
+      "text": "The late-stage afflicted would not survive Seriva's ritual."
+    }
   ]
 }

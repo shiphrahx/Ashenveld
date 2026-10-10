@@ -9,7 +9,7 @@ One step per branch and pull request. Each tick lists what was done, what was sk
 - [x] 5. docs/03 G1 to G6
 - [x] 6. docs/03 G7 to G13
 - [x] 7. docs/02 Section 0 (author decisions), then N1 to N4
-- [ ] 8. docs/02 N5 to N8
+- [x] 8. docs/02 N5 to N8
 - [ ] 9. docs/02 N9 to N18
 - [ ] 10. docs/04 U8 to U20
 - [ ] 11. docs/05 E1 to E10
@@ -274,3 +274,37 @@ The big habit counts are N10 (step 9). Contractions fell because the retold dial
 - N2.2 says to add the "fresh scratches" line before the inscription. The paragraph before the inscription is the one that introduces the scratches, so the line sits just after it instead.
 - Three lines that break the fiction aren't in N12's table: "The point of no return is coming." (`act2_ch8_faction_reckoning`), "This is the Rootless ending." (`ending_warden_of_ashenveld`) and "The ending is the loneliest one." (`ending_the_account`). I'll take them out with N12 in step 9.
 - With the asides showing everywhere, one aside label failed contrast in the folded scene; fixed with a brighter colour while folded.
+
+## Step 8 — N5 to N8
+
+Branch `step-8-threads-companion`, stacked on step 7.
+
+**AUTHOR DECISION defaults used**: D5 (the Watcher is Joren) and D6 (Sen saw Seriva put ashore three weeks early), as written in docs/02 section 0.
+
+**Done**
+
+- N5, the packet: route scene `act1_ch6_waystation_route` after the marker, and `act1_ch6_waystation` with Sera. Hand over (+20 coin, Compact +5, the lost patrol), open first on Dexterity 12 (`knows_vorne_is_coming`, `compact_message_read`; a failure tears the seal, Compact −10, no pay), or keep walking (`compact_message_undelivered`). The checkpoint's invoke choice needs the packet delivered; an undelivered packet is −2 at the checkpoint; a soldier mentions Cael asking. The journal lead for it is in.
+- N5, the ward: Seriva recognises it.
+- N5, the bone figure and Joren: the cellar wall figures, a new Watcher choice (`watcher_holds_figure`), the return scene, and the Joren lines on all four Act 3 paths.
+- N5, Sen and the river: `act2_ch3_sen_river` from week two at Sen 15+, `knows_seriva_came_early`, a new Seriva question that opens the accusation, and the deferred +2 bonus. Cael pays the forty if you report to him.
+- N5, cuts: five NPC secrets marked `secret_unused: true` in the act 1 meta (Aldous, Corvin, Hanna, Wren, Lira).
+- N6: all sixteen lines. Maret hands the letter over at the forest edge if she kept it, and both forest-edge outcomes set `maret_letter_obtained`.
+- N7: all eleven. `STAGE_DIRECTIONS_FIXED` is on in the e2e test again.
+- N8: all nine places. The three `maret_note` keys are gone.
+
+**Validator now**: 0 errors, 5 warnings. 116 scenes, 224 flags set, 123 read (N6 asks for 60). Without the journal's notes the count is 79.
+
+**Prose stats** after this step: specific 236, the specific quality of 37, of someone who 78, em dashes 842, contractions 42, for a long moment / time 40.
+
+**Skipped or deferred**
+
+- Branch and the record is N13 (step 9).
+- The two remaining validator phrase warnings: one is dialogue ("Go back to Crestfall if you have sense"), the other two are N12's "the reader" lines.
+
+**Plan was wrong or unclear**
+
+- N5 says the waystation's "open it first" success lets you "then deliver or keep it". It returns to the waystation with the open choice used, so both are still there.
+- N5's Act 3 line for the Watcher's name says you "say it to him". On the paths where you leave Ashenveld you aren't near the gate in Act 3, so the line is a memory of the last day in the ruins, on all four paths.
+- N6 asks Maret to grant `maret_letter_obtained` from text, which text can't do. Both outcomes of the forest-edge scene set it instead.
+- N7's three-sentence kit (herbs, ward, nothing) has to be three paragraphs, because guarded parts are joined as paragraphs.
+- I cut six "for a long time"s that had crept into my own new lines.

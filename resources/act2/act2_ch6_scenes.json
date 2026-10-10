@@ -25,7 +25,49 @@
         }
       },
       "text": {
-        "default": "Morning. The grey light comes in as it always does here — not from a direction, just present, like the light was always already there and the darkness merely pauses.\n\nPol is up first. She has the fragment and she is examining it with the focused attention she brings to everything — not nervously, just completely.\n\n[missing person] wakes and looks at you and the look is: today.\n\nYou eat. You prepare. The herbs, the ward if you have it, the specific mental state the ritual requires — present, honest, no performance. The last one is the hardest. The last one is what the two days of preparation were actually for.\n\nThe Watcher at the gate turns to watch you go past. Just slightly. Just enough to register that something is different about today.",
+        "default": [
+          "Morning. The grey light comes in as it always does here — not from a direction, just present, like the light was always already there and the darkness merely pauses.",
+          "Pol is up first. She has the fragment and she is examining it with the focused attention she brings to everything — not nervously, just completely.",
+          "[missing person] wakes and looks at you and the look is: today.",
+          "You eat. You prepare.",
+          {
+            "when": {
+              "inventory": [
+                "rootless_provisions"
+              ]
+            },
+            "text": "Maret's herbs, bitter under your tongue."
+          },
+          {
+            "when": {
+              "inventory": [
+                "covenant_ward"
+              ]
+            },
+            "text": "Edric's ward, cold against your skin."
+          },
+          {
+            "when": {
+              "not": {
+                "any": [
+                  {
+                    "inventory": [
+                      "rootless_provisions"
+                    ]
+                  },
+                  {
+                    "inventory": [
+                      "covenant_ward"
+                    ]
+                  }
+                ]
+              }
+            },
+            "text": "You have nothing but what [missing person] has told you."
+          },
+          "Then the state of mind the ritual asks for: present, honest, no performance. The last one is the hardest. It is what the two days of preparation were for.",
+          "The Watcher at the gate turns to watch you go past. Just slightly. Just enough to register that something is different about today."
+        ],
         "commander": "You move through the morning with the focus of someone about to do a significant thing. Everything unnecessary is set aside. What remains is the objective, the method, and the person beside you.\n\nAt the entrance to the passage: you pause. Not hesitation — preparation. The last moment before you commit.\n\n\"Ready?\" [missing person] says.\n\n\"Ready,\" you say.",
         "arcane": "You are thinking about the carving on the passage wall — the sequence of images you read weeks ago. Contained, breaking, spreading, stopped. The last image was added recently, by someone who believed stopping was possible.\n\nYou are about to find out if they were right.\n\nAt the entrance to the passage: you pause. You feel the frequency clearly, a full note, sustained.\n\n\"Ready?\" [missing person] says.\n\n\"Yes,\" you say.",
         "ranger": "You move through the morning with the quality of attention you give to the last minutes before a significant approach — the inventory of what you carry, what you know, what you cannot know until you are inside it.\n\nAt the passage entrance: you look back at Pol, sitting in the outskirts with the fragment, with her fifteen years of waiting to be the witness.\n\n\"We will come back,\" you say to her.\n\n\"I know,\" she says. She says it the way people say things they are not entirely certain of but have decided to believe.",

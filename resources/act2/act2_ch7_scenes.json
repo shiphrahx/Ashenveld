@@ -216,7 +216,23 @@
           },
           "\"The afflicted people.\"",
           "\"Unknown. The sealing stops the progression. Whether existing damage reverses — we will observe over the coming weeks.\"",
-          "He nods slowly. He is running a calculation you can partly read — what this means for his orders, for his mission, for the thirty soldiers and the resources deployed to Crestfall. What he tells his superiors. Whether what happened is a success or a failure from the Compact's perspective."
+          "He nods slowly. He is running a calculation you can partly read — what this means for his orders, for his mission, for the thirty soldiers and the resources deployed to Crestfall. What he tells his superiors. Whether what happened is a success or a failure from the Compact's perspective.",
+          {
+            "when": {
+              "flags": {
+                "issa_taken_by_compact": true
+              }
+            },
+            "text": "Issa is in the next room. She is worse than she was at the camp, and he knows it."
+          },
+          {
+            "when": {
+              "flags": {
+                "issa_agreement_reached": true
+              }
+            },
+            "text": "As you leave he says, \"My daughter asked after you.\""
+          }
         ],
         "commander": "You recognise Vorne's calculation because you have run versions of it yourself. He deployed thirty soldiers and a senior scholar to secure a significant asset. The asset has been secured — but by civilians, not the Compact, and through a method the Compact did not control.\n\nFrom a resource allocation perspective, his mission is a partial success at best. He stopped the spread. He did not secure the mechanism.\n\n\"Your daughter,\" you say. \"The sealing should slow her progression. Whether it reverses what has already happened — we will see.\"",
         "arcane": "Vorne is processing more than strategy. He is also processing his daughter. The sealing has changed Issa's prognosis — the curse is no longer actively progressing. Whether what has already happened to her reverses is unknown.\n\nHe is a man who has been trying to fix his daughter's situation by controlling the context she is in. The context has changed. The question now is whether he adjusts his methods to match.",
@@ -367,7 +383,20 @@
       },
       "requires": {},
       "text": {
-        "default": "You bring [missing person] to the Rootless camp.\n\nThis meeting — between the person who spent fourteen months in the ruins and the person who sent them there and spent fourteen months regretting it — is one you cannot manage and do not try to.\n\nMaret sees them from across the camp and stops moving. [missing person] sees Maret and stops moving. The camp moves around both of them, the ordinary business of twenty-three people, and in the middle of it two people who have something to say to each other stand still.\n\nYou give them space. Branch appears at your elbow — not to say anything, just to stand with you while the thing happens.",
+        "default": [
+          "You bring [missing person] to the Rootless camp.",
+          "This meeting — between the person who spent fourteen months in the ruins and the person who sent them there and spent fourteen months regretting it — is one you cannot manage and do not try to.",
+          {
+            "when": {
+              "flags": {
+                "maret_joined": true
+              }
+            },
+            "text": "They saw each other in the ruins and said almost nothing. This is the conversation."
+          },
+          "Maret sees them from across the camp and stops moving. [missing person] sees Maret and stops moving. The camp moves around both of them, the ordinary business of twenty-three people, and in the middle of it two people who have something to say to each other stand still.",
+          "You give them space. Branch appears at your elbow — not to say anything, just to stand with you while the thing happens."
+        ],
         "commander": "You stand with Branch and you watch Maret and [missing person] begin a conversation that has been waiting fourteen months to happen.\n\n\"She sent them in,\" Branch says quietly. \"She has never said so to me, but she sent them in.\"\n\n\"I know,\" you say.\n\n\"They are going to be all right,\" he says. Not a question. A decision. Branch making a decision about how things are going to be, which is how Branch makes things be that way.",
         "arcane": "Lira appears beside you as you watch. She is having a good period — fully present, the delay between thought and expression absent today.\n\n\"The frequency is different,\" she says. \"Since this morning. Something changed.\"\n\n\"Yes,\" you say.\n\nShe thinks about this. \"Will I get better?\" she asks. Not hopefully. Honestly.\n\n\"I do not know,\" you say. \"I think there is a possibility you might. I cannot promise it.\" A pause. \"But the thing that was making you worse has stopped.\"",
         "ranger": "You watch the camp from the edge. Lira is more present today. The plants in the herb garden that answer to the curse have shifted, and you read it as less.\n\nThe sealing is working. Slowly.\n\nBranch says, without looking at you, \"You did it.\" It is the closest he gets to thank you.",

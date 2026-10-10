@@ -4,8 +4,8 @@ import { test, expect, type Page } from '@playwright/test'
 // where a test names a choice for a scene. Randomness is stubbed so rolls are fixed.
 
 const FINAL = 'act2_ch8_point_of_no_return'
-// The script still has "if she came with you" until the story pass (N7) removes it.
-const STAGE_DIRECTIONS_FIXED = false
+// N7 took the stage directions out of the prose; this keeps them out.
+const STAGE_DIRECTIONS_FIXED = true
 
 async function stubRandom(page: Page, value: number) {
   await page.addInitScript(v => { Math.random = () => v }, value)
