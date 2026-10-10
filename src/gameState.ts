@@ -119,6 +119,10 @@ export function applyStateChanges(state: GameState, changes: StateChanges): Game
     )
   }
 
+  // Items are used up once the flag they are consumed on is set.
+  const defs = getMasterIndex().inventory_items
+  next.inventory = next.inventory.filter(id => { const f = defs[id]?.consumed_on; return !(f && next.flags[f]) })
+
   if (changes.world) {
     // curse_spread is a delta. Day parts go through applyWhen so time only moves forward.
     const { curse_spread, day, time_of_day, skip_days, ...rest } = changes.world

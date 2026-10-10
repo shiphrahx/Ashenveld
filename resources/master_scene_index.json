@@ -860,46 +860,56 @@
   },
   "inventory_items": {
     "covenant_ward": {
+      "name": "Covenant ward",
       "description": "Stone disc with Covenant markings. Slows curse exposure effects.",
       "consumable": false
     },
     "covenant_marker_stone": {
+      "name": "Marker stone",
       "description": "Carved stone for placing at the east road nexus point.",
       "consumable": true,
       "consumed_on": "covenant_marker_placed"
     },
     "rootless_map": {
+      "name": "Rootless map",
       "description": "Hand-drawn map of the east road with Rootless exploration points. Lira drew it.",
       "consumable": false
     },
     "rootless_provisions": {
+      "name": "Provisions",
       "description": "Dried food and medicinal herbs from Maret's camp.",
       "consumable": true
     },
     "carved_bone_figure": {
+      "name": "Bone figure",
       "description": "Found in Harrow. Small figure. Unknown origin.",
       "consumable": false
     },
     "missing_person_note": {
+      "name": "Cloth note",
       "description": "Cloth with four words written in ink. Your name. Keep going.",
       "consumable": false
     },
     "harrow_papers": {
+      "name": "Harrow papers",
       "description": "The old man's records from Harrow. The last entries are the most important.",
       "consumable": false
     },
     "cellar_map_copy": {
+      "name": "Cellar carvings",
       "description": "A copy of the carvings from Harrow's barn cellar. A guide to the ruins.",
       "consumable": false
     },
     "maret_outskirts_notes": {
+      "name": "Maret's notes",
       "description": "Maret's handwritten notes on safe movement through the ruins outskirts.",
       "consumable": false
     },
     "mechanism_fragment": {
+      "name": "Mechanism fragment",
       "description": "A piece of the original sealing mechanism. Warm. Remembers what it was.",
       "consumable": true,
-      "consumed_on": "ritual_complete"
+      "consumed_on": "ritual_done"
     }
   },
   "class_stat_blocks": {

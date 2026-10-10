@@ -25,7 +25,7 @@ export default function Items({ inventory, onClose }: Props) {
           ) : (
             inventory.map(id => {
               const def = itemDefs[id]
-              const name = id.replace(/_/g, ' ')
+              const name = def?.name ?? id.replace(/_/g, ' ')
               const consumable = def?.consumable ?? false
               return (
                 <div key={id} className={styles.item}>
