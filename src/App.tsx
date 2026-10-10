@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react'
 import type { GameState, Scene, Outcome, JournalEntry } from './types'
-import { initLoader, resolveScene, locationName, peekScene } from './loader'
+import { initLoader, resolveScene, locationName, peekScene, getMasterIndex } from './loader'
+import LoadingScreen from './components/LoadingScreen'
+import ErrorScreen from './components/ErrorScreen'
 import { DIMMING, REST, restOption, type RestOption } from './rules'
 import {
   createFreshState,
@@ -303,20 +305,11 @@ export default function App() {
 
   // ── Render ────────────────────────────────────────────────────────────────────
 
-  if (phase === 'loading') {
-    return (
-      <div className={styles.loading}>
-        <span className={styles.loadingText}>Loading…</span>
-      </div>
-    )
-  }
+  if (phase === 'loading') return <LoadingScreen />
 
   if (phase === 'error') {
-    return (
-      <div className={styles.error}>
-        <p className={styles.errorText}>{error ?? 'An unknown error occurred.'}</p>
-      </div>
-    )
+    return <ErrorScreen error={error ?? 'Unknown error'} onRetry={() => location.reload()}
+      onTitle={() => { try { getMasterIndex(); setError(null); handleReturnToTitle() } catch { location.reload() } }} />
   }
 
   if (phase === 'title') {
@@ -396,9 +389,5 @@ export default function App() {
   }
 
   // Phase is 'game' but scene not yet loaded
-  return (
-    <div className={styles.loading}>
-      <span className={styles.loadingText}>Loading scene…</span>
-    </div>
-  )
+  return <LoadingScreen />
 }
