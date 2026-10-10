@@ -30,6 +30,7 @@ export function meets(c: Condition | undefined | null, s: GameState): boolean {
   if (c.taken && !c.taken.every(k => s.taken?.[k])) return false
   if (c.min_curse !== undefined && s.world.curse_spread < c.min_curse) return false
   if (c.max_curse !== undefined && s.world.curse_spread > c.max_curse) return false
+  if (c.min_gold !== undefined && s.player.resources.gold < c.min_gold) return false
   if (c.health_below !== undefined && s.player.resources.health >= c.health_below) return false
   if (c.any && !c.any.some(x => meets(x, s))) return false
   if (c.not && meets(c.not, s)) return false

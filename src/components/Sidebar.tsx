@@ -9,6 +9,7 @@ interface Props {
   onPeople: () => void
   onMenu: () => void
   onMap: () => void
+  hideClock?: boolean
 }
 
 const STAT_KEYS: Array<[keyof GameState['player']['stats'], string, string]> = [
@@ -55,7 +56,7 @@ const CLASS_LABELS: Record<string, string> = {
   cipher:    'The Cipher',
 }
 
-export default function Sidebar({ state, onJournal, onItems, onPeople, onMenu, onMap }: Props) {
+export default function Sidebar({ state, onJournal, onItems, onPeople, onMenu, onMap, hideClock = false }: Props) {
   const { player, world, factions } = state
   const hpPct = Math.max(0, Math.min(100, (player.resources.health / player.resources.max_health) * 100))
   const classLabel = CLASS_LABELS[player.class] ?? player.class
@@ -73,8 +74,10 @@ export default function Sidebar({ state, onJournal, onItems, onPeople, onMenu, o
         <div className={styles.trackWrap}>
           <div className={`${styles.trackFill} ${styles.hp}`} style={{ width: `${hpPct}%` }} />
         </div>
-        <div className={styles.timeVal}>{formatTime(world.time_of_day)}</div>
-        <div className={styles.timeSub}>Day {world.day}&nbsp;·&nbsp;{formatTimeSub(world.time_of_day)}</div>
+        {!hideClock && <>
+          <div className={styles.timeVal}>{formatTime(world.time_of_day)}</div>
+          <div className={styles.timeSub}>Day {world.day}&nbsp;·&nbsp;{formatTimeSub(world.time_of_day)}</div>
+        </>}
       </div>
 
       {/* ── Stats (class label as section header) ── */}

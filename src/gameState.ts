@@ -47,7 +47,7 @@ export function createFreshState(
       act: 1,
       chapter: 1,
       day: 1,
-      time_of_day: 'dawn',
+      time_of_day: 'evening',
       current_location: 'crestfall_docks',
       curse_spread: 0,
     },
@@ -81,9 +81,10 @@ export function applyStateChanges(state: GameState, changes: StateChanges): Game
       const key = k as keyof GameState['player']['resources']
       ;(next.player.resources[key] as number) += delta
     }
-    // Clamp health
+    // Gold never goes below 0. Health has a floor of 1 until resting and collapse exist (G9).
+    next.player.resources.gold = Math.max(0, next.player.resources.gold)
     next.player.resources.health = Math.max(
-      0,
+      1,
       Math.min(next.player.resources.health, next.player.resources.max_health)
     )
   }
@@ -119,67 +120,16 @@ export function applyStateChanges(state: GameState, changes: StateChanges): Game
   }
 
   if (changes.world) {
-    Object.assign(next.world, changes.world)
+    // curse_spread is a delta. Day parts go through applyWhen so time only moves forward.
+    const { curse_spread, day, time_of_day, skip_days, ...rest } = changes.world
+    Object.assign(next.world, rest)
+    if (typeof curse_spread === 'number')
+      next.world.curse_spread = Math.max(0, Math.min(100, next.world.curse_spread + curse_spread))
+    if (time_of_day || day || skip_days)
+      return applyWhen(next, { part: time_of_day ?? next.world.time_of_day, day, skip_days })
   }
 
   return next
-}
-
-// ─── Time advance ─────────────────────────────────────────────────────────────
-
-const TIME_LABELS: Array<[number, string]> = [
-  [0,    'midnight'],
-  [60,   'pre-dawn'],
-  [300,  'dawn'],
-  [480,  'morning'],
-  [720,  'midday'],
-  [900,  'afternoon'],
-  [1080, 'evening'],
-  [1200, 'night'],
-  [1380, 'late night'],
-]
-
-function minutesToLabel(minutes: number): string {
-  for (let i = TIME_LABELS.length - 1; i >= 0; i--) {
-    if (minutes >= TIME_LABELS[i][0]) return TIME_LABELS[i][1]
-  }
-  return 'midnight'
-}
-
-/** Convert a 24-hour minute count to a readable time string like "14:30". */
-function minutesToClock(minutes: number): string {
-  const h = Math.floor(minutes / 60) % 24
-  const m = minutes % 60
-  return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`
-}
-
-export function advanceTime(state: GameState, minutesDelta: number): GameState {
-  if (minutesDelta === 0) return state
-  const next: GameState = JSON.parse(JSON.stringify(state))
-
-  // We store absolute minutes in `world.time_minutes` for calculation,
-  // but keep time_of_day as a label for display.
-  const rawMinutes = getAbsoluteMinutes(state) + minutesDelta
-  const wrapped = rawMinutes % 1440
-  const dayOffset = Math.floor(rawMinutes / 1440)
-
-  next.world.day += dayOffset
-  next.world.time_of_day = `${minutesToClock(wrapped)} — ${minutesToLabel(wrapped)}`
-
-  // Stash raw minutes for next advance
-  ;(next.world as Record<string, unknown>)['_time_minutes'] = wrapped
-
-  return next
-}
-
-function getAbsoluteMinutes(state: GameState): number {
-  const stored = (state.world as Record<string, unknown>)['_time_minutes']
-  if (typeof stored === 'number') return stored
-  // Parse from label as a rough start time if not yet stored
-  const label = state.world.time_of_day
-  if (label === 'dawn') return 300
-  if (label === 'morning') return 480
-  return 300
 }
 
 // ─── Day parts ────────────────────────────────────────────────────────────────
@@ -228,6 +178,10 @@ export function loadGame(): GameState | null {
     // Saves from before version 2 lack these; B23 replaces this with a full migration.
     saved.visited ??= {}
     saved.taken ??= {}
+    if (!PARTS.includes(saved.world.time_of_day)) {
+      const word = String(saved.world.time_of_day).split(' — ').pop() as DayPart
+      saved.world.time_of_day = PARTS.includes(word) ? word : 'evening'
+    }
     return saved
   } catch {
     return null

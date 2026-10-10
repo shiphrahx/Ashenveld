@@ -20,7 +20,8 @@
   flex-shrink: 0;
 }
 
-.crumb { color: var(--text-muted); font-size: 11px; letter-spacing: 0.1em; }
+.crumb { color: var(--text-muted); font-size: 11px; letter-spacing: 0.1em; display: flex; gap: 14px; }
+.clock { color: var(--text-main); }
 
 .narrative {
   flex: 1;

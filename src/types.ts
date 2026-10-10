@@ -84,6 +84,7 @@ export interface Condition {
   min_curse?: number
   max_curse?: number
   health_below?: number
+  min_gold?: number
   any?: Condition[]                          // at least one matches
   not?: Condition
 }
@@ -114,7 +115,8 @@ export interface StateChanges {
   factions?: Record<string, { reputation: number }>
   inventory?: string[]
   inventory_remove?: string[]
-  world?: Partial<GameState['world']>
+  /** world.curse_spread is a delta. day and skip_days move the clock forward. */
+  world?: Partial<GameState['world']> & { skip_days?: number }
 }
 
 export interface Outcome {
@@ -145,7 +147,6 @@ export interface Choice {
 
 export interface OnEnter {
   state_changes: StateChanges
-  time_advance: number
 }
 
 export type DayPart = 'dawn' | 'morning' | 'midday' | 'afternoon' | 'evening' | 'night'
@@ -199,7 +200,7 @@ export interface GameState {
     act: number
     chapter: number
     day: number
-    time_of_day: string
+    time_of_day: DayPart
     current_location: string
     curse_spread: number
   }
