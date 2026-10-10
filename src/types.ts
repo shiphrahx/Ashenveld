@@ -20,6 +20,7 @@ export interface MasterIndex {
   class_stat_blocks: Record<string, StatBlock>
   faction_reputation_thresholds: Record<string, Record<string, number>>
   act_summaries?: Record<string, { title: string; entry: string; exit_scenes: string[]; chapters: number; description: string }>
+  endings?: Array<{ id: string; title: string }>
 }
 
 export interface StatBlock {
@@ -94,6 +95,7 @@ export interface Condition {
   min_gold?: number
   min_counter?: Record<string, number>
   max_counter?: Record<string, number>
+  lowest_faction?: string                    // this faction has the lowest reputation (ties: first listed)
   any?: Condition[]                          // at least one matches
   not?: Condition
 }
@@ -163,7 +165,11 @@ export interface OnEnter {
 }
 
 export type DayPart = 'dawn' | 'morning' | 'midday' | 'afternoon' | 'evening' | 'night'
-export interface SceneWhen { part: DayPart; day?: number; skip_days?: number; hide_clock?: boolean }
+/**
+ * When a scene happens. `part` may list several day parts: if the clock is
+ * already in one of them it stays, otherwise it moves to the first.
+ */
+export interface SceneWhen { part: DayPart | DayPart[]; day?: number; skip_days?: number; hide_clock?: boolean }
 
 export interface Scene {
   id: string
@@ -240,6 +246,8 @@ export interface GameState {
   taken: Record<string, true>            // "sceneId:choiceId"
   ended?: { id: string; title: string; text?: string }  // set when an ending is reached; text is the closing outcome
   journal_seen?: string[]                // note and lead keys the player has seen in the journal
+  last_rest_scene?: string               // where a collapse wakes you (G9)
+  collapse_return?: string               // the scene to go on to after a collapse
 }
 
 // ─── Journal ──────────────────────────────────────────────────────────────────

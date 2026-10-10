@@ -7,7 +7,7 @@ One step per branch and pull request. Each tick lists what was done, what was sk
 - [x] 3. docs/01 B21 (validator and smoke test), then B14 to B20
 - [x] 4. docs/04 Design tokens, then U1 to U7
 - [x] 5. docs/03 G1 to G6
-- [ ] 6. docs/03 G7 to G13
+- [x] 6. docs/03 G7 to G13
 - [ ] 7. docs/02 Section 0 (author decisions), then N1 to N4
 - [ ] 8. docs/02 N5 to N8
 - [ ] 9. docs/02 N9 to N18
@@ -187,3 +187,37 @@ Branch `step-5-mechanics`, stacked on step 4.
 - G1c lists no labels for its bonuses. I wrote short ones in the player's terms ("Corvin told you she sent them east").
 - G1d says the road traveller already gives nothing on a failure. True, so nothing changed there.
 - The three engagement approaches reuse the old outcome text, which is written for holding steady. The story pass should give the Mana and Charisma approaches their own lines.
+
+## Step 6 — G7 to G13
+
+Branch `step-6-systems`, stacked on step 5.
+
+**Done**
+
+- G7.1: Day 2 offers the gate or the shrine; either leads to the camp through a route scene `act1_ch3_after_faction`. Whichever faction you skipped asks for you on Day 3 in `act1_ch5_faction_responses` and hands you back to the evening. The camp-rumour text only describes factions you've met.
+- G7.4: `show_cellar_carvings` in `act2_ch1_what_they_found` leads to a new `act2_ch2_hidden_passage` (bone-figure marks, Joren's name for anyone who counts them), rejoining at the chamber entrance.
+- G7 single-choice scenes: eight Act 1 and 2 scenes have a real second option (see the commit). G7.2, 7.3, 7.5–7.7 were already wired by earlier steps.
+- G8: The Dimming. Starts at 15, +1 per new day in Act 1, +3 per skipped day, Act 2 positive values ×0.75 (43 values), five slow choices +2. A full seal caps it at 45; a partial one at 60, with a floor of 30 and +1 per Act 3 scene. Bands Clear/Thin/Dim/Grey/Still in the sidebar and status strip, the number and last change for the Arcane, a band-change chip. Grey caps Resolve at 80. Thin, Dim and Grey each change a Crestfall scene; Dim costs −1 on three town Charisma rolls. Reaching 100 before the seal changes the reception scene and adds a paragraph to every ending.
+- G9: Resolve. Rest at the Tallow (3 coin, free at Aldous 30), the camp (Rootless 15+), the shrine (Covenant 15+) and the two ruins-camp scenes: +30 Resolve, next morning, Dimming +2 in Acts 1–2, with a confirm. "Eat" with provisions anywhere: +20, item used. Resolve ≤40 gives −2 on Stamina and Mana rolls, applied by the engine. Resolve 0 enters `act{n}_collapse`: wake where you last rested a day later, Dimming +5, Resolve 40, one line from whoever is there, then on to the scene you were heading for. `GameOver` is deleted.
+- G10: the three Act 3 rebuilding rolls read the settlement and alignments; a fragile settlement breaks in `act3_ch3_the_long_work`, party chosen by lowest reputation (new `lowest_faction` condition).
+- G11: the camp hub has three activities, two per visit, then only "The light is going. Find Maret."
+- G12: locked choices with a hint show as disabled rows (two at most, class first). Hints added to item, coin and trust gates.
+- G13: chapter checkpoints (last three) and a menu option to go back to the start of the chapter; an Endings gallery on the title; seen scenes skip the fade, say "seen before", and a menu switch opens them folded at the choices.
+- Engine: `when.part` can be a list of day parts.
+- Tests: unit 18 passed; e2e 11 passed, with new rest and collapse tests.
+
+**AUTHOR DECISION defaults used**: none from the plan. New prose: the Day 3 faction prompts, the hidden passage scene, eight second options, the midwife, the Dimming lines, the three collapse scenes, the settlement breaks. All in the JSON.
+
+**Skipped or deferred**
+
+- Act 3's single-choice scenes keep one choice until N11 gives each path its conflict, so they aren't written twice.
+- The ritual approach and sealing stay single-choice along with the line, the aftermath and the endings. They're the held-breath moments.
+- E4 (the curse on screen) is step 11.
+
+**Plan was wrong or unclear**
+
+- G8 says the Dimming reaches about 80 at the sealing. Measured on the main path it's 92, so the "Dimming is close" penalty (−2 at 90+) applies on every run. The knobs are in `src/rules.ts` (`DIMMING.perSkippedDay` and the Act 2 scaling); I left the plan's numbers in so you can decide.
+- G7.1's Day 3 detour would have pushed the clock to the next morning, because the faction scenes are set in the morning. `when.part` now accepts a list, and those scenes allow morning or afternoon.
+- G9 says "return to the scene you were in" after a collapse. That scene's choices may already be used up, so the collapse carries on to the scene the failed choice was leading to.
+- G9's ritual-sealing "worn thin" bonus would have doubled the engine's general −2, so the data one is gone.
+- G13's "Skip to the next choice I have not made" is read as: seen scenes open folded at the choices. It doesn't auto-play choices.

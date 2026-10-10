@@ -15,7 +15,7 @@
       "on_enter": {
         "state_changes": {
           "world": {
-            "curse_spread": 4
+            "curse_spread": 3
           }
         }
       },
@@ -65,7 +65,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act2_ch5_ritual_preparation",
@@ -80,7 +81,7 @@
       "on_enter": {
         "state_changes": {
           "world": {
-            "curse_spread": 6
+            "curse_spread": 5
           }
         }
       },
@@ -133,7 +134,24 @@
               "state_changes": {
                 "world": {
                   "skip_days": 1,
-                  "curse_spread": 3
+                  "curse_spread": 2
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "rest_instead",
+          "text": "You are worn through. Rest, and let [missing person] go over it alone.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You sleep most of the second day. When you wake they are sitting by the fire with the chamber text spread across their knees, mouthing it.\n\n\"You will know enough,\" they say, without looking up. You are not sure either of you believes it.",
+              "next_scene": "act2_ch5_maret_conversation",
+              "state_changes": {
+                "resources": {
+                  "health": 20
                 }
               }
             }
@@ -249,7 +267,8 @@
                 }
               }
             }
-          }
+          },
+          "locked_hint": "Needs 8 coin"
         }
       ]
     },

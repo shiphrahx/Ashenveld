@@ -254,3 +254,19 @@
   border-bottom: 1px dotted var(--partial);
   white-space: nowrap;
 }
+
+/* G12: what you are missing */
+.locked { cursor: default; opacity: 1; border-style: dashed; color: var(--text-muted); }
+.locked:hover { border-color: var(--border-dim); background: none; color: var(--text-muted); }
+.lockHint { font-size: var(--fs-small); color: var(--text-faint); white-space: nowrap; }
+
+/* G13: scenes read before */
+.seenMark {
+  margin-left: 10px;
+  font-family: var(--font-ui);
+  font-size: var(--fs-label);
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--text-muted);
+}
+.seen .np, .seen .nd, .seen .lens { animation: none; opacity: 1; transform: none; }

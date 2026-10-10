@@ -10,7 +10,7 @@
 
 import type { GameState, Roll, RollResult, DiceOutcome, RollBonus } from './types'
 import { meets } from './conditions'
-import { RULES, modifierForStat } from './rules'
+import { RULES, modifierForStat, WORN_THIN } from './rules'
 
 export function modifierFor(s: GameState, stat: string): number {
   return modifierForStat((s.player.stats as Record<string, number>)[stat] ?? 10)
@@ -21,6 +21,9 @@ export function resolveRoll(roll: Roll, s: GameState): { stat: string; modifier:
   const stats = Array.isArray(roll.stat) ? roll.stat : [roll.stat]
   const stat = stats.reduce((a, b) => modifierFor(s, b) > modifierFor(s, a) ? b : a)
   const bonuses = (roll.bonus ?? []).filter(b => meets(b.when, s))
+  // Worn thin: low Resolve makes enduring and sensing harder (G9).
+  if (s.player.resources.health <= WORN_THIN && (stat === 'stamina' || stat === 'mana'))
+    bonuses.push({ when: {}, value: -2, label: 'You are worn thin' })
   const bonus = Math.max(-RULES.maxBonus, Math.min(RULES.maxBonus, bonuses.reduce((n, b) => n + b.value, 0)))
   return { stat, modifier: modifierFor(s, stat), bonuses, bonus }
 }

@@ -5,7 +5,7 @@ import type { GameState } from '../../src/types'
 
 function withStats(stats: Partial<GameState['player']['stats']>, flags: Record<string, boolean> = {}): GameState {
   return {
-    player: { stats: { strength: 10, dexterity: 10, stamina: 10, intelligence: 10, mana: 10, charisma: 10, perception: 10, ...stats } },
+    player: { stats: { strength: 10, dexterity: 10, stamina: 10, intelligence: 10, mana: 10, charisma: 10, perception: 10, ...stats }, resources: { gold: 0, health: 100, max_health: 100 } },
     flags, inventory: [], relationships: {}, factions: {}, visited: {}, taken: {}, counters: {},
     world: { curse_spread: 0 },
   } as unknown as GameState
@@ -42,5 +42,15 @@ describe('resolveRoll', () => {
     const r = resolveRoll(roll, withStats({}, { a: true, b: true }))
     expect(r.bonuses.map(b => b.label)).toEqual(['A', 'B'])
     expect(r.bonus).toBe(6)
+  })
+})
+
+describe('worn thin (G9)', () => {
+  it('takes 2 off Stamina and Mana rolls at 40 Resolve or less', () => {
+    const s = withStats({ stamina: 14 })
+    s.player.resources.health = 40
+    const r = resolveRoll({ stat: 'stamina', dc: 12 }, s)
+    expect(r.bonus).toBe(-2)
+    expect(resolveRoll({ stat: 'charisma', dc: 12 }, s).bonus).toBe(0)
   })
 })

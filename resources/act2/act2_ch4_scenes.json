@@ -15,7 +15,7 @@
       "on_enter": {
         "state_changes": {
           "world": {
-            "curse_spread": 3
+            "curse_spread": 2
           }
         }
       },
@@ -256,7 +256,7 @@
       "on_enter": {
         "state_changes": {
           "world": {
-            "curse_spread": 4
+            "curse_spread": 3
           },
           "flags": {
             "issa_crisis_begun": true
@@ -432,7 +432,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act2_ch4_vorne_issa_negotiation",
@@ -446,7 +447,7 @@
       "on_enter": {
         "state_changes": {
           "world": {
-            "curse_spread": 3
+            "curse_spread": 2
           }
         }
       },
@@ -584,7 +585,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act2_ch4_issa_confrontation",
@@ -598,7 +600,7 @@
       "on_enter": {
         "state_changes": {
           "world": {
-            "curse_spread": 5
+            "curse_spread": 4
           },
           "flags": {
             "issa_confrontation_occurred": true
@@ -771,7 +773,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act2_ch4_pol_fragment",
@@ -836,7 +839,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     }
   ]
 }

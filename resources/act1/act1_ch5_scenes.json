@@ -203,6 +203,40 @@
           }
         },
         {
+          "id": "see_the_lieutenant",
+          "text": "The older soldier says the lieutenant would like a word. Go to the gate.",
+          "requires": {
+            "flags": {
+              "compact_met": false
+            }
+          },
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "\"He asked after you yesterday,\" the soldier says on the way. \"He likes to know who's in town.\"",
+              "next_scene": "act1_ch3_compact_introduction",
+              "state_changes": {}
+            }
+          }
+        },
+        {
+          "id": "see_the_priest",
+          "text": "The priest's boy says Edric would like a word. Go to the shrine.",
+          "requires": {
+            "flags": {
+              "covenant_met": false
+            }
+          },
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "The boy walks a step ahead of you the whole way and does not look back to see if you are following.",
+              "next_scene": "act1_ch3_covenant_introduction",
+              "state_changes": {}
+            }
+          }
+        },
+        {
           "id": "follow_rootless_man",
           "text": "Follow the Rootless man back toward the camp.",
           "requires": {},
@@ -340,7 +374,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch5_class_specific",
@@ -410,7 +445,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     }
   ]
 }

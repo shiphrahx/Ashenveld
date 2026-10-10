@@ -112,7 +112,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch6_east_road_start",
@@ -149,6 +150,23 @@
               "text": "You keep moving. The road continues its narrowing. The forest continues its enclosure. Two hours in, the road shows you something.",
               "next_scene": "act1_ch6_place_covenant_marker",
               "state_changes": {}
+            }
+          }
+        },
+        {
+          "id": "look_back",
+          "text": "Stop at the last milestone and look back at Crestfall.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "From here the town is a smudge of smoke above the trees. You can pick out the shrine roof and nothing else. You stand there longer than you need to.\n\nThen the road, again.",
+              "next_scene": "act1_ch6_place_covenant_marker",
+              "state_changes": {
+                "flags": {
+                  "looked_back_at_crestfall": true
+                }
+              }
             }
           }
         }
@@ -202,7 +220,8 @@
                 ]
               }
             }
-          }
+          },
+          "locked_hint": "Needs the Covenant marker stone"
         },
         {
           "id": "feel_the_stone",
@@ -272,7 +291,8 @@
                 ]
               }
             }
-          }
+          },
+          "locked_hint": "Needs the Covenant marker stone"
         },
         {
           "id": "do_not_place_marker",
@@ -606,7 +626,11 @@
             "default": {
               "text": "You take time in Harrow. The afternoon light is going and you want to be inside something before dark.",
               "next_scene": "act1_ch7_harrow_investigation",
-              "state_changes": {}
+              "state_changes": {
+                "world": {
+                  "curse_spread": 2
+                }
+              }
             }
           }
         },

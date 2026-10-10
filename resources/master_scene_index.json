@@ -570,6 +570,31 @@
       "file": "act1_ch3_scenes.json",
       "act": 1,
       "chapter": 3
+    },
+    "act1_ch3_after_faction": {
+      "file": "act1_ch3_scenes.json",
+      "act": 1,
+      "chapter": 3
+    },
+    "act2_ch2_hidden_passage": {
+      "file": "act2_ch2_scenes.json",
+      "act": 2,
+      "chapter": 2
+    },
+    "act1_collapse": {
+      "file": "act1_ch1_scenes.json",
+      "act": 1,
+      "chapter": 1
+    },
+    "act2_collapse": {
+      "file": "act2_ch1_scenes.json",
+      "act": 2,
+      "chapter": 1
+    },
+    "act3_collapse": {
+      "file": "act3_ch1_scenes.json",
+      "act": 3,
+      "chapter": 1
     }
   },
   "starting_scene": "act1_ch1_barge_arrival",
@@ -643,6 +668,16 @@
       "note": "Market to faction introductions"
     },
     {
+      "from": "act1_ch2_market_rumour_missing",
+      "to": "act1_ch3_covenant_introduction",
+      "note": "Chapter change"
+    },
+    {
+      "from": "act1_ch3_after_faction",
+      "to": "act1_ch5_player_curse_touch",
+      "note": "Chapter change"
+    },
+    {
       "from": "act1_ch3_maret_first_meeting",
       "to": "act1_ch4_maret_opens",
       "note": "Chapter change"
@@ -668,6 +703,16 @@
       "note": "Letter withheld path to ch5"
     },
     {
+      "from": "act1_ch5_faction_responses",
+      "to": "act1_ch3_compact_introduction",
+      "note": "Chapter change"
+    },
+    {
+      "from": "act1_ch5_faction_responses",
+      "to": "act1_ch3_covenant_introduction",
+      "note": "Chapter change"
+    },
+    {
       "from": "act1_ch5_class_specific",
       "to": "act1_ch6_departure_decision",
       "note": "Ch5 end to departure"
@@ -690,6 +735,11 @@
     {
       "from": "act2_ch1_what_they_found",
       "to": "act2_ch2_inner_approach",
+      "note": "Chapter change"
+    },
+    {
+      "from": "act2_ch1_what_they_found",
+      "to": "act2_ch2_hidden_passage",
       "note": "Chapter change"
     },
     {
@@ -988,5 +1038,27 @@
       "allied": 25,
       "trusted": 40
     }
-  }
+  },
+  "endings": [
+    {
+      "id": "ending_stays_together",
+      "title": "The Warden Stays"
+    },
+    {
+      "id": "ending_escape_together",
+      "title": "The Road West"
+    },
+    {
+      "id": "ending_alone_legend",
+      "title": "The Warden Alone"
+    },
+    {
+      "id": "ending_warden_of_ashenveld",
+      "title": "The Camp Endures"
+    },
+    {
+      "id": "ending_the_account",
+      "title": "The Account"
+    }
+  ]
 }

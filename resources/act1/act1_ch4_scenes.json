@@ -91,7 +91,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch4_maret_guarded",
@@ -138,13 +139,15 @@
               "next_scene": "act1_ch4_rootless_camp_stay",
               "state_changes": {
                 "world": {
-                  "time_of_day": "evening"
+                  "time_of_day": "evening",
+                  "curse_spread": 2
                 }
               }
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch4_rootless_camp_stay",
@@ -174,7 +177,11 @@
         {
           "id": "talk_to_lira",
           "text": "Spend time with Lira.",
-          "requires": {},
+          "requires": {
+            "max_counter": {
+              "camp_day": 1
+            }
+          },
           "roll": null,
           "outcomes": {
             "default": {
@@ -188,7 +195,11 @@
         {
           "id": "talk_to_branch",
           "text": "Spend time with Branch.",
-          "requires": {},
+          "requires": {
+            "max_counter": {
+              "camp_day": 1
+            }
+          },
           "roll": null,
           "outcomes": {
             "default": {
@@ -200,8 +211,80 @@
           "once": true
         },
         {
+          "id": "carry_water",
+          "text": "Carry water with the midwife.",
+          "requires": {
+            "max_counter": {
+              "camp_day": 1
+            }
+          },
+          "once": true,
+          "roll": {
+            "stat": "stamina",
+            "dc": 10
+          },
+          "outcomes": {
+            "success": {
+              "text": "The well is a quarter of a mile back towards town, because the one in the camp tastes wrong. You carry two buckets each way, six times. The midwife does not talk while she walks and you do not either.\n\nOn the last trip she says, \"The town well's the same depth as ours. It'll go the same way. Nobody there wants to hear it.\"",
+              "next_scene": "act1_ch4_rootless_camp_stay",
+              "state_changes": {
+                "counters": {
+                  "camp_day": 1
+                },
+                "factions": {
+                  "rootless": {
+                    "reputation": 8
+                  }
+                },
+                "flags": {
+                  "carried_water": true
+                }
+              }
+            },
+            "success_at_cost": {
+              "text": "You manage four trips before your shoulders give out. The midwife takes the last bucket from you without comment and carries it herself.",
+              "next_scene": "act1_ch4_rootless_camp_stay",
+              "state_changes": {
+                "counters": {
+                  "camp_day": 1
+                },
+                "factions": {
+                  "rootless": {
+                    "reputation": 4
+                  }
+                },
+                "resources": {
+                  "health": -3
+                }
+              }
+            },
+            "failure": {
+              "text": "You slip on the bank by the well on the second trip and go down hard, with the bucket on top of you. The midwife helps you up and looks at your wrist and tells you to sit.",
+              "next_scene": "act1_ch4_rootless_camp_stay",
+              "state_changes": {
+                "counters": {
+                  "camp_day": 1
+                },
+                "resources": {
+                  "health": -5
+                }
+              }
+            }
+          }
+        },
+        {
           "id": "wait_for_maret_evening",
-          "text": "Wait for Maret to find you when the day's work is done.",
+          "text": [
+            {
+              "when": {
+                "min_counter": {
+                  "camp_day": 2
+                }
+              },
+              "text": "The light is going. Find Maret.",
+              "else": "Wait for Maret to find you when the day's work is done."
+            }
+          ],
           "requires": {},
           "roll": null,
           "outcomes": {
@@ -212,7 +295,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch4_lira",
@@ -263,6 +347,9 @@
                   "lira": {
                     "closeness": 25
                   }
+                },
+                "counters": {
+                  "camp_day": 1
                 }
               }
             },
@@ -274,6 +361,9 @@
                   "lira": {
                     "closeness": 15
                   }
+                },
+                "counters": {
+                  "camp_day": 1
                 }
               }
             },
@@ -285,6 +375,9 @@
                   "lira": {
                     "closeness": 8
                   }
+                },
+                "counters": {
+                  "camp_day": 1
                 }
               }
             }
@@ -304,12 +397,16 @@
                   "lira": {
                     "closeness": 20
                   }
+                },
+                "counters": {
+                  "camp_day": 1
                 }
               }
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch4_branch",
@@ -357,6 +454,9 @@
                   "branch": {
                     "closeness": 20
                   }
+                },
+                "counters": {
+                  "camp_day": 1
                 }
               }
             },
@@ -368,13 +468,20 @@
                   "branch": {
                     "closeness": 10
                   }
+                },
+                "counters": {
+                  "camp_day": 1
                 }
               }
             },
             "failure": {
               "text": "\"Maret can tell you what she wants to tell you,\" he says. \"I am not her mouthpiece.\" He resumes sharpening. The conversation ends on his terms.",
               "next_scene": "act1_ch4_rootless_camp_stay",
-              "state_changes": {}
+              "state_changes": {
+                "counters": {
+                  "camp_day": 1
+                }
+              }
             }
           }
         },
@@ -401,6 +508,9 @@
                   "branch": {
                     "closeness": 18
                   }
+                },
+                "counters": {
+                  "camp_day": 1
                 }
               }
             },
@@ -412,17 +522,25 @@
                   "branch": {
                     "closeness": 5
                   }
+                },
+                "counters": {
+                  "camp_day": 1
                 }
               }
             },
             "failure": {
               "text": "\"Long enough,\" he says, and goes back to the blade. That is the limit.",
               "next_scene": "act1_ch4_rootless_camp_stay",
-              "state_changes": {}
+              "state_changes": {
+                "counters": {
+                  "camp_day": 1
+                }
+              }
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch4_maret_evening",
@@ -516,7 +634,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch4_maret_letter_success",
@@ -593,7 +712,8 @@
       "text_mode": {
         "arcane": "replace",
         "ranger": "replace"
-      }
+      },
+      "rest": true
     },
     {
       "id": "act1_ch4_maret_letter_withheld",
@@ -692,8 +812,28 @@
               }
             }
           }
+        },
+        {
+          "id": "leave_it",
+          "text": "Leave it. Go back to town.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You do not come back. Maret does not send for you. On the third morning you hear she has been asking Branch whether you have left yet.",
+              "next_scene": "act1_ch5_curse_event",
+              "state_changes": {
+                "relationships": {
+                  "maret": {
+                    "closeness": -5
+                  }
+                }
+              }
+            }
+          }
         }
-      ]
+      ],
+      "rest": true
     }
   ]
 }

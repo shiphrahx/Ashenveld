@@ -41,7 +41,18 @@
               "charisma",
               "stamina"
             ],
-            "dc": 11
+            "dc": 11,
+            "bonus": [
+              {
+                "when": {
+                  "flags": {
+                    "rootless_aligned": true
+                  }
+                },
+                "value": 2,
+                "label": "You stood with the camp"
+              }
+            ]
           },
           "outcomes": {
             "success": {
@@ -80,7 +91,18 @@
           "requires": {},
           "roll": {
             "stat": "intelligence",
-            "dc": 12
+            "dc": 12,
+            "bonus": [
+              {
+                "when": {
+                  "flags": {
+                    "documentation_deal": true
+                  }
+                },
+                "value": 2,
+                "label": "Vorne wants the account too"
+              }
+            ]
           },
           "outcomes": {
             "success": {
@@ -119,7 +141,27 @@
           "requires": {},
           "roll": {
             "stat": "charisma",
-            "dc": 13
+            "dc": 13,
+            "bonus": [
+              {
+                "when": {
+                  "flags": {
+                    "ashenveld_settlement_reached": true
+                  }
+                },
+                "value": 3,
+                "label": "The settlement already holds"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "no_settlement": true
+                  }
+                },
+                "value": -2,
+                "label": "There was never a settlement"
+              }
+            ]
           },
           "outcomes": {
             "success": {
@@ -318,7 +360,8 @@
           }
         }
       ],
-      "objective": "Finish the work, then follow."
+      "objective": "Finish the work, then follow.",
+      "rest": true
     },
     {
       "id": "act3_ch2_alone_work",
@@ -417,7 +460,8 @@
           }
         }
       ],
-      "objective": "Carry on alone."
+      "objective": "Carry on alone.",
+      "rest": true
     }
   ]
 }

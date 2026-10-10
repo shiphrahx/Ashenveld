@@ -195,3 +195,6 @@
   0%   { box-shadow: 0 0 0 2px var(--blue-ice); }
   100% { box-shadow: 0 0 0 2px transparent; }
 }
+
+.dim { background: var(--blue-steel); }
+.dimVal { font-family: var(--font-display); font-size: var(--fs-label); color: var(--blue-ice); }

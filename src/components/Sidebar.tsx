@@ -2,6 +2,7 @@ import React from 'react'
 import type { GameState } from '../types'
 import { CLASS_LABELS } from '../text'
 import { Icon } from './icons'
+import { dimmingBand, maxResolve, type RestOption } from '../rules'
 import type { PanelId } from './TabBar'
 import styles from './Sidebar.module.css'
 
@@ -14,6 +15,10 @@ interface Props {
   journalDot?: boolean
   /** Keys of bars that just changed, for a short highlight. */
   flash?: string[]
+  rest?: RestOption
+  onRest?: () => void
+  /** The Dimming's last change, shown to the Arcane. */
+  dimmingDelta?: number
 }
 
 const STAT_KEYS: Array<[keyof GameState['player']['stats'], string, string]> = [
@@ -57,11 +62,14 @@ const ACTIONS: Array<[PanelId, string, string]> = [
   ['people', 'People', 'Relationships'],
 ]
 
-export default function Sidebar({ state, onOpen, hideClock = false, variant = 'column', journalDot = false, flash = [] }: Props) {
+export default function Sidebar({ state, onOpen, hideClock = false, variant = 'column', journalDot = false, flash = [], rest = { mode: null }, onRest = () => {}, dimmingDelta = 0 }: Props) {
   const { player, world, factions } = state
-  const hpPct = Math.max(0, Math.min(100, (player.resources.health / player.resources.max_health) * 100))
   const classLabel = CLASS_LABELS[player.class] ?? player.class
   const lit = (k: string) => flash.includes(k) ? styles.flash : ''
+  const restLabel = rest.mode === 'eat' ? 'Eat and sit a while' : rest.cost ? `Rest until morning, ${rest.cost} coin` : 'Rest until morning'
+  const curse = world.curse_spread
+  const maxR = maxResolve(player.resources.max_health, curse)
+  const hpPct = Math.max(0, Math.min(100, (player.resources.health / maxR) * 100))
 
   return (
     <aside className={`${styles.sidebar} ${variant === 'sheet' ? styles.sheet : ''}`} aria-label="Your status">
@@ -70,11 +78,21 @@ export default function Sidebar({ state, onOpen, hideClock = false, variant = 'c
       <div className={styles.sb}>
         <div className={styles.sbl}>Condition</div>
         <div className={styles.hpRow}>
-          <span className={styles.hpName}>Health</span>
-          <span className={styles.hpVal}>{player.resources.health} / {player.resources.max_health}</span>
+          <span className={styles.hpName}>Resolve</span>
+          <span className={styles.hpVal}>{player.resources.health} / {maxR}</span>
         </div>
-        <div className={`${styles.trackWrap} ${lit('health')}`}>
+        <div className={`${styles.trackWrap} ${lit('health')}`} role="meter" aria-label="Resolve" aria-valuemin={0} aria-valuemax={maxR} aria-valuenow={player.resources.health}>
           <div className={`${styles.trackFill} ${styles.hp}`} style={{ width: `${hpPct}%` }} />
+        </div>
+        <div className={styles.hpRow}>
+          <span className={styles.hpName}>The Dimming</span>
+          <span className={styles.dimVal} data-dimming>
+            {dimmingBand(curse)}
+            {player.class === 'arcane' && <> · {curse}{dimmingDelta ? ` (${dimmingDelta > 0 ? '+' : '−'}${Math.abs(dimmingDelta)})` : ''}</>}
+          </span>
+        </div>
+        <div className={`${styles.trackWrap} ${lit('dimming')}`} role="meter" aria-label="The Dimming" aria-valuemin={0} aria-valuemax={100} aria-valuenow={curse} aria-valuetext={dimmingBand(curse)}>
+          <div className={`${styles.trackFill} ${styles.dim}`} style={{ width: `${curse}%` }} />
         </div>
         {!hideClock && <>
           <div className={styles.timeVal}>{cap(world.time_of_day)}</div>
@@ -136,10 +154,16 @@ export default function Sidebar({ state, onOpen, hideClock = false, variant = 'c
             <span className={styles.tip} aria-hidden="true">{tip}</span>
           </button>
         ))}
-        <button className={`${styles.ab} ${styles.abOff}`} data-rest aria-disabled="true" aria-label="Rest. You cannot rest here." onClick={e => e.preventDefault()}>
+        <button
+          className={`${styles.ab} ${rest.mode ? '' : styles.abOff}`}
+          data-rest
+          aria-disabled={rest.mode ? undefined : 'true'}
+          aria-label={rest.mode ? restLabel : `Rest. ${rest.reason ?? 'You cannot rest here.'}`}
+          onClick={e => { if (rest.mode) onRest(); else e.preventDefault() }}
+        >
           <Icon name="rest" />
-          <span className={styles.al}>Rest</span>
-          <span className={`${styles.tip} ${styles.tipWide}`} aria-hidden="true">You cannot rest here.</span>
+          <span className={styles.al}>{rest.mode === 'eat' ? 'Eat' : 'Rest'}</span>
+          <span className={`${styles.tip} ${styles.tipWide}`} aria-hidden="true">{rest.mode ? restLabel : rest.reason ?? 'You cannot rest here.'}</span>
         </button>
         {variant === 'column' && (
           <button className={styles.ab} onClick={() => onOpen('menu')} aria-label="Menu">

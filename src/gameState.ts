@@ -7,7 +7,7 @@
 
 import type { GameState, StateChanges, MetaStore, DayPart, SceneWhen } from './types'
 import { getMasterIndex, getNpc, getLocation } from './loader'
-import { closenessTier, factionTier, FACTION_NAMES, WORN_THIN } from './rules'
+import { closenessTier, factionTier, FACTION_NAMES, WORN_THIN, DIMMING, dimmingBand, maxResolve } from './rules'
 
 const SAVE_KEY = 'ashenveld_save'
 const META_KEY = 'ashenveld_meta'
@@ -50,7 +50,7 @@ export function createFreshState(
       day: 1,
       time_of_day: 'evening',
       current_location: 'crestfall_docks',
-      curse_spread: 0,
+      curse_spread: DIMMING.start,
     },
     factions: {
       iron_compact:    { reputation: 0 },
@@ -72,7 +72,7 @@ export function createFreshState(
 
 export function applyStateChanges(state: GameState, changes: StateChanges): GameState {
   // Deep-clone so React sees a new object
-  const next: GameState = JSON.parse(JSON.stringify(state))
+  let next: GameState = JSON.parse(JSON.stringify(state))
 
   if (changes.flags) {
     Object.assign(next.flags, changes.flags)
@@ -89,10 +89,6 @@ export function applyStateChanges(state: GameState, changes: StateChanges): Game
     }
     // Gold never goes below 0. Health has a floor of 1 until resting and collapse exist (G9).
     next.player.resources.gold = Math.max(0, next.player.resources.gold)
-    next.player.resources.health = Math.max(
-      1,
-      Math.min(next.player.resources.health, next.player.resources.max_health)
-    )
   }
 
   if (changes.relationships) {
@@ -138,13 +134,26 @@ export function applyStateChanges(state: GameState, changes: StateChanges): Game
     // curse_spread is a delta. Day parts go through applyWhen so time only moves forward.
     const { curse_spread, day, time_of_day, skip_days, ...rest } = changes.world
     Object.assign(next.world, rest)
-    if (typeof curse_spread === 'number')
-      next.world.curse_spread = Math.max(0, Math.min(100, next.world.curse_spread + curse_spread))
+    if (typeof curse_spread === 'number') next.world.curse_spread += curse_spread
     if (time_of_day || day || skip_days)
-      return applyWhen(next, { part: time_of_day ?? next.world.time_of_day, day, skip_days })
+      next = applyWhen(next, { part: time_of_day ?? next.world.time_of_day, day, skip_days })
   }
 
+  // The seal (G8): a full seal pulls the Dimming down; a partial one less, and it never clears.
+  if (changes.flags?.ritual_complete) next.world.curse_spread = Math.min(next.world.curse_spread, DIMMING.sealComplete)
+  if (changes.flags?.ritual_partial) next.world.curse_spread = Math.min(next.world.curse_spread, DIMMING.sealPartial)
+  next.world.curse_spread = clampCurse(next.world.curse_spread, next)
+
+  // Resolve: no floor here any more. Reaching 0 is a collapse, handled on the way to the next scene (G9).
+  const cap = maxResolve(next.player.resources.max_health, next.world.curse_spread)
+  next.player.resources.health = Math.max(0, Math.min(next.player.resources.health, cap))
+
   return next
+}
+
+function clampCurse(v: number, s: GameState): number {
+  const floor = s.flags.ritual_partial ? DIMMING.partialFloor : 0
+  return Math.max(floor, Math.min(100, Math.round(v)))
 }
 
 // ─── Day parts ────────────────────────────────────────────────────────────────
@@ -152,15 +161,22 @@ export function applyStateChanges(state: GameState, changes: StateChanges): Game
 export const PARTS: DayPart[] = ['dawn', 'morning', 'midday', 'afternoon', 'evening', 'night']
 
 /** Move the clock to a day part. Time only moves forward. */
-export function applyWhen(state: GameState, w: Partial<SceneWhen> & { part: DayPart }): GameState {
+export function applyWhen(state: GameState, w: Partial<SceneWhen> & { part: DayPart | DayPart[] }): GameState {
   const next: GameState = structuredClone(state)
   let day = next.world.day
   const now = PARTS.indexOf(next.world.time_of_day as DayPart)
+  const allowed = Array.isArray(w.part) ? w.part : [w.part]
+  const part = allowed.includes(next.world.time_of_day) && !w.skip_days ? next.world.time_of_day : allowed[0]
   if (w.skip_days) day += w.skip_days
-  else if (now !== -1 && PARTS.indexOf(w.part) < now) day += 1
+  else if (now !== -1 && PARTS.indexOf(part) < now) day += 1
   if (w.day) day = Math.max(day, w.day)
+  // The Dimming does not sleep (G8).
+  const risen = day - next.world.day
+  if (w.skip_days) next.world.curse_spread += DIMMING.perSkippedDay * w.skip_days
+  else if (risen > 0 && next.world.act === 1) next.world.curse_spread += DIMMING.perDayAct1 * risen
+  next.world.curse_spread = clampCurse(next.world.curse_spread, next)
   next.world.day = day
-  next.world.time_of_day = w.part
+  next.world.time_of_day = part
   return next
 }
 
@@ -260,7 +276,7 @@ export function diffState(prev: GameState, next: GameState, journalKeys?: (s: Ga
 
   const ph = prev.player.resources.health, nh = next.player.resources.health
   if (nh !== ph) {
-    out.push({ text: `Health ${nh > ph ? '+' : '−'}${Math.abs(nh - ph)}`, key: 'health' })
+    out.push({ text: `Resolve ${nh > ph ? '+' : '−'}${Math.abs(nh - ph)}`, key: 'health' })
     if (ph >= WORN_THIN && nh < WORN_THIN) out.push({ text: 'You are worn thin', key: 'health' })
   }
 
@@ -282,9 +298,46 @@ export function diffState(prev: GameState, next: GameState, journalKeys?: (s: Ga
     if (t0 !== t1) out.push({ text: `${FACTION_NAMES[f]}: ${t1}`, key: f })
   }
 
+  const b0 = dimmingBand(prev.world.curse_spread), b1 = dimmingBand(next.world.curse_spread)
+  if (b0 !== b1) out.push({ text: `The Dimming: ${b1}`, key: 'dimming' })
+
   if (journalKeys) {
     const before = new Set(journalKeys(prev))
     if (journalKeys(next).some(k => !before.has(k))) out.push({ text: 'Noted in your journal', key: 'journal' })
   }
   return out
+}
+
+// ─── Chapter checkpoints (G13) ────────────────────────────────────────────────
+
+const CHECKPOINT_KEY = 'ashenveld_checkpoints'
+const chapterKey = (s: GameState) => s.world.act * 100 + s.world.chapter
+
+export function loadCheckpoints(): GameState[] {
+  try { return JSON.parse(localStorage.getItem(CHECKPOINT_KEY) ?? '[]') as GameState[] } catch { return [] }
+}
+
+/** Keep a copy of the state at the start of each new chapter. The last three are kept. */
+export function recordCheckpoint(prev: GameState, next: GameState): void {
+  if (chapterKey(next) <= chapterKey(prev)) return
+  try {
+    const list = [...loadCheckpoints().filter(c => c.player.name === next.player.name), next].slice(-3)
+    localStorage.setItem(CHECKPOINT_KEY, JSON.stringify(list))
+  } catch { console.warn('Failed to save checkpoint') }
+}
+
+/** The checkpoint for the chapter the player is in now, if there is one. */
+export function chapterCheckpoint(s: GameState): GameState | undefined {
+  return [...loadCheckpoints()].reverse().find(c => chapterKey(c) === chapterKey(s) && c.player.name === s.player.name)
+}
+
+export function clearCheckpoints(): void {
+  localStorage.removeItem(CHECKPOINT_KEY)
+}
+
+export function markSeen(sceneId: string): void {
+  const meta = loadMeta()
+  if (meta.seenScenes.includes(sceneId)) return
+  meta.seenScenes.push(sceneId)
+  saveMeta(meta)
 }

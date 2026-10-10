@@ -10,7 +10,10 @@
       "location": "crestfall_gate",
       "title": "The Iron Compact",
       "when": {
-        "part": "morning"
+        "part": [
+          "morning",
+          "afternoon"
+        ]
       },
       "on_enter": {
         "state_changes": {
@@ -85,7 +88,10 @@
       "location": "crestfall_gate",
       "title": "The Compact's Terms",
       "when": {
-        "part": "morning"
+        "part": [
+          "morning",
+          "afternoon"
+        ]
       },
       "on_enter": {
         "state_changes": {}
@@ -107,7 +113,7 @@
           "outcomes": {
             "default": {
               "text": "Cael nods once, the way people nod when something they expected happened. He hands you the packet and the first payment — fifteen coins — and gives you a point of contact on the east road: a woman called Sera who runs what looks like a waystation and is not.\n\n\"Do not open the packet,\" he says. \"She will know if you did.\" He says it without inflection. You cannot tell if that is a threat or a test.",
-              "next_scene": "act1_ch3_covenant_introduction",
+              "next_scene": "act1_ch3_after_faction",
               "state_changes": {
                 "flags": {
                   "compact_allied": true,
@@ -133,7 +139,7 @@
           "outcomes": {
             "default": {
               "text": "\"Understood,\" Cael says. The smile stays exactly where it was. \"The offer remains open. We are not going anywhere.\" He steps aside from the gate.\n\nYou feel his attention on your back for twenty metres.",
-              "next_scene": "act1_ch3_covenant_introduction",
+              "next_scene": "act1_ch3_after_faction",
               "state_changes": {
                 "factions": {
                   "iron_compact": {
@@ -155,7 +161,7 @@
           "outcomes": {
             "success": {
               "text": "Cael considers you for a moment. Then he opens the packet himself and hands it over.\n\nThe message is administrative — a supply requisition, a request for additional personnel. Whatever it was, it is not sinister. You hand it back.\n\n\"Fair,\" he says, and means it. He offers thirty coins now and thirty on completion — marginally better than his original terms. You have negotiated something. That means something to him.",
-              "next_scene": "act1_ch3_covenant_introduction",
+              "next_scene": "act1_ch3_after_faction",
               "state_changes": {
                 "flags": {
                   "compact_allied": true,
@@ -173,7 +179,7 @@
             },
             "success_at_cost": {
               "text": "Cael does not open the message. But he offers you a slightly better rate — twenty coins now — and says the contents are logistical. You take the offer without the contents. You have improved your position. You have not resolved your concern.",
-              "next_scene": "act1_ch3_covenant_introduction",
+              "next_scene": "act1_ch3_after_faction",
               "state_changes": {
                 "flags": {
                   "compact_allied": true,
@@ -206,7 +212,10 @@
       "location": "crestfall_shrine",
       "title": "The Ashen Covenant",
       "when": {
-        "part": "morning"
+        "part": [
+          "morning",
+          "afternoon"
+        ]
       },
       "on_enter": {
         "state_changes": {
@@ -272,7 +281,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch3_covenant_warning",
@@ -281,7 +291,10 @@
       "location": "crestfall_shrine",
       "title": "Edric's Warning",
       "when": {
-        "part": "morning"
+        "part": [
+          "morning",
+          "afternoon"
+        ]
       },
       "on_enter": {
         "state_changes": {}
@@ -374,7 +387,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch3_covenant_task",
@@ -383,7 +397,10 @@
       "location": "crestfall_shrine",
       "title": "Edric's Commission",
       "when": {
-        "part": "morning"
+        "part": [
+          "morning",
+          "afternoon"
+        ]
       },
       "on_enter": {
         "state_changes": {}
@@ -405,7 +422,7 @@
           "outcomes": {
             "default": {
               "text": "You take the stone. Edric nods with the specific satisfaction of someone who has added you to a set of moving parts without asking too much of any single one.\n\n\"Safe travel,\" he says. He means it.",
-              "next_scene": "act1_ch3_rootless_rumour",
+              "next_scene": "act1_ch3_after_faction",
               "state_changes": {
                 "flags": {
                   "covenant_task_accepted": true
@@ -430,10 +447,45 @@
           "outcomes": {
             "default": {
               "text": "\"Of course,\" Edric says. The composure is absolute — he was not counting on you. He puts the stone away with the care of someone who has plenty of other options.\n\n\"The ward is still yours,\" he says. \"No conditions.\"",
-              "next_scene": "act1_ch3_rootless_rumour",
+              "next_scene": "act1_ch3_after_faction",
               "state_changes": {}
             }
           }
+        }
+      ],
+      "rest": true
+    },
+    {
+      "id": "act1_ch3_after_faction",
+      "act": 1,
+      "chapter": 3,
+      "location": "crestfall_market",
+      "title": "",
+      "when": {
+        "part": [
+          "morning",
+          "afternoon"
+        ]
+      },
+      "on_enter": {
+        "state_changes": {}
+      },
+      "requires": {},
+      "text": {
+        "default": ""
+      },
+      "choices": [],
+      "route": [
+        {
+          "when": {
+            "visited": [
+              "act1_ch5_faction_responses"
+            ]
+          },
+          "next": "act1_ch5_player_curse_touch"
+        },
+        {
+          "next": "act1_ch3_rootless_rumour"
         }
       ]
     },
@@ -451,7 +503,38 @@
       },
       "requires": {},
       "text": {
-        "default": "By midday you have a picture of the three forces operating in what is left of Crestfall.\n\nThe Compact wants the ruins. They are organised, resourced, and patient. They have been building towards something for eight months.\n\nThe Covenant wants the ruins sealed. They believe they know how. The cost of how is something they have decided not to lead with.\n\nThe Rootless are outside the town limits and nobody talks about them, which means they are the most interesting.\n\nYou have heard the name Maret from three separate people now. Each time it came with a specific quality — not exactly recommendation, not exactly warning. Something closer to the way people say the name of a weather system. Real. Significant. Already moving.",
+        "default": [
+          {
+            "when": {
+              "flags": {
+                "compact_met": true,
+                "covenant_met": true
+              }
+            },
+            "text": "By midday you have a picture of the three forces operating in what is left of Crestfall.",
+            "else": "By midday you have met one of the powers in what is left of Crestfall and heard about the others."
+          },
+          {
+            "when": {
+              "flags": {
+                "compact_met": true
+              }
+            },
+            "text": "The Compact wants the ruins. They are organised, resourced, and patient. They have been building towards something for eight months.",
+            "else": "The Compact holds the gate. People say they want the ruins and are patient about it."
+          },
+          {
+            "when": {
+              "flags": {
+                "covenant_met": true
+              }
+            },
+            "text": "The Covenant wants the ruins sealed. They believe they know how. The cost of how is something they have decided not to lead with.",
+            "else": "The Covenant has the old hall and a grey flag. People say they know how to seal the curse, and do not say what it costs."
+          },
+          "The Rootless are outside the town limits and nobody talks about them, which means they are the most interesting.",
+          "You have heard the name Maret from three separate people now. Each time it came with a specific quality — not exactly recommendation, not exactly warning. Something closer to the way people say the name of a weather system. Real. Significant. Already moving."
+        ],
         "commander": "You have spent half a day with two of the three powers. You know what each wants and you have made a preliminary decision about each.\n\nThe Compact: useful, watch them carefully.\nThe Covenant: not your ally, possibly your enemy, definitely a source of information.\nThe Rootless: unknown, which is both the most dangerous assessment and the most interesting one.",
         "arcane": "Two factions assessed. Both have partial knowledge. Neither has the complete picture.\n\nThe Rootless camp has been living alongside this for three years. That is the longest sustained proximity of any group in Ashenveld. Whatever they know, they know it the hard way.",
         "ranger": "Two factions seen. The third one is outside the town's control and has been surviving in proximity to the curse for three years.\n\nSurvival in proximity to a hostile environment is the most reliable form of knowledge there is. You are going to the camp.",
@@ -468,6 +551,28 @@
               "text": "East of the market, past the last building, along a path that is not quite a path, through the first of the ordinary trees, and into the liminal space where the town stops and the forest has not yet claimed it.",
               "next_scene": "act1_ch3_rootless_camp_approach",
               "state_changes": {}
+            }
+          }
+        },
+        {
+          "id": "ask_aldous_first",
+          "text": "Go back to the Tallow first. Ask Aldous about the camp.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "Aldous is wiping the same table he was wiping last night. \"The camp,\" he says. He thinks about it. \"Take bread. Don't take advice. And don't stand in the path, the big one doesn't like it.\"\n\nHe gives you the bread.",
+              "next_scene": "act1_ch3_rootless_camp_approach",
+              "state_changes": {
+                "relationships": {
+                  "innkeeper_aldous": {
+                    "closeness": 5
+                  }
+                },
+                "flags": {
+                  "aldous_warned_about_branch": true
+                }
+              }
             }
           }
         }
@@ -528,7 +633,8 @@
               "next_scene": "act1_ch3_camp_second_try",
               "state_changes": {
                 "world": {
-                  "time_of_day": "evening"
+                  "time_of_day": "evening",
+                  "curse_spread": 2
                 }
               }
             }
@@ -565,11 +671,16 @@
             "failure": {
               "text": "\"Maret has enough people with skills,\" Branch says. He does not send you away. He also does not go to get her. You are in a holding pattern until tomorrow.",
               "next_scene": "act1_ch3_camp_second_try",
-              "state_changes": {}
+              "state_changes": {
+                "world": {
+                  "curse_spread": 2
+                }
+              }
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch3_camp_second_try",
@@ -624,7 +735,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch3_maret_first_meeting",
@@ -733,7 +845,8 @@
         "commander": "replace",
         "ranger": "replace",
         "cipher": "replace"
-      }
+      },
+      "rest": true
     }
   ]
 }

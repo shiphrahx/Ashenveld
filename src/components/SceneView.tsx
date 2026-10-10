@@ -17,6 +17,8 @@ interface Props {
   scene: Scene
   state: GameState
   onChoice: (outcome: Outcome, entry: JournalEntry, choiceId: string) => void
+  /** The player has read this scene before, in this run or another (G13). */
+  seenBefore?: boolean
 }
 
 // Roman numerals for choice markers, matching the prototype
@@ -33,6 +35,16 @@ function isDialogue(line: string): boolean {
 function isChoiceVisible(choice: Choice, state: GameState, sceneId: string): boolean {
   if (choice.once && state.taken?.[`${sceneId}:${choice.id}`]) return false
   return meets(choice.requires, state)
+}
+
+// ── Locked choices (G12) ───────────────────────────────────────────────────────
+
+/** Choices with a hint whose requirement fails: shown disabled, two at most, class locks first. */
+function lockedChoices(scene: Scene, state: GameState): Choice[] {
+  return scene.choices
+    .filter(c => c.locked_hint && !meets(c.requires, state) && !(c.once && state.taken?.[`${scene.id}:${c.id}`]))
+    .sort((a, b) => Number(Boolean(b.requires?.class)) - Number(Boolean(a.requires?.class)))
+    .slice(0, 2)
 }
 
 // ── Choice tag: stat and odds in words (G4) ───────────────────────────────────
@@ -71,7 +83,7 @@ function outcomeClass(rollResult: RollResult, choice: Choice): string {
 
 // ── Component ─────────────────────────────────────────────────────────────────
 
-export default function SceneView({ scene, state, onChoice }: Props) {
+export default function SceneView({ scene, state, onChoice, seenBefore = false }: Props) {
   const { settings } = useSettings()
   const [rollResult, setRollResult] = useState<RollResult | null>(null)
   const [activeChoice, setActiveChoice] = useState<Choice | null>(null)
@@ -81,6 +93,7 @@ export default function SceneView({ scene, state, onChoice }: Props) {
 
   const { main, aside } = sceneText(scene, state)
   const visibleChoices = scene.choices.filter(c => isChoiceVisible(c, state, scene.id))
+  const locked = lockedChoices(scene, state)
   const outcomeText = shownOutcome ? resolveRich(shownOutcome.outcome.text, state) : ''
   // G5, the Cipher's Read: a private line the first time someone's closeness moves.
   const reads = useMemo(() => {
@@ -180,13 +193,17 @@ export default function SceneView({ scene, state, onChoice }: Props) {
     outcomeRef.current?.focus({ preventScroll: true })
   }, [shownOutcome])
 
+  useEffect(() => { setShowScene(false) }, [scene.id, state.visited[scene.id]])
+
   // U6: a new scene starts at its title for screen readers and keyboard users.
   useEffect(() => {
     if (document.activeElement?.closest('[data-panel]')) return
     titleRef.current?.focus({ preventScroll: true })
   }, [scene.id, state.visited[scene.id]])
 
-  const collapsed = Boolean(shownOutcome) && !showScene
+  // A seen scene can start folded, straight to the choices (G13).
+  const skipping = seenBefore && settings.skipSeen && !shownOutcome
+  const collapsed = (Boolean(shownOutcome) || skipping) && !showScene
   const shownMain = collapsed ? (aside.length ? [] : main.slice(-1)) : main
   const shownAside = collapsed ? aside.slice(-1) : aside
 
@@ -220,14 +237,24 @@ export default function SceneView({ scene, state, onChoice }: Props) {
           )}
         </button>
       )
-    })
+    }).concat(locked.map(choice => (
+      <button key={choice.id} className={`${styles.ch} ${styles.locked}`} disabled data-locked-id={choice.id}
+        aria-label={`${resolveRich(choice.text, state)}. ${choice.locked_hint}`}>
+        <span className={styles.mk} aria-hidden="true">·</span>
+        <span className={styles.lb}><Inline text={resolveRich(choice.text, state)} /></span>
+        <span className={styles.lockHint}>{choice.locked_hint}</span>
+      </button>
+    )))
   )
 
   return (
     <div className={styles.centre} data-scene-id={scene.id}>
       {/* ── Top bar ── */}
       <div className={styles.sceneBar}>
-        <h1 className={styles.sceneTitle} ref={titleRef} tabIndex={-1}>{scene.title}</h1>
+        <h1 className={styles.sceneTitle} ref={titleRef} tabIndex={-1}>
+          {scene.title}
+          {seenBefore && <span className={styles.seenMark}>seen before</span>}
+        </h1>
         <span className={styles.crumb}>
           <span>{place}</span>
           {clock && <span className={styles.clock} data-clock>{clock}</span>}
@@ -235,7 +262,7 @@ export default function SceneView({ scene, state, onChoice }: Props) {
       </div>
 
       {/* ── Narrative ── */}
-      <div className={styles.narrative} key={scene.id} ref={storyRef}>
+      <div className={`${styles.narrative} ${seenBefore ? styles.seen : ''}`} key={scene.id} ref={storyRef}>
         <div className={styles.measure}>
           {collapsed && (
             <button className={styles.showScene} onClick={() => setShowScene(true)}>Show the scene again</button>

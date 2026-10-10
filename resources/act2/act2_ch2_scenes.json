@@ -15,7 +15,7 @@
       "on_enter": {
         "state_changes": {
           "world": {
-            "curse_spread": 3
+            "curse_spread": 2
           }
         }
       },
@@ -78,6 +78,63 @@
                   }
                 }
               }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "act2_ch2_hidden_passage",
+      "act": 2,
+      "chapter": 2,
+      "location": "ruins_hidden_passage",
+      "title": "The Other Way Down",
+      "when": {
+        "part": "morning"
+      },
+      "on_enter": {
+        "state_changes": {
+          "flags": {
+            "took_hidden_passage": true
+          }
+        }
+      },
+      "requires": {
+        "flags": {
+          "missing_person_found": true
+        }
+      },
+      "text": {
+        "default": "The mark on the cellar wall is a crack between two leaning walls, behind a fall of stone that looks like nothing until you are standing on it.\n\n[missing person] goes first, sideways. The crack goes down in steps that are not quite steps. Nobody carved text in here. The walls are bare and the air is cleaner than in the outskirts.\n\nAt hand height, all the way down, somebody has scratched small figures into the stone. Dozens of them, each the size of your thumb, the same shape as the one from Harrow. Some have marks beside them: a line, two lines, a ring.\n\n\"Tally marks,\" [missing person] says. \"He was counting something.\""
+      },
+      "choices": [
+        {
+          "id": "count_the_figures",
+          "text": "Stop and count the figures.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "Forty-one. You count them twice. The last one has no marks beside it at all, and below it, in letters so small you need the lamp, a name: JOREN.\n\n[missing person] reads it over your shoulder and says nothing. They wait until you are ready to go on.",
+              "next_scene": "act2_ch2_chamber_entrance",
+              "state_changes": {
+                "flags": {
+                  "found_joren_marks": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "keep_going_down",
+          "text": "Keep going. The chamber is below.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You go on down. The figures go with you, one every few steps, until the crack opens out above the chamber entrance and they stop.",
+              "next_scene": "act2_ch2_chamber_entrance",
+              "state_changes": {}
             }
           }
         }
@@ -162,7 +219,7 @@
             "source_chamber_seen": true
           },
           "world": {
-            "curse_spread": 5
+            "curse_spread": 4
           }
         }
       },
@@ -292,7 +349,7 @@
                   "health": -15
                 },
                 "world": {
-                  "curse_spread": 3
+                  "curse_spread": 2
                 }
               }
             }

@@ -15,7 +15,7 @@
       "on_enter": {
         "state_changes": {
           "world": {
-            "curse_spread": 3
+            "curse_spread": 2
           }
         }
       },
@@ -88,7 +88,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act2_ch3_missing_person_teaching",
@@ -215,7 +216,7 @@
       "on_enter": {
         "state_changes": {
           "world": {
-            "curse_spread": 3
+            "curse_spread": 2
           }
         }
       },
@@ -360,7 +361,8 @@
               "next_scene": "act2_ch3_crestfall_changed",
               "state_changes": {}
             }
-          }
+          },
+          "locked_hint": "Needs Cael's commission"
         },
         {
           "id": "waved_through",
@@ -406,7 +408,8 @@
                 }
               }
             }
-          }
+          },
+          "locked_hint": "Needs 10 coin"
         }
       ],
       "text_mode": {
@@ -425,13 +428,31 @@
       "on_enter": {
         "state_changes": {
           "world": {
-            "curse_spread": 4
+            "curse_spread": 3
           }
         }
       },
       "requires": {},
       "text": {
-        "default": "Crestfall has changed in the days you were gone. The change is not dramatic but it is visible — the way a room changes when the person in charge of it changes.\n\nThirty Compact soldiers occupy the town with the practised efficiency of people who have done this before in other towns. They are not aggressive. They are orderly. They have requisitioned three buildings, posted schedules, established a supply distribution point at the old market fountain.\n\nThe town has responded the way small frightened communities always respond to organised authority: with a mixture of relief and resentment that is not yet sure which one is stronger.\n\nThe curse is worse. You can feel it the moment you enter the town limits — the ambient effect is stronger than when you left, the grey quality more pronounced. Whatever the mechanism's degradation rate is, it has not slowed.",
+        "default": [
+          "Crestfall has changed in the days you were gone. The change is not dramatic but it is visible — the way a room changes when the person in charge of it changes.",
+          "Thirty Compact soldiers occupy the town with the practised efficiency of people who have done this before in other towns. They are not aggressive. They are orderly. They have requisitioned three buildings, posted schedules, established a supply distribution point at the old market fountain.",
+          "The town has responded the way small frightened communities always respond to organised authority: with a mixture of relief and resentment that is not yet sure which one is stronger.",
+          "The curse is worse. You can feel it the moment you enter the town limits — the ambient effect is stronger than when you left, the grey quality more pronounced. Whatever the mechanism's degradation rate is, it has not slowed.",
+          {
+            "when": {
+              "min_curse": 25,
+              "max_curse": 49
+            },
+            "text": "There is a second still figure in the square tonight, an old man by the dry fountain. Nobody has moved him."
+          },
+          {
+            "when": {
+              "min_curse": 50
+            },
+            "text": "Two stalls are open. The rest are bare frames, and nobody has taken the frames down."
+          }
+        ],
         "commander": "Thirty soldiers change a town. The balance of power has shifted. The Covenant's visible presence has been reduced — their shrine is still open but they no longer have the streets. The Rootless camp outside town is, according to the soldier at the checkpoint, still there. For now.\n\nVorne has not moved against the camp yet. That he has not moved against it yet tells you something about either his restraint or his priorities.",
         "arcane": "You feel Seriva before you see her. Not literally — but her influence on the town's information environment is measurable. People are talking less. The specific topics that were freely discussed three days ago are now being discussed in lower voices, if at all.\n\nInformation consolidation. Someone is controlling what people share and with whom. That is Seriva's work, or the work of someone following her instructions.",
         "ranger": "The town's animal population has decreased further in the days you were gone. The single cat under the porch on the north side is no longer there. You look for tracks and find nothing recent.\n\nThe curse is spreading faster. You can read it in the animal absence the way you read weather systems in bird behaviour. When the animals leave, the storm has already committed.",
@@ -532,7 +553,20 @@
       },
       "requires": {},
       "text": {
-        "default": "Aldous tells you what he has seen in four days with the precision of a man who has been keeping a careful record in his head.\n\nVorne arrived with thirty soldiers and the Covenant woman — Seriva — travelling as what he called an adviser. The Compact took three buildings without asking. They issued the east road notice within six hours of arrival.\n\nSeriva has been to the shrine twice. Each time she and Edric had a conversation that Edric visibly did not enjoy.\n\nWren — the still man who used to sit by the fire — is gone. He walked east four days ago, the morning after the Compact arrived, as if the commotion stirred something in him that directed him toward the forest. Nobody tried to stop him. Nobody knew what to do.\n\n\"How many others?\" you ask.\n\nAldous sets down his cloth. \"Since you left? Six. All east.\"",
+        "default": [
+          "Aldous tells you what he has seen in four days with the precision of a man who has been keeping a careful record in his head.",
+          "Vorne arrived with thirty soldiers and the Covenant woman — Seriva — travelling as what he called an adviser. The Compact took three buildings without asking. They issued the east road notice within six hours of arrival.",
+          "Seriva has been to the shrine twice. Each time she and Edric had a conversation that Edric visibly did not enjoy.",
+          "Wren — the still man who used to sit by the fire — is gone. He walked east four days ago, the morning after the Compact arrived, as if the commotion stirred something in him that directed him toward the forest. Nobody tried to stop him. Nobody knew what to do.",
+          "\"How many others?\" you ask.",
+          "Aldous sets down his cloth. \"Since you left? Six. All east.\"",
+          {
+            "when": {
+              "min_curse": 75
+            },
+            "text": "He pours you a drink you did not ask for. When you point at it he looks at the glass for a while, as if it belongs to somebody else."
+          }
+        ],
         "commander": "Six people in five days. The rate is accelerating faster than the timeline your missing person described.\n\nEither the mechanism is degrading faster than their estimates, or the Compact's arrival has introduced something that is accelerating the exposure — large groups of people in a small area, the stress of occupation, or something Seriva brought with her.",
         "arcane": "Six people in five days. The mechanism's degradation is accelerating. The timeline you were given in the chamber was too optimistic.\n\nYou think about what Seriva's arrival might mean for the mechanism's behaviour. If she was the one who fractured it twenty years ago — if she performed a specific operation on it at the moment of fracture — then her proximity to Ashenveld now might be interacting with whatever she did then.",
         "ranger": "Six people walking east. Each one representing a family and a history and a future that is now moving in a direction nobody can follow.\n\nWren was the first. You knew Wren. Briefly, inadequately, but enough to know he was a good man with a wife who loved him and a farm he cared about. Whatever is east of the marker line has Wren now.",
@@ -586,7 +620,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act2_ch3_rootless_situation",
@@ -600,7 +635,7 @@
       "on_enter": {
         "state_changes": {
           "world": {
-            "curse_spread": 3
+            "curse_spread": 2
           }
         }
       },
@@ -678,7 +713,8 @@
       ],
       "text_mode": {
         "ranger": "replace"
-      }
+      },
+      "rest": true
     },
     {
       "id": "act2_ch3_pol_revelation",
@@ -766,7 +802,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act2_ch3_seriva_first_meeting",
@@ -905,7 +942,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     }
   ]
 }
