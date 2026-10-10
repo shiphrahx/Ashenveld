@@ -383,7 +383,7 @@
               }
             },
             "success_at_cost": {
-              "text": "You get round, but not cleanly. A branch cracks and one of the soldiers turns and looks at the trees for a long time. You wait in the wet until he turns back. By the time you reach the cobbles the light is going.",
+              "text": "You get round, but not cleanly. A branch cracks and one of the soldiers turns and stares into the trees. You wait in the wet until he turns back. By the time you reach the cobbles the light is going.",
               "next_scene": "act2_ch3_crestfall_changed",
               "state_changes": {
                 "flags": {
@@ -658,7 +658,7 @@
       },
       "requires": {},
       "text": {
-        "default": "Sen is on the end of the pier with a line in the water and no bait on it. He doesn't look round.\n\n\"Thought you'd come,\" he says. \"Or I hoped. One of those.\"\n\nYou sit on the edge beside him. The river goes by, black and slow.\n\n\"Three weeks before you came,\" he says. \"Bit more. There was a boat. Covered, no lamp. It didn't come in to the docks, it put in up there, by the old willows.\" He nods upstream without taking his eyes off the water. \"One person got off. A woman. Grey coat. She stood on the bank and looked at the town for a long time, like she was counting it.\"\n\nHe winds the line in.\n\n\"I saw her in the square yesterday. With Vorne's lot. Walking like she'd only just got here.\""
+        "default": "Sen is on the end of the pier with a line in the water and no bait on it. He doesn't look round.\n\n\"Thought you'd come,\" he says. \"Or I hoped. One of those.\"\n\nYou sit on the edge beside him. The river goes by, black and slow.\n\n\"Three weeks before you came,\" he says. \"Bit more. There was a boat. Covered, no lamp. It didn't come in to the docks, it put in up there, by the old willows.\" He nods upstream without taking his eyes off the water. \"One person got off. A woman. Grey coat. She stood on the bank and looked at the town like she was counting it.\"\n\nHe winds the line in.\n\n\"I saw her in the square yesterday. With Vorne's lot. Walking like she'd only just got here.\""
       },
       "choices": [
         {

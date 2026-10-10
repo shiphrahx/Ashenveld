@@ -459,7 +459,7 @@
           "locked_hint": "Needs the bone figure from Harrow",
           "outcomes": {
             "default": {
-              "text": "You crouch, set the figure on the stone in front of their boots, and step back.\n\nNothing, for a long time. Then one hand comes down off their knee and finds it, the way a hand finds a cup in the dark. They hold it. They do not look at it. Their thumb moves across the face that is not there.",
+              "text": "You crouch, set the figure on the stone in front of their boots, and step back.\n\nNothing happens. Then, slowly, one hand comes down off their knee and finds it, the way a hand finds a cup in the dark. They hold it. They do not look at it. Their thumb moves across the face that is not there.",
               "next_scene": "act2_ch1_missing_person_approach",
               "state_changes": {
                 "flags": {
@@ -806,7 +806,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You take the cloth out and put it in their hands. They look at their own writing for a long time.\n\n\"I wrote that in the dark,\" they say. \"I could not see if the ink was taking.\" They fold it once and give it back. \"Keep it. You came anyway.\"",
+              "text": "You take the cloth out and put it in their hands. They read their own writing twice.\n\n\"I wrote that in the dark,\" they say. \"I could not see if the ink was taking.\" They fold it once and give it back. \"Keep it. You came anyway.\"",
               "next_scene": "act2_ch1_what_they_found",
               "state_changes": {
                 "relationships": {
@@ -901,7 +901,7 @@
           "locked_hint": "Needs the Harrow cellar carvings",
           "outcomes": {
             "default": {
-              "text": "You open your journal at the page and turn it to the fire.\n\nThey look for a long time. Then they put a finger on one mark, a line running down between two others, and say, \"That is not the passage I use.\"\n\n\"Is it a way in?\"\n\n\"It is a way down.\" They look at you. \"Somebody from Harrow came this far and drew it on a wall. Tomorrow we find out if he was right.\"",
+              "text": "You open your journal at the page and turn it to the fire.\n\nThey go through it line by line. Then they put a finger on one mark, a line running down between two others, and say, \"That is not the passage I use.\"\n\n\"Is it a way in?\"\n\n\"It is a way down.\" They look at you. \"Somebody from Harrow came this far and drew it on a wall. Tomorrow we find out if he was right.\"",
               "next_scene": "act2_ch2_hidden_passage",
               "state_changes": {
                 "flags": {
