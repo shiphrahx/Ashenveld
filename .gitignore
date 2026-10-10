@@ -10,3 +10,7 @@ CLAUDE.md
 
 # Validator output
 tools/out/
+
+# Playwright
+test-results/
+playwright-report/
