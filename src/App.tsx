@@ -24,7 +24,6 @@ import {
 import { meets } from './conditions'
 import { resolveRich, CLASS_LABELS } from './text'
 import TitleScreen from './components/TitleScreen'
-import StarField from './components/StarField'
 import RestConfirm from './components/RestConfirm'
 import EndScreen from './components/EndScreen'
 import Journal, { journalKeys } from './components/Journal'
@@ -369,7 +368,7 @@ export default function App() {
     const hideClock = currentScene.when?.hide_clock ?? false
     return (
       <>
-        <StarField />
+        <div className={styles.backdrop} aria-hidden="true" />
         <div className={styles.shell}>
           <div className={styles.areaArt}>
             <SceneArt locationName={locationName(gameState.world.current_location)} gameState={gameState}

@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react'
 import type { GameState } from '../types'
 import { useLocationImage } from '../hooks/useLocationImage'
+import { getLocation } from '../loader'
+import { motionAllowed, useSettings } from '../settings'
+import Atmosphere from './Atmosphere'
 import styles from './SceneArt.module.css'
 
 interface Props {
@@ -8,9 +11,12 @@ interface Props {
   gameState: GameState
   /** What the picture shows, for screen readers. Until the art manifest (A13) it is the place's description. */
   alt?: string
+  /** E9: hold the moving layers still. */
+  frozen?: boolean
 }
 
-export default function SceneArt({ locationName, gameState, alt = '' }: Props) {
+export default function SceneArt({ locationName, gameState, alt = '', frozen = false }: Props) {
+  const { settings } = useSettings()
   const locationId = gameState.world.current_location
   const imageSrc = useLocationImage(locationId, gameState)
 
@@ -83,6 +89,9 @@ export default function SceneArt({ locationName, gameState, alt = '' }: Props) {
             onError={handleIncomingError}
           />
         )}
+
+        <Atmosphere kind={getLocation(locationId)?.atmosphere ?? 'none'} dimming={gameState.world.curse_spread}
+          moving={motionAllowed(settings)} frozen={frozen} />
       </div>
       <div className={styles.sceneFooter} data-location-name>{locationName}</div>
     </div>

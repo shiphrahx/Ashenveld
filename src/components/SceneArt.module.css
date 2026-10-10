@@ -14,26 +14,6 @@
   position: relative;
 }
 
-/* scanlines, art area only until E5 replaces them */
-.sceneArt::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent, transparent 3px,
-    rgba(0,0,0,0.06) 3px, rgba(0,0,0,0.06) 4px
-  );
-  pointer-events: none;
-  z-index: 3;
-}
-
-.sceneArt svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
 .locationImg {
   position: absolute;
   inset: 0;
@@ -58,24 +38,6 @@
   letter-spacing: 0.15em;
   color: var(--text-faint);
   text-transform: uppercase;
-}
-
-.moonGlow {
-  animation: moonPulse 6s ease-in-out infinite;
-}
-
-@keyframes moonPulse {
-  0%, 100% { opacity: 0.85; }
-  50%       { opacity: 1; }
-}
-
-.fogLayer {
-  animation: fogDrift 18s linear infinite alternate;
-}
-
-@keyframes fogDrift {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-40px); }
 }
 
 .sceneFooter {
