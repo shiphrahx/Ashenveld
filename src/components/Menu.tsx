@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { saveGame } from '../gameState'
 import type { GameState } from '../types'
+import Panel from './Panel'
 import styles from './Menu.module.css'
 
 interface Props {
@@ -20,12 +21,7 @@ export default function Menu({ state, onClose, onReturnToTitle }: Props) {
   }
 
   return (
-    <div className={styles.overlay} onClick={onClose}>
-      <div className={styles.panel} onClick={e => e.stopPropagation()}>
-        <div className={styles.header}>
-          <span className={styles.title}>Menu</span>
-          <button className={styles.close} onClick={onClose}>✕</button>
-        </div>
+    <Panel title="Menu" onClose={onClose}>
 
         <div className={styles.body}>
           <button className={styles.row} onClick={handleSave}>
@@ -49,7 +45,6 @@ export default function Menu({ state, onClose, onReturnToTitle }: Props) {
             </button>
           )}
         </div>
-      </div>
-    </div>
+    </Panel>
   )
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { getMasterIndex } from '../loader'
+import Panel from './Panel'
 import styles from './Items.module.css'
 
 interface Props {
@@ -12,12 +13,7 @@ export default function Items({ inventory, onClose }: Props) {
   const itemDefs = index.inventory_items
 
   return (
-    <div className={styles.overlay} onClick={onClose}>
-      <div className={styles.panel} onClick={e => e.stopPropagation()}>
-        <div className={styles.header}>
-          <span className={styles.title}>Items</span>
-          <button className={styles.close} onClick={onClose}>✕</button>
-        </div>
+    <Panel title="Items" onClose={onClose}>
 
         <div className={styles.body}>
           {inventory.length === 0 ? (
@@ -41,7 +37,6 @@ export default function Items({ inventory, onClose }: Props) {
             })
           )}
         </div>
-      </div>
-    </div>
+    </Panel>
   )
 }

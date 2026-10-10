@@ -1,5 +1,6 @@
 import React from 'react'
 import type { JournalEntry } from '../types'
+import Panel from './Panel'
 import styles from './Journal.module.css'
 
 interface Props {
@@ -9,12 +10,7 @@ interface Props {
 
 export default function Journal({ entries, onClose }: Props) {
   return (
-    <div className={styles.overlay} onClick={onClose}>
-      <div className={styles.panel} onClick={e => e.stopPropagation()}>
-        <div className={styles.header}>
-          <span className={styles.title}>Journal</span>
-          <button className={styles.close} onClick={onClose}>✕</button>
-        </div>
+    <Panel title="Journal" onClose={onClose}>
 
         <div className={styles.body}>
           {entries.length === 0 ? (
@@ -38,8 +34,7 @@ export default function Journal({ entries, onClose }: Props) {
             ))
           )}
         </div>
-      </div>
-    </div>
+    </Panel>
   )
 }
 
