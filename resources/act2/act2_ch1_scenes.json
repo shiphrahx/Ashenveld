@@ -583,7 +583,7 @@
       "text": {
         "default": "You sit together at the base of the gate stones, in the Watcher's proximity, which they seem unbothered by — they have been near the Watcher for months.\n\nThey talk. You listen first.\n\nFourteen months. They came in looking for the source of the curse, following the same trail Maret gave them. They reached the marker line and went past it. They found the inner approach and followed it down. And they found the source chamber — the original sealing mechanism, broken, radiating the curse outward through the stone and soil and water of Ashenveld.\n\nAnd they found the sealing ritual. The original text, carved into the chamber walls in full. They have spent fourteen months learning to read it.\n\n\"I can seal it,\" they say. \"I know how. But the ritual requires two people and I have been alone.\"\n\nThey look at you. The implication is clear and was clear from the moment they left the letter on the cairn and the note in the campsite and possibly from the moment they wrote the letter that brought you here.",
         "commander": "\"You planned this,\" you say. Not accusingly. Observing.\n\n\"I hoped,\" they say. There is a distinction and you hear it. \"I hoped you would come and I hoped you would be willing and I left markers at every point that I thought would tell you what you were walking toward without telling you what I needed from you.\"\n\nA pause. \"I did not want to ask you before you knew what you were agreeing to.\"\n\nThis is, you note, either the most considerate thing anyone has ever done for you or a form of manipulation so refined it does not feel like manipulation. Possibly both.",
-        "arcane": "You process the information with the specific part of your mind that processes information about things you have been studying for eleven years.\n\nThe original sealing ritual. Two participants. They have spent fourteen months learning a ritual that requires two people while being alone.\n\n\"What does the ritual require of the second participant?\" you ask.\n\nThe pause before they answer is the most informative pause in the conversation.",
+        "arcane": "Part of your mind has been studying this for eleven years, and it takes the information in whole. The original sealing ritual. Two participants. Fourteen months learning a ritual for two, alone.\n\n\"What does the ritual require of the second participant?\" you ask.\n\nThe pause before they answer tells you more than anything else they say.",
         "ranger": "\"You have been in there,\" you say. Meaning the source chamber. \"Past the marker line, in the centre of it.\"\n\n\"Yes.\"\n\n\"For fourteen months.\"\n\n\"Yes.\"\n\nYou look at them — the whole of them, not just their face. What fourteen months in the source chamber does to a person who is not afflicted is something you are looking at for the first time. You are still deciding what you see.",
         "cipher": "\"The letter,\" you say. \"The campsite markers. The cairn. This was all planned.\"\n\n\"Yes,\" they say. Not apologetically. They made a choice and they are owning it.\n\n\"You needed me to come here,\" you say. \"Not because you missed me. Because you needed a second person for the ritual.\"\n\nThe silence after this question is the answer. But then they add: \"Both. Both are true.\" And the way they say it makes the distinction matter."
       },
@@ -700,10 +700,7 @@
           },
           "locked_hint": "Needs the cloth from the campsite"
         }
-      ],
-      "text_mode": {
-        "arcane": "replace"
-      }
+      ]
     },
     {
       "id": "act2_ch1_what_they_found",

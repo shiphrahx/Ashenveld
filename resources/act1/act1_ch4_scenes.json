@@ -712,8 +712,8 @@
       "text": {
         "default": "The next morning Maret finds you before you go looking for her. She has a letter.\n\nNot the letter — the one sent to you, the one that brought you here. This is a different letter. Shorter. [missing person] wrote it and left it with Maret two weeks before they went east.\n\nMaret holds it out and you take it and she watches your face as you read it.\n\nThe letter says three things. First: that they found what they came looking for, or the beginning of it, and it is in the ruins, and it is real. Second: that they are going in and they are not certain they will come back, and they know that, and they are going anyway. Third: that they need you not to follow them. Not yet. Not until you know more than they did when they went in.\n\nThe letter ends with one word. [player]. Written in the way people write names when the name is the whole thing they want to say.",
         "commander": "You read it twice. The soldier's discipline keeps your face where you want it. Inside: the particular anger of someone who was not given the choice they should have been given.\n\nMaret is watching you carefully. \"They did not want you to come,\" she says. \"They wanted you to know, but they did not want you to come.\"\n\n\"I know,\" you say. \"I came anyway.\"\n\nA pause. \"I know,\" she says. \"That is why I gave you the letter.\"",
-        "arcane": "You read it with the careful attention you give texts that matter. The handwriting is theirs — you would know it anywhere.\n\nThe part that catches you: they said they found what they came looking for. They came looking for something specific. You did not know they had a specific thing they were looking for. The letter implies they knew more than they told you before they left.\n\nYou fold the letter. \"What did they know?\" you ask Maret. \"Before they went in.\"",
-        "ranger": "You read it standing, which is how you read things when sitting feels like vulnerability.\n\nThree things. Each one a fact. Delivered without softening, which is how they always communicated — the direct form of love, the one that respects you enough not to cushion things.\n\nThe third thing: not yet. Not until you know more.\n\nYou are here. You know enough. You fold the letter.",
+        "arcane": "The handwriting is theirs. You would know it anywhere.\n\nWhat catches you is that they found what they came looking for. They came looking for something in particular, and you never knew. They knew more than they told you before they left.\n\n\"What did they know?\" you ask Maret. \"Before they went in.\"",
+        "ranger": "You read it standing. Sitting down for it would feel like giving in.\n\nEach line is a fact, delivered without softening. That was always how they talked to you. Not yet, it says. Not until you know more.\n\nYou are here. You know enough. You fold the letter.",
         "cipher": "You read it with the trained capacity to process text without showing you are processing it.\n\nThree things. Each one, also, something chosen specifically to be said to you. Not to a reader in general but to you, the person who would receive this letter after this person had decided to go into those ruins.\n\nThe name at the end. Just your name.\n\nYou fold the letter and let your face remain where it is."
       },
       "choices": [
@@ -764,10 +764,6 @@
           }
         }
       ],
-      "text_mode": {
-        "arcane": "replace",
-        "ranger": "replace"
-      },
       "rest": true
     },
     {

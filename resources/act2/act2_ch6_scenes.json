@@ -100,7 +100,7 @@
         "default": "The chamber is brighter than before. The light from the stone has intensified — not dramatically, but measurably, as if the mechanism knows something is approaching and has been preparing.\n\nThe thread rising from the fracture in the mechanism is stronger too. More visible. And it is moving — not rising and dispersing but rising and circling, slowly, as if looking for something.\n\n[missing person] stops at the threshold of the approach phase — the specific position the text describes. You stop beside them.\n\n\"The first phase,\" they say quietly, \"is acknowledgement. We acknowledge what this place is. What the mechanism was. What it became when it broke.\" They pause. \"Out loud. The text says out loud. The mechanism reads intent but sound is how intent reaches it.\"\n\nThey begin.",
         "commander": "They speak and you listen and then you speak. The acknowledgement is not a prayer — it is a statement of fact, of what you understand about this place and what you are here to do.\n\nThe mechanism, as you speak, does something. The thread from the fracture changes direction slightly. Orienting. The first sign that the thing inside the ruins is aware of what is happening in this room.",
         "arcane": "The acknowledgement phase is the one you understand best — it is the theoretical framework made verbal, the description of the mechanism's original purpose restated in the presence of the mechanism itself.\n\nAs you speak, you feel the frequency change. Not louder — more specific. As if the sustained note has found its original pitch.",
-        "ranger": "The acknowledgement is simpler than you expected. Not ritualistic — practical. You name what this place is, what it does, what you are going to try to do.\n\nThe mechanism is listening. You can feel it the same way you feel being watched — the specific awareness of attention that has no visible source.",
+        "ranger": "The acknowledgement is simpler than you expected. Practical, not ceremonial. You name what this place is, what it does, and what you are going to try to do.\n\nThe mechanism is listening. You feel it as you feel being watched, with no watcher in sight.",
         "cipher": "The acknowledgement is the most straightforward part. You say what you know. The mechanism reads it. The mechanism — as best you can interpret — receives it.\n\nThe thread from the fracture is moving differently. Toward you. Toward [missing person]. Assessing."
       },
       "choices": [
@@ -192,10 +192,7 @@
             }
           }
         }
-      ],
-      "text_mode": {
-        "ranger": "replace"
-      }
+      ]
     },
     {
       "id": "act2_ch6_ritual_engagement",
@@ -733,7 +730,7 @@
       "text": {
         "default": "You have been sitting with Pol and [missing person] for twenty minutes when you hear movement in the outskirts.\n\nMore than one person. Compact soldiers, by the sound — the specific weight and rhythm of armed people moving carefully through unfamiliar terrain. And with them, moving more confidently, someone who has been in this terrain before.\n\nSeriva comes through the outskirts from the west — from the direction of the inner approach's alternate entrance, which means she found it.\n\nShe stops when she sees you. She reads the three of you — Pol, [missing person], you — and she reads the chamber entrance behind you and she understands what has happened before anyone says a word.\n\nThe look on her face is not anger. It is something more complicated than anger.",
         "commander": "Two soldiers with Seriva. You assess them in the first second — professionals, not aggressive, waiting for instruction.\n\nSeriva looks at you and at [missing person] and at Pol and she has already calculated everything.\n\n\"The sealing ritual,\" she says. Not asking. Confirming.\n\n\"Yes,\" you say.",
-        "arcane": "You look at Seriva and you think about what Pol told you — that Seriva has been trying to fix the damage she caused for twenty years, that the Covenant's purification ritual was her alternative approach, that she came back to Ashenveld to finally execute it.\n\nAnd now the ritual she needed is unnecessary. Because the original ritual has already been performed.\n\nThe look on her face is grief. Very old grief, given a new occasion.",
+        "arcane": "You think about what Pol told you. Seriva has spent twenty years trying to repair what she broke. The purification was her way, and she came back to Ashenveld to do it at last.\n\nNow it is unnecessary. The original ritual is done.\n\nWhat is on her face is grief. Very old grief, with a new occasion.",
         "ranger": "Seriva reads the situation with the speed of an expert. The chamber entrance. The three of you. The fragment, dark, on the floor where Pol set it down.\n\nShe did not come in time. Or she came just in time — depending on how you measure time and what you were measuring for.",
         "cipher": "You read Seriva reading you and for the first time since you met her, her control is not complete.\n\nShe came here to perform a ritual that would have cost Ashenveld a fifth of its people. The ritual cannot be performed now. The mechanism has been sealed by a different method.\n\nShe is free of the obligation she has been carrying for twenty years. She does not look free."
       },
@@ -842,10 +839,7 @@
             }
           }
         }
-      ],
-      "text_mode": {
-        "arcane": "replace"
-      }
+      ]
     }
   ]
 }

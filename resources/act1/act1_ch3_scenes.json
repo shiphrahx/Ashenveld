@@ -25,10 +25,10 @@
       "requires": {},
       "text": {
         "default": "The soldier at the gate is young and too upright — someone recently given authority they are still learning to wear. Behind him, through the gate, two more soldiers doing nothing with great efficiency.\n\nHe introduces himself as Lieutenant Cael. A city name, a career-soldier's name. He smiles with the lower half of his face.\n\n\"We have been expecting someone to arrive asking questions,\" he says. \"The town always gets one eventually. Someone from outside who cares about what is happening here.\" A pause that is not really a pause. \"The Compact cares about what is happening here. We have been here for eight months. We would like to help.\"",
-        "commander": "Cael recognises your bearing before he recognises you specifically and he straightens without knowing he is doing it. Military memory — the body knows rank even when the mind is trying to be diplomatic.\n\n\"Lieutenant,\" you say, acknowledging without conceding.\n\n\"Commander,\" he says, which tells you he has done his research. \"We have been expecting someone like you. The situation here requires experience.\"",
-        "arcane": "Cael watches you with the specific attention of someone who has been told to watch for scholars or mages arriving from outside. You clock the recognition and let it sit.\n\n\"We have been expecting someone with your expertise,\" he says. The Compact apparently has people who know what to watch for. That is interesting and slightly concerning.",
+        "commander": "He straightens when he sees how you stand, before he knows who you are. The body knows rank even when the mind is trying to be diplomatic.\n\n\"Lieutenant,\" you say, acknowledging without conceding.\n\n\"Commander,\" he says. He has done his research.",
+        "arcane": "He has been told to watch for scholars and mages arriving from outside. You see him place you, and let him. The Compact has people who know what to look for. That is interesting, and slightly concerning.",
         "ranger": "Cael sees you coming across the market square and positions himself to intercept naturally, without making it look like an interception. Practised.\n\n\"Just arrived?\" he asks, already knowing the answer.\n\n\"Yesterday,\" you say.\n\n\"We heard.\" Of course they did.",
-        "cipher": "Cael is good at his job. Not great — you caught him adjusting his approach twice between the time he saw you and the time you reached the gate — but good. The smile is practised. The openness is calculated.\n\n\"We have been expecting someone to arrive asking questions,\" he says. You note he said someone, not you specifically. Testing whether you will correct him."
+        "cipher": "He is good at his job. Not great: you caught him adjusting his approach twice between seeing you and your reaching the gate. The smile is practised and the openness is measured.\n\nHe said someone, not you. He is waiting to see whether you correct him."
       },
       "choices": [
         {
@@ -74,12 +74,7 @@
             }
           }
         }
-      ],
-      "text_mode": {
-        "commander": "replace",
-        "arcane": "replace",
-        "cipher": "replace"
-      }
+      ]
     },
     {
       "id": "act1_ch3_compact_offer",
@@ -757,10 +752,10 @@
       "requires": {},
       "text": {
         "default": "She comes out of the camp and looks at you and you look at her and there is a brief moment — the span of a breath, not longer — where something moves in her face that she covers immediately. She knows the name you are going to say. You have not said it yet but she knows.\n\nThat is the first thing you learn about Maret.\n\n\"Sit down,\" she says, gesturing to a log bench at the camp's edge. \"I will hear what you have to say.\"\n\nShe sits across from you. Branch positions himself nearby in the specific way of someone who has been asked to be nearby. The camp around you continues its business — people moving, a child's voice somewhere, the smell of something cooking.\n\n\"You are looking for someone,\" Maret says. Not a question.",
-        "commander": "She takes in your bearing with the eye of someone who has dealt with commanders before and decided she is done taking orders from them. Not hostile — just clear about the terms.\n\n\"Yes,\" you say. You give her the name.\n\nSomething moves in her face and goes still. She lets the stillness sit for a moment before she decides what to do with it.",
+        "commander": "She takes in how you stand like someone who has dealt with commanders before and has finished taking their orders. She is not hostile about it. She is clear about the terms.",
         "arcane": "She looks at you with the specific attention of someone reading more than your face. You do the same to her — the residue on her is complex, layered in ways that take time to read. She has been near the curse for a long time. She is not afflicted. Whatever she did to avoid affliction, it was not the Covenant's methods.\n\nYou give her the name. She knew it before you said it.",
-        "ranger": "She sits across from you and you both stay quiet for a moment. Not uncomfortable — the quiet of two people who are used to silence and know it can be used.\n\n\"You are from outside Ashenveld,\" she says. \"But you know this land. Your feet know where to step.\"\n\nYou give her the name. Her breath changes. Slightly. You caught it.",
-        "cipher": "She sits down and you read her in the first ten seconds. Controlled. Intelligent. The specific care of someone who has been making decisions with insufficient information for long enough that they have become good at it.\n\nYou say the name. Her hands — clasped in her lap — press together slightly harder for half a second. She covers it. You pretend you did not see it. Both of you know you saw it."
+        "ranger": "Neither of you minds the quiet. It is the quiet of two people who are used to silence and know it can be used.\n\n\"You are from outside Ashenveld,\" she says. \"But you know this land. Your feet know where to step.\"",
+        "cipher": "You read her in the first ten seconds. Controlled. Intelligent. Used to deciding things on too little, and good at it by now.\n\nWhen you say the name, her clasped hands press together harder for half a second. She covers it. You pretend not to have seen. Both of you know you saw."
       },
       "choices": [
         {
@@ -841,11 +836,6 @@
           }
         }
       ],
-      "text_mode": {
-        "commander": "replace",
-        "ranger": "replace",
-        "cipher": "replace"
-      },
       "rest": true
     }
   ]

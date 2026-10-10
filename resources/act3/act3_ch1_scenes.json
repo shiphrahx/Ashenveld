@@ -89,7 +89,7 @@
         "commander": "You carry what you left with. Your pack. Your skills. The specific knowledge of what is in the ruins and what was done about it.\n\nYou left Crestfall without telling Vorne everything. The documentation he was promised — [missing person] will send it, eventually, from wherever you end up. It will be complete. You gave your word.\n\nThe west road. Ordinary trees. You walk.",
         "arcane": "You carry your journal. Fourteen months of [missing person]'s notes, copied in the days before you left, will travel with you.\n\nYou are leaving the most significant field site of your career. You are doing this because the person beside you matters more than the field site. You note both facts without resolving the tension between them.\n\nThe west road. You walk. You write as you walk, because you are you.",
         "ranger": "The ordinary forest on the west road. Birds. Deer — the right kind, moving correctly, aware of you and making the appropriate calculation about whether you are a threat.\n\nYou are not a threat. You are two people walking away from something and toward something that does not have a name yet.\n\nThe forest is ordinary. After weeks in Ashenveld, ordinary is almost overwhelming.",
-        "cipher": "You and [missing person] walking on the west road.\n\nYou are thinking about what comes next. Not Ashenveld — what comes after Ashenveld. The world is large and you have skills and you have a person beside you who has spent fourteen months in a ruined city learning things nobody else knows.\n\nThe two of you together are a significant resource. You are thinking about how to deploy that resource in ways that serve something other than the institutions that will certainly try to acquire you."
+        "cipher": "You are thinking past Ashenveld. The world is large, you have skills, and beside you is someone who spent fourteen months learning things nobody else knows.\n\nThe two of you are worth a great deal to the wrong people. You are already thinking about how to keep it out of their hands."
       },
       "choices": [
         {
@@ -123,9 +123,6 @@
           }
         }
       ],
-      "text_mode": {
-        "cipher": "replace"
-      },
       "objective": "Go west."
     },
     {

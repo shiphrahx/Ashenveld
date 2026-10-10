@@ -25,7 +25,7 @@
         "commander": "You walk and you run the assessment that comes after a significant action.\n\nObjective achieved: the curse is sealed. Casualties: none. Damage to assets: unknown — the afflicted people, the animals, the land. Unknown because the text was not clear about reversal.\n\nUnfinished business: Vorne's position in Crestfall. Seriva's departure terms, if any were reached. [missing person]'s status — they have been in the ruins for fourteen months and the world outside the ruins does not know they exist.\n\nYou have a lot of work ahead of you. You note this and keep walking.",
         "arcane": "You are thinking about the afflicted.\n\nThe sealing stops the mechanism from producing the curse. But the curse is already in Ashenveld — in the soil, the water, the stone, the people who have been exposed. The sealing does not remove what is already there. It only stops more from being added.\n\nWhether what is already there diminishes over time, now that the source has been sealed — this is the question you do not have an answer to. The text described the sealing as complete, which implies restoration of the original state. But the original state was maintained by an active mechanism in an inhabited city, not by a sealed fracture in an empty ruin.\n\nYou will need to observe carefully.",
         "ranger": "The east road is different now. The deer — the wrong-walking ones — have not returned to normal in the hours since the sealing. You did not expect them to. But you read the forest as you walk and what you read is: something has changed at the source. The propagation has stopped. What is already in the system is still there, but it is no longer being fed.\n\nA river does not dry immediately when you close the dam. But eventually.",
-        "cipher": "You walk and you think about what comes next. Not the practical questions — those are manageable — but the ones that do not have obvious answers.\n\n[missing person] is beside you, walking in daylight for the first time in fourteen months. They are changed. You are changed. The mechanism showed you things about each other that you would not have found in ordinary conversation in ten more years.\n\nWhat to do with that is a question the ruins did not answer."
+        "cipher": "You think about what comes next. Not the practical questions. Those are manageable.\n\nThe mechanism showed you things about each other you would not have found in ten more years of ordinary talk. The ruins did not tell you what to do with them."
       },
       "choices": [
         {
@@ -60,10 +60,7 @@
             }
           }
         }
-      ],
-      "text_mode": {
-        "cipher": "replace"
-      }
+      ]
     },
     {
       "id": "act2_ch7_crestfall_reception",
@@ -343,7 +340,7 @@
         "default": "You bring [missing person] to the Rootless camp.\n\nThis meeting — between the person who spent fourteen months in the ruins and the person who sent them there and spent fourteen months regretting it — is one you cannot manage and do not try to.\n\nMaret sees them from across the camp and stops moving. [missing person] sees Maret and stops moving. The camp moves around both of them, the ordinary business of twenty-three people, and in the middle of it two people who have something to say to each other stand still.\n\nYou give them space. Branch appears at your elbow — not to say anything, just to stand with you while the thing happens.",
         "commander": "You stand with Branch and you watch Maret and [missing person] begin a conversation that has been waiting fourteen months to happen.\n\n\"She sent them in,\" Branch says quietly. \"She has never said so to me, but she sent them in.\"\n\n\"I know,\" you say.\n\n\"They are going to be all right,\" he says. Not a question. A decision. Branch making a decision about how things are going to be, which is how Branch makes things be that way.",
         "arcane": "Lira appears beside you as you watch. She is having a good period — fully present, the delay between thought and expression absent today.\n\n\"The frequency is different,\" she says. \"Since this morning. Something changed.\"\n\n\"Yes,\" you say.\n\nShe thinks about this. \"Will I get better?\" she asks. Not hopefully. Honestly.\n\n\"I do not know,\" you say. \"I think there is a possibility you might. I cannot promise it.\" A pause. \"But the thing that was making you worse has stopped.\"",
-        "ranger": "You watch the camp from the edge. The subtle ways things are different today — Lira is more present, the herb garden's specific plants that respond to the curse's density have shifted in a way you can read as a reduction.\n\nThe sealing is working. Slowly. But working.\n\nBranch appears at your elbow. \"You did it,\" he says. It is the closest he gets to thank you.",
+        "ranger": "You watch the camp from the edge. Lira is more present today. The plants in the herb garden that answer to the curse have shifted, and you read it as less.\n\nThe sealing is working. Slowly.\n\nBranch says, without looking at you, \"You did it.\" It is the closest he gets to thank you.",
         "cipher": "You watch Maret and [missing person] begin the conversation that needed to happen and you do not listen.\n\nSome things are not yours to read.\n\nBranch appears beside you. \"Issa asked about you,\" he says. \"She wanted to know who you were.\"\n\n\"What did you tell her?\"\n\n\"The truth,\" he says. \"That I did not know yet but I was deciding in your favour.\" A pause. \"Do not make me revise that.\""
       },
       "choices": [
@@ -405,9 +402,6 @@
           }
         }
       ],
-      "text_mode": {
-        "ranger": "replace"
-      },
       "rest": true
     }
   ]

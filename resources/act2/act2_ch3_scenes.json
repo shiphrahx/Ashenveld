@@ -228,7 +228,7 @@
       "text": {
         "default": "The Compact checkpoint is two miles east of Crestfall, at the point where the cobblestone begins. A barricade of timber, two soldiers, a small fire.\n\nThey see you before you see them, which means they were watching. When you get close enough to talk, one of them steps forward with the specific posture of someone following a procedure.\n\n\"East road is under Compact jurisdiction,\" he says. \"State your name, your origin, and your purpose for travel.\"",
         "commander": "You assess the checkpoint in the first three seconds. Two soldiers visible, probably two more within call. The barricade is solid but not permanent — it is designed to be moved, which means it is also designed to be passed under the right conditions.\n\nYou give your name. You state your origin and purpose in terms that are true but selective. The soldier writes things down.",
-        "arcane": "You note the checkpoint's location — the point where the cobblestone begins — and the specific position of the soldiers relative to the barricade. Someone chose this location deliberately. It is not the most defensible point on the road. It is the most visible point from both directions.\n\nThis checkpoint is not about security. It is about being seen.",
+        "arcane": "Someone chose this spot. It is not the most defensible point on the road. It is the most visible, from both directions.\n\nThis checkpoint is not about security. It is about being seen.",
         "ranger": "You approach the checkpoint at a pace that communicates: I know you are there, I am not trying to avoid you, I have nothing to hide. This pace is not natural to you in most situations. You adopt it consciously.\n\nThe soldier steps forward. You note the second soldier's hand position relative to their weapon. Relaxed. This is not an aggressive deployment.",
         "cipher": "You had sixty seconds to prepare your account before you reached the checkpoint. The account is ready — true in its components, structured in the order most likely to produce the outcome you want.\n\nThe soldier asks for name, origin, purpose. You give all three."
       },
@@ -411,10 +411,7 @@
           },
           "locked_hint": "Needs 10 coin"
         }
-      ],
-      "text_mode": {
-        "arcane": "replace"
-      }
+      ]
     },
     {
       "id": "act2_ch3_crestfall_changed",
@@ -455,7 +452,7 @@
         ],
         "commander": "Thirty soldiers change a town. The balance of power has shifted. The Covenant's visible presence has been reduced — their shrine is still open but they no longer have the streets. The Rootless camp outside town is, according to the soldier at the checkpoint, still there. For now.\n\nVorne has not moved against the camp yet. That he has not moved against it yet tells you something about either his restraint or his priorities.",
         "arcane": "You feel Seriva before you see her. Not literally — but her influence on the town's information environment is measurable. People are talking less. The specific topics that were freely discussed three days ago are now being discussed in lower voices, if at all.\n\nInformation consolidation. Someone is controlling what people share and with whom. That is Seriva's work, or the work of someone following her instructions.",
-        "ranger": "The town's animal population has decreased further in the days you were gone. The single cat under the porch on the north side is no longer there. You look for tracks and find nothing recent.\n\nThe curse is spreading faster. You can read it in the animal absence the way you read weather systems in bird behaviour. When the animals leave, the storm has already committed.",
+        "ranger": "There are fewer animals than when you left. The cat under the north porch has gone. You look for tracks and find nothing recent.\n\nYou read it the way you read weather in the birds. When the animals leave, the storm has already committed.",
         "cipher": "You read the changed Crestfall and update your map of it in real time. Compact soldiers at seven visible positions. Covenant influence reduced. Three new faces you do not recognise — Compact-adjacent, not soldiers, probably scholars or analysts.\n\nAnd one face you do not recognise but immediately categorise as significant: a woman in her sixties moving through the market with the unhurried certainty of someone who knows exactly where everything is even though she arrived three days ago."
       },
       "choices": [
@@ -530,10 +527,7 @@
             }
           }
         }
-      ],
-      "text_mode": {
-        "ranger": "replace"
-      }
+      ]
     },
     {
       "id": "act2_ch3_aldous_update",
@@ -644,7 +638,7 @@
         "default": "The Rootless camp is tense in the specific way of a community that has been threatened without being threatened directly.\n\nBranch is at the perimeter. Lira is at the centre of the camp with two other partially afflicted members, maintaining the routine that Maret has established for them. And in the corner of the camp, in a tent that has been made as comfortable as any tent in this collection can be, is a girl of about seventeen with grey at her fingertips and the specific vacant quality of early curse exposure.\n\nIssa Vorne. Commander Vorne's daughter.\n\nShe does not know who you are. She looks at you when you approach with the unfocused attention of the early stages — not gone, not present, somewhere in between.",
         "commander": "You assess Issa with the professional eye. Early stage affliction — the fingertips, the attention. Not beyond treatment, possibly. Maret's methods have slowed the progression in others at this stage.\n\nBut Issa Vorne at the Rootless camp is a political problem of the first order. If Vorne knows she is here, his next action will be shaped by it entirely. If he does not know she is here, someone will tell him soon.",
         "arcane": "The affliction on Issa is readable. Recent — the past two weeks, not longer. The density is low enough that it is still in the stage where external intervention can slow the progression.\n\nThe relevant question is whether Commander Vorne knows that the Rootless camp is the safest place for his daughter right now, and whether knowing it would change his behaviour toward the camp.",
-        "ranger": "Issa looks at you when you approach and the look has a quality you have not seen in the other afflicted people you have observed. Not quite vacancy — more like distance. She is still in there, further back than she should be for her age and the stage of affliction, but present.\n\nShe says: \"You came from the east.\" Not a question. She can see it somehow.",
+        "ranger": "Issa's look is not the vacancy you have seen in the other afflicted. It is distance. She is still in there, further back than she should be at her age and at this stage, but present.\n\n\"You came from the east,\" she says. She can see it somehow.",
         "cipher": "Issa Vorne is the most strategically significant person in the Rootless camp. The daughter of the regional military commander, afflicted, at the camp of a faction the commander has not yet moved against.\n\nShe is simultaneously an opportunity, a liability, and a person who is frightened and ill and has come somewhere that felt safe. You note all three of these facts and try to weight them appropriately."
       },
       "choices": [
@@ -711,9 +705,6 @@
           }
         }
       ],
-      "text_mode": {
-        "ranger": "replace"
-      },
       "rest": true
     },
     {

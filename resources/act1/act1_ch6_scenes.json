@@ -454,7 +454,7 @@
       "requires": {},
       "text": {
         "default": "A figure coming toward you on the road — moving fast, not running but close to it. A man, middle-aged, carrying more than he should be carrying for someone moving at that speed. He has the quality of someone who has decided that distance from a place is more valuable than comfort in transit.\n\nHe sees you and does not slow down. If anything he speeds up slightly.\n\nYou step to the side of the road so he can pass if he wants to. He almost does. Then, two metres past you, he stops.",
-        "commander": "He stops and turns back with the expression of someone who has decided something he immediately regrets deciding.\n\n\"You are going the wrong way,\" he says.",
+        "commander": "He turns back with the face of a man who has decided something and already regrets it.\n\n\"You are going the wrong way,\" he says.",
         "arcane": "He stops and turns and looks at you with the specific assessment of someone measuring how much you might want to know versus how much he wants to tell.\n\n\"You are going east,\" he says. It is not a question.",
         "ranger": "He stops and turns. His pack is military in origin — the straps, the frame. He is not military anymore. His boots are worn on the outside of the heel, a specific gait, something about his history you cannot place yet.\n\n\"Going to Harrow?\" he says.",
         "cipher": "He stops and turns and you read him quickly. Running from something. Not afraid of you specifically — afraid of what is behind him, and you happen to be coming from the wrong direction.\n\n\"Turn around,\" he says. No pleasantry, no preamble."
@@ -511,10 +511,7 @@
             }
           }
         }
-      ],
-      "text_mode": {
-        "commander": "replace"
-      }
+      ]
     },
     {
       "id": "act1_ch6_missing_person_campsite",
@@ -546,7 +543,7 @@
           "[missing person] was here. Three to five days ago. Moving east."
         ],
         "commander": "You assess the campsite with systematic attention. Duration of stay: one night. Direction of departure: east, based on the site's orientation. Condition when they were here: functional — the camp is tidy, the fire correctly built. Not someone in crisis.",
-        "arcane": "The residue on the campsite is specific enough to read clearly. One person, one night, not deeply afflicted at the point of departure — the camp has the residue of someone present and aware.\n\nYou feel something that is probably relief and probably also fear. Present and aware when they left this camp. Three to five days ago.",
+        "arcane": "The residue here is clear enough to read. One person, one night, not deeply afflicted when they left. Present and aware.\n\nYou feel something that is probably relief, and is also fear.",
         "ranger": "You read the campsite with the efficiency of a tracker. One person, one night. The fire stones are arranged in a specific way you have not seen anyone else use. The cleared area is exactly the size of a bedroll.\n\nThe departure direction is east and the tracks, faint on this ground, confirm it. Three to five days old. Moving steadily.",
         "cipher": "The arrangement of the fire stones. You know that arrangement. It is not a coincidence — the specific angle of the angled stone, the spacing, the choice of this particular clearing. Someone was here recently and they wanted you — specifically you, if you came — to know it was them."
       },
@@ -601,10 +598,7 @@
             }
           }
         }
-      ],
-      "text_mode": {
-        "arcane": "replace"
-      }
+      ]
     },
     {
       "id": "act1_ch6_harrow_arrival",
