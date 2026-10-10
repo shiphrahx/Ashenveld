@@ -3,7 +3,7 @@
 One step per branch and pull request. Each tick lists what was done, what was skipped, the AUTHOR DECISION defaults used, and where the plan turned out to be wrong.
 
 - [x] 1. docs/01 Section 0 (engine foundation), then B1, B2, B3, B4, B5
-- [ ] 2. docs/01 B6 to B13
+- [x] 2. docs/01 B6 to B13
 - [ ] 3. docs/01 B21 (validator and smoke test), then B14 to B20
 - [ ] 4. docs/04 Design tokens, then U1 to U7
 - [ ] 5. docs/03 G1 to G6
@@ -60,3 +60,33 @@ Small repeats and contradictions spotted while checking, all covered later in th
 
 - Final choice 2 (sent ahead) also reaches `ending_escape_together`, because nothing on the always-first-choice path sets `player_stays_permanently`. The B21 e2e test asks for four different endings from the four final choices. Step 3 needs a choice on the sent-ahead path that sets it, or a different ending for one of the four tests.
 - `master_scene_index.json` says `total_scenes: 116`. There are 108.
+
+## Step 2 — B6 to B13
+
+Branch `step-2-engine-bugs`, stacked on step 1.
+
+**Done**
+
+- B6: the 11 health changes moved from `state_changes.player.resources` to `state_changes.resources`. Gold clamps at 0, health floors at 1 until G9. `min_gold` added to `Condition`.
+- B7: `world.curse_spread` in `state_changes` is a delta, clamped 0..100. Documented in `types.ts`.
+- B8: minute clock deleted (`advanceTime`, `TIME_LABELS`, `_time_minutes`, `time_advance`). Every scene has `when` from the time table, with the location changes. The listed `world.day` values, `act` and `chapter` values are gone. Day anchors of 15 and up live in `when.day`. The two skip-day outcomes and the double sleep are fixed. Header reads "Act II · Chapter 3" and "Day 7 · Evening"; `hide_clock` hides the clock in the header and sidebar. `applyWhen` has vitest cases (`npm test`).
+- B9: covered by `resumeScene` from step 1.
+- B10: merged location and NPC tables in `loader.ts` (`getLocation`, `getNpc`, `getAllNpcs`, `locationName`). The four new places are in the metas.
+- B11: `success_at_cost` added to `ask_about_the_cost_to_them` (reusing the success's first two paragraphs). Dice Continue falls back to the nearest outcome.
+- B12: `act1_ch3_camp_second_try` added and registered. Camp hub choices are `once`. The lesson in the ruins leads to the checkpoint with `returned_to_crestfall` and `stayed_for_lesson`.
+- B13: `relationships.missing_person` renamed to `the_missing_person`.
+
+**Checked**
+
+- `npm run build` and `npm test` pass.
+- Scripted run as Commander: the day never goes down, the ritual is on Day 12, the final choice on Day 16, Act 3 on Days 17, 20, 30, 45.
+
+**Skipped or deferred**
+
+- The validator rules from B6, B11 and B13 arrive with the validator in step 3.
+- `time_of_day` values on outcomes stay and now pass through `applyWhen`, as the plan says.
+
+**Plan was wrong or unclear**
+
+- Old saves stored `time_of_day` as "05:35 — dawn". `loadGame` maps those to a day part now so a pre-step-2 save doesn't show a broken clock. The full migration is still B23.
+- Python on Windows wrote CRLF into a few source files mid-step. Stripped before committing; `.gitattributes` keeps the repo LF either way.

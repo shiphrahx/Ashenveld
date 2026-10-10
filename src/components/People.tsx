@@ -1,5 +1,5 @@
 import React from 'react'
-import { getActMeta } from '../loader'
+import { getAllNpcs } from '../loader'
 import type { GameState } from '../types'
 import styles from './People.module.css'
 
@@ -36,19 +36,6 @@ function closenessBarPct(c: number): number {
   return Math.max(0, Math.min(100, (c / 100) * 100))
 }
 
-function getAllNpcs(): Record<string, { name: string; role: string; faction_alignment: string }> {
-  const result: Record<string, { name: string; role: string; faction_alignment: string }> = {}
-  for (let act = 1; act <= 3; act++) {
-    try {
-      const meta = getActMeta(act) as unknown as Record<string, unknown>
-      // act1 uses "npcs", act2/3 use "new_npcs"
-      const block = (meta['npcs'] ?? meta['new_npcs']) as Record<string, { name: string; role: string; faction_alignment: string }> | undefined
-      if (block) Object.assign(result, block)
-    } catch { /* act meta not loaded yet */ }
-  }
-  return result
-}
-
 export default function People({ state, onClose }: Props) {
   const allNpcs = getAllNpcs()
 
@@ -65,7 +52,7 @@ export default function People({ state, onClose }: Props) {
         ? state.player.missing_person.name || 'Unknown'
         : npc.name,
       role: npc.role,
-      faction: FACTION_LABEL[npc.faction_alignment] ?? '',
+      faction: FACTION_LABEL[npc.faction_alignment ?? 'none'] ?? '',
       closeness: state.relationships[id]?.closeness ?? 0,
     }))
     .sort((a, b) => b.closeness - a.closeness)

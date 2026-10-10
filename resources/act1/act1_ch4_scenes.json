@@ -8,9 +8,11 @@
       "chapter": 4,
       "location": "rootless_camp",
       "title": "What She Admits",
+      "when": {
+        "part": "afternoon"
+      },
       "on_enter": {
-        "state_changes": {},
-        "time_advance": 20
+        "state_changes": {}
       },
       "requires": {
         "flags": {
@@ -96,9 +98,11 @@
       "chapter": 4,
       "location": "rootless_camp",
       "title": "Tomorrow",
+      "when": {
+        "part": "afternoon"
+      },
       "on_enter": {
-        "state_changes": {},
-        "time_advance": 15
+        "state_changes": {}
       },
       "requires": {},
       "text": {
@@ -147,17 +151,19 @@
       "chapter": 4,
       "location": "rootless_camp",
       "title": "Among the Rootless",
+      "when": {
+        "part": "afternoon"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "rootless_camp_stayed": true
           }
-        },
-        "time_advance": 120
+        }
       },
       "requires": {},
       "text": {
-        "default": "You spend time at the camp — a full day, working alongside the Rootless. Branch gives you things to do: firewood, the herb garden, checking the water supply for the discolouration that Maret says means the curse has touched the source.\n\nTwenty-three people. You start to know them slightly. An old farmer who does not speak much but watches everything. Two teenagers who are not from the same family but have decided to be. A woman who was a midwife in one of the eastern villages and has repurposed her skills for the particular medical needs of the curse's early stages.\n\nMaret watches you work without making it obvious she is watching. You let her.",
+        "default": "You spend time at the camp — the rest of the day, working alongside the Rootless. Branch gives you things to do: firewood, the herb garden, checking the water supply for the discolouration that Maret says means the curse has touched the source.\n\nTwenty-three people. You start to know them slightly. An old farmer who does not speak much but watches everything. Two teenagers who are not from the same family but have decided to be. A woman who was a midwife in one of the eastern villages and has repurposed her skills for the particular medical needs of the curse's early stages.\n\nMaret watches you work without making it obvious she is watching. You let her.",
         "commander": "You work. The camp is more organised than it looks from outside — labour distributed by capacity rather than by formal assignment, which means the whole thing runs on implicit understanding. Someone who grew up in a barracks recognises the pattern.\n\nBranch finds you at the end of the day. \"You know how to be useful without making a point of it,\" he says. It is as close to a compliment as he gets.",
         "arcane": "The herb garden is the most interesting part of the camp. You work in it for an hour and identify fifteen different species, three of which you have never encountered in any text. The woman who planted it — a quiet older woman named Pol — watches you identify them with the specific attention of someone who wants to know if you are right.\n\nYou are. She nods once and goes back to her work.",
         "ranger": "You work the outer perimeter of the camp, checking the places Maret has identified as weak points in whatever protection she has established. You find two she missed. You fix them without mentioning it.\n\nBranch sees you doing it. He does not say anything. But in the evening he gives you a better piece of bread than the rest.",
@@ -175,7 +181,8 @@
               "next_scene": "act1_ch4_lira",
               "state_changes": {}
             }
-          }
+          },
+          "once": true
         },
         {
           "id": "talk_to_branch",
@@ -188,7 +195,8 @@
               "next_scene": "act1_ch4_branch",
               "state_changes": {}
             }
-          }
+          },
+          "once": true
         },
         {
           "id": "wait_for_maret_evening",
@@ -211,13 +219,15 @@
       "chapter": 4,
       "location": "rootless_camp",
       "title": "Lira",
+      "when": {
+        "part": "afternoon"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "lira_met": true
           }
-        },
-        "time_advance": 45
+        }
       },
       "requires": {},
       "text": {
@@ -303,13 +313,15 @@
       "chapter": 4,
       "location": "rootless_camp",
       "title": "Branch",
+      "when": {
+        "part": "afternoon"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "branch_met": true
           }
-        },
-        "time_advance": 40
+        }
       },
       "requires": {},
       "text": {
@@ -411,9 +423,11 @@
       "chapter": 4,
       "location": "rootless_camp",
       "title": "Evening Fire",
+      "when": {
+        "part": "evening"
+      },
       "on_enter": {
-        "state_changes": {},
-        "time_advance": 40
+        "state_changes": {}
       },
       "requires": {},
       "text": {
@@ -489,13 +503,15 @@
       "chapter": 4,
       "location": "rootless_camp",
       "title": "The Letter",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "maret_letter_obtained": true
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {},
       "text": {
@@ -564,13 +580,15 @@
       "chapter": 4,
       "location": "rootless_camp",
       "title": "The Letter Withheld",
+      "when": {
+        "part": "evening"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "maret_letter_withheld": true
           }
-        },
-        "time_advance": 20
+        }
       },
       "requires": {},
       "text": {

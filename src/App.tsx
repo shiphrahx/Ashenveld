@@ -1,10 +1,9 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import type { GameState, Scene, Outcome, JournalEntry } from './types'
-import { initLoader, resolveScene, getActMeta } from './loader'
+import { initLoader, resolveScene, getActMeta, locationName } from './loader'
 import {
   createFreshState,
   applyStateChanges,
-  advanceTime,
   applyWhen,
   checkCurse,
   saveGame,
@@ -97,7 +96,6 @@ export default function App() {
       next.world.chapter = scene.chapter
       next.world.current_location = scene.location
       if (scene.when) next = applyWhen(next, scene.when)
-      if (scene.on_enter?.time_advance) next = advanceTime(next, scene.on_enter.time_advance)
       next = applyStateChanges(next, scene.on_enter?.state_changes ?? {})
       next = checkCurse(next)
 
@@ -194,17 +192,6 @@ export default function App() {
     await enterScene(outcome.next_scene, next)
   }, [gameState, currentScene, enterScene])
 
-  // ── Location name ─────────────────────────────────────────────────────────────
-  function locationName(): string {
-    if (!gameState || !currentScene) return ''
-    try {
-      const meta = getActMeta(currentScene.act)
-      return meta.locations[currentScene.location]?.name ?? currentScene.location
-    } catch {
-      return currentScene.location
-    }
-  }
-
   // ── Render ────────────────────────────────────────────────────────────────────
 
   if (phase === 'loading') {
@@ -263,9 +250,9 @@ export default function App() {
       <>
         <StarField />
         <div className={styles.shell}>
-          <SceneArt locationName={locationName()} gameState={gameState} />
+          <SceneArt locationName={locationName(currentScene.location)} gameState={gameState} />
           <SceneView scene={currentScene} state={gameState} onChoice={handleChoice} />
-          <Sidebar state={gameState} onJournal={() => setJournalOpen(true)} onItems={() => setItemsOpen(true)} onPeople={() => setPeopleOpen(true)} onMenu={() => setMenuOpen(true)} onMap={() => setMapOpen(true)} />
+          <Sidebar state={gameState} onJournal={() => setJournalOpen(true)} onItems={() => setItemsOpen(true)} onPeople={() => setPeopleOpen(true)} onMenu={() => setMenuOpen(true)} onMap={() => setMapOpen(true)} hideClock={currentScene.when?.hide_clock} />
           {journalOpen && (
             <Journal entries={gameState.journal ?? []} onClose={() => setJournalOpen(false)} />
           )}

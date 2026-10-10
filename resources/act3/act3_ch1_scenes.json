@@ -8,14 +8,16 @@
       "chapter": 1,
       "location": "crestfall_tallow_inn",
       "title": "The Morning You Decided to Stay",
+      "when": {
+        "part": "morning",
+        "day": 17
+      },
       "on_enter": {
         "state_changes": {
           "world": {
-            "curse_spread": -3,
-            "day": 17
+            "curse_spread": -3
           }
-        },
-        "time_advance": 0
+        }
       },
       "requires": {
         "flags": {
@@ -66,15 +68,14 @@
       "id": "act3_ch1_leaving",
       "act": 3,
       "chapter": 1,
-      "location": "east_road",
+      "location": "west_road_leaving",
       "title": "The Road Going West",
+      "when": {
+        "part": "morning",
+        "day": 17
+      },
       "on_enter": {
-        "state_changes": {
-          "world": {
-            "day": 17
-          }
-        },
-        "time_advance": 120
+        "state_changes": {}
       },
       "requires": {
         "flags": {
@@ -130,13 +131,12 @@
       "chapter": 1,
       "location": "crestfall_tallow_inn",
       "title": "One More Week",
+      "when": {
+        "part": "morning",
+        "day": 17
+      },
       "on_enter": {
-        "state_changes": {
-          "world": {
-            "day": 17
-          }
-        },
-        "time_advance": 0
+        "state_changes": {}
       },
       "requires": {
         "flags": {
@@ -189,13 +189,12 @@
       "chapter": 1,
       "location": "crestfall_tallow_inn",
       "title": "The Door Closed",
+      "when": {
+        "part": "morning",
+        "day": 17
+      },
       "on_enter": {
-        "state_changes": {
-          "world": {
-            "day": 17
-          }
-        },
-        "time_advance": 0
+        "state_changes": {}
       },
       "requires": {
         "flags": {
@@ -232,10 +231,8 @@
               "text": "You commit but the commitment is expensive in ways you did not fully calculate. The first day is the hardest — the specific quality of having chosen something and not being sure yet whether you chose correctly.\n\nYou do the work anyway. The work is what you have.",
               "next_scene": "act3_ch2_alone_work",
               "state_changes": {
-                "player": {
-                  "resources": {
-                    "health": -10
-                  }
+                "resources": {
+                  "health": -10
                 }
               }
             },

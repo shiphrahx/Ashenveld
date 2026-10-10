@@ -8,13 +8,15 @@
       "chapter": 2,
       "location": "ruins_inner_approach",
       "title": "Going Down",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 3
           }
-        },
-        "time_advance": 40
+        }
       },
       "requires": {
         "flags": {
@@ -86,13 +88,15 @@
       "chapter": 2,
       "location": "ruins_inner_approach",
       "title": "Before the Chamber",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 2
           }
-        },
-        "time_advance": 20
+        }
       },
       "requires": {},
       "text": {
@@ -133,10 +137,8 @@
                 "flags": {
                   "chamber_prepared": true
                 },
-                "player": {
-                  "resources": {
-                    "health": 10
-                  }
+                "resources": {
+                  "health": 10
                 }
               }
             }
@@ -150,6 +152,9 @@
       "chapter": 2,
       "location": "ruins_source_chamber",
       "title": "The Source",
+      "when": {
+        "part": "midday"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
@@ -158,8 +163,7 @@
           "world": {
             "curse_spread": 5
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {},
       "text": {
@@ -251,13 +255,15 @@
       "chapter": 2,
       "location": "ruins_source_chamber",
       "title": "We Need to Go Back",
+      "when": {
+        "part": "afternoon"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 2
           }
-        },
-        "time_advance": 20
+        }
       },
       "requires": {},
       "text": {
@@ -280,8 +286,7 @@
               "next_scene": "act2_ch3_crestfall_news",
               "state_changes": {
                 "world": {
-                  "time_of_day": "evening",
-                  "day": 6
+                  "time_of_day": "evening"
                 }
               }
             }
@@ -306,8 +311,7 @@
                   }
                 },
                 "world": {
-                  "time_of_day": "evening",
-                  "day": 6
+                  "time_of_day": "evening"
                 }
               }
             }

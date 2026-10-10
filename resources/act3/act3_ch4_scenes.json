@@ -8,14 +8,16 @@
       "chapter": 4,
       "location": "crestfall_market",
       "title": "Six Weeks",
+      "when": {
+        "part": "morning",
+        "day": 45
+      },
       "on_enter": {
         "state_changes": {
           "world": {
-            "curse_spread": -10,
-            "day": 45
+            "curse_spread": -10
           }
-        },
-        "time_advance": 0
+        }
       },
       "requires": {
         "flags": {
@@ -53,15 +55,14 @@
       "id": "act3_ch4_resolution_road",
       "act": 3,
       "chapter": 4,
-      "location": "east_road",
+      "location": "west_road_leaving",
       "title": "Six Weeks Out",
+      "when": {
+        "part": "morning",
+        "day": 45
+      },
       "on_enter": {
-        "state_changes": {
-          "world": {
-            "day": 45
-          }
-        },
-        "time_advance": 0
+        "state_changes": {}
       },
       "requires": {
         "flags": {
@@ -104,13 +105,12 @@
       "chapter": 4,
       "location": "rootless_camp",
       "title": "Six Weeks Alone",
+      "when": {
+        "part": "morning",
+        "day": 45
+      },
       "on_enter": {
-        "state_changes": {
-          "world": {
-            "day": 45
-          }
-        },
-        "time_advance": 0
+        "state_changes": {}
       },
       "requires": {
         "flags": {

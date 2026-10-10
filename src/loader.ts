@@ -7,13 +7,16 @@
  *  3. Lazy-load chapter files only when a scene inside them is needed
  */
 
-import type { MasterIndex, ActMeta, ChapterFile, Scene } from './types'
+import type { MasterIndex, ActMeta, ChapterFile, Scene, LocationDef, NpcDef } from './types'
 
 // ─── Module-level caches ──────────────────────────────────────────────────────
 
 let masterIndex: MasterIndex | null = null
 const metaCache: Record<number, ActMeta> = {}
 const chapterCache: Record<string, ChapterFile> = {}
+// Each act meta names its tables differently (locations, new_locations, new_locations_act3).
+const locations: Record<string, LocationDef> = {}
+const npcs: Record<string, NpcDef> = {}
 
 // ─── Path helpers ─────────────────────────────────────────────────────────────
 
@@ -37,6 +40,11 @@ export async function initLoader(): Promise<MasterIndex> {
 
   // Load all three act metas in parallel
   await Promise.all([loadMeta(1), loadMeta(2), loadMeta(3)])
+  for (const act of [1, 2, 3]) {
+    const m = metaCache[act] as unknown as Record<string, Record<string, never> | undefined>
+    Object.assign(locations, m.locations ?? {}, m.new_locations ?? {}, m.new_locations_act3 ?? {})
+    Object.assign(npcs, m.npcs ?? {}, m.new_npcs ?? {})
+  }
 
   return masterIndex
 }
@@ -52,6 +60,19 @@ export function getActMeta(act: number): ActMeta {
   const meta = metaCache[act]
   if (!meta) throw new Error(`Act ${act} meta not loaded`)
   return meta
+}
+
+export const getLocation = (id: string): LocationDef | undefined => locations[id]
+export const getNpc = (id: string): NpcDef | undefined => npcs[id]
+export const getAllNpcs = (): Record<string, NpcDef> => npcs
+
+const warned = new Set<string>()
+/** The player-facing name of a place. Never shows an underscore. */
+export function locationName(id: string): string {
+  const loc = locations[id]
+  if (loc) return loc.name
+  if (!warned.has(id)) { console.warn(`No location entry for "${id}"`); warned.add(id) }
+  return id.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
 }
 
 /** Resolve a scene ID to its Scene object, lazy-loading its chapter file. */

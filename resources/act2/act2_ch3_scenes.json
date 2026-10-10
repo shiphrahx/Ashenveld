@@ -8,14 +8,15 @@
       "chapter": 3,
       "location": "ruins_outskirts",
       "title": "News from Below the Trees",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
-            "curse_spread": 3,
-            "day": 7
+            "curse_spread": 3
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {},
       "text": {
@@ -94,6 +95,9 @@
       "chapter": 3,
       "location": "ruins_outskirts",
       "title": "The First Lesson",
+      "when": {
+        "part": "midday"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
@@ -102,8 +106,7 @@
           "flags": {
             "ritual_preparation_begun": true
           }
-        },
-        "time_advance": 60
+        }
       },
       "requires": {},
       "text": {
@@ -122,13 +125,15 @@
           "outcomes": {
             "default": {
               "text": "They teach you through the morning and into the afternoon.\n\nNot the ritual words — those come later, when you are ready to hold them. Today is the foundation: what the mechanism is, how it reads, what the chamber will feel like, what you will need to remain present for when the reading begins. The sensation of being seen completely by something that has been waiting for exactly this.\n\nAt one point they stop and look at you as if they are asking a question without asking it.\n\n\"I am still here,\" you say.\n\nSomething in them settles. \"I know,\" they say. \"I just needed to see it.\"\n\nThey continue teaching. Outside, the forest is very quiet. The curse has not reached this specific clearing in a way that is measurable yet. You have days. You are going to use them.",
-              "next_scene": "act2_ch3_crestfall_news",
+              "next_scene": "act2_ch3_compact_checkpoint",
               "state_changes": {
                 "flags": {
-                  "ritual_lesson_complete": true
+                  "ritual_lesson_complete": true,
+                  "returned_to_crestfall": true,
+                  "stayed_for_lesson": true
                 },
                 "relationships": {
-                  "missing_person": {
+                  "the_missing_person": {
                     "closeness": 20
                   }
                 }
@@ -147,27 +152,47 @@
           "outcomes": {
             "success": {
               "text": "They are quiet for a long time.\n\n\"Fourteen months,\" they say finally. \"I have been in this forest for fourteen months and I have been — not alone, exactly, but alone in the specific way of someone who is waiting for the one person who can complete something with them.\" A pause. \"The cost to me is not the ritual. The cost to me was the fourteen months. The ritual is what the fourteen months were for.\"\n\nYou look at them. The weight of a year and two months of waiting is visible in them if you know what to look for. They have carried it so long they have stopped being able to put it down.\n\n\"Then let's not waste what you paid,\" you say.\n\nThey nod. They begin the lesson again, and this time there is something different in the way they hold themselves — lighter, perhaps. Something set down.",
-              "next_scene": "act2_ch3_crestfall_news",
+              "next_scene": "act2_ch3_compact_checkpoint",
               "state_changes": {
                 "flags": {
-                  "ritual_lesson_complete": true
+                  "ritual_lesson_complete": true,
+                  "returned_to_crestfall": true,
+                  "stayed_for_lesson": true
                 },
                 "relationships": {
-                  "missing_person": {
+                  "the_missing_person": {
                     "closeness": 30
+                  }
+                }
+              }
+            },
+            "success_at_cost": {
+              "text": "They are quiet for a long time.\n\n\"Fourteen months,\" they say finally. \"I have been in this forest for fourteen months and I have been — not alone, exactly, but alone in the specific way of someone who is waiting for the one person who can complete something with them.\" A pause. \"The cost to me is not the ritual. The cost to me was the fourteen months. The ritual is what the fourteen months were for.\"",
+              "next_scene": "act2_ch3_compact_checkpoint",
+              "state_changes": {
+                "flags": {
+                  "ritual_lesson_complete": true,
+                  "returned_to_crestfall": true,
+                  "stayed_for_lesson": true
+                },
+                "relationships": {
+                  "the_missing_person": {
+                    "closeness": 20
                   }
                 }
               }
             },
             "failure": {
               "text": "They deflect the question with the ease of someone who has been deflecting it from themselves for fourteen months.\n\n\"The cost is manageable,\" they say. \"Let us continue.\"\n\nYou let it go. There will be time for that conversation — or there won't be, and then it won't matter.\n\nThey continue the lesson.",
-              "next_scene": "act2_ch3_crestfall_news",
+              "next_scene": "act2_ch3_compact_checkpoint",
               "state_changes": {
                 "flags": {
-                  "ritual_lesson_complete": true
+                  "ritual_lesson_complete": true,
+                  "returned_to_crestfall": true,
+                  "stayed_for_lesson": true
                 },
                 "relationships": {
-                  "missing_person": {
+                  "the_missing_person": {
                     "closeness": 10
                   }
                 }
@@ -183,13 +208,15 @@
       "chapter": 3,
       "location": "east_road",
       "title": "The Checkpoint",
+      "when": {
+        "part": "afternoon"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 3
           }
-        },
-        "time_advance": 120
+        }
       },
       "requires": {
         "flags": {
@@ -275,13 +302,15 @@
       "chapter": 3,
       "location": "crestfall_market",
       "title": "Crestfall in Week Two",
+      "when": {
+        "part": "evening"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 4
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {},
       "text": {
@@ -373,13 +402,15 @@
       "chapter": 3,
       "location": "crestfall_tallow_inn",
       "title": "What Aldous Saw",
+      "when": {
+        "part": "evening"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 2
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {},
       "text": {
@@ -445,13 +476,15 @@
       "chapter": 3,
       "location": "rootless_camp",
       "title": "The Camp in Danger",
+      "when": {
+        "part": "evening"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 3
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {},
       "text": {
@@ -535,13 +568,15 @@
       "chapter": 3,
       "location": "rootless_camp",
       "title": "What Pol Knows",
+      "when": {
+        "part": "night"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 2
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {},
       "text": {
@@ -621,6 +656,9 @@
       "chapter": 3,
       "location": "crestfall_shrine",
       "title": "Seriva",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
@@ -629,8 +667,7 @@
           "world": {
             "curse_spread": 2
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {},
       "text": {

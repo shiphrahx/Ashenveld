@@ -8,13 +8,15 @@
       "chapter": 4,
       "location": "crestfall_compact_post",
       "title": "Commander Vorne",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 3
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {},
       "text": {
@@ -160,6 +162,9 @@
       "chapter": 4,
       "location": "rootless_camp",
       "title": "The Crisis Point",
+      "when": {
+        "part": "midday"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
@@ -168,8 +173,7 @@
           "flags": {
             "issa_crisis_begun": true
           }
-        },
-        "time_advance": 60
+        }
       },
       "requires": {},
       "text": {
@@ -320,13 +324,15 @@
       "chapter": 4,
       "location": "crestfall_tallow_inn",
       "title": "Father and Daughter",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 3
           }
-        },
-        "time_advance": 60
+        }
       },
       "requires": {},
       "text": {
@@ -432,6 +438,9 @@
       "chapter": 4,
       "location": "rootless_camp",
       "title": "When It Goes Wrong",
+      "when": {
+        "part": "afternoon"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
@@ -440,8 +449,7 @@
           "flags": {
             "issa_confrontation_occurred": true
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {
         "flags": {
@@ -523,13 +531,15 @@
       "chapter": 4,
       "location": "rootless_camp",
       "title": "The Fragment",
+      "when": {
+        "part": "midday"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 2
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {},
       "text": {

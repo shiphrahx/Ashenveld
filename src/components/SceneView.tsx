@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useRef } from 'react'
-import type { Scene, GameState, Choice, Outcome, RollResult, JournalEntry } from '../types'
+import type { Scene, GameState, Choice, Outcome, RollResult, JournalEntry, DiceOutcome } from '../types'
 import { rollDice, difficultyLabel } from '../dice'
 import { meets } from '../conditions'
 import { sceneText, resolveRich, CLASS_LABELS } from '../text'
@@ -81,8 +81,13 @@ export default function SceneView({ scene, state, onChoice }: Props) {
 
   const handleDiceContinue = useCallback(() => {
     if (!rollResult || !activeChoice) return
-    const key = rollResult.outcome
-    const outcome = activeChoice.outcomes[key] ?? activeChoice.outcomes.default
+    // Never leave the player without an outcome: fall back to the nearest result.
+    const order: Record<DiceOutcome, DiceOutcome[]> = {
+      success: ['success', 'success_at_cost', 'failure'],
+      success_at_cost: ['success_at_cost', 'success', 'failure'],
+      failure: ['failure', 'success_at_cost', 'success'],
+    }
+    const outcome = order[rollResult.outcome].map(k => activeChoice.outcomes[k]).find(Boolean) ?? activeChoice.outcomes.default
     const css = outcomeClass(rollResult, activeChoice)
     setRollResult(null)
     setActiveChoice(null)
@@ -108,16 +113,19 @@ export default function SceneView({ scene, state, onChoice }: Props) {
     }
   }, [shownOutcome, onChoice, scene, state, narrative, outcomeText])
 
-  // Crumb: "Act I · Chapter I · Night, Day 1"
-  const timeDisplay = state.world.time_of_day
-  const crumb = `Act ${toRoman(state.world.act)} · Ch ${toRoman(state.world.chapter)} · ${capitalise(timeDisplay)}, Day ${state.world.day}`
+  // Crumb: "Act II · Chapter 3" and "Day 7 · Evening"
+  const place = `Act ${toRoman(state.world.act)} · Chapter ${state.world.chapter}`
+  const clock = scene.when?.hide_clock ? '' : `Day ${state.world.day} · ${capitalise(state.world.time_of_day)}`
 
   return (
     <div className={styles.centre} data-scene-id={scene.id}>
       {/* ── Top bar ── */}
       <div className={styles.sceneBar}>
         <span>{scene.title}</span>
-        <span className={styles.crumb}>{crumb}</span>
+        <span className={styles.crumb}>
+          <span>{place}</span>
+          {clock && <span className={styles.clock} data-clock>{clock}</span>}
+        </span>
       </div>
 
       {/* ── Narrative ── */}

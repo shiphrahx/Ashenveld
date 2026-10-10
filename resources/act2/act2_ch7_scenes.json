@@ -6,16 +6,17 @@
       "id": "act2_ch7_aftermath_crestfall",
       "act": 2,
       "chapter": 7,
-      "location": "east_road",
+      "location": "east_road_return",
       "title": "Walking Back",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
-            "curse_spread": -5,
-            "day": 12
+            "curse_spread": -5
           }
-        },
-        "time_advance": 120
+        }
       },
       "requires": {},
       "text": {
@@ -69,13 +70,15 @@
       "chapter": 7,
       "location": "crestfall_tallow_inn",
       "title": "Crestfall Learns",
+      "when": {
+        "part": "evening"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": -3
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {},
       "text": {
@@ -152,13 +155,15 @@
       "chapter": 7,
       "location": "crestfall_compact_post",
       "title": "Vorne's Response",
+      "when": {
+        "part": "evening"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 2
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {},
       "text": {
@@ -253,13 +258,15 @@
       "chapter": 7,
       "location": "rootless_camp",
       "title": "The Reunion at the Camp",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": -2
           }
-        },
-        "time_advance": 60
+        }
       },
       "requires": {},
       "text": {
