@@ -208,7 +208,7 @@
               "text": [
                 "Cael is at the gate. He nods when he sees you. The nod means: you are doing what you said you would. He gives you one addition. A contact point, a passphrase, a way to send information back if you find something significant.",
                 "\"Be thorough, [sir/ma'am],\" he says. \"Whatever is in those ruins, Commander Vorne needs to know exactly what it is before he can act.\"",
-                "The word act. You note it.",
+                "The word act.",
                 {
                   "when": {
                     "flags": {
@@ -368,9 +368,9 @@
           },
           "There is something about this location. A quality in the air, a stillness different from the surrounding stillness. If the Covenant's scholars identified this as a nexus point, they identified something real."
         ],
-        "commander": "The location is real. Something is different here. Not threatening exactly, but concentrated. You file it and move on or you place the marker, depending on what you decided in Crestfall.",
+        "commander": "The location is real. Something is different here. Not threatening exactly, but concentrated. You stop here a moment longer than you need to.",
         "arcane": "The ambient here is dense. You stand in the notch and extend your perception and feel the quality of a place where several of the curse's channels converge near the surface. Like the confluence of rivers, except the rivers are invisible and what they carry is worse than water.\n\nThe Covenant's scholars are competent. That is useful information.",
-        "ranger": "The animals that are left in this forest have been avoiding this spot specifically. You can see it in the tracks. Paths that approach and then veer off, over and over, worn into the soil by repeated circumvention. Whatever is concentrated here, the local fauna has been giving it a wide berth for months.",
+        "ranger": "The animals that are left in this forest have been avoiding this spot. You can see it in the tracks. Paths that approach and then veer off, over and over, worn into the soil by repeated circumvention. Whatever is concentrated here, the local fauna has been giving it a wide berth for months.",
         "cipher": "The spot is real. The Covenant identified something genuine here. That tells you their scholars have actual knowledge of the curse's mechanics. Not just doctrine, but mapped understanding. That changes how dangerous they are and how useful they could be."
       },
       "choices": [
@@ -702,7 +702,7 @@
         "commander": "You watch it cross. Your skin is crawling and you could not say why.\n\nAn afflicted animal. The curse has gotten into the local fauna, which means the affected area is broader than the ruins themselves. You mark the location in your mind. The distance from Crestfall, the direction.",
         "arcane": "The residue on the deer is dense. Months, possibly longer. The curse in animals progresses differently than in humans: humans retain enough of themselves to suffer the gap between what they were and what they are becoming. Animals seem to lose the gap more completely.\n\nThe deer is, in some meaningful sense, no longer there.",
         "ranger": "You have tracked deer in a dozen different forests. You have never seen one move like that.\n\nThe wrongness of it is specific: a prey animal that has stopped being afraid. The fear response in deer is so deeply embedded that removing it requires removing the animal. Whatever the curse does to awareness, it does it all the way down to the oldest levels.\n\nYou wait for two minutes after it is gone, listening for anything that might have been following it.",
-        "cipher": "The deer is a data point. The curse affects animals as well as people, with what appears to be a similar progression. The removal of normal responsiveness, the maintenance of baseline physical function without the animating attention.\n\nYou note the location, the approximate stage of affliction, and continue."
+        "cipher": "The deer is a data point. The curse affects animals as well as people, with what appears to be a similar progression. The removal of normal responsiveness, the maintenance of baseline physical function without the animating attention.\n\nYou mark the place in your head and go on."
       },
       "choices": [
         {

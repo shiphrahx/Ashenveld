@@ -66,7 +66,7 @@
               }
             },
             "failure": {
-              "text": "\"I have told you what I can for today,\" Maret says. Not unkind. Just closed. \"Come back. Let me see who you are over a bit more time.\"",
+              "text": "\"I have told you what I can for today,\" Maret says. Just closed. \"Come back. Let me see who you are over a bit more time.\"",
               "next_scene": "act1_ch4_rootless_camp_stay",
               "state_changes": {}
             }
@@ -171,7 +171,7 @@
         "commander": "You work. The camp is more organised than it looks from outside. Labour distributed by capacity rather than by formal assignment, which means the whole thing runs on implicit understanding. Someone who grew up in a barracks recognises the pattern.\n\nBranch finds you at the end of the day. \"You know how to be useful without making a point of it,\" he says. It is as close to a compliment as he gets.",
         "arcane": "The herb garden is the most interesting part of the camp. You work in it for an hour and identify fifteen different species, three of which you have never encountered in any text. The woman who planted it, a quiet older woman named Pol, watches you name them and says nothing until you get one wrong.\n\nYou are. She nods once and goes back to her work.",
         "ranger": "You work the outer perimeter of the camp, checking the places Maret has identified as weak points in whatever protection she has established. You find two she missed. You fix them without mentioning it.\n\nBranch sees you doing it. He does not say anything. But in the evening he gives you a better piece of bread than the rest.",
-        "cipher": "You work and watch simultaneously. By the end of the day you know the camp's social structure: Maret at the centre, Branch as her second who is also her doubt-voice, Lira as the moral centre the rest orient toward without acknowledging it, Pol as the one who knows the most about what Maret is actually doing.\n\nYou note the load-bearing people. You note which relationships have weight."
+        "cipher": "You work and watch simultaneously. By the end of the day you know the camp's social structure: Maret at the centre, Branch as her second who is also her doubt-voice, Lira as the moral centre the rest orient toward without acknowledging it, Pol as the one who knows the most about what Maret is actually doing.\n\nYou learn who holds the place up. You learn who listens to whom."
       },
       "choices": [
         {
@@ -449,7 +449,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "He finishes the blade. Sets it down.\n\n\"Capable,\" he says. \"Asking the right questions. Not afraid of the answers, which is unusual.\" He looks at his hands. \"They stayed longer than Maret expected. Did useful work. Helped with Lira.\" A pause. \"Maret trusted them further than she usually trusts people that fast.\"\n\n\"And that worried you.\"\n\n\"Yes,\" he says simply. \"Maret's judgment is good. Her judgment about people she trusts quickly is more variable.\"\n\nYou note that he just told you something about Maret she did not tell you herself.",
+              "text": "He finishes the blade. Sets it down.\n\n\"Capable,\" he says. \"Asking the right questions. Not afraid of the answers, which is unusual.\" He looks at his hands. \"They stayed longer than Maret expected. Did useful work. Helped with Lira.\" A pause. \"Maret trusted them further than she usually trusts people that fast.\"\n\n\"And that worried you.\"\n\n\"Yes,\" he says simply. \"Maret's judgment is good. Her judgment about people she trusts quickly is more variable.\"\n\nHe has just told you something about Maret she did not tell you herself.",
               "next_scene": "act1_ch4_rootless_camp_stay",
               "state_changes": {
                 "flags": {

@@ -340,7 +340,7 @@
               }
             },
             "success_at_cost": {
-              "text": "The documentation is complete but took longer than planned. The delay cost you — some of the political arrangements you were managing deteriorated while your attention was elsewhere.\n\nYou file this as the cost of prioritisation. You made a choice. The choice had a cost. The document is real and distributed.",
+              "text": "The documentation is complete but took longer than planned. The delay cost you — some of the political arrangements you were managing deteriorated while your attention was elsewhere.\n\nThat is the cost of choosing. You made a choice. The choice had a cost. The document is real and distributed.",
               "next_scene": "act3_ch3_the_long_work",
               "state_changes": {
                 "flags": {
@@ -905,7 +905,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "You and Lira sit in the herb garden every morning for two weeks.\n\nShe talks as her capacity returns. Not all at once, not linearly, but in the way of someone recovering from something that affected their ability to connect thought to word. Some days clear, some days behind glass.\n\nOn day twenty-eight she tells you a complete story without losing the thread of it. A story from before the curse, from when she was living in the eastern village, about a festival and a particular person and something funny that happened.\n\nShe finishes it and looks at you and says: \"I have not been able to remember that for two years.\" She is not crying. She is cataloguing. The way the camp has taught her to catalogue, the way she holds things carefully because the holding matters.\n\nYou file it as the most significant data point of the third week.",
+              "text": "You and Lira sit in the herb garden every morning for two weeks.\n\nShe talks as her capacity returns. Not all at once, not linearly, but in the way of someone recovering from something that affected their ability to connect thought to word. Some days clear, some days behind glass.\n\nOn day twenty-eight she tells you a complete story without losing the thread of it. A story from before the curse, from when she was living in the eastern village, about a festival and a particular person and something funny that happened.\n\nShe finishes it and looks at you and says: \"I have not been able to remember that for two years.\" She is not crying. She is cataloguing. The way the camp has taught her to catalogue, the way she holds things carefully because the holding matters.\n\nIt is the best thing that happens in the third week.",
               "next_scene": "act3_ch3_alone_continues",
               "state_changes": {
                 "flags": {

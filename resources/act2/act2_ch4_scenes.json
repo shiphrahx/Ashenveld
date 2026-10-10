@@ -82,7 +82,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "You tell him about the east road, Harrow, the forest edge. You describe the terrain, accurately, in terms that would be useful to a military commander, and you describe the curse's visible effects on the land. All of this is true and none of it tells him about the inner approach or the chamber.\n\nHe listens. He asks questions. You answer them honestly where honesty costs you nothing and around them where it does.\n\nAt the end: \"You are holding something back,\" he says. Not accusing. Stating.\n\n\"Everyone holds something back,\" you say. \"The question is whether what I am holding back affects what you need to know.\"\n\nA pause. He decides to let it go. For now.",
+              "text": "You tell him about the east road, Harrow, the forest edge. You describe the terrain, accurately, in terms that would be useful to a military commander, and you describe the curse's visible effects on the land. All of this is true and none of it tells him about the inner approach or the chamber.\n\nHe listens. He asks questions. You answer them honestly where honesty costs you nothing and around them where it does.\n\nAt the end: \"You are holding something back,\" he says. Stating.\n\n\"Everyone holds something back,\" you say. \"The question is whether what I am holding back affects what you need to know.\"\n\nA pause. He decides to let it go. For now.",
               "next_scene": "act2_ch4_issa_crisis",
               "state_changes": {
                 "factions": {
@@ -102,7 +102,7 @@
               }
             },
             "failure": {
-              "text": "He reads the gap in your account clearly and does not try to hide that he has read it.\n\n\"You have been in the ruins,\" he says. Not a question. \"Not just the edge. Inside.\"\n\nYou do not confirm or deny. He notes the non-denial. \"I will find out what is in there,\" he says. \"With or without your help. The question is whether it will take me a day or a week.\"",
+              "text": "He reads the gap in your account clearly and does not try to hide that he has read it.\n\n\"You have been in the ruins,\" he says. \"Not just the edge. Inside.\"\n\nYou do not confirm or deny. He notes the non-denial. \"I will find out what is in there,\" he says. \"With or without your help. The question is whether it will take me a day or a week.\"",
               "next_scene": "act2_ch4_issa_crisis",
               "state_changes": {
                 "flags": {
@@ -171,7 +171,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "He listens. He is not a man who dismisses proposals reflexively. He evaluates them.\n\n\"What are you proposing specifically?\" he says.\n\nYou lay out the terms: you share what you found in the ruins, he gives you a time buffer before the Compact moves on the source, he keeps Seriva away from the Rootless camp. In exchange: the information he needs to plan whatever operation he has in mind.\n\nHe looks at you for a long moment. \"You know what is in the ruins,\" he says. Not asking.\n\n\"Yes,\" you say.\n\n\"And you will tell me.\"\n\n\"The relevant parts.\"\n\nHe extends his hand. You shake it with the understanding that this arrangement has a very specific expiration date.",
+              "text": "He listens. He is not a man who dismisses proposals reflexively. He evaluates them.\n\n\"What are you proposing specifically?\" he says.\n\nYou lay out the terms: you share what you found in the ruins, he gives you a time buffer before the Compact moves on the source, he keeps Seriva away from the Rootless camp. In exchange: the information he needs to plan whatever operation he has in mind.\n\nHe looks at you for a long moment. \"You know what is in the ruins,\" he says. Not asking.\n\n\"Yes,\" you say.\n\n\"And you will tell me.\"\n\n\"The relevant parts.\"\n\nHe extends his hand. You shake it with the understanding that this arrangement has a date on it.",
               "next_scene": "act2_ch4_issa_crisis",
               "state_changes": {
                 "flags": {
@@ -257,7 +257,7 @@
               }
             },
             "failure": {
-              "text": "He gives you nothing. Perfect control, no tell. Either he already knows where she is, or he has decided that his response to not knowing is not something he will display in front of you.\n\n\"My family is not your concern,\" he says. You file the deflection.",
+              "text": "He gives you nothing. Perfect control, no tell. Either he already knows where she is, or he has decided that his response to not knowing is not something he will display in front of you.\n\n\"My family is not your concern,\" he says.",
               "next_scene": "act2_ch4_issa_crisis",
               "state_changes": {}
             }

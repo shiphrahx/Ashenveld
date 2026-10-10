@@ -46,7 +46,7 @@
         ],
         "commander": "You sit at your usual table in the Tallow and look at three forces arrayed around the question of what happens next.\n\nVorne wants control of the documentation and the ruins' status. Seriva wants the Covenant's involvement in the rebuilding formally recognised. The Rootless camp wants recognition, resources, and to be left alone.\n\nThese three things are not incompatible. They require a broker. You have been a broker before.",
         "arcane": "Three days of observation have given you initial data on the sealing's effects.\n\nThe curse is not reversing rapidly. Affliction at early stages, like Issa, like Lira, is progressing more slowly. People at further stages show no measurable change yet.\n\nThe land itself shows the most immediate response. Birds are beginning to return to areas nearest Crestfall. Time is the question. How much.",
-        "ranger": "You have been tracking the recovery the way you track any environmental change. With patience and attention to specific signs.\n\nDirection is positive. Rate is slow. The deepest areas will take longest.\n\nBut you heard a bird this morning. In the ordinary trees, half a mile from Crestfall. A species you had not heard in Ashenveld since you arrived. You stood in the road and listened to it for longer than was strictly necessary.",
+        "ranger": "You have been tracking the recovery the way you track any environmental change. With patience and attention to the signs.\n\nDirection is positive. Rate is slow. The deepest areas will take longest.\n\nBut you heard a bird this morning. In the ordinary trees, half a mile from Crestfall. A species you had not heard in Ashenveld since you arrived. You stood in the road and listened to it for longer than was strictly necessary.",
         "cipher": "Three days. You have been running the political analysis continuously.\n\nPower in Ashenveld for the next decade will be determined by who controls the documentation of what happened and who controls the interpretation of it.\n\nThe story is still being written. You are one of the people writing it."
       },
       "choices": [
@@ -132,7 +132,7 @@
               }
             },
             "success_at_cost": {
-              "text": "The settlement is reached but fragile. One party accepted terms they will not hold to when the situation permits abandonment.\n\nThe settlement is better than no settlement. You note its weak point and keep it in mind.",
+              "text": "The settlement is reached but fragile. One party accepted terms they will not hold to when the situation permits abandonment.\n\nThe settlement is better than no settlement. You can see where it will break.",
               "next_scene": "act2_ch8_relationship_test",
               "state_changes": {
                 "flags": {
@@ -279,7 +279,7 @@
       "requires": {},
       "text": {
         "default": "You and [missing person] have an evening alone. The first genuine one since you found them in the outskirts.\n\nThe Tallow. The fire is better tonight than it has been in weeks. Aldous has been burning the good wood, the kind he saves for occasions.\n\n[missing person] is sitting across from you. They look different in the Tallow's light than they looked in the chamber's light. Or maybe you are seeing them differently now. The mechanism read everything. Including things you have been carrying about this person for eleven years and more.\n\nThey went through the same reading. They know things now that they did not choose to know.",
-        "commander": "\"The mechanism showed me why you left,\" they say. Not accusing. Stating.\n\n\"Yes,\" you say.\n\n\"The real reason. Not the war. The one underneath the war.\"\n\n\"Yes,\" you say again.\n\n\"I knew part of it,\" they say. \"I did not know the full shape of it.\" A pause. \"It does not change why I wrote the letter. It changes what the letter cost me to write.\"",
+        "commander": "\"The mechanism showed me why you left,\" they say. Stating.\n\n\"Yes,\" you say.\n\n\"The real reason. Not the war. The one underneath the war.\"\n\n\"Yes,\" you say again.\n\n\"I knew part of it,\" they say. \"I did not know the full shape of it.\" A pause. \"It does not change why I wrote the letter. It changes what the letter cost me to write.\"",
         "arcane": "\"There is something I want to tell you,\" they say. \"That the mechanism showed me about myself, that I did not know before.\"\n\nThey tell you.\n\nWhat they say is not what you expected. Something about the fourteen months. Not the ruins, not the ritual. What they understood about themselves while they were alone. What the isolation clarified.\n\nYou listen. They have never told anyone this.",
         "ranger": "\"What did it show you?\" they ask. \"About me.\"\n\nYou think about how to answer honestly.\n\n\"That you came back to Ashenveld for the same reason you left,\" you say. \"That those two things are the same reason. That you have been trying to solve a problem about yourself for eleven years and the ruins were the first place you found where the problem felt like it might have an answer.\"\n\nThey look at you for a long time. \"Yes,\" they say. \"Does it change how you see me?\"\n\n\"No,\" you say. You mean it.",
         "cipher": "\"I know what you did not tell me,\" they say. \"By the fire. Before the ritual.\"\n\nYou look at them.\n\n\"You let the mechanism read it,\" they say. \"You decided to let it read you rather than say it yourself. I want you to know — I know why. And I know what it was.\"\n\nA silence.\n\n\"Is it something we can talk about?\" you ask.\n\n\"Yes,\" they say. \"But not tonight.\"\n\n\"All right,\" you say."
@@ -571,7 +571,7 @@
               "text": [
                 "\"Go,\" you tell them. \"Get somewhere safe and ordinary and rest. I will follow.\"",
                 "They look at you with the look they have been giving you since the ruins. They have been reading you longer than you have been reading them.",
-                "\"You will,\" they say. Not a question.",
+                "\"You will,\" they say.",
                 "\"Yes,\" you say.",
                 {
                   "when": {

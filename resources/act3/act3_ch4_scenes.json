@@ -103,7 +103,7 @@
         "default": [
           "Six weeks out from Ashenveld.",
           "You have reached a town that [missing person] decided they wanted to reach. Not for any reason connected to what came before, but because someone told them the market here is good and the rooms are affordable and the forest to the north has birds they have not seen in fourteen months.",
-          "This is how they navigate now: toward birds. Toward markets with specific reputations. Toward rooms in towns they have never been in.",
+          "This is how they navigate now: toward birds. Toward markets people speak well of. Toward rooms in towns they have never been in.",
           "You navigate with them. This is, you are discovering, a different skill from the ones you developed in Ashenveld. Less reading of damage and more reading of possibility.",
           {
             "when": {
@@ -115,7 +115,7 @@
           }
         ],
         "commander": "A letter arrived from Cael two weeks ago. The documentation was received. Vorne completed the withdrawal. The Rootless camp is formally recognised.\n\nYou read it and wrote a brief reply, confirmation, not conversation, and put it away.\n\nThe work is done. You are not the person who needs to be told the work is done. The work being done is what you wanted and it has happened and you are here, in a town with a good market and affordable rooms, which is a different kind of achievement.",
-        "arcane": "The academic correspondence follows you. This is fine. It is the work you are built for and it does not require you to be anywhere specific.\n\nYou write back to your colleagues from a table in a market town and the letters they receive say the name of the town in the header and none of them find this strange because scholars move and the work moves with them.\n\n[missing person] watches you write and asks: \"Is it strange? Doing this from here?\"\n\n\"No,\" you say, and mean it. \"This is what the work looks like when I am not in a crisis.\"\n\nThey consider this. \"I think I prefer it,\" they say.",
+        "arcane": "The academic correspondence follows you. This is fine. It is the work you are built for and it does not require you to be anywhere in particular.\n\nYou write back to your colleagues from a table in a market town and the letters they receive say the name of the town in the header and none of them find this strange because scholars move and the work moves with them.\n\n[missing person] watches you write and asks: \"Is it strange? Doing this from here?\"\n\n\"No,\" you say, and mean it. \"This is what the work looks like when I am not in a crisis.\"\n\nThey consider this. \"I think I prefer it,\" they say.",
         "ranger": "The forest to the north has birds you have not seen in weeks. [missing person] was right about that.\n\nYou spend an afternoon in it, reading. Not for curse damage. Not for a recovery rate. You read the forest because it is interesting, and you had forgotten that it could be.",
         "cipher": "Six weeks out and the person beside you has become the most legible person you have ever read.\n\nThis is the effect of the ritual and the ruins and the intimacy of having your complete contents examined by a mechanism that did not miss anything. You know them fully. They know you fully. There is nothing left to withhold.\n\nWhat you are discovering is that knowing someone fully is not the end of finding them interesting. It turns out knowing someone fully is the beginning of being interested in what they do with what they are.\n\nThis is either a philosophical insight or just the quality of being in love with someone who has recently spent fourteen months in a ruined city. You have not decided which."
       },
@@ -180,7 +180,7 @@
         "default": [
           "Six weeks alone in Ashenveld.",
           "This is the accounting you make on day forty-five:",
-          "The Rootless camp is the strongest institution in Ashenveld's recovery. Maret is the most important person in the region. Branch has become someone who can do what you do in specific contexts. Lira is recovering. Slowly, unevenly, but the direction is real.",
+          "The Rootless camp is the strongest institution in Ashenveld's recovery. Maret is the most important person in the region. Branch has become someone who can do what you do in some places. Lira is recovering. Slowly, unevenly, but the direction is real.",
           "The Watcher from the ruins gate is at the camp. They have a name now. Joren. You found it in the old man's papers from Harrow. They respond to it sometimes. Not reliably. But sometimes.",
           "The fountain is running.",
           "You did all of this. With everyone here, but also because you stayed and used yourself in service of it. That is real. That counts.",

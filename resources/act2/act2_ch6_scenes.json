@@ -260,7 +260,7 @@
       "text": {
         "default": [
           "The engagement phase is where the ritual reads you.",
-          "You and [missing person] take the positions the text describes. Locations in the chamber, specific orientations relative to the mechanism. The fragment is placed at the midpoint between you, on the floor, touching the chamber stone.",
+          "You and [missing person] take the positions the text describes. Locations in the chamber, facing the mechanism just so. The fragment is placed at the midpoint between you, on the floor, touching the chamber stone.",
           "The effect begins immediately.",
           "Not painful. Not frightening. What the mechanism does in this phase is not a threat. It is the sensation of being seen. Completely. The parts of yourself you manage, the parts you suppress, the parts you have not looked at directly in years. All of it equally visible, equally present, equally real.",
           {
@@ -809,7 +809,7 @@
                     }
                   },
                   "text": "\"It held,\" she says. A pause. \"Mostly.\"\n\nShe does not sit down. She stands beside the Watcher with her hands in her sleeves, and you stand with her.",
-                  "else": "\"It worked,\" she says. Not a question.\n\n\"Yes,\" [missing person] says.\n\nPol sits down where she is standing. A very old woman sitting down in the ruins outskirts because her legs have decided that fifteen years of waiting and one morning of witnessing are enough for one day. You sit beside her."
+                  "else": "\"It worked,\" she says.\n\n\"Yes,\" [missing person] says.\n\nPol sits down where she is standing. A very old woman sitting down in the ruins outskirts because her legs have decided that fifteen years of waiting and one morning of witnessing are enough for one day. You sit beside her."
                 },
                 "The Watcher does not move."
               ],
