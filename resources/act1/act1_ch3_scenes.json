@@ -654,7 +654,7 @@
                 },
                 "relationships": {
                   "maret": {
-                    "closeness": 15
+                    "closeness": 20
                   }
                 }
               }
@@ -695,7 +695,7 @@
               "state_changes": {
                 "relationships": {
                   "maret": {
-                    "closeness": 18
+                    "closeness": 8
                   }
                 }
               }

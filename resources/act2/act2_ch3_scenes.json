@@ -674,7 +674,7 @@
                 },
                 "relationships": {
                   "the_archivist": {
-                    "closeness": 25
+                    "closeness": 10
                   }
                 }
               }
@@ -699,7 +699,7 @@
                 },
                 "relationships": {
                   "the_archivist": {
-                    "closeness": 15
+                    "closeness": 20
                   }
                 }
               }
