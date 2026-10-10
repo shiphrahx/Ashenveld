@@ -211,7 +211,14 @@
       },
       "requires": {},
       "text": {
-        "default": "The cairn is at the convergence of three paths through the outskirts, in a space that has slightly less curse-density than the surrounding area — either by coincidence or by design.\n\nOn top of it: a piece of cloth weighted with a flat stone. You recognise the cloth before you pick it up. You would recognise it anywhere.\n\nUnder the cloth, scratched into the flat stone in small careful letters:\n\n*I am below. Take the south passage. Do not touch the carved walls. Wait at the gate.*\n\nNo name. No date. But the handwriting is theirs and the instruction is clear and the south passage is — you look around and find it, a gap between two standing walls that does not look like a gap until you are at the right angle.",
+        "default": [
+          "The cairn is at the convergence of three paths through the outskirts, in a space that has slightly less curse-density than the surrounding area — either by coincidence or by design.",
+          "On top of it: a piece of cloth weighted with a flat stone. You recognise the cloth before you pick it up. You would recognise it anywhere.",
+          "Under the cloth, scratched into the flat stone in small careful letters:",
+          "*I am below. Take the south passage. Do not touch the carved walls. Wait at the gate.*",
+          "The scratches are fresh. Whoever wrote this knew you were already past the line.",
+          "No name. No date. But the handwriting is theirs and the instruction is clear and the south passage is — you look around and find it, a gap between two standing walls that does not look like a gap until you are at the right angle."
+        ],
         "commander": "A military mind reads this quickly: a rendezvous point, a route, a behavioural instruction, a destination. They anticipated your arrival, or someone's arrival. They prepared.\n\nFourteen months in the ruins and they are still capable of preparation. That tells you something important.",
         "arcane": "The message is written in plain language but the stone it is written on is not plain — it is one of the resonant stones from the ruins, chosen deliberately. The message will last longer carved here than it would on paper. They knew that.\n\nThey have been learning the properties of this place. For fourteen months. You are walking into the laboratory of someone who is further into this material than you are.",
         "ranger": "You read the message and read the ground around the cairn. The path to the south passage is worn — more worn than the other paths. This is the most-used route. They come back here regularly. They have been maintaining the cairn.\n\nThey are not lost. They are living here.",
@@ -325,11 +332,11 @@
       },
       "requires": {},
       "text": {
-        "default": "The figure at the gate is not your missing person.\n\nYou know this immediately — the height is wrong, the posture is wrong. This is someone else. They are sitting with their back against the right-hand stone of the gate, their knees drawn up, their face turned slightly away from you.\n\nThey are wearing the clothes of someone from Harrow — the specific grey wool the village used for outdoor work. The clothes are intact. The person wearing them is less intact.\n\nThey are alive. You can see the breathing. But when you approach they do not respond — not to your footsteps, not to your voice when you try it, not to anything. Their eyes are open and fixed on something that is not in this space.\n\nThe Watcher. You have heard this term from Maret without fully understanding it. Now you understand it.",
+        "default": "The figure at the gate is not [missing person].\n\nYou know this immediately — the height is wrong, the posture is wrong. This is someone else. They are sitting with their back against the right-hand stone of the gate, their knees drawn up, their face turned slightly away from you.\n\nThey are wearing the clothes of someone from Harrow — the specific grey wool the village used for outdoor work. The clothes are intact. The person wearing them is less intact.\n\nThey are alive. You can see the breathing. But when you approach they do not respond — not to your footsteps, not to your voice when you try it, not to anything. Their eyes are open and fixed on something that is not in this space.\n\nThe Watcher. You have heard this term from Maret without fully understanding it. Now you understand it.",
         "commander": "You assess the Watcher with professional speed. Alive. Unresponsive. Not threatening — the body is relaxed, not tensed. Not sleeping — the eyes are open and tracking something, just not anything you can see.\n\nThis is the furthest stage of the curse you have seen in a person who is still ambulatory. Whatever they were, they are now primarily a signal.",
         "arcane": "The Watcher's residue is unlike anything you have encountered. Not the curse in its normal form — the Watcher has been in the ruins for long enough that the boundary between the curse and themselves has become unclear. They are not afflicted by the curse. They are, in some functional sense, part of it.\n\nThis should be more disturbing than it is. You note that it is not as disturbing as it should be and file that observation for later.",
         "ranger": "The Watcher does not react to you the way a person would or the way a deeply afflicted person would. They react like a territorial marker — their presence here is not accidental. They are placed here.\n\nSomething placed them here. Something is using them the way you would use a marker cairn.",
-        "cipher": "The Watcher is information. Someone put them here at the gate, at the convergence point that the cairn's message was directing you toward. Whether that someone is your missing person, or the ruins themselves, or something else entirely — that is the question.\n\nYou watch the Watcher and wait."
+        "cipher": "The Watcher is information. Someone put them here at the gate, at the convergence point that the cairn's message was directing you toward. Whether that someone is [missing person], or the ruins themselves, or something else entirely — that is the question.\n\nYou watch the Watcher and wait."
       },
       "choices": [
         {
@@ -342,7 +349,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "You crouch in front of them and speak. Not their name — you do not know it. Just words, calm and direct, the words you would use with someone surfacing from very deep water.\n\nSomething in their eyes shifts. Just slightly. Just enough to feel like something returning from a long distance.\n\nThey say one word. It is your name.\n\nThen they are gone again — back to wherever they were — but the word hangs in the air of the ruins outskirts and nobody told the Watcher that name today. Someone who has been in here for a very long time told the Watcher your name. And the Watcher said it.",
+              "text": "You crouch in front of them and speak. Not their name — you do not know it. Just words, calm and direct, the words you would use with someone surfacing from very deep water.\n\nSomething in their eyes shifts. Just slightly. Just enough to feel like something returning from a long distance.\n\nThey say one word. \"[player].\"\n\nThen they are gone again — back to wherever they were — but the word hangs in the air of the ruins outskirts and nobody told the Watcher that name today. Someone who has been in here for a very long time told the Watcher your name. And the Watcher said it.",
               "next_scene": "act2_ch1_missing_person_approach",
               "state_changes": {
                 "flags": {
@@ -383,7 +390,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "You stop trying to be heard. You let yourself go still, the way they are still, and stop wanting anything from them.\n\nYou crouch in front of them and speak. Not their name — you do not know it. Just words, calm and direct, the words you would use with someone surfacing from very deep water.\n\nSomething in their eyes shifts. Just slightly. Just enough to feel like something returning from a long distance.\n\nThey say one word. It is your name.\n\nThen they are gone again — back to wherever they were — but the word hangs in the air of the ruins outskirts and nobody told the Watcher that name today. Someone who has been in here for a very long time told the Watcher your name. And the Watcher said it.",
+              "text": "You stop trying to be heard. You let yourself go still, the way they are still, and stop wanting anything from them.\n\nYou crouch in front of them and speak. Not their name — you do not know it. Just words, calm and direct, the words you would use with someone surfacing from very deep water.\n\nSomething in their eyes shifts. Just slightly. Just enough to feel like something returning from a long distance.\n\nThey say one word. \"[player].\"\n\nThen they are gone again — back to wherever they were — but the word hangs in the air of the ruins outskirts and nobody told the Watcher that name today. Someone who has been in here for a very long time told the Watcher your name. And the Watcher said it.",
               "next_scene": "act2_ch1_missing_person_approach",
               "state_changes": {
                 "flags": {
@@ -451,7 +458,62 @@
       },
       "requires": {},
       "text": {
-        "default": "Footsteps. From deeper in the ruins, from past the gate.\n\nA pace you recognise. You have not heard it in over a year — in the time before that you heard it often enough that your body remembers it the way your body remembers anything repeated: not as a fact but as a feeling, a specific quality of presence.\n\nThey come through the gate.\n\nThey are changed. You see that immediately and note it as fact before you let yourself feel it. Thinner. The particular thinness of someone who has been eating what the environment offers rather than what they chose. Their eyes have a quality you have seen in people who have been somewhere that altered them — not the vacancy of the afflicted, something almost opposite: an excess of attention, as if they are seeing more than you are and have been for a long time.\n\nThey see you and stop.\n\nFor a moment neither of you moves.",
+        "default": [
+          "Footsteps. From deeper in the ruins, from past the gate.",
+          "A pace you recognise. You have not heard it in over a year — in the time before that you heard it often enough that your body remembers it the way your body remembers anything repeated: not as a fact but as a feeling, a specific quality of presence.",
+          "They come through the gate.",
+          "They are changed. You see that immediately and note it as fact before you let yourself feel it. Thinner. The particular thinness of someone who has been eating what the environment offers rather than what they chose. Their eyes have a quality you have seen in people who have been somewhere that altered them — not the vacancy of the afflicted, something almost opposite: an excess of attention, as if they are seeing more than you are and have been for a long time.",
+          {
+            "when": {
+              "relationship_type": [
+                "childhood friend"
+              ]
+            },
+            "text": "Then they push their hair back with the heel of their hand, the way they did at twelve when they were about to dare you to something, and they are not changed at all."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "former lover"
+              ]
+            },
+            "text": "Then they tilt their head, very slightly, to the left. It is what they did when you said something they had not expected. You had forgotten it. You had not."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "sibling"
+              ]
+            },
+            "text": "They stand with their weight on one foot and their arms folded, the way your mother stood in the kitchen doorway. They always hated it when you told them so."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "mentor"
+              ]
+            },
+            "text": "They stop with their hands behind their back and look you up and down, as they did at the start of every lesson, before they said anything at all."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "parent"
+              ]
+            },
+            "text": "They rub a thumb across their knuckles, one hand then the other. It is what they did while they waited up for you, and you were always late."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "the one who got away"
+              ]
+            },
+            "text": "They put a hand on the gatepost as they come through, lightly, as if the stone might need steadying. You knew they would do that. You do not know how you knew."
+          },
+          "They see you and stop.",
+          "For a moment neither of you moves."
+        ],
         "commander": "You have had reunions before. People you thought were dead. People you went back for. You know the shape of this moment — the specific arrest of motion, the recalibration of the world around a new fact.\n\nThey are alive. They are here. They are changed.\n\nYou do the thing you always do in these moments: you move first. You cross the distance between you.",
         "arcane": "Your reading of them takes less than a second and takes the rest of the conversation to process.\n\nThe curse is in them. Not deeply — not the vacancy, not the diminishment — but present, integrated in a way you have not seen before. They have not been afflicted by the curse. They have been learning it. The way you learn a language, gradually, until it is no longer foreign.\n\nYou do not know if that is extraordinary or catastrophic. Possibly both.",
         "ranger": "You read them the way you read terrain after something significant has happened to it — for what has changed, for what has held, for what the change cost.\n\nThey held. That is what you see first. Fourteen months in the ruins and they held. The thing that makes them themselves is still present, still legible. Changed around the edges, sharpened in the middle.\n\nThey are looking at you the same way.",
@@ -465,7 +527,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You cross the distance.\n\nThe reunion is not what reunions are in stories. It is quieter, more careful, the specific quality of two people who have been holding something for a long time and are deciding, in real time, how to set it down without breaking it.\n\nYou say their name.\n\nThey say yours.\n\nThat is enough for now. The rest will come.",
+              "text": "You cross the distance.\n\nThe reunion is not what reunions are in stories. It is quieter, more careful, the specific quality of two people who have been holding something for a long time and are deciding, in real time, how to set it down without breaking it.\n\n\"[missing person],\" you say.\n\n\"[player],\" they say.\n\nThat is enough for now. The rest will come.",
               "next_scene": "act2_ch1_reunion",
               "state_changes": {
                 "flags": {
@@ -487,7 +549,13 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You stay. They understand — something in your stillness reads to them as: I am here, I will wait, take the time you need.\n\nThey take a breath. Then they cross the distance.\n\nThey stop a foot in front of you. Close enough that you can see exactly how the fourteen months have changed them. Close enough that you can see, underneath the changes, the person you have been carrying with you since you got on the barge in Crestfall.\n\n\"You came,\" they say.",
+              "text": [
+                "You stay. They understand — something in your stillness reads to them as: I am here, I will wait, take the time you need.",
+                "They take a breath. Then they cross the distance.",
+                "They stop a foot in front of you. Close enough that you can see exactly how the fourteen months have changed them. Close enough that you can see, underneath the changes, the person you have been carrying with you since you got on the barge in Crestfall.",
+                "\"You came,\" they say.",
+                "It is not all gladness. \"I told you not to.\""
+              ],
               "next_scene": "act2_ch1_reunion",
               "state_changes": {
                 "flags": {
@@ -528,7 +596,7 @@
       "text": {
         "default": "You sit together at the base of the gate stones, in the Watcher's proximity, which they seem unbothered by — they have been near the Watcher for months.\n\nThey talk. You listen first.\n\nFourteen months. They came in looking for the source of the curse, following the same trail Maret gave them. They reached the marker line and went past it. They found the inner approach and followed it down. And they found the source chamber — the original sealing mechanism, broken, radiating the curse outward through the stone and soil and water of Ashenveld.\n\nAnd they found the sealing ritual. The original text, carved into the chamber walls in full. They have spent fourteen months learning to read it.\n\n\"I can seal it,\" they say. \"I know how. But the ritual requires two people and I have been alone.\"\n\nThey look at you. The implication is clear and was clear from the moment they left the letter on the cairn and the note in the campsite and possibly from the moment they wrote the letter that brought you here.",
         "commander": "\"You planned this,\" you say. Not accusingly. Observing.\n\n\"I hoped,\" they say. There is a distinction and you hear it. \"I hoped you would come and I hoped you would be willing and I left markers at every point that I thought would tell you what you were walking toward without telling you what I needed from you.\"\n\nA pause. \"I did not want to ask you before you knew what you were agreeing to.\"\n\nThis is, you note, either the most considerate thing anyone has ever done for you or a form of manipulation so refined it does not feel like manipulation. Possibly both.",
-        "arcane": "You process the information with the specific part of your mind that processes information about things you have been studying for eleven years.\n\nThe original sealing ritual. Two participants. They have spent fourteen months learning a ritual that requires two people while being alone.\n\n\"What does the ritual require of the second participant?\" you ask.\n\nThe pause before they answer is the most informative pause in the conversation.",
+        "arcane": "Part of your mind has been studying this for eleven years, and it takes the information in whole. The original sealing ritual. Two participants. Fourteen months learning a ritual for two, alone.\n\n\"What does the ritual require of the second participant?\" you ask.\n\nThe pause before they answer tells you more than anything else they say.",
         "ranger": "\"You have been in there,\" you say. Meaning the source chamber. \"Past the marker line, in the centre of it.\"\n\n\"Yes.\"\n\n\"For fourteen months.\"\n\n\"Yes.\"\n\nYou look at them — the whole of them, not just their face. What fourteen months in the source chamber does to a person who is not afflicted is something you are looking at for the first time. You are still deciding what you see.",
         "cipher": "\"The letter,\" you say. \"The campsite markers. The cairn. This was all planned.\"\n\n\"Yes,\" they say. Not apologetically. They made a choice and they are owning it.\n\n\"You needed me to come here,\" you say. \"Not because you missed me. Because you needed a second person for the ritual.\"\n\nThe silence after this question is the answer. But then they add: \"Both. Both are true.\" And the way they say it makes the distinction matter."
       },
@@ -557,12 +625,95 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "The question catches them. They had prepared for practical questions and you asked them a human one.\n\n\"I am—\" They stop. Start again. \"I am different. I do not know if different is the same as alright. I have been inside this place for fourteen months and it has changed how I see things.\" A pause. \"Not like the affliction. Not like the dimming. More like — I have been looking at something for so long that I understand its shape now, and understanding its shape means I cannot unknow it.\"\n\nThey look at you steadily. \"I am glad you came. That is true regardless of the ritual.\"",
+              "text": [
+                "The question catches them. They had prepared for practical questions and you asked them a human one.",
+                "\"I am—\" They stop. Start again. \"I am different. I do not know if different is the same as alright. I have been inside this place for fourteen months and it has changed how I see things.\" A pause. \"Not like the affliction. Not like the dimming. More like — I have been looking at something for so long that I understand its shape now, and understanding its shape means I cannot unknow it.\"",
+                {
+                  "when": {
+                    "relationship_type": [
+                      "childhood friend"
+                    ]
+                  },
+                  "text": "Then, quieter: \"You still stand like you're about to run.\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "former lover"
+                    ]
+                  },
+                  "text": "Then, before they can stop it: \"You cut your hair.\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "sibling"
+                    ]
+                  },
+                  "text": "Then: \"You look like her. Did anyone tell you? You look like her now.\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "mentor"
+                    ]
+                  },
+                  "text": "Then: \"You came through the outskirts on your own. I saw your marks. You did it properly.\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "parent"
+                    ]
+                  },
+                  "text": "Then, as if it were the obvious thing to ask: \"Have you been eating?\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "the one who got away"
+                    ]
+                  },
+                  "text": "Then, very quietly: \"I thought about what I would say if you came. I did not think of anything.\""
+                },
+                "They look at you steadily. \"I am glad you came. That is true regardless of the ritual.\""
+              ],
               "next_scene": "act2_ch1_what_they_found",
               "state_changes": {
                 "relationships": {
                   "the_missing_person": {
                     "closeness": 15
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "name_what_they_did",
+          "text": "\"You told me to go home. Then you gave the Watcher my name.\"",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": [
+                "They do not deny it.",
+                "\"I meant it,\" they say. \"Go home. I meant it when I wrote it.\" They look at the gate stones, not at you. \"Then I read the chamber wall properly. It needs two. And there was only ever one name I could give it.\"",
+                "\"I wanted you safe and I needed you here. I have not found a way to make those the same thing.\"",
+                "Then they tell you what it needs.",
+                "The ritual requires two participants who are — the text uses a word they have spent months translating, and the closest they can get is *bonded*. Not in any legal or formal sense. In the sense that their lives have been shaped by each other, that they carry each other's weight, that separating one from the other changes the essential composition of both.",
+                "The ritual will work with any two such people.",
+                "They chose you specifically."
+              ],
+              "next_scene": "act2_ch1_what_they_found",
+              "state_changes": {
+                "flags": {
+                  "confronted_being_used": true,
+                  "ritual_explained": true
+                },
+                "relationships": {
+                  "the_missing_person": {
+                    "closeness": 5
                   }
                 }
               }
@@ -593,10 +744,7 @@
           },
           "locked_hint": "Needs the cloth from the campsite"
         }
-      ],
-      "text_mode": {
-        "arcane": "replace"
-      }
+      ]
     },
     {
       "id": "act2_ch1_what_they_found",
@@ -620,7 +768,7 @@
         "commander": "\"The Covenant knows this,\" you say. Not a question.\n\n\"Parts of it,\" they say. \"The Covenant has texts that describe the original sealing. They know the ritual exists. I think they have a partial version of it. But the full text — the version that works — is on the chamber walls. I have copied it.\"\n\nThey produce a journal, battered, densely written. Fourteen months of work.\n\n\"Anyone who gets hold of this,\" you say, \"can perform the ritual.\"\n\n\"Yes,\" they say. \"Which is why I need to perform it before anyone else does.\"",
         "arcane": "You absorb the information with the same hunger you absorb all significant information and immediately start asking the questions that follow from it.\n\n\"The power the city was containing,\" you say. \"What is it?\"\n\nThey are quiet for a moment. \"The best I can describe it,\" they say, \"is that it is the world's original capacity for change. Not evil. Not good. Just — everything that the world could become if the existing constraints were removed.\" Another pause. \"Unsealed, it does not destroy things. It transforms them, relentlessly, into versions of themselves that are more purely themselves. The curse is what that process looks like at the margin — people becoming so purely themselves that the parts of themselves that care about external things dissolve.\"\n\nYou sit with this. It changes everything about what you thought the curse was.",
         "ranger": "\"The animals,\" you say. \"The ones moving wrong. The deer.\"\n\n\"Yes,\" they say. \"They reach the transformation faster than people do. They have less — less of what the transformation dissolves. They become purely instinct. Purely movement. What you are seeing is a deer that is only the hunting-and-fleeing parts of deer, with no remainder.\"\n\nYou look at the Watcher. \"And people?\"\n\n\"People become purely — presence. Attention without object. Being without wanting.\" They follow your gaze. \"He is not suffering. I want you to know that. He is not in there experiencing deprivation. He is just — present. Completely.\"",
-        "cipher": "You process the information as intelligence and immediately identify the strategic implications.\n\nA working ritual exists. Your missing person has a copy. The Covenant has a partial copy. The Compact does not know it exists but will want it when they learn it does. The Rootless camp — specifically Pol, you now recall — left the Covenant after reading something in the archives.\n\n\"Pol,\" you say.\n\nThey look at you. \"You know Pol.\"\n\n\"She is at the Rootless camp. She left the Covenant fifteen years ago.\"\n\nSomething changes in their face. \"She read the full text,\" they say. \"That is the only reason to leave the Covenant.\""
+        "cipher": "You process the information as intelligence and immediately identify the strategic implications.\n\nA working ritual exists. [missing person] has a copy. The Covenant has a partial copy. The Compact does not know it exists but will want it when they learn it does. The Rootless camp — specifically Pol, you now recall — left the Covenant after reading something in the archives.\n\n\"Pol,\" you say.\n\nThey look at you. \"You know Pol.\"\n\n\"She is at the Rootless camp. She left the Covenant fifteen years ago.\"\n\nSomething changes in their face. \"She read the full text,\" they say. \"That is the only reason to leave the Covenant.\""
       },
       "choices": [
         {

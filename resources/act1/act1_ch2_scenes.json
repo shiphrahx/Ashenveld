@@ -149,7 +149,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "His name is Corvin and he has been in Crestfall for eighty years and he knows things the way old people in small towns know things — not because anyone told him but because he was there.\n\nHe saw your missing person. He says so directly, which surprises you. \"Asking about the ruins,\" he says. \"Like you are probably about to.\" He gives you a long look. \"Went to the camp outside town eventually. The woman there — Maret — sent them east.\"\n\nHe hands you a piece of dried fish you did not ask for and looks away, which means the conversation is over.",
+              "text": "His name is Corvin and he has been in Crestfall for eighty years and he knows things the way old people in small towns know things — not because anyone told him but because he was there.\n\nHe saw [missing person]. He says so directly, which surprises you. \"Asking about the ruins,\" he says. \"Like you are probably about to.\" He gives you a long look. \"Went to the camp outside town eventually. The woman there — Maret — sent them east.\"\n\nHe hands you a piece of dried fish you did not ask for and looks away, which means the conversation is over.",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {
                 "flags": {
@@ -159,7 +159,7 @@
               }
             },
             "success_at_cost": {
-              "text": "He watched you come in and has been deciding something. He lands on partial disclosure — your missing person was here, went to the camp. He looks away before you can ask more.",
+              "text": "He watched you come in and has been deciding something. He lands on partial disclosure — [missing person] was here, went to the camp. He looks away before you can ask more.",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {
                 "flags": {
@@ -338,7 +338,60 @@
       },
       "requires": {},
       "text": {
-        "default": "Left at the baker's, down the hill, past the old mill wall that was already crumbling when you were a child and has crumbled further since, around the corner, and—\n\nA different door. Same frame, different door. Someone painted the shutters a colour you would not have chosen. The window boxes have plants in them you do not recognise.\n\nThe house is occupied and has been for years. Of course it is. You left. You did not come back. What you left has become something else, which is what things do when you are not watching.\n\nYou stand in the street in front of it for longer than you intend to.",
+        "default": [
+          "Left at the baker's, down the hill, past the old mill wall that was already crumbling when you were a child and has crumbled further since, around the corner, and—",
+          "A different door. Same frame, different door. Someone painted the shutters a colour you would not have chosen. The window boxes have plants in them you do not recognise.",
+          "The house is occupied and has been for years. Of course it is. You left. You did not come back. What you left has become something else, which is what things do when you are not watching.",
+          "You stand in the street in front of it for longer than you intend to.",
+          {
+            "when": {
+              "relationship_type": [
+                "childhood friend"
+              ]
+            },
+            "text": "This is where [missing person] used to wait for you in the mornings, sitting on your step with their back to the door so your mother would not see them and send them home."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "former lover"
+              ]
+            },
+            "text": "[missing person] used to wait for you at the corner by the mill wall, where your mother could not see from the window. The wall is lower now. You could see over it."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "sibling"
+              ]
+            },
+            "text": "It was [missing person]'s house too. They had the room at the back, over the yard, and they kept it after you went. Somebody else's curtains hang in that window now."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "mentor"
+              ]
+            },
+            "text": "[missing person] walked you home along this lane after your first long day of work, stopped at the corner, and told you that you would be good at it. Then they walked back the way they had come."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "parent"
+              ]
+            },
+            "text": "[missing person] raised you in that house. They planted the climbing rose by the door the year you were born. The rose is gone. There is a boot scraper where it was."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "the one who got away"
+              ]
+            },
+            "text": "The corner by the mill wall is where you and [missing person] used to stop and talk until it got dark, and then a while after. You never once walked them home. They never asked."
+          }
+        ],
         "commander": "You stand in front of your childhood home and make yourself acknowledge it completely — the different door, the painted shutters, the strangers who live there now and have made it theirs. You let the acknowledgement sit until it loses its weight.\n\nYou left. Eleven years passed. The house continued.\n\nYou turn and go back to the main street.",
         "arcane": "You stand in front of your childhood home and note that it feels different than you expected. Not painful. Stranger than painful.\n\nThe residue on the building is layered — your own history, faint now, eleven years old, and over it the residue of other lives. You look for your own traces and find them in the places you would expect: the window of your room, the corner of the yard where you used to sit, the step at the door.\n\nYou are still in this place, slightly, the way everyone is still in the places they grew up. It is smaller than you remembered.",
         "ranger": "You stand in front of the house and read it as territory first, which is a habit you have noticed in yourself before. The building is structurally sound. The new occupants keep it up. The yard behind has been turned into a kitchen garden.\n\nThen you let yourself feel it. You came here for someone who also grew up not far from here. That is enough of that.",
@@ -355,7 +408,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "A woman in her thirties opens the door — wary at first, then warm when you explain.\n\nShe was born in Crestfall and moved here with her husband six years ago. She knew some of the people who knew you. She invites you in for something to drink. You go.\n\nThe inside has changed completely and is, underneath the changes, entirely the same. You sit in the kitchen and drink something hot and she tells you about the town. And then, without you asking, she says: \"Someone was here last year asking after you. Or someone like you — they described the family who used to live here. Asked questions about the old ruins.\"\n\nYour missing person was here. At your childhood home. Looking for something about you, or about where you came from.",
+              "text": "A woman in her thirties opens the door — wary at first, then warm when you explain.\n\nShe was born in Crestfall and moved here with her husband six years ago. She knew some of the people who knew you. She invites you in for something to drink. You go.\n\nThe inside has changed completely and is, underneath the changes, entirely the same. You sit in the kitchen and drink something hot and she tells you about the town. And then, without you asking, she says: \"Someone was here last year asking after you. Or someone like you — they described the family who used to live here. Asked questions about the old ruins.\"\n\n[missing person] was here. At your childhood home. Looking for something about you, or about where you came from.",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {
                 "flags": {
@@ -369,7 +422,7 @@
               }
             },
             "success_at_cost": {
-              "text": "She opens the door and is politely reserved. You explain briefly. She nods and tells you one thing useful: that she saw your missing person walking east on the road about fourteen months ago. Alone. Purposeful.\n\n\"I remember thinking they knew where they were going,\" she says. \"That is rare now. People here do not look like they know where they are going.\"",
+              "text": "She opens the door and is politely reserved. You explain briefly. She nods and tells you one thing useful: that she saw [missing person] walking east on the road about fourteen months ago. Alone. Purposeful.\n\n\"I remember thinking they knew where they were going,\" she says. \"That is rare now. People here do not look like they know where they are going.\"",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {
                 "flags": {
@@ -413,7 +466,7 @@
       },
       "requires": {},
       "text": {
-        "default": "Someone calls your name from across the street — your name, the one people here knew, not the one you have been using since. A man your age, give or take. You recognise him slowly, the way you recognise a piece of music from hearing only the first few notes and having to wait for memory to supply the rest.\n\nGoran. You used to run the east field fence together in the summers, a job both your families shared. You have not thought of him in years.\n\nHe crosses the street and shakes your hand with the warmth of someone who is genuinely glad to see you and also slightly afraid of what your arrival means.",
+        "default": "Someone calls \"[player]\" across the street. The name people here knew, not the one you have been using since. A man your age, give or take. You recognise him slowly, the way you recognise a piece of music from hearing only the first few notes and having to wait for memory to supply the rest.\n\nGoran. You used to run the east field fence together in the summers, a job both your families shared. You have not thought of him in years.\n\nHe crosses the street and shakes your hand with the warmth of someone who is genuinely glad to see you and also slightly afraid of what your arrival means.",
         "commander": "Goran. He was the kind of child who became the kind of adult who holds a community together by doing the things nobody notices until they stop getting done. Looking at him now you can see he has been doing a lot of that lately.\n\n\"It is good to see you,\" he says. He means it and also the underneath of it — it is good to see someone from before, someone who remembers what this place used to be.",
         "arcane": "Goran. He looks at you with the specific mix of recognition and relief that you have seen on people who have been frightened for a long time and have just encountered someone who might understand something.\n\n\"You are back,\" he says. \"Are you here because of—\" He stops. \"You heard about what is happening.\"",
         "ranger": "Goran. The east field. Long summers, short pay, the particular friendship of people who work alongside each other in comfortable silence. He is heavier now and his hair is going and he is looking at you like you might have an answer.\n\n\"I heard you were at the Tallow,\" he says. Word moves fast in a town this size.",

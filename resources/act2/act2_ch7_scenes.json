@@ -21,16 +21,30 @@
       },
       "requires": {},
       "text": {
-        "default": "You walk the east road back to Crestfall.\n\nThree of you: you, [missing person], Pol. Seriva and her soldiers took a different route — not avoiding you exactly, but not walking with you either.\n\nYour missing person is walking in ordinary daylight for the first time in fourteen months. They do not say this. They do not need to. You can see it in how they look at the light coming through the ordinary trees — the trees that are normal, the trees with birds in them, the trees whose bark is the right colour.\n\nSomewhere, two miles back, the deep forest begins. It is still wrong in there. The sealing stops the spread but it does not reverse fourteen months of transformation overnight. The Watcher is still at the gate. The ruins are still ruins.\n\nBut the frequency — the note you have been carrying in your bones since you arrived in Ashenveld — is quieter. Not gone. Changed. The way a very loud sound changes when you move away from its source.",
-        "commander": "You walk and you run the assessment that comes after a significant action.\n\nObjective achieved: the curse is sealed. Casualties: none. Damage to assets: unknown — the afflicted people, the animals, the land. Unknown because the text was not clear about reversal.\n\nUnfinished business: Vorne's position in Crestfall. Seriva's departure terms, if any were reached. The missing person's status — they have been in the ruins for fourteen months and the world outside the ruins does not know they exist.\n\nYou have a lot of work ahead of you. You note this and keep walking.",
+        "default": [
+          "You walk the east road back to Crestfall.",
+          "Three of you: you, [missing person], Pol. Seriva and her soldiers took a different route — not avoiding you exactly, but not walking with you either.",
+          "[missing person] is walking in ordinary daylight for the first time in fourteen months. They do not say this. They do not need to. You can see it in how they look at the light coming through the ordinary trees — the trees that are normal, the trees with birds in them, the trees whose bark is the right colour.",
+          "Somewhere, two miles back, the deep forest begins. It is still wrong in there. The sealing stops the spread but it does not reverse fourteen months of transformation overnight. The Watcher is still at the gate. The ruins are still ruins.",
+          {
+            "when": {
+              "flags": {
+                "ritual_partial": true
+              }
+            },
+            "text": "But the note you have been carrying in your bones since you arrived in Ashenveld is quieter. You can still find it if you listen.",
+            "else": "But the frequency — the note you have been carrying in your bones since you arrived in Ashenveld — is quieter. Not gone. Changed. The way a very loud sound changes when you move away from its source."
+          }
+        ],
+        "commander": "You walk and you run the assessment that comes after a significant action.\n\nObjective achieved: the curse is sealed. Casualties: none. Damage to assets: unknown — the afflicted people, the animals, the land. Unknown because the text was not clear about reversal.\n\nUnfinished business: Vorne's position in Crestfall. Seriva's departure terms, if any were reached. [missing person]'s status — they have been in the ruins for fourteen months and the world outside the ruins does not know they exist.\n\nYou have a lot of work ahead of you. You note this and keep walking.",
         "arcane": "You are thinking about the afflicted.\n\nThe sealing stops the mechanism from producing the curse. But the curse is already in Ashenveld — in the soil, the water, the stone, the people who have been exposed. The sealing does not remove what is already there. It only stops more from being added.\n\nWhether what is already there diminishes over time, now that the source has been sealed — this is the question you do not have an answer to. The text described the sealing as complete, which implies restoration of the original state. But the original state was maintained by an active mechanism in an inhabited city, not by a sealed fracture in an empty ruin.\n\nYou will need to observe carefully.",
         "ranger": "The east road is different now. The deer — the wrong-walking ones — have not returned to normal in the hours since the sealing. You did not expect them to. But you read the forest as you walk and what you read is: something has changed at the source. The propagation has stopped. What is already in the system is still there, but it is no longer being fed.\n\nA river does not dry immediately when you close the dam. But eventually.",
-        "cipher": "You walk and you think about what comes next. Not the practical questions — those are manageable — but the ones that do not have obvious answers.\n\nYour missing person is beside you, walking in daylight for the first time in fourteen months. They are changed. You are changed. The mechanism showed you things about each other that you would not have found in ordinary conversation in ten more years.\n\nWhat to do with that is a question the ruins did not answer."
+        "cipher": "You think about what comes next. Not the practical questions. Those are manageable.\n\nThe mechanism showed you things about each other you would not have found in ten more years of ordinary talk. The ruins did not tell you what to do with them."
       },
       "choices": [
         {
           "id": "talk_while_walking",
-          "text": "Talk to your missing person as you walk. Start processing what happened.",
+          "text": "Talk to [missing person] as you walk. Start processing what happened.",
           "requires": {},
           "roll": null,
           "outcomes": {
@@ -54,16 +68,13 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You walk. Pol walks. Your missing person walks.\n\nThe road passes in silence that is not the silence of people who have nothing to say but the silence of people who have more to say than the walk home can hold and have decided to wait until they are somewhere still enough to say it properly.\n\nThe Compact checkpoint. You pass through. The soldiers look at your missing person with the specific attention of someone encountering a face they do not have a record for. You give a simple account and you pass.\n\nCrestfall ahead.",
+              "text": "You walk. Pol walks. [missing person] walks.\n\nThe road passes in silence that is not the silence of people who have nothing to say but the silence of people who have more to say than the walk home can hold and have decided to wait until they are somewhere still enough to say it properly.\n\nThe Compact checkpoint. You pass through. The soldiers look at [missing person] with the specific attention of someone encountering a face they do not have a record for. You give a simple account and you pass.\n\nCrestfall ahead.",
               "next_scene": "act2_ch7_crestfall_reception",
               "state_changes": {}
             }
           }
         }
-      ],
-      "text_mode": {
-        "cipher": "replace"
-      }
+      ]
     },
     {
       "id": "act2_ch7_crestfall_reception",
@@ -93,7 +104,7 @@
               }
             },
             "text": "Aldous is in the chair by the fire that used to be Wren's. He does not look up when the door opens.\n\nIt is Hanna, behind the bar, who sees you first. \"They are back,\" she says, to nobody in particular. Then, louder, to the room: \"They are back.\"",
-            "else": "Aldous is the first person you see when you enter the Tallow. He looks at your missing person the way people look at someone they believed to be dead and have not adjusted to the revision.\n\n\"They are back,\" he says. Not to you. To himself. Then, louder, to the room: \"They are back.\""
+            "else": "Aldous is the first person you see when you enter the Tallow. He looks at [missing person] the way people look at someone they believed to be dead and have not adjusted to the revision.\n\n\"They are back,\" he says. Not to you. To himself. Then, louder, to the room: \"They are back.\""
           }
         ],
         "commander": "The reception in the Tallow is the reception of people who have been waiting for a long time for something to change and are in the process of deciding whether this is the change they were waiting for.\n\nYou manage the information flow — what is said, to whom, in what order. The Compact needs to hear it from Vorne, not from rumour. The Covenant's response needs to be managed.",
@@ -104,12 +115,12 @@
       "choices": [
         {
           "id": "let_missing_person_rest",
-          "text": "Get your missing person somewhere quiet. They have been away for fourteen months.",
+          "text": "Get [missing person] somewhere quiet. They have been away for fourteen months.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You bring them upstairs. Aldous gives you the room at the end of the hall without being asked — he sees the fourteen months in your missing person's face and makes the immediate and correct assessment that what they need is not questions.\n\nYou close the door. The room is ordinary. The bed is ordinary. The window looks out onto the market square, which is beginning to receive the news in the specific way Crestfall receives things — slowly, then all at once.\n\nYour missing person sits on the bed and looks at the ordinary room for a long moment.\n\n\"It is very loud out there,\" they say.\n\n\"Yes,\" you say. \"You have been somewhere very quiet.\"\n\n\"For fourteen months,\" they say. And then, quietly: \"Thank you for coming.\"",
+              "text": "You bring them upstairs. Aldous gives you the room at the end of the hall without being asked — he sees the fourteen months in [missing person]'s face and makes the immediate and correct assessment that what they need is not questions.\n\nYou close the door. The room is ordinary. The bed is ordinary. The window looks out onto the market square, which is beginning to receive the news in the specific way Crestfall receives things — slowly, then all at once.\n\n[missing person] sits on the bed and looks at the ordinary room for a long moment.\n\n\"It is very loud out there,\" they say.\n\n\"Yes,\" you say. \"You have been somewhere very quiet.\"\n\n\"For fourteen months,\" they say. And then, quietly: \"Thank you for coming.\"",
               "next_scene": "act2_ch7_vorne_reacts",
               "state_changes": {
                 "relationships": {
@@ -190,7 +201,23 @@
       },
       "requires": {},
       "text": {
-        "default": "Vorne receives the news with the controlled expression of someone whose understanding of the situation has been fundamentally revised and who is processing the revision while maintaining the appearance of having expected it.\n\nHe has you brought to the post. He listens to what you tell him — the ritual, the sealing, the mechanism, Seriva's presence and her response — without interrupting.\n\nWhen you finish:\n\n\"The curse will not spread further,\" he says.\n\n\"No,\" you say.\n\n\"The afflicted people.\"\n\n\"Unknown. The sealing stops the progression. Whether existing damage reverses — we will observe over the coming weeks.\"\n\nHe nods slowly. He is running a calculation you can partly read — what this means for his orders, for his mission, for the thirty soldiers and the resources deployed to Crestfall. What he tells his superiors. Whether what happened is a success or a failure from the Compact's perspective.",
+        "default": [
+          "Vorne receives the news with the controlled expression of someone whose understanding of the situation has been fundamentally revised and who is processing the revision while maintaining the appearance of having expected it.",
+          "He has you brought to the post. He listens to what you tell him — the ritual, the sealing, the mechanism, Seriva's presence and her response — without interrupting.",
+          "When you finish:",
+          {
+            "when": {
+              "flags": {
+                "ritual_partial": true
+              }
+            },
+            "text": "\"Slowed,\" he says.\n\n\"Yes.\"\n\nHe is less ready to talk about withdrawing than he was a minute ago.",
+            "else": "\"The curse will not spread further,\" he says.\n\n\"No,\" you say."
+          },
+          "\"The afflicted people.\"",
+          "\"Unknown. The sealing stops the progression. Whether existing damage reverses — we will observe over the coming weeks.\"",
+          "He nods slowly. He is running a calculation you can partly read — what this means for his orders, for his mission, for the thirty soldiers and the resources deployed to Crestfall. What he tells his superiors. Whether what happened is a success or a failure from the Compact's perspective."
+        ],
         "commander": "You recognise Vorne's calculation because you have run versions of it yourself. He deployed thirty soldiers and a senior scholar to secure a significant asset. The asset has been secured — but by civilians, not the Compact, and through a method the Compact did not control.\n\nFrom a resource allocation perspective, his mission is a partial success at best. He stopped the spread. He did not secure the mechanism.\n\n\"Your daughter,\" you say. \"The sealing should slow her progression. Whether it reverses what has already happened — we will see.\"",
         "arcane": "Vorne is processing more than strategy. He is also processing his daughter. The sealing has changed Issa's prognosis — the curse is no longer actively progressing. Whether what has already happened to her reverses is unknown.\n\nHe is a man who has been trying to fix his daughter's situation by controlling the context she is in. The context has changed. The question now is whether he adjusts his methods to match.",
         "ranger": "Vorne listens and then asks the question that tells you what he actually cares about most.\n\n\"Issa,\" he says. \"The sealing. What does it mean for her?\"\n\nYou tell him what you know and what you do not know. He listens with the specific quality of a father who has been making decisions based on insufficient information for weeks and is still making them.",
@@ -304,7 +331,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "This he considers differently. Documentation — the detailed account of what is in the ruins, what the mechanism is, the sealing ritual and its requirements — this has value to the Compact beyond the military mission. It is the kind of information that justifies the deployment retrospectively.\n\n\"Everything,\" he says. \"Complete documentation. The ritual. The mechanism's specifications. The language of the original text.\"\n\n\"Yes,\" you say. Your missing person has fourteen months of notes. Pol has fifteen years of scholarship. Between the two of them, the documentation will be complete.\n\n\"Two weeks,\" he says. \"I will withdraw when the documentation is delivered.\"\n\nYou shake his hand.",
+              "text": "This he considers differently. Documentation — the detailed account of what is in the ruins, what the mechanism is, the sealing ritual and its requirements — this has value to the Compact beyond the military mission. It is the kind of information that justifies the deployment retrospectively.\n\n\"Everything,\" he says. \"Complete documentation. The ritual. The mechanism's specifications. The language of the original text.\"\n\n\"Yes,\" you say. [missing person] has fourteen months of notes. Pol has fifteen years of scholarship. Between the two of them, the documentation will be complete.\n\n\"Two weeks,\" he says. \"I will withdraw when the documentation is delivered.\"\n\nYou shake his hand.",
               "next_scene": "act2_ch7_maret_and_missing",
               "state_changes": {
                 "flags": {
@@ -340,11 +367,11 @@
       },
       "requires": {},
       "text": {
-        "default": "You bring your missing person to the Rootless camp.\n\nThis meeting — between the person who spent fourteen months in the ruins and the person who sent them there and spent fourteen months regretting it — is one you cannot manage and do not try to.\n\nMaret sees them from across the camp and stops moving. Your missing person sees Maret and stops moving. The camp moves around both of them, the ordinary business of twenty-three people, and in the middle of it two people who have something to say to each other stand still.\n\nYou give them space. Branch appears at your elbow — not to say anything, just to stand with you while the thing happens.",
-        "commander": "You stand with Branch and you watch Maret and your missing person begin a conversation that has been waiting fourteen months to happen.\n\n\"She sent them in,\" Branch says quietly. \"She has never said so to me, but she sent them in.\"\n\n\"I know,\" you say.\n\n\"They are going to be all right,\" he says. Not a question. A decision. Branch making a decision about how things are going to be, which is how Branch makes things be that way.",
+        "default": "You bring [missing person] to the Rootless camp.\n\nThis meeting — between the person who spent fourteen months in the ruins and the person who sent them there and spent fourteen months regretting it — is one you cannot manage and do not try to.\n\nMaret sees them from across the camp and stops moving. [missing person] sees Maret and stops moving. The camp moves around both of them, the ordinary business of twenty-three people, and in the middle of it two people who have something to say to each other stand still.\n\nYou give them space. Branch appears at your elbow — not to say anything, just to stand with you while the thing happens.",
+        "commander": "You stand with Branch and you watch Maret and [missing person] begin a conversation that has been waiting fourteen months to happen.\n\n\"She sent them in,\" Branch says quietly. \"She has never said so to me, but she sent them in.\"\n\n\"I know,\" you say.\n\n\"They are going to be all right,\" he says. Not a question. A decision. Branch making a decision about how things are going to be, which is how Branch makes things be that way.",
         "arcane": "Lira appears beside you as you watch. She is having a good period — fully present, the delay between thought and expression absent today.\n\n\"The frequency is different,\" she says. \"Since this morning. Something changed.\"\n\n\"Yes,\" you say.\n\nShe thinks about this. \"Will I get better?\" she asks. Not hopefully. Honestly.\n\n\"I do not know,\" you say. \"I think there is a possibility you might. I cannot promise it.\" A pause. \"But the thing that was making you worse has stopped.\"",
-        "ranger": "You watch the camp from the edge. The subtle ways things are different today — Lira is more present, the herb garden's specific plants that respond to the curse's density have shifted in a way you can read as a reduction.\n\nThe sealing is working. Slowly. But working.\n\nBranch appears at your elbow. \"You did it,\" he says. It is the closest he gets to thank you.",
-        "cipher": "You watch Maret and your missing person begin the conversation that needed to happen and you do not listen.\n\nSome things are not yours to read.\n\nBranch appears beside you. \"Issa asked about you,\" he says. \"She wanted to know who you were.\"\n\n\"What did you tell her?\"\n\n\"The truth,\" he says. \"That I did not know yet but I was deciding in your favour.\" A pause. \"Do not make me revise that.\""
+        "ranger": "You watch the camp from the edge. Lira is more present today. The plants in the herb garden that answer to the curse have shifted, and you read it as less.\n\nThe sealing is working. Slowly.\n\nBranch says, without looking at you, \"You did it.\" It is the closest he gets to thank you.",
+        "cipher": "You watch Maret and [missing person] begin the conversation that needed to happen and you do not listen.\n\nSome things are not yours to read.\n\nBranch appears beside you. \"Issa asked about you,\" he says. \"She wanted to know who you were.\"\n\n\"What did you tell her?\"\n\n\"The truth,\" he says. \"That I did not know yet but I was deciding in your favour.\" A pause. \"Do not make me revise that.\""
       },
       "choices": [
         {
@@ -379,7 +406,20 @@
           },
           "outcomes": {
             "success": {
-              "text": "Lira sits with you in the herb garden.\n\n\"It is quieter,\" she says. Not the curse's effect — she means the ambient, the quality of the air. \"For three years it has been—\" She stops. \"Like a noise you get used to. You do not notice it until it changes.\" A pause. \"It changed this morning. It is quieter. I noticed.\"\n\nShe looks at the plants. \"I remembered something today that I have not remembered in two years,\" she says. \"My mother's face. I had forgotten what she looked like. This morning I remembered.\"\n\nShe does not cry. She says it the way she says most things — as a fact, as data, as something she is holding carefully because the holding matters.",
+              "text": [
+                "Lira sits with you in the herb garden.",
+                "\"It is quieter,\" she says. Not the curse's effect — she means the ambient, the quality of the air. \"For three years it has been—\" She stops. \"Like a noise you get used to. You do not notice it until it changes.\" A pause. \"It changed this morning. It is quieter. I noticed.\"",
+                "She looks at the plants. \"I remembered something today that I have not remembered in two years,\" she says. \"My mother's face. I had forgotten what she looked like. This morning I remembered.\"",
+                {
+                  "when": {
+                    "flags": {
+                      "ritual_partial": true
+                    }
+                  },
+                  "text": "By evening she has lost it again."
+                },
+                "She does not cry. She says it the way she says most things — as a fact, as data, as something she is holding carefully because the holding matters."
+              ],
               "next_scene": "act2_ch8_faction_reckoning",
               "state_changes": {
                 "flags": {
@@ -403,11 +443,43 @@
               "state_changes": {}
             }
           }
+        },
+        {
+          "id": "ask_about_the_list",
+          "text": "Ask Maret about the list.",
+          "roll": null,
+          "requires": {
+            "any": [
+              {
+                "flags": {
+                  "seen_marets_list": true
+                }
+              },
+              {
+                "min_faction": {
+                  "rootless": 40
+                }
+              }
+            ]
+          },
+          "outcomes": {
+            "default": {
+              "text": "Maret takes the list out. It is softer than it was, from folding.\n\n\"I have not been to the tree line since the seal,\" she says. \"There is nothing to pay. I thought something might come back.\" She looks at the first line. \"Nothing has.\"\n\nShe reads it to you anyway. \"My daughter's voice.\" Then she folds the paper and puts it away.",
+              "next_scene": "act2_ch8_faction_reckoning",
+              "state_changes": {
+                "relationships": {
+                  "maret": {
+                    "closeness": 10
+                  }
+                },
+                "flags": {
+                  "maret_stopped_paying": true
+                }
+              }
+            }
+          }
         }
       ],
-      "text_mode": {
-        "ranger": "replace"
-      },
       "rest": true
     }
   ]

@@ -798,12 +798,12 @@
         "commander": "You look at the fragment and think about the operational implications. It is a required component of the original sealing ritual. It is also the kind of object that Seriva will be looking for, that the Compact will want to control if they find out it exists, and that the Rootless camp currently possesses.\n\nThe camp just became significantly more strategically important than it was this morning.",
         "arcane": "You hold the fragment carefully, feeling its warmth, reading its residue with the same attention you have been giving to every significant object since you arrived in Ashenveld.\n\nThe residue is old and clean — older than the curse, older than the mechanism's fracture. This piece carries the memory of the mechanism in its original state, before Seriva's modification destabilised it.\n\nYou understand what the ritual does now. It uses the fragment to remind the mechanism what it was, and then uses the participants to show it what it could be again.",
         "ranger": "The fragment is warm and you note the warmth the way you note temperature in new territory — as information, not sensation.\n\n\"How did Issa find it?\" you ask.\n\n\"She does not know,\" Pol says. \"She was in the outskirts, exploring, and she found it in the soil. The fragment surfaces sometimes. The mechanism is trying to repair itself. This piece was moving toward the source.\"\n\nYou think about what it means that a piece of broken mechanism is moving toward its origin. You think about intention. You think about whether intention is the right word for what a piece of stone does.",
-        "cipher": "The fragment changes the equation significantly. The ritual now has all three required components: the participants, the chamber, the fragment.\n\nThe question is timing. Seriva is looking for the chamber. Vorne's soldiers are on the east road. Your missing person is waiting in the ruins.\n\n\"How long do we have before Seriva finds the chamber?\" you ask Pol.\n\nPol thinks. \"She knows the general location from twenty years ago,\" she says. \"The outskirts have changed. She will find it, but it will take her time. Days. A week, possibly.\" A pause. \"We have less time than that.\""
+        "cipher": "The fragment changes the equation significantly. The ritual now has all three required components: the participants, the chamber, the fragment.\n\nThe question is timing. Seriva is looking for the chamber. Vorne's soldiers are on the east road. [missing person] is waiting in the ruins.\n\n\"How long do we have before Seriva finds the chamber?\" you ask Pol.\n\nPol thinks. \"She knows the general location from twenty years ago,\" she says. \"The outskirts have changed. She will find it, but it will take her time. Days. A week, possibly.\" A pause. \"We have less time than that.\""
       },
       "choices": [
         {
           "id": "take_fragment_to_ruins",
-          "text": "Take the fragment back to the ruins. Tell your missing person the ritual can proceed.",
+          "text": "Take the fragment back to the ruins. Tell [missing person] the ritual can proceed.",
           "requires": {},
           "roll": null,
           "outcomes": {
@@ -824,12 +824,12 @@
         },
         {
           "id": "consult_missing_person_first",
-          "text": "Go back to the ruins first. Tell your missing person what has developed.",
+          "text": "Go back to the ruins first. Tell [missing person] what has developed.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You leave the fragment with Pol for safekeeping and go east.\n\nThe ruins outskirts. The cairn. The gate. Your missing person sitting in the familiar spot where they have apparently spent significant portions of fourteen months, reading their journal in the grey light.\n\nThey look up when you arrive. They read your face and set the journal down.\n\n\"Tell me,\" they say.",
+              "text": "You leave the fragment with Pol for safekeeping and go east.\n\nThe ruins outskirts. The cairn. The gate. [missing person] sitting in the familiar spot where they have apparently spent significant portions of fourteen months, reading their journal in the grey light.\n\nThey look up when you arrive. They read your face and set the journal down.\n\n\"Tell me,\" they say.",
               "next_scene": "act2_ch5_return_to_ruins",
               "state_changes": {
                 "flags": {

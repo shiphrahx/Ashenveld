@@ -270,3 +270,6 @@
   color: var(--text-muted);
 }
 .seen .np, .seen .nd, .seen .lens { animation: none; opacity: 1; transform: none; }
+
+/* the folded scene is at 75%; the label needs a brighter colour to stay over 4.5:1 */
+.faded .lensLabel { color: var(--blue-moon); }

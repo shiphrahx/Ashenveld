@@ -45,7 +45,7 @@
           "You leave before the market opens."
         ],
         "commander": "Before leaving, you have made your commitments. The Compact message, if you took it. The covenant ward, if you wear it. The relationships with the Rootless.\n\nYou are not beholden to any single answer. You are going east to find the truth of it.",
-        "arcane": "Before leaving, you spend an hour at the Tallow's writing table going over your notes from three days. You are better prepared than your missing person was, you think. You have more information, more context, more theoretical framework.\n\nYou hope that makes a difference. You know it might not.",
+        "arcane": "Before leaving, you spend an hour at the Tallow's writing table going over your notes from three days. You are better prepared than [missing person] was, you think. You have more information, more context, more theoretical framework.\n\nYou hope that makes a difference. You know it might not.",
         "ranger": "Before leaving, you check your pack with automatic thoroughness. Everything in order. Everything necessary.\n\nYou check the east road from the market square — empty this early, which is either good or suspicious, and you need to decide which before you are a mile in.",
         "cipher": "Before leaving, you say goodbye to no one, which is the goodbye that costs least and protects most. If you fail to come back, no one will remember it as a choice you made in their presence.\n\nThis is either wisdom or the specific kind of loneliness that has become strategy. You have stopped distinguishing between the two."
       },
@@ -454,7 +454,7 @@
       "requires": {},
       "text": {
         "default": "A figure coming toward you on the road — moving fast, not running but close to it. A man, middle-aged, carrying more than he should be carrying for someone moving at that speed. He has the quality of someone who has decided that distance from a place is more valuable than comfort in transit.\n\nHe sees you and does not slow down. If anything he speeds up slightly.\n\nYou step to the side of the road so he can pass if he wants to. He almost does. Then, two metres past you, he stops.",
-        "commander": "He stops and turns back with the expression of someone who has decided something he immediately regrets deciding.\n\n\"You are going the wrong way,\" he says.",
+        "commander": "He turns back with the face of a man who has decided something and already regrets it.\n\n\"You are going the wrong way,\" he says.",
         "arcane": "He stops and turns and looks at you with the specific assessment of someone measuring how much you might want to know versus how much he wants to tell.\n\n\"You are going east,\" he says. It is not a question.",
         "ranger": "He stops and turns. His pack is military in origin — the straps, the frame. He is not military anymore. His boots are worn on the outside of the heel, a specific gait, something about his history you cannot place yet.\n\n\"Going to Harrow?\" he says.",
         "cipher": "He stops and turns and you read him quickly. Running from something. Not afraid of you specifically — afraid of what is behind him, and you happen to be coming from the wrong direction.\n\n\"Turn around,\" he says. No pleasantry, no preamble."
@@ -511,10 +511,7 @@
             }
           }
         }
-      ],
-      "text_mode": {
-        "commander": "replace"
-      }
+      ]
     },
     {
       "id": "act1_ch6_missing_person_campsite",
@@ -530,9 +527,23 @@
       },
       "requires": {},
       "text": {
-        "default": "Half a mile further and the road shows you something.\n\nA campsite — recent, a few days old. Used once, by one person, not the traveller you just passed. A ring of stones for a fire. A cleared ground space. The careful arrangement of someone who knows how to camp and habitually tidies before leaving.\n\nYou know the arrangement. You have seen it before. The ring of stones is three flat, one angled — a marker, a habit, something you noticed years ago when you watched the person who taught it to you do it for the first time.\n\nYour missing person was here. Three to five days ago. Moving east.",
+        "default": [
+          "Half a mile further and the road shows you something.",
+          "A campsite — recent, a few days old. Used once, by one person, not the traveller you just passed. A ring of stones for a fire. A cleared ground space. The careful arrangement of someone who knows how to camp and habitually tidies before leaving.",
+          {
+            "when": {
+              "relationship_type": [
+                "childhood friend",
+                "mentor"
+              ]
+            },
+            "text": "You know the arrangement. You have seen it before. The ring of stones is three flat, one angled — a marker, a habit, something you noticed years ago when you watched the person who taught it to you do it for the first time.",
+            "else": "You know the arrangement. You have seen it before. The ring of stones is three flat, one angled — a marker, a habit, a habit the two of you shared."
+          },
+          "[missing person] was here. Three to five days ago. Moving east."
+        ],
         "commander": "You assess the campsite with systematic attention. Duration of stay: one night. Direction of departure: east, based on the site's orientation. Condition when they were here: functional — the camp is tidy, the fire correctly built. Not someone in crisis.",
-        "arcane": "The residue on the campsite is specific enough to read clearly. One person, one night, not deeply afflicted at the point of departure — the camp has the residue of someone present and aware.\n\nYou feel something that is probably relief and probably also fear. Present and aware when they left this camp. Three to five days ago.",
+        "arcane": "The residue here is clear enough to read. One person, one night, not deeply afflicted when they left. Present and aware.\n\nYou feel something that is probably relief, and is also fear.",
         "ranger": "You read the campsite with the efficiency of a tracker. One person, one night. The fire stones are arranged in a specific way you have not seen anyone else use. The cleared area is exactly the size of a bedroll.\n\nThe departure direction is east and the tracks, faint on this ground, confirm it. Three to five days old. Moving steadily.",
         "cipher": "The arrangement of the fire stones. You know that arrangement. It is not a coincidence — the specific angle of the angled stone, the spacing, the choice of this particular clearing. Someone was here recently and they wanted you — specifically you, if you came — to know it was them."
       },
@@ -547,7 +558,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "Under the edge of one of the fire stones — placed there deliberately, weighted down — a torn piece of cloth. Not accidental. They left it.\n\nOn the cloth, in ink that has partially run: four words. The first word is your name. The remaining three you read three times each to make sure you are reading them right.\n\nYour name. Keep going.\n\nThey knew you would come. They wanted you to keep going. That is either the best thing you have heard since you arrived in Ashenveld or the worst. You have not decided.",
+              "text": "Under the edge of one of the fire stones, placed there on purpose and weighted down, a torn piece of cloth. They left it.\n\nOn the cloth, in ink that has partly run, three words. You read them three times each to make sure you are reading them right.\n\n[player]. Go home.\n\nThey knew you would come. They knew it well enough to leave you this at the first place you would stop. And they did not want you to.",
               "next_scene": "act1_ch6_harrow_arrival",
               "state_changes": {
                 "flags": {
@@ -577,7 +588,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You leave the campsite without disturbing anything and continue east. Faster than before. The distance between you and your missing person is measured in days, not months.",
+              "text": "You leave the campsite without disturbing anything and continue east. Faster than before. The distance between you and [missing person] is measured in days, not months.",
               "next_scene": "act1_ch6_harrow_arrival",
               "state_changes": {
                 "flags": {
@@ -587,10 +598,7 @@
             }
           }
         }
-      ],
-      "text_mode": {
-        "arcane": "replace"
-      }
+      ]
     },
     {
       "id": "act1_ch6_harrow_arrival",

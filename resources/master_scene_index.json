@@ -937,7 +937,7 @@
     },
     "missing_person_note": {
       "name": "Cloth note",
-      "description": "Cloth with four words written in ink. Your name. Keep going.",
+      "description": "Cloth with three words in ink. Your name. Go home.",
       "consumable": false
     },
     "harrow_papers": {

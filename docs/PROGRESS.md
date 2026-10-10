@@ -8,7 +8,7 @@ One step per branch and pull request. Each tick lists what was done, what was sk
 - [x] 4. docs/04 Design tokens, then U1 to U7
 - [x] 5. docs/03 G1 to G6
 - [x] 6. docs/03 G7 to G13
-- [ ] 7. docs/02 Section 0 (author decisions), then N1 to N4
+- [x] 7. docs/02 Section 0 (author decisions), then N1 to N4
 - [ ] 8. docs/02 N5 to N8
 - [ ] 9. docs/02 N9 to N18
 - [ ] 10. docs/04 U8 to U20
@@ -221,3 +221,56 @@ Branch `step-6-systems`, stacked on step 5.
 - G9 says "return to the scene you were in" after a collapse. That scene's choices may already be used up, so the collapse carries on to the scene the failed choice was leading to.
 - G9's ritual-sealing "worn thin" bonus would have doubled the engine's general −2, so the data one is gone.
 - G13's "Skip to the next choice I have not made" is read as: seen scenes open folded at the choices. It doesn't auto-play choices.
+
+## Step 7 — author decisions, N1 to N4
+
+Branch `step-7-story-names-stakes`, stacked on step 6.
+
+**AUTHOR DECISION defaults used** (docs/02 section 0, all as written in the plan)
+
+- D1, why you left: Crestfall was making you quiet and there was no event to point at. Stated to Maret in `act1_ch4_maret_evening`, echoed after Lira's speech.
+- D2, Maret's arrangement: one memory to the tree line each new moon; a list of thirty-eight, "my daughter's voice" first. Shown in `act1_ch4_maret_letter_success`, paid off at the forest edge, the camp garden and after the seal.
+- D3, what they wanted: they told you to go home, and they needed you. The cloth, the cairn, "I told you not to", and the new reunion choice.
+- D4, what the mechanism shows: one fact per relationship from the N1 table, in the chamber and in what you tell them after.
+- D5, the Watcher is Joren of Harrow: named in `act3_ch4_resolution_alone` and in the hidden passage (step 6). The rest of the Joren thread is N5.
+- D6, what Sen saw: not used yet. It's N5 (step 8).
+
+**Done**
+
+- `tools/prose-stats.mjs` (`npm run prose`), brought forward from N10 so story PRs can report numbers.
+- N1 step 1: 164 texts now use `[missing person]`. No paragraph uses the name more than twice. The validator's "your missing person" warning is at zero.
+- N1 step 2: `[player]` in the five places the name is spoken or written (the letter, the Watcher, the reunion, the chamber, Goran). The Watcher only repeats it on the return if `watcher_spoke`.
+- N1 step 3: the campsite fire ring is "a habit the two of you shared" except for a childhood friend or mentor. Creation preview reads "raised you" for a parent and "taught you everything you were good at" for a mentor. People shows "Your sibling" and so on. Role is "The one you came back for".
+- N1 step 4: six relationship variants in ten of the eleven places (the letter in `maret_letter_success` is N15, step 9).
+- N1 step 5: all 38 `replace` passages rewritten as asides; `text_mode` is gone from the data. The engine still supports it.
+- N2: the cloth, the cairn, "I told you not to", the third reunion choice `name_what_they_did` (written without the Cipher aside's "Both" wording), the consequence paragraph and bonus in the ritual, the missing success-at-cost, and "You never did say whether you forgave me."
+- N3: everything in the table. `seen_marets_list` is set when she shows you the list; the new Act 2 choice needs it (or Rootless 40+, the G5 trusted tier).
+- N4: guarded partial-seal text in the ten listed places and a "who watches the seal" paragraph in all five endings.
+
+**Prose stats** (`npm run prose`, before → after this step)
+
+| Pattern | Before | After |
+|---|---|---|
+| specific / specifically | 253 | 239 |
+| the specific quality of | 37 | 37 |
+| of someone who | 88 | 78 |
+| Not a question / accusing / unkind | 17 | 15 |
+| You note / You file (outside Cipher) | 30 | 29 |
+| em dashes | 894 | 851 |
+| "You read" paragraphs, Ranger / Cipher | 20 / 10 | 21 / 10 |
+| contractions | 43 | 28 |
+| for a long moment / time | 45 | 43 |
+| "your missing person" | 177 | 0 |
+
+The big habit counts are N10 (step 9). Contractions fell because the retold dialogue ("Didn't think you'd come back") was cut from the asides; N10 adds them back by voice.
+
+**Skipped or deferred**
+
+- The letter itself (N15) and the story bible (N9) are step 9.
+- The e2e check for "if she came with you" is still parked; that line goes in N7 (step 8).
+
+**Plan was wrong or unclear**
+
+- N2.2 says to add the "fresh scratches" line before the inscription. The paragraph before the inscription is the one that introduces the scratches, so the line sits just after it instead.
+- Three lines that break the fiction aren't in N12's table: "The point of no return is coming." (`act2_ch8_faction_reckoning`), "This is the Rootless ending." (`ending_warden_of_ashenveld`) and "The ending is the loneliest one." (`ending_the_account`). I'll take them out with N12 in step 9.
+- With the asides showing everywhere, one aside label failed contrast in the folded scene; fixed with a brighter colour while folded.

@@ -22,10 +22,10 @@
       "requires": {},
       "text": {
         "default": "The barge docks before dawn and the ferryman ties off without a word. You have been watching the town grow from a smear of lamplight on the water into something recognisable for the last hour, and now that it is fully in front of you, you wish you had looked away sooner.\n\nCrestfall. You left eleven years ago and told yourself you were not coming back. You told yourself that so many times it almost became true.\n\nThe docks smell of rot and cold water. A warehouse door hangs open on a broken hinge. Somewhere in the town a dog is barking at something that is not answering. You pick up your pack, step off the barge, and stand for a moment on the pier.\n\nYou are back.",
-        "commander": "The barge docks before dawn and the ferryman ties off without a word. You have been watching Crestfall grow from a smear of lamplight into something you once commanded people in front of, and the change in it is visible even from the water.\n\nSmaller. Quieter. The kind of town that has been losing something slowly for long enough that the loss has become the place itself.\n\nYou pick up your pack and step onto the pier. Eleven years. You left because there was a war to fight and you needed to be somewhere the orders made sense. You came back because of a letter from someone whose name you do not say out loud in company.",
-        "arcane": "The barge docks before dawn and you have been awake the entire crossing, watching the water.\n\nThe river changes as it nears Crestfall. Not visibly — the surface is the same dark moving mass it was for the whole journey. But something beneath it is different. A pressure. A frequency you feel in the back of your teeth rather than hear. You noted it in your journal two miles back and have been trying to describe it precisely ever since. You have not succeeded.\n\nCrestfall. You step off the barge and the frequency is stronger on land. Whatever is here, it is not subtle to someone who knows how to listen.",
-        "ranger": "The barge docks before dawn and you are the first one off.\n\nYou stand on the pier and read the town the way you would read a tree line — looking for the shape of things, what is missing, what should not be there. The dog barking somewhere to the north is barking at the same thing on a loop, which means it is confused or frightened. The warehouse door hanging open has been open long enough that the hinge has rusted in that position. Nobody has used it in weeks.\n\nCrestfall. You grew up reading this place like a map and the map has changed.",
-        "cipher": "The barge docks before dawn and you study the ferryman's back for the entire approach.\n\nHe has not spoken since you paid him two days ago. That is fine — you have not needed him to. You have been reading Crestfall from the water, cataloguing what the town projects before you are close enough for anyone to read you back. Quieter than it should be. Fewer lights. A Compact soldier visible at the gate even at this hour, which is new.\n\nSomething happened here. Several somethings, probably. You step off the barge and begin."
+        "commander": "From the water you could see what Crestfall had lost. Smaller. Quieter. The kind of town that has been losing something slowly for long enough that the loss has become the place itself.\n\nYou left because there was a war to fight and you needed to be somewhere the orders made sense. You came back because of a letter from someone whose name you do not say out loud in company.",
+        "arcane": "You were awake the whole crossing, watching the water. The river changes as it nears Crestfall. Not on the surface. Underneath, there is a pressure, a frequency you feel in the back of your teeth rather than hear. You noted it two miles out and have not managed to describe it since.\n\nOn land it is stronger. Whatever is here, it is not subtle to someone who knows how to listen.",
+        "ranger": "You read the docks the way you would read a tree line. The dog to the north is barking at the same thing over and over, which means it is confused or frightened. The warehouse hinge has rusted open. Nobody has used that door in weeks.\n\nYou grew up reading this place like a map. The map has changed.",
+        "cipher": "You studied the ferryman's back for the whole approach. He has not spoken since you paid him two days ago. From the water you counted what the town shows a stranger: fewer lights than it should have, and a Compact soldier at the gate even at this hour, which is new.\n\nSomething happened here. Several somethings, probably."
       },
       "choices": [
         {
@@ -71,13 +71,7 @@
             }
           }
         }
-      ],
-      "text_mode": {
-        "commander": "replace",
-        "arcane": "replace",
-        "ranger": "replace",
-        "cipher": "replace"
-      }
+      ]
     },
     {
       "id": "act1_ch1_docks_encounter",
@@ -94,10 +88,10 @@
       "requires": {},
       "text": {
         "default": "A man is coiling rope near the warehouse — or pretending to. He has been watching you since you stepped off the barge. When you get close enough, he straightens and you recognise him from the before-time, the part of your life that ended when you got on a barge going the other direction.\n\nSen. Older now. Greyer. The kind of weathering that comes from staying somewhere difficult rather than leaving it.\n\n\"Didn't think you'd come back,\" he says. Not unkind. Just honest. \"Nobody comes back.\"\n\nHe looks at the town behind him the way you look at something that worries you.",
-        "commander": "A man is coiling rope near the warehouse and watching you with the careful attention of someone who has learned to be careful. You recognise him before he recognises you.\n\nSen. He used to help load supplies for the town garrison when you were posted here. A reliable man who notices things and keeps quiet about them.\n\n\"Didn't think you'd come back,\" he says. Not unkind. \"People do not. Not these days.\"",
-        "arcane": "A man is coiling rope near the warehouse and watching you with the focused attention of someone who has decided you are worth watching. You let him look.\n\nSen. You know the name from eleven years ago but barely the face. He has changed more than the name suggests he should have.\n\n\"Didn't think you'd come back,\" he says. \"Especially not now.\" That last part he adds quietly, as if he did not mean to say it.",
-        "ranger": "A man is coiling rope near the warehouse. He has been aware of you since before you stepped off the barge — you saw his posture change when the boat was still fifty metres out.\n\nSen. You hunted with his father once, briefly, before you left. This man has his father's hands.\n\n\"Didn't think you'd come back,\" he says. He looks at the tree line to the east when he says it, not at you.",
-        "cipher": "A man near the warehouse has been watching you with the careful interest of someone who was told to, or someone who recognised you, or both. You have had sixty seconds to study him while pretending you had not noticed him yet.\n\nSen. Tense in the shoulders. Afraid of something general that your arrival has added to.\n\n\"Didn't think you'd come back,\" he says. The words are simple. The weight behind them is not."
+        "commander": "You knew him before he knew you. Sen used to load supplies for the garrison when you were posted here, a reliable man who notices things and keeps quiet about them.",
+        "arcane": "You know the name from eleven years ago and barely the face. He has changed more than the years explain.\n\n\"Especially not now,\" he adds, quietly, as if he did not mean to say it.",
+        "ranger": "He was aware of you before you stepped off the barge. You saw his shoulders change when the boat was still fifty metres out.\n\nYou hunted with his father once, briefly, before you left. This man has his father's hands. When he speaks he looks at the tree line to the east, not at you.",
+        "cipher": "You had sixty seconds to study him while pretending you had not noticed. Tense in the shoulders. Afraid of something general that your arrival has added to. The words are simple. The weight behind them is not."
       },
       "choices": [
         {
@@ -211,13 +205,7 @@
             }
           }
         }
-      ],
-      "text_mode": {
-        "commander": "replace",
-        "arcane": "replace",
-        "ranger": "replace",
-        "cipher": "replace"
-      }
+      ]
     },
     {
       "id": "act1_ch1_tallow_arrival",
@@ -238,10 +226,10 @@
       "requires": {},
       "text": {
         "default": "The inn is quieter than you remember. The Tallow used to be loud on a cold night — arguments about harvest weights, a fiddle badly played near the fire, the particular laughter of people who have known each other too long. Now three men sit at separate tables and say nothing to each other, and the fire is lower than it should be for the hour.\n\nThe innkeeper looks up when you enter. Something crosses his face — recognition, then something harder to name. He knows you. Or he knew who you were, eleven years ago, and is not sure what to make of the person standing in your place.\n\n\"Didn't think we'd see you back here,\" he says. Not warmly. Not coldly either. The way you would say it about weather returning out of season.\n\nYou set your pack down by the door. The floorboards are the same. The low beam you always had to duck is the same. Everything is the same and none of it feels the way it did.",
-        "commander": "You have slept in worse places. You remind yourself of that as you push open the door to the Tallow and take in what it has become — three silent men, a dying fire, an innkeeper with the face of someone who has been waiting for bad news long enough that arriving news is always bad news first.\n\nHe recognises you. You watch the recognition happen and then watch him decide what to do with it.\n\n\"Didn't think we'd see you back here,\" Aldous says. There is a question underneath it. Why now. Why at all.",
-        "arcane": "The inn has a residue. You feel it as soon as you open the door — not the curse exactly, but the presence of people who have been afraid in one place for long enough that the fear has settled into the wood and the plaster. The fire is low. Three men sit alone. The innkeeper looks up.\n\n\"Didn't think we'd see you back here,\" he says. He means it as a neutral observation. It does not land that way.",
-        "ranger": "You read the inn in the first five seconds. Low fire — fuel being rationed or attention being withheld. Three men at separate tables — not strangers avoiding each other but regulars who have stopped bothering to sit together. Aldous behind the bar with the posture of someone waiting for something he has decided to be ready for.\n\nHe recognises you. His hands still.\n\n\"Didn't think we'd see you back here,\" he says. His eyes go to your pack, then to the door behind you, then back to you.",
-        "cipher": "You read the room before Aldous reads you. Three men, all separate, none looking at each other with the deliberate care of people who have agreed not to talk about something. A dying fire nobody is tending.\n\nAldous recognises you. You watch the recognition move through him — warmth, wariness, the specific calculation of someone deciding how much he owes you from before versus how much trouble you might represent now.\n\n\"Didn't think we'd see you back here,\" he says. You hear the question he did not ask."
+        "commander": "You have slept in worse places. You remind yourself of that. Aldous has the face of a man who has waited for bad news so long that all news arrives as bad news first.\n\nYou watch him recognise you, and then decide what to do about it. There is a question under his greeting. Why now. Why at all.",
+        "arcane": "The inn has a residue. Not the curse, exactly. People have been afraid in this one room for long enough that the fear has settled into the wood and the plaster.\n\nAldous means his greeting as a plain observation. It does not land that way.",
+        "ranger": "Low fire: fuel being rationed, or attention being withheld. Three men at separate tables: not strangers avoiding each other but regulars who have stopped bothering to sit together.\n\nAldous's hands go still when he sees you. His eyes go to your pack, then to the door behind you, then back to you.",
+        "cipher": "The three men are not looking at each other, carefully, like people who have agreed not to talk about something. Nobody is tending the fire.\n\nYou watch the recognition move through Aldous: warmth, then wariness, then a sum. What he owes you from before, against how much trouble you might be now. You hear the question he does not ask."
       },
       "choices": [
         {
@@ -351,12 +339,6 @@
           }
         }
       ],
-      "text_mode": {
-        "commander": "replace",
-        "arcane": "replace",
-        "ranger": "replace",
-        "cipher": "replace"
-      },
       "rest": true
     },
     {
@@ -377,10 +359,10 @@
         }
       },
       "text": {
-        "default": "You sit at the bar and Aldous talks. Not freely — he measures everything — but he talks.\n\nFourteen months ago. The missing person arrived and spent a week in town asking questions nobody wanted to answer about the ruins to the east and the old city under the forest. Then they found the Rootless camp — the survivors outside town — and spent the remaining two weeks there.\n\n\"The woman at the camp,\" Aldous says. \"Maret. She knew them better than I did by the end. She might tell you something. Or she might not.\" He refills his own glass for the first time tonight. \"She tends not to.\"\n\nHe looks at you. \"Whatever you are looking for — I hope you find it. I hope it is still what you think it is when you do.\"",
+        "default": "You sit at the bar and Aldous talks. Not freely — he measures everything — but he talks.\n\nFourteen months ago. [missing person] arrived and spent a week in town asking questions nobody wanted to answer about the ruins to the east and the old city under the forest. Then they found the Rootless camp — the survivors outside town — and spent the remaining two weeks there.\n\n\"The woman at the camp,\" Aldous says. \"Maret. She knew them better than I did by the end. She might tell you something. Or she might not.\" He refills his own glass for the first time tonight. \"She tends not to.\"\n\nHe looks at you. \"Whatever you are looking for — I hope you find it. I hope it is still what you think it is when you do.\"",
         "commander": "Aldous tells you what he knows because you asked the right way — direct, without pressure, the tone of someone who has been owed information before and knows how to receive it.\n\nFourteen months ago. Military bearing — he noticed. The right questions. Three weeks. Gone one morning without a word.\n\n\"Maret would know more,\" he says. \"She is careful who she talks to but she is not unkind.\"",
         "arcane": "Aldous tells you what he knows, which is more than he thought he knew when he started talking. You notice the way memory works on people — they begin with what they are sure of and end somewhere they did not expect to be.\n\nFourteen months ago. Questions about the ruins. Three weeks of conversations with Maret at the Rootless camp. Then gone — but not fled. More like concluded. Like they had made a decision.\n\n\"Whatever they were looking for,\" Aldous says slowly, \"I think they found the beginning of it, at least.\"",
-        "ranger": "Aldous talks and you listen the way you listen to terrain — for the shape of things, the direction the information is flowing.\n\nFourteen months ago. Your missing person arrived, asked about the ruins, spent three weeks at the Rootless camp, then went east without telling anyone.\n\n\"Maret,\" Aldous says. \"At the camp. She is the one to find.\" He adds flatly: \"Do not go into the forest alone.\"",
+        "ranger": "Aldous talks and you listen the way you listen to terrain — for the shape of things, the direction the information is flowing.\n\nFourteen months ago. [missing person] arrived, asked about the ruins, spent three weeks at the Rootless camp, then went east without telling anyone.\n\n\"Maret,\" Aldous says. \"At the camp. She is the one to find.\" He adds flatly: \"Do not go into the forest alone.\"",
         "cipher": "Aldous tells you what he knows. You listen to what he does not say as much as what he does.\n\nFourteen months ago. Three weeks. The Rootless camp. Maret. Gone east.\n\nWhat he does not say: whether he tried to stop them. Whether the Rootless camp is as innocent as he is making it sound. The gaps in his account are not dishonesty — they are the shape of things he has decided are yours to find rather than his to give away."
       },
       "choices": [
@@ -541,7 +523,7 @@
               }
             },
             "success_at_cost": {
-              "text": "He looks up when you come back down. He mentions the Rootless camp. He mentions Maret. He does not mention how he knows she knew your missing person.",
+              "text": "He looks up when you come back down. He mentions the Rootless camp. He mentions Maret. He does not mention how he knows she knew [missing person].",
               "next_scene": "act1_ch1_tallow_room",
               "state_changes": {
                 "flags": {
@@ -588,7 +570,7 @@
       },
       "requires": {},
       "text": {
-        "default": "The key is in your hand. Aldous has found something behind the bar that requires his complete attention. The three men at their separate tables have the stillness of people pretending they did not hear anything.\n\nYou take the stairs.\n\nThe room is four coins of silence and a window that looks out onto a street that is not moving. You sit on the bed. The name — your missing person's name — is sitting in this inn somewhere between Aldous's teeth and his conscience, and tonight it is staying there.\n\nYou have been back in Crestfall for less than an hour and you have already made a mistake. You file it. You will not make it the same way twice.",
+        "default": "The key is in your hand. Aldous has found something behind the bar that requires his complete attention. The three men at their separate tables have the stillness of people pretending they did not hear anything.\n\nYou take the stairs.\n\nThe room is four coins of silence and a window that looks out onto a street that is not moving. You sit on the bed. The name — [missing person]'s name — is sitting in this inn somewhere between Aldous's teeth and his conscience, and tonight it is staying there.\n\nYou have been back in Crestfall for less than an hour and you have already made a mistake. You file it. You will not make it the same way twice.",
         "commander": "The key. The stairs. The room.\n\nYou have had subordinates who shut down under questioning and you know what it looks like and what it means. Aldous is not hostile. He is frightened of something and you reminded him of it. That is recoverable. Tomorrow you will try differently.",
         "arcane": "The room. The window. Your journal.\n\nYou write: the innkeeper knows the name. The reaction was involuntary and he caught it too late. He has decided that not speaking is safer than speaking. The content of that decision is the actual information. You do not have it yet.",
         "ranger": "You read the room on your way to bed. Aldous: guilty. The two other men: not surprised. Whatever is wrong with the still man by the fire has nothing to do with your question.\n\nThe name landed badly. You will come at it from a different angle in the morning. Probably through the Rootless camp.",
@@ -739,11 +721,65 @@
       },
       "requires": {},
       "text": {
-        "default": "The room is small and adequate. A bed, a window, a lamp with enough oil for two more hours if you are careful. The street below is empty.\n\nYou sit on the bed and let the day settle.\n\nYou are back in Crestfall. The town is wrong in ways that go past what eleven years of absence would explain. Someone you came here for was here fourteen months ago and is not here now. A woman named Maret may know where they went. The forest to the east is the direction everything points.\n\nOutside the window, the wind moves through a town that has stopped making most of its sounds. You try to remember what Crestfall sounded like at this hour and find that you can, mostly. That makes the present silence louder.\n\nYou put out the lamp. Sleep comes eventually.",
+        "default": [
+          "The room is small and adequate. A bed, a window, a lamp with enough oil for two more hours if you are careful. The street below is empty.",
+          "You sit on the bed and let the day settle.",
+          {
+            "when": {
+              "relationship_type": [
+                "childhood friend"
+              ]
+            },
+            "text": "Two streets over is the east field fence. You and [missing person] ran the length of it every summer, one foot on the top rail, and whoever fell off first paid for the cider."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "former lover"
+              ]
+            },
+            "text": "The lamp is the same kind they used to read by, in the room above the chandler's. They read with their knees drawn up and their lips moving. You used to pretend to be asleep so you could watch."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "sibling"
+              ]
+            },
+            "text": "From this window you can almost see the mill lane. [missing person] used to sit on the wall at the end of it and wait for you to come home, two years younger and pretending not to wait."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "mentor"
+              ]
+            },
+            "text": "The last time you were in this inn, [missing person] bought you a drink for finishing your first real piece of work. They did not say well done. They pushed the cup across the table and watched you drink it."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "parent"
+              ]
+            },
+            "text": "[missing person] used to bring you here on market days when you were small, and sit you on the bar while they argued about the price of lamp oil. You remember the smell of the wood, and their hand flat on your back."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "the one who got away"
+              ]
+            },
+            "text": "You stood under this window once with [missing person], waiting out the rain. Neither of you said anything the whole time. You have thought about that silence more than most things anyone has said to you."
+          },
+          "You are back in Crestfall. The town is wrong in ways that go past what eleven years of absence would explain. Someone you came here for was here fourteen months ago and is not here now. A woman named Maret may know where they went. The forest to the east is the direction everything points.",
+          "Outside the window, the wind moves through a town that has stopped making most of its sounds. You try to remember what Crestfall sounded like at this hour and find that you can, mostly. That makes the present silence louder.",
+          "You put out the lamp. Sleep comes eventually."
+        ],
         "commander": "You run the situation the way you would run any position assessment. What you know: the name, the destination, the time elapsed. What you do not know: everything else. What resources you have: yourself, what you carried, and the credibility that comes from being exactly what you appear to be.\n\nYou sleep with the soldier's ability to rest in hostile terrain.",
-        "arcane": "You write by lamplight until the lamp needs to be conserved.\n\nThe frequency under Crestfall is consistent. Not pulsing — a sustained note, like a string that has been plucked and not yet faded. You have felt similar things near sites of old workings. Those were smaller. This is not.\n\nYou write: whatever is here, it has been here for a very long time. The curse did not create it. The curse is what happens when something contains it improperly.\n\nYou put out the lamp and lie in the dark and listen to the note.",
+        "arcane": "You write by lamplight until the oil needs saving.\n\nThe frequency under Crestfall is steady. A sustained note, like a string that has been plucked and not yet faded. You have felt things like it near old workings. Those were smaller.\n\nYou write: whatever is here, it has been here a very long time. The curse did not make it. The curse is what happens when something holds it badly.",
         "ranger": "You do not use the lamp. You sit in the dark by the window and let your eyes adjust and read the street below for an hour. Nothing moves that should not. Nothing is missing that should be there.\n\nExcept the animals. In any town at any hour there should be something — a cat, a dog, something passing. There is nothing.\n\nYou sleep lightly with one ear on the window.",
-        "cipher": "You spend an hour cataloguing. What you know, what you were told, what you inferred, what you do not know yet.\n\nMaret. The Rootless camp. The forest. Fourteen months. A person who came here asking questions and then went east and did not come back.\n\nYou also catalogue: Aldous has something. Sen at the docks has something. Plenty to work with in the morning.\n\nYou put out the lamp."
+        "cipher": "You spend an hour sorting what you were told from what you inferred. Maret. The camp. The forest. Fourteen months.\n\nAldous has something he did not say. So does Sen at the docks. Plenty to work with in the morning."
       },
       "choices": [
         {
@@ -781,10 +817,6 @@
           }
         }
       ],
-      "text_mode": {
-        "arcane": "replace",
-        "cipher": "replace"
-      },
       "rest": true
     },
     {
