@@ -214,15 +214,6 @@
               {
                 "when": {
                   "flags": {
-                    "confronted_being_used": true
-                  }
-                },
-                "value": 1,
-                "label": "You named it in the ruins"
-              },
-              {
-                "when": {
-                  "flags": {
                     "ritual_lesson_complete": true
                   }
                 },
@@ -307,15 +298,6 @@
               {
                 "when": {
                   "flags": {
-                    "confronted_being_used": true
-                  }
-                },
-                "value": 1,
-                "label": "You named it in the ruins"
-              },
-              {
-                "when": {
-                  "flags": {
                     "ritual_lesson_complete": true
                   }
                 },
@@ -396,15 +378,6 @@
                 },
                 "value": 2,
                 "label": "Nothing left unsaid"
-              },
-              {
-                "when": {
-                  "flags": {
-                    "confronted_being_used": true
-                  }
-                },
-                "value": 1,
-                "label": "You named it in the ruins"
               },
               {
                 "when": {
