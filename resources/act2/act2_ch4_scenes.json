@@ -33,8 +33,31 @@
           "text": "Give Vorne a partial account. Enough to seem cooperative without revealing the ruins.",
           "requires": {},
           "roll": {
-            "stat": "charisma",
-            "dc": 13
+            "stat": [
+              "charisma",
+              "intelligence"
+            ],
+            "dc": 13,
+            "bonus": [
+              {
+                "when": {
+                  "min_faction": {
+                    "iron_compact": 15
+                  }
+                },
+                "value": 2,
+                "label": "The Compact trusts you"
+              },
+              {
+                "when": {
+                  "max_faction": {
+                    "iron_compact": -10
+                  }
+                },
+                "value": -2,
+                "label": "The Compact does not trust you"
+              }
+            ]
           },
           "outcomes": {
             "success": {
@@ -76,10 +99,54 @@
         {
           "id": "propose_alliance_with_vorne",
           "text": "Propose working together. You have information he needs.",
-          "requires": {},
+          "requires": {
+            "not": {
+              "max_faction": {
+                "iron_compact": -10
+              }
+            }
+          },
           "roll": {
             "stat": "charisma",
-            "dc": 15
+            "dc": 15,
+            "bonus": [
+              {
+                "when": {
+                  "min_faction": {
+                    "iron_compact": 15
+                  }
+                },
+                "value": 2,
+                "label": "The Compact trusts you"
+              },
+              {
+                "when": {
+                  "max_faction": {
+                    "iron_compact": -10
+                  }
+                },
+                "value": -2,
+                "label": "The Compact does not trust you"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "compact_allied": true
+                  }
+                },
+                "value": 3,
+                "label": "You took Cael's coin"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "compact_suspicious": true
+                  }
+                },
+                "value": -3,
+                "label": "His sergeant thinks you lied"
+              }
+            ]
           },
           "outcomes": {
             "success": {
@@ -122,7 +189,27 @@
           },
           "roll": {
             "stat": "perception",
-            "dc": 10
+            "dc": 10,
+            "bonus": [
+              {
+                "when": {
+                  "min_faction": {
+                    "iron_compact": 15
+                  }
+                },
+                "value": 2,
+                "label": "The Compact trusts you"
+              },
+              {
+                "when": {
+                  "max_faction": {
+                    "iron_compact": -10
+                  }
+                },
+                "value": -2,
+                "label": "The Compact does not trust you"
+              }
+            ]
           },
           "outcomes": {
             "success": {
@@ -191,7 +278,27 @@
           "requires": {},
           "roll": {
             "stat": "charisma",
-            "dc": 13
+            "dc": 13,
+            "bonus": [
+              {
+                "when": {
+                  "flags": {
+                    "issa_spoke": true
+                  }
+                },
+                "value": 2,
+                "label": "Issa has talked to you"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "stayed_for_lesson": true
+                  }
+                },
+                "value": -2,
+                "label": "You stayed a day too long in the ruins"
+              }
+            ]
           },
           "outcomes": {
             "success": {
@@ -251,7 +358,15 @@
                     "closeness": 20
                   },
                   "issa_vorne": {
-                    "closeness": 15
+                    "closeness": -10
+                  },
+                  "maret": {
+                    "closeness": -10
+                  }
+                },
+                "factions": {
+                  "rootless": {
+                    "reputation": -10
                   }
                 }
               }
@@ -350,7 +465,45 @@
           "requires": {},
           "roll": {
             "stat": "charisma",
-            "dc": 14
+            "dc": 14,
+            "bonus": [
+              {
+                "when": {
+                  "min_faction": {
+                    "iron_compact": 15
+                  }
+                },
+                "value": 2,
+                "label": "The Compact trusts you"
+              },
+              {
+                "when": {
+                  "max_faction": {
+                    "iron_compact": -10
+                  }
+                },
+                "value": -2,
+                "label": "The Compact does not trust you"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "vorne_knows_player_knows_issa": true
+                  }
+                },
+                "value": 2,
+                "label": "Vorne knows you found her"
+              },
+              {
+                "when": {
+                  "min_relationship": {
+                    "maret": 60
+                  }
+                },
+                "value": 2,
+                "label": "Maret trusts you"
+              }
+            ]
           },
           "outcomes": {
             "success": {
@@ -470,8 +623,40 @@
           "text": "Step forward and negotiate directly with the soldiers.",
           "requires": {},
           "roll": {
-            "stat": "charisma",
-            "dc": 14
+            "stat": [
+              "charisma",
+              "strength"
+            ],
+            "dc": 14,
+            "bonus": [
+              {
+                "when": {
+                  "min_relationship": {
+                    "branch": 25
+                  }
+                },
+                "value": 2,
+                "label": "Branch backs you"
+              },
+              {
+                "when": {
+                  "min_faction": {
+                    "rootless": 25
+                  }
+                },
+                "value": 2,
+                "label": "The camp stands with you"
+              },
+              {
+                "when": {
+                  "max_faction": {
+                    "iron_compact": -10
+                  }
+                },
+                "value": -2,
+                "label": "The soldiers know your name"
+              }
+            ]
           },
           "outcomes": {
             "success": {
@@ -499,6 +684,68 @@
             },
             "failure": {
               "text": "The negotiation fails to hold. The soldiers push past the camp's edge. Not violently — firmly. Branch does not stop them because stopping them would be violent.\n\nIssa is found in the tent. She is brought out. She does not resist — she looks at you as she passes with an expression you will spend a long time trying to interpret.\n\nShe goes to the Compact post. The camp watches her go.",
+              "next_scene": "act2_ch4_pol_fragment",
+              "state_changes": {
+                "flags": {
+                  "issa_taken_by_compact": true
+                },
+                "factions": {
+                  "iron_compact": {
+                    "reputation": -20
+                  },
+                  "rootless": {
+                    "reputation": -10
+                  }
+                },
+                "relationships": {
+                  "commander_vorne": {
+                    "closeness": -10
+                  },
+                  "issa_vorne": {
+                    "closeness": -15
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "stand_in_the_gap",
+          "text": "Stand in the gap between the tents. Do not move.",
+          "requires": {},
+          "roll": {
+            "stat": "strength",
+            "dc": 13
+          },
+          "outcomes": {
+            "success": {
+              "text": "You walk into the gap between the two nearest tents and stop there, facing the soldiers. You do not say anything.\n\nThe sergeant looks at you, then at Branch beside you, then at the six men behind him. He does the sum. \"We'll tell the Commander she's well,\" he says. \"He'll want to talk.\"\n\nBranch does not look at you. He moves half a step closer.",
+              "next_scene": "act2_ch4_vorne_issa_negotiation",
+              "state_changes": {
+                "flags": {
+                  "issa_negotiation_arranged": true
+                },
+                "relationships": {
+                  "branch": {
+                    "closeness": 15
+                  }
+                }
+              }
+            },
+            "success_at_cost": {
+              "text": "You stand in the gap. One of the younger soldiers walks right up to you, close enough that you can smell the road on him, and you do not move. The sergeant calls him back. \"He'll want to talk,\" the sergeant says. Your hands do not stop shaking for an hour.",
+              "next_scene": "act2_ch4_vorne_issa_negotiation",
+              "state_changes": {
+                "flags": {
+                  "issa_negotiation_arranged": true
+                },
+                "resources": {
+                  "health": -5
+                }
+              }
+            },
+            "failure": {
+              "text": "They go round you.\n\nThe negotiation fails to hold. The soldiers push past the camp's edge. Not violently — firmly. Branch does not stop them because stopping them would be violent.\n\nIssa is found in the tent. She is brought out. She does not resist — she looks at you as she passes with an expression you will spend a long time trying to interpret.\n\nShe goes to the Compact post. The camp watches her go.",
               "next_scene": "act2_ch4_pol_fragment",
               "state_changes": {
                 "flags": {

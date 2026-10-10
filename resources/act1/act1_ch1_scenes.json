@@ -156,7 +156,10 @@
           "text": "\"What happened to this place?\"",
           "requires": {},
           "roll": {
-            "stat": "charisma",
+            "stat": [
+              "charisma",
+              "perception"
+            ],
             "dc": 9
           },
           "outcomes": {
@@ -513,7 +516,10 @@
           "text": "Go back downstairs and try again while the inn is still open.",
           "requires": {},
           "roll": {
-            "stat": "charisma",
+            "stat": [
+              "charisma",
+              "stamina"
+            ],
             "dc": 14
           },
           "outcomes": {
@@ -635,7 +641,10 @@
           "text": "Ask him what it feels like from inside.",
           "requires": {},
           "roll": {
-            "stat": "charisma",
+            "stat": [
+              "charisma",
+              "mana"
+            ],
             "dc": 9
           },
           "outcomes": {

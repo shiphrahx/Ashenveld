@@ -65,6 +65,7 @@ export default function Settings({ onClose }: Props) {
 
         <section aria-labelledby="set-play">
           <h3 id="set-play" className={styles.group}>Play</h3>
+          <Options label="Odds on choices" field="odds" options={[['words', 'In words'], ['percent', 'As a percentage']]} />
           <Options label="Change notices" field="toasts" options={[[true, 'On'], [false, 'Off']]} />
         </section>
       </div>

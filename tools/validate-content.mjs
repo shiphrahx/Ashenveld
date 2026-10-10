@@ -26,14 +26,15 @@ const KEYS = {
   outcomes: ['default', 'success', 'success_at_cost', 'failure'],
   outcome: ['text', 'next_scene', 'state_changes'],
   on_enter: ['state_changes'],
-  state_changes: ['flags', 'resources', 'relationships', 'factions', 'inventory', 'inventory_remove', 'world'],
+  state_changes: ['flags', 'resources', 'relationships', 'factions', 'inventory', 'inventory_remove', 'world', 'counters'],
   resources: ['gold', 'health', 'max_health'],
   world: ['curse_spread', 'time_of_day', 'day', 'skip_days'],
-  roll: ['stat', 'dc'],
+  roll: ['stat', 'dc', 'bonus'],
+  bonus: ['when', 'value', 'label'],
   when: ['part', 'day', 'skip_days', 'hide_clock'],
   condition: ['flags', 'inventory', 'class', 'min_relationship', 'max_relationship', 'min_faction', 'max_faction',
     'min_stat', 'relationship_type', 'visited', 'not_visited', 'taken', 'min_curse', 'max_curse', 'health_below',
-    'min_gold', 'any', 'not'],
+    'min_gold', 'min_counter', 'max_counter', 'any', 'not'],
   route: ['when', 'next'],
   chapterFile: ['chapter', 'title', 'objective', 'scenes'],
   ending: ['id', 'title'],
@@ -181,6 +182,11 @@ for (const [id, { scene: s }] of scenes) {
     if (c.roll) {
       checkKeys(c.roll, 'roll', cw)
       for (const st of [c.roll.stat].flat()) if (!STATS.includes(st)) err(`${cw}: unknown stat "${st}"`)
+      for (const b of c.roll.bonus ?? []) {
+        checkKeys(b, 'bonus', `${cw}:bonus`)
+        checkCondition(b.when, `${cw}:bonus`)
+        if (typeof b.value !== 'number' || !b.label) err(`${cw}: bonus needs a number value and a label`)
+      }
       for (const k of ['success', 'success_at_cost', 'failure']) if (!c.outcomes[k]) err(`${cw}: rolled choice has no ${k} outcome`)   // 4
       const [a, b, d] = ['success', 'success_at_cost', 'failure'].map(k => c.outcomes[k])
       if (a && b && d && a.next_scene === b.next_scene && b.next_scene === d.next_scene

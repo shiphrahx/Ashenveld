@@ -18,7 +18,8 @@
       "initial_closeness": 80,
       "faction_alignment": "none",
       "archetype": "lost_one",
-      "note": "This NPC's dialogue must reference the player-defined relationship and name from character creation."
+      "note": "This NPC's dialogue must reference the player-defined relationship and name from character creation.",
+      "read": "They go still when you look at them. They did that when they had something to tell you."
     },
     "seriva": {
       "id": "seriva",
@@ -29,7 +30,8 @@
       "secret": "She was in Ashenveld twenty years ago, before the sealing failed. She knows why it failed. She is partly responsible for why it failed. She is here to correct that.",
       "initial_closeness": 0,
       "faction_alignment": "ashen_covenant",
-      "archetype": "rival"
+      "archetype": "rival",
+      "read": "She talks in costs and never in names."
     },
     "commander_vorne": {
       "id": "commander_vorne",
@@ -40,7 +42,8 @@
       "secret": "His daughter Issa is at the Rootless camp. She went there three weeks ago when the curse touched her and he has been pretending he does not know where she is.",
       "initial_closeness": 0,
       "faction_alignment": "iron_compact",
-      "archetype": "rival"
+      "archetype": "rival",
+      "read": "He has not slept. He asks one-word questions so he will not have to hear long answers."
     },
     "issa_vorne": {
       "id": "issa_vorne",
@@ -51,7 +54,8 @@
       "secret": "She found something in the ruins outskirts before she was afflicted — a fragment of the original sealing stone. She has been carrying it without knowing what it is.",
       "initial_closeness": 0,
       "faction_alignment": "none",
-      "archetype": "dependent"
+      "archetype": "dependent",
+      "read": "She watches her father's men the way you watch weather coming in."
     },
     "the_archivist": {
       "id": "the_archivist",
@@ -62,7 +66,8 @@
       "secret": "She is the only living person who has read the complete original sealing text. She left the Covenant rather than participate in what it required. She has been at the Rootless camp for three years, preparing.",
       "initial_closeness": 5,
       "faction_alignment": "rootless",
-      "archetype": "mentor"
+      "archetype": "mentor",
+      "read": "She counts things. Steps, leaves, your silences. She has counted you already."
     },
     "ruins_watcher": {
       "id": "ruins_watcher",
@@ -73,7 +78,8 @@
       "secret": "The Watcher is a person from Harrow who went east two years ago and reached a state of partial integration with the ruins that preserved their physical form while eliminating their individual will. They are being used as a guide by whatever animates the ruins.",
       "initial_closeness": 0,
       "faction_alignment": "none",
-      "archetype": "unknown"
+      "archetype": "unknown",
+      "read": "Nothing in the face. But the hands are folded like a man's at a graveside."
     }
   },
   "new_locations": {

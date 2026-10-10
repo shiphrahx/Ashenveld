@@ -106,6 +106,9 @@ export default function App() {
   const enterScene = useCallback(async (sceneId: string, state: GameState) => {
     try {
       const scene = await followRoutes(sceneId, state)
+      // G6: requires is checked but never blocks. A failure here is a routing mistake, and the e2e test fails on it.
+      if (!meets(scene.requires, state))
+        console.error(`Scene "${scene.id}" entered without meeting its requires: ${JSON.stringify(scene.requires)}`)
       let next: GameState = structuredClone(state)
       next.current_scene = scene.id
       next.visited[scene.id] = (next.visited[scene.id] ?? 0) + 1

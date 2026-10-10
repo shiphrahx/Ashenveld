@@ -154,6 +154,12 @@
         "state_changes": {
           "world": {
             "curse_spread": 2
+          },
+          "inventory": [
+            "mechanism_fragment"
+          ],
+          "flags": {
+            "fragment_obtained": true
           }
         }
       },
@@ -217,6 +223,29 @@
               "state_changes": {
                 "flags": {
                   "ritual_day_set": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "pay_a_runner",
+          "text": "Pay a runner from the camp to take word to Maret.",
+          "requires": {
+            "min_gold": 8
+          },
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "Pol can carry a message back to the camp before she returns to witness the ritual. You compose something brief — the Rootless camp has resources that Seriva will need to requisition through Vorne, and Vorne's daughter is at the camp, and Maret can make that requisition complicated enough to cost Seriva a day.\n\nPol takes the message and goes. She will be back before morning.\n\nYou have bought possibly another day. It may not be needed. It may make all the difference.",
+              "next_scene": "act2_ch5_missing_person_private",
+              "state_changes": {
+                "flags": {
+                  "seriva_delayed": true,
+                  "ritual_day_set": true
+                },
+                "resources": {
+                  "gold": -8
                 }
               }
             }

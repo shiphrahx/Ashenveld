@@ -1,12 +1,15 @@
 import React, { useState, useCallback, useRef, useEffect, useMemo } from 'react'
 import type { Scene, GameState, Choice, Outcome, RollResult, JournalEntry, DiceOutcome, OutcomeKey } from '../types'
-import { rollDice, difficultyLabel } from '../dice'
+import { rollDice, resolveRoll, odds } from '../dice'
+import { oddsWord, STAT_NAMES } from '../rules'
+import { useSettings } from '../settings'
 import { meets } from '../conditions'
 import { sceneText, resolveRich, CLASS_LABELS } from '../text'
 import { Inline } from './Inline'
 import DiceOverlay from './DiceOverlay'
 import { useMediaQuery } from '../hooks/useMediaQuery'
 import { applyStateChanges, diffState } from '../gameState'
+import { getNpc } from '../loader'
 import { journalKeys } from './Journal'
 import styles from './SceneView.module.css'
 
@@ -32,18 +35,29 @@ function isChoiceVisible(choice: Choice, state: GameState, sceneId: string): boo
   return meets(choice.requires, state)
 }
 
-// ── Badge label from dice ──────────────────────────────────────────────────────
+// ── Choice tag: stat and odds in words (G4) ───────────────────────────────────
 
-const STAT_SHORT: Record<string, string> = {
-  strength: 'STR', dexterity: 'DEX', stamina: 'STA',
-  intelligence: 'INT', mana: 'MAN', charisma: 'CHA', perception: 'PER',
+const pct = (x: number) => `${Math.round(x * 100)}%`
+
+export function rollTag(choice: Choice, state: GameState, mode: 'words' | 'percent' = 'words') {
+  if (!choice.roll) return null
+  const { stat, bonuses } = resolveRoll(choice.roll, state)
+  const o = odds(choice.roll, state)
+  const notFailing = 1 - o.failure
+  const word = mode === 'percent' ? pct(notFailing) : oddsWord(notFailing)
+  const css = notFailing >= 0.65 ? 'easy' : notFailing >= 0.45 ? 'medium' : 'hard'
+  const detail = [`Success ${pct(o.success)} · At a cost ${pct(o.cost)} · Fail ${pct(o.failure)}`,
+    ...bonuses.map(b => `${b.value > 0 ? '+' : '−'}${Math.abs(b.value)} ${b.label}`)]
+  return { label: `${STAT_NAMES[stat] ?? stat} · ${word}`, css, detail }
 }
 
-function badgeContent(choice: Choice): { label: string; css: string } {
-  if (!choice.roll) return { label: 'No roll', css: 'none' }
-  const { label, css } = difficultyLabel(choice.roll.dc)
-  const stat = STAT_SHORT[choice.roll.stat] ?? choice.roll.stat.toUpperCase()
-  return { label: `${stat} · ${choice.roll.dc}`, css }
+/** Ranger: what a choice will cost, before it's made (G5). */
+function groundMarks(choice: Choice): string[] {
+  const outs = Object.values(choice.outcomes).filter(Boolean)
+  const marks: string[] = []
+  if (outs.some(o => (o!.state_changes?.world?.curse_spread ?? 0) > 0)) marks.push('exposure')
+  if (outs.some(o => (o!.state_changes?.resources?.health ?? 0) < 0)) marks.push('tiring')
+  return marks
 }
 
 // ── Which outcome key was resolved ───────────────────────────────────────────
@@ -58,6 +72,7 @@ function outcomeClass(rollResult: RollResult, choice: Choice): string {
 // ── Component ─────────────────────────────────────────────────────────────────
 
 export default function SceneView({ scene, state, onChoice }: Props) {
+  const { settings } = useSettings()
   const [rollResult, setRollResult] = useState<RollResult | null>(null)
   const [activeChoice, setActiveChoice] = useState<Choice | null>(null)
   const [shownOutcome, setShownOutcome] = useState<{ outcome: Outcome; css: string; key: OutcomeKey } | null>(null)
@@ -67,6 +82,15 @@ export default function SceneView({ scene, state, onChoice }: Props) {
   const { main, aside } = sceneText(scene, state)
   const visibleChoices = scene.choices.filter(c => isChoiceVisible(c, state, scene.id))
   const outcomeText = shownOutcome ? resolveRich(shownOutcome.outcome.text, state) : ''
+  // G5, the Cipher's Read: a private line the first time someone's closeness moves.
+  const reads = useMemo(() => {
+    if (!shownOutcome || state.player.class !== 'cipher') return []
+    return Object.keys(shownOutcome.outcome.state_changes.relationships ?? {})
+      .filter(id => getNpc(id)?.read && !state.counters?.[`read:${id}`])
+      .map(id => ({ id, text: getNpc(id)!.read! }))
+  }, [shownOutcome, state])
+  useEffect(() => { for (const r of reads) extraChanges.current[`read:${r.id}`] = 1 }, [reads])
+
   // U7: what this outcome changes, shown under it so cause and effect stay together.
   const changes = useMemo(
     () => shownOutcome ? diffState(state, applyStateChanges(state, shownOutcome.outcome.state_changes), journalKeys) : [],
@@ -85,6 +109,18 @@ export default function SceneView({ scene, state, onChoice }: Props) {
       if (outcome) setShownOutcome({ outcome, css: '', key: 'default' })
     }
   }, [state])
+
+  // Counters the outcome should also apply: Command used, a Cipher read shown.
+  const extraChanges = useRef<Record<string, number>>({})
+
+  const commandKey = `command_used_act${state.world.act}`
+  const canCommand = Boolean(rollResult && !rollResult.commanded && rollResult.outcome === 'failure'
+    && rollResult.statName === 'charisma' && state.player.class === 'commander' && !state.counters?.[commandKey])
+  const handleCommand = useCallback(() => {
+    if (!rollResult) return
+    extraChanges.current[commandKey] = 1
+    setRollResult({ ...rollResult, outcome: 'success_at_cost', commanded: true })
+  }, [rollResult, commandKey])
 
   const handleDiceContinue = useCallback(() => {
     if (!rollResult || !activeChoice) return
@@ -111,7 +147,12 @@ export default function SceneView({ scene, state, onChoice }: Props) {
         day: state.world.day,
         part: state.world.time_of_day,
       }
-      onChoice(shownOutcome.outcome, entry, activeChoiceId.current ?? '')
+      const extra = extraChanges.current
+      const outcome = Object.keys(extra).length
+        ? { ...shownOutcome.outcome, state_changes: { ...shownOutcome.outcome.state_changes, counters: { ...shownOutcome.outcome.state_changes.counters, ...extra } } }
+        : shownOutcome.outcome
+      extraChanges.current = {}
+      onChoice(outcome, entry, activeChoiceId.current ?? '')
       setShownOutcome(null)
       activeChoiceText.current = null
       activeChoiceId.current = null
@@ -156,17 +197,27 @@ export default function SceneView({ scene, state, onChoice }: Props) {
     </button>
   ) : (
     visibleChoices.map((choice, i) => {
-      const { label, css } = badgeContent(choice)
+      const tag = rollTag(choice, state, settings.odds)
+      const marks = state.player.class === 'ranger' ? groundMarks(choice) : []
+      const tipId = `tip-${scene.id}-${choice.id}`
       return (
         <button
           key={choice.id}
           data-choice-id={choice.id}
+          data-roll-stat={tag ? resolveRoll(choice.roll!, state).stat : undefined}
           className={styles.ch}
           onClick={() => handleChoiceClick(choice)}
+          aria-describedby={tag ? tipId : undefined}
         >
           <span className={styles.mk}>{ROMAN[i] ?? String(i + 1)}</span>
           <span className={styles.lb}><Inline text={resolveRich(choice.text, state)} /></span>
-          <span className={`${styles.badge} ${styles[css]}`}>{label}</span>
+          {marks.map(m => <span key={m} className={styles.mark}>{m}</span>)}
+          {tag && <span className={`${styles.badge} ${styles[tag.css]}`}>{tag.label}</span>}
+          {tag && (
+            <span className={styles.tagTip} id={tipId} role="tooltip">
+              {tag.detail.map(d => <span key={d}>{d}</span>)}
+            </span>
+          )}
         </button>
       )
     })
@@ -225,6 +276,12 @@ export default function SceneView({ scene, state, onChoice }: Props) {
               {outcomeText.split(/\n{2,}/).filter(Boolean).map((p, i) => (
                 <p key={i} style={{ marginBottom: '0.8em' }}><Inline text={p} /></p>
               ))}
+              {reads.length > 0 && (
+                <aside className={styles.lens} aria-label="The Cipher: your read">
+                  <div className={styles.lensLabel}>The Read</div>
+                  {reads.map(r => <p key={r.id}><Inline text={r.text} /></p>)}
+                </aside>
+              )}
               {changes.length > 0 && (
                 <ul className={styles.chips} aria-label="What changed">
                   {changes.map((c, i) => <li key={i} className={styles.chip}>{c.text}</li>)}
@@ -242,7 +299,7 @@ export default function SceneView({ scene, state, onChoice }: Props) {
 
       {/* ── Dice overlay ── */}
       {rollResult && (
-        <DiceOverlay result={rollResult} onContinue={handleDiceContinue} />
+        <DiceOverlay result={rollResult} onContinue={handleDiceContinue} onCommand={canCommand ? handleCommand : undefined} />
       )}
     </div>
   )

@@ -222,3 +222,35 @@
   border: 1px solid var(--border-lit);
   padding: 3px 9px;
 }
+
+/* G4: odds on hover, focus or a long press */
+.ch { position: relative; }
+.tagTip {
+  display: none;
+  position: absolute;
+  right: 8px;
+  bottom: calc(100% + 6px);
+  z-index: 20;
+  flex-direction: column;
+  gap: 2px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-lit);
+  color: var(--text-bright);
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 8px 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+  white-space: nowrap;
+  max-width: calc(100vw - 32px);
+}
+.ch:hover .tagTip, .ch:focus-visible .tagTip, .ch:active .tagTip { display: flex; }
+
+/* Ranger: what a choice will cost */
+.mark {
+  font-size: var(--fs-label);
+  letter-spacing: 0.06em;
+  color: var(--partial-lit);
+  border-bottom: 1px dotted var(--partial);
+  white-space: nowrap;
+}

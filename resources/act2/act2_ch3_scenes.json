@@ -238,7 +238,27 @@
           "requires": {},
           "roll": {
             "stat": "charisma",
-            "dc": 10
+            "dc": 10,
+            "bonus": [
+              {
+                "when": {
+                  "min_faction": {
+                    "iron_compact": 15
+                  }
+                },
+                "value": 3,
+                "label": "The Compact knows you"
+              },
+              {
+                "when": {
+                  "max_faction": {
+                    "iron_compact": -10
+                  }
+                },
+                "value": -2,
+                "label": "The Compact does not trust you"
+              }
+            ]
           },
           "outcomes": {
             "success": {
@@ -270,6 +290,56 @@
                   "iron_compact": {
                     "reputation": -10
                   }
+                },
+                "world": {
+                  "time_of_day": "evening"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "go_round_through_trees",
+          "text": "Leave the road and go round through the trees.",
+          "requires": {},
+          "roll": {
+            "stat": "dexterity",
+            "dc": 13
+          },
+          "outcomes": {
+            "success": {
+              "text": "A hundred yards short of the barricade you step off the road into the alders and keep low. The soldiers are watching the road. Nobody is watching the ditch. You come out on the cobbles behind them with mud to the knee and your name in nobody's ledger.",
+              "next_scene": "act2_ch3_crestfall_changed",
+              "state_changes": {
+                "flags": {
+                  "slipped_checkpoint": true
+                }
+              }
+            },
+            "success_at_cost": {
+              "text": "You get round, but not cleanly. A branch cracks and one of the soldiers turns and looks at the trees for a long time. You wait in the wet until he turns back. By the time you reach the cobbles the light is going.",
+              "next_scene": "act2_ch3_crestfall_changed",
+              "state_changes": {
+                "flags": {
+                  "slipped_checkpoint": true
+                },
+                "world": {
+                  "time_of_day": "evening"
+                }
+              }
+            },
+            "failure": {
+              "text": "You are halfway round when a voice says, \"That's far enough.\" A third soldier has been sitting in the trees the whole time. He walks you back to the barricade and writes your name down slowly, so you can watch him do it.",
+              "next_scene": "act2_ch3_crestfall_changed",
+              "state_changes": {
+                "flags": {
+                  "compact_suspicious": true,
+                  "compact_knows_you_were_east": true
+                },
+                "factions": {
+                  "iron_compact": {
+                    "reputation": -10
+                  }
                 }
               }
             }
@@ -289,6 +359,52 @@
               "text": "The mention of Cael's name changes the dynamic immediately. The soldier's posture relaxes — not all the way, but enough.\n\n\"Cael said to expect you,\" he says, which means Cael has been preparing for your return. \"He wants to see you directly when you get in. The Compact post, north side of town.\"",
               "next_scene": "act2_ch3_crestfall_changed",
               "state_changes": {}
+            }
+          }
+        },
+        {
+          "id": "waved_through",
+          "text": "Walk up to the barricade. They know you.",
+          "requires": {
+            "min_faction": {
+              "iron_compact": 15
+            }
+          },
+          "roll": null,
+          "locked_hint": "Needs the Compact to know you",
+          "outcomes": {
+            "default": {
+              "text": "The soldier looks at you, then at his ledger, and lifts the bar. \"Lieutenant Cael said you might come back this way,\" he says. He does not write anything down.",
+              "next_scene": "act2_ch3_crestfall_changed",
+              "state_changes": {
+                "flags": {
+                  "compact_knows_you_were_east": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "pay_the_sergeant",
+          "text": "Put ten coins on the barricade.",
+          "requires": {
+            "min_gold": 10
+          },
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "He looks at the coins for a while. Then he sweeps them into his hand and lifts the bar. \"Didn't see you,\" he says. The other one looks at the fire.",
+              "next_scene": "act2_ch3_crestfall_changed",
+              "state_changes": {
+                "resources": {
+                  "gold": -10
+                },
+                "factions": {
+                  "iron_compact": {
+                    "reputation": -5
+                  }
+                }
+              }
             }
           }
         }
@@ -386,7 +502,8 @@
               "next_scene": "act2_ch3_seriva_first_meeting",
               "state_changes": {
                 "flags": {
-                  "seriva_met": true
+                  "seriva_met": true,
+                  "seriva_has_initiative": true
                 }
               }
             }
@@ -603,7 +720,7 @@
                 },
                 "relationships": {
                   "the_archivist": {
-                    "closeness": 25
+                    "closeness": 10
                   }
                 }
               }
@@ -628,7 +745,7 @@
                 },
                 "relationships": {
                   "the_archivist": {
-                    "closeness": 15
+                    "closeness": 20
                   }
                 }
               }
@@ -689,7 +806,27 @@
           },
           "roll": {
             "stat": "charisma",
-            "dc": 14
+            "dc": 14,
+            "bonus": [
+              {
+                "when": {
+                  "flags": {
+                    "understands_fracture": true
+                  }
+                },
+                "value": 2,
+                "label": "You have seen the fracture"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "seriva_has_initiative": true
+                  }
+                },
+                "value": -2,
+                "label": "She found you first"
+              }
+            ]
           },
           "outcomes": {
             "success": {
@@ -731,7 +868,13 @@
         {
           "id": "ask_about_purification_cost",
           "text": "\"What does the purification ritual cost? Who pays it?\"",
-          "requires": {},
+          "requires": {
+            "not": {
+              "max_faction": {
+                "ashen_covenant": -10
+              }
+            }
+          },
           "roll": {
             "stat": "intelligence",
             "dc": 12

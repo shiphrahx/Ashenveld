@@ -157,6 +157,55 @@
           }
         },
         {
+          "id": "buy_grain_for_camp",
+          "text": "Buy a sack of grain for the camp outside town.",
+          "requires": {
+            "min_gold": 5
+          },
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "Hanna weighs it twice. When you tell her where it is going she takes a coin back off the pile and pushes it across to you.\n\n\"They had my brother's boy out there all winter,\" she says. \"Tell them it's from the grain stall.\"",
+              "next_scene": "act1_ch2_market_rumour_missing",
+              "state_changes": {
+                "resources": {
+                  "gold": -5
+                },
+                "factions": {
+                  "rootless": {
+                    "reputation": 5
+                  }
+                },
+                "flags": {
+                  "hanna_remembers": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "buy_dried_fish",
+          "text": "Buy dried fish from the old man for the road.",
+          "requires": {
+            "min_gold": 4
+          },
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "He wraps four fish in paper without asking how many. \"For the road,\" he says. \"Everyone who buys fish from me now is going east.\"",
+              "next_scene": "act1_ch2_market_rumour_missing",
+              "state_changes": {
+                "resources": {
+                  "gold": -4
+                },
+                "inventory": [
+                  "rootless_provisions"
+                ]
+              }
+            }
+          }
+        },
+        {
           "id": "move_to_compact",
           "text": "Head to the town gate. See what the Compact soldiers want.",
           "requires": {},

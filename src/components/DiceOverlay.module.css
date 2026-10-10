@@ -77,3 +77,24 @@
   border-color: var(--blue-steel);
   color: var(--blue-moon);
 }
+
+.dTarget { font-size: var(--fs-small); color: var(--text-main); }
+
+.dSum {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  max-width: 440px;
+  padding: 0 16px;
+}
+.chip {
+  font-size: var(--fs-small);
+  color: var(--text-bright);
+  border: 1px solid var(--border-lit);
+  padding: 3px 9px;
+}
+
+.dButtons { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.commanded { color: var(--text-main); font-weight: 400; }

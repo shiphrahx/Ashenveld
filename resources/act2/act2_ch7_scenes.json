@@ -181,7 +181,54 @@
           "requires": {},
           "roll": {
             "stat": "charisma",
-            "dc": 14
+            "dc": 14,
+            "bonus": [
+              {
+                "when": {
+                  "min_faction": {
+                    "iron_compact": 15
+                  }
+                },
+                "value": 2,
+                "label": "The Compact trusts you"
+              },
+              {
+                "when": {
+                  "max_faction": {
+                    "iron_compact": -10
+                  }
+                },
+                "value": -2,
+                "label": "The Compact does not trust you"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "vorne_alliance": true
+                  }
+                },
+                "value": 3,
+                "label": "You and Vorne have an understanding"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "issa_standoff_continues": true
+                  }
+                },
+                "value": -3,
+                "label": "Issa is still at the camp"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "ritual_partial": true
+                  }
+                },
+                "value": -2,
+                "label": "The seal only half held"
+              }
+            ]
           },
           "outcomes": {
             "success": {
@@ -302,7 +349,10 @@
           "text": "Speak to Lira. Find out what the sealing feels like from the inside.",
           "requires": {},
           "roll": {
-            "stat": "charisma",
+            "stat": [
+              "charisma",
+              "mana"
+            ],
             "dc": 9
           },
           "outcomes": {

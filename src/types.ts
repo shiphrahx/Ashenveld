@@ -60,6 +60,7 @@ export interface NpcDef {
   location?: string
   personality?: string
   faction_alignment?: string
+  read?: string            // the Cipher's private assessment, shown once
 }
 
 export interface LocationDef {
@@ -91,6 +92,8 @@ export interface Condition {
   max_curse?: number
   health_below?: number
   min_gold?: number
+  min_counter?: Record<string, number>
+  max_counter?: Record<string, number>
   any?: Condition[]                          // at least one matches
   not?: Condition
 }
@@ -121,6 +124,7 @@ export interface StateChanges {
   factions?: Record<string, { reputation: number }>
   inventory?: string[]
   inventory_remove?: string[]
+  counters?: Record<string, number>        // deltas
   /** world.curse_spread is a delta. day and skip_days move the clock forward. */
   world?: Partial<GameState['world']> & { skip_days?: number }
 }
@@ -131,9 +135,12 @@ export interface Outcome {
   state_changes: StateChanges
 }
 
+export interface RollBonus { when: Condition; value: number; label: string }
+
 export interface Roll {
-  stat: string
+  stat: string | string[]          // an array means: use the player's best of these
   dc: number
+  bonus?: RollBonus[]
 }
 
 export interface Choice {
@@ -228,6 +235,7 @@ export interface GameState {
   inventory: string[]
   current_scene: string
   journal: JournalEntry[]
+  counters: Record<string, number>
   visited: Record<string, number>        // scene id → times entered
   taken: Record<string, true>            // "sceneId:choiceId"
   ended?: { id: string; title: string; text?: string }  // set when an ending is reached; text is the closing outcome
@@ -272,8 +280,11 @@ export type DiceOutcome = 'success' | 'success_at_cost' | 'failure'
 export interface RollResult {
   d20: number
   modifier: number
+  bonus: number                    // sum of the bonuses that applied, capped
+  bonuses: RollBonus[]
   total: number
   dc: number
   outcome: DiceOutcome
   statName: string
+  commanded?: boolean              // the Commander turned a failure into a success at a cost
 }

@@ -46,7 +46,7 @@
                 },
                 "relationships": {
                   "maret": {
-                    "closeness": 10
+                    "closeness": 18
                   }
                 }
               }
@@ -84,7 +84,7 @@
               "state_changes": {
                 "relationships": {
                   "maret": {
-                    "closeness": 15
+                    "closeness": 8
                   }
                 }
               }
@@ -244,7 +244,10 @@
           "text": "Ask her what the curse feels like from inside.",
           "requires": {},
           "roll": {
-            "stat": "charisma",
+            "stat": [
+              "charisma",
+              "mana"
+            ],
             "dc": 9
           },
           "outcomes": {
@@ -299,7 +302,7 @@
               "state_changes": {
                 "relationships": {
                   "lira": {
-                    "closeness": 30
+                    "closeness": 20
                   }
                 }
               }
@@ -380,7 +383,10 @@
           "text": "\"How long have you known Maret?\"",
           "requires": {},
           "roll": {
-            "stat": "charisma",
+            "stat": [
+              "charisma",
+              "intelligence"
+            ],
             "dc": 11
           },
           "outcomes": {
@@ -446,13 +452,16 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You tell her. Not everything — there is not time and some of it is not hers yet — but the shape of it. Why you left. What the person you are looking for meant to you when you left. What the letter meant when it arrived.\n\nShe listens the way she does everything — fully, without performing attention.\n\nWhen you finish she is quiet for a long moment. \"I will tell you what I know tomorrow,\" she says. \"All of it. What I know about the ruins and what I know about your person.\"\n\nShe says it like someone paying a debt. You have not asked what it costs her.",
+              "text": "You tell her. Not everything — there is not time and some of it is not hers yet — but the shape of it. Why you left. What the person you are looking for meant to you when you left. What the letter meant when it arrived.\n\nShe listens the way she does everything — fully, without performing attention.\n\nWhen you finish she is quiet for a long moment. \"I will tell you what I know tomorrow,\" she says. \"All of it. What I know about the ruins and what I know about your person.\"\n\nShe says it like someone paying a debt. You have not asked what it costs her.\n\nIt costs you to say it.",
               "next_scene": "act1_ch4_maret_letter_success",
               "state_changes": {
                 "relationships": {
                   "maret": {
                     "closeness": 30
                   }
+                },
+                "resources": {
+                  "health": -5
                 }
               }
             }
@@ -464,7 +473,18 @@
           "requires": {},
           "roll": {
             "stat": "charisma",
-            "dc": 12
+            "dc": 12,
+            "bonus": [
+              {
+                "when": {
+                  "taken": [
+                    "act1_ch4_lira:just_sit_with_lira"
+                  ]
+                },
+                "value": 2,
+                "label": "You sat with Lira and asked nothing"
+              }
+            ]
           },
           "outcomes": {
             "success": {
@@ -605,8 +625,31 @@
           "text": "Come back. Show her who you are over the next two days.",
           "requires": {},
           "roll": {
-            "stat": "charisma",
-            "dc": 13
+            "stat": [
+              "charisma",
+              "stamina"
+            ],
+            "dc": 13,
+            "bonus": [
+              {
+                "when": {
+                  "flags": {
+                    "lira_met": true
+                  }
+                },
+                "value": 2,
+                "label": "Lira knows you"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "branch_met": true
+                  }
+                },
+                "value": 2,
+                "label": "Branch has met you"
+              }
+            ]
           },
           "outcomes": {
             "success": {

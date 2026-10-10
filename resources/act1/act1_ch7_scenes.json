@@ -115,7 +115,10 @@
           "text": "Copy the carvings into your journal. Take them with you.",
           "requires": {},
           "roll": {
-            "stat": "intelligence",
+            "stat": [
+              "intelligence",
+              "dexterity"
+            ],
             "dc": 10
           },
           "outcomes": {
@@ -143,7 +146,11 @@
             "failure": {
               "text": "The carvings are too complex in too little time. You capture what you can — the major landmarks, some of the symbols — but the connections between them elude you. You commit what you can to memory.",
               "next_scene": "act1_ch7_forest_edge",
-              "state_changes": {}
+              "state_changes": {
+                "resources": {
+                  "health": -5
+                }
+              }
             }
           }
         },
@@ -157,6 +164,47 @@
               "text": "You stand in the cellar for ten minutes and look. You commit the major features to the part of your memory that keeps things.\n\nThen you go up and sleep in the barn. Tomorrow.",
               "next_scene": "act1_ch7_forest_edge",
               "state_changes": {}
+            }
+          }
+        },
+        {
+          "id": "shift_the_boxes",
+          "text": "Shift the stacked boxes along the back wall without bringing them down.",
+          "requires": {},
+          "roll": {
+            "stat": "strength",
+            "dc": 10
+          },
+          "outcomes": {
+            "success": {
+              "text": "The boxes along the back wall are packed tight, floor to beam. You take them down one at a time and set them on the floor in the order they came off.\n\nBehind the last of them is a bundle of sacking tied with twine. A blanket, a tin cup, a candle end. And a small figure carved from bone, no longer than your thumb, worn smooth where somebody's fingers held it.\n\nYou take the figure. You leave the rest where it was.",
+              "next_scene": "act1_ch7_forest_edge",
+              "state_changes": {
+                "inventory": [
+                  "carved_bone_figure"
+                ]
+              }
+            },
+            "success_at_cost": {
+              "text": "Two boxes come down together and you catch the second against your chest. Something inside it breaks. Behind the stack is a bundle of sacking: a blanket, a cup, a candle end, and a small figure carved from bone. You take the figure. Your arms ache all the way back to the barn.",
+              "next_scene": "act1_ch7_forest_edge",
+              "state_changes": {
+                "inventory": [
+                  "carved_bone_figure"
+                ],
+                "resources": {
+                  "health": -3
+                }
+              }
+            },
+            "failure": {
+              "text": "The stack goes. It comes down all at once, louder than anything in Harrow has been for months, and the dust takes a long time to settle. You sit on the cellar step with your sleeve over your mouth until it does. Whatever was behind the boxes is under them now.",
+              "next_scene": "act1_ch7_forest_edge",
+              "state_changes": {
+                "resources": {
+                  "health": -8
+                }
+              }
             }
           }
         }
@@ -191,12 +239,9 @@
           "id": "wait_sense_behind",
           "text": "Wait. Something behind you.",
           "requires": {},
-          "roll": {
-            "stat": "perception",
-            "dc": 11
-          },
+          "roll": null,
           "outcomes": {
-            "success": {
+            "default": {
               "text": "You heard her before she intended to be heard — footsteps on the road behind you, a measured pace, someone moving with purpose and some haste.\n\nMaret comes out of the Harrow tree line. She is carrying a pack. She looks at you at the forest edge and does not look surprised to see you standing there.",
               "next_scene": "act1_ch7_maret_follows",
               "state_changes": {
@@ -204,22 +249,22 @@
                   "maret_followed": true
                 }
               }
-            },
-            "success_at_cost": {
-              "text": "You hear something a second before she steps out of the trees. Not enough warning to do more than turn.",
+            }
+          }
+        },
+        {
+          "id": "watch_who_follows",
+          "text": "Step off the road and watch who is following.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You step back into the last of the ordinary trees and wait.\n\nIt is Maret. She comes along the road with a pack on her back, fast, and stops short of the line. She does not see you. She stands facing the dark trees with her hands at her sides and says something to them, too quietly to carry. She waits, as if for an answer.\n\nThen she turns, and finds you watching.",
               "next_scene": "act1_ch7_maret_follows",
               "state_changes": {
                 "flags": {
-                  "maret_followed": true
-                }
-              }
-            },
-            "failure": {
-              "text": "She steps out of the trees behind you and you turn at the sound. For a moment you are both still.",
-              "next_scene": "act1_ch7_maret_follows",
-              "state_changes": {
-                "flags": {
-                  "maret_followed": true
+                  "maret_followed": true,
+                  "saw_maret_at_line": true
                 }
               }
             }
@@ -276,7 +321,11 @@
         {
           "id": "accept_maret_companion",
           "text": "\"Come then. You know what you are getting into.\"",
-          "requires": {},
+          "requires": {
+            "min_relationship": {
+              "maret": 30
+            }
+          },
           "roll": null,
           "outcomes": {
             "default": {
@@ -293,7 +342,8 @@
                 }
               }
             }
-          }
+          },
+          "locked_hint": "Needs Maret to trust you"
         },
         {
           "id": "refuse_maret_companion",

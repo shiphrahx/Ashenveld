@@ -31,6 +31,9 @@ export function meets(c: Condition | undefined | null, s: GameState): boolean {
   if (c.min_curse !== undefined && s.world.curse_spread < c.min_curse) return false
   if (c.max_curse !== undefined && s.world.curse_spread > c.max_curse) return false
   if (c.min_gold !== undefined && s.player.resources.gold < c.min_gold) return false
+  const counter = (id: string) => s.counters?.[id] ?? 0
+  for (const [k, v] of Object.entries(c.min_counter ?? {})) if (counter(k) < v) return false
+  for (const [k, v] of Object.entries(c.max_counter ?? {})) if (counter(k) > v) return false
   if (c.health_below !== undefined && s.player.resources.health >= c.health_below) return false
   if (c.any && !c.any.some(x => meets(x, s))) return false
   if (c.not && meets(c.not, s)) return false
