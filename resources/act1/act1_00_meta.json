@@ -16,7 +16,8 @@
       "personality": "Cautious. Tired. Knows more than he says. Was kind once.",
       "secret": "He saw the missing person leave with a Rootless woman the night before they disappeared into the forest.",
       "initial_closeness": 0,
-      "faction_alignment": "none"
+      "faction_alignment": "none",
+      "read": "He watches the door more than the room. Whatever he is waiting for, it is not a customer."
     },
     "maret": {
       "id": "maret",
@@ -27,7 +28,8 @@
       "secret": "She was the last person to see the missing person alive. She made a private arrangement with the curse to protect her people. It cost her something she will not name.",
       "initial_closeness": 0,
       "faction_alignment": "rootless",
-      "archetype": "mirror"
+      "archetype": "mirror",
+      "read": "She answers before you have finished asking. People who have rehearsed do that."
     },
     "lira": {
       "id": "lira",
@@ -38,7 +40,8 @@
       "secret": "She has been inside the ruins outskirts and came back changed. She will not say what she saw.",
       "initial_closeness": 0,
       "faction_alignment": "rootless",
-      "archetype": "dependent"
+      "archetype": "dependent",
+      "read": "Her hands keep working while she talks. When they stop, she has lost the thread."
     },
     "branch": {
       "id": "branch",
@@ -49,7 +52,8 @@
       "secret": "He recognises the player from a military record he should not have access to.",
       "initial_closeness": 0,
       "faction_alignment": "rootless",
-      "archetype": "rival"
+      "archetype": "rival",
+      "read": "He stands where he can see the path and the tents at once. He has never come off duty."
     },
     "lieutenant_cael": {
       "id": "lieutenant_cael",
@@ -59,7 +63,8 @@
       "personality": "Professional. Polite in a way that does not reach his eyes. Following orders he half-believes in.",
       "secret": "Commander Vorne's daughter is showing early curse symptoms. Cael knows. Vorne does not yet.",
       "initial_closeness": 0,
-      "faction_alignment": "iron_compact"
+      "faction_alignment": "iron_compact",
+      "read": "He smiles with the bottom half of his face. The top half is counting what you carry."
     },
     "priest_edric": {
       "id": "priest_edric",
@@ -69,7 +74,8 @@
       "personality": "Devout. Precise. Believes completely. The certainty never wavers even when the facts argue against it.",
       "secret": "The Covenant's oldest texts describe exactly what is happening. He knows the purification ritual will kill as many as the curse does.",
       "initial_closeness": 0,
-      "faction_alignment": "ashen_covenant"
+      "faction_alignment": "ashen_covenant",
+      "read": "He does not hedge. Men who never hedge have usually stopped checking."
     },
     "dockworker_sen": {
       "id": "dockworker_sen",
@@ -79,7 +85,8 @@
       "personality": "Weathered. Nostalgic. Frightened but will not say of what.",
       "secret": "He saw something in the river three weeks ago that he has told no one.",
       "initial_closeness": 10,
-      "faction_alignment": "none"
+      "faction_alignment": "none",
+      "read": "He keeps looking at the water, as if the river owes him an answer."
     },
     "corvin": {
       "id": "corvin",
@@ -89,7 +96,8 @@
       "personality": "Eighty years old. Seen everything. Says exactly what he means in as few words as possible.",
       "secret": "He saw the missing person and the Rootless woman together, the night before they went east.",
       "initial_closeness": 5,
-      "faction_alignment": "none"
+      "faction_alignment": "none",
+      "read": "He tells you more than he means to, and he knows exactly how much."
     },
     "hanna": {
       "id": "hanna",
@@ -99,7 +107,8 @@
       "personality": "Efficient. Frightened. Doing what she can for people who are worse off. Running low on optimism.",
       "secret": "She has been supplementing the Rootless camp with grain she writes off the books. If the Compact found out she would lose her stall.",
       "initial_closeness": 0,
-      "faction_alignment": "none"
+      "faction_alignment": "none",
+      "read": "She weighs the grain twice. She does not trust her own hands any more."
     },
     "still_man_wren": {
       "id": "still_man_wren",
@@ -109,7 +118,8 @@
       "personality": "Was warm, community-minded, the person everyone liked. Now diminished. Still present, partially.",
       "secret": "He went to the forest edge alone six months ago, touched something, and came back changed. He has told no one.",
       "initial_closeness": 0,
-      "faction_alignment": "none"
+      "faction_alignment": "none",
+      "read": "Somebody is still in there. He turns his cup so the handle faces the fire."
     }
   },
   "locations": {
