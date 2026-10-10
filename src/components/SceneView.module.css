@@ -254,3 +254,8 @@
   border-bottom: 1px dotted var(--partial);
   white-space: nowrap;
 }
+
+/* G12: what you are missing */
+.locked { cursor: default; opacity: 1; border-style: dashed; color: var(--text-muted); }
+.locked:hover { border-color: var(--border-dim); background: none; color: var(--text-muted); }
+.lockHint { font-size: var(--fs-small); color: var(--text-faint); white-space: nowrap; }

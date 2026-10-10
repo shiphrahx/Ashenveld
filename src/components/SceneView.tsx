@@ -35,6 +35,16 @@ function isChoiceVisible(choice: Choice, state: GameState, sceneId: string): boo
   return meets(choice.requires, state)
 }
 
+// ── Locked choices (G12) ───────────────────────────────────────────────────────
+
+/** Choices with a hint whose requirement fails: shown disabled, two at most, class locks first. */
+function lockedChoices(scene: Scene, state: GameState): Choice[] {
+  return scene.choices
+    .filter(c => c.locked_hint && !meets(c.requires, state) && !(c.once && state.taken?.[`${scene.id}:${c.id}`]))
+    .sort((a, b) => Number(Boolean(b.requires?.class)) - Number(Boolean(a.requires?.class)))
+    .slice(0, 2)
+}
+
 // ── Choice tag: stat and odds in words (G4) ───────────────────────────────────
 
 const pct = (x: number) => `${Math.round(x * 100)}%`
@@ -81,6 +91,7 @@ export default function SceneView({ scene, state, onChoice }: Props) {
 
   const { main, aside } = sceneText(scene, state)
   const visibleChoices = scene.choices.filter(c => isChoiceVisible(c, state, scene.id))
+  const locked = lockedChoices(scene, state)
   const outcomeText = shownOutcome ? resolveRich(shownOutcome.outcome.text, state) : ''
   // G5, the Cipher's Read: a private line the first time someone's closeness moves.
   const reads = useMemo(() => {
@@ -220,7 +231,14 @@ export default function SceneView({ scene, state, onChoice }: Props) {
           )}
         </button>
       )
-    })
+    }).concat(locked.map(choice => (
+      <button key={choice.id} className={`${styles.ch} ${styles.locked}`} disabled data-locked-id={choice.id}
+        aria-label={`${resolveRich(choice.text, state)}. ${choice.locked_hint}`}>
+        <span className={styles.mk} aria-hidden="true">·</span>
+        <span className={styles.lb}><Inline text={resolveRich(choice.text, state)} /></span>
+        <span className={styles.lockHint}>{choice.locked_hint}</span>
+      </button>
+    )))
   )
 
   return (
