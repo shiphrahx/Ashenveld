@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react'
 import type { GameState, Scene, Outcome, JournalEntry } from './types'
-import { initLoader, resolveScene, locationName, peekScene, getMasterIndex } from './loader'
+import { initLoader, resolveScene, locationName, peekScene, getMasterIndex, getLocation } from './loader'
 import LoadingScreen from './components/LoadingScreen'
 import ErrorScreen from './components/ErrorScreen'
 import { DIMMING, REST, restOption, type RestOption } from './rules'
@@ -345,7 +345,8 @@ export default function App() {
         <StarField />
         <div className={styles.shell}>
           <div className={styles.areaArt}>
-            <SceneArt locationName={locationName(gameState.world.current_location)} gameState={gameState} />
+            <SceneArt locationName={locationName(gameState.world.current_location)} gameState={gameState}
+              alt={getLocation(gameState.world.current_location)?.description ?? locationName(gameState.world.current_location)} />
           </div>
           <header className={styles.areaStatus}>
             <StatusStrip state={gameState} hideClock={hideClock} onOpen={() => openPanel('status')} />
