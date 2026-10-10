@@ -570,6 +570,11 @@
       "file": "act1_ch3_scenes.json",
       "act": 1,
       "chapter": 3
+    },
+    "act1_ch3_after_faction": {
+      "file": "act1_ch3_scenes.json",
+      "act": 1,
+      "chapter": 3
     }
   },
   "starting_scene": "act1_ch1_barge_arrival",
@@ -643,6 +648,16 @@
       "note": "Market to faction introductions"
     },
     {
+      "from": "act1_ch2_market_rumour_missing",
+      "to": "act1_ch3_covenant_introduction",
+      "note": "Chapter change"
+    },
+    {
+      "from": "act1_ch3_after_faction",
+      "to": "act1_ch5_player_curse_touch",
+      "note": "Chapter change"
+    },
+    {
       "from": "act1_ch3_maret_first_meeting",
       "to": "act1_ch4_maret_opens",
       "note": "Chapter change"
@@ -666,6 +681,16 @@
       "from": "act1_ch4_maret_letter_withheld",
       "to": "act1_ch5_curse_event",
       "note": "Letter withheld path to ch5"
+    },
+    {
+      "from": "act1_ch5_faction_responses",
+      "to": "act1_ch3_compact_introduction",
+      "note": "Chapter change"
+    },
+    {
+      "from": "act1_ch5_faction_responses",
+      "to": "act1_ch3_covenant_introduction",
+      "note": "Chapter change"
     },
     {
       "from": "act1_ch5_class_specific",

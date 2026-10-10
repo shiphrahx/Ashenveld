@@ -283,6 +283,19 @@
               "state_changes": {}
             }
           }
+        },
+        {
+          "id": "visit_shrine_first",
+          "text": "Visit the Covenant shrine first.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "The shrine is in the old alderman's hall, with a grey flag over the door. Somebody has swept the steps this morning.",
+              "next_scene": "act1_ch3_covenant_introduction",
+              "state_changes": {}
+            }
+          }
         }
       ]
     },
