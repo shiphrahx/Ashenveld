@@ -25,7 +25,48 @@
         }
       },
       "text": {
-        "default": "You wake up in Crestfall on the seventeenth day and you know, with the specific clarity that comes from decisions that have finally settled, that you are not leaving.\n\nThe decision was made last night. This morning it is simply true, the way facts become true when the deciding is done — not a question anymore, not a weight, just a condition of the world you are now operating in.\n\n[missing person] is awake before you. They are at the window looking out at the market square. The square, in the morning light, is doing something it has not done in weeks: it is busy. Not crowded — busy, which is different. People moving with the particular quality of people who have decided there are things worth doing today.",
+        "default": [
+          "You wake up in Crestfall on the seventeenth day and you know, with the specific clarity that comes from decisions that have finally settled, that you are not leaving.",
+          "The decision was made last night. This morning it is simply true, the way facts become true when the deciding is done — not a question anymore, not a weight, just a condition of the world you are now operating in.",
+          "[missing person] is awake before you. They are at the window looking out at the market square. The square, in the morning light, is doing something it has not done in weeks: it is busy. Not crowded — busy, which is different. People moving with the particular quality of people who have decided there are things worth doing today.",
+          {
+            "when": {
+              "any": [
+                {
+                  "inventory": [
+                    "harrow_papers"
+                  ]
+                },
+                {
+                  "flags": {
+                    "read_harrow_records": true
+                  }
+                }
+              ]
+            },
+            "text": "On the last day in the ruins you went to the gate stones once more. You had found the name in the old man's entries. \"Joren,\" you said."
+          },
+          {
+            "when": {
+              "any": [
+                {
+                  "inventory": [
+                    "harrow_papers"
+                  ]
+                },
+                {
+                  "flags": {
+                    "read_harrow_records": true
+                  }
+                }
+              ],
+              "flags": {
+                "watcher_holds_figure": true
+              }
+            },
+            "text": "He looked up from the figure in his hands. \"Yes,\" he said."
+          }
+        ],
         "commander": "You stand beside them at the window and read the market the way you would read a position that has been secured and now requires administration rather than defence.\n\n\"We need to make a list,\" you say.\n\nThey look at you. Then, slowly, they smile — the first real one since you found them in the ruins, not the careful managed expression but the one you remember from before.\n\n\"Always,\" they say. \"Always with the lists.\"",
         "arcane": "The ambient in Crestfall this morning is measurably different from yesterday. Not dramatically — incrementally. But the increment is in the right direction.\n\nYou make a note in your journal. Day seventeen. Baseline established.\n\nYou have decided to stay and you have decided to document everything. Ashenveld is the most significant field site you will ever have access to and you have just committed to spending the foreseeable future in it. You are aware that this is either your best decision or your worst and that the distinction may take years to become clear.",
         "ranger": "The birds are back in the market square this morning. Two sparrows and something larger you do not immediately identify — a species that normally keeps further into the ordinary forest, moving closer now that the forest is becoming ordinary again.\n\nYou note this. You will note it again tomorrow and the day after and the day after that. The recovery of Ashenveld's wildlife will be the clearest measure of what the sealing achieved.\n\n[missing person] is at the window. You stand beside them and you watch the birds.",
@@ -85,7 +126,50 @@
         }
       },
       "text": {
-        "default": "You and [missing person] leave Crestfall on the seventeenth day.\n\nThe west road. The one you did not arrive on — the one that goes away from Ashenveld into the rest of the world, the part that does not have ruins under its forests or curses in its groundwater or people going quietly dim.\n\nThe morning is ordinary. Overcast. Cold in the specific way of late autumn in this part of the world.\n\nYou walk. They walk beside you. The distance between you and Crestfall grows at the rate of walking — two miles an hour, approximately, which is slow enough to see everything you are passing and fast enough that returning would require a decision.\n\nYou do not return.",
+        "default": [
+          "You and [missing person] leave Crestfall on the seventeenth day.",
+          "The west road. The one you did not arrive on — the one that goes away from Ashenveld into the rest of the world, the part that does not have ruins under its forests or curses in its groundwater or people going quietly dim.",
+          "The morning is ordinary. Overcast. Cold in the specific way of late autumn in this part of the world.",
+          "You walk. They walk beside you. The distance between you and Crestfall grows at the rate of walking — two miles an hour, approximately, which is slow enough to see everything you are passing and fast enough that returning would require a decision.",
+          "You do not return.",
+          {
+            "when": {
+              "any": [
+                {
+                  "inventory": [
+                    "harrow_papers"
+                  ]
+                },
+                {
+                  "flags": {
+                    "read_harrow_records": true
+                  }
+                }
+              ]
+            },
+            "text": "On the last day in the ruins you went to the gate stones once more. You had found the name in the old man's entries. \"Joren,\" you said."
+          },
+          {
+            "when": {
+              "any": [
+                {
+                  "inventory": [
+                    "harrow_papers"
+                  ]
+                },
+                {
+                  "flags": {
+                    "read_harrow_records": true
+                  }
+                }
+              ],
+              "flags": {
+                "watcher_holds_figure": true
+              }
+            },
+            "text": "He looked up from the figure in his hands. \"Yes,\" he said."
+          }
+        ],
         "commander": "You carry what you left with. Your pack. Your skills. The specific knowledge of what is in the ruins and what was done about it.\n\nYou left Crestfall without telling Vorne everything. The documentation he was promised — [missing person] will send it, eventually, from wherever you end up. It will be complete. You gave your word.\n\nThe west road. Ordinary trees. You walk.",
         "arcane": "You carry your journal. Fourteen months of [missing person]'s notes, copied in the days before you left, will travel with you.\n\nYou are leaving the most significant field site of your career. You are doing this because the person beside you matters more than the field site. You note both facts without resolving the tension between them.\n\nThe west road. You walk. You write as you walk, because you are you.",
         "ranger": "The ordinary forest on the west road. Birds. Deer — the right kind, moving correctly, aware of you and making the appropriate calculation about whether you are a threat.\n\nYou are not a threat. You are two people walking away from something and toward something that does not have a name yet.\n\nThe forest is ordinary. After weeks in Ashenveld, ordinary is almost overwhelming.",
@@ -144,7 +228,50 @@
         }
       },
       "text": {
-        "default": "They are gone. You watched them leave the Tallow and cross the market square and you are still sitting at your table.\n\nAldous brings you something without being asked. He does this — the specific competence of an innkeeper who understands that some moments require something in your hand without you having to ask for it.\n\n\"How long?\" he says.\n\n\"A week,\" you say. \"Maybe two.\"\n\nHe nods. He does not say: you said that about Ashenveld when you arrived. He is too good at his work to say that.",
+        "default": [
+          "They are gone. You watched them leave the Tallow and cross the market square and you are still sitting at your table.",
+          "Aldous brings you something without being asked. He does this — the specific competence of an innkeeper who understands that some moments require something in your hand without you having to ask for it.",
+          "\"How long?\" he says.",
+          "\"A week,\" you say. \"Maybe two.\"",
+          "He nods. He does not say: you said that about Ashenveld when you arrived. He is too good at his work to say that.",
+          {
+            "when": {
+              "any": [
+                {
+                  "inventory": [
+                    "harrow_papers"
+                  ]
+                },
+                {
+                  "flags": {
+                    "read_harrow_records": true
+                  }
+                }
+              ]
+            },
+            "text": "On the last day in the ruins you went to the gate stones once more. You had found the name in the old man's entries. \"Joren,\" you said."
+          },
+          {
+            "when": {
+              "any": [
+                {
+                  "inventory": [
+                    "harrow_papers"
+                  ]
+                },
+                {
+                  "flags": {
+                    "read_harrow_records": true
+                  }
+                }
+              ],
+              "flags": {
+                "watcher_holds_figure": true
+              }
+            },
+            "text": "He looked up from the figure in his hands. \"Yes,\" he said."
+          }
+        ],
         "commander": "A week. Possibly two. You have commitments to finish — the documentation, the Compact arrangement, the Rootless camp's formal recognition. Things that will not hold if they are not properly tied off.\n\nYou have made a promise. You do not leave promises untied.",
         "arcane": "The documentation needs to be complete before you leave. [missing person]'s notes, your own observations, Pol's scholarship. The account of what happened in the ruins and what it means.\n\nThis is the work of a week. Possibly longer. You will do it in the time you have.",
         "ranger": "The land's recovery needs to be documented at this stage. Before you leave. The baseline, the direction, the rate. Someone needs to know what to look for and how to read it.\n\nYou spend the first morning teaching Branch. He is a better student than he lets on.",
@@ -204,7 +331,49 @@
         }
       },
       "text": {
-        "default": "The door of the Tallow closes behind them and you are alone at your table.\n\nAldous does not say anything. He has been a barman long enough to know when silence is the right response.\n\nYou sit with what you chose. Not regretting it — you do not yet know if it is the kind of choice that regret applies to. It is the kind of choice that has consequences and you will discover what the consequences are by living into them.\n\nOutside, Crestfall is beginning its seventeenth day. Slowly. With the specific quality of a place that has been diminished and is discovering, incrementally, that diminishment is not the same as ending.",
+        "default": [
+          "The door of the Tallow closes behind them and you are alone at your table.",
+          "Aldous does not say anything. He has been a barman long enough to know when silence is the right response.",
+          "You sit with what you chose. Not regretting it — you do not yet know if it is the kind of choice that regret applies to. It is the kind of choice that has consequences and you will discover what the consequences are by living into them.",
+          "Outside, Crestfall is beginning its seventeenth day. Slowly. With the specific quality of a place that has been diminished and is discovering, incrementally, that diminishment is not the same as ending.",
+          {
+            "when": {
+              "any": [
+                {
+                  "inventory": [
+                    "harrow_papers"
+                  ]
+                },
+                {
+                  "flags": {
+                    "read_harrow_records": true
+                  }
+                }
+              ]
+            },
+            "text": "On the last day in the ruins you went to the gate stones once more. You had found the name in the old man's entries. \"Joren,\" you said."
+          },
+          {
+            "when": {
+              "any": [
+                {
+                  "inventory": [
+                    "harrow_papers"
+                  ]
+                },
+                {
+                  "flags": {
+                    "read_harrow_records": true
+                  }
+                }
+              ],
+              "flags": {
+                "watcher_holds_figure": true
+              }
+            },
+            "text": "He looked up from the figure in his hands. \"Yes,\" he said."
+          }
+        ],
         "commander": "You made a choice. You are the kind of person who makes choices and holds them.\n\nThe person you let leave will either understand or they will not. Either way, you are here. Ashenveld is here. The work is here.\n\nYou go find Maret. You have things to discuss.",
         "arcane": "The loneliness of the choice hits you with a delay — not in the moment, but twenty minutes later when you look up from the table and the seat across from you is empty and will be empty for the foreseeable future.\n\nYou note the feeling the way you note everything: as data. Present. Real. Worth attending to.\n\nThen you open your journal.",
         "ranger": "You chose to stay and they chose to go and both of those things are real.\n\nYou go outside. The market square. The birds this morning. The specific quality of Crestfall in early recovery — not healed, not well, but alive and moving in the right direction.\n\nYou are part of why it is moving in the right direction. You stay because of that. The other reason — the one that is walking away on the west road — you hold separately.",

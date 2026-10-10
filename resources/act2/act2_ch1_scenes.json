@@ -426,6 +426,36 @@
           }
         },
         {
+          "id": "set_down_the_figure",
+          "text": "Set the bone figure on the ground in front of them.",
+          "requires": {
+            "inventory": [
+              "carved_bone_figure"
+            ]
+          },
+          "roll": null,
+          "locked_hint": "Needs the bone figure from Harrow",
+          "outcomes": {
+            "default": {
+              "text": "You crouch, set the figure on the stone in front of their boots, and step back.\n\nNothing, for a long time. Then one hand comes down off their knee and finds it, the way a hand finds a cup in the dark. They hold it. They do not look at it. Their thumb moves across the face that is not there.",
+              "next_scene": "act2_ch1_missing_person_approach",
+              "state_changes": {
+                "flags": {
+                  "watcher_holds_figure": true
+                },
+                "relationships": {
+                  "ruins_watcher": {
+                    "closeness": 15
+                  }
+                },
+                "inventory_remove": [
+                  "carved_bone_figure"
+                ]
+              }
+            }
+          }
+        },
+        {
           "id": "wait_at_gate",
           "text": "Follow the instruction. Wait at the gate.",
           "requires": {},

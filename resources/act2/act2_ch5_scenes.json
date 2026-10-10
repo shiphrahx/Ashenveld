@@ -32,6 +32,14 @@
             "text": "The ruins receive you back with the specific quality of a place that has not changed while you have. The grey light. The silence with mass. The Watcher at the gate, unchanged, who says \"[player]\" again when you pass. The same word, the same flat tone.",
             "else": "The ruins receive you back with the specific quality of a place that has not changed while you have. The grey light. The silence with mass. The Watcher at the gate, unchanged, who does not turn."
           },
+          {
+            "when": {
+              "flags": {
+                "watcher_holds_figure": true
+              }
+            },
+            "text": "They are turning the bone figure over and over in their hands."
+          },
           "[missing person] is where you left them. They look up when they hear your steps in the outskirts with the specific attention of someone who has spent months listening for footsteps and has learned to read everything about a person from the sound of them walking.",
           "\"Two days,\" you say.",
           "They nod. \"Two days is enough.\""
