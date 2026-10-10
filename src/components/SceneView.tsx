@@ -28,6 +28,8 @@ interface Props {
   onEngage?: () => void
   /** E9 'touch': the choices wait this long whatever happens. */
   holdChoicesMs?: number
+  /** E10: a rolled choice is hovered or focused; the sidebar lights its stat. */
+  onHoverStat?: (stat: string | null) => void
 }
 
 // Roman numerals for choice markers, matching the prototype
@@ -87,7 +89,7 @@ function outcomeClass(rollResult: RollResult, choice: Choice): string {
 
 // ── Component ─────────────────────────────────────────────────────────────────
 
-export default function SceneView({ scene, state, onChoice, seenBefore = false, chapterNote = null, onEngage, holdChoicesMs = 0 }: Props) {
+export default function SceneView({ scene, state, onChoice, seenBefore = false, chapterNote = null, onEngage, holdChoicesMs = 0, onHoverStat }: Props) {
   const { settings } = useSettings()
   const [rollResult, setRollResult] = useState<RollResult | null>(null)
   const [activeChoice, setActiveChoice] = useState<Choice | null>(null)
@@ -277,6 +279,10 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false, 
           className={styles.ch}
           onClick={() => handleChoiceClick(choice)}
           aria-describedby={tag ? tipId : undefined}
+          onPointerEnter={tag ? () => onHoverStat?.(resolveRoll(choice.roll!, state).stat) : undefined}
+          onPointerLeave={tag ? () => onHoverStat?.(null) : undefined}
+          onFocus={tag ? () => onHoverStat?.(resolveRoll(choice.roll!, state).stat) : undefined}
+          onBlur={tag ? () => onHoverStat?.(null) : undefined}
         >
           <kbd className={styles.mk} aria-hidden="true">{KEYS[i] ?? String(i + 1)}</kbd>
           <span className={styles.lb}><Inline text={resolveRich(choice.text, state)} /></span>

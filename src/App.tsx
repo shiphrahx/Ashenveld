@@ -96,6 +96,7 @@ export default function App() {
 
   // ── E9: staged scenes ────────────────────────────────────────────────────────
   const [engaged, setEngaged] = useState(false)          // a choice has been made in this scene
+  const [hoverStat, setHoverStat] = useState<string | null>(null)
   const [frozenArt, setFrozenArt] = useState(false)      // 'stopped': everything that moves holds still
   const [touching, setTouching] = useState(false)        // 'touch': the shell greys and comes back
   const [closing, setClosing] = useState(false)          // the last fade before the end screen
@@ -106,6 +107,7 @@ export default function App() {
   useEffect(() => {
     if (!stageScene) return
     setEngaged(false)
+    setHoverStat(null)
     if (stage === 'stopped') {
       setFrozenArt(true)
       const t = setTimeout(() => setFrozenArt(false), 2000)
@@ -482,10 +484,10 @@ export default function App() {
           <main className={`${styles.areaStory} ${storyFade === 'out' ? styles.storyOut : storyFade === 'in' ? styles.storyIn : ''}`}
             inert={storyFade === 'out'} data-leaving={storyFade === 'out' ? '' : undefined}>
             <SceneView scene={currentScene} state={gameState} onChoice={handleChoice} seenBefore={seenBefore} chapterNote={chapterNote}
-              onEngage={() => setEngaged(true)} holdChoicesMs={touching ? TOUCH_MS : 0} />
+              onEngage={() => setEngaged(true)} holdChoicesMs={touching ? TOUCH_MS : 0} onHoverStat={setHoverStat} />
           </main>
           <div className={styles.areaSide}>
-            <Sidebar state={gameState} onOpen={openPanel} hideClock={hideClock} journalDot={journalDot} flash={flash} rest={rest} onRest={onRestPressed} dimmingDelta={dimmingDelta} />
+            <Sidebar state={gameState} onOpen={openPanel} hideClock={hideClock} journalDot={journalDot} flash={flash} highlightStat={hoverStat} rest={rest} onRest={onRestPressed} dimmingDelta={dimmingDelta} />
           </div>
           <div className={styles.areaTabs}>
             <TabBar onOpen={openPanel} journalDot={journalDot} />

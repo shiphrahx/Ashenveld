@@ -233,3 +233,8 @@
 .facMark { width: 12px; height: 12px; margin-right: 6px; vertical-align: -1px; color: var(--blue-moon); }
 
 .sblRow { display: flex; align-items: center; justify-content: space-between; margin-top: -6px; margin-bottom: 4px; }
+
+/* E10: the stat a choice would roll */
+.statRow { border-radius: 2px; transition: background 150ms ease; }
+.statLit { background: rgba(74, 106, 154, 0.18); box-shadow: -6px 0 0 rgba(74, 106, 154, 0.18), 6px 0 0 rgba(74, 106, 154, 0.18); }
+.statLit .sn, .statLit .statVal { color: var(--white-cold); }
