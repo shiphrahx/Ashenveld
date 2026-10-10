@@ -318,9 +318,10 @@ export default function CharacterCreation({ onComplete, onBack }: Props) {
               {(missingName.trim() || relation) && (
                 <div className={styles.missingPreview}>
                   <div className={styles.previewText}>
-                    You grew up with{' '}
-                    <strong>{missingName.trim() || 'them'}</strong>{' '}
-                    in Ashenveld —{' '}
+                    {relation === 'Parent' ? <><strong>{missingName.trim() || 'They'}</strong> raised you in Ashenveld</>
+                      : relation === 'Mentor' ? <><strong>{missingName.trim() || 'They'}</strong> taught you everything you were good at</>
+                      : <>You grew up with <strong>{missingName.trim() || 'them'}</strong> in Ashenveld</>}
+                    {' '}—{' '}
                     {relation ? `your ${relation.toLowerCase()}` : 'someone you loved'}.
                     When you left, you told yourself you would come back for them.
                     You didn't. Then their letter arrived, and you understood that leaving

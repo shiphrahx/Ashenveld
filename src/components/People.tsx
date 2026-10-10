@@ -71,7 +71,7 @@ export default function People({ state, onClose }: Props) {
                   <span className={styles.personName}>{p.name}</span>
                   {p.faction && <span className={styles.personFaction}>{p.faction}</span>}
                 </div>
-                <div className={styles.personRole}>{p.role}</div>
+                <div className={styles.personRole}>{p.id === 'the_missing_person' && state.player.missing_person.relationship ? `Your ${state.player.missing_person.relationship}` : p.role}</div>
                 <div className={styles.closenessRow}>
                   <div className={styles.closenessBar}>
                     <div
