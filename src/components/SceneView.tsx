@@ -6,6 +6,7 @@ import { useSettings } from '../settings'
 import { meets } from '../conditions'
 import { sceneText, resolveRich, CLASS_LABELS } from '../text'
 import { Inline } from './Inline'
+import Para from './Para'
 import DiceOverlay from './DiceOverlay'
 import { useMediaQuery } from '../hooks/useMediaQuery'
 import { applyStateChanges, diffState } from '../gameState'
@@ -23,12 +24,6 @@ interface Props {
 
 // Roman numerals for choice markers, matching the prototype
 const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI']
-
-// ── Dialogue detection: lines that start with " are dialogue ─────────────────
-
-function isDialogue(line: string): boolean {
-  return line.trim().startsWith('"') || line.trim().startsWith('“')
-}
 
 // ── Choice visibility ──────────────────────────────────────────────────────────
 
@@ -268,16 +263,9 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
             <button className={styles.showScene} onClick={() => setShowScene(true)}>Show the scene again</button>
           )}
           <div className={collapsed ? styles.faded : undefined}>
-            {shownMain.map((p, i) => {
-              const dialogue = isDialogue(p)
-              return (
-                <p
-                  key={i}
-                  className={dialogue ? styles.nd : styles.np}
-                  style={dialogue ? undefined : { animationDelay: `${0.04 + i * 0.14}s` }}
-                ><Inline text={p} /></p>
-              )
-            })}
+            {shownMain.map((p, i) => (
+              <Para key={i} text={p} className={styles.np} style={{ animationDelay: `${0.04 + i * 0.14}s` }} />
+            ))}
 
             {shownAside.length > 0 && (
               <aside
@@ -286,7 +274,7 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
                 style={{ animationDelay: `${0.04 + shownMain.length * 0.14}s` }}
               >
                 <div className={styles.lensLabel}>{CLASS_LABELS[state.player.class]}</div>
-                {shownAside.map((p, i) => <p key={i}><Inline text={p} /></p>)}
+                {shownAside.map((p, i) => <Para key={i} text={p} />)}
               </aside>
             )}
           </div>
@@ -301,7 +289,7 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
               className={`${styles.outcomeBlock} ${shownOutcome.css ? styles[shownOutcome.css] : ''}`}
             >
               {outcomeText.split(/\n{2,}/).filter(Boolean).map((p, i) => (
-                <p key={i} style={{ marginBottom: '0.8em' }}><Inline text={p} /></p>
+                <Para key={i} text={p} style={{ marginBottom: '0.8em' }} />
               ))}
               {reads.length > 0 && (
                 <aside className={styles.lens} aria-label="The Cipher: your read">

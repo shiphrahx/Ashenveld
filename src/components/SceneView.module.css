@@ -57,18 +57,6 @@
 /* em inside np */
 .np em { color: var(--blue-ice); font-style: italic; }
 
-/* dialogue / indented paragraph */
-.nd {
-  font-size: inherit;
-  line-height: var(--story-leading);
-  color: var(--text-main);
-  padding: 4px 0 4px 20px;
-  border-left: 1px solid var(--blue-mid);
-  margin: -4px 0 22px;
-  opacity: 0;
-  animation: npIn 0.55s ease 0.28s forwards;
-}
-
 /* class aside: a second voice, not a separate feature */
 .lens {
   border-left: 1px solid var(--blue-mid);
@@ -207,7 +195,6 @@
 
 /* Text appears at once (U4) */
 :global(:root[data-reveal="instant"]) .np,
-:global(:root[data-reveal="instant"]) .nd,
 :global(:root[data-reveal="instant"]) .lens,
 :global(:root[data-reveal="instant"]) .outcomeBlock { animation: none; opacity: 1; transform: none; }
 
@@ -269,7 +256,7 @@
   text-transform: none;
   color: var(--text-muted);
 }
-.seen .np, .seen .nd, .seen .lens { animation: none; opacity: 1; transform: none; }
+.seen .np, .seen .lens { animation: none; opacity: 1; transform: none; }
 
 /* the folded scene is at 75%; the label needs a brighter colour to stay over 4.5:1 */
 .faded .lensLabel { color: var(--blue-moon); }
