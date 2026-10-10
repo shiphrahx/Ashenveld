@@ -17,7 +17,20 @@
       },
       "requires": {},
       "text": {
-        "default": "Crestfall in the morning is a study in what remains.\n\nThe baker's is open — Reisa, who has been baking since before you were born, working with the particular silence of someone who has decided silence is more honest than conversation. The church is open, the Ashen Covenant flag above its door, new since your time here. The smith's is not open. Neither is the cooper's. Or the chandler's.\n\nYou walk the main street and count the closed shops the way you counted the wrong things on the pier — automatically, a habit you cannot switch off.\n\nThe fountain in the market square has been dry for months. You can tell from the colour of the stone — the waterline, where the wet stopped. Someone left a bunch of dried flowers at its base. Nobody has removed them. They have been there long enough to go completely grey.",
+        "default": [
+          "Crestfall in the morning is a study in what remains.",
+          "The baker's is open — Reisa, who has been baking since before you were born, working with the particular silence of someone who has decided silence is more honest than conversation. The church is open, the Ashen Covenant flag above its door, new since your time here. The smith's is not open. Neither is the cooper's. Or the chandler's.",
+          "You walk the main street and count the closed shops the way you counted the wrong things on the pier — automatically, a habit you cannot switch off.",
+          "The fountain in the market square has been dry for months. You can tell from the colour of the stone — the waterline, where the wet stopped. Someone left a bunch of dried flowers at its base. Nobody has removed them. They have been there long enough to go completely grey.",
+          {
+            "when": {
+              "flags": {
+                "aldous_closed_off": true
+              }
+            },
+            "text": "Aldous did not look up when you left this morning."
+          }
+        ],
         "commander": "You walk Crestfall with the eye of someone used to assessing positions.\n\nThe town is defensible but unprepared — no organised patrol, Compact soldiers at one gate only, the rest of the perimeter unwatched. The population is reduced from what you remember, or they are staying inside, which amounts to the same thing. The Covenant has a visible presence. The Compact has a garrison presence. The Rootless camp apparently exists outside the town's administrative awareness, which is either an oversight or a decision.",
         "arcane": "You walk Crestfall and read it the way you read any site — looking for the shape of what has accumulated here.\n\nThe curse is visible to you, dimly, if you let your vision unfocus slightly. Not the curse itself but its effect on the ambient — a grey tinge to things, a quality of muffled sound, as if the town exists behind a veil that is getting very slightly thinner. The baker's bread probably tastes fine. But the intent behind baking it — the pleasure, the warmth — that quality is fading.\n\nThis is how the curse spreads. Not by taking life. By taking the sense that life is worth having.",
         "ranger": "You walk Crestfall and read it like territory.\n\nThe absence of animals is total within the town limits. You find one cat, under a porch on the north side, and it looks at you with the specific awareness of an animal that knows it is the last of its kind in a given space and has decided to stay anyway. You respect it for that.\n\nThe tree line to the east is visible from the market square. Further in than it used to be — not by much, maybe twenty metres, but the encroachment is measurable. The forest is taking ground slowly.",

@@ -61,7 +61,19 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "Cael is at the gate. He nods when he sees you. The nod means: you are doing what you said you would. He gives you one addition — a contact point, a passphrase, a way to send information back if you find something significant.\n\n\"Be thorough,\" he says. \"Whatever is in those ruins, Commander Vorne needs to know exactly what it is before he can act.\"\n\nThe word act. You note it.",
+              "text": [
+                "Cael is at the gate. He nods when he sees you. The nod means: you are doing what you said you would. He gives you one addition — a contact point, a passphrase, a way to send information back if you find something significant.",
+                "\"Be thorough,\" he says. \"Whatever is in those ruins, Commander Vorne needs to know exactly what it is before he can act.\"",
+                "The word act. You note it.",
+                {
+                  "when": {
+                    "flags": {
+                      "compact_message_read": true
+                    }
+                  },
+                  "text": "\"You read our mail and still took the job,\" Cael says. \"I respect that.\""
+                }
+              ],
               "next_scene": "act1_ch6_departure_decision",
               "state_changes": {
                 "flags": {

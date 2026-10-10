@@ -37,6 +37,14 @@
               }
             },
             "text": "Every month someone walks east to check the seal. This month it was Branch."
+          },
+          {
+            "when": {
+              "flags": {
+                "lira_recovering": true
+              }
+            },
+            "text": "Lira runs the herb stall on market days now."
           }
         ],
         "commander": "You have established a rhythm. Mornings: the documentation work with [missing person] and Pol. Afternoons: the political work — the Compact arrangements, the Covenant's reduced presence, the Rootless camp's growing formal role.\n\nVorne has reduced his garrison to twelve soldiers. The remaining twelve are doing useful things: road repair, supply distribution, the practical work of stabilisation that soldiers are good at when they are not being used for something more violent.\n\nYou and Vorne have found, through the friction of working in the same space, something that is not quite respect and is more useful than friendship.",

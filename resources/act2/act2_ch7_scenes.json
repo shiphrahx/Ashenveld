@@ -216,7 +216,23 @@
           },
           "\"The afflicted people.\"",
           "\"Unknown. The sealing stops the progression. Whether existing damage reverses — we will observe over the coming weeks.\"",
-          "He nods slowly. He is running a calculation you can partly read — what this means for his orders, for his mission, for the thirty soldiers and the resources deployed to Crestfall. What he tells his superiors. Whether what happened is a success or a failure from the Compact's perspective."
+          "He nods slowly. He is running a calculation you can partly read — what this means for his orders, for his mission, for the thirty soldiers and the resources deployed to Crestfall. What he tells his superiors. Whether what happened is a success or a failure from the Compact's perspective.",
+          {
+            "when": {
+              "flags": {
+                "issa_taken_by_compact": true
+              }
+            },
+            "text": "Issa is in the next room. She is worse than she was at the camp, and he knows it."
+          },
+          {
+            "when": {
+              "flags": {
+                "issa_agreement_reached": true
+              }
+            },
+            "text": "As you leave he says, \"My daughter asked after you.\""
+          }
         ],
         "commander": "You recognise Vorne's calculation because you have run versions of it yourself. He deployed thirty soldiers and a senior scholar to secure a significant asset. The asset has been secured — but by civilians, not the Compact, and through a method the Compact did not control.\n\nFrom a resource allocation perspective, his mission is a partial success at best. He stopped the spread. He did not secure the mechanism.\n\n\"Your daughter,\" you say. \"The sealing should slow her progression. Whether it reverses what has already happened — we will see.\"",
         "arcane": "Vorne is processing more than strategy. He is also processing his daughter. The sealing has changed Issa's prognosis — the curse is no longer actively progressing. Whether what has already happened to her reverses is unknown.\n\nHe is a man who has been trying to fix his daughter's situation by controlling the context she is in. The context has changed. The question now is whether he adjusts his methods to match.",

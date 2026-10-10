@@ -751,7 +751,21 @@
       },
       "requires": {},
       "text": {
-        "default": "She comes out of the camp and looks at you and you look at her and there is a brief moment — the span of a breath, not longer — where something moves in her face that she covers immediately. She knows the name you are going to say. You have not said it yet but she knows.\n\nThat is the first thing you learn about Maret.\n\n\"Sit down,\" she says, gesturing to a log bench at the camp's edge. \"I will hear what you have to say.\"\n\nShe sits across from you. Branch positions himself nearby in the specific way of someone who has been asked to be nearby. The camp around you continues its business — people moving, a child's voice somewhere, the smell of something cooking.\n\n\"You are looking for someone,\" Maret says. Not a question.",
+        "default": [
+          "She comes out of the camp and looks at you and you look at her and there is a brief moment — the span of a breath, not longer — where something moves in her face that she covers immediately. She knows the name you are going to say. You have not said it yet but she knows.",
+          "That is the first thing you learn about Maret.",
+          {
+            "when": {
+              "flags": {
+                "knows_maret_name": true
+              }
+            },
+            "text": "You have had her name from three mouths. None of them said it lightly."
+          },
+          "\"Sit down,\" she says, gesturing to a log bench at the camp's edge. \"I will hear what you have to say.\"",
+          "She sits across from you. Branch positions himself nearby in the specific way of someone who has been asked to be nearby. The camp around you continues its business — people moving, a child's voice somewhere, the smell of something cooking.",
+          "\"You are looking for someone,\" Maret says. Not a question."
+        ],
         "commander": "She takes in how you stand like someone who has dealt with commanders before and has finished taking their orders. She is not hostile about it. She is clear about the terms.",
         "arcane": "She looks at you with the specific attention of someone reading more than your face. You do the same to her — the residue on her is complex, layered in ways that take time to read. She has been near the curse for a long time. She is not afflicted. Whatever she did to avoid affliction, it was not the Covenant's methods.\n\nYou give her the name. She knew it before you said it.",
         "ranger": "Neither of you minds the quiet. It is the quiet of two people who are used to silence and know it can be used.\n\n\"You are from outside Ashenveld,\" she says. \"But you know this land. Your feet know where to step.\"",

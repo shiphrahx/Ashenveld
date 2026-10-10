@@ -684,7 +684,15 @@
           "Aldous tells you what he has seen in four days with the precision of a man who has been keeping a careful record in his head.",
           "Vorne arrived with thirty soldiers and the Covenant woman — Seriva — travelling as what he called an adviser. The Compact took three buildings without asking. They issued the east road notice within six hours of arrival.",
           "Seriva has been to the shrine twice. Each time she and Edric had a conversation that Edric visibly did not enjoy.",
-          "Wren — the still man who used to sit by the fire — is gone. He walked east four days ago, the morning after the Compact arrived, as if the commotion stirred something in him that directed him toward the forest. Nobody tried to stop him. Nobody knew what to do.",
+          {
+            "when": {
+              "flags": {
+                "knows_still_man_is_wren": true
+              }
+            },
+            "text": "Wren — the still man who used to sit by the fire — is gone. He walked east four days ago, the morning after the Compact arrived, as if the commotion stirred something in him that directed him toward the forest. Nobody tried to stop him. Nobody knew what to do.",
+            "else": "The still man by the fire is gone. You never learned his name. Aldous tells it to you now: Wren. He walked east four days ago, the morning after the Compact arrived, as if the commotion stirred something in him that directed him toward the forest. Nobody tried to stop him. Nobody knew what to do."
+          },
           "\"How many others?\" you ask.",
           "Aldous sets down his cloth. \"Since you left? Six. All east.\"",
           {
@@ -773,7 +781,15 @@
           "Branch is at the perimeter. Lira is at the centre of the camp with two other partially afflicted members, maintaining the routine that Maret has established for them. And in the corner of the camp, in a tent that has been made as comfortable as any tent in this collection can be, is a girl of about seventeen with grey at her fingertips and the specific vacant quality of early curse exposure.",
           "Issa Vorne. Commander Vorne's daughter.",
           "She does not know who you are. She looks at you when you approach with the unfocused attention of the early stages — not gone, not present, somewhere in between.",
-          "The herb garden has started to yellow along one edge. Branch has noticed. He has laid a row of stones along it, as if that would help."
+          "The herb garden has started to yellow along one edge. Branch has noticed. He has laid a row of stones along it, as if that would help.",
+          {
+            "when": {
+              "flags": {
+                "maret_sent_back": true
+              }
+            },
+            "text": "Maret, without looking up: \"You were right to send me back. I have not forgiven you for it.\""
+          }
         ],
         "commander": "You assess Issa with the professional eye. Early stage affliction — the fingertips, the attention. Not beyond treatment, possibly. Maret's methods have slowed the progression in others at this stage.\n\nBut Issa Vorne at the Rootless camp is a political problem of the first order. If Vorne knows she is here, his next action will be shaped by it entirely. If he does not know she is here, someone will tell him soon.",
         "arcane": "The affliction on Issa is readable. Recent — the past two weeks, not longer. The density is low enough that it is still in the stage where external intervention can slow the progression.\n\nThe relevant question is whether Commander Vorne knows that the Rootless camp is the safest place for his daughter right now, and whether knowing it would change his behaviour toward the camp.",
