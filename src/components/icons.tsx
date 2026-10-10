@@ -37,3 +37,20 @@ export function PartGlyph({ part, className }: { part: string; className?: strin
     </svg>
   )
 }
+
+/** Faction marks (A.7): a barred gate, a bowl under a circle, a tent line with a small flame. */
+const MARKS: Record<string, React.ReactNode> = {
+  iron_compact: <><path d="M5 21V8a7 7 0 0 1 14 0v13"/><path d="M9 21v-9M15 21v-9"/><path d="M3 14h18"/></>,
+  ashen_covenant: <><circle cx="12" cy="6" r="3"/><path d="M4 13h16a8 8 0 0 1-16 0z"/><path d="M9 21h6"/></>,
+  rootless: <><path d="M2 20l5-8 5 8M10 20l5-8 5 8"/><path d="M2 20h20"/><path d="M12 9c-1.2-1.3-1-3 0-5 1 2 1.2 3.7 0 5z"/></>,
+}
+
+export function FactionMark({ faction, className, title }: { faction: string; className?: string; title?: string }) {
+  if (!MARKS[faction]) return null
+  return (
+    <svg viewBox="0 0 24 24" className={className} role={title ? 'img' : undefined} aria-label={title} aria-hidden={title ? undefined : true}
+      focusable="false" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      {MARKS[faction]}
+    </svg>
+  )
+}
