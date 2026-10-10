@@ -264,7 +264,10 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "arcane": "replace"
+      }
     },
     {
       "id": "act2_ch3_crestfall_changed",
@@ -359,7 +362,10 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "ranger": "replace"
+      }
     },
     {
       "id": "act2_ch3_aldous_update",
@@ -518,7 +524,10 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "ranger": "replace"
+      }
     },
     {
       "id": "act2_ch3_pol_revelation",

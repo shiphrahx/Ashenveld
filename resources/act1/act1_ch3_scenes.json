@@ -68,7 +68,12 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "commander": "replace",
+        "arcane": "replace",
+        "cipher": "replace"
+      }
     },
     {
       "id": "act1_ch3_compact_offer",
@@ -613,7 +618,12 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "commander": "replace",
+        "ranger": "replace",
+        "cipher": "replace"
+      }
     }
   ]
 }

@@ -77,7 +77,10 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "ranger": "replace"
+      }
     },
     {
       "id": "act1_ch7_harrow_cellar",
@@ -233,7 +236,10 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "cipher": "replace"
+      }
     },
     {
       "id": "act1_ch7_maret_follows",
@@ -343,7 +349,10 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "cipher": "replace"
+      }
     },
     {
       "id": "act1_ch7_decision_enter",
@@ -423,7 +432,10 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "arcane": "replace"
+      }
     }
   ]
 }

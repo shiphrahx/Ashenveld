@@ -370,7 +370,10 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "commander": "replace"
+      }
     },
     {
       "id": "act1_ch6_missing_person_campsite",
@@ -441,7 +444,10 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "arcane": "replace"
+      }
     },
     {
       "id": "act1_ch6_harrow_arrival",

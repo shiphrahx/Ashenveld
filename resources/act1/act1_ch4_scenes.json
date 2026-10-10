@@ -552,7 +552,11 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "arcane": "replace",
+        "ranger": "replace"
+      }
     },
     {
       "id": "act1_ch4_maret_letter_withheld",

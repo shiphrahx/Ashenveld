@@ -58,7 +58,10 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "cipher": "replace"
+      }
     },
     {
       "id": "act2_ch7_crestfall_reception",
@@ -321,7 +324,10 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "ranger": "replace"
+      }
     }
   ]
 }

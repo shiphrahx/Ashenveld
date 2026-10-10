@@ -68,7 +68,13 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "commander": "replace",
+        "arcane": "replace",
+        "ranger": "replace",
+        "cipher": "replace"
+      }
     },
     {
       "id": "act1_ch1_docks_encounter",
@@ -197,7 +203,13 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "commander": "replace",
+        "arcane": "replace",
+        "ranger": "replace",
+        "cipher": "replace"
+      }
     },
     {
       "id": "act1_ch1_tallow_arrival",
@@ -328,7 +340,13 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "commander": "replace",
+        "arcane": "replace",
+        "ranger": "replace",
+        "cipher": "replace"
+      }
     },
     {
       "id": "act1_ch1_innkeeper_success",
@@ -702,7 +720,11 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "arcane": "replace",
+        "cipher": "replace"
+      }
     }
   ]
 }

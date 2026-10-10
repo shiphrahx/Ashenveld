@@ -93,7 +93,10 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "ranger": "replace"
+      }
     },
     {
       "id": "act3_ch4_resolution_alone",

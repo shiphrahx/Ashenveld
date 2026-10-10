@@ -119,7 +119,10 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "ranger": "replace"
+      }
     },
     {
       "id": "act2_ch6_ritual_engagement",
@@ -439,7 +442,10 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "arcane": "replace"
+      }
     }
   ]
 }

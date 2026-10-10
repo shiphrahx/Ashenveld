@@ -119,7 +119,10 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "cipher": "replace"
+      }
     },
     {
       "id": "act3_ch1_staying_briefly",

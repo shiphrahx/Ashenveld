@@ -406,7 +406,10 @@
             }
           }
         }
-      ]
+      ],
+      "text_mode": {
+        "arcane": "replace"
+      }
     },
     {
       "id": "act2_ch1_what_they_found",
