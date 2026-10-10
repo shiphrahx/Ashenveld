@@ -4,10 +4,18 @@
   "scenes": [
     {
       "id": "act1_ch6_departure_decision",
-      "act": 1, "chapter": 6,
+      "act": 1,
+      "chapter": 6,
       "location": "crestfall_tallow_inn",
       "title": "Before You Go",
-      "on_enter": { "state_changes": { "flags": { "departure_begun": true } }, "time_advance": 60 },
+      "on_enter": {
+        "state_changes": {
+          "flags": {
+            "departure_begun": true
+          }
+        },
+        "time_advance": 60
+      },
       "requires": {},
       "text": {
         "default": "You pack what you have. At the Tallow's bar, Aldous gives you bread for the road without being asked and charges you three coins less than the posted rate, which is his specific language for: I hope you come back.\n\nYou have been in Crestfall for three days. You know more than you did and less than you need and the gap is east.\n\nThree factions have asked things of you or offered things to you and you have navigated between them with whatever you have navigated with. What you have now: a direction, a destination, a letter that may or may not be a warning, and the specific quality of purpose that comes from having assembled enough pieces to see the shape of a thing, even if the thing itself is still dark.\n\nYou leave before the market opens.",
@@ -20,13 +28,21 @@
         {
           "id": "visit_compact_before_leaving",
           "text": "Visit the Compact gate. Confirm arrangements.",
-          "requires": { "flags": { "compact_allied": true } },
+          "requires": {
+            "flags": {
+              "compact_allied": true
+            }
+          },
           "roll": null,
           "outcomes": {
             "default": {
               "text": "Cael is at the gate. He nods when he sees you. The nod means: you are doing what you said you would. He gives you one addition — a contact point, a passphrase, a way to send information back if you find something significant.\n\n\"Be thorough,\" he says. \"Whatever is in those ruins, Commander Vorne needs to know exactly what it is before he can act.\"\n\nThe word act. You note it.",
               "next_scene": "act1_ch6_visit_maret_departure",
-              "state_changes": { "flags": { "compact_task_confirmed": true } }
+              "state_changes": {
+                "flags": {
+                  "compact_task_confirmed": true
+                }
+              }
             }
           }
         },
@@ -40,9 +56,18 @@
               "text": "She knows you are leaving. She has packed something for you — dried food from the camp's stores, a specific herb Pol prepared, and a hand-drawn map of the east road with the camp's known exploration points marked.\n\n\"Lira drew it,\" Maret says. \"She remembers the outskirts in more detail than the rest of us. The marks there are hers.\"\n\nShe gives it to you without asking for anything in return. Which means the debt is implicit, and both of you know it.",
               "next_scene": "act1_ch6_east_road_start",
               "state_changes": {
-                "flags": { "maret_gave_supplies": true },
-                "inventory": ["rootless_map", "rootless_provisions"],
-                "factions": { "rootless": { "reputation": 10 } }
+                "flags": {
+                  "maret_gave_supplies": true
+                },
+                "inventory": [
+                  "rootless_map",
+                  "rootless_provisions"
+                ],
+                "factions": {
+                  "rootless": {
+                    "reputation": 10
+                  }
+                }
               }
             }
           }
@@ -62,13 +87,16 @@
         }
       ]
     },
-
     {
       "id": "act1_ch6_visit_maret_departure",
-      "act": 1, "chapter": 6,
+      "act": 1,
+      "chapter": 6,
       "location": "rootless_camp",
       "title": "Maret's Supplies",
-      "on_enter": { "state_changes": {}, "time_advance": 30 },
+      "on_enter": {
+        "state_changes": {},
+        "time_advance": 30
+      },
       "requires": {},
       "text": {
         "default": "She knows you are leaving. She has packed something for you — dried food from the camp's stores, a specific herb Pol prepared, and a hand-drawn map of the east road with the camp's known exploration points marked.\n\n\"Lira drew it,\" Maret says. \"She remembers the outskirts in more detail than the rest of us. The marks there are hers.\"\n\nShe gives it to you without asking for anything in return. Which means the debt is implicit, and both of you know it.\n\nBranch is nearby, sharpening something, saying nothing. He looks up when you go and does not say anything, which is his version of: good luck.",
@@ -88,21 +116,35 @@
               "text": "You go. The camp falls behind you. The trees thin and then give way to the edge of Crestfall and then to the cobblestone that begins the east road.",
               "next_scene": "act1_ch6_east_road_start",
               "state_changes": {
-                "inventory": ["rootless_map", "rootless_provisions"],
-                "factions": { "rootless": { "reputation": 10 } }
+                "inventory": [
+                  "rootless_map",
+                  "rootless_provisions"
+                ],
+                "factions": {
+                  "rootless": {
+                    "reputation": 10
+                  }
+                }
               }
             }
           }
         }
       ]
     },
-
     {
       "id": "act1_ch6_east_road_start",
-      "act": 1, "chapter": 6,
+      "act": 1,
+      "chapter": 6,
       "location": "east_road",
       "title": "The East Road",
-      "on_enter": { "state_changes": { "flags": { "east_road_entered": true } }, "time_advance": 90 },
+      "on_enter": {
+        "state_changes": {
+          "flags": {
+            "east_road_entered": true
+          }
+        },
+        "time_advance": 90
+      },
       "requires": {},
       "text": {
         "default": "The cobblestone lasts for a mile. Then packed earth. Then the path becomes a habit rather than a road — the evidence of people having gone this way rather than any deliberate construction for the purpose.\n\nThe forest closes in from both sides after the second mile. Not dramatically — gradually, the way a room changes when the light changes. First the trees are at a distance and you can see sky. Then the trees are closer and the sky is framed. Then the trees are overhead and the sky is a theory.\n\nYou walk.\n\nThe silence here is wrong in the way you have started to understand — not the absence of sound but the presence of something that has taken the place of sound. Birds are absent. Insects are absent. The wind moves the branches above you without making the sound that wind makes in branches.",
@@ -127,13 +169,16 @@
         }
       ]
     },
-
     {
       "id": "act1_ch6_place_covenant_marker",
-      "act": 1, "chapter": 6,
+      "act": 1,
+      "chapter": 6,
       "location": "east_road",
       "title": "The Nexus Point",
-      "on_enter": { "state_changes": {}, "time_advance": 20 },
+      "on_enter": {
+        "state_changes": {},
+        "time_advance": 20
+      },
       "requires": {},
       "text": {
         "default": "The point Edric described is identifiable if you are looking for it — the angle of the tree line on the left side changes by approximately thirty degrees over the course of ten metres, creating a specific notch in the canopy. Not natural. Or perhaps natural, and the Covenant has been watching this spot long enough to give it meaning.\n\nYou pause here regardless of whether you carry the marker stone. There is something about this location — a quality in the air, a stillness different from the surrounding stillness. If the Covenant's scholars identified this as a nexus point, they identified something real.",
@@ -146,16 +191,28 @@
         {
           "id": "place_marker",
           "text": "Place the Covenant marker stone here.",
-          "requires": { "inventory": ["covenant_marker_stone"] },
+          "requires": {
+            "inventory": [
+              "covenant_marker_stone"
+            ]
+          },
           "roll": null,
           "outcomes": {
             "default": {
               "text": "You place the stone where Edric instructed. You stand back and wait. Nothing visible happens — no light, no sound, no perceptible change.\n\nEither it is working on a scale you cannot perceive or it is doing nothing. Either way, the obligation is fulfilled and the Covenant owes you something small.",
               "next_scene": "act1_ch6_cursed_creature",
               "state_changes": {
-                "flags": { "covenant_marker_placed": true },
-                "factions": { "ashen_covenant": { "reputation": 10 } },
-                "inventory_remove": ["covenant_marker_stone"]
+                "flags": {
+                  "covenant_marker_placed": true
+                },
+                "factions": {
+                  "ashen_covenant": {
+                    "reputation": 10
+                  }
+                },
+                "inventory_remove": [
+                  "covenant_marker_stone"
+                ]
               }
             }
           }
@@ -169,19 +226,26 @@
             "default": {
               "text": "You note it in whatever way you note things and keep moving. The spot is real. Edric's scholars are competent. The Covenant is more dangerous than they look.",
               "next_scene": "act1_ch6_cursed_creature",
-              "state_changes": { "flags": { "noted_nexus_point": true } }
+              "state_changes": {
+                "flags": {
+                  "noted_nexus_point": true
+                }
+              }
             }
           }
         }
       ]
     },
-
     {
       "id": "act1_ch6_cursed_creature",
-      "act": 1, "chapter": 6,
+      "act": 1,
+      "chapter": 6,
       "location": "east_road",
       "title": "Something Wrong",
-      "on_enter": { "state_changes": {}, "time_advance": 20 },
+      "on_enter": {
+        "state_changes": {},
+        "time_advance": 20
+      },
       "requires": {},
       "text": {
         "default": "You hear it before you see it — not the sound itself but the wrong quality of the sound. Movement through undergrowth with the rhythm slightly off. Like something that learned to move through forest by watching something else do it rather than by being born to it.\n\nIt comes through the trees on your left: a deer.\n\nExcept it is wrong. The gait is wrong — the legs move in the right pattern but the timing is off, a half-beat delay between front legs and back legs that makes the whole thing look mechanical. Its eyes are open but not tracking. Its head is at an angle that does not serve any purpose — not scenting, not watching, just held at that angle.\n\nIt crosses the road thirty metres ahead of you and goes into the trees on the other side without pausing.",
@@ -195,12 +259,19 @@
           "id": "follow_the_deer",
           "text": "Follow it into the trees. See what it is doing.",
           "requires": {},
-          "roll": { "stat": "perception", "dc": 12 },
+          "roll": {
+            "stat": "perception",
+            "dc": 12
+          },
           "outcomes": {
             "success": {
               "text": "You track it through fifty metres of undergrowth. It is standing in a small clearing, doing nothing. Not eating, not drinking, not resting — just standing with that wrong head angle, breathing normally.\n\nAround it, in a radius of about ten metres, the ground is slightly different. The grass lower. The soil darker. You crouch and look at the boundary of the radius. The curse is concentrated here — the deer has apparently returned to this spot repeatedly. There are tracks from multiple visits.\n\nThe deer chose this place. Whatever the curse does to wanting, it does not eliminate it — it redirects it.",
               "next_scene": "act1_ch6_road_traveller",
-              "state_changes": { "flags": { "found_concentrated_curse_point": true } }
+              "state_changes": {
+                "flags": {
+                  "found_concentrated_curse_point": true
+                }
+              }
             },
             "success_at_cost": {
               "text": "You follow it far enough to confirm it is doing nothing — just standing in the trees. You come back to the road feeling like you have looked at something you cannot quite describe.",
@@ -229,13 +300,16 @@
         }
       ]
     },
-
     {
       "id": "act1_ch6_road_traveller",
-      "act": 1, "chapter": 6,
+      "act": 1,
+      "chapter": 6,
       "location": "east_road",
       "title": "Going the Other Way",
-      "on_enter": { "state_changes": {}, "time_advance": 20 },
+      "on_enter": {
+        "state_changes": {},
+        "time_advance": 20
+      },
       "requires": {},
       "text": {
         "default": "A figure coming toward you on the road — moving fast, not running but close to it. A man, middle-aged, carrying more than he should be carrying for someone moving at that speed. He has the quality of someone who has decided that distance from a place is more valuable than comfort in transit.\n\nHe sees you and does not slow down. If anything he speeds up slightly.\n\nYou step to the side of the road so he can pass if he wants to. He almost does. Then, two metres past you, he stops.",
@@ -249,20 +323,32 @@
           "id": "ask_what_he_saw",
           "text": "\"What did you see? Tell me.\"",
           "requires": {},
-          "roll": { "stat": "charisma", "dc": 11 },
+          "roll": {
+            "stat": "charisma",
+            "dc": 11
+          },
           "outcomes": {
             "success": {
               "text": "He tells you. He was trying to get through Ashenveld to the coast — the east road was the fastest route. He camped a mile past Harrow last night and at some point during the night he woke up in the middle of the road, sitting upright, facing east.\n\nHe had not walked there. He does not sleepwalk. He has no memory of moving.\n\n\"I was facing east,\" he says. \"Like something wanted me to look.\"\n\nHe hands you something without being asked — a small carved bone figure he found in Harrow. \"Do not know why I took it,\" he says. \"Do not want it.\"",
               "next_scene": "act1_ch6_missing_person_campsite",
               "state_changes": {
-                "flags": { "traveller_spoke": true, "knows_curse_moves_sleepers": true },
-                "inventory": ["carved_bone_figure"]
+                "flags": {
+                  "traveller_spoke": true,
+                  "knows_curse_moves_sleepers": true
+                },
+                "inventory": [
+                  "carved_bone_figure"
+                ]
               }
             },
             "success_at_cost": {
               "text": "\"Harrow is empty,\" he says. \"Do not go into Harrow.\" He looks at the road behind you. \"Go back to Crestfall if you have sense.\" He resumes walking before you can ask more.",
               "next_scene": "act1_ch6_missing_person_campsite",
-              "state_changes": { "flags": { "knows_harrow_empty": true } }
+              "state_changes": {
+                "flags": {
+                  "knows_harrow_empty": true
+                }
+              }
             },
             "failure": {
               "text": "He shakes his head and keeps moving. He is past you in four seconds and becoming a figure in the distance in twenty. He does not look back.",
@@ -286,13 +372,16 @@
         }
       ]
     },
-
     {
       "id": "act1_ch6_missing_person_campsite",
-      "act": 1, "chapter": 6,
+      "act": 1,
+      "chapter": 6,
       "location": "east_road",
       "title": "Signs",
-      "on_enter": { "state_changes": {}, "time_advance": 20 },
+      "on_enter": {
+        "state_changes": {},
+        "time_advance": 20
+      },
       "requires": {},
       "text": {
         "default": "Half a mile further and the road shows you something.\n\nA campsite — recent, a few days old. Used once, by one person, not the traveller you just passed. A ring of stones for a fire. A cleared ground space. The careful arrangement of someone who knows how to camp and habitually tidies before leaving.\n\nYou know the arrangement. You have seen it before. The ring of stones is three flat, one angled — a marker, a habit, something you noticed years ago when you watched the person who taught it to you do it for the first time.\n\nYour missing person was here. Three to five days ago. Moving east.",
@@ -306,14 +395,21 @@
           "id": "examine_campsite",
           "text": "Examine the campsite carefully. They may have left something.",
           "requires": {},
-          "roll": { "stat": "perception", "dc": 12 },
+          "roll": {
+            "stat": "perception",
+            "dc": 12
+          },
           "outcomes": {
             "success": {
               "text": "Under the edge of one of the fire stones — placed there deliberately, weighted down — a torn piece of cloth. Not accidental. They left it.\n\nOn the cloth, in ink that has partially run: four words. The first word is your name. The remaining three you read three times each to make sure you are reading them right.\n\nYour name. Keep going.\n\nThey knew you would come. They wanted you to keep going. That is either the best thing you have heard since you arrived in Ashenveld or the worst. You have not decided.",
               "next_scene": "act1_ch6_harrow_arrival",
               "state_changes": {
-                "flags": { "found_missing_note": true },
-                "inventory": ["missing_person_note"]
+                "flags": {
+                  "found_missing_note": true
+                },
+                "inventory": [
+                  "missing_person_note"
+                ]
               }
             },
             "success_at_cost": {
@@ -337,19 +433,30 @@
             "default": {
               "text": "You leave the campsite without disturbing anything and continue east. Faster than before. The distance between you and your missing person is measured in days, not months.",
               "next_scene": "act1_ch6_harrow_arrival",
-              "state_changes": { "flags": { "found_missing_campsite": true } }
+              "state_changes": {
+                "flags": {
+                  "found_missing_campsite": true
+                }
+              }
             }
           }
         }
       ]
     },
-
     {
       "id": "act1_ch6_harrow_arrival",
-      "act": 1, "chapter": 6,
+      "act": 1,
+      "chapter": 6,
       "location": "abandoned_village_harrow",
       "title": "Harrow",
-      "on_enter": { "state_changes": { "flags": { "harrow_reached": true } }, "time_advance": 30 },
+      "on_enter": {
+        "state_changes": {
+          "flags": {
+            "harrow_reached": true
+          }
+        },
+        "time_advance": 30
+      },
       "requires": {},
       "text": {
         "default": "Harrow.\n\nTwelve houses. A well. A shrine. A communal barn. Everything in the position it was built in and should still be in.\n\nNothing moving.\n\nThe silence here is different from the road's silence — denser, the specific quality of a place that used to have people in it and no longer does. Not ruin. Harrow is not ruined. The houses are intact. A door hangs open on one of them but not because of violence — because someone left in a way that did not include closing the door behind them.\n\nYou walk into the main street and your footsteps are the only sound.\n\nThere are meals on three tables in the houses you can see through their windows. Set meals, not interrupted ones — the kind of placement that goes before sitting, not after leaving.",
@@ -381,7 +488,11 @@
             "default": {
               "text": "You move through Harrow at pace and out the other side. The forest edge is visible from the village's eastern wall — the dark line of where the trees begin in earnest. A mile, maybe less.\n\nYou camp in Harrow's barn. Better to sleep in a structure tonight.",
               "next_scene": "act1_ch7_forest_edge",
-              "state_changes": { "world": { "time_of_day": "evening" } }
+              "state_changes": {
+                "world": {
+                  "time_of_day": "evening"
+                }
+              }
             }
           }
         }

@@ -4,14 +4,24 @@
   "scenes": [
     {
       "id": "act3_ch4_resolution",
-      "act": 3, "chapter": 4,
+      "act": 3,
+      "chapter": 4,
       "location": "crestfall_market",
       "title": "Six Weeks",
       "on_enter": {
-        "state_changes": { "world": { "curse_spread": -10, "day": 45 } },
+        "state_changes": {
+          "world": {
+            "curse_spread": -10,
+            "day": 45
+          }
+        },
         "time_advance": 0
       },
-      "requires": { "flags": { "player_stays_ashenveld": true } },
+      "requires": {
+        "flags": {
+          "player_stays_ashenveld": true
+        }
+      },
       "text": {
         "default": "Six weeks after the ritual. Day forty-five.\n\nThe fountain in the market square is running again. Not strongly — a thin stream, a technical victory rather than a celebration. But the water is clear and cold and it is coming from the ground without the wrongness the well-water had.\n\nSomebody put a cup on the fountain's edge. Then somebody else put another cup. By the end of the day there are seven cups and a child drinking from one of them.\n\nYou and your missing person watch this from across the square. Neither of you says anything. The cups say it.",
         "commander": "Vorne leaves on day forty-three. He takes twenty-two soldiers with him and leaves six — a skeleton presence, formally occupying, functionally symbolic.\n\nHe shakes your hand before he goes. He shakes your missing person's hand. He shakes Maret's hand, which requires visible effort from both of them, but they manage it.\n\nHe does not shake Pol's hand. Pol does not offer it. They stand in the same space for a moment and look at each other with the mutual assessment of two people who know they handled the same situation differently and are deciding what to do with that.\n\nThen Vorne leaves. The six remaining soldiers are well-behaved and useful and nobody resents their presence much.",
@@ -29,23 +39,35 @@
             "default": {
               "text": "You and your missing person sit by the fountain in the market square — the fountain that is running again — and you make the honest accounting.\n\nWhat the ritual achieved: the curse stopped spreading. The afflicted population has stabilised. Some recovery is measurable. The deepest damage — the ruins, the people who went furthest in — will take longer, possibly much longer.\n\nWhat the six weeks achieved: a functional arrangement for Ashenveld's ongoing recovery. Documentation that will outlast everyone in this square. The Rootless camp established as the centre of what happens next.\n\nWhat you personally lost and gained: the accounting is too long for one afternoon by a fountain. You are both aware of this.\n\n\"It was worth it,\" your missing person says. Not asking. Telling you what they have decided.\n\n\"Yes,\" you say. \"It was.\"",
               "next_scene": "act3_ch5_endings",
-              "state_changes": { "flags": { "resolution_acknowledged": true } }
+              "state_changes": {
+                "flags": {
+                  "resolution_acknowledged": true
+                }
+              }
             }
           }
         }
       ]
     },
-
     {
       "id": "act3_ch4_resolution_road",
-      "act": 3, "chapter": 4,
+      "act": 3,
+      "chapter": 4,
       "location": "east_road",
       "title": "Six Weeks Out",
       "on_enter": {
-        "state_changes": { "world": { "day": 45 } },
+        "state_changes": {
+          "world": {
+            "day": 45
+          }
+        },
         "time_advance": 0
       },
-      "requires": { "flags": { "player_leaves_ashenveld": true } },
+      "requires": {
+        "flags": {
+          "player_leaves_ashenveld": true
+        }
+      },
       "text": {
         "default": "Six weeks out from Ashenveld.\n\nYou have reached a specific town that your missing person decided they wanted to reach — not for any reason connected to what came before, but because someone told them the market here is good and the rooms are affordable and the forest to the north has birds they have not seen in fourteen months.\n\nThis is how they navigate now: toward birds. Toward markets with specific reputations. Toward rooms in towns they have never been in.\n\nYou navigate with them. This is, you are discovering, a different skill from the ones you developed in Ashenveld. Less reading of damage and more reading of possibility.",
         "commander": "A letter arrived from Cael two weeks ago. The documentation was received. Vorne completed the withdrawal. The Rootless camp is formally recognised.\n\nYou read it and wrote a brief reply — confirmation, not conversation — and put it away.\n\nThe work is done. You are not the person who needs to be told the work is done. The work being done is what you wanted and it has happened and you are here, in a town with a good market and affordable rooms, which is a different kind of achievement.",
@@ -63,23 +85,35 @@
             "default": {
               "text": "You sit down together and decide.\n\nNot a grand plan — a direction. A thing you are going toward rather than away from. Something that uses what you both became in Ashenveld in a way that is not Ashenveld.\n\nThe decision is yours and theirs and belongs to this story in the same way the direction you chose at the crossroads belongs to it: it is real and specific and it is not the reader's to know.\n\nWhat matters is that it is decided. And that you decide it together. And that when you stand up from the table and walk out into the market town, you are walking in the same direction.\n\nAshenveld is behind you. What you learned there is not.",
               "next_scene": "act3_ch5_endings",
-              "state_changes": { "flags": { "post_ashenveld_direction_set": true } }
+              "state_changes": {
+                "flags": {
+                  "post_ashenveld_direction_set": true
+                }
+              }
             }
           }
         }
       ]
     },
-
     {
       "id": "act3_ch4_resolution_alone",
-      "act": 3, "chapter": 4,
+      "act": 3,
+      "chapter": 4,
       "location": "rootless_camp",
       "title": "Six Weeks Alone",
       "on_enter": {
-        "state_changes": { "world": { "day": 45 } },
+        "state_changes": {
+          "world": {
+            "day": 45
+          }
+        },
         "time_advance": 0
       },
-      "requires": { "flags": { "player_stays_alone": true } },
+      "requires": {
+        "flags": {
+          "player_stays_alone": true
+        }
+      },
       "text": {
         "default": "Six weeks alone in Ashenveld.\n\nThis is the accounting you make on day forty-five:\n\nThe Rootless camp is the strongest institution in Ashenveld's recovery. Maret is the most important person in the region. Branch has become someone who can do what you do in specific contexts. Lira is recovering — slowly, unevenly, but the direction is real.\n\nThe Watcher from the ruins gate is at the camp. They have a name now — you found it in Harrow's records, in the old man's papers you took from the house. They respond to it sometimes. Not reliably. But sometimes.\n\nThe fountain is running.\n\nYou did all of this. With everyone here, but also because you stayed and used yourself in service of it. That is real. That counts.",
         "commander": "Vorne's offer is still on the table. You have been thinking about it for a month.\n\nThe formal position in the regional administration would give you institutional reach and institutional constraints simultaneously. The reach is useful. The constraints are real.\n\nYou make the decision. You will tell Vorne tomorrow.\n\nWhat you decide is yours — it is the last thing in this story that belongs entirely to you.",
@@ -97,7 +131,11 @@
             "default": {
               "text": "You sit in the herb garden — Pol's garden, the one that should not grow this well — on a cold afternoon in the sixth week, and you make the full accounting.\n\nWhat you have: the work, the people, the place, the sense of something real that you helped make.\n\nWhat you lost, or chose, or set aside: the person who is not here. The version of your life that would have followed them west.\n\nBoth columns are real. Neither cancels the other.\n\nPol comes out of the camp and sits beside you without asking. She has been doing this for six weeks — sitting beside you when you need someone beside you and not asking what you need.\n\n\"Sufficient,\" you say, not quite to her.\n\n\"Yes,\" she says. \"Sufficient is what we have to work with.\"",
               "next_scene": "act3_ch5_endings",
-              "state_changes": { "flags": { "accounting_made": true } }
+              "state_changes": {
+                "flags": {
+                  "accounting_made": true
+                }
+              }
             }
           }
         }

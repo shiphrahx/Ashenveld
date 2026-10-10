@@ -4,14 +4,24 @@
   "scenes": [
     {
       "id": "act3_ch3_the_long_work",
-      "act": 3, "chapter": 3,
+      "act": 3,
+      "chapter": 3,
       "location": "crestfall_market",
       "title": "A Month In",
       "on_enter": {
-        "state_changes": { "world": { "curse_spread": -8, "day": 30 } },
+        "state_changes": {
+          "world": {
+            "curse_spread": -8,
+            "day": 30
+          }
+        },
         "time_advance": 0
       },
-      "requires": { "flags": { "player_stays_ashenveld": true } },
+      "requires": {
+        "flags": {
+          "player_stays_ashenveld": true
+        }
+      },
       "text": {
         "default": "A month after the ritual. Day thirty.\n\nCrestfall is measurably different. Not healed — different. The market has six stalls now instead of three. The fountain has not started running again but someone has planted bulbs around its base. Not flowers — vegetables, which is more honest.\n\nVorne's garrison is down to eight soldiers. The remaining eight are doing things that look less like occupation and more like maintenance. The east road checkpoint has been moved a mile east and is now staffed by two people rather than five.\n\nThe Rootless camp has seventeen new members — people from the eastern villages who heard that something had changed and came toward Crestfall rather than continuing east. Maret received them with the specific efficiency of someone who has been preparing for this for three years.",
         "commander": "You and your missing person have developed a division of labour that neither of you planned.\n\nThey work with Pol on the documentation and with Maret on the camp's organisation. You work with Vorne on the Compact arrangements and with Edric on the Covenant's restructured role.\n\nYou are, you realise, managing the institutional half of Ashenveld's recovery while they manage the human half. The two halves require different things from different people and you each turned out to be the right person for the half you ended up in.",
@@ -24,12 +34,19 @@
           "id": "assess_what_remains",
           "text": "Make an honest assessment. What does Ashenveld still need most?",
           "requires": {},
-          "roll": { "stat": "intelligence", "dc": 10 },
+          "roll": {
+            "stat": "intelligence",
+            "dc": 10
+          },
           "outcomes": {
             "success": {
               "text": "You and your missing person sit down together and make the list.\n\nWhat Ashenveld still needs: time for the natural recovery to reach the deeper-affected areas. A sustainable structure for the Rootless camp's ongoing work. A way to support the people who walked east and have not come back. A clear account of what happened for the region's historical record.\n\nWhat Ashenveld does not need: another faction competition for control of the ruins. Political instability during the transition period. You leaving before the transition is stable.\n\nThe list is manageable. That is the first time in thirty days you have thought of it that way.",
               "next_scene": "act3_ch4_resolution",
-              "state_changes": { "flags": { "clear_assessment_made": true } }
+              "state_changes": {
+                "flags": {
+                  "clear_assessment_made": true
+                }
+              }
             },
             "success_at_cost": {
               "text": "You make the list but some of what remains is beyond your capacity to address. You name those things anyway. Named things are less overwhelming than unnamed ones.",
@@ -45,14 +62,18 @@
         }
       ]
     },
-
     {
       "id": "act3_ch3_road_further",
-      "act": 3, "chapter": 3,
+      "act": 3,
+      "chapter": 3,
       "location": "east_road",
       "title": "Somewhere Else",
       "on_enter": {
-        "state_changes": { "world": { "day": 30 } },
+        "state_changes": {
+          "world": {
+            "day": 30
+          }
+        },
         "time_advance": 0
       },
       "requires": {},
@@ -86,23 +107,35 @@
             "default": {
               "text": "You decide with the specific quality of someone who has been making difficult decisions for a month and has gotten better at the decisiveness.\n\nAshenveld was the work. The work is done. The next work is something else.\n\nYou say this to your missing person. They look at you for a moment.\n\n\"All right,\" they say. \"What next?\"\n\nYou think about it. You do not have a complete answer yet. But you are asking the question in the right direction.",
               "next_scene": "act3_ch4_resolution_road",
-              "state_changes": { "flags": { "not_returning_committed": true } }
+              "state_changes": {
+                "flags": {
+                  "not_returning_committed": true
+                }
+              }
             }
           }
         }
       ]
     },
-
     {
       "id": "act3_ch3_alone_continues",
-      "act": 3, "chapter": 3,
+      "act": 3,
+      "chapter": 3,
       "location": "rootless_camp",
       "title": "The Shape of Staying Alone",
       "on_enter": {
-        "state_changes": { "world": { "day": 30 } },
+        "state_changes": {
+          "world": {
+            "day": 30
+          }
+        },
         "time_advance": 0
       },
-      "requires": { "flags": { "player_stays_alone": true } },
+      "requires": {
+        "flags": {
+          "player_stays_alone": true
+        }
+      },
       "text": {
         "default": "Day thirty.\n\nYou have been in Ashenveld a month. You have been alone in Ashenveld for two weeks — the two weeks since they left.\n\nYou are not going to lie to yourself about this: it is hard. Not the work — you have the work and the work is good and necessary and uses you well. The hard part is the specific quality of the evenings, when the work is done and the Tallow is quiet and the fire is lower than it should be.\n\nYou manage it the way you manage most difficult things: by doing the next thing. By keeping the list current. By talking to the people who are here — Maret, Branch, Lira, Pol — and finding in those conversations what ordinary evenings should contain.\n\nIt is not the same. It is enough.",
         "commander": "Vorne sought you out last week. He offered you a formal position in the regional administration — advisory, well-resourced, meaningful.\n\nYou have been thinking about it for seven days. The position would give you institutional reach. It would also give you a reason to stay in Ashenveld that does not require you to examine too closely why staying feels necessary.\n\nYou think about whether those two things can be separated.",
@@ -115,12 +148,19 @@
           "id": "consider_what_you_need",
           "text": "Be honest with yourself. What do you actually need?",
           "requires": {},
-          "roll": { "stat": "intelligence", "dc": 11 },
+          "roll": {
+            "stat": "intelligence",
+            "dc": 11
+          },
           "outcomes": {
             "success": {
               "text": "You sit with the question the way the ritual taught you to sit with things — completely, without performance.\n\nWhat you need: the work, which you have. The people you are building relationships with here, which you have. The sense of contributing to something that matters, which you have.\n\nWhat you are missing: the specific person who is not here. You do not pretend this is not a missing. You do not fill it with the other things.\n\nBoth are true simultaneously. You can have most of what you need and be missing something. That is not a problem to solve. That is the shape of your current life.\n\nYou hold this honestly and you go back to work.",
               "next_scene": "act3_ch4_resolution_alone",
-              "state_changes": { "flags": { "honest_self_assessment": true } }
+              "state_changes": {
+                "flags": {
+                  "honest_self_assessment": true
+                }
+              }
             },
             "success_at_cost": {
               "text": "You get partway there. You acknowledge what you are missing before you can fully acknowledge what you have.\n\nPol, watching you in the herb garden with the expression she has when she is about to say something useful, says: \"Both things can be true at the same time.\" She goes back to her plants. You sit with this.",

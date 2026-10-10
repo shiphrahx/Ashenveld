@@ -4,11 +4,17 @@
   "scenes": [
     {
       "id": "act2_ch3_crestfall_news",
-      "act": 2, "chapter": 3,
+      "act": 2,
+      "chapter": 3,
       "location": "ruins_outskirts",
       "title": "News from Below the Trees",
       "on_enter": {
-        "state_changes": { "world": { "curse_spread": 3, "day": 7 } },
+        "state_changes": {
+          "world": {
+            "curse_spread": 3,
+            "day": 7
+          }
+        },
         "time_advance": 30
       },
       "requires": {},
@@ -30,7 +36,9 @@
               "text": "Your missing person looks at you when you say this. Something in their face moves — not objection, something more complicated.\n\n\"If you go back,\" they say, \"and the Compact closes the road properly, you may not be able to return.\"\n\n\"I know,\" you say.\n\nA pause. \"Then go,\" they say. \"Come back. I will be here.\"\n\nThey say it simply, with the quality of someone who has spent fourteen months waiting and has become good at it. You leave the outskirts and head west.",
               "next_scene": "act2_ch3_compact_checkpoint",
               "state_changes": {
-                "flags": { "returned_to_crestfall": true }
+                "flags": {
+                  "returned_to_crestfall": true
+                }
               }
             }
           }
@@ -38,15 +46,25 @@
         {
           "id": "send_maret_back",
           "text": "Send Maret back to Crestfall with information. Stay in the ruins.",
-          "requires": { "flags": { "maret_joined": true } },
+          "requires": {
+            "flags": {
+              "maret_joined": true
+            }
+          },
           "roll": null,
           "outcomes": {
             "default": {
               "text": "Maret is already thinking the same thing. \"Someone needs to know what is in here,\" she says. \"And someone needs to know what Vorne is doing.\" She looks at your missing person — the first long look between them since the reunion. Something passes between them that you cannot fully read. \"I will go back. I will keep the camp safe. I will send word if Vorne moves on the road.\"\n\nShe leaves. You watch her go through the outskirts until the ordinary forest takes her.",
               "next_scene": "act2_ch3_missing_person_teaching",
               "state_changes": {
-                "flags": { "maret_returned_to_crestfall": true },
-                "relationships": { "maret": { "closeness": 10 } }
+                "flags": {
+                  "maret_returned_to_crestfall": true
+                },
+                "relationships": {
+                  "maret": {
+                    "closeness": 10
+                  }
+                }
               }
             }
           }
@@ -61,21 +79,30 @@
               "text": "You make the decision that the ritual is the point and everything else is the context. Vorne's arrival changes the urgency but not the priority.\n\n\"How long do we need?\" you ask your missing person.\n\n\"To prepare you properly? Three days minimum. Five would be better.\" They look at the direction of Crestfall, visible through the trees in the sense that you know it is there even though you cannot see it. \"We have days. We do not have weeks.\"\n\n\"Then we start today,\" you say.",
               "next_scene": "act2_ch3_missing_person_teaching",
               "state_changes": {
-                "flags": { "ritual_preparation_begun": true }
+                "flags": {
+                  "ritual_preparation_begun": true
+                }
               }
             }
           }
         }
       ]
     },
-
     {
       "id": "act2_ch3_missing_person_teaching",
-      "act": 2, "chapter": 3,
+      "act": 2,
+      "chapter": 3,
       "location": "ruins_outskirts",
       "title": "The First Lesson",
       "on_enter": {
-        "state_changes": { "world": { "curse_spread": 2 }, "flags": { "ritual_preparation_begun": true } },
+        "state_changes": {
+          "world": {
+            "curse_spread": 2
+          },
+          "flags": {
+            "ritual_preparation_begun": true
+          }
+        },
         "time_advance": 60
       },
       "requires": {},
@@ -97,8 +124,14 @@
               "text": "They teach you through the morning and into the afternoon.\n\nNot the ritual words — those come later, when you are ready to hold them. Today is the foundation: what the mechanism is, how it reads, what the chamber will feel like, what you will need to remain present for when the reading begins. The sensation of being seen completely by something that has been waiting for exactly this.\n\nAt one point they stop and look at you as if they are asking a question without asking it.\n\n\"I am still here,\" you say.\n\nSomething in them settles. \"I know,\" they say. \"I just needed to see it.\"\n\nThey continue teaching. Outside, the forest is very quiet. The curse has not reached this specific clearing in a way that is measurable yet. You have days. You are going to use them.",
               "next_scene": "act2_ch3_crestfall_news",
               "state_changes": {
-                "flags": { "ritual_lesson_complete": true },
-                "relationships": { "missing_person": { "closeness": 20 } }
+                "flags": {
+                  "ritual_lesson_complete": true
+                },
+                "relationships": {
+                  "missing_person": {
+                    "closeness": 20
+                  }
+                }
               }
             }
           }
@@ -107,39 +140,62 @@
           "id": "ask_about_the_cost_to_them",
           "text": "\"What does this cost you? Not theoretically. What does it cost you personally?\"",
           "requires": {},
-          "roll": { "stat": "charisma", "dc": 10 },
+          "roll": {
+            "stat": "charisma",
+            "dc": 10
+          },
           "outcomes": {
             "success": {
               "text": "They are quiet for a long time.\n\n\"Fourteen months,\" they say finally. \"I have been in this forest for fourteen months and I have been — not alone, exactly, but alone in the specific way of someone who is waiting for the one person who can complete something with them.\" A pause. \"The cost to me is not the ritual. The cost to me was the fourteen months. The ritual is what the fourteen months were for.\"\n\nYou look at them. The weight of a year and two months of waiting is visible in them if you know what to look for. They have carried it so long they have stopped being able to put it down.\n\n\"Then let's not waste what you paid,\" you say.\n\nThey nod. They begin the lesson again, and this time there is something different in the way they hold themselves — lighter, perhaps. Something set down.",
               "next_scene": "act2_ch3_crestfall_news",
               "state_changes": {
-                "flags": { "ritual_lesson_complete": true },
-                "relationships": { "missing_person": { "closeness": 30 } }
+                "flags": {
+                  "ritual_lesson_complete": true
+                },
+                "relationships": {
+                  "missing_person": {
+                    "closeness": 30
+                  }
+                }
               }
             },
             "failure": {
               "text": "They deflect the question with the ease of someone who has been deflecting it from themselves for fourteen months.\n\n\"The cost is manageable,\" they say. \"Let us continue.\"\n\nYou let it go. There will be time for that conversation — or there won't be, and then it won't matter.\n\nThey continue the lesson.",
               "next_scene": "act2_ch3_crestfall_news",
               "state_changes": {
-                "flags": { "ritual_lesson_complete": true },
-                "relationships": { "missing_person": { "closeness": 10 } }
+                "flags": {
+                  "ritual_lesson_complete": true
+                },
+                "relationships": {
+                  "missing_person": {
+                    "closeness": 10
+                  }
+                }
               }
             }
           }
         }
       ]
     },
-
     {
       "id": "act2_ch3_compact_checkpoint",
-      "act": 2, "chapter": 3,
+      "act": 2,
+      "chapter": 3,
       "location": "east_road",
       "title": "The Checkpoint",
       "on_enter": {
-        "state_changes": { "world": { "curse_spread": 3 } },
+        "state_changes": {
+          "world": {
+            "curse_spread": 3
+          }
+        },
         "time_advance": 120
       },
-      "requires": { "flags": { "returned_to_crestfall": true } },
+      "requires": {
+        "flags": {
+          "returned_to_crestfall": true
+        }
+      },
       "text": {
         "default": "The Compact checkpoint is two miles east of Crestfall, at the point where the cobblestone begins. A barricade of timber, two soldiers, a small fire.\n\nThey see you before you see them, which means they were watching. When you get close enough to talk, one of them steps forward with the specific posture of someone following a procedure.\n\n\"East road is under Compact jurisdiction,\" he says. \"State your name, your origin, and your purpose for travel.\"",
         "commander": "You assess the checkpoint in the first three seconds. Two soldiers visible, probably two more within call. The barricade is solid but not permanent — it is designed to be moved, which means it is also designed to be passed under the right conditions.\n\nYou give your name. You state your origin and purpose in terms that are true but selective. The soldier writes things down.",
@@ -152,28 +208,41 @@
           "id": "comply_straightforwardly",
           "text": "Give your name and state you were exploring east of town. You are returning now.",
           "requires": {},
-          "roll": { "stat": "charisma", "dc": 10 },
+          "roll": {
+            "stat": "charisma",
+            "dc": 10
+          },
           "outcomes": {
             "success": {
               "text": "The soldier writes it down. He asks if you encountered anything of note. You describe the east road, the abandoned village of Harrow, the forest edge. You do not mention the ruins. You do not mention the inner approach. You do not mention what you found at the end of it.\n\nHe nods. \"Lieutenant Cael would like a word with anyone returning from east of Harrow,\" he says. \"When you are settled, find him at the Compact post in town.\"\n\nHe stands aside. You walk through.",
               "next_scene": "act2_ch3_crestfall_changed",
               "state_changes": {
-                "flags": { "compact_knows_you_were_east": true }
+                "flags": {
+                  "compact_knows_you_were_east": true
+                }
               }
             },
             "success_at_cost": {
               "text": "The soldier accepts your account but he asks a follow-up question you were not expecting — whether you encountered anyone else east of Harrow. You navigate it. You do not think he believed everything you said. You do not think he disbelieved it either.\n\nYou walk through. Cael will want to speak with you.",
               "next_scene": "act2_ch3_crestfall_changed",
               "state_changes": {
-                "flags": { "compact_suspicious": true }
+                "flags": {
+                  "compact_suspicious": true
+                }
               }
             },
             "failure": {
               "text": "He holds you at the checkpoint for forty minutes. More questions. A second soldier brought in. Eventually a note taken and sent toward town.\n\nYou are not detained. But you walk through the checkpoint with the specific feeling of someone whose account has been filed as requiring follow-up.",
               "next_scene": "act2_ch3_crestfall_changed",
               "state_changes": {
-                "flags": { "compact_suspicious": true },
-                "factions": { "iron_compact": { "reputation": -10 } }
+                "flags": {
+                  "compact_suspicious": true
+                },
+                "factions": {
+                  "iron_compact": {
+                    "reputation": -10
+                  }
+                }
               }
             }
           }
@@ -181,7 +250,11 @@
         {
           "id": "invoke_compact_relationship",
           "text": "Invoke your existing relationship with the Compact. You have been working with Cael.",
-          "requires": { "flags": { "compact_allied": true } },
+          "requires": {
+            "flags": {
+              "compact_allied": true
+            }
+          },
           "roll": null,
           "outcomes": {
             "default": {
@@ -193,14 +266,18 @@
         }
       ]
     },
-
     {
       "id": "act2_ch3_crestfall_changed",
-      "act": 2, "chapter": 3,
+      "act": 2,
+      "chapter": 3,
       "location": "crestfall_market",
       "title": "Crestfall in Week Two",
       "on_enter": {
-        "state_changes": { "world": { "curse_spread": 4 } },
+        "state_changes": {
+          "world": {
+            "curse_spread": 4
+          }
+        },
         "time_advance": 30
       },
       "requires": {},
@@ -222,7 +299,11 @@
               "text": "Aldous is behind his bar when you enter, which is where Aldous always is. He looks up when you come in and something in him relaxes — the specific relief of someone who had categorised you as lost and has been revised.\n\n\"You came back,\" he says.\n\n\"I said I would.\"\n\nHe pours something without being asked. \"It has been a strange few days,\" he says. This is Aldous for: everything has changed and none of it is good.",
               "next_scene": "act2_ch3_aldous_update",
               "state_changes": {
-                "relationships": { "innkeeper_aldous": { "closeness": 10 } }
+                "relationships": {
+                  "innkeeper_aldous": {
+                    "closeness": 10
+                  }
+                }
               }
             }
           }
@@ -244,35 +325,54 @@
           "id": "find_seriva",
           "text": "Find the woman you identified as Seriva. Begin there.",
           "requires": {},
-          "roll": { "stat": "perception", "dc": 11 },
+          "roll": {
+            "stat": "perception",
+            "dc": 11
+          },
           "outcomes": {
             "success": {
               "text": "You locate her at the Covenant shrine, which she appears to be using as her operational base despite Edric's obvious discomfort. She is examining a map when you arrive — a detailed map, old, of the region east of Crestfall.\n\nShe looks up when you enter and her assessment of you takes approximately three seconds. Thorough. Professional. The assessment of someone who is very good at reading what they see.",
               "next_scene": "act2_ch3_seriva_first_meeting",
-              "state_changes": { "flags": { "seriva_met": true } }
+              "state_changes": {
+                "flags": {
+                  "seriva_met": true
+                }
+              }
             },
             "success_at_cost": {
               "text": "You find her at the shrine. She sees you arrive and she was already watching the door. You are reading her while she is reading you and she is better at it.",
               "next_scene": "act2_ch3_seriva_first_meeting",
-              "state_changes": { "flags": { "seriva_met": true } }
+              "state_changes": {
+                "flags": {
+                  "seriva_met": true
+                }
+              }
             },
             "failure": {
               "text": "You look for her and she finds you. She has been watching you since you came through the town gate. She approaches you in the market square with the unhurried confidence of someone who has decided how this conversation will go.",
               "next_scene": "act2_ch3_seriva_first_meeting",
-              "state_changes": { "flags": { "seriva_met": true } }
+              "state_changes": {
+                "flags": {
+                  "seriva_met": true
+                }
+              }
             }
           }
         }
       ]
     },
-
     {
       "id": "act2_ch3_aldous_update",
-      "act": 2, "chapter": 3,
+      "act": 2,
+      "chapter": 3,
       "location": "crestfall_tallow_inn",
       "title": "What Aldous Saw",
       "on_enter": {
-        "state_changes": { "world": { "curse_spread": 2 } },
+        "state_changes": {
+          "world": {
+            "curse_spread": 2
+          }
+        },
         "time_advance": 30
       },
       "requires": {},
@@ -294,7 +394,9 @@
               "text": "\"Not yet,\" Aldous says. \"But—\" He pauses. \"There is a girl at the camp. Young. She arrived four days ago, just before the Compact did. She is—\" He hesitates. \"She is showing the early signs. The dimming. And she is Vorne's daughter.\"\n\nYou process this.\n\n\"Does he know she is there?\"\n\n\"I do not know what he knows,\" Aldous says. \"I know that if he finds out, the camp is in trouble. Either he tries to take her back, which Maret will not allow, or he tries to take the camp apart because his daughter went to them instead of to him.\"",
               "next_scene": "act2_ch3_rootless_situation",
               "state_changes": {
-                "flags": { "knows_issa_at_camp": true }
+                "flags": {
+                  "knows_issa_at_camp": true
+                }
               }
             }
           }
@@ -303,13 +405,18 @@
           "id": "ask_about_seriva_behavior",
           "text": "\"Tell me everything you have observed about Seriva.\"",
           "requires": {},
-          "roll": { "stat": "perception", "dc": 10 },
+          "roll": {
+            "stat": "perception",
+            "dc": 10
+          },
           "outcomes": {
             "success": {
               "text": "Aldous tells you. Every detail he has catalogued with the barman's instinct for detail: the way she moves through spaces as if she has been in them before, the specific questions she asked Edric, the way she looked at the east road when she thought no one was watching her.\n\n\"She is not advising Vorne,\" Aldous says. \"She is directing him. He asks her where to post soldiers and she tells him. He is the authority. She is the knowledge. Together they are something I do not have a word for.\"\n\nHe pauses. \"She has been to Ashenveld before. I would bet everything I own on it.\"",
               "next_scene": "act2_ch3_seriva_first_meeting",
               "state_changes": {
-                "flags": { "seriva_profile_built": true }
+                "flags": {
+                  "seriva_profile_built": true
+                }
               }
             },
             "success_at_cost": {
@@ -326,14 +433,18 @@
         }
       ]
     },
-
     {
       "id": "act2_ch3_rootless_situation",
-      "act": 2, "chapter": 3,
+      "act": 2,
+      "chapter": 3,
       "location": "rootless_camp",
       "title": "The Camp in Danger",
       "on_enter": {
-        "state_changes": { "world": { "curse_spread": 3 } },
+        "state_changes": {
+          "world": {
+            "curse_spread": 3
+          }
+        },
         "time_advance": 30
       },
       "requires": {},
@@ -349,22 +460,38 @@
           "id": "speak_to_issa",
           "text": "Speak to Issa. Find out what she knows and how she came here.",
           "requires": {},
-          "roll": { "stat": "charisma", "dc": 10 },
+          "roll": {
+            "stat": "charisma",
+            "dc": 10
+          },
           "outcomes": {
             "success": {
               "text": "She talks to you. Slowly, with the care of someone who has to rebuild each sentence from its component parts before they can say it.\n\nShe came to the camp because she knew about it — she had seen Lira in town before Lira came to the camp and Lira had told her about it, in the brief period when Lira was still functioning well enough to have a conversation in the market. When the affliction touched Issa, she knew where to go.\n\n\"My father,\" she says, and stops. \"He will fix it. That is what he does.\" A pause that contains something complicated. \"Or he will try to fix it in a way that makes it worse. He does that too.\"\n\nAnd then, carefully: \"I found something. In the ruins outskirts, the day before the affliction started. I have it here.\"\n\nShe produces a fragment of stone. The surface is worked, carved, familiar. Part of the sealing mechanism.",
               "next_scene": "act2_ch3_pol_revelation",
               "state_changes": {
-                "flags": { "issa_spoke": true, "issa_has_fragment": true },
-                "relationships": { "issa_vorne": { "closeness": 20 } }
+                "flags": {
+                  "issa_spoke": true,
+                  "issa_has_fragment": true
+                },
+                "relationships": {
+                  "issa_vorne": {
+                    "closeness": 20
+                  }
+                }
               }
             },
             "success_at_cost": {
               "text": "She talks, partially. She came here because she knew about the camp. She found something in the ruins outskirts and she has it with her. She shows you the fragment of stone but does not explain how she found it or what she was doing in the outskirts.",
               "next_scene": "act2_ch3_pol_revelation",
               "state_changes": {
-                "flags": { "issa_has_fragment": true },
-                "relationships": { "issa_vorne": { "closeness": 10 } }
+                "flags": {
+                  "issa_has_fragment": true
+                },
+                "relationships": {
+                  "issa_vorne": {
+                    "closeness": 10
+                  }
+                }
               }
             },
             "failure": {
@@ -383,20 +510,28 @@
             "default": {
               "text": "Branch gives you his assessment without preamble.\n\n\"Vorne has not moved on the camp yet because he does not know his daughter is here,\" he says. \"When he finds out — and he will find out, someone will tell him — he has three options. He takes her by force, which requires fighting us. He asks us to release her, which gives Maret leverage. Or he leaves her here, which means accepting that the camp is the best option for her, which he will not do.\"\n\nHe looks at the camp. \"We have maybe three days before someone talks. Possibly less.\"",
               "next_scene": "act2_ch3_pol_revelation",
-              "state_changes": { "flags": { "branch_assessed_situation": true } }
+              "state_changes": {
+                "flags": {
+                  "branch_assessed_situation": true
+                }
+              }
             }
           }
         }
       ]
     },
-
     {
       "id": "act2_ch3_pol_revelation",
-      "act": 2, "chapter": 3,
+      "act": 2,
+      "chapter": 3,
       "location": "rootless_camp",
       "title": "What Pol Knows",
       "on_enter": {
-        "state_changes": { "world": { "curse_spread": 2 } },
+        "state_changes": {
+          "world": {
+            "curse_spread": 2
+          }
+        },
         "time_advance": 30
       },
       "requires": {},
@@ -418,8 +553,14 @@
               "text": "Pol counts on her fingers.\n\n\"The two participants. Bonded, as the text describes. Your person and you, or any two others who fit the requirement.\"\n\n\"The fragment. The piece of the mechanism that Issa found. The ritual requires a physical connection to the mechanism's original state.\"\n\n\"Time. The ritual cannot be rushed. The text specifies that the participants must be in the chamber long enough for the mechanism to read them fully. An hour at minimum.\"\n\nShe looks at you. \"And one more thing. Someone outside the chamber who understands what is happening and can act if something goes wrong. A witness.\" She looks at her hands. \"I have been waiting to be that witness for fifteen years.\"",
               "next_scene": "act2_ch3_seriva_first_meeting",
               "state_changes": {
-                "flags": { "pol_explained_ritual_requirements": true },
-                "relationships": { "the_archivist": { "closeness": 25 } }
+                "flags": {
+                  "pol_explained_ritual_requirements": true
+                },
+                "relationships": {
+                  "the_archivist": {
+                    "closeness": 25
+                  }
+                }
               }
             }
           }
@@ -428,20 +569,33 @@
           "id": "ask_pol_about_seriva",
           "text": "\"Tell me about Seriva. You both worked in the Covenant archives.\"",
           "requires": {},
-          "roll": { "stat": "charisma", "dc": 11 },
+          "roll": {
+            "stat": "charisma",
+            "dc": 11
+          },
           "outcomes": {
             "success": {
               "text": "Pol is quiet for a moment.\n\n\"Seriva was the most gifted archivist the Covenant produced in a generation,\" she says. \"She understood the old texts at a depth most scholars never achieve.\" A pause. \"Twenty years ago she proposed an experiment. She wanted to test whether the sealing mechanism could be modified — made more powerful, more complete, more total in what it sealed.\"\n\n\"The Covenant approved it.\"\n\n\"Yes,\" Pol says. \"I voted against it. I was overruled.\" She looks at the garden. \"What she did to the mechanism — the modification she attempted — destabilised it. The sealing began failing immediately. She has spent twenty years trying to fix it with a different ritual, one that does not require admitting the original damage was her fault.\"",
               "next_scene": "act2_ch3_seriva_first_meeting",
               "state_changes": {
-                "flags": { "seriva_responsible_confirmed": true },
-                "relationships": { "the_archivist": { "closeness": 15 } }
+                "flags": {
+                  "seriva_responsible_confirmed": true
+                },
+                "relationships": {
+                  "the_archivist": {
+                    "closeness": 15
+                  }
+                }
               }
             },
             "success_at_cost": {
               "text": "Pol confirms that Seriva was at the mechanism twenty years ago and that something she did destabilised it. The specifics of what and why remain something she is reluctant to give in full.",
               "next_scene": "act2_ch3_seriva_first_meeting",
-              "state_changes": { "flags": { "seriva_was_at_mechanism": true } }
+              "state_changes": {
+                "flags": {
+                  "seriva_was_at_mechanism": true
+                }
+              }
             },
             "failure": {
               "text": "\"Ask Seriva,\" Pol says. \"She will not tell you the truth but the specific way she avoids it will tell you something.\"",
@@ -452,14 +606,21 @@
         }
       ]
     },
-
     {
       "id": "act2_ch3_seriva_first_meeting",
-      "act": 2, "chapter": 3,
+      "act": 2,
+      "chapter": 3,
       "location": "crestfall_shrine",
       "title": "Seriva",
       "on_enter": {
-        "state_changes": { "flags": { "seriva_met": true }, "world": { "curse_spread": 2 } },
+        "state_changes": {
+          "flags": {
+            "seriva_met": true
+          },
+          "world": {
+            "curse_spread": 2
+          }
+        },
         "time_advance": 30
       },
       "requires": {},
@@ -474,27 +635,48 @@
         {
           "id": "accuse_seriva_directly",
           "text": "\"You broke the mechanism twenty years ago. You are here to fix what you did.\"",
-          "requires": { "flags": { "seriva_responsible_confirmed": true } },
-          "roll": { "stat": "charisma", "dc": 14 },
+          "requires": {
+            "flags": {
+              "seriva_responsible_confirmed": true
+            }
+          },
+          "roll": {
+            "stat": "charisma",
+            "dc": 14
+          },
           "outcomes": {
             "success": {
               "text": "She looks at you for a long time.\n\nThen she sits down. The first time you have seen her choose to sit — she has been standing since you arrived.\n\n\"Yes,\" she says. Quietly. Completely. \"I broke it. Not through carelessness. I believed what I was doing would strengthen it. I was wrong.\" She looks at her hands. \"I have spent twenty years trying to repair the damage I caused. The Covenant's purification ritual will work. It is not the original ritual — it is a different approach to the same problem — but it will stop the curse.\"\n\n\"At what cost?\" you ask.\n\n\"At the cost the situation requires,\" she says. And now she sounds like herself again — the admission is over, the control is back. But the admission happened. You have it.",
               "next_scene": "act2_ch4_vorne_meeting",
               "state_changes": {
-                "flags": { "seriva_admitted_guilt": true },
-                "relationships": { "seriva": { "closeness": 15 } }
+                "flags": {
+                  "seriva_admitted_guilt": true
+                },
+                "relationships": {
+                  "seriva": {
+                    "closeness": 15
+                  }
+                }
               }
             },
             "success_at_cost": {
               "text": "She does not confirm it directly. But she does not deny it with the force she would use to deny something false. She redirects: what matters is the solution, not the cause. The purification ritual will stop the spread. The cost is acceptable.\n\nYou note that she accepted the premise of your accusation by not rejecting it.",
               "next_scene": "act2_ch4_vorne_meeting",
-              "state_changes": { "flags": { "seriva_deflected": true } }
+              "state_changes": {
+                "flags": {
+                  "seriva_deflected": true
+                }
+              }
             },
             "failure": {
               "text": "She deflects with the ease of someone who has been deflecting this specific accusation — or the fear of it — for twenty years. You have overplayed and she has closed.\n\n\"The Covenant's ritual is the appropriate response to the current situation,\" she says. \"I am here to ensure it is performed correctly and quickly.\"",
               "next_scene": "act2_ch4_vorne_meeting",
               "state_changes": {
-                "factions": { "ashen_covenant": { "reputation": -10 } }
+                "factions": {
+                  "ashen_covenant": {
+                    "reputation": -10
+                  }
+                }
               }
             }
           }
@@ -503,19 +685,28 @@
           "id": "ask_about_purification_cost",
           "text": "\"What does the purification ritual cost? Who pays it?\"",
           "requires": {},
-          "roll": { "stat": "intelligence", "dc": 12 },
+          "roll": {
+            "stat": "intelligence",
+            "dc": 12
+          },
           "outcomes": {
             "success": {
               "text": "She is quiet for a moment. Then she answers with the precision of someone who has thought about this answer for a very long time.\n\n\"The purification ritual seals the mechanism by eliminating everything the power has sufficiently transformed. People. Animals. Structures. The further the transformation has progressed, the more completely the ritual eliminates it.\" A pause. \"In Crestfall, given the current spread rate, the ritual would affect perhaps a fifth of the population. In the eastern villages — in Harrow — there would be no remainder.\"\n\nShe holds your gaze. \"This is why it must be performed before the spread reaches the point where a fifth becomes a third becomes a half.\"",
               "next_scene": "act2_ch4_vorne_meeting",
               "state_changes": {
-                "flags": { "knows_purification_cost": true }
+                "flags": {
+                  "knows_purification_cost": true
+                }
               }
             },
             "success_at_cost": {
               "text": "She tells you the cost in terms that are technically accurate and emotionally sanitised. People in the late stage of affliction would not survive the ritual. The scale depends on how far the spread has progressed.",
               "next_scene": "act2_ch4_vorne_meeting",
-              "state_changes": { "flags": { "knows_purification_kills": true } }
+              "state_changes": {
+                "flags": {
+                  "knows_purification_kills": true
+                }
+              }
             },
             "failure": {
               "text": "She gives you the doctrinal answer — purification is necessary, the cost is proportional to the situation, the Covenant has the expertise to perform it with minimal impact. You do not believe the last part and cannot prove it.",

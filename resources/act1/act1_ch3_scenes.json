@@ -4,10 +4,18 @@
   "scenes": [
     {
       "id": "act1_ch3_compact_introduction",
-      "act": 1, "chapter": 3,
+      "act": 1,
+      "chapter": 3,
       "location": "crestfall_gate",
       "title": "The Iron Compact",
-      "on_enter": { "state_changes": { "flags": { "compact_met": true } }, "time_advance": 20 },
+      "on_enter": {
+        "state_changes": {
+          "flags": {
+            "compact_met": true
+          }
+        },
+        "time_advance": 20
+      },
       "requires": {},
       "text": {
         "default": "The soldier at the gate is young and too upright — someone recently given authority they are still learning to wear. Behind him, through the gate, two more soldiers doing nothing with great efficiency.\n\nHe introduces himself as Lieutenant Cael. A city name, a career-soldier's name. He smiles with the lower half of his face.\n\n\"We have been expecting someone to arrive asking questions,\" he says. \"The town always gets one eventually. Someone from outside who cares about what is happening here.\" A pause that is not really a pause. \"The Compact cares about what is happening here. We have been here for eight months. We would like to help.\"",
@@ -34,12 +42,19 @@
           "id": "ask_compact_about_curse",
           "text": "\"What does the Compact know about what is happening here?\"",
           "requires": {},
-          "roll": { "stat": "intelligence", "dc": 11 },
+          "roll": {
+            "stat": "intelligence",
+            "dc": 11
+          },
           "outcomes": {
             "success": {
               "text": "Cael gives you more than he intends to. Under the official line — coordinated response, measured approach, protecting the region — you hear the shape of what the Compact actually believes: that there is something in those ruins that their scholars have been trying to classify for eight months and cannot, and that the curse is not a disease but a signal.",
               "next_scene": "act1_ch3_compact_offer",
-              "state_changes": { "flags": { "compact_believes_ruins_are_signal": true } }
+              "state_changes": {
+                "flags": {
+                  "compact_believes_ruins_are_signal": true
+                }
+              }
             },
             "success_at_cost": {
               "text": "Cael gives you the official line. Competently. You are not sure if there is more under it or if the official line is all there is. Either way, there is a conversation to be had with someone higher up than a lieutenant.",
@@ -55,13 +70,16 @@
         }
       ]
     },
-
     {
       "id": "act1_ch3_compact_offer",
-      "act": 1, "chapter": 3,
+      "act": 1,
+      "chapter": 3,
       "location": "crestfall_gate",
       "title": "The Compact's Terms",
-      "on_enter": { "state_changes": {}, "time_advance": 15 },
+      "on_enter": {
+        "state_changes": {},
+        "time_advance": 15
+      },
       "requires": {},
       "text": {
         "default": "Cael explains the terms cleanly. The Compact wants eyes in the ruins. They have soldiers but soldiers are obvious — they attract attention and create resistance. Someone moving independently, gathering information, moving between the factions without formal allegiance — that is more valuable right now.\n\nIn exchange: fifteen coins now, forty on completion of the assessment. Access to Compact supply lines — food, medicine, equipment — which in a place like Crestfall is not a small thing. And protection: if something goes wrong in a way that requires more than one person, the Compact will send people.\n\n\"We are not your enemies,\" Cael says. \"And we are not pretending to be your friends. We are a business arrangement, if you want one.\"",
@@ -81,9 +99,18 @@
               "text": "Cael nods once, the way people nod when something they expected happened. He hands you the packet and the first payment — fifteen coins — and gives you a point of contact on the east road: a woman called Sera who runs what looks like a waystation and is not.\n\n\"Do not open the packet,\" he says. \"She will know if you did.\" He says it without inflection. You cannot tell if that is a threat or a test.",
               "next_scene": "act1_ch3_covenant_introduction",
               "state_changes": {
-                "flags": { "compact_allied": true, "carrying_compact_message": true },
-                "resources": { "gold": 15 },
-                "factions": { "iron_compact": { "reputation": 15 } }
+                "flags": {
+                  "compact_allied": true,
+                  "carrying_compact_message": true
+                },
+                "resources": {
+                  "gold": 15
+                },
+                "factions": {
+                  "iron_compact": {
+                    "reputation": 15
+                  }
+                }
               }
             }
           }
@@ -98,7 +125,11 @@
               "text": "\"Understood,\" Cael says. The smile stays exactly where it was. \"The offer remains open. We are not going anywhere.\" He steps aside from the gate.\n\nYou feel his attention on your back for twenty metres.",
               "next_scene": "act1_ch3_covenant_introduction",
               "state_changes": {
-                "factions": { "iron_compact": { "reputation": -5 } }
+                "factions": {
+                  "iron_compact": {
+                    "reputation": -5
+                  }
+                }
               }
             }
           }
@@ -107,24 +138,45 @@
           "id": "negotiate_compact",
           "text": "Counter-offer. You want to see the message before you carry it.",
           "requires": {},
-          "roll": { "stat": "charisma", "dc": 14 },
+          "roll": {
+            "stat": "charisma",
+            "dc": 14
+          },
           "outcomes": {
             "success": {
               "text": "Cael considers you for a moment. Then he opens the packet himself and hands it over.\n\nThe message is administrative — a supply requisition, a request for additional personnel. Whatever it was, it is not sinister. You hand it back.\n\n\"Fair,\" he says, and means it. He offers thirty coins now and thirty on completion — marginally better than his original terms. You have negotiated something. That means something to him.",
               "next_scene": "act1_ch3_covenant_introduction",
               "state_changes": {
-                "flags": { "compact_allied": true, "compact_message_read": true },
-                "resources": { "gold": 30 },
-                "factions": { "iron_compact": { "reputation": 20 } }
+                "flags": {
+                  "compact_allied": true,
+                  "compact_message_read": true
+                },
+                "resources": {
+                  "gold": 30
+                },
+                "factions": {
+                  "iron_compact": {
+                    "reputation": 20
+                  }
+                }
               }
             },
             "success_at_cost": {
               "text": "Cael does not open the message. But he offers you a slightly better rate — twenty coins now — and says the contents are logistical. You take the offer without the contents. You have improved your position. You have not resolved your concern.",
               "next_scene": "act1_ch3_covenant_introduction",
               "state_changes": {
-                "flags": { "compact_allied": true, "carrying_compact_message": true },
-                "resources": { "gold": 20 },
-                "factions": { "iron_compact": { "reputation": 12 } }
+                "flags": {
+                  "compact_allied": true,
+                  "carrying_compact_message": true
+                },
+                "resources": {
+                  "gold": 20
+                },
+                "factions": {
+                  "iron_compact": {
+                    "reputation": 12
+                  }
+                }
               }
             },
             "failure": {
@@ -136,13 +188,20 @@
         }
       ]
     },
-
     {
       "id": "act1_ch3_covenant_introduction",
-      "act": 1, "chapter": 3,
+      "act": 1,
+      "chapter": 3,
       "location": "crestfall_shrine",
       "title": "The Ashen Covenant",
-      "on_enter": { "state_changes": { "flags": { "covenant_met": true } }, "time_advance": 20 },
+      "on_enter": {
+        "state_changes": {
+          "flags": {
+            "covenant_met": true
+          }
+        },
+        "time_advance": 20
+      },
       "requires": {},
       "text": {
         "default": "The shrine is the old alderman's hall. You remember it differently, with a different flag above the door and a different kind of authority inside. The Ashen Covenant's flag is grey, which might be a statement or might just be the colour they settled on.\n\nEdric is outside when you arrive, as if he knew you were coming, which he probably did — in a town this size, word of a stranger travels at the speed of a glance across a street.\n\nHe is a composed man in his fifties with the specific quality of someone who has found their answer and is at peace with it. Not smug. Just settled.\n\n\"You arrived last night,\" he says. Not accusing. Simply establishing that he knows.",
@@ -156,19 +215,29 @@
           "id": "ask_covenant_about_curse",
           "text": "\"What do the Covenant believe is causing this?\"",
           "requires": {},
-          "roll": { "stat": "intelligence", "dc": 11 },
+          "roll": {
+            "stat": "intelligence",
+            "dc": 11
+          },
           "outcomes": {
             "success": {
               "text": "He tells you the official doctrine — the Covenant believes the curse is a consequence of the ruins being disturbed, of an old sealed power being unsealed, of the region's people moving away from the old ways that kept it contained. Punishment is too simple a word for what he actually means — more like consequence, the natural result of ignoring things that were being ignored for a reason.\n\nBut underneath the doctrine, your reading of him catches something: he has been in those texts for thirty years and he knows the ritual that sealed the old power the first time. He knows exactly what it required. His certainty about the solution is not the certainty of faith. It is the certainty of someone who has done the maths.",
               "next_scene": "act1_ch3_covenant_warning",
               "state_changes": {
-                "flags": { "edric_has_sealing_knowledge": true, "knows_covenant_doctrine": true }
+                "flags": {
+                  "edric_has_sealing_knowledge": true,
+                  "knows_covenant_doctrine": true
+                }
               }
             },
             "success_at_cost": {
               "text": "He gives you the doctrine. It is coherent and internally consistent and it requires accepting a set of premises about the nature of the world that you may or may not share. The curse is consequence. The solution is purification. The Covenant knows how.",
               "next_scene": "act1_ch3_covenant_warning",
-              "state_changes": { "flags": { "knows_covenant_doctrine": true } }
+              "state_changes": {
+                "flags": {
+                  "knows_covenant_doctrine": true
+                }
+              }
             },
             "failure": {
               "text": "He gives you the doctrine and you take it at face value. It is a belief system. You have encountered belief systems before. This one is more specific than most.",
@@ -192,13 +261,16 @@
         }
       ]
     },
-
     {
       "id": "act1_ch3_covenant_warning",
-      "act": 1, "chapter": 3,
+      "act": 1,
+      "chapter": 3,
       "location": "crestfall_shrine",
       "title": "Edric's Warning",
-      "on_enter": { "state_changes": {}, "time_advance": 20 },
+      "on_enter": {
+        "state_changes": {},
+        "time_advance": 20
+      },
       "requires": {},
       "text": {
         "default": "Inside the shrine, Edric shows you the ward they have built around the building — not visible to the eye, but he explains it: herbs in the threshold, specific arrangements of stone, a chant maintained by the priests in three-hour shifts. It has been keeping the worst of the curse's effects off the shrine and the people in it.\n\n\"The forest contains something that should be contained,\" he says. \"An ancient working — a power sealed away by the people who lived here before history. The sealing deteriorated. Three years ago it began to fail.\"\n\nHe looks at you. \"The Covenant knows how to reseal it. We have the texts. We know the ritual.\"\n\nHe pauses. \"The ritual requires the source to be purified. Everything the power has touched — deeply touched — must be cleansed. Completely.\"\n\nThe word cleansed sits in the air between you.",
@@ -212,19 +284,28 @@
           "id": "ask_what_cleansing_means",
           "text": "\"What does cleansing mean, exactly?\"",
           "requires": {},
-          "roll": { "stat": "intelligence", "dc": 12 },
+          "roll": {
+            "stat": "intelligence",
+            "dc": 12
+          },
           "outcomes": {
             "success": {
               "text": "He tells you. The ritual requires that everything significantly afflicted by the power — people, animals, places — be separated from the world in a specific way. He uses the word released. You hear the word killed.\n\nNot all of them. He is careful to say that. The threshold is significant exposure. Minor exposure — the early stages, the stillness, the dimming — may be reversible. The Covenant believes the reversible and the irreversible can be distinguished.\n\nYou believe him that they believe this.",
               "next_scene": "act1_ch3_covenant_task",
               "state_changes": {
-                "flags": { "knows_covenant_kills_afflicted": true }
+                "flags": {
+                  "knows_covenant_kills_afflicted": true
+                }
               }
             },
             "success_at_cost": {
               "text": "He gives you the language around it. Separation. Release. Necessary loss for the preservation of the greater whole. The specific details of what that means for people you have already met in this town he does not volunteer.",
               "next_scene": "act1_ch3_covenant_task",
-              "state_changes": { "flags": { "suspects_covenant_kills_afflicted": true } }
+              "state_changes": {
+                "flags": {
+                  "suspects_covenant_kills_afflicted": true
+                }
+              }
             },
             "failure": {
               "text": "He gives you the doctrine without the specifics and you accept the doctrine without pressing. The edge of what the Covenant does remains something you will have to find out elsewhere.",
@@ -243,21 +324,30 @@
               "text": "He gives you a ward — a small stone disc with markings, strung on a cord. He places it with the care of someone giving something genuine.\n\n\"It will not protect you from everything,\" he says. \"But it will slow the effect of sustained exposure. Keep it close to your skin.\" He asks nothing in return. The Covenant apparently operates on a credit system — they help you, and you owe them the consideration of knowing they helped you.",
               "next_scene": "act1_ch3_covenant_task",
               "state_changes": {
-                "inventory": ["covenant_ward"],
-                "factions": { "ashen_covenant": { "reputation": 10 } }
+                "inventory": [
+                  "covenant_ward"
+                ],
+                "factions": {
+                  "ashen_covenant": {
+                    "reputation": 10
+                  }
+                }
               }
             }
           }
         }
       ]
     },
-
     {
       "id": "act1_ch3_covenant_task",
-      "act": 1, "chapter": 3,
+      "act": 1,
+      "chapter": 3,
       "location": "crestfall_shrine",
       "title": "Edric's Commission",
-      "on_enter": { "state_changes": {}, "time_advance": 10 },
+      "on_enter": {
+        "state_changes": {},
+        "time_advance": 10
+      },
       "requires": {},
       "text": {
         "default": "Before you leave, Edric produces a small carved stone — a specific shape, a specific marking — and holds it out to you.\n\n\"There is a point on the east road where the tree line makes a particular angle,\" he says. \"Our scholars identified it as a significant nexus — a place where the curse's channels converge near the surface. If you are going east regardless, placing this marker there would be of service.\"\n\nHe says it may slow the curse's spread in that corridor. He says it with the precision of someone reporting a probability rather than a certainty.\n\n\"It may do nothing,\" he admits. \"We do not have certainty. We act on probability.\"",
@@ -277,9 +367,17 @@
               "text": "You take the stone. Edric nods with the specific satisfaction of someone who has added you to a set of moving parts without asking too much of any single one.\n\n\"Safe travel,\" he says. He means it.",
               "next_scene": "act1_ch3_rootless_rumour",
               "state_changes": {
-                "flags": { "covenant_task_accepted": true },
-                "inventory": ["covenant_marker_stone"],
-                "factions": { "ashen_covenant": { "reputation": 5 } }
+                "flags": {
+                  "covenant_task_accepted": true
+                },
+                "inventory": [
+                  "covenant_marker_stone"
+                ],
+                "factions": {
+                  "ashen_covenant": {
+                    "reputation": 5
+                  }
+                }
               }
             }
           }
@@ -299,13 +397,16 @@
         }
       ]
     },
-
     {
       "id": "act1_ch3_rootless_rumour",
-      "act": 1, "chapter": 3,
+      "act": 1,
+      "chapter": 3,
       "location": "crestfall_market",
       "title": "The Camp Outside Town",
-      "on_enter": { "state_changes": {}, "time_advance": 15 },
+      "on_enter": {
+        "state_changes": {},
+        "time_advance": 15
+      },
       "requires": {},
       "text": {
         "default": "By midday you have a picture of the three forces operating in what is left of Crestfall.\n\nThe Compact wants the ruins. They are organised, resourced, and patient. They have been building towards something for eight months.\n\nThe Covenant wants the ruins sealed. They believe they know how. The cost of how is something they have decided not to lead with.\n\nThe Rootless are outside the town limits and nobody talks about them, which means they are the most interesting.\n\nYou have heard the name Maret from three separate people now. Each time it came with a specific quality — not exactly recommendation, not exactly warning. Something closer to the way people say the name of a weather system. Real. Significant. Already moving.",
@@ -330,13 +431,20 @@
         }
       ]
     },
-
     {
       "id": "act1_ch3_rootless_camp_approach",
-      "act": 1, "chapter": 3,
+      "act": 1,
+      "chapter": 3,
       "location": "rootless_camp",
       "title": "The Camp",
-      "on_enter": { "state_changes": { "flags": { "rootless_camp_visited": true } }, "time_advance": 20 },
+      "on_enter": {
+        "state_changes": {
+          "flags": {
+            "rootless_camp_visited": true
+          }
+        },
+        "time_advance": 20
+      },
       "requires": {},
       "text": {
         "default": "Fifteen tents. A central fire burning even at midday. A herb garden along the southern edge that grows too well for this soil and this season.\n\nA man steps out from between two tents when you arrive. Big. Unhurried. The specific stillness of someone who has decided that moving quickly is almost never necessary.\n\n\"Camp is not open to visitors,\" he says. Not hostile. Just clear.\n\n\"I am looking for Maret,\" you say.\n\nHe looks at you for a moment with the quality of someone checking something against an internal list. \"Most people who come looking for Maret want something from her. What is it you want?\"",
@@ -350,12 +458,21 @@
           "id": "be_direct_with_branch",
           "text": "\"Someone I am looking for came through here. I just need to know where they went.\"",
           "requires": {},
-          "roll": { "stat": "charisma", "dc": 11 },
+          "roll": {
+            "stat": "charisma",
+            "dc": 11
+          },
           "outcomes": {
             "success": {
               "text": "He looks at you for a long moment and makes a decision.\n\n\"Wait here,\" he says. He goes back into the camp. Three minutes later, a woman comes out.\n\nMaret is not what you expected. Not in any way you can immediately specify. She is approximately your age, with the quality of someone who has been outside in difficult conditions for long enough that the conditions have become her natural state. She looks at you the way she probably looks at most things — fully, without performance.\n\n\"Branch says you are looking for someone,\" she says.",
               "next_scene": "act1_ch3_maret_first_meeting",
-              "state_changes": { "relationships": { "branch": { "closeness": 5 } } }
+              "state_changes": {
+                "relationships": {
+                  "branch": {
+                    "closeness": 5
+                  }
+                }
+              }
             },
             "success_at_cost": {
               "text": "He considers you. \"That is what half the people who show up here say.\" He looks at your pack, your bearing, something he is calculating. \"Maret will see you but do not push. She will give you what she wants to give you.\" He goes to get her.",
@@ -365,7 +482,11 @@
             "failure": {
               "text": "\"Maret is busy,\" he says. Not immediately hostile but not open either. \"Come back tomorrow.\"\n\nThe day is ending. Tomorrow the camp, and a different approach.",
               "next_scene": "act1_ch1_tallow_room",
-              "state_changes": { "world": { "time_of_day": "evening" } }
+              "state_changes": {
+                "world": {
+                  "time_of_day": "evening"
+                }
+              }
             }
           }
         },
@@ -373,12 +494,21 @@
           "id": "offer_help_to_branch",
           "text": "\"I can help. Whatever the camp needs, I have skills.\"",
           "requires": {},
-          "roll": { "stat": "charisma", "dc": 10 },
+          "roll": {
+            "stat": "charisma",
+            "dc": 10
+          },
           "outcomes": {
             "success": {
               "text": "His expression shifts — not convinced, but curious. In a camp that needs things, offering things is a different kind of approach than most take.\n\n\"What kind of skills?\" he asks. And then he goes to get Maret.",
               "next_scene": "act1_ch3_maret_first_meeting",
-              "state_changes": { "relationships": { "branch": { "closeness": 8 } } }
+              "state_changes": {
+                "relationships": {
+                  "branch": {
+                    "closeness": 8
+                  }
+                }
+              }
             },
             "success_at_cost": {
               "text": "He is not moved by the offer but he is not dismissive of it either. He goes to get Maret without committing to anything. You wait.",
@@ -394,13 +524,20 @@
         }
       ]
     },
-
     {
       "id": "act1_ch3_maret_first_meeting",
-      "act": 1, "chapter": 3,
+      "act": 1,
+      "chapter": 3,
       "location": "rootless_camp",
       "title": "Maret",
-      "on_enter": { "state_changes": { "flags": { "maret_met": true } }, "time_advance": 30 },
+      "on_enter": {
+        "state_changes": {
+          "flags": {
+            "maret_met": true
+          }
+        },
+        "time_advance": 30
+      },
       "requires": {},
       "text": {
         "default": "She comes out of the camp and looks at you and you look at her and there is a brief moment — the span of a breath, not longer — where something moves in her face that she covers immediately. She knows the name you are going to say. You have not said it yet but she knows.\n\nThat is the first thing you learn about Maret.\n\n\"Sit down,\" she says, gesturing to a log bench at the camp's edge. \"I will hear what you have to say.\"\n\nShe sits across from you. Branch positions himself nearby in the specific way of someone who has been asked to be nearby. The camp around you continues its business — people moving, a child's voice somewhere, the smell of something cooking.\n\n\"You are looking for someone,\" Maret says. Not a question.",
@@ -414,27 +551,46 @@
           "id": "probe_maret_reaction",
           "text": "\"You knew that name before I said it.\"",
           "requires": {},
-          "roll": { "stat": "perception", "dc": 12 },
+          "roll": {
+            "stat": "perception",
+            "dc": 12
+          },
           "outcomes": {
             "success": {
               "text": "She looks at you for a long moment. Then she does something you did not expect — she almost smiles.\n\n\"You are observant,\" she says. \"That is useful here.\" She is quiet for a moment. \"Yes. I knew them. They were here for three weeks.\" She says it cleanly, giving you the fact and none of the weight around it yet.\n\n\"Where did they go?\"\n\nShe looks at the trees. \"East.\" She says it the way people say the word for something they are still deciding how to feel about.",
               "next_scene": "act1_ch4_maret_opens",
               "state_changes": {
-                "flags": { "maret_admits_knew_missing": true },
-                "relationships": { "maret": { "closeness": 15 } }
+                "flags": {
+                  "maret_admits_knew_missing": true
+                },
+                "relationships": {
+                  "maret": {
+                    "closeness": 15
+                  }
+                }
               }
             },
             "success_at_cost": {
               "text": "She catches you catching her and makes a quick decision — not denial, not full admission. \"I meet a lot of people who come through the camp,\" she says carefully. \"Some names stay with me.\" A pause. \"Come back tomorrow. I need to think about what I can tell you.\"",
               "next_scene": "act1_ch4_maret_guarded",
               "state_changes": {
-                "relationships": { "maret": { "closeness": 8 } }
+                "relationships": {
+                  "maret": {
+                    "closeness": 8
+                  }
+                }
               }
             },
             "failure": {
               "text": "She deflects smoothly. \"Lots of people come through the camp. I try to help the ones I can.\" Her voice is steady. \"Come back tomorrow. I have things to attend to today.\"",
               "next_scene": "act1_ch4_maret_guarded",
-              "state_changes": { "relationships": { "maret": { "closeness": 3 } } }
+              "state_changes": {
+                "relationships": {
+                  "maret": {
+                    "closeness": 3
+                  }
+                }
+              }
             }
           }
         },
@@ -448,7 +604,11 @@
               "text": "She opens slightly at this. Not much — but the wariness that was in her face when you arrived eases a degree.\n\nShe tells you about the camp: survivors from the eastern villages, people the town did not know what to do with, people whose families stopped wanting them once the curse touched them. Twenty-three people currently. She runs it on practical principles.\n\n\"Why do you do it?\" you ask.\n\nShe considers the question longer than it requires. \"Because someone has to,\" she says. \"And I am here.\"",
               "next_scene": "act1_ch4_rootless_camp_stay",
               "state_changes": {
-                "relationships": { "maret": { "closeness": 18 } }
+                "relationships": {
+                  "maret": {
+                    "closeness": 18
+                  }
+                }
               }
             }
           }

@@ -4,11 +4,16 @@
   "scenes": [
     {
       "id": "act2_ch5_return_to_ruins",
-      "act": 2, "chapter": 5,
+      "act": 2,
+      "chapter": 5,
       "location": "ruins_outskirts",
       "title": "Back in the Ruins",
       "on_enter": {
-        "state_changes": { "world": { "curse_spread": 4 } },
+        "state_changes": {
+          "world": {
+            "curse_spread": 4
+          }
+        },
         "time_advance": 120
       },
       "requires": {},
@@ -30,7 +35,11 @@
             "default": {
               "text": "They take you back into the inner approach. Not to the chamber — not yet. They show you the sections of the carving that pertain to the participants, what the ritual will ask of you, what you will need to be prepared for.\n\nThe work of the next two days begins.",
               "next_scene": "act2_ch5_ritual_preparation",
-              "state_changes": { "flags": { "ritual_preparation_active": true } }
+              "state_changes": {
+                "flags": {
+                  "ritual_preparation_active": true
+                }
+              }
             }
           }
         },
@@ -44,24 +53,37 @@
               "text": "The Watcher sits at the gate. The ruins are around you. The grey light fades toward whatever passes for night here.\n\nYou talk. Not about the ritual, not about Crestfall, not about what happens next. About before — the specific texture of the time before either of you came to Ashenveld. The things that made you. The shape of the relationship you have carried through eleven years and a hundred miles and fourteen months of silence.\n\nBy the time the light has fully gone, you understand something about what the mechanism reads. Not what you present. What you actually carry.\n\nYou understand why it needed two people who knew each other this well.",
               "next_scene": "act2_ch5_ritual_preparation",
               "state_changes": {
-                "relationships": { "the_missing_person": { "closeness": 30 } }
+                "relationships": {
+                  "the_missing_person": {
+                    "closeness": 30
+                  }
+                }
               }
             }
           }
         }
       ]
     },
-
     {
       "id": "act2_ch5_ritual_preparation",
-      "act": 2, "chapter": 5,
+      "act": 2,
+      "chapter": 5,
       "location": "ruins_outskirts",
       "title": "Two Days",
       "on_enter": {
-        "state_changes": { "world": { "curse_spread": 6, "day": 9 } },
+        "state_changes": {
+          "world": {
+            "curse_spread": 6,
+            "day": 9
+          }
+        },
         "time_advance": 2880
       },
-      "requires": { "flags": { "ritual_preparation_active": true } },
+      "requires": {
+        "flags": {
+          "ritual_preparation_active": true
+        }
+      },
       "text": {
         "default": "Two days in the ruins outskirts.\n\nYour missing person teaches you the ritual's structure with the patient efficiency of someone who has spent eight months learning it and now has to transmit it in forty-eight hours. They are a good teacher — or they have become one, here, in the absence of anyone to teach.\n\nThe ritual has three phases. The approach — what you do before you enter the chamber, how you prepare the participants' relationship for the mechanism's reading. The engagement — what happens in the chamber, where each participant stands, what actions are required, the moment of physical contact. The sealing — what happens if the mechanism responds correctly, which the text describes but which they admit they do not fully understand.\n\n\"The builders,\" they say, \"were honest about the fact that they did not fully understand what they were doing. They knew it worked. They did not know exactly why.\"",
         "commander": "You approach the two days as training. The objective is clear, the method is as documented as anything you are going to get, and the risks are known. You prepare.\n\nOn the evening of the second day they ask you whether you are ready.\n\n\"I have done harder things with less preparation,\" you say.\n\n\"That is not what I asked,\" they say.\n\n\"I am ready,\" you say. And you mean it.",
@@ -74,40 +96,60 @@
           "id": "preparation_complete",
           "text": "The preparation is complete. Tomorrow: the chamber.",
           "requires": {},
-          "roll": { "stat": "intelligence", "dc": 11 },
+          "roll": {
+            "stat": "intelligence",
+            "dc": 11
+          },
           "outcomes": {
             "success": {
               "text": "You are as prepared as two days and forty-eight hours of instruction can make you. Your missing person looks at you on the evening of the second day with the specific quality of someone who has transferred everything they know and is now waiting to see what it becomes.\n\n\"Tomorrow,\" they say.\n\n\"Tomorrow,\" you say.\n\nYou both sleep in the outskirts, in the camp they have made, under the grey non-sky of the deep forest. You sleep better than you have slept since you came to Ashenveld.",
               "next_scene": "act2_ch5_maret_conversation",
               "state_changes": {
-                "flags": { "ritual_preparation_complete": true },
-                "player": { "resources": { "health": 15 } }
+                "flags": {
+                  "ritual_preparation_complete": true
+                },
+                "player": {
+                  "resources": {
+                    "health": 15
+                  }
+                }
               }
             },
             "success_at_cost": {
               "text": "You are prepared but not completely — there are sections of the ritual that did not fully settle, concepts that remain slightly out of reach. Your missing person says: \"It is enough. The mechanism does not require perfection. It requires honesty.\"\n\nYou take them at their word.",
               "next_scene": "act2_ch5_maret_conversation",
-              "state_changes": { "flags": { "ritual_preparation_complete": true } }
+              "state_changes": {
+                "flags": {
+                  "ritual_preparation_complete": true
+                }
+              }
             },
             "failure": {
               "text": "The preparation has not fully taken — you can feel it, the way you can feel when you have memorised the words but not the meaning. Your missing person sees it too.\n\n\"We need another day,\" they say. \"The risk of going in before you are ready is worse than the risk of the extra time.\"",
               "next_scene": "act2_ch5_maret_conversation",
               "state_changes": {
-                "world": { "curse_spread": 3, "day": 10 }
+                "world": {
+                  "curse_spread": 3,
+                  "day": 10
+                }
               }
             }
           }
         }
       ]
     },
-
     {
       "id": "act2_ch5_maret_conversation",
-      "act": 2, "chapter": 5,
+      "act": 2,
+      "chapter": 5,
       "location": "ruins_outskirts",
       "title": "The Night Before",
       "on_enter": {
-        "state_changes": { "world": { "curse_spread": 2 } },
+        "state_changes": {
+          "world": {
+            "curse_spread": 2
+          }
+        },
         "time_advance": 30
       },
       "requires": {},
@@ -128,7 +170,11 @@
             "default": {
               "text": "\"Tomorrow,\" you say. Not a question.\n\nYour missing person nods. Pol nods. The decision is made.\n\nYou spend the evening not rehearsing the ritual — that work is done. You spend it in the company of the people who are here because of you and because of choices each of you made. Pol with her fifteen years of waiting. Your missing person with their fourteen months. You with the eleven years before all of this and the few days since.\n\nThe fire is small. The ruins are quiet around you. The Watcher sits at the gate.\n\nTomorrow.",
               "next_scene": "act2_ch6_day_of_ritual",
-              "state_changes": { "flags": { "ritual_day_set": true } }
+              "state_changes": {
+                "flags": {
+                  "ritual_day_set": true
+                }
+              }
             }
           }
         },
@@ -136,37 +182,55 @@
           "id": "send_message_back",
           "text": "Send a message to Maret. Ask her to delay Seriva if she can.",
           "requires": {},
-          "roll": { "stat": "charisma", "dc": 12 },
+          "roll": {
+            "stat": "charisma",
+            "dc": 12
+          },
           "outcomes": {
             "success": {
               "text": "Pol can carry a message back to the camp before she returns to witness the ritual. You compose something brief — the Rootless camp has resources that Seriva will need to requisition through Vorne, and Vorne's daughter is at the camp, and Maret can make that requisition complicated enough to cost Seriva a day.\n\nPol takes the message and goes. She will be back before morning.\n\nYou have bought possibly another day. It may not be needed. It may make all the difference.",
               "next_scene": "act2_ch6_day_of_ritual",
               "state_changes": {
-                "flags": { "seriva_delayed": true, "ritual_day_set": true }
+                "flags": {
+                  "seriva_delayed": true,
+                  "ritual_day_set": true
+                }
               }
             },
             "success_at_cost": {
               "text": "The message goes but you are not confident it will work — Maret has limited leverage over Seriva specifically, even through Vorne. It may buy hours, not a day.",
               "next_scene": "act2_ch6_day_of_ritual",
-              "state_changes": { "flags": { "ritual_day_set": true } }
+              "state_changes": {
+                "flags": {
+                  "ritual_day_set": true
+                }
+              }
             },
             "failure": {
               "text": "The message goes but you do not believe it will make a significant difference. Seriva is not easily delayed. You proceed without counting on the extra time.",
               "next_scene": "act2_ch6_day_of_ritual",
-              "state_changes": { "flags": { "ritual_day_set": true } }
+              "state_changes": {
+                "flags": {
+                  "ritual_day_set": true
+                }
+              }
             }
           }
         }
       ]
     },
-
     {
       "id": "act2_ch5_missing_person_private",
-      "act": 2, "chapter": 5,
+      "act": 2,
+      "chapter": 5,
       "location": "ruins_outskirts",
       "title": "Before the Fire Goes Out",
       "on_enter": {
-        "state_changes": { "world": { "curse_spread": 1 } },
+        "state_changes": {
+          "world": {
+            "curse_spread": 1
+          }
+        },
         "time_advance": 60
       },
       "requires": {},
@@ -188,8 +252,14 @@
               "text": "You talk for an hour. The fire goes out and neither of you moves to rebuild it. You talk in the dark, in the specific quality of darkness that exists in the ruins, and you say the things you have been carrying.\n\nWhen you finish, they are quiet for a long time.\n\nThen: \"Thank you,\" they say. \"For not making me find out in the chamber.\"\n\nYou sleep. In the morning: the chamber.",
               "next_scene": "act2_ch6_day_of_ritual",
               "state_changes": {
-                "flags": { "full_disclosure_made": true },
-                "relationships": { "the_missing_person": { "closeness": 40 } }
+                "flags": {
+                  "full_disclosure_made": true
+                },
+                "relationships": {
+                  "the_missing_person": {
+                    "closeness": 40
+                  }
+                }
               }
             }
           }
@@ -204,7 +274,11 @@
               "text": "You stay quiet. They understand — or they accept it, which is the closest thing.\n\n\"All right,\" they say. \"The mechanism will know.\"\n\n\"Yes,\" you say. \"I know.\"\n\nYou sleep. In the morning: the chamber.\n\nBut something has shifted in the specific quality of silence between you. Not worse. Just — acknowledged.",
               "next_scene": "act2_ch6_day_of_ritual",
               "state_changes": {
-                "relationships": { "the_missing_person": { "closeness": 15 } }
+                "relationships": {
+                  "the_missing_person": {
+                    "closeness": 15
+                  }
+                }
               }
             }
           }

@@ -4,10 +4,14 @@
   "scenes": [
     {
       "id": "act1_ch2_morning_crestfall",
-      "act": 1, "chapter": 2,
+      "act": 1,
+      "chapter": 2,
       "location": "crestfall_market",
       "title": "Crestfall by Morning",
-      "on_enter": { "state_changes": {}, "time_advance": 30 },
+      "on_enter": {
+        "state_changes": {},
+        "time_advance": 30
+      },
       "requires": {},
       "text": {
         "default": "Crestfall in the morning is a study in what remains.\n\nThe baker's is open — Reisa, who has been baking since before you were born, working with the particular silence of someone who has decided silence is more honest than conversation. The church is open, the Ashen Covenant flag above its door, new since your time here. The smith's is not open. Neither is the cooper's. Or the chandler's.\n\nYou walk the main street and count the closed shops the way you counted the wrong things on the pier — automatically, a habit you cannot switch off.\n\nThe fountain in the market square has been dry for months. You can tell from the colour of the stone — the waterline, where the wet stopped. Someone left a bunch of dried flowers at its base. Nobody has removed them. They have been there long enough to go completely grey.",
@@ -58,13 +62,16 @@
         }
       ]
     },
-
     {
       "id": "act1_ch2_market_square",
-      "act": 1, "chapter": 2,
+      "act": 1,
+      "chapter": 2,
       "location": "crestfall_market",
       "title": "The Market",
-      "on_enter": { "state_changes": {}, "time_advance": 30 },
+      "on_enter": {
+        "state_changes": {},
+        "time_advance": 30
+      },
       "requires": {},
       "text": {
         "default": "Three stalls in a square that was built for fifteen. The gaps between them feel like missing teeth.\n\nA grain seller, a woman with cloth, and an old man with preserved food — dried fish, smoked meat, things that last. The grain seller sees you approaching and makes a decision with her eyes that you cannot quite read — not hostile, not welcoming, somewhere between.\n\nThey are doing business with each other more than with the town at this point. The economy of a place that has been quietly preparing for something without admitting it is preparing.",
@@ -78,19 +85,29 @@
           "id": "talk_grain_seller",
           "text": "Approach the grain seller.",
           "requires": {},
-          "roll": { "stat": "charisma", "dc": 10 },
+          "roll": {
+            "stat": "charisma",
+            "dc": 10
+          },
           "outcomes": {
             "success": {
               "text": "Her name is Hanna. She tells you things about Crestfall with the efficiency of someone who has been answering the same questions for months.\n\nThe curse started two years ago in the eastern villages. Moved west slowly. Three families from Harrow — the village on the east road — arrived in Crestfall six months ago. They left because Harrow emptied. Not because of violence. One by one, everyone in Harrow stopped wanting to stay and walked east into the forest and did not come back.\n\n\"They do not come back,\" she says. \"But they are not dead. Or — nobody knows. Nobody has found bodies.\"",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {
-                "flags": { "knows_harrow": true, "knows_curse_movement": true }
+                "flags": {
+                  "knows_harrow": true,
+                  "knows_curse_movement": true
+                }
               }
             },
             "success_at_cost": {
               "text": "She will talk but carefully. The curse is spreading west. The eastern villages are mostly empty. People come to Crestfall because it feels safer. \"It probably is not,\" she adds, and immediately looks like she wishes she had not.",
               "next_scene": "act1_ch2_market_rumour_missing",
-              "state_changes": { "flags": { "knows_curse_movement": true } }
+              "state_changes": {
+                "flags": {
+                  "knows_curse_movement": true
+                }
+              }
             },
             "failure": {
               "text": "\"Just selling grain today,\" she says pleasantly. She has done this before — the careful withdrawal into transaction when a conversation could go somewhere uncomfortable.",
@@ -103,19 +120,29 @@
           "id": "talk_old_man",
           "text": "Speak to the old man with the preserved food.",
           "requires": {},
-          "roll": { "stat": "perception", "dc": 11 },
+          "roll": {
+            "stat": "perception",
+            "dc": 11
+          },
           "outcomes": {
             "success": {
               "text": "His name is Corvin and he has been in Crestfall for eighty years and he knows things the way old people in small towns know things — not because anyone told him but because he was there.\n\nHe saw your missing person. He says so directly, which surprises you. \"Asking about the ruins,\" he says. \"Like you are probably about to.\" He gives you a long look. \"Went to the camp outside town eventually. The woman there — Maret — sent them east.\"\n\nHe hands you a piece of dried fish you did not ask for and looks away, which means the conversation is over.",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {
-                "flags": { "knows_maret_sent_missing_east": true, "knows_maret_name": true }
+                "flags": {
+                  "knows_maret_sent_missing_east": true,
+                  "knows_maret_name": true
+                }
               }
             },
             "success_at_cost": {
               "text": "He watched you come in and has been deciding something. He lands on partial disclosure — your missing person was here, went to the camp. He looks away before you can ask more.",
               "next_scene": "act1_ch2_market_rumour_missing",
-              "state_changes": { "flags": { "knows_maret_name": true } }
+              "state_changes": {
+                "flags": {
+                  "knows_maret_name": true
+                }
+              }
             },
             "failure": {
               "text": "He watches you with the comfortable attention of someone who has decided the world can come to him. He will tell you his prices. That is today's limit.",
@@ -139,13 +166,16 @@
         }
       ]
     },
-
     {
       "id": "act1_ch2_market_rumour_missing",
-      "act": 1, "chapter": 2,
+      "act": 1,
+      "chapter": 2,
       "location": "crestfall_market",
       "title": "Word in the Market",
-      "on_enter": { "state_changes": {}, "time_advance": 20 },
+      "on_enter": {
+        "state_changes": {},
+        "time_advance": 20
+      },
       "requires": {},
       "text": {
         "default": "Two things happen in quick succession as you move through the market.\n\nFirst: Hanna from the grain stall stops you on the way past and lowers her voice. \"You asked about the Rootless earlier.\" She did not hear you ask — she heard about it, which is different and faster. \"Maret. The woman who runs the camp. She is careful. Do not go there offering things. She does not want things from people like you. She wants to know why you are worth trusting.\"\n\nSecond: an old woman you do not recognise presses a piece of bread into your hand and says, \"The camp fed my daughter when the town would not. Whatever anyone tells you about them, remember that.\" She walks away before you can ask who she is.",
@@ -177,7 +207,11 @@
             "default": {
               "text": "You spend the rest of the morning moving through the town's remaining open businesses, gathering what you can. The afternoon: the camp.",
               "next_scene": "act1_ch3_rootless_camp_approach",
-              "state_changes": { "world": { "time_of_day": "afternoon" } }
+              "state_changes": {
+                "world": {
+                  "time_of_day": "afternoon"
+                }
+              }
             }
           }
         },
@@ -196,13 +230,20 @@
         }
       ]
     },
-
     {
       "id": "act1_ch2_childhood_home",
-      "act": 1, "chapter": 2,
+      "act": 1,
+      "chapter": 2,
       "location": "crestfall_market",
       "title": "The House",
-      "on_enter": { "state_changes": { "flags": { "visited_childhood_home": true } }, "time_advance": 45 },
+      "on_enter": {
+        "state_changes": {
+          "flags": {
+            "visited_childhood_home": true
+          }
+        },
+        "time_advance": 45
+      },
       "requires": {},
       "text": {
         "default": "Left at the baker's, down the hill, past the old mill wall that was already crumbling when you were a child and has crumbled further since, around the corner, and—\n\nA different door. Same frame, different door. Someone painted the shutters a colour you would not have chosen. The window boxes have plants in them you do not recognise.\n\nThe house is occupied and has been for years. Of course it is. You left. You did not come back. What you left has become something else, which is what things do when you are not watching.\n\nYou stand in the street in front of it for longer than you intend to.",
@@ -216,21 +257,32 @@
           "id": "knock_on_door",
           "text": "Knock. Introduce yourself to whoever lives there now.",
           "requires": {},
-          "roll": { "stat": "charisma", "dc": 8 },
+          "roll": {
+            "stat": "charisma",
+            "dc": 8
+          },
           "outcomes": {
             "success": {
               "text": "A woman in her thirties opens the door — wary at first, then warm when you explain.\n\nShe was born in Crestfall and moved here with her husband six years ago. She knew some of the people who knew you. She invites you in for something to drink. You go.\n\nThe inside has changed completely and is, underneath the changes, entirely the same. You sit in the kitchen and drink something hot and she tells you about the town. And then, without you asking, she says: \"Someone was here last year asking after you. Or someone like you — they described the family who used to live here. Asked questions about the old ruins.\"\n\nYour missing person was here. At your childhood home. Looking for something about you, or about where you came from.",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {
-                "flags": { "missing_sought_childhood_home": true },
-                "relationships": { "innkeeper_aldous": { "closeness": 0 } }
+                "flags": {
+                  "missing_sought_childhood_home": true
+                },
+                "relationships": {
+                  "innkeeper_aldous": {
+                    "closeness": 0
+                  }
+                }
               }
             },
             "success_at_cost": {
               "text": "She opens the door and is politely reserved. You explain briefly. She nods and tells you one thing useful: that she saw your missing person walking east on the road about fourteen months ago. Alone. Purposeful.\n\n\"I remember thinking they knew where they were going,\" she says. \"That is rare now. People here do not look like they know where they are going.\"",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {
-                "flags": { "knows_missing_looked_purposeful": true }
+                "flags": {
+                  "knows_missing_looked_purposeful": true
+                }
               }
             },
             "failure": {
@@ -255,13 +307,16 @@
         }
       ]
     },
-
     {
       "id": "act1_ch2_old_friend",
-      "act": 1, "chapter": 2,
+      "act": 1,
+      "chapter": 2,
       "location": "crestfall_market",
       "title": "Someone Who Knew You",
-      "on_enter": { "state_changes": {}, "time_advance": 30 },
+      "on_enter": {
+        "state_changes": {},
+        "time_advance": 30
+      },
       "requires": {},
       "text": {
         "default": "Someone calls your name from across the street — your name, the one people here knew, not the one you have been using since. A man your age, give or take. You recognise him slowly, the way you recognise a piece of music from hearing only the first few notes and having to wait for memory to supply the rest.\n\nGoran. You used to run the east field fence together in the summers, a job both your families shared. You have not thought of him in years.\n\nHe crosses the street and shakes your hand with the warmth of someone who is genuinely glad to see you and also slightly afraid of what your arrival means.",
@@ -281,8 +336,15 @@
               "text": "He finds you a place to sit — a bench near the old fountain — and tells you. Not everything, but more than you have gotten from anyone else, delivered with the specific intimacy of someone who has been wanting to tell somebody.\n\nThe curse started two winters ago. First the animals, then the crops, then people. Three families left Harrow and came to Crestfall. The Compact arrived eight months ago. The Covenant strengthened its presence. The Rootless camp appeared at the forest edge.\n\n\"Your person,\" he says suddenly. You have not mentioned anyone. \"The one you are here for. I saw them. About fourteen months back. They spent a week asking questions and then went to the camp outside town.\" He looks at the trees to the east. \"Then they went east. Nobody I know went to find out what happened.\"",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {
-                "flags": { "goran_spoke": true, "knows_harrow": true },
-                "relationships": { "innkeeper_aldous": { "closeness": 0 } }
+                "flags": {
+                  "goran_spoke": true,
+                  "knows_harrow": true
+                },
+                "relationships": {
+                  "innkeeper_aldous": {
+                    "closeness": 0
+                  }
+                }
               }
             }
           }
@@ -297,7 +359,10 @@
               "text": "He nods before you finish the name. \"I saw them,\" he says. \"We spoke a few times. They were asking about the history of this place — the old city under the forest, the ruins. Things people here grow up not asking about.\"\n\nHe looks at his hands. \"They seemed — purposeful. Not frightened. I remember thinking: either they know something we do not, or they are about to find out something they did not expect.\"\n\nHe looks at you. \"I take it they did not come back.\"",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {
-                "flags": { "goran_spoke": true, "knows_missing_was_purposeful": true }
+                "flags": {
+                  "goran_spoke": true,
+                  "knows_missing_was_purposeful": true
+                }
               }
             }
           }

@@ -4,10 +4,18 @@
   "scenes": [
     {
       "id": "act1_ch5_curse_event",
-      "act": 1, "chapter": 5,
+      "act": 1,
+      "chapter": 5,
       "location": "crestfall_market",
       "title": "The Curse, Visible",
-      "on_enter": { "state_changes": { "flags": { "witnessed_curse_event": true } }, "time_advance": 30 },
+      "on_enter": {
+        "state_changes": {
+          "flags": {
+            "witnessed_curse_event": true
+          }
+        },
+        "time_advance": 30
+      },
       "requires": {},
       "text": {
         "default": "You are crossing the market square when it happens.\n\nA woman near the fountain stops walking. Not gradually — she simply stops, between one step and the next, as if the thought that was powering the walking completed and no other thought came to replace it. She stands with one foot slightly ahead of the other, her shopping basket held in both hands, her eyes open and fixed on nothing in particular.\n\nThree people nearby see it. Two of them look away immediately, with the practised efficiency of people who have developed the reflex of not seeing. One — an older man — takes a step toward her and then stops himself.\n\nYou do not look away.",
@@ -21,14 +29,23 @@
           "id": "try_to_reach_her",
           "text": "Try to reach her. Use her name if someone gives it to you.",
           "requires": {},
-          "roll": { "stat": "charisma", "dc": 13 },
+          "roll": {
+            "stat": "charisma",
+            "dc": 13
+          },
           "outcomes": {
             "success": {
               "text": "The older man gives you her name. You use it.\n\nSomething in her responds — not movement, not speech, but a shifting of attention, the curse's distance contracting slightly. You talk to her. You say her name twice more. You tell her she is in the market square and it is morning and the basket in her hands is heavy and she should probably put it down.\n\nShe puts it down. Then she blinks. Then she looks at you with the specific bewilderment of someone surfacing from somewhere cold.\n\n\"I am sorry,\" she says. She does not know what she is apologising for.",
               "next_scene": "act1_ch5_faction_responses",
               "state_changes": {
-                "flags": { "helped_cursed_woman_market": true },
-                "factions": { "rootless": { "reputation": 10 } }
+                "flags": {
+                  "helped_cursed_woman_market": true
+                },
+                "factions": {
+                  "rootless": {
+                    "reputation": 10
+                  }
+                }
               }
             },
             "success_at_cost": {
@@ -39,7 +56,11 @@
             "failure": {
               "text": "She does not respond to anything you say. The episode ends on its own eventually. She comes back to herself and looks at you with polite confusion and then picks up her basket and continues walking.\n\nThe older man watches her go. \"Fifteen minutes this time,\" he says quietly. \"Last week it was thirty.\" He looks at you. \"She does not remember them.\"",
               "next_scene": "act1_ch5_faction_responses",
-              "state_changes": { "flags": { "knows_episodes_shorten": true } }
+              "state_changes": {
+                "flags": {
+                  "knows_episodes_shorten": true
+                }
+              }
             }
           }
         },
@@ -47,12 +68,19 @@
           "id": "watch_and_wait",
           "text": "Do not intervene. Watch what happens.",
           "requires": {},
-          "roll": { "stat": "perception", "dc": 10 },
+          "roll": {
+            "stat": "perception",
+            "dc": 10
+          },
           "outcomes": {
             "success": {
               "text": "You step back and observe.\n\nThe episode lasts eleven minutes. No one approaches her — the two who looked away have moved on, the older man has decided against intervention. The market continues around her like water around a stone.\n\nThen, without transition, she is back. She adjusts the basket. She looks at the fountain. She continues toward wherever she was going.\n\nThe older man catches your eye. \"We have stopped reacting,\" he says. \"It does not help and it costs them something to be seen.\"",
               "next_scene": "act1_ch5_faction_responses",
-              "state_changes": { "flags": { "understands_curse_episodes": true } }
+              "state_changes": {
+                "flags": {
+                  "understands_curse_episodes": true
+                }
+              }
             },
             "success_at_cost": {
               "text": "You watch. The episode ends. She continues. You have learned something about the duration and the recovery but not more than that.",
@@ -68,13 +96,16 @@
         }
       ]
     },
-
     {
       "id": "act1_ch5_faction_responses",
-      "act": 1, "chapter": 5,
+      "act": 1,
+      "chapter": 5,
       "location": "crestfall_market",
       "title": "How Each Faction Responds",
-      "on_enter": { "state_changes": {}, "time_advance": 40 },
+      "on_enter": {
+        "state_changes": {},
+        "time_advance": 40
+      },
       "requires": {},
       "text": {
         "default": "In the hour after the episode in the market, you see all three factions respond to the same event in ways that tell you exactly who they are.\n\nTwo Compact soldiers arrive seven minutes after the woman recovers. They ask questions — efficient, recorded, impersonal. They want to know how long, whether she has had episodes before, who her family is. They write things down. They leave.\n\nA Covenant priest arrives twelve minutes after that. He speaks to the woman's neighbour — not to the woman herself — and leaves a small parcel of herbs with specific instructions. He does not charge. He also does not say whether the herbs will help.\n\nA young man from the Rootless camp arrives twenty minutes after the episode ended. He does not ask questions. He sits with the woman for forty minutes and then helps her carry her basket home.",
@@ -88,14 +119,23 @@
           "id": "speak_to_compact_soldiers",
           "text": "Speak to the Compact soldiers before they leave.",
           "requires": {},
-          "roll": { "stat": "charisma", "dc": 12 },
+          "roll": {
+            "stat": "charisma",
+            "dc": 12
+          },
           "outcomes": {
             "success": {
               "text": "One of them — older, more senior — gives you a surprisingly direct answer.\n\n\"We are tracking the progression rate,\" he says. \"How quickly episodes become permanent. Whether there are environmental factors that accelerate or slow the process.\" He looks at his notes. \"The answer to your next question is: we do not know yet what we will do with the data. Commander Vorne is waiting for enough data to act.\"\n\nThe specific quality of waiting for enough data in a town that is getting worse: you note it.",
               "next_scene": "act1_ch5_player_curse_touch",
               "state_changes": {
-                "flags": { "compact_tracking_progression": true },
-                "factions": { "iron_compact": { "reputation": 5 } }
+                "flags": {
+                  "compact_tracking_progression": true
+                },
+                "factions": {
+                  "iron_compact": {
+                    "reputation": 5
+                  }
+                }
               }
             },
             "success_at_cost": {
@@ -119,7 +159,13 @@
             "default": {
               "text": "He walks back through the trees at a pace that suggests he does this regularly. When you catch up he does not seem surprised.\n\n\"You watched,\" he says. Not accusing.\n\n\"I wanted to understand what you were doing.\"\n\n\"Sitting,\" he says. \"Just sitting.\" He pauses. \"Maret says the worst part of it is feeling alone in it. So we try not to let them be alone in it. Even if sitting does not fix anything.\"\n\nHe shrugs. It is a specific kind of shrug — the one that contains the whole of a position held in the face of its own inadequacy.",
               "next_scene": "act1_ch5_player_curse_touch",
-              "state_changes": { "factions": { "rootless": { "reputation": 8 } } }
+              "state_changes": {
+                "factions": {
+                  "rootless": {
+                    "reputation": 8
+                  }
+                }
+              }
             }
           }
         },
@@ -138,13 +184,20 @@
         }
       ]
     },
-
     {
       "id": "act1_ch5_player_curse_touch",
-      "act": 1, "chapter": 5,
+      "act": 1,
+      "chapter": 5,
       "location": "crestfall_tallow_inn",
       "title": "What It Feels Like",
-      "on_enter": { "state_changes": { "flags": { "player_first_curse_exposure": true } }, "time_advance": 15 },
+      "on_enter": {
+        "state_changes": {
+          "flags": {
+            "player_first_curse_exposure": true
+          }
+        },
+        "time_advance": 15
+      },
       "requires": {},
       "text": {
         "default": "It happens that evening in the Tallow, without warning or ceremony.\n\nYou are sitting at your usual table going over what you know, and you touch the wall beside you — a reflex, adjusting your balance — and the wall is wrong.\n\nNot structurally. Not visibly. But your hand registers something under the surface of it, a cold that is not cold, a vibration that is not movement, a sense of a note being held somewhere below the audible range. It is in the wall. It is in the building. It is in the ground under the building.\n\nFor three or four seconds, everything that is not the note becomes slightly less interesting.\n\nThen it passes. You lift your hand from the wall. The room comes back to full volume.",
@@ -164,8 +217,14 @@
               "text": "He listens without the expression of someone who is surprised.\n\n\"The building has been standing here for sixty years,\" he says. \"Ground has been soaking for three.\" He wipes the bar. \"Keeps mostly to the edges. I moved the tables to the centre two years ago.\"\n\nHe looks at the wall. \"Wren — the man by the fire — touched the wall by his usual chair three times a day for a year before I moved the chair. I thought it was habit.\" A pause. \"It was habit.\"",
               "next_scene": "act1_ch5_class_specific",
               "state_changes": {
-                "flags": { "knows_building_affected": true },
-                "relationships": { "innkeeper_aldous": { "closeness": 15 } }
+                "flags": {
+                  "knows_building_affected": true
+                },
+                "relationships": {
+                  "innkeeper_aldous": {
+                    "closeness": 15
+                  }
+                }
               }
             }
           }
@@ -185,13 +244,16 @@
         }
       ]
     },
-
     {
       "id": "act1_ch5_class_specific",
-      "act": 1, "chapter": 5,
+      "act": 1,
+      "chapter": 5,
       "location": "crestfall_tallow_inn",
       "title": "What You Notice",
-      "on_enter": { "state_changes": {}, "time_advance": 30 },
+      "on_enter": {
+        "state_changes": {},
+        "time_advance": 30
+      },
       "requires": {},
       "text": {
         "default": "The night passes. You sit with what you now know and what you still do not know, and you make a list.\n\nYou know: your missing person was here fourteen months ago, went east, left a letter with Maret. You know the curse is real and you have felt it. You know the ruins are the source. You know three factions each want something from that source. You know Maret has an arrangement she will not fully explain.\n\nYou do not know: what is actually in the ruins. What happened to your missing person specifically. Whether the letter they left is a warning, an invitation, or both.\n\nThe east road. Tomorrow.",
@@ -205,13 +267,18 @@
           "id": "class_specific_skill",
           "text": "Use your specific abilities to learn something more before leaving.",
           "requires": {},
-          "roll": { "stat": "intelligence", "dc": 11 },
+          "roll": {
+            "stat": "intelligence",
+            "dc": 11
+          },
           "outcomes": {
             "success": {
               "text": "You spend the remaining hours of the evening applying what you do best to the problem in front of you — and you find something you did not expect. A pattern in what you have been told, a connection between two pieces of information from different sources, a gap that points to something specific.\n\nIt is not enough to change the plan. It is enough to change what you are looking for when you get there.",
               "next_scene": "act1_ch6_departure_decision",
               "state_changes": {
-                "flags": { "found_pre_departure_insight": true }
+                "flags": {
+                  "found_pre_departure_insight": true
+                }
               }
             },
             "success_at_cost": {
@@ -235,7 +302,12 @@
             "default": {
               "text": "You put out the lamp and sleep with the specific discipline of someone who has learned that rest before a difficult day is a resource, not an indulgence.",
               "next_scene": "act1_ch6_departure_decision",
-              "state_changes": { "world": { "time_of_day": "morning", "day": 4 } }
+              "state_changes": {
+                "world": {
+                  "time_of_day": "morning",
+                  "day": 4
+                }
+              }
             }
           }
         }
