@@ -283,6 +283,31 @@
           }
         },
         {
+          "id": "ask_about_lamp_oil",
+          "text": "Order a drink and ask about the price of lamp oil.",
+          "requires": {
+            "class": "cipher"
+          },
+          "roll": null,
+          "locked_hint": "Cipher only",
+          "outcomes": {
+            "default": {
+              "text": "He tells you the price. Then what it was last year, and the year before, and who in town is buying it in quantity and why. By the time he has finished he is leaning on the bar and has forgotten to be careful.\n\n\"You'll be wanting a room,\" he says. It is not a question any more.",
+              "next_scene": "act1_ch1_innkeeper_success",
+              "state_changes": {
+                "flags": {
+                  "aldous_spoke_about_missing": true
+                },
+                "relationships": {
+                  "innkeeper_aldous": {
+                    "closeness": 20
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
           "id": "watch_the_room",
           "text": "Say nothing. Take a seat by the fire and watch.",
           "requires": {},

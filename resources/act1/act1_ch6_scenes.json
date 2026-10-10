@@ -476,6 +476,38 @@
           "locked_hint": "Needs the Covenant marker stone"
         },
         {
+          "id": "kneel_and_listen",
+          "text": "Kneel, and listen for where the stone wants to go.",
+          "requires": {
+            "class": "arcane",
+            "inventory": [
+              "covenant_marker_stone"
+            ]
+          },
+          "roll": null,
+          "locked_hint": "Arcane only",
+          "outcomes": {
+            "default": {
+              "text": "You kneel with the stone in both hands and lower it towards the ground until you feel the pull. It wants to go a little to the left of where Edric said, closer to the bend. You let it.\n\nThe moment it touches the earth, the note under the road leans towards it. The Covenant is not slowing anything with these stones. They are mapping it.",
+              "next_scene": "act1_ch6_waystation_route",
+              "state_changes": {
+                "flags": {
+                  "covenant_marker_placed": true,
+                  "knows_ward_is_survey": true
+                },
+                "factions": {
+                  "ashen_covenant": {
+                    "reputation": 10
+                  }
+                },
+                "inventory_remove": [
+                  "covenant_marker_stone"
+                ]
+              }
+            }
+          }
+        },
+        {
           "id": "do_not_place_marker",
           "text": "Note the location. Keep moving.",
           "requires": {},
@@ -778,6 +810,26 @@
               "state_changes": {
                 "resources": {
                   "health": -5
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "read_its_trail_backwards",
+          "text": "Read its trail backwards instead.",
+          "requires": {
+            "class": "ranger"
+          },
+          "roll": null,
+          "locked_hint": "Ranger only",
+          "outcomes": {
+            "default": {
+              "text": "You leave the deer to its walking and go where it came from. The trail is easy: it comes the same way every day, the same wrong stride, to the same place. A clearing a hundred yards in, where the grass is shorter and the soil darker, in a ring ten paces across.\n\nIt does not wander. It comes here, and stands, and goes. Something in it still wants this one thing.",
+              "next_scene": "act1_ch6_road_traveller",
+              "state_changes": {
+                "flags": {
+                  "found_concentrated_curse_point": true
                 }
               }
             }

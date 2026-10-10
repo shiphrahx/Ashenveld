@@ -544,6 +544,34 @@
               }
             }
           }
+        },
+        {
+          "id": "ask_which_company",
+          "text": "\"You served. Which company?\"",
+          "requires": {
+            "class": "commander"
+          },
+          "roll": null,
+          "locked_hint": "Commander only",
+          "outcomes": {
+            "default": {
+              "text": "He sets the blade down. \"Third Eastern. Pikes.\" He looks at you for the first time as if you were a person he might know. \"You were on a list. Casualties, the year of the river crossing. I read it in a tent I was not meant to be in.\" A pause. \"You were not dead.\"\n\n\"No.\"\n\n\"Good,\" Branch says, and picks the blade up again.",
+              "next_scene": "act1_ch4_rootless_camp_stay",
+              "state_changes": {
+                "relationships": {
+                  "branch": {
+                    "closeness": 20
+                  }
+                },
+                "counters": {
+                  "camp_day": 1
+                },
+                "flags": {
+                  "branch_knows_your_record": true
+                }
+              }
+            }
+          }
         }
       ],
       "rest": true

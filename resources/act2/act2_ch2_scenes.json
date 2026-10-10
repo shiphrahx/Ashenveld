@@ -454,6 +454,26 @@
               }
             }
           }
+        },
+        {
+          "id": "listen_from_where_you_stand",
+          "text": "Listen to the thread from where you stand.",
+          "requires": {
+            "class": "arcane"
+          },
+          "roll": null,
+          "locked_hint": "Arcane only",
+          "outcomes": {
+            "default": {
+              "text": "You do not go closer. You stand at the edge of the light and let yourself hear it.\n\nThe thread is the note, and the note is wrong. Not damaged. Missing a part. Somebody took a piece out of this mechanism, cleanly, the way you would take a key out of a lock, and it has been trying to close around the gap ever since.",
+              "next_scene": "act2_ch2_decision_to_return",
+              "state_changes": {
+                "flags": {
+                  "understands_fracture": true
+                }
+              }
+            }
+          }
         }
       ]
     },

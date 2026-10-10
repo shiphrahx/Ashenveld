@@ -45,6 +45,31 @@
           }
         },
         {
+          "id": "ask_his_commission",
+          "text": "Ask his commission date, and who signed it.",
+          "requires": {
+            "class": "commander"
+          },
+          "roll": null,
+          "locked_hint": "Commander only",
+          "outcomes": {
+            "default": {
+              "text": "He tells you. The date, the regiment, the colonel's name. Somewhere in the telling the smile goes, and what is left is a young officer who was sent somewhere difficult and is not sure he was meant to come back.\n\n\"Sir,\" he says, and then corrects himself, and does not finish the correction.",
+              "next_scene": "act1_ch3_compact_offer",
+              "state_changes": {
+                "flags": {
+                  "cael_respects_rank": true
+                },
+                "factions": {
+                  "iron_compact": {
+                    "reputation": 5
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
           "id": "ask_compact_about_curse",
           "text": "\"What does the Compact know about what is happening here?\"",
           "requires": {},
@@ -334,6 +359,26 @@
               "text": "He gives you the doctrine without the specifics and you accept the doctrine without pressing. The edge of what the Covenant does remains something you will have to find out elsewhere.",
               "next_scene": "act1_ch3_covenant_task",
               "state_changes": {}
+            }
+          }
+        },
+        {
+          "id": "trace_the_ward",
+          "text": "Trace the ward's pattern with a finger, without touching it.",
+          "requires": {
+            "class": "arcane"
+          },
+          "roll": null,
+          "locked_hint": "Arcane only",
+          "outcomes": {
+            "default": {
+              "text": "You hold your finger a hair above the carving and follow it. It is not a shield. The lines run in a grid, square on square, with a mark at every crossing. It is a surveyor's pattern. Whatever wears this is not being protected. They are being used to measure.\n\nEdric watches you do it and does not say anything.",
+              "next_scene": "act1_ch3_covenant_task",
+              "state_changes": {
+                "flags": {
+                  "knows_ward_is_survey": true
+                }
+              }
             }
           }
         },
@@ -830,6 +875,31 @@
                 "relationships": {
                   "maret": {
                     "closeness": 3
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "watch_her_hands",
+          "text": "Say the name, and watch her hands, not her face.",
+          "requires": {
+            "class": "cipher"
+          },
+          "roll": null,
+          "locked_hint": "Cipher only",
+          "outcomes": {
+            "default": {
+              "text": "You say the name. Her face does nothing. Her hands, in her lap, close on each other and hold on.\n\n\"You knew,\" you say.\n\nShe looks at her hands, then at you, and does not pretend.",
+              "next_scene": "act1_ch4_maret_opens",
+              "state_changes": {
+                "flags": {
+                  "maret_admits_knew_missing": true
+                },
+                "relationships": {
+                  "maret": {
+                    "closeness": 15
                   }
                 }
               }

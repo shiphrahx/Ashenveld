@@ -289,6 +289,27 @@
               }
             }
           }
+        },
+        {
+          "id": "walk_the_line",
+          "text": "Walk the line for a hundred paces before crossing.",
+          "requires": {
+            "class": "ranger"
+          },
+          "roll": null,
+          "locked_hint": "Ranger only",
+          "outcomes": {
+            "default": {
+              "text": "You walk north along the edge with the ordinary trees on your left hand. Eighty paces in you find the first cairn: three stones, waist high, old moss on the bottom one. Another at a hundred and forty. Somebody marked this line, carefully, more than once.\n\nWhen you come back to the road, Maret is standing there with a pack on her back, looking at the cairn you have just come from.",
+              "next_scene": "act1_ch7_maret_follows",
+              "state_changes": {
+                "flags": {
+                  "knows_marker_cairns": true,
+                  "maret_followed": true
+                }
+              }
+            }
+          }
         }
       ]
     },

@@ -412,6 +412,26 @@
           }
         },
         {
+          "id": "come_in_through_the_alders",
+          "text": "Leave the road a mile early and come in through the alder brake.",
+          "requires": {
+            "class": "ranger"
+          },
+          "roll": null,
+          "locked_hint": "Ranger only",
+          "outcomes": {
+            "default": {
+              "text": "A mile short of the barricade you step off the cobbles and into the alders, and come into Crestfall the way the deer used to, along the ditch behind the tannery. Nobody sees you. Nobody writes anything down.",
+              "next_scene": "act2_ch3_crestfall_changed",
+              "state_changes": {
+                "flags": {
+                  "slipped_checkpoint": true
+                }
+              }
+            }
+          }
+        },
+        {
           "id": "invoke_compact_relationship",
           "text": "Invoke your existing relationship with the Compact. You have been working with Cael.",
           "requires": {
@@ -1176,6 +1196,27 @@
               "state_changes": {}
             }
           }
+        },
+        {
+          "id": "tell_her_what_she_fears",
+          "text": "Tell her what she is afraid you found.",
+          "requires": {
+            "class": "cipher"
+          },
+          "roll": null,
+          "locked_hint": "Cipher only",
+          "outcomes": {
+            "default": {
+              "text": "\"You were in the chamber twenty years ago,\" you say. \"The fracture is yours.\"\n\nShe does not move. That is the answer. People who are surprised move.\n\n\"You have been very busy,\" she says.",
+              "next_scene": "act2_ch3_seriva_first_meeting",
+              "state_changes": {
+                "flags": {
+                  "seriva_responsible_confirmed": true
+                }
+              }
+            }
+          },
+          "once": true
         }
       ],
       "rest": true

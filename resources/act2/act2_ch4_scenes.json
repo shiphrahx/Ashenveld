@@ -793,6 +793,26 @@
               }
             }
           }
+        },
+        {
+          "id": "give_the_sergeant_an_order",
+          "text": "Give the sergeant an order.",
+          "requires": {
+            "class": "commander"
+          },
+          "roll": null,
+          "locked_hint": "Commander only",
+          "outcomes": {
+            "default": {
+              "text": "\"Sergeant. Stand your men down and wait for the Commander's word.\"\n\nHe has his hand up to his men before he has thought about who said it. When he does think, it is too late to take it back, and he knows it. \"The Commander will want to talk,\" he says, to save what he can.",
+              "next_scene": "act2_ch4_vorne_issa_negotiation",
+              "state_changes": {
+                "flags": {
+                  "issa_negotiation_arranged": true
+                }
+              }
+            }
+          }
         }
       ],
       "rest": true
