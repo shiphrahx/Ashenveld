@@ -34,7 +34,7 @@ You have come back because someone you love has gone into that forest and not re
 Three powers are fighting over Crestfall's future, each certain they know what the town needs.
 
 ### The Iron Compact
-A regional military authority that moved into Crestfall under the pretext of protection three years ago. They control the east gate, enforce a curfew, and track who goes where. Professionally courteous. Quietly authoritarian. Their commander is running out of patience with a situation his training did not prepare him for.
+A regional military authority that moved into Crestfall under the pretext of protection eight months ago. They control the east gate, enforce a curfew, and track who goes where. Professionally courteous. Quietly authoritarian. Their commander is running out of patience with a situation his training did not prepare him for.
 
 ### The Ashen Covenant
 A religious order that took over the old alderman's hall and hung a grey flag above the door. They offer comfort, purpose, and the certainty that the affliction can be purified — if the town allows it. Their oldest texts describe what is happening in Crestfall in precise detail. The priest who leads them here has read those texts. He believes in what he is doing anyway.
@@ -61,7 +61,7 @@ Your class shapes how scenes read, which choices are available to you, and how t
 
 ## The Characters
 
-The people of Crestfall are not aligned with the factions that have claimed the town. Aldous runs the Tallow Inn and knows more than he says. Sen on the docks saw something in the river three weeks ago and has told no one. Corvin in the market has been there for eighty years and says exactly what he means. Wren, who used to be the person everyone liked, went to the forest edge six months ago and touched something and came back changed.
+The people of Crestfall are not aligned with the factions that have claimed the town. Aldous runs the Tallow Inn and knows more than he says. Sen on the docks saw something in the river three weeks ago and has told no one. Corvin in the market has been there for eighty years and says exactly what he means. Wren, who used to be the person everyone liked, stopped talking two months ago and now sits by the Tallow's fire.
 
 Everyone in Crestfall is waiting for something. Most of them are hoping you are not the one who makes it worse.
 
