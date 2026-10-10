@@ -16,6 +16,8 @@ export interface Settings {
   skipSeen: boolean                                // seen scenes open folded, at the choices
   volume: number                                   // 0..1
   ambience: boolean
+  muted: boolean                                   // the speaker button (E3)
+  screenEffects: boolean                           // the curse greying the art, staged colour changes (E4, E9)
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -30,6 +32,8 @@ export const DEFAULT_SETTINGS: Settings = {
   skipSeen: false,
   volume: 0.6,
   ambience: true,
+  muted: false,
+  screenEffects: true,
 }
 
 const KEY = 'ashenveld_settings'

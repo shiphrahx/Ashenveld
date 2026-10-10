@@ -38,3 +38,7 @@
   overflow: hidden;
 }
 .fill { display: block; height: 100%; background: var(--red-mid); transition: width 0.4s ease; }
+
+.wrap { display: flex; align-items: stretch; width: 100%; }
+.wrap .strip { flex: 1; min-width: 0; }
+.mute { align-self: center; margin: 0 8px; flex-shrink: 0; }

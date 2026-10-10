@@ -54,3 +54,5 @@
 }
 .option:hover { border-color: var(--blue-mid); color: var(--white-cold); }
 .option.on { border-color: var(--blue-steel); background: var(--blue-faint); color: var(--white-cold); }
+
+.slider { width: min(240px, 100%); accent-color: var(--blue-steel); min-height: 32px; }

@@ -231,3 +231,5 @@
 @media (max-height: 699px) { .sidebar { overflow-y: auto; } }
 
 .facMark { width: 12px; height: 12px; margin-right: 6px; vertical-align: -1px; color: var(--blue-moon); }
+
+.sblRow { display: flex; align-items: center; justify-content: space-between; margin-top: -6px; margin-bottom: 4px; }

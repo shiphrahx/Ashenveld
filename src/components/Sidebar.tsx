@@ -2,6 +2,7 @@ import React from 'react'
 import type { GameState } from '../types'
 import { CLASS_LABELS } from '../text'
 import { Icon, PartGlyph, FactionMark } from './icons'
+import MuteButton from './MuteButton'
 import { dimmingBand, maxResolve, factionTier, modifierForStat, STAT_NAMES, STAT_TIPS, TIER_ORDER, TIER_EFFECT, type RestOption } from '../rules'
 import type { PanelId } from './TabBar'
 import styles from './Sidebar.module.css'
@@ -66,7 +67,7 @@ export default function Sidebar({ state, onOpen, hideClock = false, variant = 'c
 
       {/* ── Condition ── */}
       <div className={styles.sb}>
-        <div className={styles.sbl}>Condition</div>
+        <div className={`${styles.sbl} ${styles.sblRow}`}>Condition<MuteButton /></div>
         <div className={styles.hpRow}>
           <span className={styles.hpName}>Resolve</span>
           <span className={styles.hpVal}>{player.resources.health} / {maxR}</span>
