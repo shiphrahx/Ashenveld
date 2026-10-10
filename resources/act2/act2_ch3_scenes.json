@@ -548,6 +548,117 @@
               }
             }
           }
+        },
+        {
+          "id": "find_sen",
+          "text": "Find Sen at the docks.",
+          "requires": {
+            "min_relationship": {
+              "dockworker_sen": 15
+            }
+          },
+          "roll": null,
+          "locked_hint": "Needs Sen to trust you",
+          "outcomes": {
+            "default": {
+              "text": "The docks are empty except for one figure at the end of the pier.",
+              "next_scene": "act2_ch3_sen_river",
+              "state_changes": {}
+            }
+          }
+        },
+        {
+          "id": "report_to_cael",
+          "text": "Report to Cael.",
+          "requires": {
+            "flags": {
+              "compact_allied": true
+            }
+          },
+          "roll": null,
+          "locked_hint": "Needs Cael's commission",
+          "outcomes": {
+            "default": {
+              "text": "Cael is at the granary door. He listens to as much as you choose to tell him and pays you the forty without counting it twice.\n\n\"The Commander will want to hear this himself,\" he says. \"He likes to know who has been where.\"",
+              "next_scene": "act2_ch3_aldous_update",
+              "state_changes": {
+                "resources": {
+                  "gold": 40
+                },
+                "factions": {
+                  "iron_compact": {
+                    "reputation": 10
+                  }
+                },
+                "flags": {
+                  "vorne_knows_player_was_in_ruins": true
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "act2_ch3_sen_river",
+      "act": 2,
+      "chapter": 3,
+      "location": "crestfall_docks",
+      "title": "What the River Saw",
+      "when": {
+        "part": "evening"
+      },
+      "on_enter": {
+        "state_changes": {}
+      },
+      "requires": {},
+      "text": {
+        "default": "Sen is on the end of the pier with a line in the water and no bait on it. He doesn't look round.\n\n\"Thought you'd come,\" he says. \"Or I hoped. One of those.\"\n\nYou sit on the edge beside him. The river goes by, black and slow.\n\n\"Three weeks before you came,\" he says. \"Bit more. There was a boat. Covered, no lamp. It didn't come in to the docks, it put in up there, by the old willows.\" He nods upstream without taking his eyes off the water. \"One person got off. A woman. Grey coat. She stood on the bank and looked at the town for a long time, like she was counting it.\"\n\nHe winds the line in.\n\n\"I saw her in the square yesterday. With Vorne's lot. Walking like she'd only just got here.\""
+      },
+      "choices": [
+        {
+          "id": "thank_sen",
+          "text": "Thank him. Go and find Aldous.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "\"Don't thank me,\" he says. \"I didn't do anything. That's the trouble with this town.\"",
+              "next_scene": "act2_ch3_aldous_update",
+              "state_changes": {
+                "flags": {
+                  "knows_seriva_came_early": true
+                },
+                "relationships": {
+                  "dockworker_sen": {
+                    "closeness": 10
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "ask_why_he_kept_it",
+          "text": "\"Why didn't you tell anyone?\"",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "\"Who'd I tell?\" He looks at the water. \"Cael? He'd write it down. Edric? He'd pray about it.\" He casts the empty line again. \"You're the first one who's come back. I thought I'd wait for someone who came back.\"",
+              "next_scene": "act2_ch3_aldous_update",
+              "state_changes": {
+                "flags": {
+                  "knows_seriva_came_early": true
+                },
+                "relationships": {
+                  "dockworker_sen": {
+                    "closeness": 15
+                  }
+                }
+              }
+            }
+          }
         }
       ]
     },
@@ -894,6 +1005,15 @@
                 },
                 "value": -2,
                 "label": "She found you first"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "knows_seriva_came_early": true
+                  }
+                },
+                "value": 2,
+                "label": "Sen saw her come early"
               }
             ]
           },
@@ -929,6 +1049,28 @@
                   "ashen_covenant": {
                     "reputation": -10
                   }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "ask_why_she_came_early",
+          "text": "\"You have been here three weeks longer than Vorne. Why?\"",
+          "requires": {
+            "flags": {
+              "knows_seriva_came_early": true
+            }
+          },
+          "once": true,
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "She does not ask how you know.\n\n\"I wished to see the threshold for myself before anyone arrived to argue about it,\" she says. \"I had been there before, a long time ago. I needed to know how far it had come.\" She folds her hands. \"That is all I will say about it in this room.\"\n\nIt is enough to say the rest for her.",
+              "next_scene": "act2_ch3_seriva_first_meeting",
+              "state_changes": {
+                "flags": {
+                  "seriva_responsible_confirmed": true
                 }
               }
             }
