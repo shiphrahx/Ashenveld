@@ -12,6 +12,7 @@ export interface CreationResult {
 
 interface Props {
   onComplete: (result: CreationResult) => void
+  onBack?: () => void
 }
 
 const PILL_STAT_KEY: Record<string, string> = {
@@ -82,7 +83,7 @@ const CLASS_LABELS: Record<string, string> = {
   cipher: 'The Cipher',
 }
 
-export default function CharacterCreation({ onComplete }: Props) {
+export default function CharacterCreation({ onComplete, onBack }: Props) {
   const [step, setStep] = useState(1)
   const [gender, setGender] = useState<string | null>(null)
   const [playerClass, setPlayerClass] = useState<string | null>(null)
@@ -175,7 +176,7 @@ export default function CharacterCreation({ onComplete }: Props) {
           </div>
 
           <div className={styles.stepNav}>
-            <button className={styles.navBack} disabled>← Back</button>
+            <button className={styles.navBack} onClick={onBack}>← Back</button>
             <div className={styles.navProgress}>
               <div className={`${styles.progDot} ${styles.active}`} />
               <div className={styles.progDot} />
