@@ -361,6 +361,52 @@
               "state_changes": {}
             }
           }
+        },
+        {
+          "id": "waved_through",
+          "text": "Walk up to the barricade. They know you.",
+          "requires": {
+            "min_faction": {
+              "iron_compact": 15
+            }
+          },
+          "roll": null,
+          "locked_hint": "Needs the Compact to know you",
+          "outcomes": {
+            "default": {
+              "text": "The soldier looks at you, then at his ledger, and lifts the bar. \"Lieutenant Cael said you might come back this way,\" he says. He does not write anything down.",
+              "next_scene": "act2_ch3_crestfall_changed",
+              "state_changes": {
+                "flags": {
+                  "compact_knows_you_were_east": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "pay_the_sergeant",
+          "text": "Put ten coins on the barricade.",
+          "requires": {
+            "min_gold": 10
+          },
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "He looks at the coins for a while. Then he sweeps them into his hand and lifts the bar. \"Didn't see you,\" he says. The other one looks at the fire.",
+              "next_scene": "act2_ch3_crestfall_changed",
+              "state_changes": {
+                "resources": {
+                  "gold": -10
+                },
+                "factions": {
+                  "iron_compact": {
+                    "reputation": -5
+                  }
+                }
+              }
+            }
+          }
         }
       ],
       "text_mode": {
@@ -822,7 +868,13 @@
         {
           "id": "ask_about_purification_cost",
           "text": "\"What does the purification ritual cost? Who pays it?\"",
-          "requires": {},
+          "requires": {
+            "not": {
+              "max_faction": {
+                "ashen_covenant": -10
+              }
+            }
+          },
           "roll": {
             "stat": "intelligence",
             "dc": 12

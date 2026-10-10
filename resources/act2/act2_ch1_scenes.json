@@ -565,6 +565,29 @@
               }
             }
           }
+        },
+        {
+          "id": "show_them_the_cloth",
+          "text": "Show them the cloth.",
+          "requires": {
+            "inventory": [
+              "missing_person_note"
+            ]
+          },
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You take the cloth out and put it in their hands. They look at their own writing for a long time.\n\n\"I wrote that in the dark,\" they say. \"I could not see if the ink was taking.\" They fold it once and give it back. \"Keep it. You came anyway.\"",
+              "next_scene": "act2_ch1_what_they_found",
+              "state_changes": {
+                "relationships": {
+                  "the_missing_person": {
+                    "closeness": 10
+                  }
+                }
+              }
+            }
+          }
         }
       ],
       "text_mode": {

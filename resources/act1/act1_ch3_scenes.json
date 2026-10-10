@@ -330,6 +330,29 @@
           }
         },
         {
+          "id": "ask_what_town_is_not_told",
+          "text": "\"What is the Covenant not telling the town?\"",
+          "requires": {
+            "min_faction": {
+              "ashen_covenant": 15
+            }
+          },
+          "roll": null,
+          "once": true,
+          "locked_hint": "Needs the Covenant to trust you",
+          "outcomes": {
+            "default": {
+              "text": "He takes his time. \"That we have done this before,\" he says. \"Not here. In the south, two hundred years ago. The texts say it worked.\"\n\nHe does not say what it cost. He looks as though he expects you to ask, and is relieved when you do not.",
+              "next_scene": "act1_ch3_covenant_warning",
+              "state_changes": {
+                "flags": {
+                  "knows_cleansing_was_done_before": true
+                }
+              }
+            }
+          }
+        },
+        {
           "id": "accept_covenant_preparation",
           "text": "Ask about the preparation they offer for those going east.",
           "requires": {},

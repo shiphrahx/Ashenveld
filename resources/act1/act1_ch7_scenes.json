@@ -318,7 +318,11 @@
         {
           "id": "accept_maret_companion",
           "text": "\"Come then. You know what you are getting into.\"",
-          "requires": {},
+          "requires": {
+            "min_relationship": {
+              "maret": 30
+            }
+          },
           "roll": null,
           "outcomes": {
             "default": {
@@ -335,7 +339,8 @@
                 }
               }
             }
-          }
+          },
+          "locked_hint": "Needs Maret to trust you"
         },
         {
           "id": "refuse_maret_companion",

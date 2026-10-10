@@ -99,7 +99,13 @@
         {
           "id": "propose_alliance_with_vorne",
           "text": "Propose working together. You have information he needs.",
-          "requires": {},
+          "requires": {
+            "not": {
+              "max_faction": {
+                "iron_compact": -10
+              }
+            }
+          },
           "roll": {
             "stat": "charisma",
             "dc": 15,

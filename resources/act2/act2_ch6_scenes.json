@@ -35,7 +35,11 @@
         {
           "id": "enter_the_passage",
           "text": "Enter the passage. Walk toward the chamber.",
-          "requires": {},
+          "requires": {
+            "inventory": [
+              "mechanism_fragment"
+            ]
+          },
           "roll": null,
           "outcomes": {
             "default": {
@@ -43,7 +47,8 @@
               "next_scene": "act2_ch6_ritual_approach",
               "state_changes": {}
             }
-          }
+          },
+          "locked_hint": "Needs the mechanism fragment"
         }
       ]
     },
