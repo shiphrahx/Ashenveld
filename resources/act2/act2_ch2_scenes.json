@@ -316,7 +316,18 @@
           "requires": {},
           "roll": {
             "stat": "intelligence",
-            "dc": 12
+            "dc": 12,
+            "bonus": [
+              {
+                "when": {
+                  "flags": {
+                    "heard_the_note": true
+                  }
+                },
+                "value": 2,
+                "label": "You have listened to it before"
+              }
+            ]
           },
           "outcomes": {
             "success": {
@@ -354,7 +365,18 @@
           "requires": {},
           "roll": {
             "stat": "perception",
-            "dc": 13
+            "dc": 13,
+            "bonus": [
+              {
+                "when": {
+                  "flags": {
+                    "heard_the_note": true
+                  }
+                },
+                "value": 2,
+                "label": "You have listened to it before"
+              }
+            ]
           },
           "outcomes": {
             "success": {

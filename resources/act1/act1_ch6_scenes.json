@@ -289,7 +289,20 @@
       },
       "requires": {},
       "text": {
-        "default": "The cobblestone lasts for a mile. Then packed earth. Then the path becomes a habit rather than a road — the evidence of people having gone this way rather than any deliberate construction for the purpose.\n\nThe forest closes in from both sides after the second mile. Not dramatically — gradually, the way a room changes when the light changes. First the trees are at a distance and you can see sky. Then the trees are closer and the sky is framed. Then the trees are overhead and the sky is a theory.\n\nYou walk.\n\nThe silence here is wrong in the way you have started to understand — not the absence of sound but the presence of something that has taken the place of sound. Birds are absent. Insects are absent. The wind moves the branches above you without making the sound that wind makes in branches.",
+        "default": [
+          "The cobblestone lasts for a mile. Then packed earth. Then the path becomes a habit rather than a road — the evidence of people having gone this way rather than any deliberate construction for the purpose.",
+          "The forest closes in from both sides after the second mile. Not dramatically — gradually, the way a room changes when the light changes. First the trees are at a distance and you can see sky. Then the trees are closer and the sky is framed. Then the trees are overhead and the sky is a theory.",
+          "You walk.",
+          "The silence here is wrong in the way you have started to understand — not the absence of sound but the presence of something that has taken the place of sound. Birds are absent. Insects are absent. The wind moves the branches above you without making the sound that wind makes in branches.",
+          {
+            "when": {
+              "flags": {
+                "read_the_east_road": true
+              }
+            },
+            "text": "You read this road at midnight. It holds no surprises yet."
+          }
+        ],
         "commander": "You walk the road with the assessment of a military advance — looking at the terrain, the angles, the places where something could be waiting. The road is tactically poor: flanked on both sides, limited sight lines, one direction of travel.\n\nYou keep moving. The answer to poor tactical ground is to not stop in it.",
         "arcane": "The frequency you have been feeling since arriving in Ashenveld is stronger out here. Not dramatically — incrementally, with each half mile. Your notebook is open as you walk.\n\nYou write: the effect intensifies linearly with proximity, not exponentially. This is consistent with a single stationary source rather than a distributed field. The source is ahead. The source is specific.",
         "ranger": "You walk and read the land as you walk. The curse's effect on the terrain is visible to you in ways it would not be to someone less trained — the particular angle at which the grass grows, the distribution of fungi along the root systems, the places where the soil has a slightly different colour.\n\nThe curse came from the east and moved west. You can see the direction in the land itself.",
@@ -679,6 +692,15 @@
                 },
                 "value": 3,
                 "label": "Branch walked the first mile with you"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "read_the_east_road": true
+                  }
+                },
+                "value": 4,
+                "label": "You read this road last night"
               }
             ]
           },
@@ -718,7 +740,18 @@
           "requires": {},
           "roll": {
             "stat": "dexterity",
-            "dc": 12
+            "dc": 12,
+            "bonus": [
+              {
+                "when": {
+                  "flags": {
+                    "read_the_east_road": true
+                  }
+                },
+                "value": 4,
+                "label": "You read this road last night"
+              }
+            ]
           },
           "outcomes": {
             "success": {

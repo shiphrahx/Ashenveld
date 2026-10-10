@@ -341,7 +341,15 @@
             },
             "text": "She is holding the letter. \"This is yours,\" she says. \"I was wrong to keep it.\""
           },
-          "It is new moon tomorrow. She should be at the tree line by the camp."
+          "It is new moon tomorrow. She should be at the tree line by the camp.",
+          {
+            "when": {
+              "flags": {
+                "maret_believes_alive": true
+              }
+            },
+            "text": "She says \"the people who went in\", never \"the people who died in there\". You noticed that at the camp. She still does it."
+          }
         ],
         "commander": "\"You are not a soldier,\" you say.\n\n\"No,\" she says. \"But I have kept twenty-three people alive in a camp next to the worst outbreak zone in this region for three years. I know how to manage difficult ground.\" A pause. \"And I know when a decision I made needs to be corrected.\"\n\nShe waits for you to decide.",
         "arcane": "\"You made an arrangement,\" you say. \"With whatever is in here. Does that not make this complicated?\"\n\n\"Yes,\" she says. \"It makes it very complicated. I am telling you that before we go in rather than after, which is my version of being honest about it.\"\n\nYou weigh the complication against the information she carries. It is not a close calculation.",

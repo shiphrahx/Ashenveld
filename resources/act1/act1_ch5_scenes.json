@@ -412,16 +412,29 @@
       },
       "choices": [
         {
-          "id": "class_specific_skill",
-          "text": "Use your specific abilities to learn something more before leaving.",
-          "requires": {},
+          "id": "walk_the_perimeter",
+          "text": "Walk the Compact's perimeter after curfew. Count what they are guarding.",
+          "requires": {
+            "class": "commander"
+          },
           "roll": {
-            "stat": "intelligence",
+            "stat": "perception",
             "dc": 11
           },
+          "locked_hint": "Commander only",
           "outcomes": {
             "success": {
-              "text": "You spend the remaining hours of the evening applying what you do best to the problem in front of you — and you find something you did not expect. A pattern in what you have been told, a connection between two pieces of information from different sources, a gap that points to something specific.\n\nIt is not enough to change the plan. It is enough to change what you are looking for when you get there.",
+              "text": "You walk the long way round the granary after curfew, the way you walked a hundred perimeters, and count.\n\nTwo sentries where one would do. Fresh straw in the stables, enough for twenty horses. In the yard, new bunks still in their timber, stacked and waiting. They are not guarding what they have. They are making room for what is coming.\n\nThirty, at a guess. And someone senior enough to need a room of his own.",
+              "next_scene": "act1_ch6_departure_decision",
+              "state_changes": {
+                "flags": {
+                  "found_pre_departure_insight": true,
+                  "knows_vorne_is_coming": true
+                }
+              }
+            },
+            "success_at_cost": {
+              "text": "You get round most of it before a sentry's lamp turns your way. Enough to see the new bunks stacked in the yard. More beds than soldiers. Someone is coming.",
               "next_scene": "act1_ch6_departure_decision",
               "state_changes": {
                 "flags": {
@@ -429,13 +442,122 @@
                 }
               }
             },
-            "success_at_cost": {
-              "text": "You find something — a partial connection, a suggestion of a pattern — but it dissolves before you can hold it clearly. You go to sleep with the feeling that you almost knew something important.",
+            "failure": {
+              "text": "A sentry calls out before you are halfway round. You give him a name that is not yours and go back to the Tallow, and lie awake counting what you did not see.",
               "next_scene": "act1_ch6_departure_decision",
               "state_changes": {}
+            }
+          }
+        },
+        {
+          "id": "listen_to_the_wall",
+          "text": "Put your palm flat on the inn wall and listen properly.",
+          "requires": {
+            "class": "arcane"
+          },
+          "roll": {
+            "stat": "mana",
+            "dc": 12
+          },
+          "locked_hint": "Arcane only",
+          "outcomes": {
+            "success": {
+              "text": "You wait until the room is empty, then put your palm flat on the plaster and stop holding yourself apart from it.\n\nThe note has a direction. East, a little south. And it has a pulse, very slow, like something breathing in its sleep. Under the inn, under the town, under the road. All the way to the forest.\n\nYou take your hand away and write it down before you can lose it.",
+              "next_scene": "act1_ch6_departure_decision",
+              "state_changes": {
+                "flags": {
+                  "found_pre_departure_insight": true,
+                  "heard_the_note": true
+                }
+              }
+            },
+            "success_at_cost": {
+              "text": "You find the note, and the pulse in it, and then it finds you back. When you lift your hand the candle has burned down a full inch.",
+              "next_scene": "act1_ch6_departure_decision",
+              "state_changes": {
+                "flags": {
+                  "found_pre_departure_insight": true
+                }
+              }
             },
             "failure": {
-              "text": "Nothing more tonight. You are tired and the tiredness is starting to cost you precision. You sleep.",
+              "text": "The note is there, but it will not hold still for you. You give up before it costs you more than sleep.",
+              "next_scene": "act1_ch6_departure_decision",
+              "state_changes": {}
+            }
+          }
+        },
+        {
+          "id": "read_the_east_road",
+          "text": "Go to the east gate at midnight and read the road.",
+          "requires": {
+            "class": "ranger"
+          },
+          "roll": {
+            "stat": "perception",
+            "dc": 11
+          },
+          "locked_hint": "Ranger only",
+          "outcomes": {
+            "success": {
+              "text": "The soldiers at the gate are watching the town, not the road. You crouch in the mud just past the lamp's reach and read it.\n\nMany feet going east, bare, close together, with the short even stride of people who are not hurrying and not stopping. One set coming back, booted, months old, set deep. Somebody walked out the far end of this road and came back carrying something heavy.\n\nYou know the road now. It will not surprise you tomorrow.",
+              "next_scene": "act1_ch6_departure_decision",
+              "state_changes": {
+                "flags": {
+                  "found_pre_departure_insight": true,
+                  "read_the_east_road": true
+                }
+              }
+            },
+            "success_at_cost": {
+              "text": "You read enough before the cold drives you in. Feet going east, many of them, bare. Coming back, almost nothing.",
+              "next_scene": "act1_ch6_departure_decision",
+              "state_changes": {
+                "flags": {
+                  "found_pre_departure_insight": true
+                }
+              }
+            },
+            "failure": {
+              "text": "It rained in the afternoon and the road has nothing to say. You go back to bed with wet knees.",
+              "next_scene": "act1_ch6_departure_decision",
+              "state_changes": {}
+            }
+          }
+        },
+        {
+          "id": "sit_with_what_maret_did_not_say",
+          "text": "Sit with what Maret did not say.",
+          "requires": {
+            "class": "cipher"
+          },
+          "roll": {
+            "stat": "intelligence",
+            "dc": 11
+          },
+          "locked_hint": "Cipher only",
+          "outcomes": {
+            "success": {
+              "text": "You go back over every word Maret said to you, and listen this time for the tense.\n\nShe never once said they were. Every time she spoke of [missing person] she said they are. They know the ruins. They are careful. They are not the kind to.\n\nMaret believes they are alive. She has believed it for fourteen months, and she has not told anyone, because then she would have to explain why she has not gone in after them.",
+              "next_scene": "act1_ch6_departure_decision",
+              "state_changes": {
+                "flags": {
+                  "found_pre_departure_insight": true,
+                  "maret_believes_alive": true
+                }
+              }
+            },
+            "success_at_cost": {
+              "text": "Something in the way Maret spoke of them has stuck. You turn it over half the night and cannot quite name it, only that it was hopeful, and she would hate you for noticing.",
+              "next_scene": "act1_ch6_departure_decision",
+              "state_changes": {
+                "flags": {
+                  "found_pre_departure_insight": true
+                }
+              }
+            },
+            "failure": {
+              "text": "You go over it all again and again and end up where you started, with less sleep.",
               "next_scene": "act1_ch6_departure_decision",
               "state_changes": {}
             }
