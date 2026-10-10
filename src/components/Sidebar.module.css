@@ -141,7 +141,7 @@
   color: var(--text-main);
   transition: color 0.13s;
 }
-.ab:hover .al { color: var(--blue-mid); }
+.ab:hover .al { color: var(--blue-ice); }
 
 .tip {
   position: absolute;

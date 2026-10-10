@@ -21,7 +21,7 @@
   flex-shrink: 0;
 }
 
-.crumb { color: var(--text-muted); font-size: var(--fs-label); letter-spacing: 0.1em; display: flex; gap: 14px; }
+.crumb { color: var(--text-muted); font-size: var(--fs-small); letter-spacing: 0.1em; display: flex; gap: 14px; }
 .clock { color: var(--text-main); }
 
 .narrative {
@@ -137,7 +137,7 @@
 
 .mk {
   font-family: var(--font-display);
-  font-size: var(--fs-label);
+  font-size: var(--fs-small);
   color: var(--text-muted);
   min-width: 14px;
   flex-shrink: 0;
@@ -181,7 +181,8 @@
 .sceneTitle:focus-visible { outline: var(--focus); outline-offset: 4px; }
 
 /* U2: the scene collapses under its outcome */
-.faded { opacity: 0.6; }
+/* 0.6 in the plan, but the aside colour fails 4.5:1 below 0.75 */
+.faded { opacity: 0.75; }
 .showScene {
   display: inline-block;
   background: none;

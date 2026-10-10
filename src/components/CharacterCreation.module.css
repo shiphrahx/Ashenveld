@@ -294,14 +294,14 @@
 
 .statPill.low {
   border-color: var(--red);
-  color: var(--red-lit);
+  color: var(--red-bright);
 }
 
 .classCard.selected .statPill { border-color: var(--border-lit); }
 .classCard.selected .statPill.peak { border-color: var(--blue-steel); color: var(--blue-moon); }
 
 .pillVal {
-  opacity: 0.7;
+  color: var(--text-main);
   font-size: var(--fs-label);
   margin-left: 3px;
 }
@@ -488,7 +488,7 @@
 .navNext:hover { border-color: var(--blue-steel); color: var(--white-cold); }
 .navNext:hover::before { transform: scaleX(1); }
 .navNext span { position: relative; z-index: 1; }
-.navNext:disabled { opacity: 0.3; pointer-events: none; }
+.navNext:disabled { opacity: 0.55; pointer-events: none; }
 
 /* ── FINAL SCREEN ── */
 .finalScreen {

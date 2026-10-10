@@ -12,9 +12,9 @@
 
 .dStat {
   font-family: var(--font-display);
-  font-size: var(--fs-label);
+  font-size: var(--fs-small);
   letter-spacing: 0.26em;
-  color: var(--text-faint);
+  color: var(--text-main);
   text-transform: uppercase;
 }
 
@@ -33,9 +33,9 @@
 
 .dBreak {
   font-family: var(--font-display);
-  font-size: var(--fs-label);
+  font-size: var(--fs-small);
   letter-spacing: 0.12em;
-  color: var(--text-muted);
+  color: var(--text-main);
 }
 
 .dLine {
@@ -60,12 +60,12 @@
 
 .dBtn {
   font-family: var(--font-display);
-  font-size: var(--fs-label);
+  font-size: var(--fs-small);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   background: none;
   border: 1px solid var(--border-lit);
-  color: var(--blue-steel);
+  color: var(--blue-ice);
   padding: 9px 28px;
   cursor: pointer;
   transition: background 0.14s, border-color 0.14s, color 0.14s;
