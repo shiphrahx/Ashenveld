@@ -131,7 +131,7 @@
                   "ritual_lesson_complete": true
                 },
                 "relationships": {
-                  "missing_person": {
+                  "the_missing_person": {
                     "closeness": 20
                   }
                 }
@@ -156,8 +156,22 @@
                   "ritual_lesson_complete": true
                 },
                 "relationships": {
-                  "missing_person": {
+                  "the_missing_person": {
                     "closeness": 30
+                  }
+                }
+              }
+            },
+            "success_at_cost": {
+              "text": "They are quiet for a long time.\n\n\"Fourteen months,\" they say finally. \"I have been in this forest for fourteen months and I have been — not alone, exactly, but alone in the specific way of someone who is waiting for the one person who can complete something with them.\" A pause. \"The cost to me is not the ritual. The cost to me was the fourteen months. The ritual is what the fourteen months were for.\"",
+              "next_scene": "act2_ch3_crestfall_news",
+              "state_changes": {
+                "flags": {
+                  "ritual_lesson_complete": true
+                },
+                "relationships": {
+                  "the_missing_person": {
+                    "closeness": 20
                   }
                 }
               }
@@ -170,7 +184,7 @@
                   "ritual_lesson_complete": true
                 },
                 "relationships": {
-                  "missing_person": {
+                  "the_missing_person": {
                     "closeness": 10
                   }
                 }
