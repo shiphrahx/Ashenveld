@@ -575,6 +575,11 @@
       "file": "act1_ch3_scenes.json",
       "act": 1,
       "chapter": 3
+    },
+    "act2_ch2_hidden_passage": {
+      "file": "act2_ch2_scenes.json",
+      "act": 2,
+      "chapter": 2
     }
   },
   "starting_scene": "act1_ch1_barge_arrival",
@@ -715,6 +720,11 @@
     {
       "from": "act2_ch1_what_they_found",
       "to": "act2_ch2_inner_approach",
+      "note": "Chapter change"
+    },
+    {
+      "from": "act2_ch1_what_they_found",
+      "to": "act2_ch2_hidden_passage",
       "note": "Chapter change"
     },
     {

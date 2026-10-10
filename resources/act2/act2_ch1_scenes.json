@@ -655,6 +655,37 @@
               }
             }
           }
+        },
+        {
+          "id": "show_cellar_carvings",
+          "text": "Show them the cellar carvings.",
+          "requires": {
+            "any": [
+              {
+                "flags": {
+                  "has_cellar_map": true
+                }
+              },
+              {
+                "flags": {
+                  "has_partial_cellar_map": true
+                }
+              }
+            ]
+          },
+          "roll": null,
+          "locked_hint": "Needs the Harrow cellar carvings",
+          "outcomes": {
+            "default": {
+              "text": "You open your journal at the page and turn it to the fire.\n\nThey look for a long time. Then they put a finger on one mark, a line running down between two others, and say, \"That is not the passage I use.\"\n\n\"Is it a way in?\"\n\n\"It is a way down.\" They look at you. \"Somebody from Harrow came this far and drew it on a wall. Tomorrow we find out if he was right.\"",
+              "next_scene": "act2_ch2_hidden_passage",
+              "state_changes": {
+                "flags": {
+                  "knows_time_limit": true
+                }
+              }
+            }
+          }
         }
       ]
     }
