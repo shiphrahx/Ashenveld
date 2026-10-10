@@ -201,11 +201,6 @@
       "act": 1,
       "chapter": 6
     },
-    "act1_ch6_visit_maret_departure": {
-      "file": "act1_ch6_scenes.json",
-      "act": 1,
-      "chapter": 6
-    },
     "act1_ch6_east_road_start": {
       "file": "act1_ch6_scenes.json",
       "act": 1,
@@ -613,14 +608,29 @@
   },
   "cross_file_routes": [
     {
+      "from": "act1_ch1_innkeeper_cost",
+      "to": "act1_ch2_morning_crestfall",
+      "note": "Chapter change"
+    },
+    {
+      "from": "act1_ch1_innkeeper_failure",
+      "to": "act1_ch2_morning_crestfall",
+      "note": "Chapter change"
+    },
+    {
       "from": "act1_ch1_tallow_room",
       "to": "act1_ch2_morning_crestfall",
       "note": "End of chapter 1 to chapter 2"
     },
     {
-      "from": "act1_ch2_market_rumour_missing",
+      "from": "act1_ch2_morning_crestfall",
+      "to": "act1_ch3_covenant_introduction",
+      "note": "Chapter change"
+    },
+    {
+      "from": "act1_ch2_market_square",
       "to": "act1_ch3_compact_introduction",
-      "note": "Market to faction introductions"
+      "note": "Chapter change"
     },
     {
       "from": "act1_ch2_market_rumour_missing",
@@ -629,8 +639,23 @@
     },
     {
       "from": "act1_ch2_market_rumour_missing",
-      "to": "act1_ch3_covenant_introduction",
-      "note": "Market to covenant"
+      "to": "act1_ch3_compact_introduction",
+      "note": "Market to faction introductions"
+    },
+    {
+      "from": "act1_ch3_maret_first_meeting",
+      "to": "act1_ch4_maret_opens",
+      "note": "Chapter change"
+    },
+    {
+      "from": "act1_ch3_maret_first_meeting",
+      "to": "act1_ch4_maret_guarded",
+      "note": "Chapter change"
+    },
+    {
+      "from": "act1_ch3_maret_first_meeting",
+      "to": "act1_ch4_rootless_camp_stay",
+      "note": "Chapter change"
     },
     {
       "from": "act1_ch4_maret_letter_success",
@@ -663,6 +688,11 @@
       "note": "Act 1 to Act 2"
     },
     {
+      "from": "act2_ch1_what_they_found",
+      "to": "act2_ch2_inner_approach",
+      "note": "Chapter change"
+    },
+    {
       "from": "act2_ch2_decision_to_return",
       "to": "act2_ch3_crestfall_news",
       "note": "Ch2 to ch3"
@@ -676,11 +706,6 @@
       "from": "act2_ch4_pol_fragment",
       "to": "act2_ch5_return_to_ruins",
       "note": "Ch4 to ch5"
-    },
-    {
-      "from": "act2_ch5_maret_conversation",
-      "to": "act2_ch6_day_of_ritual",
-      "note": "Ch5 to ch6"
     },
     {
       "from": "act2_ch5_missing_person_private",
@@ -716,6 +741,26 @@
       "from": "act2_ch8_point_of_no_return",
       "to": "act3_ch1_alone_in_ashenveld",
       "note": "Act 2 to Act 3 — alone"
+    },
+    {
+      "from": "act3_ch1_new_ashenveld",
+      "to": "act3_ch2_rebuilding",
+      "note": "Chapter change"
+    },
+    {
+      "from": "act3_ch1_leaving",
+      "to": "act3_ch2_on_the_road",
+      "note": "Chapter change"
+    },
+    {
+      "from": "act3_ch1_staying_briefly",
+      "to": "act3_ch2_finishing_work",
+      "note": "Chapter change"
+    },
+    {
+      "from": "act3_ch1_alone_in_ashenveld",
+      "to": "act3_ch2_alone_work",
+      "note": "Chapter change"
     },
     {
       "from": "act3_ch2_rebuilding",
@@ -815,46 +860,56 @@
   },
   "inventory_items": {
     "covenant_ward": {
+      "name": "Covenant ward",
       "description": "Stone disc with Covenant markings. Slows curse exposure effects.",
       "consumable": false
     },
     "covenant_marker_stone": {
+      "name": "Marker stone",
       "description": "Carved stone for placing at the east road nexus point.",
       "consumable": true,
       "consumed_on": "covenant_marker_placed"
     },
     "rootless_map": {
+      "name": "Rootless map",
       "description": "Hand-drawn map of the east road with Rootless exploration points. Lira drew it.",
       "consumable": false
     },
     "rootless_provisions": {
+      "name": "Provisions",
       "description": "Dried food and medicinal herbs from Maret's camp.",
       "consumable": true
     },
     "carved_bone_figure": {
+      "name": "Bone figure",
       "description": "Found in Harrow. Small figure. Unknown origin.",
       "consumable": false
     },
     "missing_person_note": {
+      "name": "Cloth note",
       "description": "Cloth with four words written in ink. Your name. Keep going.",
       "consumable": false
     },
     "harrow_papers": {
+      "name": "Harrow papers",
       "description": "The old man's records from Harrow. The last entries are the most important.",
       "consumable": false
     },
     "cellar_map_copy": {
+      "name": "Cellar carvings",
       "description": "A copy of the carvings from Harrow's barn cellar. A guide to the ruins.",
       "consumable": false
     },
     "maret_outskirts_notes": {
+      "name": "Maret's notes",
       "description": "Maret's handwritten notes on safe movement through the ruins outskirts.",
       "consumable": false
     },
     "mechanism_fragment": {
+      "name": "Mechanism fragment",
       "description": "A piece of the original sealing mechanism. Warm. Remembers what it was.",
       "consumable": true,
-      "consumed_on": "ritual_complete"
+      "consumed_on": "ritual_done"
     }
   },
   "class_stat_blocks": {

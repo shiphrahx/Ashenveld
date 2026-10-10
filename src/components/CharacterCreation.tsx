@@ -98,16 +98,16 @@ export default function CharacterCreation({ onComplete, onBack }: Props) {
 
   function finish() {
     setFinishing(true)
-    // small delay to show final screen before handing off
-    setTimeout(() => {
-      onComplete({
-        gender: gender!,
-        playerClass: playerClass!,
-        missingPersonName: missingName.trim(),
-        missingPersonRelationship: (relation ?? '').toLowerCase(),
-        playerName: playerName.trim(),
-      })
-    }, 800)
+  }
+
+  function enter() {
+    onComplete({
+      gender: gender!,
+      playerClass: playerClass!,
+      missingPersonName: missingName.trim(),
+      missingPersonRelationship: (relation ?? '').toLowerCase(),
+      playerName: playerName.trim(),
+    })
   }
 
   const genderPronoun = gender === 'Woman' ? 'She' : 'He'
@@ -120,7 +120,7 @@ export default function CharacterCreation({ onComplete, onBack }: Props) {
       <div className={styles.finalScreen}>
         <div className={styles.finalSummary}>
           <div className={styles.finalClass}>
-            {cls} · {gender === 'woman' ? 'Woman' : 'Man'}
+            {cls} · {gender}
           </div>
           <div className={styles.finalName}>{playerName.trim()}</div>
           <div className={styles.finalRule} />
@@ -129,11 +129,12 @@ export default function CharacterCreation({ onComplete, onBack }: Props) {
             <strong>{missingName.trim() || 'them'}</strong> —{' '}
             {genderPossessive} {(relation ?? '').toLowerCase()}.
             Over a year missing. One letter. Then silence.<br /><br />
-            The river barge docks at Crestfall before dawn.
+            The river barge docks at Crestfall at nightfall.
             The town is quieter than {genderPronoun === 'She' ? 'she' : 'he'} remembers.
           </div>
         </div>
-        <button className={styles.beginBtn}>Enter Ashenveld</button>
+        <button className={styles.beginBtn} onClick={enter} autoFocus>Enter Ashenveld</button>
+        <button className={styles.navBack} onClick={() => { setFinishing(false); setStep(4) }}>← Back</button>
       </div>
     )
   }

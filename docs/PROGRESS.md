@@ -4,7 +4,7 @@ One step per branch and pull request. Each tick lists what was done, what was sk
 
 - [x] 1. docs/01 Section 0 (engine foundation), then B1, B2, B3, B4, B5
 - [x] 2. docs/01 B6 to B13
-- [ ] 3. docs/01 B21 (validator and smoke test), then B14 to B20
+- [x] 3. docs/01 B21 (validator and smoke test), then B14 to B20
 - [ ] 4. docs/04 Design tokens, then U1 to U7
 - [ ] 5. docs/03 G1 to G6
 - [ ] 6. docs/03 G7 to G13
@@ -90,3 +90,32 @@ Branch `step-2-engine-bugs`, stacked on step 1.
 
 - Old saves stored `time_of_day` as "05:35 — dawn". `loadGame` maps those to a day part now so a pre-step-2 save doesn't show a broken clock. The full migration is still B23.
 - Python on Windows wrote CRLF into a few source files mid-step. Stripped before committing; `.gitattributes` keeps the repo LF either way.
+
+## Step 3 — B21, then B14 to B20
+
+Branch `step-3-validator`, stacked on step 2.
+
+**Done**
+
+- B21 validator: `tools/validate-content.mjs`, `npm run validate`. All 11 error rules and the warnings. Long warning lists go to `tools/out/` (ignored by git). It also prints how many flags are read. Runs in `deploy.yml` before the build, with `npm test`.
+- B21 smoke test: `tests/playthrough.spec.ts` with `@playwright/test`, `npm run test:e2e`. Four playthroughs (one per class, dice stubbed at 0.95 or 0.02) reach four different endings; the save test reloads three times and checks scene, day, time, gold, health and inventory, then Return to Title. A new `Checks` workflow runs validate, unit, build and e2e on pull requests.
+- B14: Goran and the fire are linked in. `cross_file_routes` is rebuilt from the data.
+- B15: departure hub with two `once` visits and "Take the east road." Opening text is guarded with a fallback. `act1_ch6_visit_maret_departure` deleted.
+- B16: the summary waits for **Enter Ashenveld**, has a Back link, shows the stored gender, and says nightfall.
+- B17: Rest is `aria-disabled` with "You cannot rest here."
+- B18: `consumed_on` is applied after every state change. All ten items have a `name`, shown in Items. The fragment is consumed on a shared `ritual_done` flag, set on all three sealing outcomes.
+- B19: no seeding at creation. A relationship starts from the NPC's `initial_closeness` when a scene first changes it.
+- B20: the four text slips. The two asterisk items are handled by `Inline` since step 1.
+
+**Validator now**: 0 errors, 23 warnings. 198 flags set, 24 read.
+
+**Skipped or deferred**
+
+- The 390×844 test is written but marked `fixme`. The shell is a fixed 1100×660 box until U1 (step 4), so it can't pass yet.
+- The e2e check for "if she came with you" is behind `STAGE_DIRECTIONS_FIXED = false`. That line is still in `act2_ch3_crestfall_news` until N7 (step 7). Raw `[missing person]` and `[player]` are checked now.
+- The e2e test runs against the Vite dev server, not `vite preview`. The built `dist/` has no `resources/` folder until B22 (step 12) moves it into `public/`. Switch it to `vite preview` then.
+
+**Plan was wrong or unclear**
+
+- Byte-identical images (rule 8): files 010 and 019 are copies of 009 and 018, and the art is on hold, so the rule would fail today. Those two pairs are listed in the validator as known and only warn. Any other duplicate fails.
+- B21 asks for four different endings from the four final choices with "always the first choice". The sent-ahead path then reaches `ending_escape_together`, the same as leaving together. The Ranger test names two choices (`choose_rootless_side` at the reckoning, `realise_you_are_staying` later) and reaches `ending_warden_of_ashenveld`.

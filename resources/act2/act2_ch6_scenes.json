@@ -242,7 +242,8 @@
               "state_changes": {
                 "flags": {
                   "ritual_complete": true,
-                  "curse_sealed": true
+                  "curse_sealed": true,
+                  "ritual_done": true
                 }
               }
             },
@@ -252,7 +253,8 @@
               "state_changes": {
                 "flags": {
                   "ritual_complete": true,
-                  "curse_sealed": true
+                  "curse_sealed": true,
+                  "ritual_done": true
                 },
                 "resources": {
                   "health": -20
@@ -265,7 +267,8 @@
               "state_changes": {
                 "flags": {
                   "ritual_partial": true,
-                  "curse_slowed": true
+                  "curse_slowed": true,
+                  "ritual_done": true
                 }
               }
             }

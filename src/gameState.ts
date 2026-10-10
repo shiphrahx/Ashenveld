@@ -6,7 +6,7 @@
  */
 
 import type { GameState, StateChanges, MetaStore, DayPart, SceneWhen } from './types'
-import { getMasterIndex } from './loader'
+import { getMasterIndex, getNpc } from './loader'
 
 const SAVE_KEY = 'ashenveld_save'
 const META_KEY = 'ashenveld_meta'
@@ -92,7 +92,7 @@ export function applyStateChanges(state: GameState, changes: StateChanges): Game
   if (changes.relationships) {
     for (const [npcId, delta] of Object.entries(changes.relationships)) {
       if (!next.relationships[npcId]) {
-        next.relationships[npcId] = { closeness: 0 }
+        next.relationships[npcId] = { closeness: getNpc(npcId)?.initial_closeness ?? 0 }
       }
       next.relationships[npcId].closeness += delta.closeness
     }
@@ -118,6 +118,10 @@ export function applyStateChanges(state: GameState, changes: StateChanges): Game
       item => !changes.inventory_remove!.includes(item)
     )
   }
+
+  // Items are used up once the flag they are consumed on is set.
+  const defs = getMasterIndex().inventory_items
+  next.inventory = next.inventory.filter(id => { const f = defs[id]?.consumed_on; return !(f && next.flags[f]) })
 
   if (changes.world) {
     // curse_spread is a delta. Day parts go through applyWhen so time only moves forward.

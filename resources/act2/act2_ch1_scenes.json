@@ -228,7 +228,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "You crouch in front of them and speak. Not their name — you do not know it. Just words, calm and direct, the words you would use with someone surfacing from very deep water.\n\nSomething in their eyes shifts. Just slightly. Just enough to feel like something returning from a long distance.\n\nThey say one word. It is your name.\n\nThen they are gone again — back to wherever they were — but the word hangs in the air of the ruins outskirts and your missing person did not leave a message on a cairn stone telling you to wait here. Someone who has been in here for a very long time told the Watcher your name. And the Watcher said it.",
+              "text": "You crouch in front of them and speak. Not their name — you do not know it. Just words, calm and direct, the words you would use with someone surfacing from very deep water.\n\nSomething in their eyes shifts. Just slightly. Just enough to feel like something returning from a long distance.\n\nThey say one word. It is your name.\n\nThen they are gone again — back to wherever they were — but the word hangs in the air of the ruins outskirts and nobody told the Watcher that name today. Someone who has been in here for a very long time told the Watcher your name. And the Watcher said it.",
               "next_scene": "act2_ch1_missing_person_approach",
               "state_changes": {
                 "flags": {

@@ -81,7 +81,7 @@ export default function SceneArt({ locationName, gameState }: Props) {
           />
         )}
       </div>
-      <div className={styles.sceneFooter}>{locationName}</div>
+      <div className={styles.sceneFooter} data-location-name>{locationName}</div>
     </div>
   )
 }

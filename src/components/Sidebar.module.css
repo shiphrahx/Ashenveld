@@ -167,3 +167,8 @@
   width: 160px;
   text-align: center;
 }
+
+.abOff { cursor: default; }
+.abOff svg { opacity: 0.45; }
+.abOff:hover { background: none; }
+.abOff:hover svg { stroke: inherit; }

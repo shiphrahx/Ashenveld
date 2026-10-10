@@ -7,3 +7,10 @@ dist/
 # Claude Code (local only)
 CLAUDE.md
 .claude/
+
+# Validator output
+tools/out/
+
+# Playwright
+test-results/
+playwright-report/
