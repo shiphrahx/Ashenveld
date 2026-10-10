@@ -57,12 +57,18 @@ export interface NpcDef {
   name: string
   role: string
   initial_closeness: number
+  location?: string
+  personality?: string
+  faction_alignment?: string
 }
 
 export interface LocationDef {
   id: string
   name: string
   description: string
+  region?: string
+  ambient_day?: string
+  ambient_night?: string
 }
 
 // ─── Conditions and text ──────────────────────────────────────────────────────
