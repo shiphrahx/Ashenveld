@@ -448,13 +448,60 @@
         }
       },
       "text": {
-        "default": "Three days out from Crestfall.\n\nThe road has become ordinary in a way the road into Ashenveld never was. No checkpoint. No wrong silence. No trees leaning in with attention they should not have.\n\nYou and [missing person] walk through a landscape that does not require interpretation. This is more disorienting than you expected.\n\nThey are adjusting to the open world in ways you watch without commenting on. They look at things — ordinary things, a market in a village, people arguing over a fence line, a dog sleeping in the sun — with an attention that is not anxious, just intense. Fourteen months without ordinary things means they are relearning what ordinary is.\n\nYou let them relearn it. You have nothing better to do.",
+        "default": [
+          "Three days out from Crestfall.",
+          "The road has become ordinary in a way the road into Ashenveld never was. No checkpoint. No wrong silence. No trees leaning in with attention they should not have.",
+          "You and [missing person] walk through a landscape that does not require interpretation. This is more disorienting than you expected.",
+          "They are adjusting to the open world in ways you watch without commenting on. They look at things — ordinary things, a market in a village, people arguing over a fence line, a dog sleeping in the sun — with an attention that is not anxious, just intense. Fourteen months without ordinary things means they are relearning what ordinary is.",
+          "You let them relearn it. You have nothing better to do.",
+          "On the twentieth morning you wake and they are not beside you. You find them a hundred yards on, sitting upright in the middle of the road, facing east. Their eyes are open. When you say their name they look at you, then at the road, and ask how they got there.",
+          "The traveller on the east road told you the same thing happened to him."
+        ],
         "commander": "The road is a decompression chamber between what you were in Ashenveld and whatever you will be next.\n\nYou think, as you walk, about the work you left unfinished. You made commitments you cannot complete from this distance. You will fulfil them remotely, through letters, through the documentation when it is sent.\n\nYou think about whether leaving was the right decision. You arrive at the same answer each time: it was not the only right decision. It was one right decision among several. You made it and you walk.",
         "arcane": "You are writing as you travel. Not the documentation — that can wait. Something else. The account of what the ritual was like from inside. What the mechanism showed you. What the experience of unified intention actually felt like.\n\nNo text describes this from the inside. You are the first person in the documented record to have done the original sealing ritual and survived to describe it.\n\nYou write carefully. The words you choose for this will be the words that shape how it is understood for as long as the record survives.",
         "ranger": "You are reading the landscape as you travel and the landscape is reading normally.\n\nThat sounds like a small thing. It is not a small thing. Three weeks in Ashenveld with a corrupted ambient made reading the land a different kind of work — everything had to be filtered through what the curse might be doing to it before you could understand what the land itself was doing.\n\nOrdinary landscape. Ordinary reading. You find yourself grateful for the simplicity in a way you would not have predicted three weeks ago.",
         "cipher": "You are out of the political environment of Ashenveld and into a road with [missing person] and the shift in context is producing unexpected effects.\n\nYou do not have anything to manage. No faction to monitor. No information to curate. No position to maintain.\n\nYou are not sure what you are without those things. You are spending the walk finding out."
       },
       "choices": [
+        {
+          "id": "tell_them",
+          "text": "Tell them what you found.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You tell them. They listen with their hands round a cup they have not drunk from.\n\n\"East,\" they say. \"Of course east.\" They put the cup down. \"Wake me, if it happens again. Do not be kind about it.\"",
+              "next_scene": "act3_ch3_road_further",
+              "state_changes": {
+                "flags": {
+                  "told_them_about_the_pull": true
+                },
+                "relationships": {
+                  "the_missing_person": {
+                    "closeness": 10
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "watch_for_it",
+          "text": "Say nothing. Watch for it to happen again.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You tell them they were sleepwalking, which is true, and nothing else. For the next week you sleep lightly, with your boots on, and wake at every sound.",
+              "next_scene": "act3_ch3_road_further",
+              "state_changes": {
+                "flags": {
+                  "watching_for_the_pull": true
+                }
+              }
+            }
+          }
+        },
         {
           "id": "ask_them_about_the_ruins",
           "text": "Ask [missing person] about the fourteen months. What they actually experienced.",
@@ -501,6 +548,86 @@
                   "the_missing_person": {
                     "closeness": 15
                   }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "set_a_watch",
+          "text": "Set a watch, as you would on campaign.",
+          "requires": {
+            "class": "commander"
+          },
+          "roll": null,
+          "locked_hint": "Commander only",
+          "outcomes": {
+            "default": {
+              "text": "You split the night into watches and keep both of them yourself. On the fourth night you see them sit up, and stand, and turn east, and you put a hand on their shoulder before the first step. They wake. They know at once what happened.",
+              "next_scene": "act3_ch3_road_further",
+              "state_changes": {
+                "flags": {
+                  "understands_the_pull": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "listen_for_the_note_in_them",
+          "text": "Listen for the note in them.",
+          "requires": {
+            "class": "arcane"
+          },
+          "roll": null,
+          "locked_hint": "Arcane only",
+          "outcomes": {
+            "default": {
+              "text": "You sit beside them while they sleep and listen. It is there: very faint, the note from under the chamber, threaded through them like a hair through a loaf. Not the curse. The place they spent fourteen months. It wants them back.",
+              "next_scene": "act3_ch3_road_further",
+              "state_changes": {
+                "flags": {
+                  "understands_the_pull": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "read_their_tracks",
+          "text": "Read their tracks back from where they sat.",
+          "requires": {
+            "class": "ranger"
+          },
+          "roll": null,
+          "locked_hint": "Ranger only",
+          "outcomes": {
+            "default": {
+              "text": "Their tracks go straight, a hundred yards, heel to toe, no wander in them at all. Nobody walks like that asleep. Something walked them. It walked them east.",
+              "next_scene": "act3_ch3_road_further",
+              "state_changes": {
+                "flags": {
+                  "understands_the_pull": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "ask_what_they_dreamed",
+          "text": "Ask what they were dreaming, before they decide not to say.",
+          "requires": {
+            "class": "cipher"
+          },
+          "roll": null,
+          "locked_hint": "Cipher only",
+          "outcomes": {
+            "default": {
+              "text": "\"The chamber,\" they say, before they can stop it. \"It was quiet. I was the only one there. It was the best I have slept in a year.\" Then they hear what they have said, and go white.",
+              "next_scene": "act3_ch3_road_further",
+              "state_changes": {
+                "flags": {
+                  "understands_the_pull": true
                 }
               }
             }

@@ -100,7 +100,20 @@
         }
       },
       "text": {
-        "default": "Six weeks out from Ashenveld.\n\nYou have reached a specific town that [missing person] decided they wanted to reach — not for any reason connected to what came before, but because someone told them the market here is good and the rooms are affordable and the forest to the north has birds they have not seen in fourteen months.\n\nThis is how they navigate now: toward birds. Toward markets with specific reputations. Toward rooms in towns they have never been in.\n\nYou navigate with them. This is, you are discovering, a different skill from the ones you developed in Ashenveld. Less reading of damage and more reading of possibility.",
+        "default": [
+          "Six weeks out from Ashenveld.",
+          "You have reached a specific town that [missing person] decided they wanted to reach — not for any reason connected to what came before, but because someone told them the market here is good and the rooms are affordable and the forest to the north has birds they have not seen in fourteen months.",
+          "This is how they navigate now: toward birds. Toward markets with specific reputations. Toward rooms in towns they have never been in.",
+          "You navigate with them. This is, you are discovering, a different skill from the ones you developed in Ashenveld. Less reading of damage and more reading of possibility.",
+          {
+            "when": {
+              "flags": {
+                "understands_the_pull": true
+              }
+            },
+            "text": "It has happened twice more since. Both times you were awake."
+          }
+        ],
         "commander": "A letter arrived from Cael two weeks ago. The documentation was received. Vorne completed the withdrawal. The Rootless camp is formally recognised.\n\nYou read it and wrote a brief reply — confirmation, not conversation — and put it away.\n\nThe work is done. You are not the person who needs to be told the work is done. The work being done is what you wanted and it has happened and you are here, in a town with a good market and affordable rooms, which is a different kind of achievement.",
         "arcane": "The academic correspondence follows you. This is fine. It is the work you are built for and it does not require you to be anywhere specific.\n\nYou write back to your colleagues from a table in a market town and the letters they receive say the name of the town in the header and none of them find this strange because scholars move and the work moves with them.\n\n[missing person] watches you write and asks: \"Is it strange? Doing this from here?\"\n\n\"No,\" you say, and mean it. \"This is what the work looks like when I am not in a crisis.\"\n\nThey consider this. \"I think I prefer it,\" they say.",
         "ranger": "The forest to the north has birds you have not seen in weeks. [missing person] was right about that.\n\nYou spend an afternoon in it, reading. Not for curse damage. Not for a recovery rate. You read the forest because it is interesting, and you had forgotten that it could be.",
@@ -118,6 +131,24 @@
               "next_scene": "act3_ch5_endings",
               "state_changes": {
                 "flags": {
+                  "post_ashenveld_direction_set": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "turn_back_east",
+          "text": "Turn back. Walk east again, together.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You do not decide it so much as notice it has been decided. One morning you turn round on the road, and [missing person] turns with you, and neither of you says why.",
+              "next_scene": "act3_ch5_endings",
+              "state_changes": {
+                "flags": {
+                  "turned_back_east": true,
                   "post_ashenveld_direction_set": true
                 }
               }

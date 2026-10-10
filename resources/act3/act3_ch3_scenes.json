@@ -152,7 +152,42 @@
       },
       "requires": {},
       "text": {
-        "default": "A month after leaving Ashenveld.\n\nYou are somewhere else entirely. The specific town does not matter — what matters is that it has nothing to do with ruins or curses or factions negotiating over broken mechanisms.\n\n[missing person] has adapted faster than you. Fourteen months in isolation inside a ruined city produced, apparently, a person who is intensely grateful for ordinary things. They speak to strangers. They eat everything on the plate. They sleep without difficulty in strange rooms.\n\nYou are the one who is still adjusting.\n\nAshenveld follows you in the specific way that significant places follow people who were changed by them. Not as regret — as something that has become part of how you read the world. Every landscape you move through, you are reading for the signs that Ashenveld taught you to read. Mostly the signs are absent. Sometimes they are not.",
+        "default": [
+          "A month after leaving Ashenveld.",
+          "You are somewhere else entirely. The specific town does not matter — what matters is that it has nothing to do with ruins or curses or factions negotiating over broken mechanisms.",
+          "[missing person] has adapted faster than you. Fourteen months in isolation inside a ruined city produced, apparently, a person who is intensely grateful for ordinary things. They speak to strangers. They eat everything on the plate. They sleep without difficulty in strange rooms.",
+          "You are the one who is still adjusting.",
+          "Ashenveld follows you in the specific way that significant places follow people who were changed by them. Not as regret — as something that has become part of how you read the world. Every landscape you move through, you are reading for the signs that Ashenveld taught you to read. Mostly the signs are absent. Sometimes they are not.",
+          {
+            "when": {
+              "flags": {
+                "player_leaves_ashenveld": true,
+                "missing_person_sent_ahead": false
+              }
+            },
+            "text": "A letter from Maret catches up with you at an inn, three weeks old."
+          },
+          {
+            "when": {
+              "flags": {
+                "player_leaves_ashenveld": true,
+                "missing_person_sent_ahead": false,
+                "ritual_partial": true
+              }
+            },
+            "text": "The seal is holding, she writes. It is not finished. She does not ask you to come back. She asks if you know anyone who can read the old texts."
+          },
+          {
+            "when": {
+              "flags": {
+                "player_leaves_ashenveld": true,
+                "missing_person_sent_ahead": false,
+                "ritual_partial": false
+              }
+            },
+            "text": "The garden is green again along the yellow edge, she writes. Lira is teaching a child to tie the knot."
+          }
+        ],
         "commander": "You received a letter from Cael three weeks out. The documentation arrived. Vorne is proceeding with the withdrawal. The Rootless camp is formally recognised.\n\nYou read the letter twice and filed it. The work is continuing without you. That is the correct outcome.\n\nYou think about whether you are done with institutional work or whether this is a period between institutional works. You have not decided yet. The question is patient.",
         "arcane": "The academic letters have begun arriving — responses to the documentation you distributed. Colleagues from three institutions with questions, with frameworks you had not considered, with corrections to errors you made under pressure.\n\nThis is the normal life of a scholar. It follows you wherever you go.\n\n[missing person] watches you correspond and says: \"Is it strange? To be doing this in an ordinary place?\"\n\n\"Yes,\" you say. \"Good strange.\"",
         "ranger": "You are in a town with a market and a forest and birds and animals behaving in ways you can read without filtering for contamination.\n\nIt is a relief that is also a kind of grief. You spent weeks learning to read a damaged landscape and now the reading is not necessary and you are not sure what to do with the skill.\n\n[missing person] says, watching you track a hawk's flight across the market square: \"You are doing it again.\"\n\n\"Yes,\" you say.\n\n\"It is fine,\" they say. \"I like that you do that.\"",
