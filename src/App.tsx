@@ -22,7 +22,7 @@ import {
   markSeen,
 } from './gameState'
 import { meets } from './conditions'
-import { resolveRich } from './text'
+import { resolveRich, CLASS_LABELS } from './text'
 import TitleScreen from './components/TitleScreen'
 import StarField from './components/StarField'
 import RestConfirm from './components/RestConfirm'
@@ -71,6 +71,7 @@ export default function App() {
   const [currentScene, setCurrentScene] = useState<Scene | null>(null)
   const [saveExists, setSaveExists] = useState(false)
   const [savedEnded, setSavedEnded] = useState(false)
+  const [saveSummary, setSaveSummary] = useState<string | undefined>()
   const [panel, setPanel] = useState<PanelId | null>(null)
   const [seenBefore, setSeenBefore] = useState(false)
   const [toasts, setToasts] = useState<Toast[]>([])
@@ -102,7 +103,9 @@ export default function App() {
 
   const refreshSaveInfo = useCallback(() => {
     setSaveExists(hasSave())
-    setSavedEnded(Boolean(loadGame()?.ended))
+    const saved = loadGame()
+    setSavedEnded(Boolean(saved?.ended))
+    setSaveSummary(saved ? `${saved.player.name} · ${CLASS_LABELS[saved.player.class] ?? ''} · ${saved.ended ? saved.ended.title : `Act ${['', 'I', 'II', 'III'][saved.world.act] ?? saved.world.act}, Day ${saved.world.day}`}` : undefined)
   }, [])
 
   // ── Startup ──────────────────────────────────────────────────────────────────
@@ -317,6 +320,7 @@ export default function App() {
       <TitleScreen
         hasSave={saveExists}
         saveEnded={savedEnded}
+        saveSummary={saveSummary}
         onNewGame={handleNewGame}
         onContinue={handleContinue}
       />
