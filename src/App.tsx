@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback, useRef } from 'react'
 import type { GameState, Scene, Outcome, JournalEntry } from './types'
 import { initLoader, resolveScene, locationName, peekScene, getMasterIndex, getLocation, getChapterOf } from './loader'
 import ActCard from './components/ActCard'
+import { imageFor, srcSetFor, IMG_SIZES } from './hooks/useLocationImage'
 import LoadingScreen from './components/LoadingScreen'
 import ErrorScreen from './components/ErrorScreen'
 import { DIMMING, REST, restOption, type RestOption } from './rules'
@@ -136,6 +137,28 @@ export default function App() {
     const t = setTimeout(() => setStoryFade(null), 300)
     return () => clearTimeout(t)
   }, [storyFade])
+
+  // ── B22: warm the cache for wherever the visible choices lead ─────────────────
+  useEffect(() => {
+    if (!currentScene || !gameState || phase !== 'game') return
+    const targets = new Set<string>()
+    for (const c of currentScene.choices ?? []) {
+      if (!meets(c.requires, gameState)) continue
+      for (const o of Object.values(c.outcomes ?? {})) if (o?.next_scene && o.next_scene !== '@return') targets.add(o.next_scene)
+    }
+    const seen = new Set<string>()
+    for (const id of targets) {
+      resolveScene(id).then(s => {
+        const base = imageFor(s.location, gameState)
+        if (!base || seen.has(base)) return
+        seen.add(base)
+        const img = new Image()
+        img.sizes = IMG_SIZES
+        img.srcset = srcSetFor(base)
+      }).catch(() => { /* a missing scene shows up when it's entered */ })
+    }
+  // Once per scene entry.
+  }, [currentScene?.id, phase])
 
   // ── Sound (E3) ────────────────────────────────────────────────────────────────
   useEffect(() => { setVolume(settings.volume) }, [settings.volume])

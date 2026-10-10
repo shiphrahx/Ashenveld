@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import type { GameState } from '../types'
-import { useLocationImage } from '../hooks/useLocationImage'
+import { useLocationImage, srcSetFor, IMG_SIZES } from '../hooks/useLocationImage'
 import { getLocation } from '../loader'
 import { motionAllowed, useSettings } from '../settings'
 import Atmosphere from './Atmosphere'
@@ -16,9 +16,6 @@ interface Props {
   /** E9 'ritual': a warm glow at the focal point, 0 to 3. */
   glow?: number
 }
-
-/** B22: the art column is about a third of a wide screen and the whole width of a phone. */
-const IMG_SIZES = '(max-width: 720px) 100vw, 34vw'
 
 export default function SceneArt({ locationName, gameState, alt = '', frozen = false, glow = 0 }: Props) {
   const { settings } = useSettings()
@@ -112,7 +109,7 @@ export default function SceneArt({ locationName, gameState, alt = '', frozen = f
           <img
             key={displayed}
             src={`${displayed}@1x.webp`}
-            srcSet={`${displayed}@1x.webp 640w, ${displayed}@2x.webp 1280w`}
+            srcSet={srcSetFor(displayed)}
             sizes={IMG_SIZES}
             alt={alt}
             className={styles.locationImg}
@@ -124,7 +121,7 @@ export default function SceneArt({ locationName, gameState, alt = '', frozen = f
           <img
             key={incoming}
             src={`${incoming}@1x.webp`}
-            srcSet={`${incoming}@1x.webp 640w, ${incoming}@2x.webp 1280w`}
+            srcSet={srcSetFor(incoming)}
             sizes={IMG_SIZES}
             alt=""
             aria-hidden="true"
