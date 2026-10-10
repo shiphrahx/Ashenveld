@@ -21,7 +21,28 @@
       },
       "requires": {},
       "text": {
-        "default": "Morning in the outskirts. The grey light that passes for dawn here.\n\nYou wake to find [missing person] already up, sitting near the remnants of last night's fire, reading from their journal — the fourteen months of notes, translations, observations. They look like someone who has forgotten what mornings used to involve.\n\nMaret — if she came with you — has news from the camp. A runner arrived during the night. Someone from Crestfall, moving fast.\n\nIf Maret is not with you: [missing person]'s expression when you wake tells you something has changed. They have been up for hours and they have been thinking.\n\nEither way, the news is the same: Commander Vorne has arrived in Crestfall. He has brought thirty soldiers and a scholar — a woman named Seriva — and he has issued a notice to the town that the east road is now under Compact control. Nobody goes east without Compact authorisation.",
+        "default": [
+          "Morning in the outskirts. The grey light that passes for dawn here.",
+          "You wake to find [missing person] already up, sitting near the remnants of last night's fire, reading from their journal — the fourteen months of notes, translations, observations. They look like someone who has forgotten what mornings used to involve.",
+          {
+            "when": {
+              "flags": {
+                "maret_joined": true
+              }
+            },
+            "text": "Maret is crouched at the edge of the clearing with a boy from the camp. He ran most of the night. She listens, sends him to the fire, and comes to you.",
+            "else": "A boy from the Rootless camp is sitting by the fire with a blanket round his shoulders. Maret sent him. He ran most of the night."
+          },
+          "The news: Commander Vorne has arrived in Crestfall. He has brought thirty soldiers and a scholar, a woman named Seriva, and he has issued a notice to the town that the east road is now under Compact control. Nobody goes east without Compact authorisation.",
+          {
+            "when": {
+              "flags": {
+                "knows_vorne_is_coming": true
+              }
+            },
+            "text": "You knew. You read the order on the road."
+          }
+        ],
         "commander": "Thirty soldiers. A forward command established in the granary. A scholarly resource travelling with military protection.\n\nVorne is not here to assess. He is here to act. The period of patience has ended and the Compact has decided it has collected enough data.\n\nYou think about what Cael told you — Commander Vorne is waiting for enough data to act. Vorne has decided he has enough.",
         "arcane": "Seriva. You have been thinking about Seriva since [missing person] mentioned her name in connection with the mechanism's fracture.\n\nA senior Covenant scholar travelling with the Iron Compact is not a natural alliance. The Covenant and the Compact have been in institutional competition for the region's resources for decades. For Seriva to be working with Vorne means either she has been working with him for a long time, or the situation has changed dramatically enough that old competitors have become temporary allies.\n\nOr she is not working with him. She is using him.",
         "ranger": "Thirty soldiers on the east road means the east road is closed. Which means anyone in the ruins who wants to return to Crestfall will have to explain their presence to the Compact. Which means you will have to explain your presence to the Compact.\n\nYou begin thinking about alternative routes out of the ruins that avoid the east road entirely.",
@@ -228,6 +249,14 @@
       "text": {
         "default": [
           "The Compact checkpoint is two miles east of Crestfall, at the point where the cobblestone begins. A barricade of timber, two soldiers, a small fire.",
+          {
+            "when": {
+              "flags": {
+                "stayed_for_lesson": true
+              }
+            },
+            "text": "You stayed a day longer in the ruins than was wise. The barricade is taller than the runner described."
+          },
           "They see you before you see them, which means they were watching. When you get close enough to talk, one of them steps forward with the specific posture of someone following a procedure.",
           "\"East road is under Compact jurisdiction,\" he says. \"State your name, your origin, and your purpose for travel.\"",
           {
@@ -504,7 +533,9 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "The camp is still there — you were not sure it would be. Maret, if she came back with you, is already there. Branch is at the edge, watching the town with the quality of someone who has been watching for a while and does not like what they see.",
+              "text": [
+                "The camp is still there — you were not sure it would be. Maret is already there. Branch is at the edge, watching the town with the quality of someone who has been watching for a while and does not like what they see."
+              ],
               "next_scene": "act2_ch3_rootless_situation",
               "state_changes": {}
             }

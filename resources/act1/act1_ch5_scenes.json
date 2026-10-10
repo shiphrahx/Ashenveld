@@ -30,7 +30,7 @@
       "choices": [
         {
           "id": "try_to_reach_her",
-          "text": "Try to reach her. Use her name if someone gives it to you.",
+          "text": "Ask the old man her name. Try to reach her.",
           "requires": {},
           "roll": {
             "stat": "charisma",

@@ -39,8 +39,152 @@
                 ]
               }
             },
-            "text": "You pack what you have. At the Tallow's bar, Aldous gives you bread for the road without being asked and charges you three coins less than the posted rate, which is his specific language for: I hope you come back.\n\nYou have been in Crestfall for three days. You know more than you did and less than you need and the gap is east.\n\nThree factions have asked things of you or offered things to you and you have navigated between them with whatever you have navigated with. What you have now: a direction, a destination, a letter that may or may not be a warning, and the specific quality of purpose that comes from having assembled enough pieces to see the shape of a thing, even if the thing itself is still dark.",
-            "else": "The light is coming up. The east road is waiting."
+            "text": "You pack what you have. At the Tallow's bar, Aldous gives you bread for the road without being asked and charges you three coins less than the posted rate, which is his specific language for: I hope you come back."
+          },
+          {
+            "when": {
+              "not": {
+                "any": [
+                  {
+                    "taken": [
+                      "act1_ch6_departure_decision:visit_compact_before_leaving"
+                    ]
+                  },
+                  {
+                    "taken": [
+                      "act1_ch6_departure_decision:visit_maret_before_leaving"
+                    ]
+                  }
+                ]
+              }
+            },
+            "text": "You have been in Crestfall for three days. You know more than you did and less than you need and the gap is east."
+          },
+          {
+            "when": {
+              "not": {
+                "any": [
+                  {
+                    "taken": [
+                      "act1_ch6_departure_decision:visit_compact_before_leaving"
+                    ]
+                  },
+                  {
+                    "taken": [
+                      "act1_ch6_departure_decision:visit_maret_before_leaving"
+                    ]
+                  }
+                ]
+              }
+            },
+            "text": "Three factions have asked things of you or offered things to you."
+          },
+          {
+            "when": {
+              "not": {
+                "any": [
+                  {
+                    "taken": [
+                      "act1_ch6_departure_decision:visit_compact_before_leaving"
+                    ]
+                  },
+                  {
+                    "taken": [
+                      "act1_ch6_departure_decision:visit_maret_before_leaving"
+                    ]
+                  }
+                ]
+              },
+              "flags": {
+                "compact_allied": true
+              }
+            },
+            "text": "You took the Compact's coin."
+          },
+          {
+            "when": {
+              "not": {
+                "any": [
+                  {
+                    "taken": [
+                      "act1_ch6_departure_decision:visit_compact_before_leaving"
+                    ]
+                  },
+                  {
+                    "taken": [
+                      "act1_ch6_departure_decision:visit_maret_before_leaving"
+                    ]
+                  }
+                ]
+              },
+              "flags": {
+                "covenant_task_accepted": true
+              }
+            },
+            "text": "You carry the Covenant's stone."
+          },
+          {
+            "when": {
+              "not": {
+                "any": [
+                  {
+                    "taken": [
+                      "act1_ch6_departure_decision:visit_compact_before_leaving"
+                    ]
+                  },
+                  {
+                    "taken": [
+                      "act1_ch6_departure_decision:visit_maret_before_leaving"
+                    ]
+                  }
+                ]
+              },
+              "flags": {
+                "compact_allied": false,
+                "covenant_task_accepted": false
+              }
+            },
+            "text": "You owe none of them anything, which is its own kind of position."
+          },
+          {
+            "when": {
+              "not": {
+                "any": [
+                  {
+                    "taken": [
+                      "act1_ch6_departure_decision:visit_compact_before_leaving"
+                    ]
+                  },
+                  {
+                    "taken": [
+                      "act1_ch6_departure_decision:visit_maret_before_leaving"
+                    ]
+                  }
+                ]
+              }
+            },
+            "text": "What you have now: a direction, a destination, a letter that may or may not be a warning, and the specific quality of purpose that comes from having assembled enough pieces to see the shape of a thing, even if the thing itself is still dark."
+          },
+          {
+            "when": {
+              "not": {
+                "not": {
+                  "any": [
+                    {
+                      "taken": [
+                        "act1_ch6_departure_decision:visit_compact_before_leaving"
+                      ]
+                    },
+                    {
+                      "taken": [
+                        "act1_ch6_departure_decision:visit_maret_before_leaving"
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            "text": "The light is coming up. The east road is waiting."
           },
           "You leave before the market opens."
         ],
@@ -198,7 +342,19 @@
       },
       "requires": {},
       "text": {
-        "default": "The point Edric described is identifiable if you are looking for it — the angle of the tree line on the left side changes by approximately thirty degrees over the course of ten metres, creating a specific notch in the canopy. Not natural. Or perhaps natural, and the Covenant has been watching this spot long enough to give it meaning.\n\nYou pause here regardless of whether you carry the marker stone. There is something about this location — a quality in the air, a stillness different from the surrounding stillness. If the Covenant's scholars identified this as a nexus point, they identified something real.",
+        "default": [
+          "The point Edric described is identifiable if you are looking for it — the angle of the tree line on the left side changes by approximately thirty degrees over the course of ten metres, creating a specific notch in the canopy. Not natural. Or perhaps natural, and the Covenant has been watching this spot long enough to give it meaning.",
+          {
+            "when": {
+              "inventory": [
+                "covenant_marker_stone"
+              ]
+            },
+            "text": "Edric's stone is heavy in your pocket.",
+            "else": "You are not carrying Edric's stone. You stop anyway."
+          },
+          "There is something about this location — a quality in the air, a stillness different from the surrounding stillness. If the Covenant's scholars identified this as a nexus point, they identified something real."
+        ],
         "commander": "The location is real. Something is different here — not threatening exactly, but concentrated. You file it and move on or you place the marker, depending on what you decided in Crestfall.",
         "arcane": "The ambient here is dense. You stand in the notch and extend your perception and feel the specific quality of a place where several of the curse's channels converge near the surface — like the confluence of rivers, except the rivers are invisible and what they carry is worse than water.\n\nThe Covenant's scholars are competent. That is useful information.",
         "ranger": "The animals that are left in this forest have been avoiding this spot specifically. You can see it in the tracks — paths that approach and then veer off, over and over, worn into the soil by repeated circumvention. Whatever is concentrated here, the local fauna has been giving it a wide berth for months.",
@@ -313,7 +469,9 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You note it in whatever way you note things and keep moving. The spot is real. Edric's scholars are competent. The Covenant is more dangerous than they look.",
+              "text": [
+                "You fix the place in your memory and keep moving. The spot is real. Edric's scholars are competent. The Covenant is more dangerous than they look."
+              ],
               "next_scene": "act1_ch6_waystation_route",
               "state_changes": {
                 "flags": {

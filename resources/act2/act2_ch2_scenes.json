@@ -172,7 +172,46 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You take what protection you have — the herbs, the ward if you carry it, the specific knowledge that you now have about what to watch for — and you go through the entrance.\n\nThe light in the chamber is wrong. Not the grey light of the outskirts — something older, something that seems to come from the stone itself rather than from any source you can identify. It is enough to see by. More than enough, in a way that is difficult to explain.",
+              "text": [
+                "You take what protection you have.",
+                {
+                  "when": {
+                    "inventory": [
+                      "rootless_provisions"
+                    ]
+                  },
+                  "text": "Maret's herbs, bitter under your tongue."
+                },
+                {
+                  "when": {
+                    "inventory": [
+                      "covenant_ward"
+                    ]
+                  },
+                  "text": "Edric's ward, cold against your skin."
+                },
+                {
+                  "when": {
+                    "not": {
+                      "any": [
+                        {
+                          "inventory": [
+                            "rootless_provisions"
+                          ]
+                        },
+                        {
+                          "inventory": [
+                            "covenant_ward"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "text": "You have nothing but what [missing person] has told you."
+                },
+                "You know now what to watch for. You go through the entrance.",
+                "The light in the chamber is wrong. Not the grey light of the outskirts — something older, something that seems to come from the stone itself rather than from any source you can identify. It is enough to see by. More than enough, in a way that is difficult to explain."
+              ],
               "next_scene": "act2_ch2_source_chamber",
               "state_changes": {
                 "flags": {
@@ -189,7 +228,46 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You take twenty minutes. The herbs, if you have them. The ward, if you carry it. You and [missing person] go over the chamber's layout, the ritual's requirements, the specific locations they will need you to stand.\n\nPreparation does not eliminate risk. It does what preparation always does: it changes the shape of what can go wrong.",
+              "text": [
+                "You take twenty minutes.",
+                {
+                  "when": {
+                    "inventory": [
+                      "rootless_provisions"
+                    ]
+                  },
+                  "text": "Maret's herbs, bitter under your tongue."
+                },
+                {
+                  "when": {
+                    "inventory": [
+                      "covenant_ward"
+                    ]
+                  },
+                  "text": "Edric's ward, cold against your skin."
+                },
+                {
+                  "when": {
+                    "not": {
+                      "any": [
+                        {
+                          "inventory": [
+                            "rootless_provisions"
+                          ]
+                        },
+                        {
+                          "inventory": [
+                            "covenant_ward"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "text": "You have nothing but what [missing person] has told you."
+                },
+                "You and [missing person] go over the chamber's layout, what the ritual requires, and where they will need you to stand.",
+                "Preparation does not eliminate risk. It does what preparation always does: it changes the shape of what can go wrong."
+              ],
               "next_scene": "act2_ch2_source_chamber",
               "state_changes": {
                 "flags": {
