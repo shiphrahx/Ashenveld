@@ -8,13 +8,15 @@
       "chapter": 1,
       "location": "crestfall_docks",
       "title": "Arrival",
+      "when": {
+        "part": "evening"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "act1_started": true
           }
-        },
-        "time_advance": 0
+        }
       },
       "requires": {},
       "text": {
@@ -82,9 +84,11 @@
       "chapter": 1,
       "location": "crestfall_docks",
       "title": "A Face From Before",
+      "when": {
+        "part": "evening"
+      },
       "on_enter": {
-        "state_changes": {},
-        "time_advance": 15
+        "state_changes": {}
       },
       "requires": {},
       "text": {
@@ -217,13 +221,15 @@
       "chapter": 1,
       "location": "crestfall_tallow_inn",
       "title": "The Tallow Inn",
+      "when": {
+        "part": "night"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "tallow_visited": true
           }
-        },
-        "time_advance": 20
+        }
       },
       "requires": {},
       "text": {
@@ -354,9 +360,11 @@
       "chapter": 1,
       "location": "crestfall_tallow_inn",
       "title": "What Aldous Knows",
+      "when": {
+        "part": "night"
+      },
       "on_enter": {
-        "state_changes": {},
-        "time_advance": 25
+        "state_changes": {}
       },
       "requires": {
         "flags": {
@@ -467,9 +475,11 @@
       "chapter": 1,
       "location": "crestfall_tallow_inn",
       "title": "Not Tonight",
+      "when": {
+        "part": "night"
+      },
       "on_enter": {
-        "state_changes": {},
-        "time_advance": 10
+        "state_changes": {}
       },
       "requires": {},
       "text": {
@@ -488,7 +498,7 @@
           "outcomes": {
             "default": {
               "text": "You sleep badly and wake before dawn with the alertness that means your body gave up on rest before your mind did. You dress and go downstairs.",
-              "next_scene": "act1_ch1_tallow_room",
+              "next_scene": "act1_ch2_morning_crestfall",
               "state_changes": {
                 "world": {
                   "time_of_day": "morning"
@@ -556,13 +566,15 @@
       "chapter": 1,
       "location": "crestfall_tallow_inn",
       "title": "The Door Closed",
+      "when": {
+        "part": "night"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "aldous_closed_off": true
           }
-        },
-        "time_advance": 5
+        }
       },
       "requires": {},
       "text": {
@@ -581,7 +593,7 @@
           "outcomes": {
             "default": {
               "text": "You sleep with the discipline of someone who has learned to rest even when their mind is elsewhere. In the morning, Crestfall.",
-              "next_scene": "act1_ch1_tallow_room",
+              "next_scene": "act1_ch2_morning_crestfall",
               "state_changes": {
                 "world": {
                   "time_of_day": "morning"
@@ -598,9 +610,11 @@
       "chapter": 1,
       "location": "crestfall_tallow_inn",
       "title": "The Man By The Fire",
+      "when": {
+        "part": "night"
+      },
       "on_enter": {
-        "state_changes": {},
-        "time_advance": 20
+        "state_changes": {}
       },
       "requires": {
         "flags": {
@@ -685,13 +699,15 @@
       "chapter": 1,
       "location": "crestfall_tallow_inn",
       "title": "Night in Crestfall",
+      "when": {
+        "part": "night"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "first_night_complete": true
           }
-        },
-        "time_advance": 360
+        }
       },
       "requires": {},
       "text": {
@@ -713,8 +729,7 @@
               "next_scene": "act1_ch2_morning_crestfall",
               "state_changes": {
                 "world": {
-                  "time_of_day": "morning",
-                  "day": 2
+                  "time_of_day": "morning"
                 }
               }
             }

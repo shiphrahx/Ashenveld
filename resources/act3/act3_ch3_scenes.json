@@ -8,14 +8,16 @@
       "chapter": 3,
       "location": "crestfall_market",
       "title": "A Month In",
+      "when": {
+        "part": "morning",
+        "day": 30
+      },
       "on_enter": {
         "state_changes": {
           "world": {
-            "curse_spread": -8,
-            "day": 30
+            "curse_spread": -8
           }
-        },
-        "time_advance": 0
+        }
       },
       "requires": {
         "flags": {
@@ -66,15 +68,14 @@
       "id": "act3_ch3_road_further",
       "act": 3,
       "chapter": 3,
-      "location": "east_road",
+      "location": "west_road_leaving",
       "title": "Somewhere Else",
+      "when": {
+        "part": "morning",
+        "day": 30
+      },
       "on_enter": {
-        "state_changes": {
-          "world": {
-            "day": 30
-          }
-        },
-        "time_advance": 0
+        "state_changes": {}
       },
       "requires": {},
       "text": {
@@ -123,13 +124,12 @@
       "chapter": 3,
       "location": "rootless_camp",
       "title": "The Shape of Staying Alone",
+      "when": {
+        "part": "morning",
+        "day": 30
+      },
       "on_enter": {
-        "state_changes": {
-          "world": {
-            "day": 30
-          }
-        },
-        "time_advance": 0
+        "state_changes": {}
       },
       "requires": {
         "flags": {

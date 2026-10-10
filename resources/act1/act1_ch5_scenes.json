@@ -8,13 +8,15 @@
       "chapter": 5,
       "location": "crestfall_market",
       "title": "The Curse, Visible",
+      "when": {
+        "part": "midday"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "witnessed_curse_event": true
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {},
       "text": {
@@ -102,9 +104,11 @@
       "chapter": 5,
       "location": "crestfall_market",
       "title": "How Each Faction Responds",
+      "when": {
+        "part": "afternoon"
+      },
       "on_enter": {
-        "state_changes": {},
-        "time_advance": 40
+        "state_changes": {}
       },
       "requires": {},
       "text": {
@@ -190,13 +194,15 @@
       "chapter": 5,
       "location": "crestfall_tallow_inn",
       "title": "What It Feels Like",
+      "when": {
+        "part": "evening"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "player_first_curse_exposure": true
           }
-        },
-        "time_advance": 15
+        }
       },
       "requires": {},
       "text": {
@@ -250,9 +256,11 @@
       "chapter": 5,
       "location": "crestfall_tallow_inn",
       "title": "What You Notice",
+      "when": {
+        "part": "night"
+      },
       "on_enter": {
-        "state_changes": {},
-        "time_advance": 30
+        "state_changes": {}
       },
       "requires": {},
       "text": {
@@ -304,8 +312,7 @@
               "next_scene": "act1_ch6_departure_decision",
               "state_changes": {
                 "world": {
-                  "time_of_day": "morning",
-                  "day": 4
+                  "time_of_day": "morning"
                 }
               }
             }

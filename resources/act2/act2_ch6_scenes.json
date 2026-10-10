@@ -8,14 +8,15 @@
       "chapter": 6,
       "location": "ruins_outskirts",
       "title": "The Day",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
-            "curse_spread": 3,
-            "day": 11
+            "curse_spread": 3
           }
-        },
-        "time_advance": 60
+        }
       },
       "requires": {
         "flags": {
@@ -51,13 +52,15 @@
       "chapter": 6,
       "location": "ruins_source_chamber",
       "title": "The Approach Phase",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 2
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {},
       "text": {
@@ -126,13 +129,15 @@
       "chapter": 6,
       "location": "ruins_source_chamber",
       "title": "The Engagement",
+      "when": {
+        "part": "midday"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 3
           }
-        },
-        "time_advance": 60
+        }
       },
       "requires": {
         "flags": {
@@ -199,13 +204,15 @@
       "chapter": 6,
       "location": "ruins_source_chamber",
       "title": "The Sealing",
+      "when": {
+        "part": "midday"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 2
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {
         "flags": {
@@ -272,13 +279,15 @@
       "chapter": 6,
       "location": "ruins_source_chamber",
       "title": "After",
+      "when": {
+        "part": "midday"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": -15
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {},
       "text": {
@@ -314,13 +323,15 @@
       "chapter": 6,
       "location": "ruins_outskirts",
       "title": "Too Late or Just in Time",
+      "when": {
+        "part": "afternoon"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 2
           }
-        },
-        "time_advance": 20
+        }
       },
       "requires": {},
       "text": {

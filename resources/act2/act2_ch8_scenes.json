@@ -8,14 +8,16 @@
       "chapter": 8,
       "location": "crestfall_tallow_inn",
       "title": "Three Days After",
+      "when": {
+        "part": "afternoon",
+        "day": 15
+      },
       "on_enter": {
         "state_changes": {
           "world": {
-            "curse_spread": -5,
-            "day": 15
+            "curse_spread": -5
           }
-        },
-        "time_advance": 0
+        }
       },
       "requires": {},
       "text": {
@@ -147,13 +149,15 @@
       "chapter": 8,
       "location": "crestfall_tallow_inn",
       "title": "What the Mechanism Showed You",
+      "when": {
+        "part": "evening"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": -2
           }
-        },
-        "time_advance": 60
+        }
       },
       "requires": {},
       "text": {
@@ -210,13 +214,12 @@
       "chapter": 8,
       "location": "crestfall_tallow_inn",
       "title": "The Choice That Determines Everything",
+      "when": {
+        "part": "morning",
+        "day": 16
+      },
       "on_enter": {
-        "state_changes": {
-          "world": {
-            "day": 16
-          }
-        },
-        "time_advance": 0
+        "state_changes": {}
       },
       "requires": {},
       "text": {
@@ -239,10 +242,6 @@
               "state_changes": {
                 "flags": {
                   "player_stays_ashenveld": true
-                },
-                "world": {
-                  "act": 3,
-                  "chapter": 1
                 }
               }
             }
@@ -260,10 +259,6 @@
               "state_changes": {
                 "flags": {
                   "player_leaves_ashenveld": true
-                },
-                "world": {
-                  "act": 3,
-                  "chapter": 1
                 }
               }
             }
@@ -281,10 +276,6 @@
               "state_changes": {
                 "flags": {
                   "missing_person_sent_ahead": true
-                },
-                "world": {
-                  "act": 3,
-                  "chapter": 1
                 }
               }
             }
@@ -302,10 +293,6 @@
               "state_changes": {
                 "flags": {
                   "player_stays_alone": true
-                },
-                "world": {
-                  "act": 3,
-                  "chapter": 1
                 }
               }
             }

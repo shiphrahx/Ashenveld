@@ -8,14 +8,16 @@
       "chapter": 2,
       "location": "crestfall_market",
       "title": "What Staying Looks Like",
+      "when": {
+        "part": "morning",
+        "day": 20
+      },
       "on_enter": {
         "state_changes": {
           "world": {
-            "curse_spread": -4,
-            "day": 20
+            "curse_spread": -4
           }
-        },
-        "time_advance": 0
+        }
       },
       "requires": {
         "flags": {
@@ -166,15 +168,14 @@
       "id": "act3_ch2_on_the_road",
       "act": 3,
       "chapter": 2,
-      "location": "east_road",
+      "location": "west_road_leaving",
       "title": "Distance",
+      "when": {
+        "part": "midday",
+        "day": 20
+      },
       "on_enter": {
-        "state_changes": {
-          "world": {
-            "day": 20
-          }
-        },
-        "time_advance": 0
+        "state_changes": {}
       },
       "requires": {
         "flags": {
@@ -235,13 +236,12 @@
       "chapter": 2,
       "location": "crestfall_tallow_inn",
       "title": "One Week Becomes Two",
+      "when": {
+        "part": "morning",
+        "day": 20
+      },
       "on_enter": {
-        "state_changes": {
-          "world": {
-            "day": 20
-          }
-        },
-        "time_advance": 0
+        "state_changes": {}
       },
       "requires": {
         "flags": {
@@ -288,7 +288,7 @@
               "next_scene": "act3_ch3_road_further",
               "state_changes": {
                 "world": {
-                  "day": 27
+                  "skip_days": 7
                 }
               }
             }
@@ -319,13 +319,12 @@
       "chapter": 2,
       "location": "rootless_camp",
       "title": "The Work Without Them",
+      "when": {
+        "part": "morning",
+        "day": 20
+      },
       "on_enter": {
-        "state_changes": {
-          "world": {
-            "day": 20
-          }
-        },
-        "time_advance": 0
+        "state_changes": {}
       },
       "requires": {
         "flags": {

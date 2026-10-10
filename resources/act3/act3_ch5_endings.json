@@ -8,9 +8,11 @@
       "chapter": 5,
       "location": "crestfall_market",
       "title": "",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
-        "state_changes": {},
-        "time_advance": 0
+        "state_changes": {}
       },
       "requires": {},
       "text": {
@@ -76,13 +78,16 @@
       "chapter": 5,
       "location": "crestfall_market",
       "title": "The Warden Stays",
+      "when": {
+        "part": "morning",
+        "hide_clock": true
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "game_complete": true
           }
-        },
-        "time_advance": 0
+        }
       },
       "requires": {},
       "text": {
@@ -120,15 +125,18 @@
       "id": "ending_escape_together",
       "act": 3,
       "chapter": 5,
-      "location": "east_road",
+      "location": "west_road_leaving",
       "title": "The Road West",
+      "when": {
+        "part": "morning",
+        "hide_clock": true
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "game_complete": true
           }
-        },
-        "time_advance": 0
+        }
       },
       "requires": {},
       "text": {
@@ -168,13 +176,16 @@
       "chapter": 5,
       "location": "crestfall_market",
       "title": "The Warden Alone",
+      "when": {
+        "part": "morning",
+        "hide_clock": true
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "game_complete": true
           }
-        },
-        "time_advance": 0
+        }
       },
       "requires": {},
       "text": {
@@ -214,13 +225,16 @@
       "chapter": 5,
       "location": "crestfall_market",
       "title": "The Camp Endures",
+      "when": {
+        "part": "morning",
+        "hide_clock": true
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "game_complete": true
           }
-        },
-        "time_advance": 0
+        }
       },
       "requires": {},
       "text": {
@@ -260,13 +274,16 @@
       "chapter": 5,
       "location": "crestfall_market",
       "title": "The Account",
+      "when": {
+        "part": "morning",
+        "hide_clock": true
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "game_complete": true
           }
-        },
-        "time_advance": 0
+        }
       },
       "requires": {},
       "text": {

@@ -8,13 +8,15 @@
       "chapter": 5,
       "location": "ruins_outskirts",
       "title": "Back in the Ruins",
+      "when": {
+        "part": "evening"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 4
           }
-        },
-        "time_advance": 120
+        }
       },
       "requires": {},
       "text": {
@@ -70,14 +72,16 @@
       "chapter": 5,
       "location": "ruins_outskirts",
       "title": "Two Days",
+      "when": {
+        "part": "evening",
+        "skip_days": 2
+      },
       "on_enter": {
         "state_changes": {
           "world": {
-            "curse_spread": 6,
-            "day": 9
+            "curse_spread": 6
           }
-        },
-        "time_advance": 2880
+        }
       },
       "requires": {
         "flags": {
@@ -127,8 +131,8 @@
               "next_scene": "act2_ch5_maret_conversation",
               "state_changes": {
                 "world": {
-                  "curse_spread": 3,
-                  "day": 10
+                  "skip_days": 1,
+                  "curse_spread": 3
                 }
               }
             }
@@ -142,13 +146,15 @@
       "chapter": 5,
       "location": "ruins_outskirts",
       "title": "The Night Before",
+      "when": {
+        "part": "evening"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 2
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {},
       "text": {
@@ -223,13 +229,15 @@
       "chapter": 5,
       "location": "ruins_outskirts",
       "title": "Before the Fire Goes Out",
+      "when": {
+        "part": "night"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 1
           }
-        },
-        "time_advance": 60
+        }
       },
       "requires": {},
       "text": {

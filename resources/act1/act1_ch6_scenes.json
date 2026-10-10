@@ -8,13 +8,15 @@
       "chapter": 6,
       "location": "crestfall_tallow_inn",
       "title": "Before You Go",
+      "when": {
+        "part": "dawn"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "departure_begun": true
           }
-        },
-        "time_advance": 60
+        }
       },
       "requires": {},
       "text": {
@@ -93,9 +95,11 @@
       "chapter": 6,
       "location": "rootless_camp",
       "title": "Maret's Supplies",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
-        "state_changes": {},
-        "time_advance": 30
+        "state_changes": {}
       },
       "requires": {},
       "text": {
@@ -137,13 +141,15 @@
       "chapter": 6,
       "location": "east_road",
       "title": "The East Road",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "east_road_entered": true
           }
-        },
-        "time_advance": 90
+        }
       },
       "requires": {},
       "text": {
@@ -175,9 +181,11 @@
       "chapter": 6,
       "location": "east_road",
       "title": "The Nexus Point",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
-        "state_changes": {},
-        "time_advance": 20
+        "state_changes": {}
       },
       "requires": {},
       "text": {
@@ -242,9 +250,11 @@
       "chapter": 6,
       "location": "east_road",
       "title": "Something Wrong",
+      "when": {
+        "part": "midday"
+      },
       "on_enter": {
-        "state_changes": {},
-        "time_advance": 20
+        "state_changes": {}
       },
       "requires": {},
       "text": {
@@ -306,9 +316,11 @@
       "chapter": 6,
       "location": "east_road",
       "title": "Going the Other Way",
+      "when": {
+        "part": "midday"
+      },
       "on_enter": {
-        "state_changes": {},
-        "time_advance": 20
+        "state_changes": {}
       },
       "requires": {},
       "text": {
@@ -381,9 +393,11 @@
       "chapter": 6,
       "location": "east_road",
       "title": "Signs",
+      "when": {
+        "part": "afternoon"
+      },
       "on_enter": {
-        "state_changes": {},
-        "time_advance": 20
+        "state_changes": {}
       },
       "requires": {},
       "text": {
@@ -455,13 +469,15 @@
       "chapter": 6,
       "location": "abandoned_village_harrow",
       "title": "Harrow",
+      "when": {
+        "part": "afternoon"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "harrow_reached": true
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {},
       "text": {

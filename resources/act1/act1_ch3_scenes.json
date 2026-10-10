@@ -8,13 +8,15 @@
       "chapter": 3,
       "location": "crestfall_gate",
       "title": "The Iron Compact",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "compact_met": true
           }
-        },
-        "time_advance": 20
+        }
       },
       "requires": {},
       "text": {
@@ -81,9 +83,11 @@
       "chapter": 3,
       "location": "crestfall_gate",
       "title": "The Compact's Terms",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
-        "state_changes": {},
-        "time_advance": 15
+        "state_changes": {}
       },
       "requires": {},
       "text": {
@@ -199,13 +203,15 @@
       "chapter": 3,
       "location": "crestfall_shrine",
       "title": "The Ashen Covenant",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "covenant_met": true
           }
-        },
-        "time_advance": 20
+        }
       },
       "requires": {},
       "text": {
@@ -272,9 +278,11 @@
       "chapter": 3,
       "location": "crestfall_shrine",
       "title": "Edric's Warning",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
-        "state_changes": {},
-        "time_advance": 20
+        "state_changes": {}
       },
       "requires": {},
       "text": {
@@ -349,9 +357,11 @@
       "chapter": 3,
       "location": "crestfall_shrine",
       "title": "Edric's Commission",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
-        "state_changes": {},
-        "time_advance": 10
+        "state_changes": {}
       },
       "requires": {},
       "text": {
@@ -408,9 +418,11 @@
       "chapter": 3,
       "location": "crestfall_market",
       "title": "The Camp Outside Town",
+      "when": {
+        "part": "midday"
+      },
       "on_enter": {
-        "state_changes": {},
-        "time_advance": 15
+        "state_changes": {}
       },
       "requires": {},
       "text": {
@@ -442,13 +454,15 @@
       "chapter": 3,
       "location": "rootless_camp",
       "title": "The Camp",
+      "when": {
+        "part": "afternoon"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "rootless_camp_visited": true
           }
-        },
-        "time_advance": 20
+        }
       },
       "requires": {},
       "text": {
@@ -535,13 +549,15 @@
       "chapter": 3,
       "location": "rootless_camp",
       "title": "Maret",
+      "when": {
+        "part": "afternoon"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "maret_met": true
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {},
       "text": {

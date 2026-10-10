@@ -8,6 +8,9 @@
       "chapter": 1,
       "location": "ruins_outskirts",
       "title": "The Buried City",
+      "when": {
+        "part": "midday"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
@@ -16,8 +19,7 @@
           "world": {
             "curse_spread": 2
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {},
       "text": {
@@ -117,6 +119,9 @@
       "chapter": 1,
       "location": "ruins_outskirts",
       "title": "The Cairn",
+      "when": {
+        "part": "midday"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
@@ -125,8 +130,7 @@
           "world": {
             "curse_spread": 2
           }
-        },
-        "time_advance": 20
+        }
       },
       "requires": {},
       "text": {
@@ -193,15 +197,17 @@
       "id": "act2_ch1_the_watcher_seen",
       "act": 2,
       "chapter": 1,
-      "location": "ruins_outskirts",
+      "location": "ruins_gate",
       "title": "The Figure at the Gate",
+      "when": {
+        "part": "afternoon"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 2
           }
-        },
-        "time_advance": 15
+        }
       },
       "requires": {},
       "text": {
@@ -272,15 +278,17 @@
       "id": "act2_ch1_missing_person_approach",
       "act": 2,
       "chapter": 1,
-      "location": "ruins_outskirts",
+      "location": "ruins_gate",
       "title": "Footsteps",
+      "when": {
+        "part": "afternoon"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 1
           }
-        },
-        "time_advance": 20
+        }
       },
       "requires": {},
       "text": {
@@ -341,15 +349,17 @@
       "id": "act2_ch1_reunion",
       "act": 2,
       "chapter": 1,
-      "location": "ruins_outskirts",
+      "location": "ruins_gate",
       "title": "Fourteen Months",
+      "when": {
+        "part": "afternoon"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 1
           }
-        },
-        "time_advance": 60
+        }
       },
       "requires": {
         "flags": {
@@ -409,15 +419,17 @@
       "id": "act2_ch1_what_they_found",
       "act": 2,
       "chapter": 1,
-      "location": "ruins_outskirts",
+      "location": "ruins_gate",
       "title": "What Fourteen Months Found",
+      "when": {
+        "part": "evening"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 2
           }
-        },
-        "time_advance": 45
+        }
       },
       "requires": {},
       "text": {

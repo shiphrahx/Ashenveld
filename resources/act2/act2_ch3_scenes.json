@@ -8,14 +8,15 @@
       "chapter": 3,
       "location": "ruins_outskirts",
       "title": "News from Below the Trees",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
-            "curse_spread": 3,
-            "day": 7
+            "curse_spread": 3
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {},
       "text": {
@@ -94,6 +95,9 @@
       "chapter": 3,
       "location": "ruins_outskirts",
       "title": "The First Lesson",
+      "when": {
+        "part": "midday"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
@@ -102,8 +106,7 @@
           "flags": {
             "ritual_preparation_begun": true
           }
-        },
-        "time_advance": 60
+        }
       },
       "requires": {},
       "text": {
@@ -183,13 +186,15 @@
       "chapter": 3,
       "location": "east_road",
       "title": "The Checkpoint",
+      "when": {
+        "part": "afternoon"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 3
           }
-        },
-        "time_advance": 120
+        }
       },
       "requires": {
         "flags": {
@@ -275,13 +280,15 @@
       "chapter": 3,
       "location": "crestfall_market",
       "title": "Crestfall in Week Two",
+      "when": {
+        "part": "evening"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 4
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {},
       "text": {
@@ -373,13 +380,15 @@
       "chapter": 3,
       "location": "crestfall_tallow_inn",
       "title": "What Aldous Saw",
+      "when": {
+        "part": "evening"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 2
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {},
       "text": {
@@ -445,13 +454,15 @@
       "chapter": 3,
       "location": "rootless_camp",
       "title": "The Camp in Danger",
+      "when": {
+        "part": "evening"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 3
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {},
       "text": {
@@ -535,13 +546,15 @@
       "chapter": 3,
       "location": "rootless_camp",
       "title": "What Pol Knows",
+      "when": {
+        "part": "night"
+      },
       "on_enter": {
         "state_changes": {
           "world": {
             "curse_spread": 2
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {},
       "text": {
@@ -621,6 +634,9 @@
       "chapter": 3,
       "location": "crestfall_shrine",
       "title": "Seriva",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
@@ -629,8 +645,7 @@
           "world": {
             "curse_spread": 2
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {},
       "text": {

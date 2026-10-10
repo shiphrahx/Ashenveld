@@ -8,9 +8,11 @@
       "chapter": 7,
       "location": "abandoned_village_harrow",
       "title": "What Harrow Left Behind",
+      "when": {
+        "part": "evening"
+      },
       "on_enter": {
-        "state_changes": {},
-        "time_advance": 60
+        "state_changes": {}
       },
       "requires": {},
       "text": {
@@ -88,13 +90,15 @@
       "chapter": 7,
       "location": "abandoned_village_harrow",
       "title": "The Cellar",
+      "when": {
+        "part": "night"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "harrow_secret_found": true
           }
-        },
-        "time_advance": 30
+        }
       },
       "requires": {},
       "text": {
@@ -163,13 +167,15 @@
       "chapter": 7,
       "location": "forest_edge",
       "title": "The Edge of Things",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "forest_edge_reached": true
           }
-        },
-        "time_advance": 40
+        }
       },
       "requires": {},
       "text": {
@@ -247,9 +253,11 @@
       "chapter": 7,
       "location": "forest_edge",
       "title": "Maret at the Edge",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
-        "state_changes": {},
-        "time_advance": 20
+        "state_changes": {}
       },
       "requires": {
         "flags": {
@@ -319,9 +327,11 @@
       "chapter": 7,
       "location": "forest_edge",
       "title": "What She Carries",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
-        "state_changes": {},
-        "time_advance": 30
+        "state_changes": {}
       },
       "requires": {
         "flags": {
@@ -360,13 +370,15 @@
       "chapter": 7,
       "location": "forest_edge",
       "title": "The Point of No Return",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "entered_deep_forest": true
           }
-        },
-        "time_advance": 10
+        }
       },
       "requires": {},
       "text": {
@@ -398,17 +410,15 @@
       "chapter": 7,
       "location": "forest_edge",
       "title": "End of Act I",
+      "when": {
+        "part": "morning"
+      },
       "on_enter": {
         "state_changes": {
           "flags": {
             "act1_complete": true
-          },
-          "world": {
-            "act": 2,
-            "chapter": 1
           }
-        },
-        "time_advance": 0
+        }
       },
       "requires": {},
       "text": {
