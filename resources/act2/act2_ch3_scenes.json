@@ -845,7 +845,20 @@
       },
       "requires": {},
       "text": {
-        "default": "Seriva is at the shrine when you find her, or she allows herself to be found there, which amounts to the same thing.\n\nShe is in her sixties, compact, with the bearing of someone who has spent decades in rooms where other people defer to them and has stopped needing the deference to feel it is owed. She looks at you when you enter with the specific quality of someone completing an assessment they began the moment you arrived in Crestfall.\n\n\"You went east,\" she says. \"You came back. Most people who go east do not come back.\" A pause. \"Which tells me either you are exceptionally capable or exceptionally fortunate, or you have found whatever you were looking for and it was not in the deepest part of the ruins.\"\n\nShe is watching to see which of those possibilities you will confirm.",
+        "default": [
+          "Seriva is at the shrine when you find her, or she allows herself to be found there, which amounts to the same thing.",
+          "She is in her sixties, compact, with the bearing of someone who has spent decades in rooms where other people defer to them and has stopped needing the deference to feel it is owed. She looks at you when you enter with the specific quality of someone completing an assessment they began the moment you arrived in Crestfall.",
+          {
+            "when": {
+              "inventory": [
+                "covenant_ward"
+              ]
+            },
+            "text": "Her eyes go to the cord at your neck. \"Edric gave you one of mine,\" she says. \"I made those. Twenty years ago.\""
+          },
+          "\"You went east,\" she says. \"You came back. Most people who go east do not come back.\" A pause. \"Which tells me either you are exceptionally capable or exceptionally fortunate, or you have found whatever you were looking for and it was not in the deepest part of the ruins.\"",
+          "She is watching to see which of those possibilities you will confirm."
+        ],
         "commander": "You give her nothing she is looking for and everything that is true in what you say.\n\n\"I went to Harrow,\" you say. \"Explored the forest edge. Came back.\"\n\nShe looks at you. She does not believe this is the complete account. She also cannot prove it is not the complete account.\n\n\"Harrow is interesting,\" she says. \"What did you find there?\"",
         "arcane": "You look at her and she looks at you and you both understand that this is a conversation between two people who know more than they are going to say and are assessing how much the other knows.\n\n\"You have been in Ashenveld before,\" you say. It is not a question.\n\n\"Twenty years ago,\" she says, without hesitation. Acknowledging it before you can use it as a reveal. \"I was conducting research on behalf of the Covenant.\"\n\n\"On the ruins.\"\n\n\"On the region,\" she says. The distinction is deliberate.",
         "ranger": "You read her in the first thirty seconds and what you read is: control. This is a person who has had information about Ashenveld and the ruins for twenty years and has been managing it carefully for twenty years, releasing only what serves her purposes.\n\n\"You know what is in the ruins,\" you say.\n\n\"I know what was in the ruins twenty years ago,\" she says. \"Things change.\"",
