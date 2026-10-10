@@ -211,3 +211,44 @@ test('keyboard only, from the title into the story and through choices', async (
   await expect(page.getByRole('dialog', { name: 'Menu' })).toBeVisible()
   expect(errors).toEqual([])
 })
+
+test('resting at the Tallow costs a room and moves to morning (G9)', async ({ page }) => {
+  const errors = watchConsole(page)
+  await stubRandom(page, 0.95)
+  await createCharacter(page, 'Arcane')
+  await pickChoice(page, 'move_to_town')
+  await pickChoice(page, (await page.locator('[data-choice-id]:not([disabled])').first().getAttribute('data-choice-id'))!)
+  await expect(page.locator('[data-scene-id]')).toHaveAttribute('data-scene-id', /tallow|innkeeper/)
+  const before = await page.evaluate(() => JSON.parse(localStorage.getItem('ashenveld_save')!))
+  await page.keyboard.press('r')
+  await page.locator('[data-rest-confirm]').click()
+  const after = await page.evaluate(() => JSON.parse(localStorage.getItem('ashenveld_save')!))
+  expect(after.world.day).toBe(before.world.day + 1)
+  expect(after.world.time_of_day).toBe('morning')
+  expect(after.player.resources.gold).toBe(before.player.resources.gold - 3)
+  expect(errors).toEqual([])
+})
+
+test('Resolve at zero is a collapse, not a game over (G9)', async ({ page }) => {
+  const errors = watchConsole(page)
+  await stubRandom(page, 0.02)
+  await createCharacter(page, 'Ranger')
+  // Put the run just before a roll that hurts when it fails, with almost no Resolve left.
+  await page.evaluate(() => {
+    const s = JSON.parse(localStorage.getItem('ashenveld_save')!)
+    s.current_scene = 'act1_ch5_curse_event'
+    s.world.day = 3; s.world.time_of_day = 'midday'
+    s.player.resources.health = 3
+    localStorage.setItem('ashenveld_save', JSON.stringify(s))
+  })
+  await page.reload()
+  await page.getByRole('button', { name: 'Continue', exact: true }).click()
+  await pickChoice(page, 'catch_her')
+  await expect(page.locator('[data-scene-id="act1_collapse"]')).toBeVisible()
+  const s = await page.evaluate(() => JSON.parse(localStorage.getItem('ashenveld_save')!))
+  expect(s.player.resources.health).toBe(40)
+  expect(s.world.day).toBe(4)
+  await pickChoice(page, 'get_up')
+  await expect(page.locator('[data-scene-id="act1_ch5_faction_responses"]')).toBeVisible()
+  expect(errors).toEqual([])
+})
