@@ -25,7 +25,39 @@
         }
       },
       "text": {
-        "default": "A month after the ritual. Day thirty.\n\nCrestfall is measurably different. Not healed — different. The market has six stalls now instead of three. The fountain has not started running again but someone has planted bulbs around its base. Not flowers — vegetables, which is more honest.\n\nVorne's garrison is down to eight soldiers. The remaining eight are doing things that look less like occupation and more like maintenance. The east road checkpoint has been moved a mile east and is now staffed by two people rather than five.\n\nThe Rootless camp has seventeen new members — people from the eastern villages who heard that something had changed and came toward Crestfall rather than continuing east. Maret received them with the specific efficiency of someone who has been preparing for this for three years.",
+        "default": [
+          "A month after the ritual. Day thirty.",
+          "Crestfall is measurably different. Not healed — different. The market has six stalls now instead of three. The fountain has not started running again but someone has planted bulbs around its base. Not flowers — vegetables, which is more honest.",
+          "Vorne's garrison is down to eight soldiers. The remaining eight are doing things that look less like occupation and more like maintenance. The east road checkpoint has been moved a mile east and is now staffed by two people rather than five.",
+          "The Rootless camp has seventeen new members — people from the eastern villages who heard that something had changed and came toward Crestfall rather than continuing east. Maret received them with the specific efficiency of someone who has been preparing for this for three years.",
+          {
+            "when": {
+              "flags": {
+                "fragile_settlement": true
+              },
+              "lowest_faction": "iron_compact"
+            },
+            "text": "The settlement held for nine days. Then the Compact posted a new curfew without asking anyone, and Maret stopped coming to the meetings."
+          },
+          {
+            "when": {
+              "flags": {
+                "fragile_settlement": true
+              },
+              "lowest_faction": "ashen_covenant"
+            },
+            "text": "The settlement held until the Covenant took the grey flag down and put it back up the next morning, bigger. Edric says it was not his decision."
+          },
+          {
+            "when": {
+              "flags": {
+                "fragile_settlement": true
+              },
+              "lowest_faction": "rootless"
+            },
+            "text": "The settlement held until a Compact patrol walked through the camp at night. Branch walked them back out to the road. Nobody has called a meeting since."
+          }
+        ],
         "commander": "You and your missing person have developed a division of labour that neither of you planned.\n\nThey work with Pol on the documentation and with Maret on the camp's organisation. You work with Vorne on the Compact arrangements and with Edric on the Covenant's restructured role.\n\nYou are, you realise, managing the institutional half of Ashenveld's recovery while they manage the human half. The two halves require different things from different people and you each turned out to be the right person for the half you ended up in.",
         "arcane": "The documentation is complete. Three copies distributed. The knowledge is out in the world.\n\nWhat follows the documentation's completion is unexpected: you have time. Not unlimited time, not unstructured time, but the specific quality of a project finished and a next one not yet defined.\n\nYou walk out into Crestfall on day thirty and you try something you have not done in months: you observe without recording. Just watch. The market. The people. The specific quality of ordinary life reasserting itself in a damaged place.\n\nYou do it for an hour. At the end of the hour your missing person finds you and asks what you were doing.\n\n\"Looking,\" you say.\n\nThey nod as if this is the most normal thing you have said in weeks. It might be.",
         "ranger": "The wildlife recovery is past the point where you can track it in the market square.\n\nYou spend day thirty outside the town, in the ordinary forest west of Crestfall, reading what the animals are doing. The forest is returning to normal in the specific order that ecosystems recover — the generalists first, the specialists later, the apex predators last.\n\nNo predators yet. But the prey animals are moving normally, which means they are expecting predators at the right distance and behaving accordingly. The expectation of predators means the expectation of a functioning ecosystem.\n\nYou write it down. The sentence: the prey animals expect predators. You look at it for a while. It is the most hopeful sentence you have written in a month.",
