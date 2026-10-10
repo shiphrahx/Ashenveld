@@ -380,7 +380,10 @@
           "text": "\"How long have you known Maret?\"",
           "requires": {},
           "roll": {
-            "stat": "charisma",
+            "stat": [
+              "charisma",
+              "intelligence"
+            ],
             "dc": 11
           },
           "outcomes": {

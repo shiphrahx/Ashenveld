@@ -156,7 +156,10 @@
           "text": "\"What happened to this place?\"",
           "requires": {},
           "roll": {
-            "stat": "charisma",
+            "stat": [
+              "charisma",
+              "perception"
+            ],
             "dc": 9
           },
           "outcomes": {

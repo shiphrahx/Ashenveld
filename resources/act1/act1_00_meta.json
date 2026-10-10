@@ -242,7 +242,7 @@
   },
   "dice_rules": {
     "system": "d20 plus stat modifier",
-    "modifier_formula": "floor((stat - 5) / 2)",
+    "modifier_formula": "Table: 6 or less −2, 7–8 −1, 9–10 0, 11–12 +1, 13–14 +3, 15–16 +5, 17+ +6. Bonuses from earlier choices add to it, capped at ±6. The source of truth is src/rules.ts.",
     "outcomes": {
       "success": "roll >= dc + 4",
       "success_at_cost": "roll >= dc - 2 AND roll < dc + 4",

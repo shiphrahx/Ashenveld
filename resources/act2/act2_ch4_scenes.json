@@ -33,7 +33,10 @@
           "text": "Give Vorne a partial account. Enough to seem cooperative without revealing the ruins.",
           "requires": {},
           "roll": {
-            "stat": "charisma",
+            "stat": [
+              "charisma",
+              "intelligence"
+            ],
             "dc": 13,
             "bonus": [
               {
