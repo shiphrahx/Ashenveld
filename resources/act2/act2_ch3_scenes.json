@@ -238,7 +238,27 @@
           "requires": {},
           "roll": {
             "stat": "charisma",
-            "dc": 10
+            "dc": 10,
+            "bonus": [
+              {
+                "when": {
+                  "min_faction": {
+                    "iron_compact": 15
+                  }
+                },
+                "value": 3,
+                "label": "The Compact knows you"
+              },
+              {
+                "when": {
+                  "max_faction": {
+                    "iron_compact": -10
+                  }
+                },
+                "value": -2,
+                "label": "The Compact does not trust you"
+              }
+            ]
           },
           "outcomes": {
             "success": {
@@ -386,7 +406,8 @@
               "next_scene": "act2_ch3_seriva_first_meeting",
               "state_changes": {
                 "flags": {
-                  "seriva_met": true
+                  "seriva_met": true,
+                  "seriva_has_initiative": true
                 }
               }
             }
@@ -689,7 +710,27 @@
           },
           "roll": {
             "stat": "charisma",
-            "dc": 14
+            "dc": 14,
+            "bonus": [
+              {
+                "when": {
+                  "flags": {
+                    "understands_fracture": true
+                  }
+                },
+                "value": 2,
+                "label": "You have seen the fracture"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "seriva_has_initiative": true
+                  }
+                },
+                "value": -2,
+                "label": "She found you first"
+              }
+            ]
           },
           "outcomes": {
             "success": {

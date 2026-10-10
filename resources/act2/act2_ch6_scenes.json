@@ -782,6 +782,9 @@
                   "ashen_covenant": {
                     "reputation": -15
                   }
+                },
+                "flags": {
+                  "seriva_left_hostile": true
                 }
               }
             }

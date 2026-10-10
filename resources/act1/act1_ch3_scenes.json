@@ -630,7 +630,18 @@
           "requires": {},
           "roll": {
             "stat": "perception",
-            "dc": 12
+            "dc": 12,
+            "bonus": [
+              {
+                "when": {
+                  "flags": {
+                    "knows_maret_sent_missing_east": true
+                  }
+                },
+                "value": 2,
+                "label": "Corvin told you she sent them east"
+              }
+            ]
           },
           "outcomes": {
             "success": {

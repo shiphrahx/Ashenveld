@@ -250,7 +250,18 @@
           "requires": {},
           "roll": {
             "stat": "perception",
-            "dc": 12
+            "dc": 12,
+            "bonus": [
+              {
+                "when": {
+                  "min_faction": {
+                    "rootless": 25
+                  }
+                },
+                "value": 3,
+                "label": "Branch walked the first mile with you"
+              }
+            ]
           },
           "outcomes": {
             "success": {

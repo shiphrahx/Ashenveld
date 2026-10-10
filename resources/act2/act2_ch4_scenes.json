@@ -34,7 +34,27 @@
           "requires": {},
           "roll": {
             "stat": "charisma",
-            "dc": 13
+            "dc": 13,
+            "bonus": [
+              {
+                "when": {
+                  "min_faction": {
+                    "iron_compact": 15
+                  }
+                },
+                "value": 2,
+                "label": "The Compact trusts you"
+              },
+              {
+                "when": {
+                  "max_faction": {
+                    "iron_compact": -10
+                  }
+                },
+                "value": -2,
+                "label": "The Compact does not trust you"
+              }
+            ]
           },
           "outcomes": {
             "success": {
@@ -79,7 +99,45 @@
           "requires": {},
           "roll": {
             "stat": "charisma",
-            "dc": 15
+            "dc": 15,
+            "bonus": [
+              {
+                "when": {
+                  "min_faction": {
+                    "iron_compact": 15
+                  }
+                },
+                "value": 2,
+                "label": "The Compact trusts you"
+              },
+              {
+                "when": {
+                  "max_faction": {
+                    "iron_compact": -10
+                  }
+                },
+                "value": -2,
+                "label": "The Compact does not trust you"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "compact_allied": true
+                  }
+                },
+                "value": 3,
+                "label": "You took Cael's coin"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "compact_suspicious": true
+                  }
+                },
+                "value": -3,
+                "label": "His sergeant thinks you lied"
+              }
+            ]
           },
           "outcomes": {
             "success": {
@@ -122,7 +180,27 @@
           },
           "roll": {
             "stat": "perception",
-            "dc": 10
+            "dc": 10,
+            "bonus": [
+              {
+                "when": {
+                  "min_faction": {
+                    "iron_compact": 15
+                  }
+                },
+                "value": 2,
+                "label": "The Compact trusts you"
+              },
+              {
+                "when": {
+                  "max_faction": {
+                    "iron_compact": -10
+                  }
+                },
+                "value": -2,
+                "label": "The Compact does not trust you"
+              }
+            ]
           },
           "outcomes": {
             "success": {
@@ -191,7 +269,27 @@
           "requires": {},
           "roll": {
             "stat": "charisma",
-            "dc": 13
+            "dc": 13,
+            "bonus": [
+              {
+                "when": {
+                  "flags": {
+                    "issa_spoke": true
+                  }
+                },
+                "value": 2,
+                "label": "Issa has talked to you"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "stayed_for_lesson": true
+                  }
+                },
+                "value": -2,
+                "label": "You stayed a day too long in the ruins"
+              }
+            ]
           },
           "outcomes": {
             "success": {
@@ -350,7 +448,45 @@
           "requires": {},
           "roll": {
             "stat": "charisma",
-            "dc": 14
+            "dc": 14,
+            "bonus": [
+              {
+                "when": {
+                  "min_faction": {
+                    "iron_compact": 15
+                  }
+                },
+                "value": 2,
+                "label": "The Compact trusts you"
+              },
+              {
+                "when": {
+                  "max_faction": {
+                    "iron_compact": -10
+                  }
+                },
+                "value": -2,
+                "label": "The Compact does not trust you"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "vorne_knows_player_knows_issa": true
+                  }
+                },
+                "value": 2,
+                "label": "Vorne knows you found her"
+              },
+              {
+                "when": {
+                  "min_relationship": {
+                    "maret": 60
+                  }
+                },
+                "value": 2,
+                "label": "Maret trusts you"
+              }
+            ]
           },
           "outcomes": {
             "success": {
@@ -471,7 +607,36 @@
           "requires": {},
           "roll": {
             "stat": "charisma",
-            "dc": 14
+            "dc": 14,
+            "bonus": [
+              {
+                "when": {
+                  "min_relationship": {
+                    "branch": 25
+                  }
+                },
+                "value": 2,
+                "label": "Branch backs you"
+              },
+              {
+                "when": {
+                  "min_faction": {
+                    "rootless": 25
+                  }
+                },
+                "value": 2,
+                "label": "The camp stands with you"
+              },
+              {
+                "when": {
+                  "max_faction": {
+                    "iron_compact": -10
+                  }
+                },
+                "value": -2,
+                "label": "The soldiers know your name"
+              }
+            ]
           },
           "outcomes": {
             "success": {

@@ -37,7 +37,60 @@
           "requires": {},
           "roll": {
             "stat": "perception",
-            "dc": 10
+            "dc": 10,
+            "bonus": [
+              {
+                "when": {
+                  "inventory": [
+                    "rootless_map"
+                  ],
+                  "max_relationship": {
+                    "lira": 39
+                  }
+                },
+                "value": 2,
+                "label": "Lira's map"
+              },
+              {
+                "when": {
+                  "inventory": [
+                    "rootless_map"
+                  ],
+                  "min_relationship": {
+                    "lira": 40
+                  }
+                },
+                "value": 3,
+                "label": "Lira's map, with her marks"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "maret_joined": true
+                  }
+                },
+                "value": 2,
+                "label": "Maret found two of the paths"
+              },
+              {
+                "when": {
+                  "inventory": [
+                    "cellar_map_copy"
+                  ]
+                },
+                "value": 2,
+                "label": "The cellar carvings"
+              },
+              {
+                "when": {
+                  "inventory": [
+                    "maret_outskirts_notes"
+                  ]
+                },
+                "value": 2,
+                "label": "Maret's notes"
+              }
+            ]
           },
           "outcomes": {
             "success": {
@@ -84,7 +137,27 @@
           "requires": {},
           "roll": {
             "stat": "intelligence",
-            "dc": 11
+            "dc": 11,
+            "bonus": [
+              {
+                "when": {
+                  "any": [
+                    {
+                      "flags": {
+                        "has_cellar_map": true
+                      }
+                    },
+                    {
+                      "flags": {
+                        "read_harrow_records": true
+                      }
+                    }
+                  ]
+                },
+                "value": 2,
+                "label": "What you learned in Harrow"
+              }
+            ]
           },
           "outcomes": {
             "success": {

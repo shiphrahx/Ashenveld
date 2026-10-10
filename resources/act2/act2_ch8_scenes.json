@@ -35,7 +35,45 @@
           "requires": {},
           "roll": {
             "stat": "charisma",
-            "dc": 15
+            "dc": 15,
+            "bonus": [
+              {
+                "when": {
+                  "flags": {
+                    "issa_agreement_reached": true
+                  }
+                },
+                "value": 2,
+                "label": "Issa is safe"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "seriva_reconciled": true
+                  }
+                },
+                "value": 2,
+                "label": "Seriva has told the truth"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "seriva_version_established": true
+                  }
+                },
+                "value": -2,
+                "label": "Seriva's story got there first"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "seriva_left_hostile": true
+                  }
+                },
+                "value": -3,
+                "label": "Seriva left angry"
+              }
+            ]
           },
           "outcomes": {
             "success": {

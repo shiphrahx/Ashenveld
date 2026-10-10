@@ -464,7 +464,18 @@
           "requires": {},
           "roll": {
             "stat": "charisma",
-            "dc": 12
+            "dc": 12,
+            "bonus": [
+              {
+                "when": {
+                  "taken": [
+                    "act1_ch4_lira:just_sit_with_lira"
+                  ]
+                },
+                "value": 2,
+                "label": "You sat with Lira and asked nothing"
+              }
+            ]
           },
           "outcomes": {
             "success": {
@@ -606,7 +617,27 @@
           "requires": {},
           "roll": {
             "stat": "charisma",
-            "dc": 13
+            "dc": 13,
+            "bonus": [
+              {
+                "when": {
+                  "flags": {
+                    "lira_met": true
+                  }
+                },
+                "value": 2,
+                "label": "Lira knows you"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "branch_met": true
+                  }
+                },
+                "value": 2,
+                "label": "Branch has met you"
+              }
+            ]
           },
           "outcomes": {
             "success": {
