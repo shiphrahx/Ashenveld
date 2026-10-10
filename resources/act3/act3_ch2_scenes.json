@@ -307,7 +307,8 @@
               "next_scene": "act3_ch3_the_long_work",
               "state_changes": {
                 "flags": {
-                  "player_stays_permanently": true
+                  "player_stays_permanently": true,
+                  "player_stays_ashenveld": true
                 }
               }
             }
