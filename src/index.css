@@ -82,3 +82,13 @@ html, body {
 }
 
 button { font-family: inherit; cursor: pointer; }
+
+/* ── Reading settings (U4) ── */
+:root[data-font="serif"]  { --font-story: 'Lora', Georgia, 'Times New Roman', serif; }
+:root[data-font="system"] { --font-story: system-ui, -apple-system, 'Segoe UI', sans-serif; }
+
+/* ── Motion off: everything lands at once (E1) ── */
+:root[data-motion="off"] *, :root[data-motion="off"] *::before, :root[data-motion="off"] *::after {
+  animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+}

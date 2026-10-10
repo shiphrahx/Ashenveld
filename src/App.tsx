@@ -29,6 +29,7 @@ import Sidebar from './components/Sidebar'
 import StatusStrip from './components/StatusStrip'
 import TabBar, { type PanelId } from './components/TabBar'
 import Panel from './components/Panel'
+import Settings from './components/Settings'
 import styles from './App.module.css'
 
 type AppPhase = 'loading' | 'title' | 'creation' | 'game' | 'ended' | 'gameover' | 'error'
@@ -258,8 +259,10 @@ export default function App() {
               state={gameState}
               onClose={closePanel}
               onReturnToTitle={() => { closePanel(); handleReturnToTitle() }}
+              onSettings={() => setPanel('settings')}
             />
           )}
+          {panel === 'settings' && <Settings onClose={closePanel} />}
         </div>
       </>
     )

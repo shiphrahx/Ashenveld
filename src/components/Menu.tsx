@@ -8,9 +8,10 @@ interface Props {
   state: GameState
   onClose: () => void
   onReturnToTitle: () => void
+  onSettings: () => void
 }
 
-export default function Menu({ state, onClose, onReturnToTitle }: Props) {
+export default function Menu({ state, onClose, onReturnToTitle, onSettings }: Props) {
   const [saved, setSaved] = useState(false)
   const [confirming, setConfirming] = useState(false)
 
@@ -24,6 +25,14 @@ export default function Menu({ state, onClose, onReturnToTitle }: Props) {
     <Panel title="Menu" onClose={onClose}>
 
         <div className={styles.body}>
+          <button className={styles.row} onClick={onClose}>
+            <span className={styles.rowLabel}>Resume</span>
+          </button>
+
+          <button className={styles.row} onClick={onSettings}>
+            <span className={styles.rowLabel}>Settings</span>
+          </button>
+
           <button className={styles.row} onClick={handleSave}>
             <span className={styles.rowLabel}>Save Game</span>
             {saved && <span className={styles.rowHint}>Saved</span>}

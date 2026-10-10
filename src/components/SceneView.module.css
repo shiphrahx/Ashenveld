@@ -36,9 +36,15 @@
 .narrative::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 
 /* narrative paragraphs */
+.narrative {
+  font-family: var(--font-story);
+  font-size: var(--story-size);
+  letter-spacing: var(--story-tracking);
+  word-spacing: var(--story-word-spacing);
+}
 .np {
-  font-size: 17px;
-  line-height: 1.95;
+  font-size: inherit;
+  line-height: var(--story-leading);
   color: var(--text-bright);
   margin-bottom: 22px;
   opacity: 0;
@@ -53,8 +59,8 @@
 
 /* dialogue / indented paragraph */
 .nd {
-  font-size: 17px;
-  line-height: 1.9;
+  font-size: inherit;
+  line-height: var(--story-leading);
   color: var(--text-main);
   padding: 4px 0 4px 20px;
   border-left: 1px solid var(--blue-mid);
@@ -69,8 +75,8 @@
   padding-left: 20px;
   margin: 4px 0 24px;
   color: var(--text-main);
-  font-size: 17px;
-  line-height: 1.9;
+  font-size: inherit;
+  line-height: var(--story-leading);
   opacity: 0;
   animation: npIn 0.55s ease forwards;
 }
@@ -87,8 +93,8 @@
 
 /* outcome block */
 .outcomeBlock {
-  font-size: 17px;
-  line-height: 1.85;
+  font-size: inherit;
+  line-height: var(--story-leading);
   padding: 14px 18px;
   margin-bottom: 24px;
   border-left: 2px solid;
@@ -116,7 +122,7 @@
   border: 1px solid var(--border-dim);
   color: var(--text-main);
   font-family: var(--font-ui);
-  font-size: 17px;
+  font-size: calc(var(--story-size) * 0.95);
   padding: 11px 14px 11px 12px;
   text-align: left;
   cursor: pointer;
@@ -198,3 +204,9 @@
 }
 .showScene:hover { border-color: var(--blue-mid); color: var(--white-cold); }
 .outcomeBlock:focus { outline: none; }
+
+/* Text appears at once (U4) */
+:global(:root[data-reveal="instant"]) .np,
+:global(:root[data-reveal="instant"]) .nd,
+:global(:root[data-reveal="instant"]) .lens,
+:global(:root[data-reveal="instant"]) .outcomeBlock { animation: none; opacity: 1; transform: none; }
