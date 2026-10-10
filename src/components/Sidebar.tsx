@@ -1,8 +1,8 @@
 import React from 'react'
 import type { GameState } from '../types'
 import { CLASS_LABELS } from '../text'
-import { Icon } from './icons'
-import { dimmingBand, maxResolve, type RestOption } from '../rules'
+import { Icon, PartGlyph } from './icons'
+import { dimmingBand, maxResolve, factionTier, modifierForStat, STAT_NAMES, STAT_TIPS, TIER_ORDER, TIER_EFFECT, type RestOption } from '../rules'
 import type { PanelId } from './TabBar'
 import styles from './Sidebar.module.css'
 
@@ -21,14 +21,9 @@ interface Props {
   dimmingDelta?: number
 }
 
-const STAT_KEYS: Array<[keyof GameState['player']['stats'], string, string]> = [
-  ['strength',     'STR', 'Strength — Raw physical power. Determines your ability to force, carry, break, and endure through brute effort.'],
-  ['dexterity',    'DEX', 'Dexterity — Speed, precision, and coordination. Used for stealth, ranged attacks, sleight of hand, and fine motor tasks.'],
-  ['stamina',      'STA', 'Stamina — Endurance and resilience. Governs how long you can exert yourself and how quickly you recover from strain.'],
-  ['intelligence', 'INT', 'Intelligence — Reasoning and recall. Used for reading situations, understanding lore, solving problems, and resisting mental influence.'],
-  ['mana',         'MAN', 'Mana — Attunement to the unseen. Required to perceive, channel, or resist arcane forces. Depletes with use and recovers with rest.'],
-  ['charisma',     'CHA', 'Charisma — Force of personality. Determines how people respond to you — whether they trust, fear, follow, or open up.'],
-  ['perception',   'PER', 'Perception — Awareness and instinct. Used to notice what others miss: hidden things, changes in behaviour, danger before it arrives.'],
+const STAT_KEYS: Array<[keyof GameState['player']['stats'], string]> = [
+  ['strength', 'STR'], ['dexterity', 'DEX'], ['stamina', 'STA'], ['intelligence', 'INT'],
+  ['mana', 'MAN'], ['charisma', 'CHA'], ['perception', 'PER'],
 ]
 
 const FACTION_KEYS: Array<[keyof GameState['factions'], string]> = [
@@ -36,11 +31,6 @@ const FACTION_KEYS: Array<[keyof GameState['factions'], string]> = [
   ['ashen_covenant', 'Ashen Covenant'],
   ['rootless',       'The Rootless'],
 ]
-
-// Reputation: centre is 50% at rep 0. Range −40 to +40 → 0–100%
-function repPercent(rep: number): number {
-  return Math.max(0, Math.min(100, ((rep + 40) / 80) * 100))
-}
 
 const MAX_PIPS = 10
 const statPips = (val: number) => Math.round((val / 20) * MAX_PIPS)
@@ -94,23 +84,31 @@ export default function Sidebar({ state, onOpen, hideClock = false, variant = 'c
         <div className={`${styles.trackWrap} ${lit('dimming')}`} role="meter" aria-label="The Dimming" aria-valuemin={0} aria-valuemax={100} aria-valuenow={curse} aria-valuetext={dimmingBand(curse)}>
           <div className={`${styles.trackFill} ${styles.dim}`} style={{ width: `${curse}%` }} />
         </div>
-        {!hideClock && <>
-          <div className={styles.timeVal}>{cap(world.time_of_day)}</div>
-          <div className={styles.timeSub}>Day {world.day}</div>
-        </>}
+        {!hideClock && (
+          <div className={styles.timeBlock} data-time-block>
+            <PartGlyph part={world.time_of_day} className={styles.partGlyph} />
+            <div>
+              <div className={styles.timeVal}>Day {world.day}</div>
+              <div className={styles.timeSub}>{cap(world.time_of_day)}</div>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* ── Stats (class label as section header) ── */}
       <div className={styles.sb}>
         <div className={styles.sbl}>{classLabel}</div>
-        {STAT_KEYS.map(([key, label, desc]) => {
+        {STAT_KEYS.map(([key, label]) => {
           const val = player.stats[key]
           const filled = statPips(val)
+          const mod = modifierForStat(val)
           return (
-            <div key={key} className={styles.statRow}>
-              <span className={styles.sn} tabIndex={0}>
+            <div key={key} className={styles.statRow} data-stat-row={key}>
+              <span className={styles.sn} tabIndex={0} aria-label={`${STAT_NAMES[key]} ${val}, modifier ${mod >= 0 ? '+' : '−'}${Math.abs(mod)}. ${STAT_TIPS[key]}`}>
                 {label}
-                <span className={styles.statTip} role="tooltip">{desc}</span>
+                <span className={styles.statTip} role="tooltip">
+                  <strong>{STAT_NAMES[key]}</strong> · {val} · {mod >= 0 ? '+' : '−'}{Math.abs(mod)}<br />{STAT_TIPS[key]}
+                </span>
               </span>
               <div className={styles.pips}>
                 {Array.from({ length: MAX_PIPS }, (_, i) => (
@@ -126,14 +124,23 @@ export default function Sidebar({ state, onOpen, hideClock = false, variant = 'c
       {/* ── Factions ── */}
       <div className={styles.sb}>
         <div className={styles.sbl}>Factions</div>
-        {FACTION_KEYS.map(([key, label]) => (
-          <div key={key} className={styles.facRow}>
-            <span className={styles.fn}>{label}</span>
-            <div className={`${styles.repWrap} ${lit(key)}`}>
-              <div className={styles.repFill} style={{ width: `${repPercent(factions[key].reputation)}%` }} />
+        {FACTION_KEYS.map(([key, label]) => {
+          const tier = factionTier(key, factions[key].reputation)
+          const seg = TIER_ORDER.indexOf(tier === 'Trusted' ? 'Allied' : tier)
+          return (
+            <div key={key} className={styles.facRow} tabIndex={0} data-faction={key}
+              aria-label={`${label}: ${tier}. ${TIER_EFFECT[key]?.[tier] ?? ''}`}>
+              <div className={styles.facTop}>
+                <span className={styles.fn}>{label}</span>
+                <span className={styles.facTier}>{tier}</span>
+              </div>
+              <div className={`${styles.segs} ${lit(key)}`} aria-hidden="true">
+                {TIER_ORDER.map((t, i) => <span key={t} className={`${styles.seg} ${i === seg ? styles.segOn : ''}`} />)}
+              </div>
+              <span className={styles.facTip} role="tooltip">{TIER_EFFECT[key]?.[tier]}</span>
             </div>
-          </div>
-        ))}
+          )
+        })}
       </div>
 
       {/* ── Purse ── */}

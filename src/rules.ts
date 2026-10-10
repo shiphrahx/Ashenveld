@@ -155,3 +155,42 @@ export function restOption(scene: { id: string; location: string; rest?: boolean
   }
   return eat
 }
+
+// ─── What a reputation tier means right now (U8, from the G5 table) ───────────
+
+export const TIER_ORDER = ['Hostile', 'Wary', 'Neutral', 'Cooperative', 'Allied']
+
+export const TIER_EFFECT: Record<string, Record<string, string>> = {
+  iron_compact: {
+    Hostile: 'The Compact sees you as a problem.',
+    Wary: 'Vorne and his soldiers are harder to talk to, and he will not hear an alliance.',
+    Neutral: 'Nothing either way yet.',
+    Cooperative: 'The checkpoint waves you through, and Vorne listens more readily.',
+    Allied: 'The Compact treats you as one of its own.',
+  },
+  ashen_covenant: {
+    Hostile: 'The Covenant sees you as a problem.',
+    Wary: 'Seriva will not discuss what the purification costs.',
+    Neutral: 'Nothing either way yet.',
+    Cooperative: 'The shrine will give you a bed, and Edric answers one more question.',
+    Allied: 'The Covenant would follow your lead on the seal.',
+  },
+  rootless: {
+    Hostile: 'The camp will not have you.',
+    Wary: 'The camp keeps you at the edge.',
+    Neutral: 'Nothing either way yet.',
+    Cooperative: 'The camp will give you a bed.',
+    Allied: 'Branch walks the first mile with you, and the camp stands with you.',
+    Trusted: 'Maret will show you what she pays the forest.',
+  },
+}
+
+export const STAT_TIPS: Record<string, string> = {
+  strength: 'Lifting, holding, standing your ground.',
+  dexterity: 'Moving quietly and quickly. Steady hands.',
+  stamina: 'Enduring long days and the pull of the ruins.',
+  intelligence: 'Reading texts, patterns and plans.',
+  mana: 'Sensing the curse and what lies under it. Useful near the ruins, and dangerous.',
+  charisma: 'Getting people to talk, to trust you, or to back down.',
+  perception: 'Noticing what is out of place.',
+}

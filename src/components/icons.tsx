@@ -18,3 +18,22 @@ export function Icon({ name, className }: { name: keyof typeof ICONS | string; c
     </svg>
   )
 }
+
+/** Six day-part glyphs (U9): low sun, sun, high sun, slanting sun, sun on the horizon, moon. */
+const PARTS: Record<string, React.ReactNode> = {
+  dawn: <><path d="M3 18h18"/><path d="M7 18a5 5 0 0 1 10 0"/><path d="M12 9v2M5.6 11.6l1.4 1.4M18.4 11.6 17 13"/></>,
+  morning: <><circle cx="12" cy="13" r="4"/><path d="M12 5v2M5 13H3M21 13h-2M6.3 7.3l1.4 1.4M17.7 7.3l-1.4 1.4"/><path d="M3 20h18"/></>,
+  midday: <><circle cx="12" cy="9" r="4"/><path d="M12 2v1.5M12 14.5V16M5 9H3.5M20.5 9H19M7 4l1 1M17 4l-1 1"/><path d="M3 20h18"/></>,
+  afternoon: <><circle cx="15" cy="10" r="4"/><path d="M15 3v1.5M21.5 10H20M19.6 5.4l-1 1"/><path d="M3 20h18M4 16l6-2"/></>,
+  evening: <><path d="M3 17h18"/><path d="M8 17a4 4 0 0 1 8 0"/><path d="M5 21h14"/></>,
+  night: <path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/>,
+}
+
+export function PartGlyph({ part, className }: { part: string; className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" focusable="false"
+      fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      {PARTS[part]}
+    </svg>
+  )
+}
