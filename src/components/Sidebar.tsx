@@ -47,9 +47,9 @@ const cap = (s: string) => s ? s.charAt(0).toUpperCase() + s.slice(1) : s
 
 const ACTIONS: Array<[PanelId, string, string]> = [
   ['journal', 'Journal', 'Journal'],
-  ['items', 'Items', 'Inventory'],
+  ['items', 'Items', 'Items'],
   ['map', 'Map', 'Map'],
-  ['people', 'People', 'Relationships'],
+  ['people', 'People', 'People you have met'],
 ]
 
 export default function Sidebar({ state, onOpen, hideClock = false, variant = 'column', journalDot = false, flash = [], rest = { mode: null }, onRest = () => {}, dimmingDelta = 0 }: Props) {
@@ -152,7 +152,7 @@ export default function Sidebar({ state, onOpen, hideClock = false, variant = 'c
 
       <div className={styles.sbSpacer} />
 
-      <div className={styles.acts}>
+      <nav className={styles.acts} aria-label="Panels">
         {variant === 'column' && ACTIONS.map(([id, label, tip]) => (
           <button key={id} className={styles.ab} onClick={() => onOpen(id)} aria-label={id === 'journal' && journalDot ? 'Journal, something new' : undefined}>
             <Icon name={id} />
@@ -179,7 +179,7 @@ export default function Sidebar({ state, onOpen, hideClock = false, variant = 'c
             <span className={styles.tip} aria-hidden="true">Menu</span>
           </button>
         )}
-      </div>
+      </nav>
     </aside>
   )
 }
