@@ -12,7 +12,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: 'Cinzel', serif;
+  font-family: var(--font-display);
   font-size: 12px;
   letter-spacing: 0.14em;
   color: var(--blue-ice);
@@ -20,7 +20,7 @@
   flex-shrink: 0;
 }
 
-.crumb { color: var(--text-muted); font-size: 11px; letter-spacing: 0.1em; display: flex; gap: 14px; }
+.crumb { color: var(--text-muted); font-size: var(--fs-label); letter-spacing: 0.1em; display: flex; gap: 14px; }
 .clock { color: var(--text-main); }
 
 .narrative {
@@ -76,7 +76,7 @@
 .lens p:last-child { margin-bottom: 0; }
 .lens em { color: var(--blue-ice); font-style: italic; }
 .lensLabel {
-  font-family: 'Cinzel', serif;
+  font-family: var(--font-display);
   font-size: 12px;
   letter-spacing: 0.12em;
   color: var(--blue-ice);
@@ -113,7 +113,7 @@
   background: none;
   border: 1px solid var(--border-dim);
   color: var(--text-main);
-  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-family: var(--font-ui);
   font-size: 17px;
   padding: 11px 14px 11px 12px;
   text-align: left;
@@ -132,8 +132,8 @@
 }
 
 .mk {
-  font-family: 'Cinzel', serif;
-  font-size: 11px;
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
   color: var(--text-muted);
   min-width: 14px;
   flex-shrink: 0;
@@ -142,8 +142,8 @@
 .lb { flex: 1; }
 
 .badge {
-  font-family: 'Cinzel', serif;
-  font-size: 11px;
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
   letter-spacing: 0.06em;
   padding: 2px 8px;
   border: 1px solid;

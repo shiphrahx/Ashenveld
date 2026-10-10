@@ -32,10 +32,10 @@
 }
 
 .loadingText {
-  font-family: 'Cinzel', serif;
-  font-size: 10px;
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
   letter-spacing: 0.3em;
-  color: var(--text-dim);
+  color: var(--text-faint);
   text-transform: uppercase;
   animation: pulse 2s ease-in-out infinite;
 }
@@ -46,7 +46,7 @@
 }
 
 .errorText {
-  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-family: var(--font-ui);
   font-size: 14px;
   color: var(--fail-lit);
   max-width: 480px;

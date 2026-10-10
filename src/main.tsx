@@ -1,5 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import '@fontsource/cinzel/400.css'
+import '@fontsource/cinzel/500.css'
+import '@fontsource/atkinson-hyperlegible/400.css'
+import '@fontsource/atkinson-hyperlegible/400-italic.css'
+import '@fontsource/atkinson-hyperlegible/700.css'
 import App from './App'
 import './index.css'
 

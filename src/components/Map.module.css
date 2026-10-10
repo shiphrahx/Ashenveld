@@ -39,7 +39,7 @@
 }
 
 .title {
-  font-family: 'Cinzel', serif;
+  font-family: var(--font-display);
   font-size: 13px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
@@ -74,8 +74,8 @@
 
 .regionLabel {
   position: absolute;
-  font-family: 'Cinzel', serif;
-  font-size: 9px;
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--text-muted);
@@ -140,22 +140,22 @@
 
 /* Labels */
 .label {
-  font-family: 'Cinzel', serif;
-  font-size: 9px;
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
   fill: var(--text-main);
   letter-spacing: 0.05em;
 }
 
 .labelUnvisited {
-  font-family: 'Cinzel', serif;
-  font-size: 9px;
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
   fill: var(--border-lit);
   letter-spacing: 0.05em;
 }
 
 .labelCurrent {
-  font-family: 'Cinzel', serif;
-  font-size: 9px;
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
   fill: var(--white-cold);
   letter-spacing: 0.05em;
   font-weight: 600;
@@ -174,7 +174,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 11px;
+  font-size: var(--fs-label);
   color: var(--text-muted);
 }
 
