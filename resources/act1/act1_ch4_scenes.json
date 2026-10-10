@@ -244,7 +244,10 @@
           "text": "Ask her what the curse feels like from inside.",
           "requires": {},
           "roll": {
-            "stat": "charisma",
+            "stat": [
+              "charisma",
+              "mana"
+            ],
             "dc": 9
           },
           "outcomes": {
@@ -622,7 +625,10 @@
           "text": "Come back. Show her who you are over the next two days.",
           "requires": {},
           "roll": {
-            "stat": "charisma",
+            "stat": [
+              "charisma",
+              "stamina"
+            ],
             "dc": 13,
             "bonus": [
               {

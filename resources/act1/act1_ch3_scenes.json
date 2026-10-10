@@ -539,7 +539,10 @@
           "text": "\"I can help. Whatever the camp needs, I have skills.\"",
           "requires": {},
           "roll": {
-            "stat": "charisma",
+            "stat": [
+              "charisma",
+              "strength"
+            ],
             "dc": 10
           },
           "outcomes": {

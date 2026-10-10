@@ -516,7 +516,10 @@
           "text": "Go back downstairs and try again while the inn is still open.",
           "requires": {},
           "roll": {
-            "stat": "charisma",
+            "stat": [
+              "charisma",
+              "stamina"
+            ],
             "dc": 14
           },
           "outcomes": {
@@ -638,7 +641,10 @@
           "text": "Ask him what it feels like from inside.",
           "requires": {},
           "roll": {
-            "stat": "charisma",
+            "stat": [
+              "charisma",
+              "mana"
+            ],
             "dc": 9
           },
           "outcomes": {

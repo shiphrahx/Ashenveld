@@ -37,7 +37,10 @@
           "text": "Focus your energy on the afflicted. The people the curse touched most deeply.",
           "requires": {},
           "roll": {
-            "stat": "charisma",
+            "stat": [
+              "charisma",
+              "stamina"
+            ],
             "dc": 11
           },
           "outcomes": {
@@ -368,7 +371,10 @@
           "text": "Spend time with Lira. Her recovery is the clearest measure of what the sealing achieved.",
           "requires": {},
           "roll": {
-            "stat": "charisma",
+            "stat": [
+              "charisma",
+              "stamina"
+            ],
             "dc": 9
           },
           "outcomes": {

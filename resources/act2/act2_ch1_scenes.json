@@ -36,7 +36,10 @@
           "text": "Follow the worn paths. See where they lead.",
           "requires": {},
           "roll": {
-            "stat": "perception",
+            "stat": [
+              "perception",
+              "dexterity"
+            ],
             "dc": 10,
             "bonus": [
               {

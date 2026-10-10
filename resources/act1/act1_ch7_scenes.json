@@ -115,7 +115,10 @@
           "text": "Copy the carvings into your journal. Take them with you.",
           "requires": {},
           "roll": {
-            "stat": "intelligence",
+            "stat": [
+              "intelligence",
+              "dexterity"
+            ],
             "dc": 10
           },
           "outcomes": {

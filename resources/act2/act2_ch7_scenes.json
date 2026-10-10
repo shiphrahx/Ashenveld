@@ -349,7 +349,10 @@
           "text": "Speak to Lira. Find out what the sealing feels like from the inside.",
           "requires": {},
           "roll": {
-            "stat": "charisma",
+            "stat": [
+              "charisma",
+              "mana"
+            ],
             "dc": 9
           },
           "outcomes": {

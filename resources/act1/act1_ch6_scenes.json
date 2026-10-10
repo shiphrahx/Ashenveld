@@ -319,7 +319,10 @@
           "text": "Follow it into the trees. See what it is doing.",
           "requires": {},
           "roll": {
-            "stat": "perception",
+            "stat": [
+              "perception",
+              "dexterity"
+            ],
             "dc": 12,
             "bonus": [
               {

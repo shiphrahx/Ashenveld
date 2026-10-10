@@ -623,7 +623,10 @@
           "text": "Step forward and negotiate directly with the soldiers.",
           "requires": {},
           "roll": {
-            "stat": "charisma",
+            "stat": [
+              "charisma",
+              "strength"
+            ],
             "dc": 14,
             "bonus": [
               {
