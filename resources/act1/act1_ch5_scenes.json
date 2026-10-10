@@ -190,7 +190,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "One of them, older, more senior, gives you a surprisingly direct answer.\n\n\"We are tracking the progression rate,\" he says. \"How quickly episodes become permanent. Whether there are environmental factors that accelerate or slow the process.\" He looks at his notes. \"The answer to your next question is: we do not know yet what we will do with the data. Commander Vorne is waiting for enough data to act.\"\n\nThe quality of waiting for enough data in a town that is getting worse: you note it.",
+              "text": "One of them, older, more senior, gives you a surprisingly direct answer.\n\n\"We're tracking the progression rate,\" he says. \"How quickly episodes become permanent. Whether there are environmental factors that accelerate or slow the process.\" He looks at his notes. \"The answer to your next question is: we do not know yet what we will do with the data. Commander Vorne is waiting for enough data to act.\"\n\nThe quality of waiting for enough data in a town that is getting worse: you note it.",
               "next_scene": "act1_ch5_player_curse_touch",
               "state_changes": {
                 "flags": {

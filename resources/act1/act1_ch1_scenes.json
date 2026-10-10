@@ -385,7 +385,7 @@
       },
       "text": {
         "default": "You sit at the bar and Aldous talks. Not freely, he measures everything, but he talks.\n\nFourteen months ago. [missing person] arrived and spent a week in town asking questions nobody wanted to answer about the ruins to the east and the old city under the forest. Then they found the Rootless camp, the survivors outside town, and spent the remaining two weeks there.\n\n\"The woman at the camp,\" Aldous says. \"Maret. She knew them better than I did by the end. She might tell you something. Or she might not.\" He refills his own glass for the first time tonight. \"She tends not to.\"\n\nHe looks at you. \"Whatever you are looking for — I hope you find it. I hope it is still what you think it is when you do.\"",
-        "commander": "Aldous tells you what he knows because you asked the right way. Direct, without pressure. You have been owed information before.\n\nFourteen months ago. Military bearing. He noticed. The right questions. Three weeks. Gone one morning without a word.\n\n\"Maret would know more,\" he says. \"She is careful who she talks to but she is not unkind.\"",
+        "commander": "Aldous tells you what he knows because you asked the right way. Direct, without pressure. You have been owed information before.\n\nFourteen months ago. Military bearing. He noticed. The right questions. Three weeks. Gone one morning without a word.\n\n\"Maret would know more,\" he says. \"She's careful who she talks to but she isn't unkind.\"",
         "arcane": "Aldous tells you what he knows, which is more than he thought he knew when he started talking. You notice the way memory works on people. They begin with what they are sure of and end somewhere they did not expect to be.\n\nFourteen months ago. Questions about the ruins. Three weeks of conversations with Maret at the Rootless camp. Then gone. But not fled. More like concluded. Like they had made a decision.\n\n\"Whatever they were looking for,\" Aldous says slowly, \"I think they found the beginning of it, at least.\"",
         "ranger": "Aldous talks and you listen the way you listen to terrain. For the shape of things, the direction the information is flowing.\n\nFourteen months ago. [missing person] arrived, asked about the ruins, spent three weeks at the Rootless camp, then went east without telling anyone.\n\n\"Maret,\" Aldous says. \"At the camp. She is the one to find.\" He adds flatly: \"Do not go into the forest alone.\"",
         "cipher": "Aldous tells you what he knows. You listen to what he does not say as much as what he does.\n\nFourteen months ago. Three weeks. The Rootless camp. Maret. Gone east.\n\nWhat he does not say: whether he tried to stop them. Whether the Rootless camp is as innocent as he is making it sound. The gaps in his account are not dishonesty. They are the shape of things he has decided are yours to find rather than his to give away."
@@ -456,7 +456,7 @@
               "state_changes": {}
             },
             "failure": {
-              "text": "\"That is a question for people who know more than I do,\" he says. \"Which in this town is either the Covenant or nobody.\"",
+              "text": "\"That's a question for people who know more than I do,\" he says. \"Which in this town is either the Covenant or nobody.\"",
               "next_scene": "act1_ch1_tallow_room",
               "state_changes": {}
             }

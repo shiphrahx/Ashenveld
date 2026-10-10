@@ -316,8 +316,8 @@
       },
       "requires": {},
       "text": {
-        "default": "She does not look up when you approach. She is working the rope. Her hands know what to do when her head does not.\n\nLira is twenty-something. She was quick once, you think. The kind of person who filled a room. She is careful now. The curse is not deep in her. But it is there. You can see it in the occasional delay between thought and expression, a beat where the connection is slower than it should be.\n\n\"The new person,\" she says without looking up. \"From outside. Maret said you are looking for someone.\"\n\n\"Yes,\" you say.\n\n\"Most people who come here are,\" she says. \"Or they are eventually. Everyone is looking for someone.\"",
-        "commander": "You sit near her and let the silence be comfortable. You have sat next to enough soldiers in field camps to know that proximity is not always conversation.\n\n\"You are from outside,\" she says eventually. \"Do you know what it looks like from outside? What this—\" she gestures at herself, at the camp \"—looks like to people who have not seen it?\"",
+        "default": "She does not look up when you approach. She is working the rope. Her hands know what to do when her head does not.\n\nLira is twenty-something. She was quick once, you think. The kind of person who filled a room. She is careful now. The curse is not deep in her. But it is there. You can see it in the occasional delay between thought and expression, a beat where the connection is slower than it should be.\n\n\"The new person,\" she says without looking up. \"From outside. Maret said you're looking for someone.\"\n\n\"Yes,\" you say.\n\n\"Most people who come here are,\" she says. \"Or they are eventually. Everyone is looking for someone.\"",
+        "commander": "You sit near her and let the silence be comfortable. You have sat next to enough soldiers in field camps to know that proximity is not always conversation.\n\n\"You're from outside,\" she says eventually. \"Do you know what it looks like from outside? What this—\" she gestures at herself, at the camp \"—looks like to people who have not seen it?\"",
         "arcane": "You sit and watch her work the rope. The knot she is tying is one you have seen in a text. A ward-knot, pre-Covenant, the kind used by the people who built the original seals.\n\n\"Where did you learn that?\" you ask.\n\nShe looks up. For a moment you see the quick person she was, the brightness, before the delay sets in. \"From the ruins,\" she says. \"I was inside the outskirts. Before Maret found me.\"",
         "ranger": "You crouch near her, which puts you at her level, which is the posture you would use with a skittish creature.\n\nShe seems to appreciate it. \"You move like you know where you are,\" she says. \"Most people here stopped knowing where they are a while ago. Even before the curse.\"\n\nShe looks at the rope. \"I was getting there. Then the curse, and then I stopped caring about before.\"",
         "cipher": "You sit. She works. You read her.\n\nThe delay in her is intermittent. Some sentences run at full speed, others have that beat of gap in them, a thought arriving a second after the moment for it. She is managing it. She has been managing it for a while. Whatever partial recovery Maret's methods offer, Lira has taken it as far as it goes."
@@ -360,7 +360,7 @@
               }
             },
             "success_at_cost": {
-              "text": "She tries to describe it and finds the edges of language quickly. \"Like being cold in a way that is not temperature,\" she says. \"And then getting used to the cold.\" She goes quiet. \"Maret helped me get less used to it.\"",
+              "text": "She tries to describe it and finds the edges of language quickly. \"Like being cold in a way that isn't temperature,\" she says. \"And then getting used to the cold.\" She goes quiet. \"Maret helped me get less used to it.\"",
               "next_scene": "act1_ch4_rootless_camp_stay",
               "state_changes": {
                 "relationships": {
@@ -374,7 +374,7 @@
               }
             },
             "failure": {
-              "text": "She starts to try and loses the thread of it. After a moment she shakes her head, that small, cost-counting gesture, and goes back to the rope.\n\n\"Sorry,\" she says. \"Some days it is easier to say than others.\"",
+              "text": "She starts to try and loses the thread of it. After a moment she shakes her head, that small, cost-counting gesture, and goes back to the rope.\n\n\"Sorry,\" she says. \"Some days it's easier to say than others.\"",
               "next_scene": "act1_ch4_rootless_camp_stay",
               "state_changes": {
                 "relationships": {

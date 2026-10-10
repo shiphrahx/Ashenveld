@@ -104,7 +104,7 @@
               }
             },
             "text": "Aldous is in the chair by the fire that used to be Wren's. He does not look up when the door opens.\n\nIt is Hanna, behind the bar, who sees you first. \"They are back,\" she says, to nobody in particular. Then, louder, to the room: \"They are back.\"",
-            "else": "Aldous is the first person you see when you enter the Tallow. He looks at [missing person] the way people look at someone they believed to be dead and have not adjusted to the revision.\n\n\"They are back,\" he says. Not to you. To himself. Then, louder, to the room: \"They are back.\""
+            "else": "Aldous is the first person you see when you enter the Tallow. He looks at [missing person] the way people look at someone they believed to be dead and have not adjusted to the revision.\n\n\"They're back,\" he says. Not to you. To himself. Then, louder, to the room: \"They're back.\""
           }
         ],
         "commander": "The reception in the Tallow is the reception of people who have been waiting for a long time for something to change and are in the process of deciding whether this is the change they were waiting for.\n\nYou manage the information flow. What is said, to whom, in what order. The Compact needs to hear it from Vorne, not from rumour. The Covenant's response needs to be managed.",

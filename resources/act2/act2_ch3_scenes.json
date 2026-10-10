@@ -328,7 +328,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "The soldier writes it down. He asks if you encountered anything of note. You describe the east road, the abandoned village of Harrow, the forest edge. You do not mention the ruins. You do not mention the inner approach. You do not mention what you found at the end of it.\n\nHe nods. \"Lieutenant Cael would like a word with anyone returning from east of Harrow,\" he says. \"When you are settled, find him at the Compact post in town.\"\n\nHe stands aside. You walk through.",
+              "text": "The soldier writes it down. He asks if you encountered anything of note. You describe the east road, the abandoned village of Harrow, the forest edge. You do not mention the ruins. You do not mention the inner approach. You do not mention what you found at the end of it.\n\nHe nods. \"Lieutenant Cael would like a word with anyone returning from east of Harrow,\" he says. \"When you're settled, find him at the Compact post in town.\"\n\nHe stands aside. You walk through.",
               "next_scene": "act2_ch3_crestfall_changed",
               "state_changes": {
                 "flags": {
@@ -770,7 +770,7 @@
         "commander": "Six people in five days. The rate is accelerating faster than the timeline [missing person] described.\n\nEither the mechanism is degrading faster than their estimates, or the Compact's arrival has introduced something that is accelerating the exposure. Large groups of people in a small area, the stress of occupation, or something Seriva brought with her.",
         "arcane": "Six people in five days. The mechanism's degradation is accelerating. The timeline you were given in the chamber was too optimistic.\n\nYou think about what Seriva's arrival might mean for the mechanism's behaviour. If she was the one who fractured it twenty years ago, if she performed an operation on it at the moment of fracture, then her proximity to Ashenveld now might be interacting with whatever she did then.",
         "ranger": "Six people walking east. Each one representing a family and a history and a future that is now moving in a direction nobody can follow.\n\nWren was the first. You knew Wren. Briefly, inadequately, but enough to know he was a good man with a wife who loved him and a farm he cared about. Whatever is east of the marker line has Wren now.",
-        "cipher": "Six people. Aldous has been counting carefully, which means he is afraid and has decided that counting is the form his response to fear takes.\n\n\"Seriva,\" you say. \"What is she doing here specifically? Not as an Covenant adviser. What is she actually doing?\"\n\nAldous looks at you. \"I do not know,\" he says. \"But she asked Edric to show her the Covenant's files on the last twenty years in Ashenveld. He showed her what he had. She spent six hours reading them. When she finished she burned the copies.\""
+        "cipher": "Six people. Aldous has been counting carefully, which means he is afraid and has decided that counting is the form his response to fear takes.\n\n\"Seriva,\" you say. \"What is she doing here specifically? Not as an Covenant adviser. What is she actually doing?\"\n\nAldous looks at you. \"I don't know,\" he says. \"But she asked Edric to show her the Covenant's files on the last twenty years in Ashenveld. He showed her what he had. She spent six hours reading them. When she finished she burned the copies.\""
       },
       "choices": [
         {
@@ -780,7 +780,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "\"Not yet,\" Aldous says. \"But—\" He pauses. \"There is a girl at the camp. Young. She came to the camp three days ago, the night before Vorne rode in. She is—\" He hesitates. \"She is showing the early signs. The dimming. And she is Vorne's daughter.\"\n\nYou process this.\n\n\"Does he know she is there?\"\n\n\"I do not know what he knows,\" Aldous says. \"I know that if he finds out, the camp is in trouble. Either he tries to take her back, which Maret will not allow, or he tries to take the camp apart because his daughter went to them instead of to him.\"",
+              "text": "\"Not yet,\" Aldous says. \"But—\" He pauses. \"There is a girl at the camp. Young. She came to the camp three days ago, the night before Vorne rode in. She is—\" He hesitates. \"She is showing the early signs. The dimming. And she is Vorne's daughter.\"\n\nYou process this.\n\n\"Does he know she is there?\"\n\n\"I don't know what he knows,\" Aldous says. \"I know that if he finds out, the camp is in trouble. Either he tries to take her back, which Maret won't allow, or he tries to take the camp apart because his daughter went to them instead of to him.\"",
               "next_scene": "act2_ch3_rootless_situation",
               "state_changes": {
                 "flags": {
@@ -800,7 +800,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "Aldous tells you. Every detail he has catalogued with the barman's instinct for detail: the way she moves through spaces as if she has been in them before, the questions she asked Edric, the way she looked at the east road when she thought no one was watching her.\n\n\"She is not advising Vorne,\" Aldous says. \"She is directing him. He asks her where to post soldiers and she tells him. He is the authority. She is the knowledge. Together they are something I do not have a word for.\"\n\nHe pauses. \"She has been to Ashenveld before. I would bet everything I own on it.\"",
+              "text": "Aldous tells you. Every detail he has catalogued with the barman's instinct for detail: the way she moves through spaces as if she has been in them before, the questions she asked Edric, the way she looked at the east road when she thought no one was watching her.\n\n\"She isn't advising Vorne,\" Aldous says. \"She's directing him. He asks her where to post soldiers and she tells him. He's the authority. She's the knowledge. Together they're something I don't have a word for.\"\n\nHe pauses. \"She has been to Ashenveld before. I would bet everything I own on it.\"",
               "next_scene": "act2_ch3_seriva_first_meeting",
               "state_changes": {
                 "flags": {
