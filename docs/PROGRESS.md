@@ -10,7 +10,7 @@ One step per branch and pull request. Each tick lists what was done, what was sk
 - [x] 6. docs/03 G7 to G13
 - [x] 7. docs/02 Section 0 (author decisions), then N1 to N4
 - [x] 8. docs/02 N5 to N8
-- [ ] 9. docs/02 N9 to N18
+- [x] 9. docs/02 N9 to N18
 - [ ] 10. docs/04 U8 to U20
 - [ ] 11. docs/05 E1 to E10
 - [ ] 12. docs/01 B22, B23. docs/03 G14, G15
@@ -309,12 +309,54 @@ Branch `step-8-threads-companion`, stacked on step 7.
 - N7's three-sentence kit (herbs, ward, nothing) has to be three paragraphs, because guarded parts are joined as paragraphs.
 - I cut six "for a long time"s that had crept into my own new lines.
 
-## Step 9 — N9 to N18 (IN PROGRESS, not ticked)
+## Step 9 — N9 to N18
 
-Branch `step-9-voice-endings`, stacked on step 8. Pushed, no PR yet.
+Branch `step-9-voice-endings`, stacked on step 8.
 
-**Done so far**: N9 (timeline, `docs/story-bible.md`, README dates), N11 (four Act 3 path conflicts), N12 (fiction breaks, act-end scene removed, titles), N13 (class stub, 12 class-only choices, Act 3 class options), N14 (Covenant path), N15 (both letters; U14 paragraph kinds brought forward to render them), N16 (endings), N17 (Neither option, `[sir/ma'am]`; pronoun conversion not done, needs your say-so), N18 (roles, items, README). N10 mechanical pass: "specific" 231 → 39, em dashes 829 → 112.
+**AUTHOR DECISION defaults used**
+- N17: kept the gender step, added Neither, and used the answer through a `[sir/ma'am]` token (ma'am, sir, traveller) in five lines from Cael, Sera and the soldiers. The script-wide pronoun conversion for [missing person] is **not** done: the plan says only if you confirm, so "they" stays throughout.
 
-**Left for step 9**: the N10 hand edits ("of someone who" 78 → 15, "specific" 39 → 25, the Not-tags 16 → 6, "You note/file" 28 → 6, "You read" openers, contractions for Aldous, Sen, Hanna, Lira, Issa and the soldiers), a full e2e run, prose stats in the PR, ticking this step and opening the PR.
+**Done**
+
+- N9: the timeline table, plus `docs/story-bible.md` (canon timeline, the six relationships, D1–D6, a paragraph per person, voices in brief) and the README's dates. The "just be in this room with you" line moves into `keep_some_things`; the road-west callback is guarded on having taken it.
+- N10: `tools/prose-stats.mjs` (from step 7). A scripted pass for filler "specific" and spaced em dashes in narration (speech left alone, no sentence left ending on "was" or "the"), then hand edits for "of someone who", "You note / You file", the "Not unkind." tags, the "You read" openers, and contractions for attributed lines from Aldous, Lira, the soldiers and others.
+- N11: a live problem on each Act 3 path, with flags the endings read. Stayed: the returned at the gate (Wren on Day 30). Left: the pull east and the choice to turn back. Sent ahead: the letters stop. Alone: Joren wakes and asks about Harrow; Maret offers her list. The rebuilding choices move to `act3_ch2_rebuilding_work` so the returned can frame them.
+- N12: fiction breaks gone, including three the table missed; `act1_ch7_act1_end` removed and its text moved into stepping over the line; six titles renamed.
+- N13: four class choices replace the stub, each read once later; twelve class-only choices; one class option per class on each Act 3 path.
+- N14: Edric at Seriva's meeting, the number for Crestfall (a fifth), the map room, keeping the seal, and a line in every ending.
+- N15: both letters shown as letter blocks. U14's paragraph kinds (letter, inscription, speech) brought forward from step 10 to render them.
+- N16: `act3_branches` lists the five real endings; unwritten ones are marked `folded_into`; the guarded closing paragraphs; Goran's recommendation guarded.
+- N17: see above.
+- N18: player-facing roles for all sixteen people, one plain line for each item, README classes and endings.
+
+**Prose stats** (`npm run prose`), plan target in brackets
+
+| Pattern | Start of step 7 | Now |
+|---|---|---|
+| specific / specifically (≤25) | 253 | 24 |
+| the specific quality of (≤3) | 37 | 0 |
+| of someone who (≤15) | 88 | 14 |
+| Not a question / accusing / unkind (≤6) | 17 | 0 |
+| You note / You file outside Cipher (≤6) | 30 | 1 |
+| em dashes (halve) | 894 | 112 |
+| "You read" paragraphs, Ranger / Cipher (≤5 each) | 20 / 10 | 5 / 5 |
+| contractions | 43 | 63 |
+| for a long moment / time | 45 | 37 |
+
+**Checks**: validate 0 errors (4 warnings), unit 24 passed, e2e 11 passed.
+
+**Skipped or deferred**
+
+- The contractions pass only touched speech it could attribute with confidence, so it reached 16 lines. Issa's lines have little to contract. A read-through by voice would find more.
+- Act 3's chapter 1 scenes keep a single choice.
+- The words-per-scene list in prose-stats counts every guarded variant, so relationship-heavy scenes look longer than any one player reads. G15 (step 12) handles pacing.
+
+**Plan was wrong or unclear**
+
+- N14 has "Say the number aloud" gated on knowing that cleansing kills, but the player doesn't know a number yet at that point. The choice asks Seriva for it in front of Edric instead.
+- N13's Arcane "Feel what the stone does" duplicated G2b's Mana check, and "Listen to the thread" duplicated another. The Arcane versions are worded differently ("Kneel, and listen for where the stone wants to go", "Listen to the thread from where you stand").
+- The sent-ahead player who leaves never got `player_leaves_ashenveld`, which the road scenes require. Now set on leaving.
+- A step 7 edit produced "a habit, a habit the two of you shared" at the campsite. Fixed.
+- The mechanical dash pass produced one bad contraction-free fragment risk; sentences were spot-checked, and two spliced sentences from the "of someone who" edits were fixed.
 
 **Not started**: steps 10, 11, 12.
