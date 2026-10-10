@@ -720,7 +720,20 @@
       },
       "requires": {},
       "text": {
-        "default": "The chamber after the ritual is the same chamber. The same stone, the same light, the same dimensions. But the quality of the air has changed — the thickness is gone. Breathing is what breathing should be.\n\nThe mechanism at the centre of the chamber is still broken. The fracture is still there. But the thread from the fracture is gone, and the fragment — which fell when the sealing was complete — lies on the chamber floor, dark, cool, ordinary.\n\n[missing person] sits beside you on the chamber floor. Both of you are tired in the specific way of people who have done something that required the whole of themselves.\n\nYou are not the same as you were before you entered. You will spend some time understanding what the differences are. But you are here. Both of you.",
+        "default": [
+          "The chamber after the ritual is the same chamber. The same stone, the same light, the same dimensions. But the quality of the air has changed — the thickness is gone. Breathing is what breathing should be.",
+          {
+            "when": {
+              "flags": {
+                "ritual_partial": true
+              }
+            },
+            "text": "The mechanism at the centre of the chamber is still broken. The fracture is still there. The thread from the fracture is thinner. It is still there. The fragment, which fell when the sealing ended, lies on the chamber floor, dark and cool.",
+            "else": "The mechanism at the centre of the chamber is still broken. The fracture is still there. But the thread from the fracture is gone, and the fragment — which fell when the sealing was complete — lies on the chamber floor, dark, cool, ordinary."
+          },
+          "[missing person] sits beside you on the chamber floor. Both of you are tired in the specific way of people who have done something that required the whole of themselves.",
+          "You are not the same as you were before you entered. You will spend some time understanding what the differences are. But you are here. Both of you."
+        ],
         "commander": "The mission is complete. The objective was achieved. These are the facts you lead with when you are processing the aftermath of significant actions.\n\nBut underneath them, available now in a way they were not before the ritual: the specific quality of having been seen completely and found — not perfect, not without complication — but sufficient. Real. Worth the seeing.\n\nYou will think about this for a long time.",
         "arcane": "The mechanism has sealed. You will need to study what this means for the curse's existing manifestations — the afflicted people, the afflicted animals, the afflicted land. The sealing stops the spread but the text was not clear about whether it reverses existing damage.\n\nYou have questions. Many questions. More than you had before you came into this chamber, which is the best possible outcome for someone built the way you are built.\n\nYou also have something that is harder to categorise. What the mechanism showed you about the person beside you. What they carry. Why they wrote the letter. Why they waited.\n\nYou will think about this for a long time too.",
         "ranger": "You read the chamber the way you read territory after a significant event — for what has changed, for what has held.\n\nThe mechanism is sealed. The curse has a ceiling now — it will not spread further. What it has already done is a different question.\n\n[missing person] is beside you. Tired. Changed. Present. All three of those things in equal measure.\n\nYou have tracked many things to their source. You have not often found what you were looking for when you got there. This is different.",
@@ -734,7 +747,30 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You help each other up. You leave the chamber together.\n\nThe passage is the same passage. The carvings are the same carvings. But the frequency you have been feeling since you arrived in Ashenveld — the note that started as a pressure in the back of your teeth and became, over the weeks, as familiar as your own pulse — is different now.\n\nNot gone. Changed. Quieter. The thing that was vibrating has settled.\n\nPol is waiting in the outskirts, at the gate, beside the Watcher. She looks at your faces and knows.\n\n\"It worked,\" she says. Not a question.\n\n\"Yes,\" [missing person] says.\n\nPol sits down where she is standing. A very old woman sitting down in the ruins outskirts because her legs have decided that fifteen years of waiting and one morning of witnessing are enough for one day. You sit beside her.\n\nThe Watcher does not move.",
+              "text": [
+                "You help each other up. You leave the chamber together.",
+                "The passage is the same passage. The carvings are the same carvings. But the frequency you have been feeling since you arrived in Ashenveld — the note that started as a pressure in the back of your teeth and became, over the weeks, as familiar as your own pulse — is different now.",
+                {
+                  "when": {
+                    "flags": {
+                      "ritual_partial": true
+                    }
+                  },
+                  "text": "Quieter. Not settled. You can still find it if you listen for it.",
+                  "else": "Not gone. Changed. Quieter. The thing that was vibrating has settled."
+                },
+                "Pol is waiting in the outskirts, at the gate, beside the Watcher. She looks at your faces and knows.",
+                {
+                  "when": {
+                    "flags": {
+                      "ritual_partial": true
+                    }
+                  },
+                  "text": "\"It held,\" she says. A pause. \"Mostly.\"\n\nShe does not sit down. She stands beside the Watcher with her hands in her sleeves, and you stand with her.",
+                  "else": "\"It worked,\" she says. Not a question.\n\n\"Yes,\" [missing person] says.\n\nPol sits down where she is standing. A very old woman sitting down in the ruins outskirts because her legs have decided that fifteen years of waiting and one morning of witnessing are enough for one day. You sit beside her."
+                },
+                "The Watcher does not move."
+              ],
               "next_scene": "act2_ch6_seriva_arrives",
               "state_changes": {
                 "flags": {
@@ -764,7 +800,21 @@
       },
       "requires": {},
       "text": {
-        "default": "You have been sitting with Pol and [missing person] for twenty minutes when you hear movement in the outskirts.\n\nMore than one person. Compact soldiers, by the sound — the specific weight and rhythm of armed people moving carefully through unfamiliar terrain. And with them, moving more confidently, someone who has been in this terrain before.\n\nSeriva comes through the outskirts from the west — from the direction of the inner approach's alternate entrance, which means she found it.\n\nShe stops when she sees you. She reads the three of you — Pol, [missing person], you — and she reads the chamber entrance behind you and she understands what has happened before anyone says a word.\n\nThe look on her face is not anger. It is something more complicated than anger.",
+        "default": [
+          "You have been sitting with Pol and [missing person] for twenty minutes when you hear movement in the outskirts.",
+          "More than one person. Compact soldiers, by the sound — the specific weight and rhythm of armed people moving carefully through unfamiliar terrain. And with them, moving more confidently, someone who has been in this terrain before.",
+          "Seriva comes through the outskirts from the west — from the direction of the inner approach's alternate entrance, which means she found it.",
+          "She stops when she sees you. She reads the three of you — Pol, [missing person], you — and she reads the chamber entrance behind you and she understands what has happened before anyone says a word.",
+          "The look on her face is not anger. It is something more complicated than anger.",
+          {
+            "when": {
+              "flags": {
+                "ritual_partial": true
+              }
+            },
+            "text": "She walks to the chamber entrance and stands in it for a while. \"It is not finished,\" she says. She is not wrong."
+          }
+        ],
         "commander": "Two soldiers with Seriva. You assess them in the first second — professionals, not aggressive, waiting for instruction.\n\nSeriva looks at you and at [missing person] and at Pol and she has already calculated everything.\n\n\"The sealing ritual,\" she says. Not asking. Confirming.\n\n\"Yes,\" you say.",
         "arcane": "You think about what Pol told you. Seriva has spent twenty years trying to repair what she broke. The purification was her way, and she came back to Ashenveld to do it at last.\n\nNow it is unnecessary. The original ritual is done.\n\nWhat is on her face is grief. Very old grief, with a new occasion.",
         "ranger": "Seriva reads the situation with the speed of an expert. The chamber entrance. The three of you. The fragment, dark, on the floor where Pol set it down.\n\nShe did not come in time. Or she came just in time — depending on how you measure time and what you were measuring for.",
@@ -778,7 +828,31 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You tell her.\n\nShe listens. She does not interrupt. When you finish she is quiet for a long time.\n\nThen: \"The curse will not spread further.\"\n\n\"No.\"\n\n\"The afflicted — the people already affected.\"\n\n\"We do not know yet,\" [missing person] says. \"The sealing stops the progression. Whether it reverses existing damage — the text was not clear.\"\n\nSeriva nods slowly. Something in her that was very tight for twenty years has begun to release. You are watching it happen. It is not comfortable to watch.\n\n\"I was going to kill people,\" she says. Quietly. To no one in particular. \"I told myself the number was acceptable. I told myself it was necessary. I have been telling myself this for twenty years and I believed it and it was wrong.\" A pause. \"I am glad it was wrong.\"",
+              "text": [
+                "You tell her.",
+                "She listens. She does not interrupt. When you finish she is quiet for a long time.",
+                {
+                  "when": {
+                    "flags": {
+                      "ritual_partial": true
+                    }
+                  },
+                  "text": "Then: \"It will still spread.\"\n\n\"Slowly,\" [missing person] says. \"Years, not weeks.\"",
+                  "else": "Then: \"The curse will not spread further.\"\n\n\"No.\""
+                },
+                "\"The afflicted — the people already affected.\"",
+                "\"We do not know yet,\" [missing person] says. \"The sealing stops the progression. Whether it reverses existing damage — the text was not clear.\"",
+                "Seriva nods slowly. Something in her that was very tight for twenty years has begun to release. You are watching it happen. It is not comfortable to watch.",
+                "\"I was going to kill people,\" she says. Quietly. To no one in particular. \"I told myself the number was acceptable. I told myself it was necessary. I have been telling myself this for twenty years and I believed it and it was wrong.\" A pause. \"I am glad it was wrong.\"",
+                {
+                  "when": {
+                    "flags": {
+                      "ritual_partial": true
+                    }
+                  },
+                  "text": "Then, after a while: \"Then my ritual may still be needed.\""
+                }
+              ],
               "next_scene": "act2_ch7_aftermath_crestfall",
               "state_changes": {
                 "flags": {

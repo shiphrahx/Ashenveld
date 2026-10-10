@@ -148,6 +148,14 @@
           {
             "when": {
               "flags": {
+                "ritual_partial": true
+              }
+            },
+            "text": "Once a month you and [missing person] walk east to the chamber and sit with the seal for an afternoon. It has not finished. It has not failed."
+          },
+          {
+            "when": {
+              "flags": {
                 "crestfall_afflicted": true
               }
             },
@@ -256,6 +264,14 @@
               ]
             },
             "text": "You said it on the road, the second week, and [missing person] said they knew."
+          },
+          {
+            "when": {
+              "flags": {
+                "ritual_partial": true
+              }
+            },
+            "text": "Pol walks east to the chamber every new moon and writes to you what she finds. The letters are short. Holding, they say. Not finished."
           },
           {
             "when": {
@@ -372,6 +388,14 @@
           {
             "when": {
               "flags": {
+                "ritual_partial": true
+              }
+            },
+            "text": "On the first of every month you walk east to the chamber alone and listen to the note. It is quieter every year. It has never stopped."
+          },
+          {
+            "when": {
+              "flags": {
                 "crestfall_afflicted": true
               }
             },
@@ -478,6 +502,14 @@
               ]
             },
             "text": "You said it the first winter at the camp, and [missing person] said they had known for twenty years."
+          },
+          {
+            "when": {
+              "flags": {
+                "ritual_partial": true
+              }
+            },
+            "text": "The camp keeps a rota for the walk east. Branch goes most months. He comes back and says \"Holding,\" and nothing else."
           },
           {
             "when": {
@@ -592,6 +624,14 @@
               ]
             },
             "text": "The account has a dedication. It is one line long, and [missing person] has never mentioned it."
+          },
+          {
+            "when": {
+              "flags": {
+                "ritual_partial": true
+              }
+            },
+            "text": "The account's last page says who checks the seal: Pol, and Lira after her, once a month. It says the seal is partial. It says so plainly."
           },
           {
             "when": {

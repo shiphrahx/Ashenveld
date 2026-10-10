@@ -25,7 +25,20 @@
         }
       },
       "text": {
-        "default": "Day twenty. The third week.\n\nThe curse is still present but measurably diminishing. The episodes in the market — the stillness, the vacancy — have become infrequent enough that when one occurs it draws attention again rather than being ignored. People are noticing because they have started to expect that people will not stop in the street, which means they have started expecting something better.\n\nThat is the specific shape of recovery in a place like Crestfall. Not dramatic improvement. The return of expectations. The belief, held tentatively at first and then more firmly, that tomorrow might be slightly better than today.\n\nYou and [missing person] are part of the mechanism of that belief. You move through the town every day, doing the unglamorous work of a place trying to remember how to function.",
+        "default": [
+          "Day twenty. The third week.",
+          "The curse is still present but measurably diminishing. The episodes in the market — the stillness, the vacancy — have become infrequent enough that when one occurs it draws attention again rather than being ignored. People are noticing because they have started to expect that people will not stop in the street, which means they have started expecting something better.",
+          "That is the specific shape of recovery in a place like Crestfall. Not dramatic improvement. The return of expectations. The belief, held tentatively at first and then more firmly, that tomorrow might be slightly better than today.",
+          "You and [missing person] are part of the mechanism of that belief. You move through the town every day, doing the unglamorous work of a place trying to remember how to function.",
+          {
+            "when": {
+              "flags": {
+                "ritual_partial": true
+              }
+            },
+            "text": "Every month someone walks east to check the seal. This month it was Branch."
+          }
+        ],
         "commander": "You have established a rhythm. Mornings: the documentation work with [missing person] and Pol. Afternoons: the political work — the Compact arrangements, the Covenant's reduced presence, the Rootless camp's growing formal role.\n\nVorne has reduced his garrison to twelve soldiers. The remaining twelve are doing useful things: road repair, supply distribution, the practical work of stabilisation that soldiers are good at when they are not being used for something more violent.\n\nYou and Vorne have found, through the friction of working in the same space, something that is not quite respect and is more useful than friendship.",
         "arcane": "The documentation is comprehensive. You have been working with [missing person] for three days on the account of the sealing ritual, the mechanism's structure, the curse's properties and progression.\n\nPol is the most valuable collaborator — fifteen years of preparation have given her a precision that neither you nor [missing person] can match individually. The three of you together produce something that is both academically rigorous and practically useful.\n\nYou will send copies to three separate institutions when it is complete. Not because you trust any single institution. Because distributing the knowledge is the only way to ensure no single institution controls it.",
         "ranger": "The wildlife recovery is documenting itself in ways you read every morning.\n\nDay seventeen: two sparrow species in the market square.\nDay eighteen: a fox sighting on the north road.\nDay nineteen: the cat that had been sheltering under the north porch moved back inside.\nDay twenty: birdsong before dawn.\n\nThe land is coming back. Slowly, in the specific order that recovery happens — the smallest and most adaptable first, the larger and more complex later.\n\nYou write it all down. Every morning, every observation. The record will matter when someone needs to understand what the curse was and what the sealing achieved.",

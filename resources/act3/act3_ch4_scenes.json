@@ -25,7 +25,20 @@
         }
       },
       "text": {
-        "default": "Six weeks after the ritual. Day forty-five.\n\nThe fountain in the market square is running again. Not strongly — a thin stream, a technical victory rather than a celebration. But the water is clear and cold and it is coming from the ground without the wrongness the well-water had.\n\nSomebody put a cup on the fountain's edge. Then somebody else put another cup. By the end of the day there are seven cups and a child drinking from one of them.\n\nYou and [missing person] watch this from across the square. Neither of you says anything. The cups say it.",
+        "default": [
+          "Six weeks after the ritual. Day forty-five.",
+          {
+            "when": {
+              "flags": {
+                "ritual_partial": true
+              }
+            },
+            "text": "The fountain in the market square runs some days. Today is one of them: a thin stream, clear and cold, and nobody quite trusts it yet.",
+            "else": "The fountain in the market square is running again. Not strongly — a thin stream, a technical victory rather than a celebration. But the water is clear and cold and it is coming from the ground without the wrongness the well-water had."
+          },
+          "Somebody put a cup on the fountain's edge. Then somebody else put another cup. By the end of the day there are seven cups and a child drinking from one of them.",
+          "You and [missing person] watch this from across the square. Neither of you says anything. The cups say it."
+        ],
         "commander": "Vorne leaves on day forty-three. He takes twenty-two soldiers with him and leaves six — a skeleton presence, formally occupying, functionally symbolic.\n\nHe shakes your hand before he goes. He shakes [missing person]'s hand. He shakes Maret's hand, which requires visible effort from both of them, but they manage it.\n\nHe does not shake Pol's hand. Pol does not offer it. They stand in the same space for a moment and look at each other with the mutual assessment of two people who know they handled the same situation differently and are deciding what to do with that.\n\nThen Vorne leaves. The six remaining soldiers are well-behaved and useful and nobody resents their presence much.",
         "arcane": "The documentation's reception has exceeded what you expected.\n\nTwo universities have written requesting the full version. A colleague in the capital has proposed a symposium — the first formal academic engagement with the curse as a documented phenomenon. A researcher you have never heard of in a distant city has written to say they have been studying similar phenomena and may have connected evidence.\n\nAshenveld is no longer an isolated mystery. It is a named and documented event in the world's understanding of itself.\n\nYou sit in the Tallow and read these letters and [missing person] sits across from you doing something with their hands — the knot Lira taught them, the same ward-knot — and the ordinary quality of the moment is extraordinary.",
         "ranger": "Six weeks.\n\nThe hawk you first saw on day thirty has a territory now. You can read its pattern from the market square — it hunts the north end of the ordinary forest between the hours of early morning and midmorning, then rests, then hunts again in the late afternoon.\n\nThis is information about a hawk. It is also information about Ashenveld. The hawk has decided to have a territory here. It has decided there is enough food to sustain it here. It has decided this is a place worth being.\n\nYou write it down. Day forty-five: the hawk has established a territory.",

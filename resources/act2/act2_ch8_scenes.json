@@ -22,7 +22,21 @@
       },
       "requires": {},
       "text": {
-        "default": "Three days after the ritual.\n\nThe curse is still present in Ashenveld — it does not evaporate in seventy-two hours. But it is no longer spreading. The ambient in Crestfall has shifted noticeably. People who have been having the episodes are having them less frequently and with shorter duration. The grey at Issa's fingertips has not disappeared but it has not progressed.\n\nThe factions are regrouping. This is the part that comes after every significant event — the negotiation of what it means and who gets credit for it and what happens next.\n\nVorne has his assessment. Seriva has hers. The Rootless camp has its position. And you have decisions to make about what happens to Ashenveld and your place in it.\n\nThe point of no return is coming.",
+        "default": [
+          "Three days after the ritual.",
+          {
+            "when": {
+              "flags": {
+                "ritual_partial": true
+              }
+            },
+            "text": "The curse is still present in Ashenveld. It is spreading more slowly, but it is spreading. Episodes are rarer. They have not stopped. The grey at Issa's fingertips has not moved.",
+            "else": "The curse is still present in Ashenveld — it does not evaporate in seventy-two hours. But it is no longer spreading. The ambient in Crestfall has shifted noticeably. People who have been having the episodes are having them less frequently and with shorter duration. The grey at Issa's fingertips has not disappeared but it has not progressed."
+          },
+          "The factions are regrouping. This is the part that comes after every significant event — the negotiation of what it means and who gets credit for it and what happens next.",
+          "Vorne has his assessment. Seriva has hers. The Rootless camp has its position. And you have decisions to make about what happens to Ashenveld and your place in it.",
+          "The point of no return is coming."
+        ],
         "commander": "You sit at your usual table in the Tallow and look at three forces arrayed around the question of what happens next.\n\nVorne wants control of the documentation and the ruins' status. Seriva wants the Covenant's involvement in the rebuilding formally recognised. The Rootless camp wants recognition, resources, and to be left alone.\n\nThese three things are not incompatible. They require a broker. You have been a broker before.",
         "arcane": "Three days of observation have given you initial data on the sealing's effects.\n\nThe curse is not reversing rapidly. Affliction at early stages — like Issa, like Lira — is progressing more slowly. People at further stages show no measurable change yet.\n\nThe land itself shows the most immediate response. Birds are beginning to return to areas nearest Crestfall. Time is the question. How much.",
         "ranger": "You have been tracking the recovery the way you track any environmental change — with patience and attention to specific signs.\n\nDirection is positive. Rate is slow. The deepest areas will take longest.\n\nBut you heard a bird this morning. In the ordinary trees, half a mile from Crestfall. A species you had not heard in Ashenveld since you arrived. You stood in the road and listened to it for longer than was strictly necessary.",

@@ -56,6 +56,14 @@
               "lowest_faction": "rootless"
             },
             "text": "The settlement held until a Compact patrol walked through the camp at night. Branch walked them back out to the road. Nobody has called a meeting since."
+          },
+          {
+            "when": {
+              "flags": {
+                "ritual_partial": true
+              }
+            },
+            "text": "The seal is checked every month. It is holding, and it is not finished."
           }
         ],
         "commander": "You and [missing person] have developed a division of labour that neither of you planned.\n\nThey work with Pol on the documentation and with Maret on the camp's organisation. You work with Vorne on the Compact arrangements and with Edric on the Covenant's restructured role.\n\nYou are, you realise, managing the institutional half of Ashenveld's recovery while they manage the human half. The two halves require different things from different people and you each turned out to be the right person for the half you ended up in.",
