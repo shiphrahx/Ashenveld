@@ -318,7 +318,60 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You talk for an hour. The fire goes out and neither of you moves to rebuild it. You talk in the dark, in the specific quality of darkness that exists in the ruins, and you say the things you have been carrying.\n\nWhen you finish, they are quiet for a long time.\n\nThen: \"Thank you,\" they say. \"For not making me find out in the chamber.\"\n\nYou sleep. In the morning: the chamber.",
+              "text": [
+                "You talk for an hour. The fire goes out and neither of you moves to rebuild it. You talk in the dark.",
+                {
+                  "when": {
+                    "relationship_type": [
+                      "childhood friend"
+                    ]
+                  },
+                  "text": "\"I said I would write,\" you say. \"I wrote twice. I do not have a reason. I have been looking for one for eleven years.\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "former lover"
+                    ]
+                  },
+                  "text": "\"I never told you it was over,\" you say. \"I just went. I think I wanted it to stay not over.\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "sibling"
+                    ]
+                  },
+                  "text": "\"I left you with the house,\" you say. \"And with her, at the end. I knew what I was leaving you with. I went anyway.\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "mentor"
+                    ]
+                  },
+                  "text": "\"You told me to go,\" you say. \"I thought you were tired of me. I let myself think it for eleven years because it was easier than asking.\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "parent"
+                    ]
+                  },
+                  "text": "\"We never finished that argument,\" you say. \"I have had it with you every night for eleven years. You win most of them.\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "the one who got away"
+                    ]
+                  },
+                  "text": "\"I left before I had to say it,\" you say. \"So I am saying it now, in the dark, where I cannot see your face.\""
+                },
+                "When you finish, they are quiet for a long time.",
+                "Then: \"Thank you,\" they say. \"For not making me find out in the chamber.\"",
+                "You sleep. In the morning: the chamber."
+              ],
               "next_scene": "act2_ch6_day_of_ritual",
               "state_changes": {
                 "flags": {

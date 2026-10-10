@@ -219,7 +219,61 @@
         }
       },
       "text": {
-        "default": "The engagement phase is where the ritual reads you.\n\nYou and [missing person] take the positions the text describes — specific locations in the chamber, specific orientations relative to the mechanism. The fragment is placed at the midpoint between you, on the floor, touching the chamber stone.\n\nThe effect begins immediately.\n\nNot painful. Not frightening. What the mechanism does in this phase is not a threat — it is the specific sensation of being seen. Completely. The parts of yourself you manage, the parts you suppress, the parts you have not looked at directly in years — all of it equally visible, equally present, equally real.\n\nAcross from you, [missing person] goes through the same thing. You can see it in their face — the specific quality of someone being read by something that does not miss anything.",
+        "default": [
+          "The engagement phase is where the ritual reads you.",
+          "You and [missing person] take the positions the text describes — specific locations in the chamber, specific orientations relative to the mechanism. The fragment is placed at the midpoint between you, on the floor, touching the chamber stone.",
+          "The effect begins immediately.",
+          "Not painful. Not frightening. What the mechanism does in this phase is not a threat — it is the specific sensation of being seen. Completely. The parts of yourself you manage, the parts you suppress, the parts you have not looked at directly in years — all of it equally visible, equally present, equally real.",
+          {
+            "when": {
+              "relationship_type": [
+                "childhood friend"
+              ]
+            },
+            "text": "And it shows you [missing person], the year after you left, standing at the docks on a market day, watching the barges come in. And the next market day. Every market day for a year, in case you were on one."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "former lover"
+              ]
+            },
+            "text": "And it shows you the morning you left. [missing person] in the warehouse door at the docks, watching you go. They did not call out. You never knew they were there."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "sibling"
+              ]
+            },
+            "text": "And it shows you your mother at the end, in the back room on the mill lane, asking for you. [missing person] holding her hand and telling her you were on your way."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "mentor"
+              ]
+            },
+            "text": "And it shows you [missing person] eleven years ago, reading the old texts by lamplight. They already knew what was under the forest. That was why they sent you away."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "parent"
+              ]
+            },
+            "text": "And it shows you [missing person] on the pier, watching your barge until it was out of sight. They were proud of you. They have been furious with you for eleven years."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "the one who got away"
+              ]
+            },
+            "text": "And it shows you [missing person], all those evenings by the mill wall. They knew. They were waiting for you to say it."
+          },
+          "Across from you, [missing person] goes through the same thing. You can see it in their face — the specific quality of someone being read by something that does not miss anything."
+        ],
         "commander": "You have been in difficult situations before. Situations that required you to be more than you were. Situations where the outcome depended on the quality of what you brought to them.\n\nThis is different. This requires you to be exactly what you are. Nothing more and nothing added. The mechanism has no use for aspiration. It reads what is there.\n\nWhat is there — you are discovering, as the mechanism reads it — is sufficient.",
         "arcane": "The mechanism reads with the thoroughness of a complete instrument. Everything you are, simultaneously, without sequence or priority. Your knowledge and your ignorance given equal weight. Your clarity and your confusion held in the same attention.\n\nYou have spent your professional life pursuing understanding. The mechanism understands things differently — it does not analyse, it holds. The way the original builders held the power: not by understanding it but by giving it something to be.\n\nYou understand what you are doing in this chamber for the first time.",
         "ranger": "The reading is not comfortable. Not because it is painful — because it is complete. You do not get to choose what the mechanism reads. The things you would prefer it not to see are visible the same as everything else.\n\nBut across from you, the same thing is happening to [missing person]. And what you see in their face — being read, being seen, having nothing held back — is not diminishment.\n\nIt is recognition. Someone else is in the room and the room can see them.",

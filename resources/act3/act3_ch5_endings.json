@@ -99,6 +99,54 @@
           "This morning: the market. The fountain. A specific quality of light that this time of year produces over Crestfall — not warm exactly, something more honest than warm. You are standing in it and so is [missing person] and the day has not yet told you what it needs.",
           {
             "when": {
+              "relationship_type": [
+                "childhood friend"
+              ]
+            },
+            "text": "[missing person] still walks the east field fence some evenings, one foot on the rail, and still waits for you to fall off first."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "former lover"
+              ]
+            },
+            "text": "Some nights [missing person] reads by the lamp with their knees drawn up, and you pretend to be asleep."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "sibling"
+              ]
+            },
+            "text": "[missing person] has the back room, over the yard, and the two of you argue about the shutters."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "mentor"
+              ]
+            },
+            "text": "[missing person] still corrects your work, and you still let them."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "parent"
+              ]
+            },
+            "text": "[missing person] waits up when you are late, and you are late less often."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "the one who got away"
+              ]
+            },
+            "text": "You said it in the end, on an ordinary evening by the mill wall, and [missing person] said they knew."
+          },
+          {
+            "when": {
               "flags": {
                 "crestfall_afflicted": true
               }
@@ -161,6 +209,54 @@
           "The letters from Ashenveld arrive every two weeks — from Maret, from Branch, from Pol. The recovery is ongoing. The work continues without you. This is what you built: something that can continue without you.",
           "Across the table, [missing person] is eating something ordinary with the specific attention of someone who has not had ordinary things for a long time and has not yet stopped being grateful for them.",
           "You watch them eat breakfast in a market town they chose. This is not what you expected your life to look like. You are not sure what you expected. You are here.",
+          {
+            "when": {
+              "relationship_type": [
+                "childhood friend"
+              ]
+            },
+            "text": "[missing person] has found a fence to walk along here too."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "former lover"
+              ]
+            },
+            "text": "You say goodbye properly now, to every town you leave, and [missing person] watches you do it."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "sibling"
+              ]
+            },
+            "text": "Every month the two of you write a line each to your mother, and post it nowhere."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "mentor"
+              ]
+            },
+            "text": "[missing person] is teaching someone else now, and lets you watch."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "parent"
+              ]
+            },
+            "text": "[missing person] still asks if you have been eating."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "the one who got away"
+              ]
+            },
+            "text": "You said it on the road, the second week, and [missing person] said they knew."
+          },
           {
             "when": {
               "flags": {
@@ -227,6 +323,54 @@
           "Maret, crossing the square, who sees you and raises a hand in greeting — the specific shorthand of two people who have worked together long enough that full greeting is unnecessary.",
           {
             "when": {
+              "relationship_type": [
+                "childhood friend"
+              ]
+            },
+            "text": "Twice a year a letter comes from [missing person], and you answer every one."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "former lover"
+              ]
+            },
+            "text": "[missing person] writes in the spring. You keep the letters in the drawer by the bed."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "sibling"
+              ]
+            },
+            "text": "[missing person] writes from the coast that they keep a room for you, and you keep not using it."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "mentor"
+              ]
+            },
+            "text": "[missing person] sends you questions by letter, and you send back answers they already know."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "parent"
+              ]
+            },
+            "text": "[missing person] writes that they are proud of you, every letter, and you have stopped arguing."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "the one who got away"
+              ]
+            },
+            "text": "You never said it. [missing person] writes anyway, and does not ask."
+          },
+          {
+            "when": {
               "flags": {
                 "crestfall_afflicted": true
               }
@@ -287,6 +431,54 @@
           "The Rootless camp is not called the Rootless camp anymore. It has a formal name — the Ashenveld Recovery Centre, a name that took three meetings to agree on and that nobody uses except on official documents. Unofficially it is still the camp. Maret is still Maret.",
           "You and [missing person] are in it. In all of it — the work, the place, the specific texture of a life built in a hard place with the people who stayed.",
           "This is the Rootless ending. Not the easiest path. Not the one the institutions wanted. The one that put the people who knew the most about the curse in charge of what came after it.",
+          {
+            "when": {
+              "relationship_type": [
+                "childhood friend"
+              ]
+            },
+            "text": "You and [missing person] walk the camp's fence most evenings, the way you once walked the east field."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "former lover"
+              ]
+            },
+            "text": "[missing person] keeps the camp's ledgers by lamplight, knees drawn up, and you still pretend to be asleep."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "sibling"
+              ]
+            },
+            "text": "You and [missing person] share a hut at the edge of the camp, and the same old arguments."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "mentor"
+              ]
+            },
+            "text": "[missing person] teaches the camp's young ones what they taught you, and some evenings asks you to take the class."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "parent"
+              ]
+            },
+            "text": "[missing person] sits by the camp fire most nights until you come in from the edge, and you always do."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "the one who got away"
+              ]
+            },
+            "text": "You said it the first winter at the camp, and [missing person] said they had known for twenty years."
+          },
           {
             "when": {
               "flags": {
@@ -353,6 +545,54 @@
           "No faction emerged from the account with full credit. No faction emerged cleanly. What emerged was the truth, distributed, which was what you intended.",
           "Ashenveld did not collapse. It fractured — into smaller independent settlements, each organised around the most trustworthy local figures. Maret's camp became the centre of a loose network of communities that operated without central authority and, after the first difficult years, without needing one.",
           "The ending is the loneliest one. It is also the one where the most people know the truth.",
+          {
+            "when": {
+              "relationship_type": [
+                "childhood friend"
+              ]
+            },
+            "text": "[missing person] read every page before it went to the printer, and argued with you about two of them."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "former lover"
+              ]
+            },
+            "text": "[missing person] wrote the last chapter. You never asked them to change a word."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "sibling"
+              ]
+            },
+            "text": "[missing person]'s name is in the account next to yours, in the order your mother would have put them."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "mentor"
+              ]
+            },
+            "text": "[missing person] corrected your drafts in the margins, the way they used to correct everything."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "parent"
+              ]
+            },
+            "text": "[missing person] keeps a copy on the shelf by the door, where visitors can see it."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "the one who got away"
+              ]
+            },
+            "text": "The account has a dedication. It is one line long, and [missing person] has never mentioned it."
+          },
           {
             "when": {
               "flags": {

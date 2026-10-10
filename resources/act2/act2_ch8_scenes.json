@@ -215,7 +215,62 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You tell them.\n\nNot everything — there is more than one evening's worth. But the most significant thing. The one that changed how you understand the last eleven years.\n\nThey listen without interrupting. When you finish they are quiet for a long time.\n\n\"I did not know you knew that,\" they say finally.\n\n\"I did not know it until the chamber,\" you say.\n\n\"Neither did I,\" they say. \"I am glad we both know now.\"",
+              "text": [
+                "You tell them.",
+                "Not everything — there is more than one evening's worth.",
+                {
+                  "when": {
+                    "relationship_type": [
+                      "childhood friend"
+                    ]
+                  },
+                  "text": "You tell them about the market days. The docks, the barges, a whole year of it."
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "former lover"
+                    ]
+                  },
+                  "text": "You tell them about the warehouse door, and that you did not know they were standing in it."
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "sibling"
+                    ]
+                  },
+                  "text": "You tell them about your mother asking for you, and what they told her."
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "mentor"
+                    ]
+                  },
+                  "text": "You tell them about the lamp and the old texts, and that you know now why they sent you away."
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "parent"
+                    ]
+                  },
+                  "text": "You tell them about the pier, and how long they watched the barge, and what they felt while they watched."
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "the one who got away"
+                    ]
+                  },
+                  "text": "You tell them about the mill wall, and that they knew, and that they waited."
+                },
+                "They listen without interrupting. When you finish they are quiet for a long time.",
+                "\"I did not know you knew that,\" they say finally.",
+                "\"I did not know it until the chamber,\" you say.",
+                "\"Neither did I,\" they say. \"I am glad we both know now.\""
+              ],
               "next_scene": "act2_ch8_point_of_no_return",
               "state_changes": {
                 "relationships": {
@@ -278,7 +333,62 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You decide to stay.\n\nNot because you have to. Because Ashenveld is where the work is and you are the person who knows what the work is and how to do it.\n\nYou find [missing person] and tell them.\n\nThey look at you for a moment. \"I was going to ask you,\" they say. \"But I did not want to ask you to stay for me rather than for the place.\"\n\n\"I am staying for both,\" you say. \"Both are real. Both are enough.\"\n\nThey nod. \"Then I am staying too.\"",
+              "text": [
+                "You decide to stay.",
+                "Not because you have to. Because Ashenveld is where the work is and you are the person who knows what the work is and how to do it.",
+                "You find [missing person] and tell them.",
+                "They look at you for a moment. \"I was going to ask you,\" they say. \"But I did not want to ask you to stay for me rather than for the place.\"",
+                "\"I am staying for both,\" you say. \"Both are real. Both are enough.\"",
+                "They nod. \"Then I am staying too.\"",
+                {
+                  "when": {
+                    "relationship_type": [
+                      "childhood friend"
+                    ]
+                  },
+                  "text": "\"Somebody has to mend the east field fence,\" they say. \"It was always going to be us.\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "former lover"
+                    ]
+                  },
+                  "text": "They take your hand, the way they did on the mill wall, and do not let go of it for some time."
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "sibling"
+                    ]
+                  },
+                  "text": "\"The house on the mill lane has new shutters,\" they say. \"We will need our own.\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "mentor"
+                    ]
+                  },
+                  "text": "\"Good,\" they say. \"There is a great deal you still do not know.\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "parent"
+                    ]
+                  },
+                  "text": "\"Then I will finally see what you are like when you stay somewhere,\" they say."
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "the one who got away"
+                    ]
+                  },
+                  "text": "\"Good,\" they say, and look at you for longer than the word needs."
+                }
+              ],
               "next_scene": "act3_ch1_new_ashenveld",
               "state_changes": {
                 "flags": {
@@ -295,7 +405,62 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You decide to leave.\n\nThe curse is sealed. The factions have their arrangement. Ashenveld's recovery is underway and does not require your specific presence.\n\nYou came here for one reason. The reason is standing across from you.\n\nYou find [missing person] and tell them you are going.\n\nSomething in their face moves — not disappointment, something more complex. \"I thought—\" they begin. Then stop. \"All right,\" they say. \"When?\"\n\n\"Now,\" you say. \"Before something else needs to be fixed.\"",
+              "text": [
+                "You decide to leave.",
+                "The curse is sealed. The factions have their arrangement. Ashenveld's recovery is underway and does not require your specific presence.",
+                "You came here for one reason. The reason is standing across from you.",
+                "You find [missing person] and tell them you are going.",
+                "Something in their face moves — not disappointment, something more complex. \"I thought—\" they begin. Then stop. \"All right,\" they say. \"When?\"",
+                "\"Now,\" you say. \"Before something else needs to be fixed.\"",
+                {
+                  "when": {
+                    "relationship_type": [
+                      "childhood friend"
+                    ]
+                  },
+                  "text": "\"West, then,\" they say. \"You go first. You always did.\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "former lover"
+                    ]
+                  },
+                  "text": "\"This time say goodbye to someone,\" they say. \"Anyone. Practise on Aldous.\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "sibling"
+                    ]
+                  },
+                  "text": "\"She would have liked to see us leave together,\" they say. \"For once.\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "mentor"
+                    ]
+                  },
+                  "text": "\"I sent you away once,\" they say. \"I am coming this time.\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "parent"
+                    ]
+                  },
+                  "text": "\"I watched you go once,\" they say. \"I am not doing that again.\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "the one who got away"
+                    ]
+                  },
+                  "text": "\"Then say it on the road,\" they say. \"It is a long road.\""
+                }
+              ],
               "next_scene": "act3_ch1_leaving",
               "state_changes": {
                 "flags": {
@@ -312,7 +477,62 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "\"Go,\" you tell them. \"Get somewhere safe and ordinary and rest. I will follow.\"\n\nThey look at you with the look they have been giving you since the ruins — the specific quality of someone who has been reading you longer than you have been reading them.\n\n\"You will,\" they say. Not a question.\n\n\"Yes,\" you say.\n\nThey go. You watch them leave the Tallow, cross the market square, and turn west toward the road that goes somewhere that is not Ashenveld.\n\nYou have a week of work left. Maybe two. Then you follow.",
+              "text": [
+                "\"Go,\" you tell them. \"Get somewhere safe and ordinary and rest. I will follow.\"",
+                "They look at you with the look they have been giving you since the ruins — the specific quality of someone who has been reading you longer than you have been reading them.",
+                "\"You will,\" they say. Not a question.",
+                "\"Yes,\" you say.",
+                {
+                  "when": {
+                    "relationship_type": [
+                      "childhood friend"
+                    ]
+                  },
+                  "text": "At the door they say, \"Write more than twice.\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "former lover"
+                    ]
+                  },
+                  "text": "At the door they say, \"Do not leave me standing in a doorway again.\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "sibling"
+                    ]
+                  },
+                  "text": "At the door they say, \"I will keep you a room. You are paying for it.\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "mentor"
+                    ]
+                  },
+                  "text": "At the door they say, \"Finish it properly. Then come and tell me how.\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "parent"
+                    ]
+                  },
+                  "text": "At the door they say, \"I will be watching the road. I am good at it.\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "the one who got away"
+                    ]
+                  },
+                  "text": "At the door they say, \"I will wait. I am good at that too.\""
+                },
+                "They go. You watch them leave the Tallow, cross the market square, and turn west toward the road that goes somewhere that is not Ashenveld.",
+                "You have a week of work left. Maybe two. Then you follow."
+              ],
               "next_scene": "act3_ch1_staying_briefly",
               "state_changes": {
                 "flags": {
@@ -329,7 +549,64 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You tell them to go without you.\n\nThe conversation that follows is not the easiest you have ever had. But you tell them what is true: you are not done here. Ashenveld is not finished with you or you with it, and you cannot leave while that is the case.\n\nThey look at you for a long time.\n\n\"Will you come when it is done?\" they ask.\n\n\"I do not know,\" you say. You owe them honesty more than comfort.\n\nThey nod. They leave. The door of the Tallow closes behind them.\n\nYou sit at your table. Aldous brings you something without being asked. The fire burns.\n\nOutside, Ashenveld is slowly beginning to remember how to be a place people can live in.",
+              "text": [
+                "You tell them to go without you.",
+                "The conversation that follows is not the easiest you have ever had. But you tell them what is true: you are not done here. Ashenveld is not finished with you or you with it, and you cannot leave while that is the case.",
+                "They look at you for a long time.",
+                "\"Will you come when it is done?\" they ask.",
+                "\"I do not know,\" you say. You owe them honesty more than comfort.",
+                {
+                  "when": {
+                    "relationship_type": [
+                      "childhood friend"
+                    ]
+                  },
+                  "text": "At the door they say, \"You still owe me cider,\" and do not look back."
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "former lover"
+                    ]
+                  },
+                  "text": "At the door they stop, and you think they will say it. They do not. Neither do you."
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "sibling"
+                    ]
+                  },
+                  "text": "At the door they say, \"I will tell people you are on your way.\" It is what they told your mother."
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "mentor"
+                    ]
+                  },
+                  "text": "At the door they say, \"You were always going to be better at this than me.\" It does not sound like praise."
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "parent"
+                    ]
+                  },
+                  "text": "At the door they say, \"I am proud of you,\" and leave before you can answer."
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "the one who got away"
+                    ]
+                  },
+                  "text": "At the door they look back once, and then they are gone."
+                },
+                "They nod. They leave. The door of the Tallow closes behind them.",
+                "You sit at your table. Aldous brings you something without being asked. The fire burns.",
+                "Outside, Ashenveld is slowly beginning to remember how to be a place people can live in."
+              ],
               "next_scene": "act3_ch1_alone_in_ashenveld",
               "state_changes": {
                 "flags": {

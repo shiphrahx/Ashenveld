@@ -739,7 +739,61 @@
       },
       "requires": {},
       "text": {
-        "default": "The room is small and adequate. A bed, a window, a lamp with enough oil for two more hours if you are careful. The street below is empty.\n\nYou sit on the bed and let the day settle.\n\nYou are back in Crestfall. The town is wrong in ways that go past what eleven years of absence would explain. Someone you came here for was here fourteen months ago and is not here now. A woman named Maret may know where they went. The forest to the east is the direction everything points.\n\nOutside the window, the wind moves through a town that has stopped making most of its sounds. You try to remember what Crestfall sounded like at this hour and find that you can, mostly. That makes the present silence louder.\n\nYou put out the lamp. Sleep comes eventually.",
+        "default": [
+          "The room is small and adequate. A bed, a window, a lamp with enough oil for two more hours if you are careful. The street below is empty.",
+          "You sit on the bed and let the day settle.",
+          {
+            "when": {
+              "relationship_type": [
+                "childhood friend"
+              ]
+            },
+            "text": "Two streets over is the east field fence. You and [missing person] ran the length of it every summer, one foot on the top rail, and whoever fell off first paid for the cider."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "former lover"
+              ]
+            },
+            "text": "The lamp is the same kind they used to read by, in the room above the chandler's. They read with their knees drawn up and their lips moving. You used to pretend to be asleep so you could watch."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "sibling"
+              ]
+            },
+            "text": "From this window you can almost see the mill lane. [missing person] used to sit on the wall at the end of it and wait for you to come home, two years younger and pretending not to wait."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "mentor"
+              ]
+            },
+            "text": "The last time you were in this inn, [missing person] bought you a drink for finishing your first real piece of work. They did not say well done. They pushed the cup across the table and watched you drink it."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "parent"
+              ]
+            },
+            "text": "[missing person] used to bring you here on market days when you were small, and sit you on the bar while they argued about the price of lamp oil. You remember the smell of the wood, and their hand flat on your back."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "the one who got away"
+              ]
+            },
+            "text": "You stood under this window once with [missing person], waiting out the rain. Neither of you said anything the whole time. You have thought about that silence more than most things anyone has said to you."
+          },
+          "You are back in Crestfall. The town is wrong in ways that go past what eleven years of absence would explain. Someone you came here for was here fourteen months ago and is not here now. A woman named Maret may know where they went. The forest to the east is the direction everything points.",
+          "Outside the window, the wind moves through a town that has stopped making most of its sounds. You try to remember what Crestfall sounded like at this hour and find that you can, mostly. That makes the present silence louder.",
+          "You put out the lamp. Sleep comes eventually."
+        ],
         "commander": "You run the situation the way you would run any position assessment. What you know: the name, the destination, the time elapsed. What you do not know: everything else. What resources you have: yourself, what you carried, and the credibility that comes from being exactly what you appear to be.\n\nYou sleep with the soldier's ability to rest in hostile terrain.",
         "arcane": "You write by lamplight until the lamp needs to be conserved.\n\nThe frequency under Crestfall is consistent. Not pulsing — a sustained note, like a string that has been plucked and not yet faded. You have felt similar things near sites of old workings. Those were smaller. This is not.\n\nYou write: whatever is here, it has been here for a very long time. The curse did not create it. The curse is what happens when something contains it improperly.\n\nYou put out the lamp and lie in the dark and listen to the note.",
         "ranger": "You do not use the lamp. You sit in the dark by the window and let your eyes adjust and read the street below for an hour. Nothing moves that should not. Nothing is missing that should be there.\n\nExcept the animals. In any town at any hour there should be something — a cat, a dog, something passing. There is nothing.\n\nYou sleep lightly with one ear on the window.",

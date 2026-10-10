@@ -451,7 +451,62 @@
       },
       "requires": {},
       "text": {
-        "default": "Footsteps. From deeper in the ruins, from past the gate.\n\nA pace you recognise. You have not heard it in over a year — in the time before that you heard it often enough that your body remembers it the way your body remembers anything repeated: not as a fact but as a feeling, a specific quality of presence.\n\nThey come through the gate.\n\nThey are changed. You see that immediately and note it as fact before you let yourself feel it. Thinner. The particular thinness of someone who has been eating what the environment offers rather than what they chose. Their eyes have a quality you have seen in people who have been somewhere that altered them — not the vacancy of the afflicted, something almost opposite: an excess of attention, as if they are seeing more than you are and have been for a long time.\n\nThey see you and stop.\n\nFor a moment neither of you moves.",
+        "default": [
+          "Footsteps. From deeper in the ruins, from past the gate.",
+          "A pace you recognise. You have not heard it in over a year — in the time before that you heard it often enough that your body remembers it the way your body remembers anything repeated: not as a fact but as a feeling, a specific quality of presence.",
+          "They come through the gate.",
+          "They are changed. You see that immediately and note it as fact before you let yourself feel it. Thinner. The particular thinness of someone who has been eating what the environment offers rather than what they chose. Their eyes have a quality you have seen in people who have been somewhere that altered them — not the vacancy of the afflicted, something almost opposite: an excess of attention, as if they are seeing more than you are and have been for a long time.",
+          {
+            "when": {
+              "relationship_type": [
+                "childhood friend"
+              ]
+            },
+            "text": "Then they push their hair back with the heel of their hand, the way they did at twelve when they were about to dare you to something, and they are not changed at all."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "former lover"
+              ]
+            },
+            "text": "Then they tilt their head, very slightly, to the left. It is what they did when you said something they had not expected. You had forgotten it. You had not."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "sibling"
+              ]
+            },
+            "text": "They stand with their weight on one foot and their arms folded, the way your mother stood in the kitchen doorway. They always hated it when you told them so."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "mentor"
+              ]
+            },
+            "text": "They stop with their hands behind their back and look you up and down, as they did at the start of every lesson, before they said anything at all."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "parent"
+              ]
+            },
+            "text": "They rub a thumb across their knuckles, one hand then the other. It is what they did while they waited up for you, and you were always late."
+          },
+          {
+            "when": {
+              "relationship_type": [
+                "the one who got away"
+              ]
+            },
+            "text": "They put a hand on the gatepost as they come through, lightly, as if the stone might need steadying. You knew they would do that. You do not know how you knew."
+          },
+          "They see you and stop.",
+          "For a moment neither of you moves."
+        ],
         "commander": "You have had reunions before. People you thought were dead. People you went back for. You know the shape of this moment — the specific arrest of motion, the recalibration of the world around a new fact.\n\nThey are alive. They are here. They are changed.\n\nYou do the thing you always do in these moments: you move first. You cross the distance between you.",
         "arcane": "Your reading of them takes less than a second and takes the rest of the conversation to process.\n\nThe curse is in them. Not deeply — not the vacancy, not the diminishment — but present, integrated in a way you have not seen before. They have not been afflicted by the curse. They have been learning it. The way you learn a language, gradually, until it is no longer foreign.\n\nYou do not know if that is extraordinary or catastrophic. Possibly both.",
         "ranger": "You read them the way you read terrain after something significant has happened to it — for what has changed, for what has held, for what the change cost.\n\nThey held. That is what you see first. Fourteen months in the ruins and they held. The thing that makes them themselves is still present, still legible. Changed around the edges, sharpened in the middle.\n\nThey are looking at you the same way.",
@@ -557,7 +612,59 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "The question catches them. They had prepared for practical questions and you asked them a human one.\n\n\"I am—\" They stop. Start again. \"I am different. I do not know if different is the same as alright. I have been inside this place for fourteen months and it has changed how I see things.\" A pause. \"Not like the affliction. Not like the dimming. More like — I have been looking at something for so long that I understand its shape now, and understanding its shape means I cannot unknow it.\"\n\nThey look at you steadily. \"I am glad you came. That is true regardless of the ritual.\"",
+              "text": [
+                "The question catches them. They had prepared for practical questions and you asked them a human one.",
+                "\"I am—\" They stop. Start again. \"I am different. I do not know if different is the same as alright. I have been inside this place for fourteen months and it has changed how I see things.\" A pause. \"Not like the affliction. Not like the dimming. More like — I have been looking at something for so long that I understand its shape now, and understanding its shape means I cannot unknow it.\"",
+                {
+                  "when": {
+                    "relationship_type": [
+                      "childhood friend"
+                    ]
+                  },
+                  "text": "Then, quieter: \"You still stand like you're about to run.\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "former lover"
+                    ]
+                  },
+                  "text": "Then, before they can stop it: \"You cut your hair.\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "sibling"
+                    ]
+                  },
+                  "text": "Then: \"You look like her. Did anyone tell you? You look like her now.\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "mentor"
+                    ]
+                  },
+                  "text": "Then: \"You came through the outskirts on your own. I saw your marks. You did it properly.\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "parent"
+                    ]
+                  },
+                  "text": "Then, as if it were the obvious thing to ask: \"Have you been eating?\""
+                },
+                {
+                  "when": {
+                    "relationship_type": [
+                      "the one who got away"
+                    ]
+                  },
+                  "text": "Then, very quietly: \"I thought about what I would say if you came. I did not think of anything.\""
+                },
+                "They look at you steadily. \"I am glad you came. That is true regardless of the ritual.\""
+              ],
               "next_scene": "act2_ch1_what_they_found",
               "state_changes": {
                 "relationships": {
