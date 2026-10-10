@@ -6,7 +6,7 @@ One step per branch and pull request. Each tick lists what was done, what was sk
 - [x] 2. docs/01 B6 to B13
 - [x] 3. docs/01 B21 (validator and smoke test), then B14 to B20
 - [x] 4. docs/04 Design tokens, then U1 to U7
-- [ ] 5. docs/03 G1 to G6
+- [x] 5. docs/03 G1 to G6
 - [ ] 6. docs/03 G7 to G13
 - [ ] 7. docs/02 Section 0 (author decisions), then N1 to N4
 - [ ] 8. docs/02 N5 to N8
@@ -151,3 +151,39 @@ Branch `step-4-ui-foundation`, stacked on step 3.
 - U7's table only names reputation changes that cross a tier, so smaller reputation changes still have no chip. The bar highlight covers them.
 - `npm run validate` counts flags read by the journal. That took the count from 24 to 69. It's honest, since the journal does read them, but it means the N6 target of 60 is already met on paper.
 - The plan puts `notes.json` in `public/resources/`. Resources don't move to `public/` until B22, so it's in `resources/` for now.
+
+## Step 5 — G1 to G6
+
+Branch `step-5-mechanics`, stacked on step 4.
+
+**Done**
+
+- G1 engine: `Roll.stat` can be a list (best of), `Roll.bonus` with labels, capped at ±6 (`RULES.maxBonus`). `resolveRoll`, `odds`, `targets` in `dice.ts`.
+- G1b: the three ritual scenes reworked as specified. The engagement is three approaches (Stamina, Mana, Charisma) with shared bonuses; a full success sets `ritual_phase2_clean`.
+- G1c: bonuses on 15 rolls. Every roll with Vorne also reads the Compact tier (G5). `seriva_has_initiative` and `seriva_left_hostile` are set.
+- G1d: failure costs on the compact offer (back to the offer, once), the market woman, the deer, the cellar copy, the checkpoint. The forest-edge roll is gone, with a new "watch who is following" choice setting `saw_maret_at_line`.
+- G2: modifier table in `rules.ts`; ten new Strength, Dexterity and Mana checks with three outcomes each; three G2c stat choices plus twelve more two-stat rolls.
+- G3: the six reward changes.
+- G4: tags read "Charisma · Favoured" (or a percentage, by setting). Hover, focus or long-press shows the three chances and the bonuses. The dice panel shows the targets, the die, the modifier and each bonus. "No roll" is gone.
+- G5: tier helpers; the checkpoint wave-through and the paid sergeant; Vorne's alliance hidden when the Compact is wary; Seriva's cost question hidden when the Covenant is wary; Edric's extra question at Covenant 15+; Maret joins only at closeness 30+; Lira 40 raises the map bonus to +3; Branch 25 and Maret 60 bonuses; the fragment required for the ritual and granted the night before; the cloth at the reunion; grain, fish and a runner to spend coin on. Class abilities: Command (Commander), ground marks (Ranger), the Read (Cipher, one line per NPC in the metas). Edric's ward halves Resolve lost in the deep forest.
+- G6: `counters`, `min_counter`, `max_counter`, `min_gold`. `scene.requires` is checked on entry and logs a console error. It caught a real bug straight away: staying after sending them ahead didn't set `player_stays_ashenveld`.
+- Unit tests for the modifier table and the odds the plan quotes (`npm test`, 12 passing).
+
+**AUTHOR DECISION defaults used**: none in this file. New prose was written for the ten G2b checks, the watch-who-follows choice, Edric's extra answer, the checkpoint options, the cloth, the market purchases, and the sixteen Cipher reads. All of it is in the JSON and open to rewrite.
+
+**Skipped or deferred**
+
+- Bonuses that need flags from later steps: `knows_seriva_came_early` and `compact_message_undelivered` (N5, step 8), and `confronted_being_used` (N2, step 7). They go in with the content that sets those flags. The validator would otherwise fail on a bonus reading a flag nothing sets.
+- The waystation Dexterity check (G2b) waits for the waystation scene (N5).
+- Arcane's Residue is the exact Dimming number, which needs G8 (step 6).
+- Aldous at 30 (free room), the rest places and provisions are G9 (step 6). Sen at 15 and Cael's forty are N5. Maret's list at Rootless 40 is N3.
+- Rootless allied "skip the exposure on the deer roll" is a +3 bonus labelled "Branch walked the first mile with you" rather than a skipped cost.
+- Locked choices are still hidden. `locked_hint` is in the data now and G12 (step 6) shows them.
+
+**Plan was wrong or unclear**
+
+- G2b's target (no stat over 35% of rolls, none under 8%) isn't met. Weighted by stat: Charisma 42%, Intelligence 20.5%, Perception 13%, Mana 8.5%, Stamina 6.3%, Dexterity 5.1%, Strength 4.5%. It was 47% Charisma before. Getting further needs new scenes, not more stretching of existing Charisma moments.
+- G2b's Mana check at the marker stone and N13's Arcane-only choice use the same wording. The Mana check is in; N13 will need a different line for the Arcane.
+- G1c lists no labels for its bonuses. I wrote short ones in the player's terms ("Corvin told you she sent them east").
+- G1d says the road traveller already gives nothing on a failure. True, so nothing changed there.
+- The three engagement approaches reuse the old outcome text, which is written for holding steady. The story pass should give the Mana and Charisma approaches their own lines.
