@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import styles from './TitleScreen.module.css'
 import StarField from './StarField'
 import Settings from './Settings'
+import Endings from './Endings'
+import { loadMeta } from '../gameState'
 
 interface Props {
   hasSave: boolean
@@ -13,6 +15,8 @@ interface Props {
 export default function TitleScreen({ hasSave, saveEnded = false, onNewGame, onContinue }: Props) {
   const [confirming, setConfirming] = useState(false)
   const [settingsOpen, setSettingsOpen] = useState(false)
+  const [endingsOpen, setEndingsOpen] = useState(false)
+  const anyEnding = loadMeta().endings.length > 0
 
   return (
     <div className={styles.titleScreen}>
@@ -44,11 +48,15 @@ export default function TitleScreen({ hasSave, saveEnded = false, onNewGame, onC
             <button className={styles.titleBtn} onClick={hasSave ? () => setConfirming(true) : onNewGame}>
               <span>{hasSave ? 'New Game' : 'Begin'}</span>
             </button>
-            <button className={styles.titleLink} onClick={() => setSettingsOpen(true)}>Settings</button>
+            <div className={styles.titleLinks}>
+              <button className={styles.titleLink} onClick={() => setSettingsOpen(true)}>Settings</button>
+              {anyEnding && <button className={styles.titleLink} onClick={() => setEndingsOpen(true)}>Endings</button>}
+            </div>
           </>
         )}
       </div>
       {settingsOpen && <Settings onClose={() => setSettingsOpen(false)} />}
+      {endingsOpen && <Endings onClose={() => setEndingsOpen(false)} />}
     </div>
   )
 }

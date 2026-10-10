@@ -129,3 +129,5 @@
   min-height: 40px;
 }
 .titleLink:hover { color: var(--white-cold); }
+
+.titleLinks { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }

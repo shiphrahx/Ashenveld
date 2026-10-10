@@ -67,6 +67,7 @@ export default function Settings({ onClose }: Props) {
           <h3 id="set-play" className={styles.group}>Play</h3>
           <Options label="Odds on choices" field="odds" options={[['words', 'In words'], ['percent', 'As a percentage']]} />
           <Options label="Change notices" field="toasts" options={[[true, 'On'], [false, 'Off']]} />
+          <Options label="Scenes you have read" field="skipSeen" options={[[false, 'Show in full'], [true, 'Skip to the choice']]} />
         </section>
       </div>
     </Panel>

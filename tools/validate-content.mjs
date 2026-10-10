@@ -218,6 +218,13 @@ for (const n of journalNotes.notes) {
   texts.push([`notes.json ${n.flag}`, n.text])
 }
 
+// ── The ending list on the title screen ─────────────────────────────────────
+for (const e of index.endings ?? []) {
+  const s = scenes.get(e.id)?.scene
+  if (!s?.ending) err(`master index endings: "${e.id}" is not an ending scene`)
+  else if (s.ending.title !== e.title) err(`master index endings: "${e.id}" is titled "${e.title}" but the scene says "${s.ending.title}"`)
+}
+
 // ── 3. Reachability ─────────────────────────────────────────────────────────
 const start = index.starting_scene
 if (!scenes.has(start)) err(`starting_scene "${start}" is not a scene`)

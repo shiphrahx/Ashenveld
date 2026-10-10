@@ -13,6 +13,7 @@ export interface Settings {
   textReveal: 'fade' | 'instant'
   odds: 'words' | 'percent'
   toasts: boolean
+  skipSeen: boolean                                // seen scenes open folded, at the choices
   volume: number                                   // 0..1
   ambience: boolean
 }
@@ -26,6 +27,7 @@ export const DEFAULT_SETTINGS: Settings = {
   textReveal: 'fade',
   odds: 'words',
   toasts: true,
+  skipSeen: false,
   volume: 0.6,
   ambience: true,
 }

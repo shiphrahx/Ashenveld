@@ -20,6 +20,7 @@ export interface MasterIndex {
   class_stat_blocks: Record<string, StatBlock>
   faction_reputation_thresholds: Record<string, Record<string, number>>
   act_summaries?: Record<string, { title: string; entry: string; exit_scenes: string[]; chapters: number; description: string }>
+  endings?: Array<{ id: string; title: string }>
 }
 
 export interface StatBlock {

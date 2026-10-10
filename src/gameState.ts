@@ -307,3 +307,37 @@ export function diffState(prev: GameState, next: GameState, journalKeys?: (s: Ga
   }
   return out
 }
+
+// ─── Chapter checkpoints (G13) ────────────────────────────────────────────────
+
+const CHECKPOINT_KEY = 'ashenveld_checkpoints'
+const chapterKey = (s: GameState) => s.world.act * 100 + s.world.chapter
+
+export function loadCheckpoints(): GameState[] {
+  try { return JSON.parse(localStorage.getItem(CHECKPOINT_KEY) ?? '[]') as GameState[] } catch { return [] }
+}
+
+/** Keep a copy of the state at the start of each new chapter. The last three are kept. */
+export function recordCheckpoint(prev: GameState, next: GameState): void {
+  if (chapterKey(next) <= chapterKey(prev)) return
+  try {
+    const list = [...loadCheckpoints().filter(c => c.player.name === next.player.name), next].slice(-3)
+    localStorage.setItem(CHECKPOINT_KEY, JSON.stringify(list))
+  } catch { console.warn('Failed to save checkpoint') }
+}
+
+/** The checkpoint for the chapter the player is in now, if there is one. */
+export function chapterCheckpoint(s: GameState): GameState | undefined {
+  return [...loadCheckpoints()].reverse().find(c => chapterKey(c) === chapterKey(s) && c.player.name === s.player.name)
+}
+
+export function clearCheckpoints(): void {
+  localStorage.removeItem(CHECKPOINT_KEY)
+}
+
+export function markSeen(sceneId: string): void {
+  const meta = loadMeta()
+  if (meta.seenScenes.includes(sceneId)) return
+  meta.seenScenes.push(sceneId)
+  saveMeta(meta)
+}

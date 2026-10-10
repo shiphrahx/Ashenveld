@@ -13,6 +13,11 @@ import {
   deleteSave,
   recordEnding,
   diffState,
+  recordCheckpoint,
+  chapterCheckpoint,
+  clearCheckpoints,
+  loadMeta,
+  markSeen,
 } from './gameState'
 import { meets } from './conditions'
 import { resolveRich } from './text'
@@ -64,6 +69,7 @@ export default function App() {
   const [saveExists, setSaveExists] = useState(false)
   const [savedEnded, setSavedEnded] = useState(false)
   const [panel, setPanel] = useState<PanelId | null>(null)
+  const [seenBefore, setSeenBefore] = useState(false)
   const [toasts, setToasts] = useState<Toast[]>([])
   const [flash, setFlash] = useState<string[]>([])
   const toastId = useRef(0)
@@ -145,6 +151,9 @@ export default function App() {
         if (lines.length) setToasts(t => [...t, ...lines.map(text => ({ id: ++toastId.current, text }))].slice(-3))
       }
 
+      recordCheckpoint(state, next)
+      setSeenBefore(loadMeta().seenScenes.includes(scene.id))
+      markSeen(scene.id)
       setGameState(next)
       setCurrentScene(scene)
       saveGame(next)
@@ -158,6 +167,7 @@ export default function App() {
   const resumeScene = useCallback(async (saved: GameState) => {
     try {
       const scene = await resolveScene(saved.current_scene)
+      setSeenBefore(false)
       setGameState(saved)
       setCurrentScene(scene)
     } catch (err) {
@@ -193,6 +203,7 @@ export default function App() {
   // ── Creation complete ─────────────────────────────────────────────────────────
   const handleCreationComplete = useCallback(async (result: CreationResult) => {
     deleteSave()                                       // the only place a run is replaced
+    clearCheckpoints()
     const state = createFreshState(
       result.playerName,
       result.gender,
@@ -232,6 +243,16 @@ export default function App() {
   }, [gameState, currentScene, enterScene])
 
   const closePanel = useCallback(() => setPanel(null), [])
+
+  // G13: back to the state saved when this chapter began.
+  const restartChapter = useCallback(async () => {
+    if (!gameState) return
+    const cp = chapterCheckpoint(gameState)
+    if (!cp) return
+    setPanel(null)
+    saveGame(cp)
+    await resumeScene(cp)
+  }, [gameState, resumeScene])
 
   // Opening the journal marks everything in it as seen.
   const openPanel = useCallback((id: PanelId) => {
@@ -336,7 +357,7 @@ export default function App() {
             <StatusStrip state={gameState} hideClock={hideClock} onOpen={() => openPanel('status')} />
           </header>
           <main className={styles.areaStory}>
-            <SceneView scene={currentScene} state={gameState} onChoice={handleChoice} />
+            <SceneView scene={currentScene} state={gameState} onChoice={handleChoice} seenBefore={seenBefore} />
           </main>
           <div className={styles.areaSide}>
             <Sidebar state={gameState} onOpen={openPanel} hideClock={hideClock} journalDot={journalDot} flash={flash} rest={rest} onRest={onRestPressed} dimmingDelta={dimmingDelta} />
@@ -359,6 +380,7 @@ export default function App() {
               onClose={closePanel}
               onReturnToTitle={() => { closePanel(); handleReturnToTitle() }}
               onSettings={() => setPanel('settings')}
+              onRestartChapter={chapterCheckpoint(gameState) ? restartChapter : undefined}
             />
           )}
           {panel === 'settings' && <Settings onClose={closePanel} />}
