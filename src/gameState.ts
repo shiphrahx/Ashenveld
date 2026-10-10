@@ -152,15 +152,17 @@ export function applyStateChanges(state: GameState, changes: StateChanges): Game
 export const PARTS: DayPart[] = ['dawn', 'morning', 'midday', 'afternoon', 'evening', 'night']
 
 /** Move the clock to a day part. Time only moves forward. */
-export function applyWhen(state: GameState, w: Partial<SceneWhen> & { part: DayPart }): GameState {
+export function applyWhen(state: GameState, w: Partial<SceneWhen> & { part: DayPart | DayPart[] }): GameState {
   const next: GameState = structuredClone(state)
   let day = next.world.day
   const now = PARTS.indexOf(next.world.time_of_day as DayPart)
+  const allowed = Array.isArray(w.part) ? w.part : [w.part]
+  const part = allowed.includes(next.world.time_of_day) && !w.skip_days ? next.world.time_of_day : allowed[0]
   if (w.skip_days) day += w.skip_days
-  else if (now !== -1 && PARTS.indexOf(w.part) < now) day += 1
+  else if (now !== -1 && PARTS.indexOf(part) < now) day += 1
   if (w.day) day = Math.max(day, w.day)
   next.world.day = day
-  next.world.time_of_day = w.part
+  next.world.time_of_day = part
   return next
 }
 

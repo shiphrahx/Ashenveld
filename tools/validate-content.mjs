@@ -155,7 +155,7 @@ for (const [id, { scene: s }] of scenes) {
   if (!s.when) err(`${id}: no "when"`)                                        // 9
   else {
     checkKeys(s.when, 'when', id)
-    if (!PARTS.includes(s.when.part)) err(`${id}: when.part "${s.when.part}" is not a day part`)
+    for (const p of [s.when.part].flat()) if (!PARTS.includes(p)) err(`${id}: when.part "${p}" is not a day part`)
   }
   if (!locations[s.location]) err(`${id}: unknown location "${s.location}"`)   // 6
   checkKeys(s.on_enter, 'on_enter', id)

@@ -163,7 +163,11 @@ export interface OnEnter {
 }
 
 export type DayPart = 'dawn' | 'morning' | 'midday' | 'afternoon' | 'evening' | 'night'
-export interface SceneWhen { part: DayPart; day?: number; skip_days?: number; hide_clock?: boolean }
+/**
+ * When a scene happens. `part` may list several day parts: if the clock is
+ * already in one of them it stays, otherwise it moves to the first.
+ */
+export interface SceneWhen { part: DayPart | DayPart[]; day?: number; skip_days?: number; hide_clock?: boolean }
 
 export interface Scene {
   id: string

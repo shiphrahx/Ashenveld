@@ -43,3 +43,14 @@ describe('applyWhen', () => {
     expect(before.world.day).toBe(3)
   })
 })
+
+describe('applyWhen with a list of parts', () => {
+  it('keeps the current part when it is in the list', () => {
+    const s = applyWhen(at(3, 'afternoon'), { part: ['morning', 'afternoon'] })
+    expect([s.world.day, s.world.time_of_day]).toEqual([3, 'afternoon'])
+  })
+  it('moves to the first part when the current one is not listed', () => {
+    const s = applyWhen(at(2, 'dawn'), { part: ['morning', 'afternoon'] })
+    expect([s.world.day, s.world.time_of_day]).toEqual([2, 'morning'])
+  })
+})
