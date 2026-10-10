@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import type { GameState, Scene, Outcome, JournalEntry } from './types'
-import { initLoader, resolveScene, getActMeta, locationName } from './loader'
+import { initLoader, resolveScene, locationName } from './loader'
 import {
   createFreshState,
   applyStateChanges,
@@ -160,16 +160,6 @@ export default function App() {
       result.missingPersonName,
       result.missingPersonRelationship,
     )
-
-    // Seed initial NPC closeness values from act 1 meta
-    try {
-      const meta = getActMeta(1)
-      for (const [id, npc] of Object.entries(meta.npcs)) {
-        if (npc.initial_closeness !== 0) {
-          state.relationships[id] = { closeness: npc.initial_closeness }
-        }
-      }
-    } catch { /* meta may not be loaded yet — fine, defaults are 0 */ }
 
     setPhase('game')
     await enterScene('act1_ch1_barge_arrival', state)
