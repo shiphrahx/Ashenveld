@@ -267,7 +267,8 @@
                 }
               }
             }
-          }
+          },
+          "locked_hint": "Needs 8 coin"
         }
       ]
     },

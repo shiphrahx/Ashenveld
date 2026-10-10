@@ -590,7 +590,8 @@
                 }
               }
             }
-          }
+          },
+          "locked_hint": "Needs the cloth from the campsite"
         }
       ],
       "text_mode": {

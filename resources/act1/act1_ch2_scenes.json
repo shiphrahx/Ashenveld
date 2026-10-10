@@ -199,7 +199,8 @@
                 }
               }
             }
-          }
+          },
+          "locked_hint": "Needs 5 coin"
         },
         {
           "id": "buy_dried_fish",
@@ -221,7 +222,8 @@
                 ]
               }
             }
-          }
+          },
+          "locked_hint": "Needs 4 coin"
         },
         {
           "id": "move_to_compact",

@@ -220,7 +220,8 @@
                 ]
               }
             }
-          }
+          },
+          "locked_hint": "Needs the Covenant marker stone"
         },
         {
           "id": "feel_the_stone",
@@ -290,7 +291,8 @@
                 ]
               }
             }
-          }
+          },
+          "locked_hint": "Needs the Covenant marker stone"
         },
         {
           "id": "do_not_place_marker",
