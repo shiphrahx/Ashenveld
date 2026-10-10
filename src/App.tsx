@@ -39,6 +39,7 @@ import TabBar, { type PanelId } from './components/TabBar'
 import Panel from './components/Panel'
 import Settings from './components/Settings'
 import KeysHelp from './components/KeysHelp'
+import Credits from './components/Credits'
 import { useHotkeys } from './hooks/useHotkeys'
 import Toasts, { type Toast } from './components/Toasts'
 import { useSettings } from './settings'
@@ -380,11 +381,13 @@ export default function App() {
               onClose={closePanel}
               onReturnToTitle={() => { closePanel(); handleReturnToTitle() }}
               onSettings={() => setPanel('settings')}
+              onCredits={() => setPanel('credits')}
               onRestartChapter={chapterCheckpoint(gameState) ? restartChapter : undefined}
             />
           )}
           {panel === 'settings' && <Settings onClose={closePanel} />}
           {panel === 'keys' && <KeysHelp onClose={closePanel} />}
+          {panel === 'credits' && <Credits onClose={closePanel} />}
           {panel === 'rest' && <RestConfirm cost={rest.cost} onRest={handleRest} onClose={closePanel} />}
           <Toasts toasts={toasts} onDone={dropToast} />
         </div>
