@@ -434,6 +434,6 @@ Branch `step-11-effects`, stacked on step 10.
 - E6's 200ms fade-out and E9's 2s fade to the end screen both left the old scene clickable while it faded, so a quick second click could pick a choice from a scene you'd already left. Both are `inert` while fading.
 - E9 'touch' holds the choices for the length of the effect. The first version never let them back, because the hold's own cleanup cancelled its timer when the effect ended. Caught by the e2e run.
 - E3 says play `end` on entry to any ending, and E9 says play it after the last choice. It plays after the last choice, with the 2s fade, and the ending's entry starts the 5s fade-out of the bed.
-- E3's sent-ahead and ending fades can leave the mix silent for the next game; Begin and Continue reset it.
+- The plan doesn't say what undoes a cue's cut or the ending's fade, so the next game could start silent. Begin and Continue reset the mix.
 
 **Not started**: step 12.
