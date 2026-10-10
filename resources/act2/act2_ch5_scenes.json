@@ -173,7 +173,7 @@
           "outcomes": {
             "default": {
               "text": "\"Tomorrow,\" you say. Not a question.\n\nYour missing person nods. Pol nods. The decision is made.\n\nYou spend the evening not rehearsing the ritual — that work is done. You spend it in the company of the people who are here because of you and because of choices each of you made. Pol with her fifteen years of waiting. Your missing person with their fourteen months. You with the eleven years before all of this and the few days since.\n\nThe fire is small. The ruins are quiet around you. The Watcher sits at the gate.\n\nTomorrow.",
-              "next_scene": "act2_ch6_day_of_ritual",
+              "next_scene": "act2_ch5_missing_person_private",
               "state_changes": {
                 "flags": {
                   "ritual_day_set": true
@@ -193,7 +193,7 @@
           "outcomes": {
             "success": {
               "text": "Pol can carry a message back to the camp before she returns to witness the ritual. You compose something brief — the Rootless camp has resources that Seriva will need to requisition through Vorne, and Vorne's daughter is at the camp, and Maret can make that requisition complicated enough to cost Seriva a day.\n\nPol takes the message and goes. She will be back before morning.\n\nYou have bought possibly another day. It may not be needed. It may make all the difference.",
-              "next_scene": "act2_ch6_day_of_ritual",
+              "next_scene": "act2_ch5_missing_person_private",
               "state_changes": {
                 "flags": {
                   "seriva_delayed": true,
@@ -203,7 +203,7 @@
             },
             "success_at_cost": {
               "text": "The message goes but you are not confident it will work — Maret has limited leverage over Seriva specifically, even through Vorne. It may buy hours, not a day.",
-              "next_scene": "act2_ch6_day_of_ritual",
+              "next_scene": "act2_ch5_missing_person_private",
               "state_changes": {
                 "flags": {
                   "ritual_day_set": true
@@ -212,7 +212,7 @@
             },
             "failure": {
               "text": "The message goes but you do not believe it will make a significant difference. Seriva is not easily delayed. You proceed without counting on the extra time.",
-              "next_scene": "act2_ch6_day_of_ritual",
+              "next_scene": "act2_ch5_missing_person_private",
               "state_changes": {
                 "flags": {
                   "ritual_day_set": true

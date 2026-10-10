@@ -295,7 +295,7 @@
             },
             "failure": {
               "text": "A man opens the door and is immediately, not unkindly, closed. He does not know you. He has things to do. He closes the door with the gentle firmness of someone protecting their morning.\n\nYou stand on the step for a moment. Then you go.",
-              "next_scene": "act1_ch2_market_rumour_missing",
+              "next_scene": "act1_ch2_old_friend",
               "state_changes": {}
             }
           }
@@ -308,7 +308,7 @@
           "outcomes": {
             "default": {
               "text": "You stand long enough to finish the thought and then go before it becomes something else.",
-              "next_scene": "act1_ch2_market_rumour_missing",
+              "next_scene": "act1_ch2_old_friend",
               "state_changes": {}
             }
           }

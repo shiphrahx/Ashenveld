@@ -613,14 +613,29 @@
   },
   "cross_file_routes": [
     {
+      "from": "act1_ch1_innkeeper_cost",
+      "to": "act1_ch2_morning_crestfall",
+      "note": "Chapter change"
+    },
+    {
+      "from": "act1_ch1_innkeeper_failure",
+      "to": "act1_ch2_morning_crestfall",
+      "note": "Chapter change"
+    },
+    {
       "from": "act1_ch1_tallow_room",
       "to": "act1_ch2_morning_crestfall",
       "note": "End of chapter 1 to chapter 2"
     },
     {
-      "from": "act1_ch2_market_rumour_missing",
+      "from": "act1_ch2_morning_crestfall",
+      "to": "act1_ch3_covenant_introduction",
+      "note": "Chapter change"
+    },
+    {
+      "from": "act1_ch2_market_square",
       "to": "act1_ch3_compact_introduction",
-      "note": "Market to faction introductions"
+      "note": "Chapter change"
     },
     {
       "from": "act1_ch2_market_rumour_missing",
@@ -629,8 +644,23 @@
     },
     {
       "from": "act1_ch2_market_rumour_missing",
-      "to": "act1_ch3_covenant_introduction",
-      "note": "Market to covenant"
+      "to": "act1_ch3_compact_introduction",
+      "note": "Market to faction introductions"
+    },
+    {
+      "from": "act1_ch3_maret_first_meeting",
+      "to": "act1_ch4_maret_opens",
+      "note": "Chapter change"
+    },
+    {
+      "from": "act1_ch3_maret_first_meeting",
+      "to": "act1_ch4_maret_guarded",
+      "note": "Chapter change"
+    },
+    {
+      "from": "act1_ch3_maret_first_meeting",
+      "to": "act1_ch4_rootless_camp_stay",
+      "note": "Chapter change"
     },
     {
       "from": "act1_ch4_maret_letter_success",
@@ -663,6 +693,11 @@
       "note": "Act 1 to Act 2"
     },
     {
+      "from": "act2_ch1_what_they_found",
+      "to": "act2_ch2_inner_approach",
+      "note": "Chapter change"
+    },
+    {
       "from": "act2_ch2_decision_to_return",
       "to": "act2_ch3_crestfall_news",
       "note": "Ch2 to ch3"
@@ -676,11 +711,6 @@
       "from": "act2_ch4_pol_fragment",
       "to": "act2_ch5_return_to_ruins",
       "note": "Ch4 to ch5"
-    },
-    {
-      "from": "act2_ch5_maret_conversation",
-      "to": "act2_ch6_day_of_ritual",
-      "note": "Ch5 to ch6"
     },
     {
       "from": "act2_ch5_missing_person_private",
@@ -716,6 +746,26 @@
       "from": "act2_ch8_point_of_no_return",
       "to": "act3_ch1_alone_in_ashenveld",
       "note": "Act 2 to Act 3 — alone"
+    },
+    {
+      "from": "act3_ch1_new_ashenveld",
+      "to": "act3_ch2_rebuilding",
+      "note": "Chapter change"
+    },
+    {
+      "from": "act3_ch1_leaving",
+      "to": "act3_ch2_on_the_road",
+      "note": "Chapter change"
+    },
+    {
+      "from": "act3_ch1_staying_briefly",
+      "to": "act3_ch2_finishing_work",
+      "note": "Chapter change"
+    },
+    {
+      "from": "act3_ch1_alone_in_ashenveld",
+      "to": "act3_ch2_alone_work",
+      "note": "Chapter change"
     },
     {
       "from": "act3_ch2_rebuilding",
