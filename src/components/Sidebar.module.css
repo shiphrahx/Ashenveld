@@ -77,7 +77,7 @@
   box-shadow: 0 4px 24px rgba(0,0,0,0.6);
 }
 
-.sn:hover .statTip { display: block; }
+.sn:hover .statTip, .sn:focus .statTip { display: block; }
 .pips { display: flex; gap: 2px; align-items: center; }
 .statVal { font-size: var(--fs-label); color: var(--text-muted); margin-left: 4px; min-width: 1.2em; text-align: right; }
 .pip { width: 5px; height: 5px; border-radius: 1px; background: var(--border-dim); }
@@ -172,3 +172,26 @@
 .abOff svg { opacity: 0.45; }
 .abOff:hover { background: none; }
 .abOff:hover svg { stroke: inherit; }
+
+.sidebar { height: 100%; min-height: 0; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
+.sheet { height: auto; overflow: visible; }
+.sheet .acts { grid-template-columns: 1fr; }
+.sheet .ab { flex-direction: row; justify-content: center; min-height: 48px; }
+.sheet .sbSpacer { display: none; }
+
+.dot {
+  position: absolute;
+  top: 8px;
+  right: calc(50% - 16px);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue-ice);
+}
+
+/* a bar that just changed */
+.flash { animation: flash 600ms ease-out; }
+@keyframes flash {
+  0%   { box-shadow: 0 0 0 2px var(--blue-ice); }
+  100% { box-shadow: 0 0 0 2px transparent; }
+}

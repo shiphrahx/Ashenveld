@@ -1,10 +1,11 @@
-import React, { useState, useCallback, useRef } from 'react'
+import React, { useState, useCallback, useRef, useEffect } from 'react'
 import type { Scene, GameState, Choice, Outcome, RollResult, JournalEntry, DiceOutcome } from '../types'
 import { rollDice, difficultyLabel } from '../dice'
 import { meets } from '../conditions'
 import { sceneText, resolveRich, CLASS_LABELS } from '../text'
 import { Inline } from './Inline'
 import DiceOverlay from './DiceOverlay'
+import { useMediaQuery } from '../hooks/useMediaQuery'
 import styles from './SceneView.module.css'
 
 interface Props {
@@ -117,11 +118,61 @@ export default function SceneView({ scene, state, onChoice }: Props) {
   const place = `Act ${toRoman(state.world.act)} · Chapter ${state.world.chapter}`
   const clock = scene.when?.hide_clock ? '' : `Day ${state.world.day} · ${capitalise(state.world.time_of_day)}`
 
+  // On a phone, a long list of choices scrolls with the story instead of being pinned.
+  const narrow = useMediaQuery('(max-width: 719px)')
+  const inlineChoices = narrow && !shownOutcome && visibleChoices.length > 3
+
+  // U2: when an outcome shows, the scene text collapses to its last paragraph.
+  const [showScene, setShowScene] = useState(false)
+  const storyRef = useRef<HTMLDivElement>(null)
+  const outcomeRef = useRef<HTMLDivElement>(null)
+  const titleRef = useRef<HTMLHeadingElement>(null)
+
+  useEffect(() => {
+    if (!shownOutcome) return
+    setShowScene(false)
+    storyRef.current?.scrollTo({ top: 0 })
+    outcomeRef.current?.focus({ preventScroll: true })
+  }, [shownOutcome])
+
+  // U6: a new scene starts at its title for screen readers and keyboard users.
+  useEffect(() => {
+    if (document.activeElement?.closest('[data-panel]')) return
+    titleRef.current?.focus({ preventScroll: true })
+  }, [scene.id, state.visited[scene.id]])
+
+  const collapsed = Boolean(shownOutcome) && !showScene
+  const shownMain = collapsed ? (aside.length ? [] : main.slice(-1)) : main
+  const shownAside = collapsed ? aside.slice(-1) : aside
+
+  const choiceButtons = shownOutcome ? (
+    <button className={styles.ch} data-choice-id="continue" onClick={handleOutcomeContinue}>
+      <span className={styles.mk}>›</span>
+      <span className={styles.lb}>Continue</span>
+    </button>
+  ) : (
+    visibleChoices.map((choice, i) => {
+      const { label, css } = badgeContent(choice)
+      return (
+        <button
+          key={choice.id}
+          data-choice-id={choice.id}
+          className={styles.ch}
+          onClick={() => handleChoiceClick(choice)}
+        >
+          <span className={styles.mk}>{ROMAN[i] ?? String(i + 1)}</span>
+          <span className={styles.lb}><Inline text={resolveRich(choice.text, state)} /></span>
+          <span className={`${styles.badge} ${styles[css]}`}>{label}</span>
+        </button>
+      )
+    })
+  )
+
   return (
     <div className={styles.centre} data-scene-id={scene.id}>
       {/* ── Top bar ── */}
       <div className={styles.sceneBar}>
-        <span>{scene.title}</span>
+        <h1 className={styles.sceneTitle} ref={titleRef} tabIndex={-1}>{scene.title}</h1>
         <span className={styles.crumb}>
           <span>{place}</span>
           {clock && <span className={styles.clock} data-clock>{clock}</span>}
@@ -129,66 +180,56 @@ export default function SceneView({ scene, state, onChoice }: Props) {
       </div>
 
       {/* ── Narrative ── */}
-      <div className={styles.narrative} key={scene.id}>
-        {main.map((p, i) => {
-          const dialogue = isDialogue(p)
-          return (
-            <p
-              key={i}
-              className={dialogue ? styles.nd : styles.np}
-              style={dialogue ? undefined : { animationDelay: `${0.04 + i * 0.14}s` }}
-            ><Inline text={p} /></p>
-          )
-        })}
+      <div className={styles.narrative} key={scene.id} ref={storyRef}>
+        <div className={styles.measure}>
+          {collapsed && (
+            <button className={styles.showScene} onClick={() => setShowScene(true)}>Show the scene again</button>
+          )}
+          <div className={collapsed ? styles.faded : undefined}>
+            {shownMain.map((p, i) => {
+              const dialogue = isDialogue(p)
+              return (
+                <p
+                  key={i}
+                  className={dialogue ? styles.nd : styles.np}
+                  style={dialogue ? undefined : { animationDelay: `${0.04 + i * 0.14}s` }}
+                ><Inline text={p} /></p>
+              )
+            })}
 
-        {aside.length > 0 && (
-          <aside
-            className={styles.lens}
-            aria-label={`${CLASS_LABELS[state.player.class]}: your read`}
-            style={{ animationDelay: `${0.04 + main.length * 0.14}s` }}
-          >
-            <div className={styles.lensLabel}>{CLASS_LABELS[state.player.class]}</div>
-            {aside.map((p, i) => <p key={i}><Inline text={p} /></p>)}
-          </aside>
-        )}
-
-        {/* Outcome text */}
-        {shownOutcome && (
-          <div
-            className={`${styles.outcomeBlock} ${shownOutcome.css ? styles[shownOutcome.css] : ''}`}
-          >
-            {outcomeText.split(/\n{2,}/).filter(Boolean).map((p, i) => (
-              <p key={i} style={{ marginBottom: '0.8em' }}><Inline text={p} /></p>
-            ))}
+            {shownAside.length > 0 && (
+              <aside
+                className={styles.lens}
+                aria-label={`${CLASS_LABELS[state.player.class]}: your read`}
+                style={{ animationDelay: `${0.04 + shownMain.length * 0.14}s` }}
+              >
+                <div className={styles.lensLabel}>{CLASS_LABELS[state.player.class]}</div>
+                {shownAside.map((p, i) => <p key={i}><Inline text={p} /></p>)}
+              </aside>
+            )}
           </div>
-        )}
+
+          {/* Outcome text */}
+          {shownOutcome && (
+            <div
+              ref={outcomeRef}
+              tabIndex={-1}
+              aria-live="polite"
+              data-outcome
+              className={`${styles.outcomeBlock} ${shownOutcome.css ? styles[shownOutcome.css] : ''}`}
+            >
+              {outcomeText.split(/\n{2,}/).filter(Boolean).map((p, i) => (
+                <p key={i} style={{ marginBottom: '0.8em' }}><Inline text={p} /></p>
+              ))}
+            </div>
+          )}
+
+          {inlineChoices && <div className={`${styles.choices} ${styles.choicesInline}`}>{choiceButtons}</div>}
+        </div>
       </div>
 
       {/* ── Choices ── */}
-      <div className={styles.choices}>
-        {shownOutcome ? (
-          <button className={styles.ch} data-choice-id="continue" onClick={handleOutcomeContinue}>
-            <span className={styles.mk}>›</span>
-            <span className={styles.lb}>Continue</span>
-          </button>
-        ) : (
-          visibleChoices.map((choice, i) => {
-            const { label, css } = badgeContent(choice)
-            return (
-              <button
-                key={choice.id}
-                data-choice-id={choice.id}
-                className={styles.ch}
-                onClick={() => handleChoiceClick(choice)}
-              >
-                <span className={styles.mk}>{ROMAN[i] ?? String(i + 1)}</span>
-                <span className={styles.lb}><Inline text={resolveRich(choice.text, state)} /></span>
-                <span className={`${styles.badge} ${styles[css]}`}>{label}</span>
-              </button>
-            )
-          })
-        )}
-      </div>
+      {!inlineChoices && <div className={styles.choices}>{choiceButtons}</div>}
 
       {/* ── Dice overlay ── */}
       {rollResult && (

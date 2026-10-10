@@ -151,8 +151,6 @@ test('saves survive a reload and Return to Title', async ({ page }) => {
 })
 
 test('story text and choices fit a phone screen', async ({ browser }) => {
-  // The layout is fixed-width until U1 (step 4) makes it responsive.
-  test.fixme(true, 'needs the responsive layout from U1')
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } })
   await createCharacter(page, 'Ranger')
   const width = 390

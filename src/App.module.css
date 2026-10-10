@@ -1,26 +1,46 @@
+/* ── Wide (1024px and up): three fluid columns ── */
 .shell {
-  width: 1100px;
-  height: 660px;
+  width: var(--shell-w);
+  height: var(--shell-h);
   display: grid;
-  grid-template-columns: 295px 1fr 185px;
+  grid-template-columns: minmax(260px, 30%) minmax(0, 1fr) 232px;
+  grid-template-rows: minmax(0, 1fr);
+  grid-template-areas: "art story side";
   background: var(--bg);
   border: 1px solid var(--border);
   position: relative;
+  overflow: hidden;
   box-shadow: 0 0 120px rgba(0,0,0,1), 0 0 40px rgba(74,106,154,0.06);
 }
 
-/* scanlines via pseudo — covers entire shell */
-.shell::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent, transparent 3px,
-    rgba(0,0,0,0.06) 3px, rgba(0,0,0,0.06) 4px
-  );
-  pointer-events: none;
-  z-index: 99;
+.areaArt    { grid-area: art; min-height: 0; min-width: 0; }
+.areaStory  { grid-area: story; min-height: 0; min-width: 0; display: flex; flex-direction: column; }
+.areaSide   { grid-area: side; min-height: 0; border-left: 1px solid var(--border); }
+.areaStatus { grid-area: status; display: none; }
+.areaTabs   { grid-area: tabs; display: none; }
+
+/* ── Medium (720–1023px): two columns, status strip above, tabs below ── */
+@media (max-width: 1023px) {
+  .shell {
+    width: 100vw; height: 100dvh; border: 0;
+    grid-template-columns: 34% minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    grid-template-areas: "art status" "art story" "tabs tabs";
+  }
+  .areaSide { display: none; }
+  .areaStatus, .areaTabs { display: block; }
+}
+
+/* ── Narrow (under 720px): one column, art as a banner ── */
+@media (max-width: 719px) {
+  .shell {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto minmax(0, 1fr) auto;
+    grid-template-areas: "art" "status" "story" "tabs";
+  }
+  .areaArt { height: 30dvh; transition: height 0.3s ease; }
+  /* give the outcome text room */
+  .shell:has([data-outcome]) .areaArt { height: 18dvh; }
 }
 
 .loading, .error {

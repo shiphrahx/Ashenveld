@@ -1,4 +1,5 @@
 .scenePanel {
+  height: 100%;
   border-right: 1px solid var(--border);
   display: flex;
   flex-direction: column;
@@ -8,8 +9,23 @@
 
 .sceneArt {
   flex: 1;
+  min-height: 0;
   overflow: hidden;
   position: relative;
+}
+
+/* scanlines, art area only until E5 replaces them */
+.sceneArt::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent, transparent 3px,
+    rgba(0,0,0,0.06) 3px, rgba(0,0,0,0.06) 4px
+  );
+  pointer-events: none;
+  z-index: 3;
 }
 
 .sceneArt svg {

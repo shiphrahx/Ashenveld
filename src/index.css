@@ -75,25 +75,10 @@ html, body {
   color: var(--text-main);
 }
 
-/* Game shell and title screen need centred/overflow:hidden layout.
-   Creation screen needs to scroll. We handle this per-phase via #root classes. */
 #root {
-  width: 100%;
   min-height: 100dvh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#root.game, #root.title {
-  height: 100dvh;
-  overflow: hidden;
-}
-
-#root.creation {
-  align-items: flex-start;
-  overflow-y: auto;
-  overflow-x: hidden;
+  display: grid;
+  place-items: center;
 }
 
 button { font-family: inherit; cursor: pointer; }

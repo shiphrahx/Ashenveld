@@ -26,20 +26,12 @@ import CharacterCreation, { type CreationResult } from './components/CharacterCr
 import SceneView from './components/SceneView'
 import SceneArt from './components/SceneArt'
 import Sidebar from './components/Sidebar'
+import StatusStrip from './components/StatusStrip'
+import TabBar, { type PanelId } from './components/TabBar'
+import Panel from './components/Panel'
 import styles from './App.module.css'
 
 type AppPhase = 'loading' | 'title' | 'creation' | 'game' | 'ended' | 'gameover' | 'error'
-
-// Keep #root class in sync with phase so CSS can adjust overflow/height
-function setRootClass(phase: AppPhase) {
-  const root = document.getElementById('root')
-  if (!root) return
-  root.className = phase === 'game' || phase === 'loading' || phase === 'error' || phase === 'gameover'
-    ? 'game'
-    : phase === 'creation' || phase === 'ended'
-    ? 'creation'
-    : 'title'
-}
 
 /** Follow route scenes until one that is shown. Route scenes are never rendered. */
 async function followRoutes(sceneId: string, state: GameState): Promise<Scene> {
@@ -58,14 +50,8 @@ export default function App() {
   const [currentScene, setCurrentScene] = useState<Scene | null>(null)
   const [saveExists, setSaveExists] = useState(false)
   const [savedEnded, setSavedEnded] = useState(false)
-  const [journalOpen, setJournalOpen] = useState(false)
-  const [itemsOpen, setItemsOpen] = useState(false)
-  const [peopleOpen, setPeopleOpen] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [mapOpen, setMapOpen] = useState(false)
+  const [panel, setPanel] = useState<PanelId | null>(null)
   const [lastOutcome, setLastOutcome] = useState<string>('')
-
-  useEffect(() => { setRootClass(phase) }, [phase])
 
   const refreshSaveInfo = useCallback(() => {
     setSaveExists(hasSave())
@@ -182,6 +168,8 @@ export default function App() {
     await enterScene(outcome.next_scene, next)
   }, [gameState, currentScene, enterScene])
 
+  const closePanel = useCallback(() => setPanel(null), [])
+
   // ── Render ────────────────────────────────────────────────────────────────────
 
   if (phase === 'loading') {
@@ -236,30 +224,40 @@ export default function App() {
   }
 
   if (phase === 'game' && gameState && currentScene) {
+    const hideClock = currentScene.when?.hide_clock ?? false
     return (
       <>
         <StarField />
         <div className={styles.shell}>
-          <SceneArt locationName={locationName(currentScene.location)} gameState={gameState} />
-          <SceneView scene={currentScene} state={gameState} onChoice={handleChoice} />
-          <Sidebar state={gameState} onJournal={() => setJournalOpen(true)} onItems={() => setItemsOpen(true)} onPeople={() => setPeopleOpen(true)} onMenu={() => setMenuOpen(true)} onMap={() => setMapOpen(true)} hideClock={currentScene.when?.hide_clock} />
-          {journalOpen && (
-            <Journal entries={gameState.journal ?? []} onClose={() => setJournalOpen(false)} />
+          <div className={styles.areaArt}>
+            <SceneArt locationName={locationName(currentScene.location)} gameState={gameState} />
+          </div>
+          <header className={styles.areaStatus}>
+            <StatusStrip state={gameState} hideClock={hideClock} onOpen={() => setPanel('status')} />
+          </header>
+          <main className={styles.areaStory}>
+            <SceneView scene={currentScene} state={gameState} onChoice={handleChoice} />
+          </main>
+          <div className={styles.areaSide}>
+            <Sidebar state={gameState} onOpen={setPanel} hideClock={hideClock} />
+          </div>
+          <div className={styles.areaTabs}>
+            <TabBar onOpen={setPanel} />
+          </div>
+          {panel === 'journal' && <Journal entries={gameState.journal ?? []} onClose={closePanel} />}
+          {panel === 'items' && <Items inventory={gameState.inventory} onClose={closePanel} />}
+          {panel === 'people' && <People state={gameState} onClose={closePanel} />}
+          {panel === 'map' && <Map state={gameState} onClose={closePanel} />}
+          {panel === 'status' && (
+            <Panel title="Status" onClose={closePanel}>
+              <Sidebar state={gameState} onOpen={setPanel} hideClock={hideClock} variant="sheet" />
+            </Panel>
           )}
-          {itemsOpen && (
-            <Items inventory={gameState.inventory} onClose={() => setItemsOpen(false)} />
-          )}
-          {peopleOpen && (
-            <People state={gameState} onClose={() => setPeopleOpen(false)} />
-          )}
-          {mapOpen && (
-            <Map state={gameState} onClose={() => setMapOpen(false)} />
-          )}
-          {menuOpen && (
+          {panel === 'menu' && (
             <Menu
               state={gameState}
-              onClose={() => setMenuOpen(false)}
-              onReturnToTitle={() => { setMenuOpen(false); handleReturnToTitle() }}
+              onClose={closePanel}
+              onReturnToTitle={() => { closePanel(); handleReturnToTitle() }}
             />
           )}
         </div>
