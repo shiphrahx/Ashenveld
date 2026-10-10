@@ -31,6 +31,8 @@ import StatusStrip from './components/StatusStrip'
 import TabBar, { type PanelId } from './components/TabBar'
 import Panel from './components/Panel'
 import Settings from './components/Settings'
+import KeysHelp from './components/KeysHelp'
+import { useHotkeys } from './hooks/useHotkeys'
 import styles from './App.module.css'
 
 type AppPhase = 'loading' | 'title' | 'creation' | 'game' | 'ended' | 'gameover' | 'error'
@@ -182,6 +184,7 @@ export default function App() {
     }
     setPanel(id)
   }, [gameState])
+  useHotkeys({ enabled: phase === 'game' && Boolean(currentScene), panelOpen: panel !== null, openPanel })
   const journalDot = gameState ? journalKeys(gameState).some(k => !(gameState.journal_seen ?? []).includes(k)) : false
 
   // ── Render ────────────────────────────────────────────────────────────────────
@@ -276,6 +279,7 @@ export default function App() {
             />
           )}
           {panel === 'settings' && <Settings onClose={closePanel} />}
+          {panel === 'keys' && <KeysHelp onClose={closePanel} />}
         </div>
       </>
     )

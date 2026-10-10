@@ -136,7 +136,7 @@ export default function Sidebar({ state, onOpen, hideClock = false, variant = 'c
             <span className={styles.tip} aria-hidden="true">{tip}</span>
           </button>
         ))}
-        <button className={`${styles.ab} ${styles.abOff}`} aria-disabled="true" aria-label="Rest. You cannot rest here." onClick={e => e.preventDefault()}>
+        <button className={`${styles.ab} ${styles.abOff}`} data-rest aria-disabled="true" aria-label="Rest. You cannot rest here." onClick={e => e.preventDefault()}>
           <Icon name="rest" />
           <span className={styles.al}>Rest</span>
           <span className={`${styles.tip} ${styles.tipWide}`} aria-hidden="true">You cannot rest here.</span>
