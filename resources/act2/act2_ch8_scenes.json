@@ -411,6 +411,15 @@
                 "You came here for one reason. The reason is standing across from you.",
                 "You find [missing person] and tell them you are going.",
                 "Something in their face moves — not disappointment, something more complex. \"I thought—\" they begin. Then stop. \"All right,\" they say. \"When?\"",
+                {
+                  "when": {
+                    "flags": {
+                      "confronted_being_used": false,
+                      "full_disclosure_made": false
+                    }
+                  },
+                  "text": "\"You never did say whether you forgave me,\" they say."
+                },
                 "\"Now,\" you say. \"Before something else needs to be fixed.\"",
                 {
                   "when": {

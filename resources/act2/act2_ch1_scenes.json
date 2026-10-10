@@ -211,7 +211,14 @@
       },
       "requires": {},
       "text": {
-        "default": "The cairn is at the convergence of three paths through the outskirts, in a space that has slightly less curse-density than the surrounding area — either by coincidence or by design.\n\nOn top of it: a piece of cloth weighted with a flat stone. You recognise the cloth before you pick it up. You would recognise it anywhere.\n\nUnder the cloth, scratched into the flat stone in small careful letters:\n\n*I am below. Take the south passage. Do not touch the carved walls. Wait at the gate.*\n\nNo name. No date. But the handwriting is theirs and the instruction is clear and the south passage is — you look around and find it, a gap between two standing walls that does not look like a gap until you are at the right angle.",
+        "default": [
+          "The cairn is at the convergence of three paths through the outskirts, in a space that has slightly less curse-density than the surrounding area — either by coincidence or by design.",
+          "On top of it: a piece of cloth weighted with a flat stone. You recognise the cloth before you pick it up. You would recognise it anywhere.",
+          "Under the cloth, scratched into the flat stone in small careful letters:",
+          "*I am below. Take the south passage. Do not touch the carved walls. Wait at the gate.*",
+          "The scratches are fresh. Whoever wrote this knew you were already past the line.",
+          "No name. No date. But the handwriting is theirs and the instruction is clear and the south passage is — you look around and find it, a gap between two standing walls that does not look like a gap until you are at the right angle."
+        ],
         "commander": "A military mind reads this quickly: a rendezvous point, a route, a behavioural instruction, a destination. They anticipated your arrival, or someone's arrival. They prepared.\n\nFourteen months in the ruins and they are still capable of preparation. That tells you something important.",
         "arcane": "The message is written in plain language but the stone it is written on is not plain — it is one of the resonant stones from the ruins, chosen deliberately. The message will last longer carved here than it would on paper. They knew that.\n\nThey have been learning the properties of this place. For fourteen months. You are walking into the laboratory of someone who is further into this material than you are.",
         "ranger": "You read the message and read the ground around the cairn. The path to the south passage is worn — more worn than the other paths. This is the most-used route. They come back here regularly. They have been maintaining the cairn.\n\nThey are not lost. They are living here.",
@@ -542,7 +549,13 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You stay. They understand — something in your stillness reads to them as: I am here, I will wait, take the time you need.\n\nThey take a breath. Then they cross the distance.\n\nThey stop a foot in front of you. Close enough that you can see exactly how the fourteen months have changed them. Close enough that you can see, underneath the changes, the person you have been carrying with you since you got on the barge in Crestfall.\n\n\"You came,\" they say.",
+              "text": [
+                "You stay. They understand — something in your stillness reads to them as: I am here, I will wait, take the time you need.",
+                "They take a breath. Then they cross the distance.",
+                "They stop a foot in front of you. Close enough that you can see exactly how the fourteen months have changed them. Close enough that you can see, underneath the changes, the person you have been carrying with you since you got on the barge in Crestfall.",
+                "\"You came,\" they say.",
+                "It is not all gladness. \"I told you not to.\""
+              ],
               "next_scene": "act2_ch1_reunion",
               "state_changes": {
                 "flags": {
@@ -670,6 +683,37 @@
                 "relationships": {
                   "the_missing_person": {
                     "closeness": 15
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "name_what_they_did",
+          "text": "\"You told me to go home. Then you gave the Watcher my name.\"",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": [
+                "They do not deny it.",
+                "\"I meant it,\" they say. \"Go home. I meant it when I wrote it.\" They look at the gate stones, not at you. \"Then I read the chamber wall properly. It needs two. And there was only ever one name I could give it.\"",
+                "\"I wanted you safe and I needed you here. I have not found a way to make those the same thing.\"",
+                "Then they tell you what it needs.",
+                "The ritual requires two participants who are — the text uses a word they have spent months translating, and the closest they can get is *bonded*. Not in any legal or formal sense. In the sense that their lives have been shaped by each other, that they carry each other's weight, that separating one from the other changes the essential composition of both.",
+                "The ritual will work with any two such people.",
+                "They chose you specifically."
+              ],
+              "next_scene": "act2_ch1_what_they_found",
+              "state_changes": {
+                "flags": {
+                  "confronted_being_used": true,
+                  "ritual_explained": true
+                },
+                "relationships": {
+                  "the_missing_person": {
+                    "closeness": 5
                   }
                 }
               }

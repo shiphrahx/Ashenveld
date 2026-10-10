@@ -558,7 +558,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "Under the edge of one of the fire stones — placed there deliberately, weighted down — a torn piece of cloth. Not accidental. They left it.\n\nOn the cloth, in ink that has partially run: four words. The first word is your name. The remaining three you read three times each to make sure you are reading them right.\n\nYour name. Keep going.\n\nThey knew you would come. They wanted you to keep going. That is either the best thing you have heard since you arrived in Ashenveld or the worst. You have not decided.",
+              "text": "Under the edge of one of the fire stones, placed there on purpose and weighted down, a torn piece of cloth. They left it.\n\nOn the cloth, in ink that has partly run, three words. You read them three times each to make sure you are reading them right.\n\n[player]. Go home.\n\nThey knew you would come. They knew it well enough to leave you this at the first place you would stop. And they did not want you to.",
               "next_scene": "act1_ch6_harrow_arrival",
               "state_changes": {
                 "flags": {

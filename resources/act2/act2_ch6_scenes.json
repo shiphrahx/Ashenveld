@@ -269,6 +269,15 @@
             },
             "text": "And it shows you [missing person], all those evenings by the mill wall. They knew. They were waiting for you to say it."
           },
+          {
+            "when": {
+              "flags": {
+                "confronted_being_used": false,
+                "full_disclosure_made": false
+              }
+            },
+            "text": "There is something you have not said to them. The mechanism finds it first."
+          },
           "Across from you, [missing person] goes through the same thing. You can see it in their face — the specific quality of someone being read by something that does not miss anything."
         ],
         "commander": "You have been in difficult situations before. Situations that required you to be more than you were. Situations where the outcome depended on the quality of what you brought to them.\n\nThis is different. This requires you to be exactly what you are. Nothing more and nothing added. The mechanism has no use for aspiration. It reads what is there.\n\nWhat is there — you are discovering, as the mechanism reads it — is sufficient.",
@@ -293,6 +302,15 @@
                 },
                 "value": 2,
                 "label": "Nothing left unsaid"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "confronted_being_used": true
+                  }
+                },
+                "value": 1,
+                "label": "You named it in the ruins"
               },
               {
                 "when": {
@@ -381,6 +399,15 @@
               {
                 "when": {
                   "flags": {
+                    "confronted_being_used": true
+                  }
+                },
+                "value": 1,
+                "label": "You named it in the ruins"
+              },
+              {
+                "when": {
+                  "flags": {
                     "ritual_lesson_complete": true
                   }
                 },
@@ -461,6 +488,15 @@
                 },
                 "value": 2,
                 "label": "Nothing left unsaid"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "confronted_being_used": true
+                  }
+                },
+                "value": 1,
+                "label": "You named it in the ruins"
               },
               {
                 "when": {
