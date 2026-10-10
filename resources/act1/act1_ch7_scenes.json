@@ -1,6 +1,7 @@
 {
   "chapter": 7,
   "title": "The Edge",
+  "objective": "Reach the forest edge.",
   "scenes": [
     {
       "id": "act1_ch7_harrow_investigation",

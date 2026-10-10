@@ -62,7 +62,8 @@
             }
           }
         }
-      ]
+      ],
+      "objective": "Stay and rebuild."
     },
     {
       "id": "act3_ch1_leaving",
@@ -123,7 +124,8 @@
       ],
       "text_mode": {
         "cipher": "replace"
-      }
+      },
+      "objective": "Go west."
     },
     {
       "id": "act3_ch1_staying_briefly",
@@ -181,7 +183,8 @@
             }
           }
         }
-      ]
+      ],
+      "objective": "Finish the work, then follow."
     },
     {
       "id": "act3_ch1_alone_in_ashenveld",
@@ -243,7 +246,8 @@
             }
           }
         }
-      ]
+      ],
+      "objective": "Carry on alone."
     }
   ]
 }

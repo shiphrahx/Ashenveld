@@ -1,6 +1,7 @@
 {
   "chapter": 1,
   "title": "Arrival",
+  "objective": "Find a bed. Find out who remembers [missing person].",
   "scenes": [
     {
       "id": "act1_ch1_barge_arrival",

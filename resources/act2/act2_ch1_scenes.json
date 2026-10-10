@@ -1,6 +1,7 @@
 {
   "chapter": 1,
   "title": "The Outskirts",
+  "objective": "Find [missing person] in the ruins.",
   "scenes": [
     {
       "id": "act2_ch1_ruins_outskirts",

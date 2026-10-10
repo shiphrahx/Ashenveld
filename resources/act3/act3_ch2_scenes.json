@@ -162,7 +162,8 @@
             }
           }
         }
-      ]
+      ],
+      "objective": "Stay and rebuild."
     },
     {
       "id": "act3_ch2_on_the_road",
@@ -228,7 +229,8 @@
             }
           }
         }
-      ]
+      ],
+      "objective": "Go west."
     },
     {
       "id": "act3_ch2_finishing_work",
@@ -311,7 +313,8 @@
             }
           }
         }
-      ]
+      ],
+      "objective": "Finish the work, then follow."
     },
     {
       "id": "act3_ch2_alone_work",
@@ -406,7 +409,8 @@
             }
           }
         }
-      ]
+      ],
+      "objective": "Carry on alone."
     }
   ]
 }

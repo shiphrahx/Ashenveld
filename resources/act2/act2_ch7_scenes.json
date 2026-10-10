@@ -1,6 +1,7 @@
 {
   "chapter": 7,
   "title": "The Return",
+  "objective": "Bring [missing person] back to Crestfall.",
   "scenes": [
     {
       "id": "act2_ch7_aftermath_crestfall",

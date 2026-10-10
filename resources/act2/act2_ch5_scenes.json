@@ -1,6 +1,7 @@
 {
   "chapter": 5,
   "title": "Preparation",
+  "objective": "Prepare for the ritual.",
   "scenes": [
     {
       "id": "act2_ch5_return_to_ruins",

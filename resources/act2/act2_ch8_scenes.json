@@ -1,6 +1,7 @@
 {
   "chapter": 8,
   "title": "The Reckoning",
+  "objective": "Decide what Ashenveld becomes, and whether you stay.",
   "scenes": [
     {
       "id": "act2_ch8_faction_reckoning",
