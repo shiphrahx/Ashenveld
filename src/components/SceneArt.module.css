@@ -99,3 +99,6 @@
   animation: glow 6s ease-in-out infinite;
 }
 @keyframes glow { 0%, 100% { filter: brightness(0.8); } 50% { filter: brightness(1.2); } }
+
+/* E1: with motion off the stamp just shows, and the timer takes it away */
+:global(:root[data-motion="off"]) .dayStamp { animation-name: none !important; }

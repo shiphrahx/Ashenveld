@@ -305,3 +305,6 @@
   animation: chapterNote 3s ease forwards;
 }
 @keyframes chapterNote { 0% { opacity: 0; } 15% { opacity: 1; } 75% { opacity: 1; } 100% { opacity: 0; } }
+
+/* E1: with motion off the chapter title just shows, and the timer takes it away */
+:global(:root[data-motion="off"]) .chapterNote { animation-name: none !important; }
