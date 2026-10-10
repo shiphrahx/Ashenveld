@@ -11,7 +11,7 @@
     "the_missing_person": {
       "id": "the_missing_person",
       "name": "[Player-defined name]",
-      "role": "The person the player came to Ashenveld for",
+      "role": "The one you came back for",
       "location": "ruins_inner_chamber",
       "personality": "Changed by fourteen months inside the ruins. Still themselves, but differently. The curse has not taken them — something else has happened, something harder to name.",
       "secret": "They found the original sealing ritual in the ruins and partially performed it alone. The ritual requires a second person to complete. They have been waiting. They did not know if the player would come.",

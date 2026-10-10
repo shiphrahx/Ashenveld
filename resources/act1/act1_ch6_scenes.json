@@ -530,7 +530,21 @@
       },
       "requires": {},
       "text": {
-        "default": "Half a mile further and the road shows you something.\n\nA campsite — recent, a few days old. Used once, by one person, not the traveller you just passed. A ring of stones for a fire. A cleared ground space. The careful arrangement of someone who knows how to camp and habitually tidies before leaving.\n\nYou know the arrangement. You have seen it before. The ring of stones is three flat, one angled — a marker, a habit, something you noticed years ago when you watched the person who taught it to you do it for the first time.\n\n[missing person] was here. Three to five days ago. Moving east.",
+        "default": [
+          "Half a mile further and the road shows you something.",
+          "A campsite — recent, a few days old. Used once, by one person, not the traveller you just passed. A ring of stones for a fire. A cleared ground space. The careful arrangement of someone who knows how to camp and habitually tidies before leaving.",
+          {
+            "when": {
+              "relationship_type": [
+                "childhood friend",
+                "mentor"
+              ]
+            },
+            "text": "You know the arrangement. You have seen it before. The ring of stones is three flat, one angled — a marker, a habit, something you noticed years ago when you watched the person who taught it to you do it for the first time.",
+            "else": "You know the arrangement. You have seen it before. The ring of stones is three flat, one angled — a marker, a habit, a habit the two of you shared."
+          },
+          "[missing person] was here. Three to five days ago. Moving east."
+        ],
         "commander": "You assess the campsite with systematic attention. Duration of stay: one night. Direction of departure: east, based on the site's orientation. Condition when they were here: functional — the camp is tidy, the fire correctly built. Not someone in crisis.",
         "arcane": "The residue on the campsite is specific enough to read clearly. One person, one night, not deeply afflicted at the point of departure — the camp has the residue of someone present and aware.\n\nYou feel something that is probably relief and probably also fear. Present and aware when they left this camp. Three to five days ago.",
         "ranger": "You read the campsite with the efficiency of a tracker. One person, one night. The fire stones are arranged in a specific way you have not seen anyone else use. The cleared area is exactly the size of a bedroll.\n\nThe departure direction is east and the tracks, faint on this ground, confirm it. Three to five days old. Moving steadily.",
