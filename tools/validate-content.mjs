@@ -34,7 +34,7 @@ const KEYS = {
   when: ['part', 'day', 'skip_days', 'hide_clock'],
   condition: ['flags', 'inventory', 'class', 'min_relationship', 'max_relationship', 'min_faction', 'max_faction',
     'min_stat', 'relationship_type', 'visited', 'not_visited', 'taken', 'min_curse', 'max_curse', 'health_below',
-    'min_gold', 'min_counter', 'max_counter', 'any', 'not'],
+    'min_gold', 'min_counter', 'max_counter', 'lowest_faction', 'any', 'not'],
   route: ['when', 'next'],
   chapterFile: ['chapter', 'title', 'objective', 'scenes'],
   ending: ['id', 'title'],
@@ -44,7 +44,7 @@ const STATS = ['strength', 'dexterity', 'stamina', 'intelligence', 'mana', 'char
 const FACTIONS = ['iron_compact', 'ashen_covenant', 'rootless']
 const PARTS = ['dawn', 'morning', 'midday', 'afternoon', 'evening', 'night']
 const TOKENS = ['[missing person]', '[player]', '[relationship]']
-const ENGINE_FLAGS = ['crestfall_afflicted']            // set by the engine, not the data
+const ENGINE_FLAGS = ['crestfall_afflicted', 'last_rest_place']   // set by the engine, not the data
 const STAGE_PHRASES = ['if you have', 'if you carry', 'if she came', 'whichever', 'the reader', 'your missing person']
 // Known duplicate images, kept until the new art lands (docs/06-art.md A5).
 const ALLOWED_DUPLICATES = [
@@ -112,6 +112,7 @@ function checkCondition(c, where) {
     if (!FACTIONS.includes(k)) err(`${where}: unknown faction "${k}"`)
   for (const k of Object.keys(c.min_stat ?? {})) if (!STATS.includes(k)) err(`${where}: unknown stat "${k}"`)
   for (const cl of [c.class ?? []].flat()) if (!CLASSES.includes(cl)) err(`${where}: unknown class "${cl}"`)
+  if (c.lowest_faction && !FACTIONS.includes(c.lowest_faction)) err(`${where}: unknown faction "${c.lowest_faction}"`)
   for (const id of [...(c.visited ?? []), ...(c.not_visited ?? [])]) if (!scenes.has(id)) err(`${where}: unknown scene "${id}" in visited`)
   for (const t of c.taken ?? []) {
     const [sid, cid] = t.split(':')
@@ -198,7 +199,9 @@ for (const [id, { scene: s }] of scenes) {
       checkKeys(o, 'outcome', ow)
       walkRich(o.text, `${ow}:text`)
       checkChanges(o.state_changes, ow)
-      if (o.next_scene !== null && !scenes.has(o.next_scene)) err(`${ow}: next_scene "${o.next_scene}" is not a scene`)   // 2
+      // "@return" goes back to wherever a collapse interrupted you (G9).
+      if (o.next_scene !== null && o.next_scene !== '@return' && !scenes.has(o.next_scene)) err(`${ow}: next_scene "${o.next_scene}" is not a scene`)   // 2
+      if (o.next_scene === '@return' && !id.endsWith('_collapse')) err(`${ow}: only collapse scenes may use @return`)
     }
   }
 }
@@ -226,7 +229,9 @@ while (queue.length) {
   const next = [...(s.route ?? []).map(r => r.next), ...s.choices.flatMap(c => Object.values(c.outcomes).map(o => o.next_scene))]
   for (const n of next) if (n && !seen.has(n)) { seen.add(n); queue.push(n) }
 }
-for (const id of scenes.keys()) if (!seen.has(id)) err(`${id}: cannot be reached from ${start}`)
+// Collapse scenes are entered by the engine when Resolve reaches 0.
+for (const id of scenes.keys()) if (!seen.has(id) && !id.endsWith('_collapse')) err(`${id}: cannot be reached from ${start}`)
+for (const act of [1, 2, 3]) if (!scenes.has(`act${act}_collapse`)) err(`act${act}_collapse is missing; Resolve at 0 needs it`)
 
 for (const n of journalNotes.notes) if (!flagsSet.has(n.flag)) err(`notes.json: note for "${n.flag}", which is never set`)
 

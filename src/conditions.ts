@@ -35,6 +35,11 @@ export function meets(c: Condition | undefined | null, s: GameState): boolean {
   for (const [k, v] of Object.entries(c.min_counter ?? {})) if (counter(k) < v) return false
   for (const [k, v] of Object.entries(c.max_counter ?? {})) if (counter(k) > v) return false
   if (c.health_below !== undefined && s.player.resources.health >= c.health_below) return false
+  if (c.lowest_faction) {
+    const reps = Object.entries(s.factions as Record<string, { reputation: number }>)
+    const low = reps.reduce((a, b) => b[1].reputation < a[1].reputation ? b : a)[0]
+    if (low !== c.lowest_faction) return false
+  }
   if (c.any && !c.any.some(x => meets(x, s))) return false
   if (c.not && meets(c.not, s)) return false
   return true

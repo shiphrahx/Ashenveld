@@ -94,6 +94,7 @@ export interface Condition {
   min_gold?: number
   min_counter?: Record<string, number>
   max_counter?: Record<string, number>
+  lowest_faction?: string                    // this faction has the lowest reputation (ties: first listed)
   any?: Condition[]                          // at least one matches
   not?: Condition
 }
@@ -244,6 +245,8 @@ export interface GameState {
   taken: Record<string, true>            // "sceneId:choiceId"
   ended?: { id: string; title: string; text?: string }  // set when an ending is reached; text is the closing outcome
   journal_seen?: string[]                // note and lead keys the player has seen in the journal
+  last_rest_scene?: string               // where a collapse wakes you (G9)
+  collapse_return?: string               // the scene to go on to after a collapse
 }
 
 // ─── Journal ──────────────────────────────────────────────────────────────────
