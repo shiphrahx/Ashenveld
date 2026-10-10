@@ -1,7 +1,7 @@
 .diceOv {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.94);
+  background: var(--bg-panel);   /* opaque: the story never shows through the number (E2) */
   z-index: 300;
   display: flex;
   flex-direction: column;
@@ -12,9 +12,9 @@
 
 .dStat {
   font-family: var(--font-display);
-  font-size: var(--fs-small);
+  font-size: 14px;
   letter-spacing: 0.26em;
-  color: var(--text-main);
+  color: var(--text-bright);
   text-transform: uppercase;
 }
 
@@ -22,14 +22,18 @@
   font-family: var(--font-display);
   font-size: 96px;
   line-height: 1;
-  animation: dRoll 0.5s cubic-bezier(0.22,1,0.36,1);
+  color: var(--white-cold);
+  font-variant-numeric: tabular-nums;
+  min-width: 2ch;
+  text-align: center;
 }
+.dNum.success { color: var(--success-lit); }
+.dNum.partial { color: var(--partial-lit); }
+.dNum.fail    { color: var(--fail-lit); }
 
-@keyframes dRoll {
-  0%   { transform: scale(0.3) rotate(-18deg); opacity: 0; }
-  65%  { transform: scale(1.06) rotate(2deg); }
-  100% { transform: scale(1) rotate(0deg); opacity: 1; }
-}
+/* The last face settles with a 4% overshoot */
+.land { animation: dLand 150ms ease-out; }
+@keyframes dLand { 0% { transform: scale(1); } 50% { transform: scale(1.04); } 100% { transform: scale(1); } }
 
 .dBreak {
   font-family: var(--font-display);
@@ -78,7 +82,7 @@
   color: var(--blue-moon);
 }
 
-.dTarget { font-size: var(--fs-small); color: var(--text-main); }
+.dTarget { font-size: 14px; color: var(--text-main); }
 
 .dSum {
   list-style: none;
@@ -94,7 +98,13 @@
   color: var(--text-bright);
   border: 1px solid var(--border-lit);
   padding: 3px 9px;
+  opacity: 0;
+  transition: opacity 120ms ease;
 }
+.chipIn { opacity: 1; }
+.dVerdict { opacity: 0; }
+.verdictIn { opacity: 1; transition: opacity 200ms ease; }
+.srOnly { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 .dButtons { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
 .commanded { color: var(--text-main); font-weight: 400; }

@@ -54,6 +54,9 @@ const sceneId = (page: Page) => page.locator('[data-scene-id]').first().getAttri
 async function pickChoice(page: Page, choiceId: string) {
   await page.locator(`[data-choice-id="${choiceId}"]`).click()
   for (let i = 0; i < 400; i++) {
+    // A click during the roll skips to the verdict (E2).
+    const rolling = page.locator('[data-dice-phase]:not([data-dice-phase="done"])')
+    if (await rolling.count()) { await rolling.first().click(); continue }
     const dice = page.locator('[data-dice-continue]')
     if (await dice.count()) { await dice.first().click(); continue }
     const cont = page.locator('[data-choice-id="continue"]')
