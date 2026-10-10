@@ -96,6 +96,14 @@
               }
             },
             "text": "One of the three held at the post is Wren. Nobody at the post knew him. Aldous went down and told them, and now they let him sit with Wren in the yard for an hour a day."
+          },
+          {
+            "when": {
+              "flags": {
+                "player_stays_permanently": true
+              }
+            },
+            "text": "[missing person] came back on the twenty-ninth day. They had read your letter, the honest one, on a bench outside an inn, and then turned round and walked the whole way."
           }
         ],
         "commander": "You and [missing person] have developed a division of labour that neither of you planned.\n\nThey work with Pol on the documentation and with Maret on the camp's organisation. You work with Vorne on the Compact arrangements and with Edric on the Covenant's restructured role.\n\nYou are, you realise, managing the institutional half of Ashenveld's recovery while they manage the human half. The two halves require different things from different people and you each turned out to be the right person for the half you ended up in.",
@@ -186,6 +194,24 @@
               }
             },
             "text": "The garden is green again along the yellow edge, she writes. Lira is teaching a child to tie the knot."
+          },
+          {
+            "when": {
+              "flags": {
+                "missing_person_sent_ahead": true,
+                "left_unfinished": true
+              }
+            },
+            "text": "You find them on the fourth day, two towns on, in a back room of an inn with a fever that broke the night before. They are sitting up. \"You came,\" they say. \"You were meant to finish.\"\n\n\"I did not,\" you say, and sit down on the end of the bed."
+          },
+          {
+            "when": {
+              "flags": {
+                "missing_person_sent_ahead": true,
+                "finished_the_work": true
+              }
+            },
+            "text": "The inn they last wrote from says they moved on a week ago, thinner than they came. There is a note with the innkeeper in their hand: the next town, and the one after, and underneath, \"Keep up.\""
           }
         ],
         "commander": "You received a letter from Cael three weeks out. The documentation arrived. Vorne is proceeding with the withdrawal. The Rootless camp is formally recognised.\n\nYou read the letter twice and filed it. The work is continuing without you. That is the correct outcome.\n\nYou think about whether you are done with institutional work or whether this is a period between institutional works. You have not decided yet. The question is patient.",

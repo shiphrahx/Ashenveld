@@ -655,13 +655,38 @@
         }
       },
       "text": {
-        "default": "Day twenty. The third week.\n\nYou said one week. Possibly two. The second week is ending and the list is not finished.\n\nThis is the specific shape of Ashenveld — it requires more than you plan for. Every task completed reveals two more that needed doing. Every arrangement formalised surfaces another that is less formal than it should be.\n\nYou are not unhappy here. That is the thing you did not expect. You are doing work that matters to people you respect and the work is hard enough to be interesting and you are not unhappy.\n\nThere is a letter on your table. [missing person] has been writing — they write every three days, from whatever ordinary place they have reached. The letters are not asking you to hurry. They are just there.",
+        "default": [
+          "Day twenty. The third week.",
+          "You said one week. Possibly two. The second week is ending and the list is not finished.",
+          "This is the specific shape of Ashenveld — it requires more than you plan for. Every task completed reveals two more that needed doing. Every arrangement formalised surfaces another that is less formal than it should be.",
+          "You are not unhappy here. That is the thing you did not expect. You are doing work that matters to people you respect and the work is hard enough to be interesting and you are not unhappy.",
+          "There is a letter on your table. [missing person] has been writing — they write every three days, from whatever ordinary place they have reached. The letters are not asking you to hurry. They are just there.",
+          "Then the letters stop. Nine days, and nothing. The carter who brought the last one has come and gone twice since with nothing for you."
+        ],
         "commander": "The work is real and it is taking the time it takes.\n\nYou read the letter. Then you put it with the others and go back to the Compact arrangements. You will finish when the work is finished. You said a week. You meant: until it is done.",
         "arcane": "The documentation is almost complete. Two more days, possibly three. Then you can go.\n\nYou read the letter. [missing person] describes an ordinary afternoon in a village two days west of Ashenveld. The specificity of it — what the light was like, what they ate, what they overheard two people arguing about — makes you understand what it means that they are somewhere ordinary and you are still here.\n\nYou work faster. Not sloppily. Faster.",
         "ranger": "The work on the land recovery documentation is done. The Rootless camp's instruction — teaching Branch to read the signs you read — is done.\n\nThe remaining work is political. Not your strongest competence. But you do it because it needs to be done and you are here.\n\nYou read the letter. [missing person] describes a forest they passed through. Birds you both know. You finish reading it twice and then go find Maret.",
         "cipher": "The political arrangements are as solid as you can make them in the time you have.\n\nYou read the letter. [missing person] does not pressure you. They describe a market, a conversation, a meal. They are telling you what ordinary is like and asking you, implicitly, when you are coming to be ordinary with them.\n\nYou finish reading it. You make a list of what remains. You calculate: four days. You write back: four days."
       },
       "choices": [
+        {
+          "id": "leave_now",
+          "text": "Leave now, with the work unfinished.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You give Branch the half-written lists and Aldous the keys, and take the west road that afternoon.",
+              "next_scene": "act3_ch3_road_further",
+              "state_changes": {
+                "flags": {
+                  "player_leaves_ashenveld": true,
+                  "left_unfinished": true
+                }
+              }
+            }
+          }
+        },
         {
           "id": "commit_to_leaving_date",
           "text": "Set a specific leaving date and hold to it regardless.",
@@ -676,7 +701,9 @@
               "next_scene": "act3_ch3_road_further",
               "state_changes": {
                 "flags": {
-                  "player_left_ashenveld_late": true
+                  "player_left_ashenveld_late": true,
+                  "player_leaves_ashenveld": true,
+                  "finished_the_work": true
                 }
               }
             },
@@ -685,7 +712,9 @@
               "next_scene": "act3_ch3_road_further",
               "state_changes": {
                 "flags": {
-                  "player_left_ashenveld_late": true
+                  "player_left_ashenveld_late": true,
+                  "player_leaves_ashenveld": true,
+                  "finished_the_work": true
                 }
               }
             },
@@ -695,6 +724,10 @@
               "state_changes": {
                 "world": {
                   "skip_days": 7
+                },
+                "flags": {
+                  "player_leaves_ashenveld": true,
+                  "finished_the_work": true
                 }
               }
             }
@@ -713,6 +746,90 @@
                 "flags": {
                   "player_stays_permanently": true,
                   "player_stays_ashenveld": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "hand_it_to_branch",
+          "text": "Hand the work to Branch with written orders, and go.",
+          "requires": {
+            "class": "commander"
+          },
+          "roll": null,
+          "locked_hint": "Commander only",
+          "outcomes": {
+            "default": {
+              "text": "You write the orders out in full, the way you were taught: what, who, when, what to do if. Branch reads them twice and folds them into his coat. \"Go,\" he says. You go.",
+              "next_scene": "act3_ch3_road_further",
+              "state_changes": {
+                "flags": {
+                  "player_leaves_ashenveld": true,
+                  "left_unfinished": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "read_the_last_letter_again",
+          "text": "Read their last letter again for what it does not say.",
+          "requires": {
+            "class": "arcane"
+          },
+          "roll": null,
+          "locked_hint": "Arcane only",
+          "outcomes": {
+            "default": {
+              "text": "The hand is wrong. Not theirs-but-hurried. Theirs-but-unsteady, the letters leaning, the ink pressed too hard at the start of each line as if every word took effort. They were ill when they wrote it. You leave within the hour.",
+              "next_scene": "act3_ch3_road_further",
+              "state_changes": {
+                "flags": {
+                  "player_leaves_ashenveld": true,
+                  "left_unfinished": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "ask_the_carters",
+          "text": "Ask the carters on the west road where they last saw a traveller alone.",
+          "requires": {
+            "class": "ranger"
+          },
+          "roll": null,
+          "locked_hint": "Ranger only",
+          "outcomes": {
+            "default": {
+              "text": "The third carter remembers: an inn two towns on, a traveller who came in one evening and did not come down the next morning. \"Fever, they said.\" You are on the road before he has finished.",
+              "next_scene": "act3_ch3_road_further",
+              "state_changes": {
+                "flags": {
+                  "player_leaves_ashenveld": true,
+                  "left_unfinished": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "write_to_the_innkeeper",
+          "text": "Write to the innkeeper, not to them.",
+          "requires": {
+            "class": "cipher"
+          },
+          "roll": null,
+          "locked_hint": "Cipher only",
+          "outcomes": {
+            "default": {
+              "text": "The innkeeper writes back by return, which tells you most of it before you open the letter. A fever. Improving. \"Your friend asks me not to worry you.\" You leave the next morning.",
+              "next_scene": "act3_ch3_road_further",
+              "state_changes": {
+                "flags": {
+                  "player_leaves_ashenveld": true,
+                  "left_unfinished": true
                 }
               }
             }
