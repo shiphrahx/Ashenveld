@@ -56,7 +56,21 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "[missing person] looks at you when you say this. Something in their face moves — not objection, something more complicated.\n\n\"If you go back,\" they say, \"and the Compact closes the road properly, you may not be able to return.\"\n\n\"I know,\" you say.\n\nA pause. \"Then go,\" they say. \"Come back. I will be here.\"\n\nThey say it simply, with the quality of someone who has spent fourteen months waiting and has become good at it. You leave the outskirts and head west.",
+              "text": [
+                "[missing person] looks at you when you say this. Something in their face moves — not objection, something more complicated.",
+                "\"If you go back,\" they say, \"and the Compact closes the road properly, you may not be able to return.\"",
+                "\"I know,\" you say.",
+                "A pause. \"Then go,\" they say. \"Come back. I will be here.\"",
+                "They say it simply, with the quality of someone who has spent fourteen months waiting and has become good at it. You leave the outskirts and head west.",
+                {
+                  "when": {
+                    "flags": {
+                      "maret_joined": true
+                    }
+                  },
+                  "text": "Maret shoulders her pack without being asked. \"I am coming,\" she says. \"My people are under that notice.\""
+                }
+              ],
               "next_scene": "act2_ch3_compact_checkpoint",
               "state_changes": {
                 "flags": {

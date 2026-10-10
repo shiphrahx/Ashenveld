@@ -24,7 +24,21 @@
       },
       "requires": {},
       "text": {
-        "default": "The ruins announce themselves gradually, then all at once.\n\nFirst: stones at odd angles in the forest floor, too regular to be natural, too broken to be structural. You step over them without thinking about it. Then more of them. Then a wall — or the suggestion of one, two metres of standing stone before it ends in nothing. Then an archway with no gate and no building on either side, framing a rectangle of grey sky.\n\nThen the ground changes. The forest floor gives way to something harder beneath a thin layer of soil — a surface, worked, the ghost of a road or a floor, the memory of a place where people walked with intention.\n\nYou are in the ruins.\n\nThe silence here is different from the forest silence. Denser. More specific. The kind of silence that accumulates over centuries rather than hours.",
+        "default": [
+          "The ruins announce themselves gradually, then all at once.",
+          "First: stones at odd angles in the forest floor, too regular to be natural, too broken to be structural. You step over them without thinking about it. Then more of them. Then a wall — or the suggestion of one, two metres of standing stone before it ends in nothing. Then an archway with no gate and no building on either side, framing a rectangle of grey sky.",
+          "Then the ground changes. The forest floor gives way to something harder beneath a thin layer of soil — a surface, worked, the ghost of a road or a floor, the memory of a place where people walked with intention.",
+          "You are in the ruins.",
+          {
+            "when": {
+              "flags": {
+                "maret_joined": true
+              }
+            },
+            "text": "Maret stops at the first broken arch. \"Three paths go through here,\" she says. \"I found two of them. I never found where the third begins.\""
+          },
+          "The silence here is different from the forest silence. Denser. More specific. The kind of silence that accumulates over centuries rather than hours."
+        ],
         "commander": "You move through the outskirts with the systematic attention of someone clearing a position, except the position has no edges you can find and no threats you can name.\n\nThe ruins are large. Larger than the approach suggested. What is visible above ground is only the top layer — you can see, where erosion has exposed the edges of things, that the structure goes down. Deep.",
         "arcane": "The ruins speak to you in the language of accumulated working, the residue of things done here over centuries. Not the curse — older than the curse. This place was active, purposeful, inhabited by people who understood the invisible architecture of the world in ways your tradition has only partially recovered.\n\nYou want to stay here for a year. You do not have a year. You take notes and keep moving.",
         "ranger": "You read the outskirts the way you would read new territory — looking for paths, for the signs of recent passage, for the places where the ground is less dead than everywhere else.\n\nThere are paths here. Not made deliberately — worn, by repeated passage. Something or someone has been moving through these ruins with regularity. The paths converge. They converge toward the centre.",
@@ -214,6 +228,14 @@
         "default": [
           "The cairn is at the convergence of three paths through the outskirts, in a space that has slightly less curse-density than the surrounding area — either by coincidence or by design.",
           "On top of it: a piece of cloth weighted with a flat stone. You recognise the cloth before you pick it up. You would recognise it anywhere.",
+          {
+            "when": {
+              "flags": {
+                "maret_joined": true
+              }
+            },
+            "text": "\"That is their hand,\" Maret says. She does not touch the stone."
+          },
           "Under the cloth, scratched into the flat stone in small careful letters:",
           "*I am below. Take the south passage. Do not touch the carved walls. Wait at the gate.*",
           "The scratches are fresh. Whoever wrote this knew you were already past the line.",
@@ -491,6 +513,14 @@
         "default": [
           "Footsteps. From deeper in the ruins, from past the gate.",
           "A pace you recognise. You have not heard it in over a year — in the time before that you heard it often enough that your body remembers it the way your body remembers anything repeated: not as a fact but as a feeling, a specific quality of presence.",
+          {
+            "when": {
+              "flags": {
+                "maret_joined": true
+              }
+            },
+            "text": "Maret takes two steps back."
+          },
           "They come through the gate.",
           "They are changed. You see that immediately and note it as fact before you let yourself feel it. Thinner. The particular thinness of someone who has been eating what the environment offers rather than what they chose. Their eyes have a quality you have seen in people who have been somewhere that altered them — not the vacancy of the afflicted, something almost opposite: an excess of attention, as if they are seeing more than you are and have been for a long time.",
           {
@@ -624,7 +654,22 @@
         }
       },
       "text": {
-        "default": "You sit together at the base of the gate stones, in the Watcher's proximity, which they seem unbothered by — they have been near the Watcher for months.\n\nThey talk. You listen first.\n\nFourteen months. They came in looking for the source of the curse, following the same trail Maret gave them. They reached the marker line and went past it. They found the inner approach and followed it down. And they found the source chamber — the original sealing mechanism, broken, radiating the curse outward through the stone and soil and water of Ashenveld.\n\nAnd they found the sealing ritual. The original text, carved into the chamber walls in full. They have spent fourteen months learning to read it.\n\n\"I can seal it,\" they say. \"I know how. But the ritual requires two people and I have been alone.\"\n\nThey look at you. The implication is clear and was clear from the moment they left the letter on the cairn and the note in the campsite and possibly from the moment they wrote the letter that brought you here.",
+        "default": [
+          "You sit together at the base of the gate stones, in the Watcher's proximity, which they seem unbothered by — they have been near the Watcher for months.",
+          {
+            "when": {
+              "flags": {
+                "maret_joined": true
+              }
+            },
+            "text": "They look past you. \"Maret.\"\n\n\"I should have come sooner,\" Maret says. Nothing else, yet."
+          },
+          "They talk. You listen first.",
+          "Fourteen months. They came in looking for the source of the curse, following the same trail Maret gave them. They reached the marker line and went past it. They found the inner approach and followed it down. And they found the source chamber — the original sealing mechanism, broken, radiating the curse outward through the stone and soil and water of Ashenveld.",
+          "And they found the sealing ritual. The original text, carved into the chamber walls in full. They have spent fourteen months learning to read it.",
+          "\"I can seal it,\" they say. \"I know how. But the ritual requires two people and I have been alone.\"",
+          "They look at you. The implication is clear and was clear from the moment they left the letter on the cairn and the note in the campsite and possibly from the moment they wrote the letter that brought you here."
+        ],
         "commander": "\"You planned this,\" you say. Not accusingly. Observing.\n\n\"I hoped,\" they say. There is a distinction and you hear it. \"I hoped you would come and I hoped you would be willing and I left markers at every point that I thought would tell you what you were walking toward without telling you what I needed from you.\"\n\nA pause. \"I did not want to ask you before you knew what you were agreeing to.\"\n\nThis is, you note, either the most considerate thing anyone has ever done for you or a form of manipulation so refined it does not feel like manipulation. Possibly both.",
         "arcane": "Part of your mind has been studying this for eleven years, and it takes the information in whole. The original sealing ritual. Two participants. Fourteen months learning a ritual for two, alone.\n\n\"What does the ritual require of the second participant?\" you ask.\n\nThe pause before they answer tells you more than anything else they say.",
         "ranger": "\"You have been in there,\" you say. Meaning the source chamber. \"Past the marker line, in the centre of it.\"\n\n\"Yes.\"\n\n\"For fourteen months.\"\n\n\"Yes.\"\n\nYou look at them — the whole of them, not just their face. What fourteen months in the source chamber does to a person who is not afflicted is something you are looking at for the first time. You are still deciding what you see.",

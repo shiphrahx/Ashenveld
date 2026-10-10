@@ -453,12 +453,25 @@
       },
       "requires": {},
       "text": {
-        "default": "You have been in the chamber for over an hour. [missing person] is watching you with the specific attention of someone monitoring for the first signs of overexposure.\n\n\"We should leave,\" they say. \"For today.\"\n\nYou feel the effects of the chamber — not acutely, not dangerously, but present. A slight narrowing at the edges. A quality of distance between yourself and the things that usually feel immediate.\n\n\"The ritual,\" you say. \"Are we doing it?\"\n\nThey look at you for a moment. \"I would like to,\" they say. \"But you came here for me and I am asking you to risk yourself for Ashenveld. Those are different things. I want you to choose it, not be led into it.\" A pause. \"We go back to the outskirts. You sleep. Tomorrow you tell me what you want to do.\"",
+        "default": [
+          "You have been in the chamber for over an hour. [missing person] is watching you with the specific attention of someone monitoring for the first signs of overexposure.",
+          "\"We should leave,\" they say. \"For today.\"",
+          "You feel the effects of the chamber — not acutely, not dangerously, but present. A slight narrowing at the edges. A quality of distance between yourself and the things that usually feel immediate.",
+          "\"The ritual,\" you say. \"Are we doing it?\"",
+          "They look at you for a moment. \"I would like to,\" they say. \"But you came here for me and I am asking you to risk yourself for Ashenveld. Those are different things. I want you to choose it, not be led into it.\" A pause. \"We go back to the outskirts. You sleep. Tomorrow you tell me what you want to do.\"",
+          {
+            "when": {
+              "flags": {
+                "maret_joined": true
+              }
+            },
+            "text": "Maret is where you left her in the outskirts, sitting with her back to a fallen pillar. She would not go down. She stands when you both come up and looks at [missing person] for a long time, and says nothing."
+          }
+        ],
         "commander": "\"If we do not seal it,\" you say, \"what happens?\"\n\n\"Crestfall is gone in weeks,\" they say. \"Then the next town. Then the next. The mechanism's degradation is accelerating. In a year — possibly less — the affected area will be large enough that stopping it becomes geometrically harder with each passing month.\"\n\nA military assessment of the situation. You have had to make worse calls with worse information. \"Tomorrow,\" you say.",
         "arcane": "\"If we do the ritual and it does not work,\" you say, \"what happens to us?\"\n\nThey are quiet for a moment. \"The text does not describe failure clearly. It describes the conditions for success. The implication is that the mechanism requires sufficient clarity of intention — if the intention is not clear enough, the mechanism simply does not respond and nothing happens.\"\n\nA pause. \"The other possibility — that the mechanism responds and the participants are not prepared for what responding entails — the text is less clear about that.\"",
         "ranger": "You have been tracking your own symptoms since you entered the chamber. The narrowing is mild. The temporal distortion — time moving inconsistently — is present but not acute. You are within safe parameters.\n\n\"I can stay longer if useful,\" you say.\n\n\"No,\" they say. Firmly, not unkindly. \"First exposure should be short. The effects compound on subsequent visits. You need a baseline.\" They move toward the passage entrance. \"Tomorrow.\"",
-        "cipher": "\"There are things happening in Crestfall,\" you say. \"Seriva. Vorne. The timeline is not only ours.\"\n\n\"I know,\" they say. \"Which is why we need to move quickly and carefully, which requires you to rest and process today before we discuss timing.\" A pause. \"I have been here fourteen months. I know how to think in this place. You just arrived. Trust me on this one thing.\"",
-        "maret_note": "If Maret joined the player: Maret has been waiting in the outskirts during this scene. She has not entered the inner approach. When the player and missing person emerge, she and the missing person see each other for the first time in fourteen months."
+        "cipher": "\"There are things happening in Crestfall,\" you say. \"Seriva. Vorne. The timeline is not only ours.\"\n\n\"I know,\" they say. \"Which is why we need to move quickly and carefully, which requires you to rest and process today before we discuss timing.\" A pause. \"I have been here fourteen months. I know how to think in this place. You just arrived. Trust me on this one thing.\""
       },
       "choices": [
         {
