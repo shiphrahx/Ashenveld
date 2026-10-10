@@ -1,6 +1,7 @@
 import React from 'react'
 import { getAllNpcs } from '../loader'
 import type { GameState } from '../types'
+import Panel from './Panel'
 import styles from './People.module.css'
 
 interface Props {
@@ -58,12 +59,7 @@ export default function People({ state, onClose }: Props) {
     .sort((a, b) => b.closeness - a.closeness)
 
   return (
-    <div className={styles.overlay} onClick={onClose}>
-      <div className={styles.panel} onClick={e => e.stopPropagation()}>
-        <div className={styles.header}>
-          <span className={styles.title}>People</span>
-          <button className={styles.close} onClick={onClose}>✕</button>
-        </div>
+    <Panel title="People" onClose={onClose}>
 
         <div className={styles.body}>
           {people.length === 0 ? (
@@ -89,7 +85,6 @@ export default function People({ state, onClose }: Props) {
             ))
           )}
         </div>
-      </div>
-    </div>
+    </Panel>
   )
 }

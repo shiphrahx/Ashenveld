@@ -7,7 +7,7 @@
  *  3. Lazy-load chapter files only when a scene inside them is needed
  */
 
-import type { MasterIndex, ActMeta, ChapterFile, Scene, LocationDef, NpcDef } from './types'
+import type { MasterIndex, ActMeta, ChapterFile, Scene, LocationDef, NpcDef, NotesFile } from './types'
 
 // ─── Module-level caches ──────────────────────────────────────────────────────
 
@@ -17,6 +17,7 @@ const chapterCache: Record<string, ChapterFile> = {}
 // Each act meta names its tables differently (locations, new_locations, new_locations_act3).
 const locations: Record<string, LocationDef> = {}
 const npcs: Record<string, NpcDef> = {}
+let notes: NotesFile = { leads: [], notes: [] }
 
 // ─── Path helpers ─────────────────────────────────────────────────────────────
 
@@ -39,7 +40,7 @@ export async function initLoader(): Promise<MasterIndex> {
   masterIndex = (await res.json()) as MasterIndex
 
   // Load all three act metas in parallel
-  await Promise.all([loadMeta(1), loadMeta(2), loadMeta(3)])
+  await Promise.all([loadMeta(1), loadMeta(2), loadMeta(3), loadNotes()])
   for (const act of [1, 2, 3]) {
     const m = metaCache[act] as unknown as Record<string, Record<string, never> | undefined>
     Object.assign(locations, m.locations ?? {}, m.new_locations ?? {}, m.new_locations_act3 ?? {})
@@ -60,6 +61,19 @@ export function getActMeta(act: number): ActMeta {
   const meta = metaCache[act]
   if (!meta) throw new Error(`Act ${act} meta not loaded`)
   return meta
+}
+
+export const getNotes = (): NotesFile => notes
+
+/** The chapter file a scene belongs to, if it has been loaded. */
+export function getChapterOf(sceneId: string): ChapterFile | undefined {
+  const ref = masterIndex?.scene_index[sceneId]
+  return ref ? chapterCache[ref.file] : undefined
+}
+
+/** A scene that is already loaded, without waiting. */
+export function peekScene(sceneId: string): Scene | undefined {
+  return getChapterOf(sceneId)?.scenes.find(s => s.id === sceneId)
 }
 
 export const getLocation = (id: string): LocationDef | undefined => locations[id]
@@ -105,6 +119,12 @@ async function loadMeta(act: number): Promise<void> {
   const res = await fetch(url)
   if (!res.ok) throw new Error(`Failed to load meta for act ${act}: ${url}`)
   metaCache[act] = (await res.json()) as ActMeta
+}
+
+async function loadNotes(): Promise<void> {
+  const res = await fetch(`${import.meta.env.BASE_URL}resources/notes.json`)
+  if (!res.ok) throw new Error('Failed to load notes.json')
+  notes = (await res.json()) as NotesFile
 }
 
 async function loadChapterFile(act: number, filename: string): Promise<void> {

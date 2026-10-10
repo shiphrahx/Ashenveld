@@ -35,6 +35,7 @@ const KEYS = {
     'min_stat', 'relationship_type', 'visited', 'not_visited', 'taken', 'min_curse', 'max_curse', 'health_below',
     'min_gold', 'any', 'not'],
   route: ['when', 'next'],
+  chapterFile: ['chapter', 'title', 'objective', 'scenes'],
   ending: ['id', 'title'],
 }
 const CLASSES = ['commander', 'arcane', 'ranger', 'cipher']
@@ -67,10 +68,13 @@ for (const m of metas) {
 const items = index.inventory_items ?? {}
 
 const scenes = new Map()          // id → { scene, file }
+const texts = []                  // [where, string]
 for (const act of ['act1', 'act2', 'act3']) {
   for (const f of fs.readdirSync(path.join(RES, act)).sort()) {
     if (!/_ch\d+_/.test(f)) continue
     const j = read(path.join(RES, act, f))
+    checkKeys(j, 'chapterFile', f)
+    if (j.objective) texts.push([`${f}:objective`, j.objective])
     for (const s of j.scenes) {
       if (scenes.has(s.id)) err(`${s.id}: defined twice (${scenes.get(s.id).file}, ${f})`)
       scenes.set(s.id, { scene: s, file: f })
@@ -92,7 +96,6 @@ const flagsRead = new Set()
 const flagsRequiredTrue = new Map()     // flag → first place it is required
 const itemsGranted = new Set()
 const itemsRequired = new Set()
-const texts = []                        // [where, string]
 
 function checkCondition(c, where) {
   if (!c || typeof c !== 'object') return
@@ -158,6 +161,7 @@ for (const [id, { scene: s }] of scenes) {
   checkChanges(s.on_enter?.state_changes, `${id}:on_enter`)
   checkCondition(s.requires, `${id}:requires`)
   if (s.ending) checkKeys(s.ending, 'ending', id)
+  if (s.objective) texts.push([`${id}:objective`, s.objective])
   for (const k of Object.keys(s.text ?? {})) {
     if (k === 'default' || CLASSES.includes(k)) walkRich(s.text[k], `${id}:text.${k}`)
     else warn(`${id}: non-class key "${k}" inside text`)
@@ -194,6 +198,17 @@ for (const [id, { scene: s }] of scenes) {
 }
 for (const [id, def] of Object.entries(items)) texts.push([`item ${id}`, def.description ?? ''])
 
+// ── Journal notes and leads ─────────────────────────────────────────────────
+const notesPath = path.join(RES, 'notes.json')
+const journalNotes = fs.existsSync(notesPath) ? read(notesPath) : { leads: [], notes: [] }
+const NOTE_GROUPS = ['People', 'The Curse', 'The Ruins', 'The Factions']
+journalNotes.leads.forEach((l, i) => { checkCondition(l.when, `notes.json lead ${i}`); texts.push([`notes.json lead ${i}`, l.text]) })
+for (const n of journalNotes.notes) {
+  flagsRead.add(n.flag)
+  if (!NOTE_GROUPS.includes(n.group)) err(`notes.json ${n.flag}: unknown group "${n.group}"`)
+  texts.push([`notes.json ${n.flag}`, n.text])
+}
+
 // ── 3. Reachability ─────────────────────────────────────────────────────────
 const start = index.starting_scene
 if (!scenes.has(start)) err(`starting_scene "${start}" is not a scene`)
@@ -206,6 +221,8 @@ while (queue.length) {
   for (const n of next) if (n && !seen.has(n)) { seen.add(n); queue.push(n) }
 }
 for (const id of scenes.keys()) if (!seen.has(id)) err(`${id}: cannot be reached from ${start}`)
+
+for (const n of journalNotes.notes) if (!flagsSet.has(n.flag)) err(`notes.json: note for "${n.flag}", which is never set`)
 
 // ── 7. Flags required and never set ─────────────────────────────────────────
 for (const [f, where] of flagsRequiredTrue) if (!flagsSet.has(f)) err(`${where}: flag "${f}" is required but never set`)

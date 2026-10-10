@@ -151,8 +151,6 @@ test('saves survive a reload and Return to Title', async ({ page }) => {
 })
 
 test('story text and choices fit a phone screen', async ({ browser }) => {
-  // The layout is fixed-width until U1 (step 4) makes it responsive.
-  test.fixme(true, 'needs the responsive layout from U1')
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } })
   await createCharacter(page, 'Ranger')
   const width = 390
@@ -161,4 +159,55 @@ test('story text and choices fit a phone screen', async ({ browser }) => {
   expect(para!.x + para!.width).toBeLessThanOrEqual(width)
   for (const box of await page.locator('[data-choice-id]').evaluateAll(els => els.map(e => e.getBoundingClientRect().right)))
     expect(box).toBeLessThanOrEqual(width)
+})
+
+test('keyboard only, from the title into the story and through choices', async ({ page }) => {
+  const errors = watchConsole(page)
+  await stubRandom(page, 0.95)
+  await page.goto('./')
+  await page.getByRole('button', { name: /^begin$/i }).focus()
+  await page.keyboard.press('Enter')
+  await page.getByRole('radio', { name: /woman/i }).focus()
+  await page.keyboard.press('Space')
+  await page.getByRole('button', { name: /next/i }).focus()
+  await page.keyboard.press('Enter')
+  await page.getByRole('radio', { name: 'The Ranger' }).focus()
+  await page.keyboard.press('Enter')
+  await page.getByRole('button', { name: /next/i }).focus()
+  await page.keyboard.press('Enter')
+  await page.locator('input').first().focus()
+  await page.keyboard.type('Ines')
+  await page.keyboard.press('Tab')
+  await page.keyboard.press('Enter')                                  // first relationship
+  await page.getByRole('button', { name: /next/i }).focus()
+  await page.keyboard.press('Enter')
+  await page.locator('input').first().focus()
+  await page.keyboard.type('Tam')
+  await page.keyboard.press('Tab')
+  await page.getByRole('button', { name: /enter ashenveld/i }).focus()
+  await page.keyboard.press('Enter')
+  await expect(page.getByRole('button', { name: /enter ashenveld/i })).toBeFocused()
+  await page.keyboard.press('Enter')
+  await expect(page.locator('[data-scene-id]')).toBeVisible()
+
+  for (let i = 0; i < 6; i++) {
+    await page.keyboard.press('1')
+    for (let k = 0; k < 3; k++) {
+      await page.waitForTimeout(150)
+      await page.keyboard.press('Enter')
+      if (!(await page.locator('[data-choice-id="continue"], [data-dice-continue]').count())) break
+    }
+    await expect(page.locator('[data-choice-id="continue"]')).toHaveCount(0)
+    expect(await page.locator('[data-scene-id]').getAttribute('data-scene-id'), `stuck after choice ${i}`).toBeTruthy()
+  }
+  await page.keyboard.press('j')
+  await expect(page.getByRole('dialog', { name: 'Journal' })).toBeVisible()
+  await page.keyboard.press('Escape')
+  await expect(page.getByRole('dialog')).toHaveCount(0)
+  await page.keyboard.press('?')
+  await expect(page.getByRole('dialog', { name: 'Keys' })).toBeVisible()
+  await page.keyboard.press('Escape')
+  await page.keyboard.press('Escape')
+  await expect(page.getByRole('dialog', { name: 'Menu' })).toBeVisible()
+  expect(errors).toEqual([])
 })

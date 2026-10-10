@@ -1,6 +1,7 @@
 {
   "chapter": 3,
   "title": "The World Above",
+  "objective": "Vorne holds Crestfall. Decide where you are needed.",
   "scenes": [
     {
       "id": "act2_ch3_crestfall_news",

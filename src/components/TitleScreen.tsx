@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styles from './TitleScreen.module.css'
 import StarField from './StarField'
+import Settings from './Settings'
 
 interface Props {
   hasSave: boolean
@@ -11,6 +12,7 @@ interface Props {
 
 export default function TitleScreen({ hasSave, saveEnded = false, onNewGame, onContinue }: Props) {
   const [confirming, setConfirming] = useState(false)
+  const [settingsOpen, setSettingsOpen] = useState(false)
 
   return (
     <div className={styles.titleScreen}>
@@ -42,9 +44,11 @@ export default function TitleScreen({ hasSave, saveEnded = false, onNewGame, onC
             <button className={styles.titleBtn} onClick={hasSave ? () => setConfirming(true) : onNewGame}>
               <span>{hasSave ? 'New Game' : 'Begin'}</span>
             </button>
+            <button className={styles.titleLink} onClick={() => setSettingsOpen(true)}>Settings</button>
           </>
         )}
       </div>
+      {settingsOpen && <Settings onClose={() => setSettingsOpen(false)} />}
     </div>
   )
 }

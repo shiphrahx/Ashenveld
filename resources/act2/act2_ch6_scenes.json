@@ -1,6 +1,7 @@
 {
   "chapter": 6,
   "title": "The Chamber",
+  "objective": "Seal the mechanism.",
   "scenes": [
     {
       "id": "act2_ch6_day_of_ritual",

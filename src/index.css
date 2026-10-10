@@ -22,55 +22,73 @@
 
   --text-bright: #ccdaec;
   --text-main:   #8fa8c8;
-  --text-muted:  #4a5e78;
-  --text-dim:    #2a3a50;
+  /* text: every text colour passes 4.5:1 on --bg */
+  --text-muted:  #7389a6;
+  --text-faint:  #6d84a2;   /* smallest allowed text colour */
+  --text-dim:    #2a3a50;   /* decoration only: rules, pips, borders. Never text */
 
   --red-dark:    #3a1818;
   --red-mid:     #7a3030;
-  --red-bright:  #c04848;
+  --red-bright:  #d96a6a;
 
   --success:     #4a8a6a;
   --success-lit: #6ab88a;
   --partial:     #5a7aaa;
   --partial-lit: #7aaadc;
   --fail:        #8a3a3a;
-  --fail-lit:    #c04848;
+  --fail-lit:    #e07070;
 
   /* creation mockup extras */
   --panel:       #06070d;
   --blue-deep:   #0d1828;
   --red:         #6a2828;
   --red-lit:     #a84040;
+
+  /* type */
+  --font-display: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  --font-story: 'Atkinson Hyperlegible', 'Segoe UI', system-ui, sans-serif;
+  --font-ui: 'Atkinson Hyperlegible', 'Segoe UI', system-ui, sans-serif;
+  --story-scale: 1;                                   /* settings: 1, 1.15, 1.3 */
+  --story-size: calc(clamp(17px, 0.5vw + 14px, 20px) * var(--story-scale));
+  --story-leading: 1.7;                               /* settings: 1.7 or 1.95 */
+  --story-tracking: 0.01em;                           /* settings: 0.01em or 0.05em */
+  --story-word-spacing: normal;
+  --story-measure: 66ch;
+  --fs-label: 12px;                                   /* floor for any label */
+  --fs-small: 13px;
+
+  /* layout */
+  --shell-w: min(100vw - 48px, 1480px);
+  --shell-h: min(100dvh - 48px, 920px);
+  --gap: clamp(12px, 1.6vw, 28px);
+  --focus: 2px solid var(--blue-ice);
 }
+
+:focus-visible { outline: var(--focus); outline-offset: 2px; }
 
 html, body {
   width: 100%;
   min-height: 100%;
   background: var(--black);
-  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-family: var(--font-ui);
   font-size: 16px;
   color: var(--text-main);
 }
 
-/* Game shell and title screen need centred/overflow:hidden layout.
-   Creation screen needs to scroll. We handle this per-phase via #root classes. */
 #root {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#root.game, #root.title {
-  height: 100vh;
-  overflow: hidden;
-}
-
-#root.creation {
-  align-items: flex-start;
-  overflow-y: auto;
-  overflow-x: hidden;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
 }
 
 button { font-family: inherit; cursor: pointer; }
+
+/* ── Reading settings (U4) ── */
+:root[data-font="serif"]  { --font-story: 'Lora', Georgia, 'Times New Roman', serif; }
+:root[data-font="system"] { --font-story: system-ui, -apple-system, 'Segoe UI', sans-serif; }
+
+/* ── Motion off: everything lands at once (E1) ── */
+:root[data-motion="off"] *, :root[data-motion="off"] *::before, :root[data-motion="off"] *::after {
+  animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+}

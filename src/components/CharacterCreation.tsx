@@ -83,6 +83,11 @@ const CLASS_LABELS: Record<string, string> = {
   cipher: 'The Cipher',
 }
 
+/** Enter and Space choose a card, as they would a button. */
+function selectKey(e: React.KeyboardEvent, pick: () => void) {
+  if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick() }
+}
+
 export default function CharacterCreation({ onComplete, onBack }: Props) {
   const [step, setStep] = useState(1)
   const [gender, setGender] = useState<string | null>(null)
@@ -156,12 +161,16 @@ export default function CharacterCreation({ onComplete, onBack }: Props) {
               </div>
             </div>
 
-            <div className={styles.genderRow}>
+            <div className={styles.genderRow} role="radiogroup" aria-label="Who are you?">
               {(['Man', 'Woman'] as const).map(g => (
                 <div
                   key={g}
+                  role="radio"
+                  aria-checked={gender === g}
+                  tabIndex={0}
                   className={`${styles.genderCard} ${gender === g ? styles.selected : ''}`}
                   onClick={() => setGender(g)}
+                  onKeyDown={e => selectKey(e, () => setGender(g))}
                 >
                   <div className={styles.check} />
                   <div className={styles.genderIcon}>
@@ -206,12 +215,17 @@ export default function CharacterCreation({ onComplete, onBack }: Props) {
               </div>
             </div>
 
-            <div className={styles.classGrid}>
+            <div className={styles.classGrid} role="radiogroup" aria-label="Your class">
               {CLASS_DATA.map(c => (
                 <div
                   key={c.id}
+                  role="radio"
+                  aria-checked={playerClass === c.id}
+                  aria-label={c.name}
+                  tabIndex={0}
                   className={`${styles.classCard} ${playerClass === c.id ? styles.selected : ''}`}
                   onClick={() => setPlayerClass(c.id)}
+                  onKeyDown={e => selectKey(e, () => setPlayerClass(c.id))}
                 >
                   <div className={styles.classTop}>
                     <div>

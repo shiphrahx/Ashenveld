@@ -1,4 +1,5 @@
 .scenePanel {
+  height: 100%;
   border-right: 1px solid var(--border);
   display: flex;
   flex-direction: column;
@@ -8,8 +9,23 @@
 
 .sceneArt {
   flex: 1;
+  min-height: 0;
   overflow: hidden;
   position: relative;
+}
+
+/* scanlines, art area only until E5 replaces them */
+.sceneArt::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent, transparent 3px,
+    rgba(0,0,0,0.06) 3px, rgba(0,0,0,0.06) 4px
+  );
+  pointer-events: none;
+  z-index: 3;
 }
 
 .sceneArt svg {
@@ -37,10 +53,10 @@
 }
 
 .placeholderText {
-  font-family: 'Cinzel', serif;
-  font-size: 10px;
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
   letter-spacing: 0.15em;
-  color: #3a3a45;
+  color: var(--text-faint);
   text-transform: uppercase;
 }
 
@@ -65,8 +81,8 @@
 .sceneFooter {
   padding: 8px 14px;
   border-top: 1px solid var(--border-dim);
-  font-family: 'Cinzel', serif;
-  font-size: 11px;
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
   letter-spacing: 0.22em;
   color: var(--text-main);
   text-transform: uppercase;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react'
+import React, { useEffect, useState, useCallback, useRef } from 'react'
 import type { GameState, Scene, Outcome, JournalEntry } from './types'
 import { initLoader, resolveScene, locationName } from './loader'
 import {
@@ -11,13 +11,15 @@ import {
   hasSave,
   deleteSave,
   recordEnding,
+  diffState,
 } from './gameState'
 import { meets } from './conditions'
+import { resolveRich } from './text'
 import TitleScreen from './components/TitleScreen'
 import StarField from './components/StarField'
 import GameOver from './components/GameOver'
 import EndScreen from './components/EndScreen'
-import Journal from './components/Journal'
+import Journal, { journalKeys } from './components/Journal'
 import Items from './components/Items'
 import People from './components/People'
 import Menu from './components/Menu'
@@ -26,20 +28,17 @@ import CharacterCreation, { type CreationResult } from './components/CharacterCr
 import SceneView from './components/SceneView'
 import SceneArt from './components/SceneArt'
 import Sidebar from './components/Sidebar'
+import StatusStrip from './components/StatusStrip'
+import TabBar, { type PanelId } from './components/TabBar'
+import Panel from './components/Panel'
+import Settings from './components/Settings'
+import KeysHelp from './components/KeysHelp'
+import { useHotkeys } from './hooks/useHotkeys'
+import Toasts, { type Toast } from './components/Toasts'
+import { useSettings } from './settings'
 import styles from './App.module.css'
 
 type AppPhase = 'loading' | 'title' | 'creation' | 'game' | 'ended' | 'gameover' | 'error'
-
-// Keep #root class in sync with phase so CSS can adjust overflow/height
-function setRootClass(phase: AppPhase) {
-  const root = document.getElementById('root')
-  if (!root) return
-  root.className = phase === 'game' || phase === 'loading' || phase === 'error' || phase === 'gameover'
-    ? 'game'
-    : phase === 'creation' || phase === 'ended'
-    ? 'creation'
-    : 'title'
-}
 
 /** Follow route scenes until one that is shown. Route scenes are never rendered. */
 async function followRoutes(sceneId: string, state: GameState): Promise<Scene> {
@@ -58,14 +57,32 @@ export default function App() {
   const [currentScene, setCurrentScene] = useState<Scene | null>(null)
   const [saveExists, setSaveExists] = useState(false)
   const [savedEnded, setSavedEnded] = useState(false)
-  const [journalOpen, setJournalOpen] = useState(false)
-  const [itemsOpen, setItemsOpen] = useState(false)
-  const [peopleOpen, setPeopleOpen] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [mapOpen, setMapOpen] = useState(false)
-  const [lastOutcome, setLastOutcome] = useState<string>('')
+  const [panel, setPanel] = useState<PanelId | null>(null)
+  const [toasts, setToasts] = useState<Toast[]>([])
+  const [flash, setFlash] = useState<string[]>([])
+  const toastId = useRef(0)
+  const { settings } = useSettings()
+  const toastsOn = useRef(settings.toasts)
+  toastsOn.current = settings.toasts
+  const dropToast = useCallback((id: number) => setToasts(t => t.filter(x => x.id !== id)), [])
 
-  useEffect(() => { setRootClass(phase) }, [phase])
+  // U7: the bar that moved gets a short highlight.
+  const prevState = useRef<GameState | null>(null)
+  useEffect(() => {
+    const a = prevState.current, b = gameState
+    prevState.current = gameState
+    if (!a || !b) return
+    const keys: string[] = []
+    if (a.player.resources.health !== b.player.resources.health) keys.push('health')
+    if (a.player.resources.gold !== b.player.resources.gold) keys.push('gold')
+    for (const f of Object.keys(b.factions) as Array<keyof GameState['factions']>)
+      if (a.factions[f].reputation !== b.factions[f].reputation) keys.push(f)
+    if (!keys.length) return
+    setFlash(keys)
+    const t = setTimeout(() => setFlash([]), 700)
+    return () => clearTimeout(t)
+  }, [gameState])
+  const [lastOutcome, setLastOutcome] = useState<string>('')
 
   const refreshSaveInfo = useCallback(() => {
     setSaveExists(hasSave())
@@ -96,8 +113,14 @@ export default function App() {
       next.world.chapter = scene.chapter
       next.world.current_location = scene.location
       if (scene.when) next = applyWhen(next, scene.when)
+      const beforeEntry = next
       next = applyStateChanges(next, scene.on_enter?.state_changes ?? {})
       next = checkCurse(next)
+      // U7: entry changes have no outcome to sit under, so they show as toasts.
+      if (toastsOn.current) {
+        const lines = diffState(beforeEntry, next, journalKeys).map(c => c.text)
+        if (lines.length) setToasts(t => [...t, ...lines.map(text => ({ id: ++toastId.current, text }))].slice(-3))
+      }
 
       if (next.player.resources.health <= 0) {
         setGameState(next)
@@ -134,7 +157,7 @@ export default function App() {
     if (!saved) { setPhase('creation'); return }
     if (saved.ended) {
       setGameState(saved)
-      setLastOutcome(saved.journal[saved.journal.length - 1]?.outcomeText ?? '')
+      setLastOutcome(saved.ended.text ?? '')
       setPhase('ended')
       return
     }
@@ -171,16 +194,31 @@ export default function App() {
     let next = applyStateChanges(gameState, outcome.state_changes)
     next = { ...next, journal: [...(next.journal ?? []), entry], taken: { ...next.taken, [`${currentScene.id}:${choiceId}`]: true } }
     if (!outcome.next_scene) {
-      next = { ...next, ended: currentScene.ending ?? { id: currentScene.id, title: currentScene.title } }
+      const ending = currentScene.ending ?? { id: currentScene.id, title: currentScene.title }
+      next = { ...next, ended: { ...ending, text: resolveRich(outcome.text, next) } }
       saveGame(next)
       recordEnding(next)
       setGameState(next)
-      setLastOutcome(entry.outcomeText)
+      setLastOutcome(resolveRich(outcome.text, next))
       setPhase('ended')
       return
     }
     await enterScene(outcome.next_scene, next)
   }, [gameState, currentScene, enterScene])
+
+  const closePanel = useCallback(() => setPanel(null), [])
+
+  // Opening the journal marks everything in it as seen.
+  const openPanel = useCallback((id: PanelId) => {
+    if (id === 'journal' && gameState) {
+      const next = { ...gameState, journal_seen: journalKeys(gameState) }
+      setGameState(next)
+      saveGame(next)
+    }
+    setPanel(id)
+  }, [gameState])
+  useHotkeys({ enabled: phase === 'game' && Boolean(currentScene), panelOpen: panel !== null, openPanel })
+  const journalDot = gameState ? journalKeys(gameState).some(k => !(gameState.journal_seen ?? []).includes(k)) : false
 
   // ── Render ────────────────────────────────────────────────────────────────────
 
@@ -236,32 +274,46 @@ export default function App() {
   }
 
   if (phase === 'game' && gameState && currentScene) {
+    const hideClock = currentScene.when?.hide_clock ?? false
     return (
       <>
         <StarField />
         <div className={styles.shell}>
-          <SceneArt locationName={locationName(currentScene.location)} gameState={gameState} />
-          <SceneView scene={currentScene} state={gameState} onChoice={handleChoice} />
-          <Sidebar state={gameState} onJournal={() => setJournalOpen(true)} onItems={() => setItemsOpen(true)} onPeople={() => setPeopleOpen(true)} onMenu={() => setMenuOpen(true)} onMap={() => setMapOpen(true)} hideClock={currentScene.when?.hide_clock} />
-          {journalOpen && (
-            <Journal entries={gameState.journal ?? []} onClose={() => setJournalOpen(false)} />
+          <div className={styles.areaArt}>
+            <SceneArt locationName={locationName(currentScene.location)} gameState={gameState} />
+          </div>
+          <header className={styles.areaStatus}>
+            <StatusStrip state={gameState} hideClock={hideClock} onOpen={() => openPanel('status')} />
+          </header>
+          <main className={styles.areaStory}>
+            <SceneView scene={currentScene} state={gameState} onChoice={handleChoice} />
+          </main>
+          <div className={styles.areaSide}>
+            <Sidebar state={gameState} onOpen={openPanel} hideClock={hideClock} journalDot={journalDot} flash={flash} />
+          </div>
+          <div className={styles.areaTabs}>
+            <TabBar onOpen={openPanel} journalDot={journalDot} />
+          </div>
+          {panel === 'journal' && <Journal state={gameState} scene={currentScene} onClose={closePanel} />}
+          {panel === 'items' && <Items inventory={gameState.inventory} onClose={closePanel} />}
+          {panel === 'people' && <People state={gameState} onClose={closePanel} />}
+          {panel === 'map' && <Map state={gameState} onClose={closePanel} />}
+          {panel === 'status' && (
+            <Panel title="Status" onClose={closePanel}>
+              <Sidebar state={gameState} onOpen={openPanel} hideClock={hideClock} variant="sheet" />
+            </Panel>
           )}
-          {itemsOpen && (
-            <Items inventory={gameState.inventory} onClose={() => setItemsOpen(false)} />
-          )}
-          {peopleOpen && (
-            <People state={gameState} onClose={() => setPeopleOpen(false)} />
-          )}
-          {mapOpen && (
-            <Map state={gameState} onClose={() => setMapOpen(false)} />
-          )}
-          {menuOpen && (
+          {panel === 'menu' && (
             <Menu
               state={gameState}
-              onClose={() => setMenuOpen(false)}
-              onReturnToTitle={() => { setMenuOpen(false); handleReturnToTitle() }}
+              onClose={closePanel}
+              onReturnToTitle={() => { closePanel(); handleReturnToTitle() }}
+              onSettings={() => setPanel('settings')}
             />
           )}
+          {panel === 'settings' && <Settings onClose={closePanel} />}
+          {panel === 'keys' && <KeysHelp onClose={closePanel} />}
+          <Toasts toasts={toasts} onDone={dropToast} />
         </div>
       </>
     )

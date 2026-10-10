@@ -1,14 +1,14 @@
 /* ── Shared base ── */
 .creationScreen {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100dvh;
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
 }
 
 .step {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
 }
@@ -38,7 +38,7 @@
 }
 
 .stepNum {
-  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-family: var(--font-display);
   font-size: 16px;
   letter-spacing: 0.3em;
   color: var(--text-muted);
@@ -47,7 +47,7 @@
 }
 
 .stepTitle {
-  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-family: var(--font-display);
   font-size: 26px;
   font-weight: 400;
   letter-spacing: 0.12em;
@@ -123,7 +123,7 @@
 .genderCard.selected .genderIcon svg { stroke: var(--blue-ice); }
 
 .genderLabel {
-  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-family: var(--font-display);
   font-size: 13px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -221,7 +221,7 @@
 }
 
 .className {
-  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-family: var(--font-display);
   font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -230,7 +230,7 @@
 }
 
 .classArchetype {
-  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-family: var(--font-display);
   font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -241,8 +241,8 @@
 .classCard.selected .className { color: var(--blue-moon); }
 
 .classTag {
-  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
-  font-size: 11px;
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   border: 1px solid var(--border-lit);
@@ -278,7 +278,7 @@
 }
 
 .statPill {
-  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-family: var(--font-display);
   font-size: 12px;
   letter-spacing: 0.1em;
   padding: 4px 10px;
@@ -294,15 +294,15 @@
 
 .statPill.low {
   border-color: var(--red);
-  color: var(--red-lit);
+  color: var(--red-bright);
 }
 
 .classCard.selected .statPill { border-color: var(--border-lit); }
 .classCard.selected .statPill.peak { border-color: var(--blue-steel); color: var(--blue-moon); }
 
 .pillVal {
-  opacity: 0.7;
-  font-size: 10px;
+  color: var(--text-main);
+  font-size: var(--fs-label);
   margin-left: 3px;
 }
 
@@ -320,7 +320,7 @@
 .fieldGroup { display: flex; flex-direction: column; gap: 10px; }
 
 .fieldLabel {
-  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-family: var(--font-display);
   font-size: 12px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -331,7 +331,7 @@
   background: var(--panel);
   border: 1px solid var(--border);
   color: var(--text-bright);
-  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-family: var(--font-ui);
   font-size: 17px;
   padding: 13px 16px;
   outline: none;
@@ -352,7 +352,7 @@
   background: var(--panel);
   border: 1px solid var(--border-lit);
   color: var(--text-main);
-  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-family: var(--font-ui);
   font-size: 15px;
   padding: 12px 10px;
   cursor: pointer;
@@ -421,7 +421,7 @@
 }
 
 .navBack {
-  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-family: var(--font-display);
   font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -461,7 +461,7 @@
 }
 
 .navNext {
-  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-family: var(--font-display);
   font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -488,12 +488,12 @@
 .navNext:hover { border-color: var(--blue-steel); color: var(--white-cold); }
 .navNext:hover::before { transform: scaleX(1); }
 .navNext span { position: relative; z-index: 1; }
-.navNext:disabled { opacity: 0.3; pointer-events: none; }
+.navNext:disabled { opacity: 0.55; pointer-events: none; }
 
 /* ── FINAL SCREEN ── */
 .finalScreen {
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -515,8 +515,8 @@
 }
 
 .finalClass {
-  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
-  font-size: 11px;
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--text-muted);
@@ -524,7 +524,7 @@
 }
 
 .finalName {
-  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-family: var(--font-display);
   font-size: 40px;
   font-weight: 500;
   letter-spacing: 0.14em;
@@ -548,7 +548,7 @@
 .finalText strong { color: var(--blue-moon); font-style: normal; font-weight: 400; }
 
 .beginBtn {
-  font-family: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+  font-family: var(--font-display);
   font-size: 12px;
   letter-spacing: 0.3em;
   text-transform: uppercase;

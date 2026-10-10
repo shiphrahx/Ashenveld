@@ -1,7 +1,8 @@
 .centre {
+  flex: 1;
+  min-height: 0;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid var(--border);
   overflow: hidden;
   position: relative;
 }
@@ -12,7 +13,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: 'Cinzel', serif;
+  font-family: var(--font-display);
   font-size: 12px;
   letter-spacing: 0.14em;
   color: var(--blue-ice);
@@ -20,13 +21,14 @@
   flex-shrink: 0;
 }
 
-.crumb { color: var(--text-muted); font-size: 11px; letter-spacing: 0.1em; display: flex; gap: 14px; }
+.crumb { color: var(--text-muted); font-size: var(--fs-small); letter-spacing: 0.1em; display: flex; gap: 14px; }
 .clock { color: var(--text-main); }
 
 .narrative {
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
-  padding: 28px 32px 20px;
+  padding: 28px clamp(16px, 4vw, 40px) 20px;
   scrollbar-width: thin;
   scrollbar-color: var(--border) transparent;
 }
@@ -34,9 +36,15 @@
 .narrative::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 
 /* narrative paragraphs */
+.narrative {
+  font-family: var(--font-story);
+  font-size: var(--story-size);
+  letter-spacing: var(--story-tracking);
+  word-spacing: var(--story-word-spacing);
+}
 .np {
-  font-size: 17px;
-  line-height: 1.95;
+  font-size: inherit;
+  line-height: var(--story-leading);
   color: var(--text-bright);
   margin-bottom: 22px;
   opacity: 0;
@@ -51,8 +59,8 @@
 
 /* dialogue / indented paragraph */
 .nd {
-  font-size: 17px;
-  line-height: 1.9;
+  font-size: inherit;
+  line-height: var(--story-leading);
   color: var(--text-main);
   padding: 4px 0 4px 20px;
   border-left: 1px solid var(--blue-mid);
@@ -67,8 +75,8 @@
   padding-left: 20px;
   margin: 4px 0 24px;
   color: var(--text-main);
-  font-size: 17px;
-  line-height: 1.9;
+  font-size: inherit;
+  line-height: var(--story-leading);
   opacity: 0;
   animation: npIn 0.55s ease forwards;
 }
@@ -76,7 +84,7 @@
 .lens p:last-child { margin-bottom: 0; }
 .lens em { color: var(--blue-ice); font-style: italic; }
 .lensLabel {
-  font-family: 'Cinzel', serif;
+  font-family: var(--font-display);
   font-size: 12px;
   letter-spacing: 0.12em;
   color: var(--blue-ice);
@@ -85,8 +93,8 @@
 
 /* outcome block */
 .outcomeBlock {
-  font-size: 17px;
-  line-height: 1.85;
+  font-size: inherit;
+  line-height: var(--story-leading);
   padding: 14px 18px;
   margin-bottom: 24px;
   border-left: 2px solid;
@@ -113,8 +121,8 @@
   background: none;
   border: 1px solid var(--border-dim);
   color: var(--text-main);
-  font-family: 'Segoe UI', system-ui, sans-serif;
-  font-size: 17px;
+  font-family: var(--font-ui);
+  font-size: calc(var(--story-size) * 0.95);
   padding: 11px 14px 11px 12px;
   text-align: left;
   cursor: pointer;
@@ -123,6 +131,8 @@
   gap: 12px;
   transition: border-color 0.13s, background 0.13s, color 0.13s;
   line-height: 1.4;
+  min-height: 48px;
+  flex-wrap: wrap;
 }
 
 .ch:hover {
@@ -132,8 +142,8 @@
 }
 
 .mk {
-  font-family: 'Cinzel', serif;
-  font-size: 11px;
+  font-family: var(--font-display);
+  font-size: var(--fs-small);
   color: var(--text-muted);
   min-width: 14px;
   flex-shrink: 0;
@@ -142,8 +152,8 @@
 .lb { flex: 1; }
 
 .badge {
-  font-family: 'Cinzel', serif;
-  font-size: 11px;
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
   letter-spacing: 0.06em;
   padding: 2px 8px;
   border: 1px solid;
@@ -156,3 +166,59 @@
 .badge.medium { color: var(--partial-lit); border-color: var(--partial); }
 .badge.hard   { color: var(--fail-lit);    border-color: var(--fail); }
 .badge.none   { color: var(--text-muted);  border-color: var(--border-lit); }
+
+/* the story column caps its line length */
+.measure { max-width: var(--story-measure); margin: 0 auto; }
+
+@media (max-width: 719px) {
+  .sceneBar { flex-wrap: wrap; gap: 4px 12px; padding: 10px 16px; }
+  .narrative { padding-top: 20px; }
+  .choices { padding: 10px 12px 12px; }
+  .choicesInline { border-top: 1px solid var(--border-dim); margin-top: 8px; padding: 12px 0 0; background: none; }
+}
+
+.sceneTitle {
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  margin: 0;
+}
+.sceneTitle:focus { outline: none; }
+.sceneTitle:focus-visible { outline: var(--focus); outline-offset: 4px; }
+
+/* U2: the scene collapses under its outcome */
+/* 0.6 in the plan, but the aside colour fails 4.5:1 below 0.75 */
+.faded { opacity: 0.75; }
+.showScene {
+  display: inline-block;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  margin-bottom: 16px;
+  min-height: 36px;
+}
+.showScene:hover { border-color: var(--blue-mid); color: var(--white-cold); }
+.outcomeBlock:focus { outline: none; }
+
+/* Text appears at once (U4) */
+:global(:root[data-reveal="instant"]) .np,
+:global(:root[data-reveal="instant"]) .nd,
+:global(:root[data-reveal="instant"]) .lens,
+:global(:root[data-reveal="instant"]) .outcomeBlock { animation: none; opacity: 1; transform: none; }
+
+/* U7: what changed, under the outcome */
+.chips { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.chip {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: var(--text-main);
+  border: 1px solid var(--border-lit);
+  padding: 3px 9px;
+}

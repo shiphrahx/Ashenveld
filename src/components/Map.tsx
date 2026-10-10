@@ -1,5 +1,6 @@
 import React from 'react'
 import type { GameState, JournalEntry } from '../types'
+import Panel from './Panel'
 import styles from './Map.module.css'
 
 interface Props {
@@ -84,12 +85,7 @@ export default function Map({ state, onClose }: Props) {
   const current = state.world.current_location
 
   return (
-    <div className={styles.overlay} onClick={onClose}>
-      <div className={styles.panel} onClick={e => e.stopPropagation()}>
-        <div className={styles.header}>
-          <span className={styles.title}>Map</span>
-          <button className={styles.close} onClick={onClose}>✕</button>
-        </div>
+    <Panel title="Map" onClose={onClose} wide>
 
         <div className={styles.body}>
           {/* Region labels */}
@@ -168,7 +164,6 @@ export default function Map({ state, onClose }: Props) {
             </span>
           </div>
         </div>
-      </div>
-    </div>
+    </Panel>
   )
 }
