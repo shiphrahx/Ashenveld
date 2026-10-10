@@ -184,6 +184,12 @@
       "description": "Where the trees stop being trees you recognise. The bark darker. The spacing too regular — as if arranged rather than grown. The ground soft despite no recent rain. The silence here is not the absence of sound but a presence of its own that takes the place of sound.",
       "ambient_day": "The line is visible. The difference between one side and the other is immediate.",
       "ambient_night": "Do not be here at night."
+    },
+    "childhood_home_area": {
+      "id": "childhood_home_area",
+      "name": "The Mill Lane",
+      "region": "crestfall",
+      "description": "Down the hill from the baker's, past the crumbling mill wall. The house you grew up in, with someone else's shutters."
     }
   },
   "game_state_schema": {

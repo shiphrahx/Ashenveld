@@ -124,6 +124,18 @@
       "description": "A way through the ruins that is not on any map, not in any account, not marked by any cairn. The missing person found it. Maret suspects it exists. The Covenant does not know about it. The Compact does not know about it. It is the only route to the source chamber that does not pass through the marker line.",
       "ambient_day": "The entrance is not visible unless you know what you are looking for.",
       "ambient_night": "Unknown."
+    },
+    "ruins_gate": {
+      "id": "ruins_gate",
+      "name": "The Gate Stones",
+      "region": "deep_forest",
+      "description": "Two standing stones and a lintel. The Watcher sits against the right-hand stone."
+    },
+    "east_road_return": {
+      "id": "east_road_return",
+      "name": "The East Road",
+      "region": "east_road",
+      "description": "The same road, walked west. There are birds in the trees again."
     }
   },
   "act2_overview": {

@@ -157,6 +157,12 @@
       "name": "Ashenveld — Several Years Later",
       "description": "The ending scenes take place in Ashenveld as it has become over time. The exact state depends on choices made: under Compact administration it is orderly and diminished; under Rootless influence it is less orderly and more alive; abandoned by both it is still slowly recovering on its own terms.",
       "note": "This location is rendered differently based on faction flags."
+    },
+    "west_road_leaving": {
+      "id": "west_road_leaving",
+      "name": "The West Road",
+      "region": "west",
+      "description": "The road that goes away from Ashenveld. Ordinary trees. Ordinary weather."
     }
   }
 }
