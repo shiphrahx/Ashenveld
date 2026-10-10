@@ -5,7 +5,7 @@ One step per branch and pull request. Each tick lists what was done, what was sk
 - [x] 1. docs/01 Section 0 (engine foundation), then B1, B2, B3, B4, B5
 - [x] 2. docs/01 B6 to B13
 - [x] 3. docs/01 B21 (validator and smoke test), then B14 to B20
-- [ ] 4. docs/04 Design tokens, then U1 to U7
+- [x] 4. docs/04 Design tokens, then U1 to U7
 - [ ] 5. docs/03 G1 to G6
 - [ ] 6. docs/03 G7 to G13
 - [ ] 7. docs/02 Section 0 (author decisions), then N1 to N4
@@ -119,3 +119,35 @@ Branch `step-3-validator`, stacked on step 2.
 
 - Byte-identical images (rule 8): files 010 and 019 are copies of 009 and 018, and the art is on hold, so the rule would fail today. Those two pairs are listed in the validator as known and only warn. Any other duplicate fails.
 - B21 asks for four different endings from the four final choices with "always the first choice". The sent-ahead path then reaches `ending_escape_together`, the same as leaving together. The Ranger test names two choices (`choose_rootless_side` at the reckoning, `realise_you_are_staying` later) and reaches `ending_warden_of_ashenveld`.
+
+## Step 4 — design tokens, U1 to U7
+
+Branch `step-4-ui-foundation`, stacked on step 3.
+
+**Done**
+
+- Tokens: palette fixes so all text passes 4.5:1, `--text-faint`, type and layout variables, `:focus-visible`. Every font size under 12px raised. `100vh` is `100dvh`. Fonts self-hosted with `@fontsource` (Cinzel, Atkinson Hyperlegible, Lora on demand); the Google Fonts link is gone.
+- U1: fluid three-column grid on wide screens, two columns with `StatusStrip` and `TabBar` from 1023px down, one column with an art banner under 720px (18dvh while an outcome shows). Story text caps at 66ch. A shared `Panel` gives every drawer the same width and a full-screen sheet on phones. Title size clamps. `#root` uses one rule and the class hack is gone. Scanlines are limited to the art area until E5.
+- U2: the scene text collapses under an outcome with "Show the scene again", the story scrolls to the top, focus moves to the outcome, `aria-live="polite"`.
+- U3: header trail, choice numbers and dice labels at 13px; loading text 14px; low-contrast creation pills, dice button and disabled Next fixed. New e2e test `tests/contrast.spec.ts` walks every text node on the title, creation, game, dice and outcome screens.
+- U4: `src/settings.ts`, `SettingsProvider`, `Settings` panel (Reading, Motion, Play) from the title and the menu.
+- U5: Journal tabs Now, What you know, Story so far. Objectives on every chapter file and per path in Act 3. `resources/notes.json` with 44 notes and 5 leads. Entries store ids only; the text is rebuilt from scene data. A dot shows when something is new.
+- U6: `useHotkeys` (1–6, Enter, Space, J, I, M, P, R, Esc, ?), a Keys panel, panels as focus-trapped dialogs, focus to the scene title on a new scene, creation cards as radios, `aria-label` on icon buttons. An e2e test plays in by keyboard.
+- U7: `diffState()` with chips under outcomes, toasts for entry changes (setting to turn off), a 600ms highlight on the bar that moved. Tier helpers live in a new `src/rules.ts`.
+
+**Checks**: build, validate (0 errors), unit 7 passed, e2e 9 passed. Screenshots checked at 390×844, 800×1000, 1280×720 and 2560×1440.
+
+**Skipped or deferred**
+
+- Sound settings (volume, ambience) are in the `Settings` type but have no controls until E3, so nothing in the panel does nothing. Same for the odds setting until G4.
+- The E1 reduced-motion CSS rule went in now, because the Movement setting would otherwise be a dead control.
+- The status strip says "Health" until G9 renames it Resolve, and has no Dimming word until G8.
+- Rest is still disabled (B17) until G9.
+- The full creation rework (two-column cards, More toggle, real `<ol>` progress) is U13 in step 10. The cards are radios now so keyboard play works.
+
+**Plan was wrong or unclear**
+
+- U2 asks for the collapsed scene at 60% opacity. At 60% the class aside's `--text-main` drops to about 3.5:1, which breaks ground rule 6. It's 75%.
+- U7's table only names reputation changes that cross a tier, so smaller reputation changes still have no chip. The bar highlight covers them.
+- `npm run validate` counts flags read by the journal. That took the count from 24 to 69. It's honest, since the journal does read them, but it means the N6 target of 60 is already met on paper.
+- The plan puts `notes.json` in `public/resources/`. Resources don't move to `public/` until B22, so it's in `resources/` for now.
