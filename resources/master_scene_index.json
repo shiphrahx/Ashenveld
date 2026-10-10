@@ -1038,5 +1038,27 @@
       "allied": 25,
       "trusted": 40
     }
-  }
+  },
+  "endings": [
+    {
+      "id": "ending_stays_together",
+      "title": "The Warden Stays"
+    },
+    {
+      "id": "ending_escape_together",
+      "title": "The Road West"
+    },
+    {
+      "id": "ending_alone_legend",
+      "title": "The Warden Alone"
+    },
+    {
+      "id": "ending_warden_of_ashenveld",
+      "title": "The Camp Endures"
+    },
+    {
+      "id": "ending_the_account",
+      "title": "The Account"
+    }
+  ]
 }
