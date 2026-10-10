@@ -95,7 +95,15 @@
           "A specific morning, some years later.",
           "Crestfall. The market square. The fountain running properly now — someone fixed it in the second year, a project that took three weeks and which the whole town had an opinion about and which Aldous funded half of and will not admit to funding.",
           "The market has nine stalls. The ninth is new — a woman from one of the eastern villages who walked back out of the forest eighteen months after walking in, confused and thin and eventually, gradually, herself again. She sells dried herbs now. Some of them are from Maret's garden. Some of them are varieties nobody recognised until she started growing them.",
-          "You and [missing person] live in the house on the north lane — Goran's old recommendation, which became available two years after you decided to stay. You have been in it since.",
+          {
+            "when": {
+              "visited": [
+                "act1_ch2_old_friend"
+              ]
+            },
+            "text": "You and [missing person] live in the house on the north lane — Goran's old recommendation, which became available two years after you decided to stay. You have been in it since.",
+            "else": "You and [missing person] live in the house on the north lane with the blue door, which became available two years after you decided to stay. You have been in it since."
+          },
           "This morning: the market. The fountain. A specific quality of light that this time of year produces over Crestfall — not warm exactly, something more honest than warm. You are standing in it and so is [missing person] and the day has not yet told you what it needs.",
           {
             "when": {
@@ -160,6 +168,14 @@
               }
             },
             "text": "Once a month a keeper in plain grey walks the east road to the chamber and back. Edric has stopped saying \"cleansed\"."
+          },
+          {
+            "when": {
+              "flags": {
+                "compact_aligned": true
+              }
+            },
+            "text": "Order came back first. The camp is smaller now, and it files reports."
           },
           {
             "when": {
@@ -292,6 +308,23 @@
           {
             "when": {
               "flags": {
+                "turned_back_east": true
+              }
+            },
+            "text": "The last you see of that market town is the road out of it, east. You walk it together, and neither of you hurries."
+          },
+          {
+            "when": {
+              "flags": {
+                "confronted_being_used": false,
+                "full_disclosure_made": false
+              }
+            },
+            "text": "There is one thing you have still not said to them. There is time."
+          },
+          {
+            "when": {
+              "flags": {
                 "crestfall_afflicted": true
               }
             },
@@ -416,6 +449,20 @@
               }
             },
             "text": "Once a month a keeper in plain grey walks the east road to the chamber and back. Edric has stopped saying \"cleansed\"."
+          },
+          {
+            "when": {
+              "flags": {
+                "holds_marets_list": true
+              }
+            },
+            "text": "At every new moon you read Maret the first line. She listens as if it were news."
+          },
+          {
+            "when": {
+              "health_below": 20
+            },
+            "text": "The days are shorter for you now. Lira carries the ledger."
           },
           {
             "when": {
