@@ -205,6 +205,76 @@
           }
         },
         {
+          "id": "feel_the_stone",
+          "text": "Place the stone, and feel what it does when it touches the ground.",
+          "requires": {
+            "inventory": [
+              "covenant_marker_stone"
+            ]
+          },
+          "roll": {
+            "stat": "mana",
+            "dc": 11
+          },
+          "outcomes": {
+            "success": {
+              "text": "You set the stone down where the tree line bends and keep your hand on it.\n\nIt pulls. Very slightly, the way a lodestone pulls at a needle. Not away from the forest. Towards it. Whatever Edric's people made this to do, it is not holding anything back. It is finding where the note is strongest, and marking it.\n\nYou take your hand away. The stone stays where it is.",
+              "next_scene": "act1_ch6_cursed_creature",
+              "state_changes": {
+                "flags": {
+                  "covenant_marker_placed": true,
+                  "knows_ward_is_survey": true
+                },
+                "factions": {
+                  "ashen_covenant": {
+                    "reputation": 10
+                  }
+                },
+                "inventory_remove": [
+                  "covenant_marker_stone"
+                ]
+              }
+            },
+            "success_at_cost": {
+              "text": "You set the stone down and feel it settle into the ground, and something under the ground settle towards it. You cannot tell what it is doing. Only that it is not nothing.",
+              "next_scene": "act1_ch6_cursed_creature",
+              "state_changes": {
+                "flags": {
+                  "covenant_marker_placed": true
+                },
+                "factions": {
+                  "ashen_covenant": {
+                    "reputation": 10
+                  }
+                },
+                "inventory_remove": [
+                  "covenant_marker_stone"
+                ],
+                "resources": {
+                  "health": -3
+                }
+              }
+            },
+            "failure": {
+              "text": "You set the stone down and feel cold stone and wet earth, and nothing else. Whatever it does, it does not do it for you.",
+              "next_scene": "act1_ch6_cursed_creature",
+              "state_changes": {
+                "flags": {
+                  "covenant_marker_placed": true
+                },
+                "factions": {
+                  "ashen_covenant": {
+                    "reputation": 10
+                  }
+                },
+                "inventory_remove": [
+                  "covenant_marker_stone"
+                ]
+              }
+            }
+          }
+        },
+        {
           "id": "do_not_place_marker",
           "text": "Note the location. Keep moving.",
           "requires": {},
@@ -282,6 +352,44 @@
               "text": "You follow it and lose it quickly — it moves in a pattern your tracking instinct cannot quite predict. You return to the road. You were in the trees long enough for the road to feel like a relief.",
               "next_scene": "act1_ch6_road_traveller",
               "state_changes": {}
+            }
+          }
+        },
+        {
+          "id": "get_close",
+          "text": "Get close enough to touch it.",
+          "requires": {},
+          "roll": {
+            "stat": "dexterity",
+            "dc": 12
+          },
+          "outcomes": {
+            "success": {
+              "text": "You leave the road slowly and come at it from downwind, a step at a time, stopping when it stops. It does not notice you. Close up its eyes are not quite still. They drift, and settle, and drift again, and every time they settle they are pointing east.\n\nYou touch its flank. It is warm. It does not flinch.\n\nWhen you step back it walks on through the trees, east, at the same wrong pace.",
+              "next_scene": "act1_ch6_road_traveller",
+              "state_changes": {
+                "flags": {
+                  "found_concentrated_curse_point": true
+                }
+              }
+            },
+            "success_at_cost": {
+              "text": "You get within an arm's length before a stick goes under your boot. Its head comes round, slowly, and it looks through you. Then it walks on. You stay crouched in the bracken until your legs cramp.",
+              "next_scene": "act1_ch6_road_traveller",
+              "state_changes": {
+                "resources": {
+                  "health": -2
+                }
+              }
+            },
+            "failure": {
+              "text": "You are almost there when it bolts. It goes straight through the place you are standing, as if you were not there, and its shoulder takes you off your feet. By the time you are up it has gone.",
+              "next_scene": "act1_ch6_road_traveller",
+              "state_changes": {
+                "resources": {
+                  "health": -5
+                }
+              }
             }
           }
         },

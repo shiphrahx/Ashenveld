@@ -159,6 +159,47 @@
               "state_changes": {}
             }
           }
+        },
+        {
+          "id": "shift_the_boxes",
+          "text": "Shift the stacked boxes along the back wall without bringing them down.",
+          "requires": {},
+          "roll": {
+            "stat": "strength",
+            "dc": 10
+          },
+          "outcomes": {
+            "success": {
+              "text": "The boxes along the back wall are packed tight, floor to beam. You take them down one at a time and set them on the floor in the order they came off.\n\nBehind the last of them is a bundle of sacking tied with twine. A blanket, a tin cup, a candle end. And a small figure carved from bone, no longer than your thumb, worn smooth where somebody's fingers held it.\n\nYou take the figure. You leave the rest where it was.",
+              "next_scene": "act1_ch7_forest_edge",
+              "state_changes": {
+                "inventory": [
+                  "carved_bone_figure"
+                ]
+              }
+            },
+            "success_at_cost": {
+              "text": "Two boxes come down together and you catch the second against your chest. Something inside it breaks. Behind the stack is a bundle of sacking: a blanket, a cup, a candle end, and a small figure carved from bone. You take the figure. Your arms ache all the way back to the barn.",
+              "next_scene": "act1_ch7_forest_edge",
+              "state_changes": {
+                "inventory": [
+                  "carved_bone_figure"
+                ],
+                "resources": {
+                  "health": -3
+                }
+              }
+            },
+            "failure": {
+              "text": "The stack goes. It comes down all at once, louder than anything in Harrow has been for months, and the dust takes a long time to settle. You sit on the cellar step with your sleeve over your mouth until it does. Whatever was behind the boxes is under them now.",
+              "next_scene": "act1_ch7_forest_edge",
+              "state_changes": {
+                "resources": {
+                  "health": -8
+                }
+              }
+            }
+          }
         }
       ]
     },

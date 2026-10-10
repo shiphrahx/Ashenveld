@@ -229,6 +229,43 @@
           }
         },
         {
+          "id": "through_fast",
+          "text": "Go through the south passage fast, before the walls can get into your head.",
+          "requires": {},
+          "roll": {
+            "stat": "dexterity",
+            "dc": 11
+          },
+          "outcomes": {
+            "success": {
+              "text": "You find the gap between the walls and go through it at a run, eyes on the ground, shoulders in. The carved stone goes past on both sides, close enough to feel. You do not look at it. On the far side you stop, and breathe, and only then turn round.",
+              "next_scene": "act2_ch1_the_watcher_seen",
+              "state_changes": {}
+            },
+            "success_at_cost": {
+              "text": "You go fast and nearly make it. At the narrowest point your sleeve drags along the wall, and for a moment the carvings are all you can think about, line after line of them. Then you are through and it stops.",
+              "next_scene": "act2_ch1_the_watcher_seen",
+              "state_changes": {
+                "resources": {
+                  "health": -3
+                }
+              }
+            },
+            "failure": {
+              "text": "You misjudge the narrow place. Your shoulder hits the wall, then your hand, flat against the carving. It is like putting your hand into cold water and finding it goes on down. You do not know how long you stand there. When you come out the other side your hand is still cold.",
+              "next_scene": "act2_ch1_the_watcher_seen",
+              "state_changes": {
+                "resources": {
+                  "health": -8
+                },
+                "world": {
+                  "curse_spread": 2
+                }
+              }
+            }
+          }
+        },
+        {
           "id": "examine_carved_walls",
           "text": "Examine the carved walls before proceeding. They may tell you something.",
           "requires": {},
@@ -330,6 +367,51 @@
               "text": "Nothing. The Watcher is absent in a way that does not respond to address. You straighten and look at the gate. The instructions said wait at the gate. You wait.",
               "next_scene": "act2_ch1_missing_person_approach",
               "state_changes": {}
+            }
+          }
+        },
+        {
+          "id": "reach_like_the_curse",
+          "text": "Reach for them the way the curse does.",
+          "requires": {},
+          "roll": {
+            "stat": "mana",
+            "dc": 13
+          },
+          "outcomes": {
+            "success": {
+              "text": "You stop trying to be heard. You let yourself go still, the way they are still, and stop wanting anything from them.\n\nYou crouch in front of them and speak. Not their name — you do not know it. Just words, calm and direct, the words you would use with someone surfacing from very deep water.\n\nSomething in their eyes shifts. Just slightly. Just enough to feel like something returning from a long distance.\n\nThey say one word. It is your name.\n\nThen they are gone again — back to wherever they were — but the word hangs in the air of the ruins outskirts and nobody told the Watcher that name today. Someone who has been in here for a very long time told the Watcher your name. And the Watcher said it.",
+              "next_scene": "act2_ch1_missing_person_approach",
+              "state_changes": {
+                "flags": {
+                  "watcher_spoke": true
+                },
+                "relationships": {
+                  "ruins_watcher": {
+                    "closeness": 10
+                  }
+                }
+              }
+            },
+            "success_at_cost": {
+              "text": "You stop trying to be heard. You let yourself go still, the way they are still, and stop wanting anything from them.\n\nYou try and something shifts in them, briefly — a slight reorientation, a moment of awareness that costs you something to look at. Then it passes. They did not speak but they saw you. Or something behind them saw you.",
+              "next_scene": "act2_ch1_missing_person_approach",
+              "state_changes": {
+                "relationships": {
+                  "ruins_watcher": {
+                    "closeness": 5
+                  }
+                }
+              }
+            },
+            "failure": {
+              "text": "You let yourself go still, and keep going. The note is very loud here. When you find your way back you are sitting against the other stone with your knees drawn up, and the light has moved.",
+              "next_scene": "act2_ch1_missing_person_approach",
+              "state_changes": {
+                "resources": {
+                  "health": -10
+                }
+              }
             }
           }
         },

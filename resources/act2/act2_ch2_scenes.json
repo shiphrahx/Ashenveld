@@ -247,6 +247,56 @@
               "state_changes": {}
             }
           }
+        },
+        {
+          "id": "listen_to_the_thread",
+          "text": "Go closer than three metres. Listen to the thread.",
+          "requires": {},
+          "roll": {
+            "stat": "mana",
+            "dc": 14
+          },
+          "outcomes": {
+            "success": {
+              "text": "[missing person] says your name once, as a warning. You go closer anyway.\n\nAt arm's length from the fracture the thread is not silent. It is the note, the one under the inn wall, but here it is uneven, catching on something, like a song with a line cut out of the middle. Something was taken from this mechanism. Cut, cleanly, by someone who knew where to cut.\n\nYou step back. It takes longer than it should.",
+              "next_scene": "act2_ch2_decision_to_return",
+              "state_changes": {
+                "flags": {
+                  "understands_fracture": true,
+                  "heard_the_note": true,
+                  "seriva_suspected": true
+                },
+                "resources": {
+                  "health": -5
+                }
+              }
+            },
+            "success_at_cost": {
+              "text": "You get close enough to hear it, and it gets into you. The note, uneven, catching on a gap. You come back to yourself with [missing person]'s hand on your collar, pulling. You know the mechanism was cut. You do not know how long you were standing there.",
+              "next_scene": "act2_ch2_decision_to_return",
+              "state_changes": {
+                "flags": {
+                  "understands_fracture": true,
+                  "heard_the_note": true
+                },
+                "resources": {
+                  "health": -10
+                }
+              }
+            },
+            "failure": {
+              "text": "Three metres, then two. Then nothing for a while. [missing person] gets you out. You remember the thread, and the floor, and their voice saying something over and over. You do not remember what.",
+              "next_scene": "act2_ch2_decision_to_return",
+              "state_changes": {
+                "resources": {
+                  "health": -15
+                },
+                "world": {
+                  "curse_spread": 3
+                }
+              }
+            }
+          }
         }
       ]
     },

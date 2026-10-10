@@ -296,6 +296,53 @@
           }
         },
         {
+          "id": "go_round_through_trees",
+          "text": "Leave the road and go round through the trees.",
+          "requires": {},
+          "roll": {
+            "stat": "dexterity",
+            "dc": 13
+          },
+          "outcomes": {
+            "success": {
+              "text": "A hundred yards short of the barricade you step off the road into the alders and keep low. The soldiers are watching the road. Nobody is watching the ditch. You come out on the cobbles behind them with mud to the knee and your name in nobody's ledger.",
+              "next_scene": "act2_ch3_crestfall_changed",
+              "state_changes": {
+                "flags": {
+                  "slipped_checkpoint": true
+                }
+              }
+            },
+            "success_at_cost": {
+              "text": "You get round, but not cleanly. A branch cracks and one of the soldiers turns and looks at the trees for a long time. You wait in the wet until he turns back. By the time you reach the cobbles the light is going.",
+              "next_scene": "act2_ch3_crestfall_changed",
+              "state_changes": {
+                "flags": {
+                  "slipped_checkpoint": true
+                },
+                "world": {
+                  "time_of_day": "evening"
+                }
+              }
+            },
+            "failure": {
+              "text": "You are halfway round when a voice says, \"That's far enough.\" A third soldier has been sitting in the trees the whole time. He walks you back to the barricade and writes your name down slowly, so you can watch him do it.",
+              "next_scene": "act2_ch3_crestfall_changed",
+              "state_changes": {
+                "flags": {
+                  "compact_suspicious": true,
+                  "compact_knows_you_were_east": true
+                },
+                "factions": {
+                  "iron_compact": {
+                    "reputation": -10
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
           "id": "invoke_compact_relationship",
           "text": "Invoke your existing relationship with the Compact. You have been working with Cael.",
           "requires": {

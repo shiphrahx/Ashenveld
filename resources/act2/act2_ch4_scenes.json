@@ -688,6 +688,68 @@
               }
             }
           }
+        },
+        {
+          "id": "stand_in_the_gap",
+          "text": "Stand in the gap between the tents. Do not move.",
+          "requires": {},
+          "roll": {
+            "stat": "strength",
+            "dc": 13
+          },
+          "outcomes": {
+            "success": {
+              "text": "You walk into the gap between the two nearest tents and stop there, facing the soldiers. You do not say anything.\n\nThe sergeant looks at you, then at Branch beside you, then at the six men behind him. He does the sum. \"We'll tell the Commander she's well,\" he says. \"He'll want to talk.\"\n\nBranch does not look at you. He moves half a step closer.",
+              "next_scene": "act2_ch4_vorne_issa_negotiation",
+              "state_changes": {
+                "flags": {
+                  "issa_negotiation_arranged": true
+                },
+                "relationships": {
+                  "branch": {
+                    "closeness": 15
+                  }
+                }
+              }
+            },
+            "success_at_cost": {
+              "text": "You stand in the gap. One of the younger soldiers walks right up to you, close enough that you can smell the road on him, and you do not move. The sergeant calls him back. \"He'll want to talk,\" the sergeant says. Your hands do not stop shaking for an hour.",
+              "next_scene": "act2_ch4_vorne_issa_negotiation",
+              "state_changes": {
+                "flags": {
+                  "issa_negotiation_arranged": true
+                },
+                "resources": {
+                  "health": -5
+                }
+              }
+            },
+            "failure": {
+              "text": "They go round you.\n\nThe negotiation fails to hold. The soldiers push past the camp's edge. Not violently — firmly. Branch does not stop them because stopping them would be violent.\n\nIssa is found in the tent. She is brought out. She does not resist — she looks at you as she passes with an expression you will spend a long time trying to interpret.\n\nShe goes to the Compact post. The camp watches her go.",
+              "next_scene": "act2_ch4_pol_fragment",
+              "state_changes": {
+                "flags": {
+                  "issa_taken_by_compact": true
+                },
+                "factions": {
+                  "iron_compact": {
+                    "reputation": -20
+                  },
+                  "rootless": {
+                    "reputation": -10
+                  }
+                },
+                "relationships": {
+                  "commander_vorne": {
+                    "closeness": -10
+                  },
+                  "issa_vorne": {
+                    "closeness": -15
+                  }
+                }
+              }
+            }
+          }
         }
       ]
     },
