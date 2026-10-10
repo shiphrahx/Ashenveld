@@ -1,4 +1,5 @@
 import { test, expect, type Page } from '@playwright/test'
+import { readFileSync } from 'node:fs'
 
 // Scripted playthroughs. Each always takes the first available choice, except
 // where a test names a choice for a scene. Randomness is stubbed so rolls are fixed.
@@ -306,4 +307,28 @@ test('a click finishes the text fade and the choices wait for it (E7)', async ({
   await pickChoice(page, (await page.locator('[data-choice-id]:not([disabled])').first().getAttribute('data-choice-id'))!)
   await page.waitForTimeout(1300)
   await expect(page.locator('[data-waiting]')).toHaveCount(0)
+})
+
+test('a save can be exported and imported (B23)', async ({ page }) => {
+  const errors = watchConsole(page)
+  await stubRandom(page, 0.95)
+  await createCharacter(page, 'Commander')
+  await pickChoice(page, 'move_to_town')
+  await page.keyboard.press('Escape')
+  await expect(page.getByRole('dialog', { name: 'Menu' })).toBeVisible()
+  const download = page.waitForEvent('download')
+  await page.getByRole('button', { name: /export save/i }).click()
+  const file = await (await download).path()
+  const saved = JSON.parse(readFileSync(file, 'utf8'))
+  expect(saved.version).toBe(2)
+
+  // A file that isn't a save is refused with a reason.
+  await page.locator('[data-import-input]').setInputFiles({ name: 'x.json', mimeType: 'application/json', buffer: Buffer.from('nope') })
+  await expect(page.getByRole('alert')).toContainText('not a saved game')
+
+  // The exported one loads, after asking.
+  await page.locator('[data-import-input]').setInputFiles(file)
+  await page.getByRole('button', { name: /^load save$/i }).click()
+  await expect(page.locator('[data-scene-id]')).toHaveAttribute('data-scene-id', saved.current_scene)
+  expect(errors).toEqual([])
 })

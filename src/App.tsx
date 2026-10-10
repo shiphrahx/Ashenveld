@@ -531,6 +531,7 @@ export default function App() {
               onReturnToTitle={() => { closePanel(); handleReturnToTitle() }}
               onSettings={() => setPanel('settings')}
               onCredits={() => setPanel('credits')}
+              onImport={imported => { saveGame(imported); clearCheckpoints(); closePanel(); void handleContinue() }}
               onRestartChapter={chapterCheckpoint(gameState) ? restartChapter : undefined}
             />
           )}
