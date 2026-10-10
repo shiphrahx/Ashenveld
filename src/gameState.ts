@@ -6,7 +6,7 @@
  */
 
 import type { GameState, StateChanges, MetaStore, DayPart, SceneWhen } from './types'
-import { getMasterIndex, getNpc } from './loader'
+import { getMasterIndex, getNpc, getLocation } from './loader'
 import { closenessTier, factionTier, FACTION_NAMES, WORN_THIN } from './rules'
 
 const SAVE_KEY = 'ashenveld_save'
@@ -62,6 +62,7 @@ export function createFreshState(
     inventory: [],
     current_scene: 'act1_ch1_barge_arrival',
     journal: [],
+    counters: {},
     visited: {},
     taken: {},
   }
@@ -78,8 +79,12 @@ export function applyStateChanges(state: GameState, changes: StateChanges): Game
   }
 
   if (changes.resources) {
-    for (const [k, delta] of Object.entries(changes.resources)) {
+    for (const [k, raw] of Object.entries(changes.resources)) {
       const key = k as keyof GameState['player']['resources']
+      let delta = raw
+      // Edric's ward halves what the deep forest takes out of you (G5).
+      if (key === 'health' && delta < 0 && next.inventory.includes('covenant_ward')
+        && getLocation(next.world.current_location)?.region === 'deep_forest') delta = Math.ceil(delta / 2)
       ;(next.player.resources[key] as number) += delta
     }
     // Gold never goes below 0. Health has a floor of 1 until resting and collapse exist (G9).
@@ -112,6 +117,11 @@ export function applyStateChanges(state: GameState, changes: StateChanges): Game
         next.inventory.push(item)
       }
     }
+  }
+
+  if (changes.counters) {
+    next.counters ??= {}
+    for (const [k, d] of Object.entries(changes.counters)) next.counters[k] = (next.counters[k] ?? 0) + d
   }
 
   if (changes.inventory_remove) {
@@ -181,6 +191,7 @@ export function loadGame(): GameState | null {
     if (!raw) return null
     const saved = JSON.parse(raw) as GameState
     // Saves from before version 2 lack these; B23 replaces this with a full migration.
+    saved.counters ??= {}
     saved.visited ??= {}
     saved.taken ??= {}
     if (!PARTS.includes(saved.world.time_of_day)) {

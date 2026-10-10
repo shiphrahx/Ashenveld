@@ -44,3 +44,39 @@ export const FACTION_NAMES: Record<string, string> = {
 // ─── Resolve ──────────────────────────────────────────────────────────────────
 
 export const WORN_THIN = 40
+
+// ─── Dice ─────────────────────────────────────────────────────────────────────
+
+export const RULES = {
+  /** Bonuses from earlier choices are capped at this, either way. */
+  maxBonus: 6,
+  /** Full success at DC + 4 or more. */
+  successMargin: 4,
+  /** Success at a cost from DC − 2. */
+  costMargin: -2,
+}
+
+/** Stat value to roll modifier. More spread than (stat − 5) / 2, so class matters. */
+export function modifierForStat(v: number): number {
+  if (v <= 6) return -2
+  if (v <= 8) return -1
+  if (v <= 10) return 0
+  if (v <= 12) return 1
+  if (v <= 14) return 3
+  if (v <= 16) return 5
+  return 6
+}
+
+/** The word on a choice tag, from the chance of not failing. */
+export function oddsWord(notFailing: number): string {
+  if (notFailing >= 0.85) return 'Sure'
+  if (notFailing >= 0.65) return 'Favoured'
+  if (notFailing >= 0.45) return 'Even'
+  if (notFailing >= 0.25) return 'Risky'
+  return 'Long shot'
+}
+
+export const STAT_NAMES: Record<string, string> = {
+  strength: 'Strength', dexterity: 'Dexterity', stamina: 'Stamina', intelligence: 'Intelligence',
+  mana: 'Mana', charisma: 'Charisma', perception: 'Perception',
+}
