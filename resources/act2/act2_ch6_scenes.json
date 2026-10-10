@@ -77,8 +77,49 @@
           "text": "Complete the acknowledgement phase. Move to the engagement.",
           "requires": {},
           "roll": {
-            "stat": "intelligence",
-            "dc": 12
+            "stat": [
+              "intelligence",
+              "mana"
+            ],
+            "dc": 12,
+            "bonus": [
+              {
+                "when": {
+                  "flags": {
+                    "ritual_understood": true
+                  }
+                },
+                "value": 2,
+                "label": "You read the text yourself"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "ritual_partially_understood": true
+                  }
+                },
+                "value": 1,
+                "label": "You know the outline"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "understands_carving_structure": true
+                  }
+                },
+                "value": 1,
+                "label": "You know where the ritual text sits"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "ritual_preparation_complete": true
+                  }
+                },
+                "value": 2,
+                "label": "Two days of preparation"
+              }
+            ]
           },
           "outcomes": {
             "success": {
@@ -155,11 +196,59 @@
       "choices": [
         {
           "id": "hold_through_reading",
-          "text": "Hold steady through the reading. Stay present. Stay honest.",
+          "text": "Hold steady. Stay on your feet.",
           "requires": {},
           "roll": {
             "stat": "stamina",
-            "dc": 14
+            "dc": 14,
+            "bonus": [
+              {
+                "when": {
+                  "flags": {
+                    "full_disclosure_made": true
+                  }
+                },
+                "value": 2,
+                "label": "Nothing left unsaid"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "confronted_being_used": true
+                  }
+                },
+                "value": 1,
+                "label": "You named it in the ruins"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "ritual_lesson_complete": true
+                  }
+                },
+                "value": 1,
+                "label": "The first lesson"
+              },
+              {
+                "when": {
+                  "min_relationship": {
+                    "the_missing_person": 80
+                  }
+                },
+                "value": 1,
+                "label": "You know each other"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "full_disclosure_made": false,
+                    "confronted_being_used": false
+                  }
+                },
+                "value": -2,
+                "label": "Something unsaid"
+              }
+            ]
           },
           "outcomes": {
             "success": {
@@ -167,7 +256,194 @@
               "next_scene": "act2_ch6_ritual_sealing",
               "state_changes": {
                 "flags": {
+                  "ritual_phase2_complete": true,
+                  "ritual_phase2_clean": true
+                }
+              }
+            },
+            "success_at_cost": {
+              "text": "You hold but it costs you. The reading goes deep and what it finds in the depths is things you have not looked at in a long time and looking at them simultaneously while being looked at requires more than you expected.\n\nYou hold. The fragment glows. Your missing person says: now.\n\nYou cross the space between you. Slower than you planned.",
+              "next_scene": "act2_ch6_ritual_sealing",
+              "state_changes": {
+                "flags": {
                   "ritual_phase2_complete": true
+                },
+                "resources": {
+                  "health": -15
+                }
+              }
+            },
+            "failure": {
+              "text": "The reading finds something and you flinch from it — not physically, but the mechanism reads the flinch the same as a physical withdrawal.\n\nThe fragment's faint warmth flickers.\n\nYour missing person says your name. Not the ritual words — your name, the one they have known longer than anything else about you. And something in the sound of it from them in this room reaches through the flinch and holds you.\n\nYou hold. The fragment's warmth returns. The phase continues.",
+              "next_scene": "act2_ch6_ritual_sealing",
+              "state_changes": {
+                "flags": {
+                  "ritual_phase2_complete": true
+                },
+                "resources": {
+                  "health": -20
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "let_it_move_through",
+          "text": "Stop holding. Let it move through you.",
+          "requires": {},
+          "roll": {
+            "stat": "mana",
+            "dc": 13,
+            "bonus": [
+              {
+                "when": {
+                  "flags": {
+                    "full_disclosure_made": true
+                  }
+                },
+                "value": 2,
+                "label": "Nothing left unsaid"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "confronted_being_used": true
+                  }
+                },
+                "value": 1,
+                "label": "You named it in the ruins"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "ritual_lesson_complete": true
+                  }
+                },
+                "value": 1,
+                "label": "The first lesson"
+              },
+              {
+                "when": {
+                  "min_relationship": {
+                    "the_missing_person": 80
+                  }
+                },
+                "value": 1,
+                "label": "You know each other"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "full_disclosure_made": false,
+                    "confronted_being_used": false
+                  }
+                },
+                "value": -2,
+                "label": "Something unsaid"
+              }
+            ]
+          },
+          "outcomes": {
+            "success": {
+              "text": "You hold. The mechanism reads and you stay — not fighting it, not performing for it, just being exactly what you are in exactly this moment with exactly this person.\n\nThe fragment at the midpoint begins to glow. Very faintly. Very warmly. The warmth is the warmth of something remembering.\n\n\"Now,\" your missing person says. \"Physical contact. The text says now.\"\n\nYou cross the space between you.",
+              "next_scene": "act2_ch6_ritual_sealing",
+              "state_changes": {
+                "flags": {
+                  "ritual_phase2_complete": true,
+                  "ritual_phase2_clean": true
+                }
+              }
+            },
+            "success_at_cost": {
+              "text": "You hold but it costs you. The reading goes deep and what it finds in the depths is things you have not looked at in a long time and looking at them simultaneously while being looked at requires more than you expected.\n\nYou hold. The fragment glows. Your missing person says: now.\n\nYou cross the space between you. Slower than you planned.",
+              "next_scene": "act2_ch6_ritual_sealing",
+              "state_changes": {
+                "flags": {
+                  "ritual_phase2_complete": true
+                },
+                "resources": {
+                  "health": -15
+                }
+              }
+            },
+            "failure": {
+              "text": "The reading finds something and you flinch from it — not physically, but the mechanism reads the flinch the same as a physical withdrawal.\n\nThe fragment's faint warmth flickers.\n\nYour missing person says your name. Not the ritual words — your name, the one they have known longer than anything else about you. And something in the sound of it from them in this room reaches through the flinch and holds you.\n\nYou hold. The fragment's warmth returns. The phase continues.",
+              "next_scene": "act2_ch6_ritual_sealing",
+              "state_changes": {
+                "flags": {
+                  "ritual_phase2_complete": true
+                },
+                "resources": {
+                  "health": -20
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "keep_eyes_on_them",
+          "text": "Keep your eyes on [missing person].",
+          "requires": {},
+          "roll": {
+            "stat": "charisma",
+            "dc": 13,
+            "bonus": [
+              {
+                "when": {
+                  "flags": {
+                    "full_disclosure_made": true
+                  }
+                },
+                "value": 2,
+                "label": "Nothing left unsaid"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "confronted_being_used": true
+                  }
+                },
+                "value": 1,
+                "label": "You named it in the ruins"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "ritual_lesson_complete": true
+                  }
+                },
+                "value": 1,
+                "label": "The first lesson"
+              },
+              {
+                "when": {
+                  "min_relationship": {
+                    "the_missing_person": 80
+                  }
+                },
+                "value": 1,
+                "label": "You know each other"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "full_disclosure_made": false,
+                    "confronted_being_used": false
+                  }
+                },
+                "value": -2,
+                "label": "Something unsaid"
+              }
+            ]
+          },
+          "outcomes": {
+            "success": {
+              "text": "You hold. The mechanism reads and you stay — not fighting it, not performing for it, just being exactly what you are in exactly this moment with exactly this person.\n\nThe fragment at the midpoint begins to glow. Very faintly. Very warmly. The warmth is the warmth of something remembering.\n\n\"Now,\" your missing person says. \"Physical contact. The text says now.\"\n\nYou cross the space between you.",
+              "next_scene": "act2_ch6_ritual_sealing",
+              "state_changes": {
+                "flags": {
+                  "ritual_phase2_complete": true,
+                  "ritual_phase2_clean": true
                 }
               }
             },
@@ -233,8 +509,72 @@
           "text": "Hold on. See it through.",
           "requires": {},
           "roll": {
-            "stat": "stamina",
-            "dc": 13
+            "stat": [
+              "stamina",
+              "mana"
+            ],
+            "dc": 13,
+            "bonus": [
+              {
+                "when": {
+                  "flags": {
+                    "ritual_phase2_clean": true
+                  }
+                },
+                "value": 2,
+                "label": "The reading went clean"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "chamber_prepared": true
+                  }
+                },
+                "value": 1,
+                "label": "You prepared at the threshold"
+              },
+              {
+                "when": {
+                  "inventory": [
+                    "covenant_ward"
+                  ]
+                },
+                "value": 1,
+                "label": "Edric's ward"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "understands_fracture": true
+                  }
+                },
+                "value": 1,
+                "label": "You know what was taken"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "heard_the_note": true
+                  }
+                },
+                "value": 1,
+                "label": "You have listened to it before"
+              },
+              {
+                "when": {
+                  "health_below": 40
+                },
+                "value": -2,
+                "label": "You are worn thin"
+              },
+              {
+                "when": {
+                  "min_curse": 90
+                },
+                "value": -2,
+                "label": "The Dimming is close"
+              }
+            ]
           },
           "outcomes": {
             "success": {
