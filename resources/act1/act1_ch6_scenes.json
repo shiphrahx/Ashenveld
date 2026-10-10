@@ -205,7 +205,7 @@
           "outcomes": {
             "default": {
               "text": "You place the stone where Edric instructed. You stand back and wait. Nothing visible happens — no light, no sound, no perceptible change.\n\nEither it is working on a scale you cannot perceive or it is doing nothing. Either way, the obligation is fulfilled and the Covenant owes you something small.",
-              "next_scene": "act1_ch6_cursed_creature",
+              "next_scene": "act1_ch6_waystation_route",
               "state_changes": {
                 "flags": {
                   "covenant_marker_placed": true
@@ -238,7 +238,7 @@
           "outcomes": {
             "success": {
               "text": "You set the stone down where the tree line bends and keep your hand on it.\n\nIt pulls. Very slightly, the way a lodestone pulls at a needle. Not away from the forest. Towards it. Whatever Edric's people made this to do, it is not holding anything back. It is finding where the note is strongest, and marking it.\n\nYou take your hand away. The stone stays where it is.",
-              "next_scene": "act1_ch6_cursed_creature",
+              "next_scene": "act1_ch6_waystation_route",
               "state_changes": {
                 "flags": {
                   "covenant_marker_placed": true,
@@ -256,7 +256,7 @@
             },
             "success_at_cost": {
               "text": "You set the stone down and feel it settle into the ground, and something under the ground settle towards it. You cannot tell what it is doing. Only that it is not nothing.",
-              "next_scene": "act1_ch6_cursed_creature",
+              "next_scene": "act1_ch6_waystation_route",
               "state_changes": {
                 "flags": {
                   "covenant_marker_placed": true
@@ -276,7 +276,7 @@
             },
             "failure": {
               "text": "You set the stone down and feel cold stone and wet earth, and nothing else. Whatever it does, it does not do it for you.",
-              "next_scene": "act1_ch6_cursed_creature",
+              "next_scene": "act1_ch6_waystation_route",
               "state_changes": {
                 "flags": {
                   "covenant_marker_placed": true
@@ -302,10 +302,166 @@
           "outcomes": {
             "default": {
               "text": "You note it in whatever way you note things and keep moving. The spot is real. Edric's scholars are competent. The Covenant is more dangerous than they look.",
-              "next_scene": "act1_ch6_cursed_creature",
+              "next_scene": "act1_ch6_waystation_route",
               "state_changes": {
                 "flags": {
                   "noted_nexus_point": true
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "act1_ch6_waystation_route",
+      "act": 1,
+      "chapter": 6,
+      "location": "east_road",
+      "title": "",
+      "when": {
+        "part": "morning"
+      },
+      "on_enter": {
+        "state_changes": {}
+      },
+      "requires": {},
+      "text": {
+        "default": ""
+      },
+      "choices": [],
+      "route": [
+        {
+          "when": {
+            "flags": {
+              "carrying_compact_message": true
+            }
+          },
+          "next": "act1_ch6_waystation"
+        },
+        {
+          "next": "act1_ch6_cursed_creature"
+        }
+      ]
+    },
+    {
+      "id": "act1_ch6_waystation",
+      "act": 1,
+      "chapter": 6,
+      "location": "east_road",
+      "title": "The Waystation",
+      "when": {
+        "part": "morning"
+      },
+      "on_enter": {
+        "state_changes": {}
+      },
+      "requires": {
+        "flags": {
+          "carrying_compact_message": true
+        }
+      },
+      "text": {
+        "default": [
+          {
+            "when": {
+              "not": {
+                "taken": [
+                  "act1_ch6_waystation:open_packet_first"
+                ]
+              }
+            },
+            "text": "Where the road dips towards a stream there is a lean-to of planks and canvas, and a mule tied to the post in front of it. A woman in a Compact coat sits on an upturned crate, eating bread with one hand. A crossbow lies across her knees.\n\nShe stands when she sees you. She does not raise the crossbow. Her hands are not quite steady.\n\n\"Sera,\" she says. \"Quartermaster. The lieutenant said someone might come along with a packet.\" She looks past you, up the road, then into the trees. \"Nobody else has. Not for a while.\"",
+            "else": "Sera is still by the mule, not looking at you."
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "hand_over_packet",
+          "text": "Hand over the packet.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "She takes the packet and puts it inside her coat without looking at it, and counts twenty coins into your hand.\n\n\"A patrol went east nine days ago,\" she says as you turn to go. \"Six of them. They were meant to be back on the fourth day.\" She looks at the mule. \"I keep the feed ready.\"",
+              "next_scene": "act1_ch6_cursed_creature",
+              "state_changes": {
+                "flags": {
+                  "compact_message_delivered": true
+                },
+                "resources": {
+                  "gold": 20
+                },
+                "factions": {
+                  "iron_compact": {
+                    "reputation": 5
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "open_packet_first",
+          "text": "Lift the seal and read the packet first.",
+          "requires": {},
+          "once": true,
+          "roll": {
+            "stat": "dexterity",
+            "dc": 12
+          },
+          "outcomes": {
+            "success": {
+              "text": "You turn your back to her as if to check your pack, and work the seal up with a thumbnail. It lifts clean.\n\nOne sheet. An order to prepare billets in Crestfall for thirty men and a commander, signed in Vorne's name and dated a month back. Cael knew. He has known all along.\n\nYou press the seal back down. It holds.",
+              "next_scene": "act1_ch6_waystation",
+              "state_changes": {
+                "flags": {
+                  "knows_vorne_is_coming": true,
+                  "compact_message_read": true
+                }
+              }
+            },
+            "success_at_cost": {
+              "text": "The seal lifts, but not cleanly. You read the order: billets in Crestfall for thirty, Vorne's name at the bottom, a month old. Cael knew.\n\nWhen you press the seal down, one corner will not sit flat.",
+              "next_scene": "act1_ch6_waystation",
+              "state_changes": {
+                "flags": {
+                  "knows_vorne_is_coming": true,
+                  "compact_message_read": true,
+                  "compact_seal_marked": true
+                }
+              }
+            },
+            "failure": {
+              "text": "The seal tears. The sound is very small and she hears it anyway.\n\nSera looks at the packet in your hands, then at your face. \"I'll have to report that,\" she says. She does not sound angry. She sounds tired. She does not pay you, and she does not take the packet.",
+              "next_scene": "act1_ch6_cursed_creature",
+              "state_changes": {
+                "flags": {
+                  "compact_message_undelivered": true,
+                  "compact_seal_torn": true
+                },
+                "factions": {
+                  "iron_compact": {
+                    "reputation": -10
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "keep_walking",
+          "text": "Nod to her and keep walking.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You nod to her and keep walking. The packet stays in your pack. She watches you all the way to the bend.",
+              "next_scene": "act1_ch6_cursed_creature",
+              "state_changes": {
+                "flags": {
+                  "compact_message_undelivered": true
                 }
               }
             }

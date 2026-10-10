@@ -226,7 +226,20 @@
         }
       },
       "text": {
-        "default": "The Compact checkpoint is two miles east of Crestfall, at the point where the cobblestone begins. A barricade of timber, two soldiers, a small fire.\n\nThey see you before you see them, which means they were watching. When you get close enough to talk, one of them steps forward with the specific posture of someone following a procedure.\n\n\"East road is under Compact jurisdiction,\" he says. \"State your name, your origin, and your purpose for travel.\"",
+        "default": [
+          "The Compact checkpoint is two miles east of Crestfall, at the point where the cobblestone begins. A barricade of timber, two soldiers, a small fire.",
+          "They see you before you see them, which means they were watching. When you get close enough to talk, one of them steps forward with the specific posture of someone following a procedure.",
+          "\"East road is under Compact jurisdiction,\" he says. \"State your name, your origin, and your purpose for travel.\"",
+          {
+            "when": {
+              "flags": {
+                "compact_allied": true,
+                "compact_message_delivered": false
+              }
+            },
+            "text": "\"Cael is asking about a packet,\" the other soldier says, to nobody in particular."
+          }
+        ],
         "commander": "You assess the checkpoint in the first three seconds. Two soldiers visible, probably two more within call. The barricade is solid but not permanent — it is designed to be moved, which means it is also designed to be passed under the right conditions.\n\nYou give your name. You state your origin and purpose in terms that are true but selective. The soldier writes things down.",
         "arcane": "Someone chose this spot. It is not the most defensible point on the road. It is the most visible, from both directions.\n\nThis checkpoint is not about security. It is about being seen.",
         "ranger": "You approach the checkpoint at a pace that communicates: I know you are there, I am not trying to avoid you, I have nothing to hide. This pace is not natural to you in most situations. You adopt it consciously.\n\nThe soldier steps forward. You note the second soldier's hand position relative to their weapon. Relaxed. This is not an aggressive deployment.",
@@ -258,6 +271,15 @@
                 },
                 "value": -2,
                 "label": "The Compact does not trust you"
+              },
+              {
+                "when": {
+                  "flags": {
+                    "compact_message_undelivered": true
+                  }
+                },
+                "value": -2,
+                "label": "Cael is still waiting for his packet"
               }
             ]
           },
@@ -351,7 +373,7 @@
           "text": "Invoke your existing relationship with the Compact. You have been working with Cael.",
           "requires": {
             "flags": {
-              "compact_allied": true
+              "compact_message_delivered": true
             }
           },
           "roll": null,
@@ -362,7 +384,7 @@
               "state_changes": {}
             }
           },
-          "locked_hint": "Needs Cael's commission"
+          "locked_hint": "Needs Cael's packet delivered"
         },
         {
           "id": "waved_through",
