@@ -179,7 +179,15 @@ export interface Scene {
 export interface ChapterFile {
   chapter: number
   title: string
+  objective?: string
   scenes: Scene[]
+}
+
+// ─── Journal notes and leads (resources/notes.json) ──────────────────────────
+
+export interface NotesFile {
+  leads: Array<{ when: Condition; text: string }>
+  notes: Array<{ flag: string; group: string; text: string }>
 }
 
 // ─── Game state ───────────────────────────────────────────────────────────────
@@ -222,21 +230,33 @@ export interface GameState {
   journal: JournalEntry[]
   visited: Record<string, number>        // scene id → times entered
   taken: Record<string, true>            // "sceneId:choiceId"
-  ended?: { id: string; title: string }  // set when an ending is reached
+  ended?: { id: string; title: string; text?: string }  // set when an ending is reached; text is the closing outcome
+  journal_seen?: string[]                // note and lead keys the player has seen in the journal
 }
 
 // ─── Journal ──────────────────────────────────────────────────────────────────
 
+/**
+ * One choice made. Only ids are stored; the journal rebuilds the text from the
+ * scene data so the save stays small. Saves from before U5 also carry the
+ * resolved text in the optional fields.
+ */
 export interface JournalEntry {
   sceneId: string
-  sceneTitle: string
-  location: string
-  timeOfDay: string
+  choiceId?: string
+  outcomeKey?: OutcomeKey
   day: number
-  text: string          // resolved scene text for the player's class
-  choiceText: string    // the choice the player made
-  outcomeText: string   // the outcome text shown
+  part?: DayPart
+  // legacy
+  sceneTitle?: string
+  location?: string
+  timeOfDay?: string
+  text?: string
+  choiceText?: string
+  outcomeText?: string
 }
+
+export type OutcomeKey = 'default' | 'success' | 'success_at_cost' | 'failure'
 
 // ─── Meta store (survives new games) ──────────────────────────────────────────
 

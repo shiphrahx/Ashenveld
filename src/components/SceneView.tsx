@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react'
-import type { Scene, GameState, Choice, Outcome, RollResult, JournalEntry, DiceOutcome } from '../types'
+import type { Scene, GameState, Choice, Outcome, RollResult, JournalEntry, DiceOutcome, OutcomeKey } from '../types'
 import { rollDice, difficultyLabel } from '../dice'
 import { meets } from '../conditions'
 import { sceneText, resolveRich, CLASS_LABELS } from '../text'
@@ -58,12 +58,11 @@ function outcomeClass(rollResult: RollResult, choice: Choice): string {
 export default function SceneView({ scene, state, onChoice }: Props) {
   const [rollResult, setRollResult] = useState<RollResult | null>(null)
   const [activeChoice, setActiveChoice] = useState<Choice | null>(null)
-  const [shownOutcome, setShownOutcome] = useState<{ outcome: Outcome; css: string } | null>(null)
+  const [shownOutcome, setShownOutcome] = useState<{ outcome: Outcome; css: string; key: OutcomeKey } | null>(null)
   const activeChoiceText = useRef<string | null>(null)
   const activeChoiceId = useRef<string | null>(null)
 
   const { main, aside } = sceneText(scene, state)
-  const narrative = [...main, ...aside].join('\n\n')
   const visibleChoices = scene.choices.filter(c => isChoiceVisible(c, state, scene.id))
   const outcomeText = shownOutcome ? resolveRich(shownOutcome.outcome.text, state) : ''
 
@@ -76,7 +75,7 @@ export default function SceneView({ scene, state, onChoice }: Props) {
       setRollResult(result)
     } else {
       const outcome = choice.outcomes.default
-      if (outcome) setShownOutcome({ outcome, css: '' })
+      if (outcome) setShownOutcome({ outcome, css: '', key: 'default' })
     }
   }, [state])
 
@@ -88,31 +87,29 @@ export default function SceneView({ scene, state, onChoice }: Props) {
       success_at_cost: ['success_at_cost', 'success', 'failure'],
       failure: ['failure', 'success_at_cost', 'success'],
     }
-    const outcome = order[rollResult.outcome].map(k => activeChoice.outcomes[k]).find(Boolean) ?? activeChoice.outcomes.default
+    const key: OutcomeKey = order[rollResult.outcome].find(k => activeChoice.outcomes[k]) ?? 'default'
+    const outcome = activeChoice.outcomes[key]
     const css = outcomeClass(rollResult, activeChoice)
     setRollResult(null)
     setActiveChoice(null)
-    if (outcome) setShownOutcome({ outcome, css })
+    if (outcome) setShownOutcome({ outcome, css, key })
   }, [rollResult, activeChoice])
 
   const handleOutcomeContinue = useCallback(() => {
     if (shownOutcome && activeChoiceText.current) {
       const entry: JournalEntry = {
         sceneId: scene.id,
-        sceneTitle: scene.title,
-        location: scene.location,
-        timeOfDay: state.world.time_of_day,
+        choiceId: activeChoiceId.current ?? '',
+        outcomeKey: shownOutcome.key,
         day: state.world.day,
-        text: narrative,
-        choiceText: activeChoiceText.current,
-        outcomeText,
+        part: state.world.time_of_day,
       }
       onChoice(shownOutcome.outcome, entry, activeChoiceId.current ?? '')
       setShownOutcome(null)
       activeChoiceText.current = null
       activeChoiceId.current = null
     }
-  }, [shownOutcome, onChoice, scene, state, narrative, outcomeText])
+  }, [shownOutcome, onChoice, scene, state])
 
   // Crumb: "Act II · Chapter 3" and "Day 7 · Evening"
   const place = `Act ${toRoman(state.world.act)} · Chapter ${state.world.chapter}`

@@ -13,11 +13,12 @@ import {
   recordEnding,
 } from './gameState'
 import { meets } from './conditions'
+import { resolveRich } from './text'
 import TitleScreen from './components/TitleScreen'
 import StarField from './components/StarField'
 import GameOver from './components/GameOver'
 import EndScreen from './components/EndScreen'
-import Journal from './components/Journal'
+import Journal, { journalKeys } from './components/Journal'
 import Items from './components/Items'
 import People from './components/People'
 import Menu from './components/Menu'
@@ -121,7 +122,7 @@ export default function App() {
     if (!saved) { setPhase('creation'); return }
     if (saved.ended) {
       setGameState(saved)
-      setLastOutcome(saved.journal[saved.journal.length - 1]?.outcomeText ?? '')
+      setLastOutcome(saved.ended.text ?? '')
       setPhase('ended')
       return
     }
@@ -158,11 +159,12 @@ export default function App() {
     let next = applyStateChanges(gameState, outcome.state_changes)
     next = { ...next, journal: [...(next.journal ?? []), entry], taken: { ...next.taken, [`${currentScene.id}:${choiceId}`]: true } }
     if (!outcome.next_scene) {
-      next = { ...next, ended: currentScene.ending ?? { id: currentScene.id, title: currentScene.title } }
+      const ending = currentScene.ending ?? { id: currentScene.id, title: currentScene.title }
+      next = { ...next, ended: { ...ending, text: resolveRich(outcome.text, next) } }
       saveGame(next)
       recordEnding(next)
       setGameState(next)
-      setLastOutcome(entry.outcomeText)
+      setLastOutcome(resolveRich(outcome.text, next))
       setPhase('ended')
       return
     }
@@ -170,6 +172,17 @@ export default function App() {
   }, [gameState, currentScene, enterScene])
 
   const closePanel = useCallback(() => setPanel(null), [])
+
+  // Opening the journal marks everything in it as seen.
+  const openPanel = useCallback((id: PanelId) => {
+    if (id === 'journal' && gameState) {
+      const next = { ...gameState, journal_seen: journalKeys(gameState) }
+      setGameState(next)
+      saveGame(next)
+    }
+    setPanel(id)
+  }, [gameState])
+  const journalDot = gameState ? journalKeys(gameState).some(k => !(gameState.journal_seen ?? []).includes(k)) : false
 
   // ── Render ────────────────────────────────────────────────────────────────────
 
@@ -234,24 +247,24 @@ export default function App() {
             <SceneArt locationName={locationName(currentScene.location)} gameState={gameState} />
           </div>
           <header className={styles.areaStatus}>
-            <StatusStrip state={gameState} hideClock={hideClock} onOpen={() => setPanel('status')} />
+            <StatusStrip state={gameState} hideClock={hideClock} onOpen={() => openPanel('status')} />
           </header>
           <main className={styles.areaStory}>
             <SceneView scene={currentScene} state={gameState} onChoice={handleChoice} />
           </main>
           <div className={styles.areaSide}>
-            <Sidebar state={gameState} onOpen={setPanel} hideClock={hideClock} />
+            <Sidebar state={gameState} onOpen={openPanel} hideClock={hideClock} journalDot={journalDot} />
           </div>
           <div className={styles.areaTabs}>
-            <TabBar onOpen={setPanel} />
+            <TabBar onOpen={openPanel} journalDot={journalDot} />
           </div>
-          {panel === 'journal' && <Journal entries={gameState.journal ?? []} onClose={closePanel} />}
+          {panel === 'journal' && <Journal state={gameState} scene={currentScene} onClose={closePanel} />}
           {panel === 'items' && <Items inventory={gameState.inventory} onClose={closePanel} />}
           {panel === 'people' && <People state={gameState} onClose={closePanel} />}
           {panel === 'map' && <Map state={gameState} onClose={closePanel} />}
           {panel === 'status' && (
             <Panel title="Status" onClose={closePanel}>
-              <Sidebar state={gameState} onOpen={setPanel} hideClock={hideClock} variant="sheet" />
+              <Sidebar state={gameState} onOpen={openPanel} hideClock={hideClock} variant="sheet" />
             </Panel>
           )}
           {panel === 'menu' && (
