@@ -201,7 +201,7 @@
       },
       "requires": {},
       "text": {
-        "default": "You and your missing person have an evening alone — the first genuine one since you found them in the outskirts.\n\nThe Tallow. The fire is better tonight than it has been in weeks. Aldous has been burning the good wood, the kind he saves for occasions.\n\nYour missing person is sitting across from you. They look different in the Tallow's light than they looked in the chamber's light — or maybe you are seeing them differently now. The mechanism read everything. Including things you have been carrying about this person for eleven years and more.\n\nThey are looking at you with the quality of someone who went through the same reading and came out knowing things they did not choose to know.",
+        "default": "You and [missing person] have an evening alone — the first genuine one since you found them in the outskirts.\n\nThe Tallow. The fire is better tonight than it has been in weeks. Aldous has been burning the good wood, the kind he saves for occasions.\n\n[missing person] is sitting across from you. They look different in the Tallow's light than they looked in the chamber's light — or maybe you are seeing them differently now. The mechanism read everything. Including things you have been carrying about this person for eleven years and more.\n\nThey are looking at you with the quality of someone who went through the same reading and came out knowing things they did not choose to know.",
         "commander": "\"The mechanism showed me why you left,\" they say. Not accusing. Stating.\n\n\"Yes,\" you say.\n\n\"The real reason. Not the war. The one underneath the war.\"\n\n\"Yes,\" you say again.\n\n\"I knew part of it,\" they say. \"I did not know the full shape of it.\" A pause. \"It does not change why I wrote the letter. It changes what the letter cost me to write.\"",
         "arcane": "\"There is something I want to tell you,\" they say. \"That the mechanism showed me about myself, that I did not know before.\"\n\nThey tell you.\n\nWhat they say is not what you expected. Something about the fourteen months — not the ruins, not the ritual. What they understood about themselves while they were alone. What the isolation clarified.\n\nYou listen with the specific attention of someone who knows that what they are being told is being told precisely, without omission, for the first time to anyone.",
         "ranger": "\"What did it show you?\" they ask. \"About me.\"\n\nYou think about how to answer honestly.\n\n\"That you came back to Ashenveld for the same reason you left,\" you say. \"That those two things are the same reason. That you have been trying to solve a problem about yourself for eleven years and the ruins were the first place you found where the problem felt like it might have an answer.\"\n\nThey look at you for a long time. \"Yes,\" they say. \"Does it change how you see me?\"\n\n\"No,\" you say. You mean it.",
@@ -264,9 +264,9 @@
       },
       "requires": {},
       "text": {
-        "default": "Morning of the sixteenth day.\n\nYou are sitting at your table in the Tallow when it becomes clear that today is the day the decisions solidify. Not made — you have been making them for days. But committed, the point past which revision requires extraordinary effort.\n\nThe factions have their positions. You have yours. Your missing person is here, and Pol, and Maret, and Branch, and Lira, and Issa, and Aldous behind his bar with the good wood still burning.\n\nThe question is not what you have done. The question is what you are going to do with what comes next.\n\nThis is the point of no return. What you choose here shapes which ending is possible.",
+        "default": "Morning of the sixteenth day.\n\nYou are sitting at your table in the Tallow when it becomes clear that today is the day the decisions solidify. Not made — you have been making them for days. But committed, the point past which revision requires extraordinary effort.\n\nThe factions have their positions. You have yours. [missing person] is here, and Pol, and Maret, and Branch, and Lira, and Issa, and Aldous behind his bar with the good wood still burning.\n\nThe question is not what you have done. The question is what you are going to do with what comes next.\n\nThis is the point of no return. What you choose here shapes which ending is possible.",
         "commander": "You have been building toward a specific outcome. You know where you stand. What comes next is implementation — and implementation in Ashenveld's current state may require you to be present for a significant time. Possibly permanently.\n\nYou think about what that means. Then you decide what it means.",
-        "arcane": "You have documentation to produce. Your missing person's fourteen months of notes. Pol's fifteen years of scholarship. Your own observations.\n\nThe question is who receives it and what version of events it tells. This work will determine what Ashenveld becomes.",
+        "arcane": "You have documentation to produce. [missing person]'s fourteen months of notes. Pol's fifteen years of scholarship. Your own observations.\n\nThe question is who receives it and what version of events it tells. This work will determine what Ashenveld becomes.",
         "ranger": "Ashenveld needs time, and time is not threatened. But it also needs people who know how to read what is happening and respond to it.\n\nYou think about whether you are one of those people. You think about what it would mean to stay.",
         "cipher": "The political situation has a shape. Remaining influence requires sustained presence — continued relationship management, continued attention to who is doing what and why.\n\nYou have done this in other places for other reasons. The question is whether you want to do it here."
       },
@@ -278,7 +278,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You decide to stay.\n\nNot because you have to. Because Ashenveld is where the work is and you are the person who knows what the work is and how to do it.\n\nYou find your missing person and tell them.\n\nThey look at you for a moment. \"I was going to ask you,\" they say. \"But I did not want to ask you to stay for me rather than for the place.\"\n\n\"I am staying for both,\" you say. \"Both are real. Both are enough.\"\n\nThey nod. \"Then I am staying too.\"",
+              "text": "You decide to stay.\n\nNot because you have to. Because Ashenveld is where the work is and you are the person who knows what the work is and how to do it.\n\nYou find [missing person] and tell them.\n\nThey look at you for a moment. \"I was going to ask you,\" they say. \"But I did not want to ask you to stay for me rather than for the place.\"\n\n\"I am staying for both,\" you say. \"Both are real. Both are enough.\"\n\nThey nod. \"Then I am staying too.\"",
               "next_scene": "act3_ch1_new_ashenveld",
               "state_changes": {
                 "flags": {
@@ -290,12 +290,12 @@
         },
         {
           "id": "choose_to_leave_with_missing",
-          "text": "Leave Ashenveld with your missing person. You came here for them. The rest is finished.",
+          "text": "Leave Ashenveld with [missing person]. You came here for them. The rest is finished.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You decide to leave.\n\nThe curse is sealed. The factions have their arrangement. Ashenveld's recovery is underway and does not require your specific presence.\n\nYou came here for one reason. The reason is standing across from you.\n\nYou find your missing person and tell them you are going.\n\nSomething in their face moves — not disappointment, something more complex. \"I thought—\" they begin. Then stop. \"All right,\" they say. \"When?\"\n\n\"Now,\" you say. \"Before something else needs to be fixed.\"",
+              "text": "You decide to leave.\n\nThe curse is sealed. The factions have their arrangement. Ashenveld's recovery is underway and does not require your specific presence.\n\nYou came here for one reason. The reason is standing across from you.\n\nYou find [missing person] and tell them you are going.\n\nSomething in their face moves — not disappointment, something more complex. \"I thought—\" they begin. Then stop. \"All right,\" they say. \"When?\"\n\n\"Now,\" you say. \"Before something else needs to be fixed.\"",
               "next_scene": "act3_ch1_leaving",
               "state_changes": {
                 "flags": {
@@ -307,7 +307,7 @@
         },
         {
           "id": "send_missing_person_ahead",
-          "text": "Send your missing person ahead. Stay long enough to finish what needs finishing, then follow.",
+          "text": "Send [missing person] ahead. Stay long enough to finish what needs finishing, then follow.",
           "requires": {},
           "roll": null,
           "outcomes": {
@@ -324,7 +324,7 @@
         },
         {
           "id": "stay_alone",
-          "text": "Stay in Ashenveld alone. Your missing person deserves to leave. You are not ready to.",
+          "text": "Stay in Ashenveld alone. [missing person] deserves to leave. You are not ready to.",
           "requires": {},
           "roll": null,
           "outcomes": {

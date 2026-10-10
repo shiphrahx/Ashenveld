@@ -149,7 +149,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "His name is Corvin and he has been in Crestfall for eighty years and he knows things the way old people in small towns know things — not because anyone told him but because he was there.\n\nHe saw your missing person. He says so directly, which surprises you. \"Asking about the ruins,\" he says. \"Like you are probably about to.\" He gives you a long look. \"Went to the camp outside town eventually. The woman there — Maret — sent them east.\"\n\nHe hands you a piece of dried fish you did not ask for and looks away, which means the conversation is over.",
+              "text": "His name is Corvin and he has been in Crestfall for eighty years and he knows things the way old people in small towns know things — not because anyone told him but because he was there.\n\nHe saw [missing person]. He says so directly, which surprises you. \"Asking about the ruins,\" he says. \"Like you are probably about to.\" He gives you a long look. \"Went to the camp outside town eventually. The woman there — Maret — sent them east.\"\n\nHe hands you a piece of dried fish you did not ask for and looks away, which means the conversation is over.",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {
                 "flags": {
@@ -159,7 +159,7 @@
               }
             },
             "success_at_cost": {
-              "text": "He watched you come in and has been deciding something. He lands on partial disclosure — your missing person was here, went to the camp. He looks away before you can ask more.",
+              "text": "He watched you come in and has been deciding something. He lands on partial disclosure — [missing person] was here, went to the camp. He looks away before you can ask more.",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {
                 "flags": {
@@ -355,7 +355,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "A woman in her thirties opens the door — wary at first, then warm when you explain.\n\nShe was born in Crestfall and moved here with her husband six years ago. She knew some of the people who knew you. She invites you in for something to drink. You go.\n\nThe inside has changed completely and is, underneath the changes, entirely the same. You sit in the kitchen and drink something hot and she tells you about the town. And then, without you asking, she says: \"Someone was here last year asking after you. Or someone like you — they described the family who used to live here. Asked questions about the old ruins.\"\n\nYour missing person was here. At your childhood home. Looking for something about you, or about where you came from.",
+              "text": "A woman in her thirties opens the door — wary at first, then warm when you explain.\n\nShe was born in Crestfall and moved here with her husband six years ago. She knew some of the people who knew you. She invites you in for something to drink. You go.\n\nThe inside has changed completely and is, underneath the changes, entirely the same. You sit in the kitchen and drink something hot and she tells you about the town. And then, without you asking, she says: \"Someone was here last year asking after you. Or someone like you — they described the family who used to live here. Asked questions about the old ruins.\"\n\n[missing person] was here. At your childhood home. Looking for something about you, or about where you came from.",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {
                 "flags": {
@@ -369,7 +369,7 @@
               }
             },
             "success_at_cost": {
-              "text": "She opens the door and is politely reserved. You explain briefly. She nods and tells you one thing useful: that she saw your missing person walking east on the road about fourteen months ago. Alone. Purposeful.\n\n\"I remember thinking they knew where they were going,\" she says. \"That is rare now. People here do not look like they know where they are going.\"",
+              "text": "She opens the door and is politely reserved. You explain briefly. She nods and tells you one thing useful: that she saw [missing person] walking east on the road about fourteen months ago. Alone. Purposeful.\n\n\"I remember thinking they knew where they were going,\" she says. \"That is rare now. People here do not look like they know where they are going.\"",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {
                 "flags": {
