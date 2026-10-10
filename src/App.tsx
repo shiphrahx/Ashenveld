@@ -366,10 +366,20 @@ export default function App() {
 
   if (phase === 'game' && gameState && currentScene) {
     const hideClock = currentScene.when?.hide_clock ?? false
+    // E4: the curse greys the art and closes in from the edges. Story text never changes.
+    const dimRaw = Math.min(1, gameState.world.curse_spread / 100)
+    const dim = !settings.screenEffects ? 0 : gameState.flags.ritual_partial ? Math.max(0.3, dimRaw) : dimRaw
+    const deep = settings.screenEffects && getLocation(gameState.world.current_location)?.region === 'deep_forest' ? 1 : 0
+    const shellVars = {
+      '--dim': String(dim),
+      '--deep': String(deep),
+      // After the seal, colour comes back slowly.
+      '--dim-time': currentScene.id === 'act2_ch6_aftermath' ? '4s' : '2s',
+    } as React.CSSProperties
     return (
       <>
         <div className={styles.backdrop} aria-hidden="true" />
-        <div className={styles.shell}>
+        <div className={styles.shell} style={shellVars} data-dim={dim.toFixed(2)}>
           <div className={styles.areaArt}>
             <SceneArt locationName={locationName(gameState.world.current_location)} gameState={gameState}
               alt={getLocation(gameState.world.current_location)?.description ?? locationName(gameState.world.current_location)} />

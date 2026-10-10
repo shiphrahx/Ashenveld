@@ -20,7 +20,21 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 400ms ease;
+  /* E4: The Dimming takes the colour out of the art */
+  filter: saturate(calc(1 - 0.75 * var(--dim, 0) - 0.15 * var(--deep, 0))) brightness(calc(1 - 0.12 * var(--dim, 0)));
+  transition: opacity 400ms ease, filter var(--dim-time, 2s) ease;
+}
+
+/* E4: and the edges close in */
+.sceneArt::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+  background: radial-gradient(ellipse at center, transparent calc(70% - 30% * var(--dim, 0)), rgba(0, 0, 0, 0.85) 100%);
+  opacity: calc(0.25 + 0.6 * var(--dim, 0));
+  transition: opacity var(--dim-time, 2s) ease;
 }
 
 .placeholder {
