@@ -1,7 +1,7 @@
 import React from 'react'
 import type { GameState } from '../types'
 import { CLASS_LABELS } from '../text'
-import { Icon, PartGlyph } from './icons'
+import { Icon, PartGlyph, FactionMark } from './icons'
 import { dimmingBand, maxResolve, factionTier, modifierForStat, STAT_NAMES, STAT_TIPS, TIER_ORDER, TIER_EFFECT, type RestOption } from '../rules'
 import type { PanelId } from './TabBar'
 import styles from './Sidebar.module.css'
@@ -131,7 +131,7 @@ export default function Sidebar({ state, onOpen, hideClock = false, variant = 'c
             <div key={key} className={styles.facRow} tabIndex={0} data-faction={key}
               aria-label={`${label}: ${tier}. ${TIER_EFFECT[key]?.[tier] ?? ''}`}>
               <div className={styles.facTop}>
-                <span className={styles.fn}>{label}</span>
+                <span className={styles.fn}><FactionMark faction={key} className={styles.facMark} />{label}</span>
                 <span className={styles.facTier}>{tier}</span>
               </div>
               <div className={`${styles.segs} ${lit(key)}`} aria-hidden="true">
