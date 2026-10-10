@@ -252,3 +252,27 @@ test('Resolve at zero is a collapse, not a game over (G9)', async ({ page }) => 
   await expect(page.locator('[data-scene-id="act1_ch5_faction_responses"]')).toBeVisible()
   expect(errors).toEqual([])
 })
+
+test('the map grows as you go, and People says where you saw them (U10, U11)', async ({ page }) => {
+  const errors = watchConsole(page)
+  await stubRandom(page, 0.95)
+  await createCharacter(page, 'Cipher')
+
+  await page.getByRole('button', { name: /^map$/i }).first().click()
+  await expect(page.locator('[data-node=crestfall_docks]')).toHaveAttribute('data-state', 'current')
+  await expect(page.locator('[data-node=crestfall_tallow_inn]')).toHaveAttribute('data-state', 'ring')
+  await expect(page.locator('[data-node=ruins_source_chamber]')).toHaveCount(0)
+  await page.keyboard.press('Escape')
+
+  await pickChoice(page, 'move_to_town')
+  await pickChoice(page, (await page.locator('[data-choice-id]:not([disabled])').first().getAttribute('data-choice-id'))!)
+  await page.getByRole('button', { name: /^map$/i }).first().click()
+  await expect(page.locator('[data-node=crestfall_docks]')).toHaveAttribute('data-state', 'visited')
+  await page.locator('[data-node=crestfall_docks]').click()
+  await expect(page.locator('[data-map-card]')).toContainText('Crestfall Docks')
+  await page.keyboard.press('Escape')
+
+  await page.getByRole('button', { name: /^people$/i }).first().click()
+  await expect(page.locator('[data-person]').first()).toBeVisible()
+  expect(errors).toEqual([])
+})
