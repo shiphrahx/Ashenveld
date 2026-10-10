@@ -70,7 +70,11 @@
             "default": {
               "text": "You walk. Pol walks. [missing person] walks.\n\nThe road passes in silence that is not the silence of people who have nothing to say but the silence of people who have more to say than the walk home can hold and have decided to wait until they are somewhere still enough to say it properly.\n\nThe Compact checkpoint. You pass through. The soldiers look at [missing person] with the attention of someone encountering a face they do not have a record for. You give a simple account and you pass.\n\nCrestfall ahead.",
               "next_scene": "act2_ch7_crestfall_reception",
-              "state_changes": {}
+              "state_changes": {
+                "counters": {
+                  "listened": 1
+                }
+              }
             }
           }
         }

@@ -250,6 +250,9 @@
               "state_changes": {
                 "flags": {
                   "maret_followed": true
+                },
+                "counters": {
+                  "careful": 1
                 }
               }
             }
@@ -268,6 +271,9 @@
                 "flags": {
                   "maret_followed": true,
                   "saw_maret_at_line": true
+                },
+                "counters": {
+                  "careful": 1
                 }
               }
             }
@@ -429,6 +435,9 @@
                   "maret": {
                     "closeness": -5
                   }
+                },
+                "counters": {
+                  "blunt": 1
                 }
               }
             }

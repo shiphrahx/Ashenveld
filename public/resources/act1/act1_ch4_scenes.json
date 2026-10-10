@@ -291,7 +291,11 @@
             "default": {
               "text": "She comes to you when the evening fire is lit. She sits across from it and looks at it for a while.\n\n\"Tomorrow,\" she says, \"I will tell you what I know. About your person. About what I think is in those ruins.\" She pauses. \"Tonight I want to ask you something first.\"",
               "next_scene": "act1_ch4_maret_evening",
-              "state_changes": {}
+              "state_changes": {
+                "counters": {
+                  "careful": 1
+                }
+              }
             }
           }
         }
@@ -405,7 +409,8 @@
                   }
                 },
                 "counters": {
-                  "camp_day": 1
+                  "camp_day": 1,
+                  "listened": 1
                 }
               }
             }
@@ -719,6 +724,9 @@
                   "maret": {
                     "closeness": 20
                   }
+                },
+                "counters": {
+                  "lied": 1
                 }
               }
             },
@@ -730,13 +738,20 @@
                   "maret": {
                     "closeness": 10
                   }
+                },
+                "counters": {
+                  "lied": 1
                 }
               }
             },
             "failure": {
               "text": "She hears what you give her and waits for more, and when more does not come she nods once.\n\n\"I understand,\" she says. She means she understands why you are holding back, not that she is satisfied with it. \"The letter I have — your person left it with me — I will keep it until I think you are the right person to give it to.\"",
               "next_scene": "act1_ch4_maret_letter_withheld",
-              "state_changes": {}
+              "state_changes": {
+                "counters": {
+                  "lied": 1
+                }
+              }
             }
           }
         }

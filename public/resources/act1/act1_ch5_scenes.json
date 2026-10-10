@@ -129,18 +129,29 @@
               "state_changes": {
                 "flags": {
                   "understands_curse_episodes": true
+                },
+                "counters": {
+                  "careful": 1
                 }
               }
             },
             "success_at_cost": {
               "text": "You watch. The episode ends. She continues. You have learned something about the duration and the recovery but not more than that.",
               "next_scene": "act1_ch5_faction_responses",
-              "state_changes": {}
+              "state_changes": {
+                "counters": {
+                  "careful": 1
+                }
+              }
             },
             "failure": {
               "text": "You watch but the curse event is ordinary enough to the market that the information it carries is lost in the backdrop of normalcy. Something happened. The town notes nothing.",
               "next_scene": "act1_ch5_faction_responses",
-              "state_changes": {}
+              "state_changes": {
+                "counters": {
+                  "careful": 1
+                }
+              }
             }
           }
         }
@@ -548,6 +559,9 @@
                 "flags": {
                   "found_pre_departure_insight": true,
                   "maret_believes_alive": true
+                },
+                "counters": {
+                  "listened": 1
                 }
               }
             },
@@ -557,13 +571,20 @@
               "state_changes": {
                 "flags": {
                   "found_pre_departure_insight": true
+                },
+                "counters": {
+                  "listened": 1
                 }
               }
             },
             "failure": {
               "text": "You go over it all again and again and end up where you started, with less sleep.",
               "next_scene": "act1_ch6_departure_decision",
-              "state_changes": {}
+              "state_changes": {
+                "counters": {
+                  "listened": 1
+                }
+              }
             }
           }
         },

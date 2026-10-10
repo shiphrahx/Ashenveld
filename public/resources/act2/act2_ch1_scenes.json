@@ -183,6 +183,9 @@
               "state_changes": {
                 "flags": {
                   "understands_ruins_structure": true
+                },
+                "counters": {
+                  "careful": 1
                 }
               }
             },
@@ -192,13 +195,20 @@
               "state_changes": {
                 "flags": {
                   "understands_ruins_structure": true
+                },
+                "counters": {
+                  "careful": 1
                 }
               }
             },
             "failure": {
               "text": "The ruins give you scale but not understanding. You know they are large and old and oriented toward something, but the details that would make those facts useful remain out of reach. You move on.",
               "next_scene": "act2_ch1_first_cairn",
-              "state_changes": {}
+              "state_changes": {
+                "counters": {
+                  "careful": 1
+                }
+              }
             }
           }
         }
@@ -312,6 +322,9 @@
               "state_changes": {
                 "flags": {
                   "read_passage_carvings": true
+                },
+                "counters": {
+                  "careful": 1
                 }
               }
             },
@@ -324,13 +337,20 @@
                 },
                 "resources": {
                   "health": -8
+                },
+                "counters": {
+                  "careful": 1
                 }
               }
             },
             "failure": {
               "text": "You cannot read the carvings. The script is completely opaque. You follow the instruction and avoid them and proceed.",
               "next_scene": "act2_ch1_the_watcher_seen",
-              "state_changes": {}
+              "state_changes": {
+                "counters": {
+                  "careful": 1
+                }
+              }
             }
           }
         }
@@ -486,7 +506,11 @@
             "default": {
               "text": "You position yourself near the gate and wait. The Watcher does not look at you. The ruins are quiet in their way. The time passes with the texture-less quality you first noticed when you entered the forest.\n\nThen, from somewhere deeper in the outskirts, footsteps.",
               "next_scene": "act2_ch1_missing_person_approach",
-              "state_changes": {}
+              "state_changes": {
+                "counters": {
+                  "careful": 1
+                }
+              }
             }
           }
         }
@@ -625,6 +649,9 @@
                   "the_missing_person": {
                     "closeness": 25
                   }
+                },
+                "counters": {
+                  "listened": 1
                 }
               }
             }
@@ -791,6 +818,9 @@
                   "the_missing_person": {
                     "closeness": 5
                   }
+                },
+                "counters": {
+                  "blunt": 1
                 }
               }
             }

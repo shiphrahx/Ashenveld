@@ -378,6 +378,9 @@
                   "the_missing_person": {
                     "closeness": 15
                   }
+                },
+                "counters": {
+                  "lied": 1
                 }
               }
             }

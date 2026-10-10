@@ -194,3 +194,71 @@ export const STAT_TIPS: Record<string, string> = {
   charisma: 'Getting people to talk, to trust you, or to back down.',
   perception: 'Noticing what is out of place.',
 }
+
+// ─── Traits (G14) ─────────────────────────────────────────────────────────────
+// Stats never change. One trait is awarded at the end of Acts 1 and 2, from how
+// you behaved. Outcomes count the behaviour in counters; the award sets
+// flags.trait_<id>.
+
+export interface Trait { id: string; name: string; effect: string }
+
+export const TRAITS: Record<string, Trait> = {
+  listener:     { id: 'listener',     name: 'Listener',     effect: '+1 on Charisma with the afflicted.' },
+  blunt:        { id: 'blunt',        name: 'Blunt',        effect: '+1 on rolls with soldiers, −1 with Maret.' },
+  careful:      { id: 'careful',      name: 'Careful',      effect: '+1 on Perception.' },
+  company_coin: { id: 'company_coin', name: 'Company coin', effect: '+1 with the Compact, −1 with the Rootless.' },
+  worn:         { id: 'worn',         name: 'Worn',         effect: '+1 on Mana. Your Resolve tops out at 90.' },
+  kept_faith:   { id: 'kept_faith',   name: 'Kept faith',   effect: '+1 in the ritual.' },
+}
+
+/** Scenes a trait's effect applies in. */
+export const TRAIT_SCENES = {
+  afflicted: ['act1_ch1_still_man', 'act1_ch4_lira', 'act1_ch5_curse_event', 'act2_ch1_the_watcher_seen',
+    'act2_ch7_maret_and_missing', 'act3_ch2_rebuilding_work', 'act3_ch2_alone_work'],
+  compact: ['act1_ch3_compact_introduction', 'act1_ch3_compact_offer', 'act1_ch5_faction_responses',
+    'act2_ch3_compact_checkpoint', 'act2_ch4_vorne_meeting', 'act2_ch4_issa_confrontation', 'act2_ch7_vorne_reacts'],
+  maret: ['act1_ch3_maret_first_meeting', 'act1_ch4_maret_opens', 'act1_ch4_maret_evening',
+    'act1_ch4_maret_letter_withheld', 'act2_ch4_issa_crisis', 'act2_ch5_maret_conversation'],
+  rootless: ['act1_ch3_rootless_camp_approach', 'act1_ch4_branch', 'act2_ch3_rootless_situation', 'act2_ch3_pol_revelation'],
+  ritual: ['act2_ch6_ritual_engagement'],
+}
+
+export const hasTrait = (flags: Record<string, unknown>, id: string) => Boolean(flags[`trait_${id}`])
+export const traitsOf = (flags: Record<string, unknown>) => Object.values(TRAITS).filter(t => hasTrait(flags, t.id))
+
+/** What each trait adds to a roll in this scene with this stat. */
+export function traitBonuses(flags: Record<string, unknown>, scene: string, stat: string): Array<{ value: number; label: string }> {
+  const out: Array<{ value: number; label: string }> = []
+  const S = TRAIT_SCENES
+  const inScene = (list: string[]) => list.includes(scene)
+  if (hasTrait(flags, 'listener') && stat === 'charisma' && inScene(S.afflicted)) out.push({ value: 1, label: 'Listener' })
+  if (hasTrait(flags, 'blunt') && inScene(S.compact)) out.push({ value: 1, label: 'Blunt' })
+  if (hasTrait(flags, 'blunt') && inScene(S.maret)) out.push({ value: -1, label: 'Blunt' })
+  if (hasTrait(flags, 'careful') && stat === 'perception') out.push({ value: 1, label: 'Careful' })
+  if (hasTrait(flags, 'company_coin') && inScene(S.compact)) out.push({ value: 1, label: 'Company coin' })
+  if (hasTrait(flags, 'company_coin') && (inScene(S.rootless) || inScene(S.maret))) out.push({ value: -1, label: 'Company coin' })
+  if (hasTrait(flags, 'worn') && stat === 'mana') out.push({ value: 1, label: 'Worn' })
+  if (hasTrait(flags, 'kept_faith') && inScene(S.ritual)) out.push({ value: 1, label: 'Kept faith' })
+  return out
+}
+
+export const TRAIT_RULES = { behaviour: 3, compactCoin: 35, wornBelow: 40, wornMaxResolve: 90 }
+
+/**
+ * The trait earned at an act break, or null. The behaviour you showed most
+ * wins; then Compact money; then being worn down; then never having lied.
+ * A trait you already have can't be earned twice.
+ */
+export function traitEarned(s: { counters?: Record<string, number>; flags: Record<string, unknown>; player: { resources: { health: number } } }): Trait | null {
+  const c = s.counters ?? {}
+  const fresh = (id: string) => !hasTrait(s.flags, id)
+  const behaviour = (['listener', 'blunt', 'careful'] as const)
+    .map(id => ({ id, n: c[{ listener: 'listened', blunt: 'blunt', careful: 'careful' }[id]] ?? 0 }))
+    .filter(b => b.n >= TRAIT_RULES.behaviour && fresh(b.id))
+    .sort((a, b) => b.n - a.n)
+  if (behaviour.length) return TRAITS[behaviour[0].id]
+  if ((c.compact_coin ?? 0) >= TRAIT_RULES.compactCoin && fresh('company_coin')) return TRAITS.company_coin
+  if (s.player.resources.health < TRAIT_RULES.wornBelow && fresh('worn')) return TRAITS.worn
+  if (!(c.lied ?? 0) && fresh('kept_faith')) return TRAITS.kept_faith
+  return null
+}

@@ -146,6 +146,9 @@
                   "iron_compact": {
                     "reputation": 15
                   }
+                },
+                "counters": {
+                  "compact_coin": 15
                 }
               }
             }
@@ -165,6 +168,9 @@
                   "iron_compact": {
                     "reputation": -5
                   }
+                },
+                "counters": {
+                  "blunt": 1
                 }
               }
             }
@@ -194,6 +200,9 @@
                   "iron_compact": {
                     "reputation": 20
                   }
+                },
+                "counters": {
+                  "compact_coin": 30
                 }
               }
             },
@@ -212,6 +221,9 @@
                   "iron_compact": {
                     "reputation": 12
                   }
+                },
+                "counters": {
+                  "compact_coin": 20
                 }
               }
             },
@@ -494,7 +506,11 @@
             "default": {
               "text": "\"Of course,\" Edric says. The composure is absolute. He was not counting on you. He puts the stone away. He has other people to ask.\n\n\"The ward is still yours,\" he says. \"No conditions.\"",
               "next_scene": "act1_ch3_after_faction",
-              "state_changes": {}
+              "state_changes": {
+                "counters": {
+                  "blunt": 1
+                }
+              }
             }
           }
         }
@@ -666,13 +682,20 @@
                   "branch": {
                     "closeness": 5
                   }
+                },
+                "counters": {
+                  "blunt": 1
                 }
               }
             },
             "success_at_cost": {
               "text": "He considers you. \"That is what half the people who show up here say.\" He looks at your pack, your bearing, something he is calculating. \"Maret will see you but do not push. She will give you what she wants to give you.\" He goes to get her.",
               "next_scene": "act1_ch3_maret_first_meeting",
-              "state_changes": {}
+              "state_changes": {
+                "counters": {
+                  "blunt": 1
+                }
+              }
             },
             "failure": {
               "text": "\"Maret is busy,\" he says. Not immediately hostile but not open either. \"Come back tomorrow.\"\n\nThe day is ending. Tomorrow the camp, and a different approach.",
@@ -681,6 +704,9 @@
                 "world": {
                   "time_of_day": "evening",
                   "curse_spread": 2
+                },
+                "counters": {
+                  "blunt": 1
                 }
               }
             }
@@ -763,6 +789,9 @@
                   "branch": {
                     "closeness": 5
                   }
+                },
+                "counters": {
+                  "careful": 1
                 }
               }
             }
@@ -854,6 +883,9 @@
                   "maret": {
                     "closeness": 20
                   }
+                },
+                "counters": {
+                  "careful": 1
                 }
               }
             },
@@ -865,6 +897,9 @@
                   "maret": {
                     "closeness": 8
                   }
+                },
+                "counters": {
+                  "careful": 1
                 }
               }
             },
@@ -876,6 +911,9 @@
                   "maret": {
                     "closeness": 3
                   }
+                },
+                "counters": {
+                  "careful": 1
                 }
               }
             }
@@ -901,6 +939,9 @@
                   "maret": {
                     "closeness": 15
                   }
+                },
+                "counters": {
+                  "careful": 1
                 }
               }
             }

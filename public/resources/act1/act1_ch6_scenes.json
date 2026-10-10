@@ -612,6 +612,9 @@
                   "iron_compact": {
                     "reputation": 5
                   }
+                },
+                "counters": {
+                  "compact_coin": 20
                 }
               }
             }
@@ -977,18 +980,29 @@
                 },
                 "inventory": [
                   "missing_person_note"
-                ]
+                ],
+                "counters": {
+                  "careful": 1
+                }
               }
             },
             "success_at_cost": {
               "text": "You find a scuff in the soil at the campsite's edge. Foot traffic, recent, east. Just the confirmation of direction. Nothing left for you to find.",
               "next_scene": "act1_ch6_harrow_arrival",
-              "state_changes": {}
+              "state_changes": {
+                "counters": {
+                  "careful": 1
+                }
+              }
             },
             "failure": {
               "text": "The campsite gives you nothing more than you already have. You have the arrangement of the stones. That is enough. You continue.",
               "next_scene": "act1_ch6_harrow_arrival",
-              "state_changes": {}
+              "state_changes": {
+                "counters": {
+                  "careful": 1
+                }
+              }
             }
           }
         },

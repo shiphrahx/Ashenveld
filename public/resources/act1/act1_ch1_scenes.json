@@ -56,18 +56,29 @@
               "state_changes": {
                 "flags": {
                   "observed_arrival_details": true
+                },
+                "counters": {
+                  "careful": 1
                 }
               }
             },
             "success_at_cost": {
               "text": "You catch some of it. The Compact soldier, the missing lights, the silence where birds should be. Enough to know the town is different in ways that are not just time passing. You are tired from the crossing. You stop counting and start walking.",
               "next_scene": "act1_ch1_docks_encounter",
-              "state_changes": {}
+              "state_changes": {
+                "counters": {
+                  "careful": 1
+                }
+              }
             },
             "failure": {
               "text": "You stand on the pier and see Crestfall. That is all. You are too tired from the crossing to read it properly and you know it. You start walking before you talk yourself into standing here until dawn.",
               "next_scene": "act1_ch1_docks_encounter",
-              "state_changes": {}
+              "state_changes": {
+                "counters": {
+                  "careful": 1
+                }
+              }
             }
           }
         }
@@ -201,7 +212,11 @@
             "default": {
               "text": "You nod and go. You feel his attention on your back for twenty metres. He has more to say. He has decided you do not want to hear it yet.",
               "next_scene": "act1_ch1_tallow_arrival",
-              "state_changes": {}
+              "state_changes": {
+                "counters": {
+                  "listened": 1
+                }
+              }
             }
           }
         }
@@ -323,6 +338,9 @@
                 "flags": {
                   "noticed_still_man": true,
                   "noticed_aldous_worried": true
+                },
+                "counters": {
+                  "careful": 1
                 }
               }
             },
@@ -332,6 +350,9 @@
               "state_changes": {
                 "flags": {
                   "noticed_still_man": true
+                },
+                "counters": {
+                  "careful": 1
                 }
               }
             },
@@ -341,6 +362,9 @@
               "state_changes": {
                 "resources": {
                   "gold": -3
+                },
+                "counters": {
+                  "careful": 1
                 }
               }
             }
@@ -628,7 +652,11 @@
             "default": {
               "text": "You take the chair nearest the fire. The man on the other side of it does not look up.",
               "next_scene": "act1_ch1_still_man",
-              "state_changes": {}
+              "state_changes": {
+                "counters": {
+                  "listened": 1
+                }
+              }
             }
           }
         }
@@ -720,6 +748,9 @@
                   "innkeeper_aldous": {
                     "closeness": 8
                   }
+                },
+                "counters": {
+                  "listened": 1
                 }
               }
             }

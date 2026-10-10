@@ -657,6 +657,9 @@
                 },
                 "flags": {
                   "vorne_knows_player_was_in_ruins": true
+                },
+                "counters": {
+                  "compact_coin": 40
                 }
               }
             }
@@ -1111,6 +1114,9 @@
                   "seriva": {
                     "closeness": 15
                   }
+                },
+                "counters": {
+                  "blunt": 1
                 }
               }
             },
@@ -1120,6 +1126,9 @@
               "state_changes": {
                 "flags": {
                   "seriva_deflected": true
+                },
+                "counters": {
+                  "blunt": 1
                 }
               }
             },
@@ -1131,6 +1140,9 @@
                   "ashen_covenant": {
                     "reputation": -10
                   }
+                },
+                "counters": {
+                  "blunt": 1
                 }
               }
             }

@@ -336,6 +336,9 @@
               "state_changes": {
                 "flags": {
                   "ritual_understood": true
+                },
+                "counters": {
+                  "careful": 1
                 }
               }
             },
@@ -345,6 +348,9 @@
               "state_changes": {
                 "flags": {
                   "ritual_partially_understood": true
+                },
+                "counters": {
+                  "careful": 1
                 }
               }
             },
@@ -354,6 +360,9 @@
               "state_changes": {
                 "flags": {
                   "ritual_summarised": true
+                },
+                "counters": {
+                  "careful": 1
                 }
               }
             }
@@ -386,6 +395,9 @@
                 "flags": {
                   "understands_fracture": true,
                   "seriva_suspected": true
+                },
+                "counters": {
+                  "careful": 1
                 }
               }
             },
@@ -395,13 +407,20 @@
               "state_changes": {
                 "flags": {
                   "fracture_is_intentional": true
+                },
+                "counters": {
+                  "careful": 1
                 }
               }
             },
             "failure": {
               "text": "The fracture reads as damage. Old, intentional damage. Beyond that you need to be closer than is advisable.",
               "next_scene": "act2_ch2_decision_to_return",
-              "state_changes": {}
+              "state_changes": {
+                "counters": {
+                  "careful": 1
+                }
+              }
             }
           }
         },

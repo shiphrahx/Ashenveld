@@ -114,6 +114,9 @@
                 },
                 "world": {
                   "curse_spread": 1
+                },
+                "counters": {
+                  "listened": 1
                 }
               }
             }

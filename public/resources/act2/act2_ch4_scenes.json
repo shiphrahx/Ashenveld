@@ -417,6 +417,9 @@
                   "iron_compact": {
                     "reputation": -15
                   }
+                },
+                "counters": {
+                  "blunt": 1
                 }
               }
             },
@@ -434,6 +437,9 @@
                   "iron_compact": {
                     "reputation": -8
                   }
+                },
+                "counters": {
+                  "blunt": 1
                 }
               }
             },
@@ -448,6 +454,9 @@
                   "iron_compact": {
                     "reputation": -20
                   }
+                },
+                "counters": {
+                  "blunt": 1
                 }
               }
             }
@@ -601,6 +610,9 @@
                   "iron_compact": {
                     "reputation": 5
                   }
+                },
+                "counters": {
+                  "listened": 1
                 }
               }
             }
