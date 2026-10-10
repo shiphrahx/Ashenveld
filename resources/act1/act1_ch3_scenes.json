@@ -500,7 +500,7 @@
             },
             "failure": {
               "text": "\"Maret is busy,\" he says. Not immediately hostile but not open either. \"Come back tomorrow.\"\n\nThe day is ending. Tomorrow the camp, and a different approach.",
-              "next_scene": "act1_ch1_tallow_room",
+              "next_scene": "act1_ch3_camp_second_try",
               "state_changes": {
                 "world": {
                   "time_of_day": "evening"
@@ -536,7 +536,62 @@
             },
             "failure": {
               "text": "\"Maret has enough people with skills,\" Branch says. He does not send you away. He also does not go to get her. You are in a holding pattern until tomorrow.",
-              "next_scene": "act1_ch1_tallow_room",
+              "next_scene": "act1_ch3_camp_second_try",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "act1_ch3_camp_second_try",
+      "act": 1,
+      "chapter": 3,
+      "location": "rootless_camp",
+      "title": "The Next Morning",
+      "when": {
+        "part": "morning"
+      },
+      "on_enter": {
+        "state_changes": {
+          "flags": {
+            "branch_turned_you_away": true
+          }
+        }
+      },
+      "requires": {},
+      "text": {
+        "default": "You sleep at the Tallow and walk back out at first light.\n\nBranch is in the same place between the same two tents, as if he has not moved. He watches you come up the path that is not quite a path. He does not look surprised. He looks like a man revising an estimate.\n\n\"You came back,\" he says. \"Most do not.\""
+      },
+      "choices": [
+        {
+          "id": "wait_him_out",
+          "text": "Say nothing. Sit down on the stump by the path and wait.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You sit. He goes back to watching the tree line. The camp wakes behind him. After most of an hour a woman comes out between the tents, looks at you, looks at Branch, and says: \"How long has that one been sitting there?\"\n\n\"Long enough,\" Branch says.",
+              "next_scene": "act1_ch3_maret_first_meeting",
+              "state_changes": {
+                "relationships": {
+                  "branch": {
+                    "closeness": 5
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "ask_again_plainly",
+          "text": "\"I am not selling anything. I am looking for [missing person].\"",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "The name does something to his face that yesterday's words did not. He looks at you for a long moment.\n\n\"Wait here,\" he says.",
+              "next_scene": "act1_ch3_maret_first_meeting",
               "state_changes": {}
             }
           }
