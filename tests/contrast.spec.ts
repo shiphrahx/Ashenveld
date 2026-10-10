@@ -7,6 +7,10 @@ test('text contrast is at least 4.5:1', async ({ page }) => {
   await page.addInitScript(() => { Math.random = () => 0.5 })
   await page.goto('./')
   await page.waitForTimeout(2200)
+  // Under load the title's fade can still be running; wait for every finite animation to end.
+  await page.waitForFunction(() => document.getAnimations()
+    .filter(a => a.effect?.getTiming().iterations !== Infinity)
+    .every(a => a.playState === 'finished'))
   expect(await lowContrast(page), 'title').toEqual([])
 
   await page.getByRole('button', { name: /begin/i }).click()
