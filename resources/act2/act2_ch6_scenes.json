@@ -49,6 +49,33 @@
             }
           },
           "locked_hint": "Needs the mechanism fragment"
+        },
+        {
+          "id": "sit_a_while_first",
+          "text": "Sit with [missing person] at the threshold for a while first.",
+          "requires": {
+            "inventory": [
+              "mechanism_fragment"
+            ]
+          },
+          "roll": null,
+          "locked_hint": "Needs the mechanism fragment",
+          "outcomes": {
+            "default": {
+              "text": "You sit on the step at the top of the passage. They sit beside you. Neither of you says anything worth writing down. Pol waits at a distance with the fragment wrapped in a cloth, and does not hurry you.\n\nThen they stand, and hold out a hand, and you go in.",
+              "next_scene": "act2_ch6_ritual_approach",
+              "state_changes": {
+                "relationships": {
+                  "the_missing_person": {
+                    "closeness": 5
+                  }
+                },
+                "world": {
+                  "curse_spread": 1
+                }
+              }
+            }
+          }
         }
       ]
     },

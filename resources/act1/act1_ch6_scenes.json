@@ -151,6 +151,23 @@
               "state_changes": {}
             }
           }
+        },
+        {
+          "id": "look_back",
+          "text": "Stop at the last milestone and look back at Crestfall.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "From here the town is a smudge of smoke above the trees. You can pick out the shrine roof and nothing else. You stand there longer than you need to.\n\nThen the road, again.",
+              "next_scene": "act1_ch6_place_covenant_marker",
+              "state_changes": {
+                "flags": {
+                  "looked_back_at_crestfall": true
+                }
+              }
+            }
+          }
         }
       ]
     },

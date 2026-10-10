@@ -692,6 +692,25 @@
               }
             }
           }
+        },
+        {
+          "id": "leave_it",
+          "text": "Leave it. Go back to town.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You do not come back. Maret does not send for you. On the third morning you hear she has been asking Branch whether you have left yet.",
+              "next_scene": "act1_ch5_curse_event",
+              "state_changes": {
+                "relationships": {
+                  "maret": {
+                    "closeness": -5
+                  }
+                }
+              }
+            }
+          }
         }
       ]
     }

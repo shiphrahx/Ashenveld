@@ -608,6 +608,19 @@
               }
             }
           }
+        },
+        {
+          "id": "sit_by_the_fire",
+          "text": "Sit by the fire a while before you go up.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You take the chair nearest the fire. The man on the other side of it does not look up.",
+              "next_scene": "act1_ch1_still_man",
+              "state_changes": {}
+            }
+          }
         }
       ]
     },
@@ -742,6 +755,23 @@
                   "time_of_day": "morning"
                 }
               }
+            }
+          }
+        },
+        {
+          "id": "go_back_down",
+          "text": "You cannot sleep. Go back down and sit with the man by the fire.",
+          "requires": {
+            "not_visited": [
+              "act1_ch1_still_man"
+            ]
+          },
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "The common room is nearly empty. The man is still in the chair by the fire, exactly where he was.",
+              "next_scene": "act1_ch1_still_man",
+              "state_changes": {}
             }
           }
         }

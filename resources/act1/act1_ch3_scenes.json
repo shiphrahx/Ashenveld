@@ -550,6 +550,28 @@
               "state_changes": {}
             }
           }
+        },
+        {
+          "id": "ask_aldous_first",
+          "text": "Go back to the Tallow first. Ask Aldous about the camp.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "Aldous is wiping the same table he was wiping last night. \"The camp,\" he says. He thinks about it. \"Take bread. Don't take advice. And don't stand in the path, the big one doesn't like it.\"\n\nHe gives you the bread.",
+              "next_scene": "act1_ch3_rootless_camp_approach",
+              "state_changes": {
+                "relationships": {
+                  "innkeeper_aldous": {
+                    "closeness": 5
+                  }
+                },
+                "flags": {
+                  "aldous_warned_about_branch": true
+                }
+              }
+            }
+          }
         }
       ]
     },

@@ -138,6 +138,23 @@
               }
             }
           }
+        },
+        {
+          "id": "rest_instead",
+          "text": "You are worn through. Rest, and let [missing person] go over it alone.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You sleep most of the second day. When you wake they are sitting by the fire with the chamber text spread across their knees, mouthing it.\n\n\"You will know enough,\" they say, without looking up. You are not sure either of you believes it.",
+              "next_scene": "act2_ch5_maret_conversation",
+              "state_changes": {
+                "resources": {
+                  "health": 20
+                }
+              }
+            }
+          }
         }
       ]
     },

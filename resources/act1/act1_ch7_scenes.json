@@ -409,6 +409,25 @@
               "state_changes": {}
             }
           }
+        },
+        {
+          "id": "ask_why_she_let_them",
+          "text": "\"Why did you let them go?\"",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "\"I did not let them,\" she says. \"I told them where. That is different, and it is not better.\"\n\nShe walks on. After a while she says, \"You will ask me again. Ask me when we find them.\"",
+              "next_scene": "act1_ch7_decision_enter",
+              "state_changes": {
+                "relationships": {
+                  "maret": {
+                    "closeness": 5
+                  }
+                }
+              }
+            }
+          }
         }
       ],
       "text_mode": {
