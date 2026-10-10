@@ -281,7 +281,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch3_covenant_warning",
@@ -386,7 +387,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch3_covenant_task",
@@ -450,7 +452,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch3_after_faction",
@@ -671,7 +674,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch3_camp_second_try",
@@ -726,7 +730,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch3_maret_first_meeting",
@@ -835,7 +840,8 @@
         "commander": "replace",
         "ranger": "replace",
         "cipher": "replace"
-      }
+      },
+      "rest": true
     }
   ]
 }

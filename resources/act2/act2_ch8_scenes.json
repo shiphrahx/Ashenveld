@@ -180,7 +180,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act2_ch8_relationship_test",
@@ -245,7 +246,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act2_ch8_point_of_no_return",
@@ -337,7 +339,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     }
   ]
 }

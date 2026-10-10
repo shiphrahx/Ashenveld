@@ -148,7 +148,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act2_ch7_vorne_reacts",
@@ -385,7 +386,8 @@
       ],
       "text_mode": {
         "ranger": "replace"
-      }
+      },
+      "rest": true
     }
   ]
 }

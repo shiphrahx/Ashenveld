@@ -318,7 +318,8 @@
           }
         }
       ],
-      "objective": "Finish the work, then follow."
+      "objective": "Finish the work, then follow.",
+      "rest": true
     },
     {
       "id": "act3_ch2_alone_work",
@@ -417,7 +418,8 @@
           }
         }
       ],
-      "objective": "Carry on alone."
+      "objective": "Carry on alone.",
+      "rest": true
     }
   ]
 }

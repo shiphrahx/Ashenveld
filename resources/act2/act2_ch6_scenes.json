@@ -567,13 +567,6 @@
               },
               {
                 "when": {
-                  "health_below": 40
-                },
-                "value": -2,
-                "label": "You are worn thin"
-              },
-              {
-                "when": {
                   "min_curse": 90
                 },
                 "value": -2,

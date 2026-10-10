@@ -374,7 +374,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch5_class_specific",
@@ -444,7 +445,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     }
   ]
 }

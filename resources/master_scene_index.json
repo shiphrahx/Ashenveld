@@ -580,6 +580,21 @@
       "file": "act2_ch2_scenes.json",
       "act": 2,
       "chapter": 2
+    },
+    "act1_collapse": {
+      "file": "act1_ch1_scenes.json",
+      "act": 1,
+      "chapter": 1
+    },
+    "act2_collapse": {
+      "file": "act2_ch1_scenes.json",
+      "act": 2,
+      "chapter": 1
+    },
+    "act3_collapse": {
+      "file": "act3_ch1_scenes.json",
+      "act": 3,
+      "chapter": 1
     }
   },
   "starting_scene": "act1_ch1_barge_arrival",

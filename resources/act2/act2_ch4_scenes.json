@@ -432,7 +432,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act2_ch4_vorne_issa_negotiation",
@@ -584,7 +585,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act2_ch4_issa_confrontation",
@@ -771,7 +773,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act2_ch4_pol_fragment",
@@ -836,7 +839,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     }
   ]
 }

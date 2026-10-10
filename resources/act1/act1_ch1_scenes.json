@@ -356,7 +356,8 @@
         "arcane": "replace",
         "ranger": "replace",
         "cipher": "replace"
-      }
+      },
+      "rest": true
     },
     {
       "id": "act1_ch1_innkeeper_success",
@@ -471,7 +472,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch1_innkeeper_cost",
@@ -565,7 +567,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch1_innkeeper_failure",
@@ -622,7 +625,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch1_still_man",
@@ -714,7 +718,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch1_tallow_room",
@@ -779,7 +784,96 @@
       "text_mode": {
         "arcane": "replace",
         "cipher": "replace"
-      }
+      },
+      "rest": true
+    },
+    {
+      "id": "act1_collapse",
+      "act": 1,
+      "chapter": 1,
+      "location": "crestfall_tallow_inn",
+      "title": "Afterwards",
+      "when": {
+        "part": "morning",
+        "skip_days": 1
+      },
+      "on_enter": {
+        "state_changes": {
+          "world": {
+            "curse_spread": 2
+          }
+        }
+      },
+      "requires": {},
+      "text": {
+        "default": [
+          "You do not remember the end of it.",
+          {
+            "when": {
+              "flags": {
+                "last_rest_place": "camp"
+              }
+            },
+            "text": "You wake under canvas, with the smell of the camp's fire and somebody's coat over you. It is morning. You have lost a day.\n\nMaret is sitting on an upturned crate by the tent flap. \"Branch carried you,\" she says. \"Do not thank him. He will not know what to do with it.\""
+          },
+          {
+            "when": {
+              "flags": {
+                "last_rest_place": "shrine"
+              }
+            },
+            "text": "You wake on a pallet at the back of the shrine, under the grey banner. It is morning, and a day has gone.\n\nEdric is lighting the candles one at a time. \"You were found on the steps,\" he says, without turning round."
+          },
+          {
+            "when": {
+              "flags": {
+                "last_rest_place": "ruins"
+              }
+            },
+            "text": "You wake by the fire in the outskirts. The grey light is the same as it always is, but [missing person] says a day has gone.\n\n\"You stopped,\" they say. \"In the middle of a sentence. I talked to you until you came back.\""
+          },
+          {
+            "when": {
+              "not": {
+                "any": [
+                  {
+                    "flags": {
+                      "last_rest_place": "camp"
+                    }
+                  },
+                  {
+                    "flags": {
+                      "last_rest_place": "shrine"
+                    }
+                  },
+                  {
+                    "flags": {
+                      "last_rest_place": "ruins"
+                    }
+                  }
+                ]
+              }
+            },
+            "text": "You wake in a room at the Tallow with your boots still on. The light says morning, and the wrong morning: a day has gone. Somebody has left water by the bed and a heel of bread on a plate.\n\nAldous is in the doorway. \"Two of them brought you in,\" he says. \"I didn't ask from where.\""
+          },
+          "You sit up. Your hands are steady enough."
+        ]
+      },
+      "choices": [
+        {
+          "id": "get_up",
+          "text": "Get up.",
+          "requires": {},
+          "roll": null,
+          "outcomes": {
+            "default": {
+              "text": "You get dressed and go back out.",
+              "next_scene": "@return",
+              "state_changes": {}
+            }
+          }
+        }
+      ]
     }
   ]
 }

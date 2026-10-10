@@ -112,7 +112,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch6_east_road_start",

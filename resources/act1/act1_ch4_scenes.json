@@ -91,7 +91,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch4_maret_guarded",
@@ -144,7 +145,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch4_rootless_camp_stay",
@@ -292,7 +294,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch4_lira",
@@ -401,7 +404,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch4_branch",
@@ -534,7 +538,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch4_maret_evening",
@@ -628,7 +633,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act1_ch4_maret_letter_success",
@@ -705,7 +711,8 @@
       "text_mode": {
         "arcane": "replace",
         "ranger": "replace"
-      }
+      },
+      "rest": true
     },
     {
       "id": "act1_ch4_maret_letter_withheld",
@@ -824,7 +831,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     }
   ]
 }

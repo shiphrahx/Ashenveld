@@ -65,7 +65,8 @@
             }
           }
         }
-      ]
+      ],
+      "rest": true
     },
     {
       "id": "act2_ch5_ritual_preparation",

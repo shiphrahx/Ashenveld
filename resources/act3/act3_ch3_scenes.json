@@ -177,7 +177,8 @@
           }
         }
       ],
-      "objective": "Carry on alone."
+      "objective": "Carry on alone.",
+      "rest": true
     }
   ]
 }
