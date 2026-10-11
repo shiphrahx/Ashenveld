@@ -48,8 +48,8 @@ const ENGINE_FLAGS = ['crestfall_afflicted', 'last_rest_place']   // set by the 
 const STAGE_PHRASES = ['if you have', 'if you carry', 'if she came', 'whichever', 'the reader', 'your missing person']
 // Known duplicate images, kept until the new art lands (docs/06-art.md A5).
 const ALLOWED_DUPLICATES = [
-  ['ashenveld_img_009_rootless_camp_established.png', 'ashenveld_img_010_rootless_camp_alone.png'],
-  ['ashenveld_img_018_ruins_source_chamber.png', 'ashenveld_img_019_ruins_source_chamber_sealed.png'],
+  ['ashenveld_img_009_rootless_camp_established', 'ashenveld_img_010_rootless_camp_alone'],
+  ['ashenveld_img_018_ruins_source_chamber', 'ashenveld_img_019_ruins_source_chamber_sealed'],
 ]
 
 function checkKeys(obj, kind, where) {
@@ -232,8 +232,9 @@ for (const n of journalNotes.notes) {
 
 // ── The ending list on the title screen ─────────────────────────────────────
 for (const e of index.endings ?? []) {
-  const s = scenes.get(e.id)?.scene
-  if (!s?.ending) err(`master index endings: "${e.id}" is not an ending scene`)
+  // Matched on the ending's id: a long ending can open with a "Go on." step (G15).
+  const s = [...scenes.values()].find(x => x.scene.ending?.id === e.id)?.scene
+  if (!s) err(`master index endings: "${e.id}" is not an ending scene`)
   else if (s.ending.title !== e.title) err(`master index endings: "${e.id}" is titled "${e.title}" but the scene says "${s.ending.title}"`)
 }
 
@@ -268,15 +269,24 @@ for (const [where, t] of texts) {
 // ── 8. Byte-identical images ────────────────────────────────────────────────
 const imgDir = path.join(RES, 'images')
 if (fs.existsSync(imgDir)) {
+  // Compared per image, not per size: name@1x.webp and name@2x.webp are one image (B22).
+  const base = f => f.replace(/(@[12]x)?\.(png|webp|jpe?g)$/i, '')
   const byHash = new Map()
+  const reported = new Set()
   for (const f of fs.readdirSync(imgDir).filter(f => /\.(png|webp|jpe?g)$/i.test(f)).sort()) {
     const h = crypto.createHash('sha1').update(fs.readFileSync(path.join(imgDir, f))).digest('hex')
     if (byHash.has(h)) {
-      const pair = [byHash.get(h), f]
+      const pair = [base(byHash.get(h)), base(f)]
+      if (reported.has(pair.join())) continue
+      reported.add(pair.join())
       if (ALLOWED_DUPLICATES.some(p => same(p, pair))) warn(`images ${pair.join(' and ')} are identical (known, see docs/06-art.md A5)`)
       else err(`images ${pair.join(' and ')} are byte-identical`)
     } else byHash.set(h, f)
   }
+  // Every image the game asks for exists at both sizes.
+  const map = fs.readFileSync(path.join(ROOT, 'src/data/imageMap.ts'), 'utf8')
+  for (const [, name] of map.matchAll(/:\s*"([^"]+)"/g))
+    for (const s of ['@1x', '@2x']) if (!fs.existsSync(path.join(imgDir, `${name}${s}.webp`))) err(`image ${name}${s}.webp is missing; run npm run images`)
 }
 
 // ── Warnings ────────────────────────────────────────────────────────────────

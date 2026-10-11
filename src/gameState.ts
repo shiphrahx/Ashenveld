@@ -5,11 +5,13 @@
  * serialises/deserialises to localStorage, and applies StateChanges.
  */
 
+import { migrate } from './saves'
 import type { GameState, StateChanges, MetaStore, DayPart, SceneWhen } from './types'
 import { getMasterIndex, getNpc, getLocation } from './loader'
 import { closenessTier, factionTier, FACTION_NAMES, WORN_THIN, DIMMING, dimmingBand, maxResolve } from './rules'
 
 const SAVE_KEY = 'ashenveld_save'
+const BACKUP_KEY = 'ashenveld_save_backup'
 const META_KEY = 'ashenveld_meta'
 
 // ─── Fresh state factory ──────────────────────────────────────────────────────
@@ -206,16 +208,14 @@ export function loadGame(): GameState | null {
   try {
     const raw = localStorage.getItem(SAVE_KEY)
     if (!raw) return null
-    const saved = JSON.parse(raw) as GameState
-    // Saves from before version 2 lack these; B23 replaces this with a full migration.
-    saved.counters ??= {}
-    saved.visited ??= {}
-    saved.taken ??= {}
-    if (!PARTS.includes(saved.world.time_of_day)) {
-      const word = String(saved.world.time_of_day).split(' — ').pop() as DayPart
-      saved.world.time_of_day = PARTS.includes(word) ? word : 'evening'
+    try {
+      return migrate(JSON.parse(raw))
+    } catch {
+      // B23: a save we can't read is kept aside, never thrown away, and the game starts clean.
+      localStorage.setItem(BACKUP_KEY, raw)
+      localStorage.removeItem(SAVE_KEY)
+      return null
     }
-    return saved
   } catch {
     return null
   }

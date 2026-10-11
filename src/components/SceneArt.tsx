@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import type { GameState } from '../types'
-import { useLocationImage } from '../hooks/useLocationImage'
+import { useLocationImage, srcSetFor, IMG_SIZES } from '../hooks/useLocationImage'
 import { getLocation } from '../loader'
 import { motionAllowed, useSettings } from '../settings'
 import Atmosphere from './Atmosphere'
@@ -108,7 +108,9 @@ export default function SceneArt({ locationName, gameState, alt = '', frozen = f
         {displayed !== null && (
           <img
             key={displayed}
-            src={displayed}
+            src={`${displayed}@1x.webp`}
+            srcSet={srcSetFor(displayed)}
+            sizes={IMG_SIZES}
             alt={alt}
             className={styles.locationImg}
             style={{ opacity: fading ? 0 : 1 }}
@@ -118,7 +120,9 @@ export default function SceneArt({ locationName, gameState, alt = '', frozen = f
         {incoming !== null && (
           <img
             key={incoming}
-            src={incoming}
+            src={`${incoming}@1x.webp`}
+            srcSet={srcSetFor(incoming)}
+            sizes={IMG_SIZES}
             alt=""
             aria-hidden="true"
             className={styles.locationImg}

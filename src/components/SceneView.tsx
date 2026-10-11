@@ -127,9 +127,15 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false, 
       setRollResult(result)
     } else {
       const outcome = choice.outcomes.default
-      if (outcome) { setShownOutcome({ outcome, css: '', key: 'default' }); playCue(outcome.cue) }
+      if (!outcome) return
+      // An outcome with no text (a scene's "Go on." step, G15) goes straight on.
+      if (!resolveRich(outcome.text, state).trim()) {
+        onChoice(outcome, { sceneId: scene.id, choiceId: choice.id, outcomeKey: 'default', day: state.world.day, part: state.world.time_of_day }, choice.id)
+        return
+      }
+      setShownOutcome({ outcome, css: '', key: 'default' }); playCue(outcome.cue)
     }
-  }, [state, onEngage])
+  }, [state, onEngage, onChoice, scene.id])
 
   // Counters the outcome should also apply: Command used, a Cipher read shown.
   const extraChanges = useRef<Record<string, number>>({})

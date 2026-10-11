@@ -79,3 +79,5 @@
   display: flex; align-items: center; justify-content: space-between; gap: 12px;
   padding: 12px 20px; border-bottom: 1px solid var(--border-dim);
 }
+
+.importError { padding: 10px 20px; font-size: 14px; color: var(--fail-lit); line-height: 1.6; }

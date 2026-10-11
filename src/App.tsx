@@ -2,9 +2,10 @@ import React, { useEffect, useState, useCallback, useRef } from 'react'
 import type { GameState, Scene, Outcome, JournalEntry } from './types'
 import { initLoader, resolveScene, locationName, peekScene, getMasterIndex, getLocation, getChapterOf } from './loader'
 import ActCard from './components/ActCard'
+import { imageFor, srcSetFor, IMG_SIZES } from './hooks/useLocationImage'
 import LoadingScreen from './components/LoadingScreen'
 import ErrorScreen from './components/ErrorScreen'
-import { DIMMING, REST, restOption, type RestOption } from './rules'
+import { DIMMING, REST, restOption, traitEarned, TRAIT_RULES, type RestOption, type Trait } from './rules'
 import {
   createFreshState,
   applyStateChanges,
@@ -51,6 +52,9 @@ import styles from './App.module.css'
 
 type AppPhase = 'loading' | 'title' | 'creation' | 'game' | 'ended' | 'error'
 
+/** G15: the id of the one-choice step that splits a long scene. */
+const GO_ON = 'go_on'
+
 /** E9 'touch': grey over 600ms, hold 3s, back over 1s. */
 const TOUCH_MS = 4600
 /** E9 'ritual': the warm glow at the art's focal point grows with each scene, and goes after the seal. */
@@ -90,7 +94,7 @@ export default function App() {
   motionOn.current = motionAllowed(settings)
 
   // ── E6: act cards, chapter titles, the story fading round a change of place ──
-  const [actCard, setActCard] = useState<{ act: number; title: string } | null>(null)
+  const [actCard, setActCard] = useState<{ act: number; title: string; trait?: Trait | null } | null>(null)
   const [chapterNote, setChapterNote] = useState<{ title: string; key: number } | null>(null)
   const [storyFade, setStoryFade] = useState<'out' | 'in' | null>(null)
 
@@ -136,6 +140,28 @@ export default function App() {
     const t = setTimeout(() => setStoryFade(null), 300)
     return () => clearTimeout(t)
   }, [storyFade])
+
+  // ── B22: warm the cache for wherever the visible choices lead ─────────────────
+  useEffect(() => {
+    if (!currentScene || !gameState || phase !== 'game') return
+    const targets = new Set<string>()
+    for (const c of currentScene.choices ?? []) {
+      if (!meets(c.requires, gameState)) continue
+      for (const o of Object.values(c.outcomes ?? {})) if (o?.next_scene && o.next_scene !== '@return') targets.add(o.next_scene)
+    }
+    const seen = new Set<string>()
+    for (const id of targets) {
+      resolveScene(id).then(s => {
+        const base = imageFor(s.location, gameState)
+        if (!base || seen.has(base)) return
+        seen.add(base)
+        const img = new Image()
+        img.sizes = IMG_SIZES
+        img.srcset = srcSetFor(base)
+      }).catch(() => { /* a missing scene shows up when it's entered */ })
+    }
+  // Once per scene entry.
+  }, [currentScene?.id, phase])
 
   // ── Sound (E3) ────────────────────────────────────────────────────────────────
   useEffect(() => { setVolume(settings.volume) }, [settings.volume])
@@ -240,8 +266,21 @@ export default function App() {
         await new Promise(r => setTimeout(r, 200))
       }
 
+      // G14: the end of Acts 1 and 2 awards a trait from how you played.
+      let trait: Trait | null = null
+      if (newAct && scene.act > state.world.act && Object.keys(state.visited).length > 0) {
+        trait = traitEarned(next)
+        if (trait) {
+          next.flags[`trait_${trait.id}`] = true
+          if (trait.id === 'worn') {
+            next.player.resources.max_health = Math.min(next.player.resources.max_health, TRAIT_RULES.wornMaxResolve)
+            next.player.resources.health = Math.min(next.player.resources.health, next.player.resources.max_health)
+          }
+        }
+      }
+
       recordCheckpoint(state, next)
-      if (newAct) setActCard({ act: scene.act, title: getMasterIndex().act_summaries?.[String(scene.act)]?.title ?? '' })
+      if (newAct) setActCard({ act: scene.act, title: getMasterIndex().act_summaries?.[String(scene.act)]?.title ?? '', trait })
       if (newChapter) {
         const title = getChapterOf(scene.id)?.title
         if (title) setChapterNote({ title, key: Date.now() })
@@ -318,7 +357,9 @@ export default function App() {
   const handleChoice = useCallback(async (outcome: Outcome, entry: JournalEntry, choiceId: string) => {
     if (!gameState || !currentScene) return
     let next = applyStateChanges(gameState, outcome.state_changes)
-    next = { ...next, journal: [...(next.journal ?? []), entry], taken: { ...next.taken, [`${currentScene.id}:${choiceId}`]: true } }
+    // A "Go on." step (G15) isn't a choice worth a journal line.
+    const journal = choiceId === GO_ON ? next.journal ?? [] : [...(next.journal ?? []), entry]
+    next = { ...next, journal, taken: { ...next.taken, [`${currentScene.id}:${choiceId}`]: true } }
     let target = outcome.next_scene
     if (target === '@return') target = next.collapse_return ?? null
     // Resolve at zero: no game over. You collapse, and wake where you last rested (G9).
@@ -445,7 +486,7 @@ export default function App() {
     return (
       <>
         <div className={styles.backdrop} aria-hidden="true" />
-        <ActCard act={actCard.act} title={actCard.title} onContinue={() => setActCard(null)} />
+        <ActCard act={actCard.act} title={actCard.title} trait={actCard.trait ?? undefined} onContinue={() => setActCard(null)} />
       </>
     )
   }
@@ -476,7 +517,7 @@ export default function App() {
           <div className={styles.areaArt}>
             <SceneArt locationName={locationName(gameState.world.current_location)} gameState={gameState}
               alt={getLocation(gameState.world.current_location)?.description ?? locationName(gameState.world.current_location)}
-              frozen={frozenArt} glow={settings.screenEffects && motionAllowed(settings) ? RITUAL_GLOW[currentScene.id] ?? 0 : 0} />
+              frozen={frozenArt} glow={settings.screenEffects && motionAllowed(settings) ? RITUAL_GLOW[currentScene.id.replace(/_on$/, '')] ?? 0 : 0} />
           </div>
           <header className={styles.areaStatus}>
             <StatusStrip state={gameState} hideClock={hideClock} onOpen={() => openPanel('status')} />
@@ -508,6 +549,7 @@ export default function App() {
               onReturnToTitle={() => { closePanel(); handleReturnToTitle() }}
               onSettings={() => setPanel('settings')}
               onCredits={() => setPanel('credits')}
+              onImport={imported => { saveGame(imported); clearCheckpoints(); closePanel(); void handleContinue() }}
               onRestartChapter={chapterCheckpoint(gameState) ? restartChapter : undefined}
             />
           )}
