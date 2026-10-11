@@ -1,4 +1,5 @@
 import { test, expect, type Page } from '@playwright/test'
+import { readFileSync } from 'node:fs'
 
 // Scripted playthroughs. Each always takes the first available choice, except
 // where a test names a choice for a scene. Randomness is stubbed so rolls are fixed.
@@ -52,14 +53,28 @@ const sceneId = (page: Page) => page.locator('[data-scene-id]').first().getAttri
 
 /** Click a choice, continue through the dice panel and the outcome. */
 async function pickChoice(page: Page, choiceId: string) {
+  // Choices wait for the text to finish arriving; a click on the story finishes it (E7).
+  const waiting = page.locator('[data-waiting]')
+  if (await waiting.count()) await page.locator('[data-narrative]').click({ position: { x: 4, y: 4 } }).catch(() => {})
+  const before = await sceneId(page)
   await page.locator(`[data-choice-id="${choiceId}"]`).click()
   for (let i = 0; i < 400; i++) {
+    // "Go on." steps (G15) have no outcome: the next scene simply arrives.
+    if (choiceId === 'go_on' && (await sceneId(page)) !== before) {
+      await expect(page.locator('[data-leaving]')).toHaveCount(0)
+      return
+    }
+    // A click during the roll skips to the verdict (E2).
+    const rolling = page.locator('[data-dice-phase]:not([data-dice-phase="done"])')
+    if (await rolling.count()) { await rolling.first().click(); continue }
     const dice = page.locator('[data-dice-continue]')
     if (await dice.count()) { await dice.first().click(); continue }
     const cont = page.locator('[data-choice-id="continue"]')
     if (await cont.count()) {
       await cont.first().click()
       await expect(cont).toHaveCount(0)
+      // A change of place fades the old scene out first (E6).
+      await expect(page.locator('[data-leaving]')).toHaveCount(0)
       return
     }
     await page.waitForTimeout(20)
@@ -67,20 +82,24 @@ async function pickChoice(page: Page, choiceId: string) {
   throw new Error(`no outcome after ${choiceId}`)
 }
 
-interface RunResult { ending: string | null; visits: Record<string, number> }
+interface RunResult { ending: string | null; visits: Record<string, number>; words: Record<string, number> }
+
+const countWords = (t: string) => (t.match(/[A-Za-z’'-]+/g) ?? []).length
 
 async function playToEnd(page: Page, picks: Record<string, string | number> = {}): Promise<RunResult> {
   const visits: Record<string, number> = {}
+  const words: Record<string, number> = {}                      // G15: what this reader actually read
   for (let step = 0; step < 300; step++) {
     await skipInterstitials(page)
     const ending = page.locator('[data-ending-id]')
-    if (await ending.count()) return { ending: await ending.getAttribute('data-ending-id'), visits }
+    if (await ending.count()) return { ending: await ending.getAttribute('data-ending-id'), visits, words }
 
     const id = await sceneId(page)
     if (!id) { await page.waitForTimeout(50); continue }
     visits[id] = (visits[id] ?? 0) + 1
 
     const text = await page.locator('[data-scene-id]').innerText()
+    if (!words[id]) words[id] = countWords(await page.locator('[data-narrative]').innerText())
     expect(text, `raw placeholder in ${id}`).not.toMatch(/\[missing person\]|\[player\]/)
     if (STAGE_DIRECTIONS_FIXED) expect(text, `stage direction in ${id}`).not.toMatch(/if she came with you/)
     expect(await page.locator('[data-location-name]').innerText(), `raw location id in ${id}`).not.toMatch(/_/)
@@ -110,12 +129,21 @@ for (const run of ENDINGS) {
     const errors = watchConsole(page)
     await stubRandom(page, run.random)
     await createCharacter(page, run.cls)
-    const { ending, visits } = await playToEnd(page, { [FINAL]: run.final, ...run.picks })
+    const { ending, visits, words } = await playToEnd(page, { [FINAL]: run.final, ...run.picks })
+    // G15: report the reading on this path. Scenes over 260 words should be split.
+    const total = Object.values(words).reduce((a, b) => a + b, 0)
+    const long = Object.entries(words).filter(([, n]) => n > 260).sort((a, b) => b[1] - a[1])
+    console.log(`${run.cls}: ${Object.keys(words).length} scenes, ${total} words of scene text${long.length ? `; over 260: ${long.map(([k, n]) => `${k} ${n}`).join(', ')}` : ''}`)
     expect(ending).toBe(run.expect)
     const repeated = Object.entries(visits).filter(([, n]) => n > 3)
     expect(repeated, 'scenes visited more than three times').toEqual([])
     expect(errors).toEqual([])
     await expect(page.getByText('An ending', { exact: true })).toBeVisible()
+    // G14: the act breaks award two traits over a full run.
+    const flags = await page.evaluate(() => JSON.parse(localStorage.getItem('ashenveld_save')!).flags)
+    const traits = Object.keys(flags).filter(k => k.startsWith('trait_'))
+    expect(traits.length, `traits: ${traits.join(', ')}`).toBeGreaterThanOrEqual(1)
+    console.log(`${run.cls}: ${traits.join(', ')}`)
   })
 }
 
@@ -188,11 +216,20 @@ test('keyboard only, from the title into the story and through choices', async (
   await page.keyboard.press('Enter')
   await expect(page.getByRole('button', { name: /enter ashenveld/i })).toBeFocused()
   await page.keyboard.press('Enter')
+  // The Act I card (E6) takes focus on its Continue.
+  await expect(page.locator('[data-act-card] button')).toBeFocused()
+  await page.keyboard.press('Enter')
   await expect(page.locator('[data-scene-id]')).toBeVisible()
 
   for (let i = 0; i < 6; i++) {
+    await expect(page.locator('[data-leaving]')).toHaveCount(0)
     await page.keyboard.press('1')
-    for (let k = 0; k < 3; k++) {
+    // While the text is still arriving, the first key only finishes it (E7).
+    if (!(await page.locator('[data-choice-id="continue"], [data-dice-phase]').count())) {
+      await page.waitForTimeout(100)
+      await page.keyboard.press('1')
+    }
+    for (let k = 0; k < 4; k++) {
       await page.waitForTimeout(150)
       await page.keyboard.press('Enter')
       if (!(await page.locator('[data-choice-id="continue"], [data-dice-continue]').count())) break
@@ -274,5 +311,43 @@ test('the map grows as you go, and People says where you saw them (U10, U11)', a
 
   await page.getByRole('button', { name: /^people$/i }).first().click()
   await expect(page.locator('[data-person]').first()).toBeVisible()
+  expect(errors).toEqual([])
+})
+
+test('a click finishes the text fade and the choices wait for it (E7)', async ({ page }) => {
+  await stubRandom(page, 0.95)
+  await createCharacter(page, 'Ranger')
+  await pickChoice(page, 'move_to_town')
+  // A fresh scene: choices are held back until the text has arrived.
+  await expect(page.locator('[data-waiting]')).toHaveCount(1)
+  await page.locator('[data-narrative]').click({ position: { x: 4, y: 4 } })
+  await expect(page.locator('[data-waiting]')).toHaveCount(0)
+  // And never more than 1.2 seconds even without a click.
+  await pickChoice(page, (await page.locator('[data-choice-id]:not([disabled])').first().getAttribute('data-choice-id'))!)
+  await page.waitForTimeout(1300)
+  await expect(page.locator('[data-waiting]')).toHaveCount(0)
+})
+
+test('a save can be exported and imported (B23)', async ({ page }) => {
+  const errors = watchConsole(page)
+  await stubRandom(page, 0.95)
+  await createCharacter(page, 'Commander')
+  await pickChoice(page, 'move_to_town')
+  await page.keyboard.press('Escape')
+  await expect(page.getByRole('dialog', { name: 'Menu' })).toBeVisible()
+  const download = page.waitForEvent('download')
+  await page.getByRole('button', { name: /export save/i }).click()
+  const file = await (await download).path()
+  const saved = JSON.parse(readFileSync(file, 'utf8'))
+  expect(saved.version).toBe(2)
+
+  // A file that isn't a save is refused with a reason.
+  await page.locator('[data-import-input]').setInputFiles({ name: 'x.json', mimeType: 'application/json', buffer: Buffer.from('nope') })
+  await expect(page.getByRole('alert')).toContainText('not a saved game')
+
+  // The exported one loads, after asking.
+  await page.locator('[data-import-input]').setInputFiles(file)
+  await page.getByRole('button', { name: /^load save$/i }).click()
+  await expect(page.locator('[data-scene-id]')).toHaveAttribute('data-scene-id', saved.current_scene)
   expect(errors).toEqual([])
 })

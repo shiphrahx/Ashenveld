@@ -14,33 +14,27 @@
   position: relative;
 }
 
-/* scanlines, art area only until E5 replaces them */
-.sceneArt::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent, transparent 3px,
-    rgba(0,0,0,0.06) 3px, rgba(0,0,0,0.06) 4px
-  );
-  pointer-events: none;
-  z-index: 3;
-}
-
-.sceneArt svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
 .locationImg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 400ms ease;
+  /* E4: The Dimming takes the colour out of the art */
+  filter: saturate(calc(1 - 0.75 * var(--dim, 0) - 0.15 * var(--deep, 0))) brightness(calc(1 - 0.12 * var(--dim, 0)));
+  transition: opacity 700ms ease, filter var(--dim-time, 2s) ease;
+}
+
+/* E4: and the edges close in */
+.sceneArt::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+  background: radial-gradient(ellipse at center, transparent calc(70% - 30% * var(--dim, 0)), rgba(0, 0, 0, 0.85) 100%);
+  opacity: calc(0.25 + 0.6 * var(--dim, 0));
+  transition: opacity var(--dim-time, 2s) ease;
 }
 
 .placeholder {
@@ -60,24 +54,6 @@
   text-transform: uppercase;
 }
 
-.moonGlow {
-  animation: moonPulse 6s ease-in-out infinite;
-}
-
-@keyframes moonPulse {
-  0%, 100% { opacity: 0.85; }
-  50%       { opacity: 1; }
-}
-
-.fogLayer {
-  animation: fogDrift 18s linear infinite alternate;
-}
-
-@keyframes fogDrift {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-40px); }
-}
-
 .sceneFooter {
   padding: 8px 14px;
   border-top: 1px solid var(--border-dim);
@@ -89,3 +65,40 @@
   background: var(--bg);
   flex-shrink: 0;
 }
+
+/* E6: the new day, across the top of the art */
+.dayStamp {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 5;
+  padding: 18px 16px 28px; text-align: center;
+  font-family: var(--font-display); font-size: 15px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--white-cold);
+  background: linear-gradient(rgba(5, 6, 8, 0.85), transparent);
+  pointer-events: none;
+  animation: dayStamp 2.5s ease forwards;
+}
+@keyframes dayStamp { 0% { opacity: 0; } 20% { opacity: 1; } 75% { opacity: 1; } 100% { opacity: 0; } }
+
+/* E8: the art breathes. A slow push in and back over 45s, and the pointer parallax. Transform only. */
+.layer {
+  position: absolute;
+  inset: -8px;
+  transform: translate(var(--px, 0px), var(--py, 0px));
+  transition: transform 600ms ease-out;
+}
+.drift .locationImg { animation: drift 45s ease-in-out infinite alternate; }
+@keyframes drift { from { transform: scale(1); } to { transform: scale(1.05); } }
+.frozen .locationImg { animation-play-state: paused; }
+
+/* E9: the ritual's warm glow, a slow 6s pulse, brighter in each scene, gone after the seal */
+.glow {
+  position: absolute; inset: 0; z-index: 3; pointer-events: none;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 176, 96, 0.55), rgba(255, 140, 60, 0.12) 35%, transparent 60%);
+  mix-blend-mode: screen;
+  opacity: calc(var(--glow, 0) * 0.7);
+  transition: opacity 3s ease;
+  animation: glow 6s ease-in-out infinite;
+}
+@keyframes glow { 0%, 100% { filter: brightness(0.8); } 50% { filter: brightness(1.2); } }
+
+/* E1: with motion off the stamp just shows, and the timer takes it away */
+:global(:root[data-motion="off"]) .dayStamp { animation-name: none !important; }

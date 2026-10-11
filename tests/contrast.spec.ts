@@ -7,6 +7,10 @@ test('text contrast is at least 4.5:1', async ({ page }) => {
   await page.addInitScript(() => { Math.random = () => 0.5 })
   await page.goto('./')
   await page.waitForTimeout(2200)
+  // Under load the title's fade can still be running; wait for every finite animation to end.
+  await page.waitForFunction(() => document.getAnimations()
+    .filter(a => a.effect?.getTiming().iterations !== Infinity)
+    .every(a => a.playState === 'finished'))
   expect(await lowContrast(page), 'title').toEqual([])
 
   await page.getByRole('button', { name: /begin/i }).click()
@@ -25,10 +29,14 @@ test('text contrast is at least 4.5:1', async ({ page }) => {
   expect(await lowContrast(page), 'summary').toEqual([])
   await page.getByRole('button', { name: /enter ashenveld/i }).click()
 
+  await page.waitForTimeout(1500)
+  expect(await lowContrast(page), 'act card').toEqual([])
+  await page.locator('[data-act-card] button').click()
+
   await page.waitForTimeout(2200)
   expect(await lowContrast(page), 'game shell').toEqual([])
   await page.locator('[data-choice-id]').nth(1).click()
-  await page.waitForTimeout(400)
+  await page.waitForTimeout(1500)                       // the roll lands and the verdict shows (E2)
   expect(await lowContrast(page), 'dice').toEqual([])
   await page.locator('[data-dice-continue]').click()
   await page.waitForTimeout(1200)

@@ -71,7 +71,15 @@ export interface LocationDef {
   region?: string
   ambient_day?: string
   ambient_night?: string
+  /** E3: the sound bed. */
+  ambience?: BedId
+  /** E5: the moving layer over the art. */
+  atmosphere?: 'mist' | 'embers' | 'ash' | 'motes' | 'none'
 }
+
+export type BedId = 'river' | 'hearth' | 'town' | 'road' | 'deep' | 'chamber'
+export type CueId = 'silence_falls' | 'touch' | 'stopped' | 'resolve' | 'resolve_partial' | 'end'
+export type StageId = 'quiet' | 'reunion' | 'ritual' | 'touch' | 'stopped' | 'ending'
 
 // ─── Conditions and text ──────────────────────────────────────────────────────
 
@@ -135,6 +143,8 @@ export interface Outcome {
   text: RichText
   next_scene: string | null
   state_changes: StateChanges
+  /** E3: a sound played when this outcome is shown. */
+  cue?: CueId
 }
 
 export interface RollBonus { when: Condition; value: number; label: string }
@@ -173,6 +183,10 @@ export interface SceneWhen { part: DayPart | DayPart[]; day?: number; skip_days?
 
 export interface Scene {
   id: string
+  /** E3: a sound played on entry. */
+  cue?: CueId
+  /** E9: how the shell stages this scene. */
+  stage?: StageId
   act: number
   chapter: number
   location: string

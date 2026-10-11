@@ -2,7 +2,9 @@ import React from 'react'
 import type { GameState } from '../types'
 import { CLASS_LABELS } from '../text'
 import { Icon, PartGlyph, FactionMark } from './icons'
-import { dimmingBand, maxResolve, factionTier, modifierForStat, STAT_NAMES, STAT_TIPS, TIER_ORDER, TIER_EFFECT, type RestOption } from '../rules'
+import MuteButton from './MuteButton'
+import CountTo from './CountTo'
+import { dimmingBand, maxResolve, traitsOf, factionTier, modifierForStat, STAT_NAMES, STAT_TIPS, TIER_ORDER, TIER_EFFECT, type RestOption } from '../rules'
 import type { PanelId } from './TabBar'
 import styles from './Sidebar.module.css'
 
@@ -13,6 +15,8 @@ interface Props {
   /** 'column' is the wide-screen sidebar. 'sheet' is the status sheet on narrow screens. */
   variant?: 'column' | 'sheet'
   journalDot?: boolean
+  /** E10: the stat a hovered or focused choice would roll. */
+  highlightStat?: string | null
   /** Keys of bars that just changed, for a short highlight. */
   flash?: string[]
   rest?: RestOption
@@ -52,7 +56,7 @@ const ACTIONS: Array<[PanelId, string, string]> = [
   ['people', 'People', 'People you have met'],
 ]
 
-export default function Sidebar({ state, onOpen, hideClock = false, variant = 'column', journalDot = false, flash = [], rest = { mode: null }, onRest = () => {}, dimmingDelta = 0 }: Props) {
+export default function Sidebar({ state, onOpen, hideClock = false, variant = 'column', journalDot = false, flash = [], highlightStat = null, rest = { mode: null }, onRest = () => {}, dimmingDelta = 0 }: Props) {
   const { player, world, factions } = state
   const classLabel = CLASS_LABELS[player.class] ?? player.class
   const lit = (k: string) => flash.includes(k) ? styles.flash : ''
@@ -66,10 +70,10 @@ export default function Sidebar({ state, onOpen, hideClock = false, variant = 'c
 
       {/* ── Condition ── */}
       <div className={styles.sb}>
-        <div className={styles.sbl}>Condition</div>
+        <div className={`${styles.sbl} ${styles.sblRow}`}>Condition<MuteButton /></div>
         <div className={styles.hpRow}>
           <span className={styles.hpName}>Resolve</span>
-          <span className={styles.hpVal}>{player.resources.health} / {maxR}</span>
+          <span className={styles.hpVal}><CountTo value={player.resources.health} /> / {maxR}</span>
         </div>
         <div className={`${styles.trackWrap} ${lit('health')}`} role="meter" aria-label="Resolve" aria-valuemin={0} aria-valuemax={maxR} aria-valuenow={player.resources.health}>
           <div className={`${styles.trackFill} ${styles.hp}`} style={{ width: `${hpPct}%` }} />
@@ -78,7 +82,7 @@ export default function Sidebar({ state, onOpen, hideClock = false, variant = 'c
           <span className={styles.hpName}>The Dimming</span>
           <span className={styles.dimVal} data-dimming>
             {dimmingBand(curse)}
-            {player.class === 'arcane' && <> · {curse}{dimmingDelta ? ` (${dimmingDelta > 0 ? '+' : '−'}${Math.abs(dimmingDelta)})` : ''}</>}
+            {player.class === 'arcane' && <> · <CountTo value={curse} />{dimmingDelta ? ` (${dimmingDelta > 0 ? '+' : '−'}${Math.abs(dimmingDelta)})` : ''}</>}
           </span>
         </div>
         <div className={`${styles.trackWrap} ${lit('dimming')}`} role="meter" aria-label="The Dimming" aria-valuemin={0} aria-valuemax={100} aria-valuenow={curse} aria-valuetext={dimmingBand(curse)}>
@@ -98,12 +102,21 @@ export default function Sidebar({ state, onOpen, hideClock = false, variant = 'c
       {/* ── Stats (class label as section header) ── */}
       <div className={styles.sb}>
         <div className={styles.sbl}>{classLabel}</div>
+        {traitsOf(state.flags).length > 0 && (
+          <div className={styles.traits} data-traits>
+            {traitsOf(state.flags).map(t => (
+              <span key={t.id} className={styles.trait} tabIndex={0} aria-label={`${t.name}: ${t.effect}`}>
+                {t.name}<span className={styles.statTip} role="tooltip">{t.effect}</span>
+              </span>
+            ))}
+          </div>
+        )}
         {STAT_KEYS.map(([key, label]) => {
           const val = player.stats[key]
           const filled = statPips(val)
           const mod = modifierForStat(val)
           return (
-            <div key={key} className={styles.statRow} data-stat-row={key}>
+            <div key={key} className={`${styles.statRow} ${highlightStat === key ? styles.statLit : ''}`} data-stat-row={key}>
               <span className={styles.sn} tabIndex={0} aria-label={`${STAT_NAMES[key]} ${val}, modifier ${mod >= 0 ? '+' : '−'}${Math.abs(mod)}. ${STAT_TIPS[key]}`}>
                 {label}
                 <span className={styles.statTip} role="tooltip">
@@ -114,7 +127,7 @@ export default function Sidebar({ state, onOpen, hideClock = false, variant = 'c
                 {Array.from({ length: MAX_PIPS }, (_, i) => (
                   <div key={i} className={pipClass(val, i, filled)} />
                 ))}
-                <span className={styles.statVal}>{val}</span>
+                <span className={styles.statVal}>{highlightStat === key ? `${val} · ${mod >= 0 ? '+' : '−'}${Math.abs(mod)}` : val}</span>
               </div>
             </div>
           )

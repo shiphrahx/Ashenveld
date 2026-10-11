@@ -2,12 +2,14 @@ import React, { useState, useCallback, useRef, useEffect, useMemo } from 'react'
 import type { Scene, GameState, Choice, Outcome, RollResult, JournalEntry, DiceOutcome, OutcomeKey } from '../types'
 import { rollDice, resolveRoll, odds } from '../dice'
 import { oddsWord, STAT_NAMES } from '../rules'
-import { useSettings } from '../settings'
+import { motionAllowed, useSettings } from '../settings'
 import { meets } from '../conditions'
 import { sceneText, resolveRich, CLASS_LABELS } from '../text'
 import { Inline } from './Inline'
 import Para from './Para'
 import DiceOverlay from './DiceOverlay'
+import { choiceTick, journalNote } from '../audio/ui'
+import { playCue } from '../audio/cues'
 import { useMediaQuery } from '../hooks/useMediaQuery'
 import { applyStateChanges, diffState } from '../gameState'
 import { getNpc } from '../loader'
@@ -20,6 +22,14 @@ interface Props {
   onChoice: (outcome: Outcome, entry: JournalEntry, choiceId: string) => void
   /** The player has read this scene before, in this run or another (G13). */
   seenBefore?: boolean
+  /** E6: the chapter's title, for three seconds after it changes. */
+  chapterNote?: { title: string; key: number } | null
+  /** E9: told when the player first picks something here. */
+  onEngage?: () => void
+  /** E9 'touch': the choices wait this long whatever happens. */
+  holdChoicesMs?: number
+  /** E10: a rolled choice is hovered or focused; the sidebar lights its stat. */
+  onHoverStat?: (stat: string | null) => void
 }
 
 // Roman numerals for choice markers, matching the prototype
@@ -79,7 +89,7 @@ function outcomeClass(rollResult: RollResult, choice: Choice): string {
 
 // ── Component ─────────────────────────────────────────────────────────────────
 
-export default function SceneView({ scene, state, onChoice, seenBefore = false }: Props) {
+export default function SceneView({ scene, state, onChoice, seenBefore = false, chapterNote = null, onEngage, holdChoicesMs = 0, onHoverStat }: Props) {
   const { settings } = useSettings()
   const [rollResult, setRollResult] = useState<RollResult | null>(null)
   const [activeChoice, setActiveChoice] = useState<Choice | null>(null)
@@ -107,6 +117,8 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
   )
 
   const handleChoiceClick = useCallback((choice: Choice) => {
+    choiceTick()
+    onEngage?.()
     activeChoiceText.current = resolveRich(choice.text, state)
     activeChoiceId.current = choice.id
     if (choice.roll) {
@@ -115,9 +127,15 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
       setRollResult(result)
     } else {
       const outcome = choice.outcomes.default
-      if (outcome) setShownOutcome({ outcome, css: '', key: 'default' })
+      if (!outcome) return
+      // An outcome with no text (a scene's "Go on." step, G15) goes straight on.
+      if (!resolveRich(outcome.text, state).trim()) {
+        onChoice(outcome, { sceneId: scene.id, choiceId: choice.id, outcomeKey: 'default', day: state.world.day, part: state.world.time_of_day }, choice.id)
+        return
+      }
+      setShownOutcome({ outcome, css: '', key: 'default' }); playCue(outcome.cue)
     }
-  }, [state])
+  }, [state, onEngage, onChoice, scene.id])
 
   // Counters the outcome should also apply: Command used, a Cipher read shown.
   const extraChanges = useRef<Record<string, number>>({})
@@ -145,11 +163,14 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
     setRollResult(null)
     setActiveChoice(null)
     const word = { success: 'Success', success_at_cost: 'At a cost', failure: 'Failed' }[rollResult.outcome]
-    if (outcome) setShownOutcome({ outcome, css, key, tag: `${STAT_NAMES[rollResult.statName] ?? rollResult.statName} · ${word}` })
+    choiceTick()
+    if (outcome) { setShownOutcome({ outcome, css, key, tag: `${STAT_NAMES[rollResult.statName] ?? rollResult.statName} · ${word}` }); playCue(outcome.cue) }
   }, [rollResult, activeChoice])
 
   const handleOutcomeContinue = useCallback(() => {
     if (shownOutcome && activeChoiceText.current) {
+      choiceTick()
+      if (changes.some(c => c.key === 'journal')) journalNote()
       const entry: JournalEntry = {
         sceneId: scene.id,
         choiceId: activeChoiceId.current ?? '',
@@ -167,7 +188,7 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
       activeChoiceText.current = null
       activeChoiceId.current = null
     }
-  }, [shownOutcome, onChoice, scene, state])
+  }, [shownOutcome, onChoice, scene, state, changes])
 
   // Crumb: "Act II · Chapter 3" and "Day 7 · Evening"
   const place = `Act ${toRoman(state.world.act)} · Chapter ${state.world.chapter}`
@@ -179,6 +200,28 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
 
   // U2: when an outcome shows, the scene text collapses to its last paragraph.
   const [showScene, setShowScene] = useState(false)
+
+  // ── E7: the text fade, capped, and skippable ────────────────────────────────
+  const instantReveal = settings.textReveal === 'instant' || seenBefore || !motionAllowed(settings)
+  const [revealed, setRevealed] = useState(instantReveal)
+  const [choicesReady, setChoicesReady] = useState(instantReveal)
+  const finishReveal = useCallback(() => { setRevealed(true); setChoicesReady(true) }, [])
+  const [held, setHeld] = useState(false)
+  useEffect(() => {
+    if (!holdChoicesMs) { setHeld(false); return }
+    setHeld(true)
+    const t = setTimeout(() => setHeld(false), holdChoicesMs)
+    return () => clearTimeout(t)
+  }, [holdChoicesMs, scene.id])
+  // E9: when the seal holds, Continue waits two seconds.
+  const [sealHold, setSealHold] = useState(false)
+  useEffect(() => {
+    if (shownOutcome?.outcome.cue !== 'resolve') return
+    setSealHold(true)
+    const t = setTimeout(() => setSealHold(false), 2000)
+    return () => clearTimeout(t)
+  }, [shownOutcome])
+  const ready = choicesReady && !held && !sealHold
   const storyRef = useRef<HTMLDivElement>(null)
   const outcomeRef = useRef<HTMLDivElement>(null)
   const titleRef = useRef<HTMLHeadingElement>(null)
@@ -204,6 +247,26 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
   const shownMain = collapsed ? (aside.length ? [] : main.slice(-1)) : main
   const shownAside = collapsed ? aside.slice(-1) : aside
 
+  // Every paragraph, of every kind, in one sequence that takes at most a second to start.
+  const revealCount = shownMain.length + (shownAside.length ? 1 : 0)
+  const revealStep = Math.min(0.14, 1.0 / Math.max(1, revealCount))
+  const dimNow = settings.screenEffects ? Math.min(1, state.world.curse_spread / 100) : 0
+  const revealSecs = 0.5 + 0.5 * dimNow                       // E4: slower as The Dimming rises
+  useEffect(() => {
+    const instant = instantReveal || collapsed
+    setRevealed(instant)
+    setChoicesReady(instant)
+    if (instant) return
+    const total = (revealCount - 1) * revealStep + revealSecs
+    const a = setTimeout(() => setRevealed(true), total * 1000)
+    const b = setTimeout(() => setChoicesReady(true), Math.min(total, 1.2) * 1000)
+    // A key press anywhere completes it.
+    const key = (e: KeyboardEvent) => { if (!['Tab', 'Shift', 'Control', 'Alt', 'Meta'].includes(e.key)) finishReveal() }
+    window.addEventListener('keydown', key)
+    return () => { clearTimeout(a); clearTimeout(b); window.removeEventListener('keydown', key) }
+  // Once per scene entry.
+  }, [scene.id, state.visited[scene.id]])
+
   const choiceButtons = shownOutcome ? (
     <button className={styles.ch} data-choice-id="continue" onClick={handleOutcomeContinue}>
       <span className={styles.mk}>›</span>
@@ -222,6 +285,10 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
           className={styles.ch}
           onClick={() => handleChoiceClick(choice)}
           aria-describedby={tag ? tipId : undefined}
+          onPointerEnter={tag ? () => onHoverStat?.(resolveRoll(choice.roll!, state).stat) : undefined}
+          onPointerLeave={tag ? () => onHoverStat?.(null) : undefined}
+          onFocus={tag ? () => onHoverStat?.(resolveRoll(choice.roll!, state).stat) : undefined}
+          onBlur={tag ? () => onHoverStat?.(null) : undefined}
         >
           <kbd className={styles.mk} aria-hidden="true">{KEYS[i] ?? String(i + 1)}</kbd>
           <span className={styles.lb}><Inline text={resolveRich(choice.text, state)} /></span>
@@ -251,6 +318,7 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
         <h1 className={styles.sceneTitle} ref={titleRef} tabIndex={-1}>
           {scene.title}
           {seenBefore && <span className={styles.seenMark}>seen before</span>}
+          {chapterNote && <span key={chapterNote.key} className={styles.chapterNote} data-chapter-note>{chapterNote.title}</span>}
         </h1>
         <span className={styles.crumb}>
           <span>{place}</span>
@@ -259,21 +327,23 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
       </div>
 
       {/* ── Narrative ── */}
-      <div className={`${styles.narrative} ${seenBefore ? styles.seen : ''}`} key={scene.id} ref={storyRef}>
+      <div className={`${styles.narrative} ${seenBefore ? styles.seen : ''} ${revealed ? styles.revealed : ''}`} key={scene.id} ref={storyRef}
+        data-narrative onClick={revealed ? undefined : finishReveal}
+        style={{ '--reveal': `${revealSecs}s` } as React.CSSProperties}>
         <div className={styles.measure}>
           {collapsed && (
             <button className={styles.showScene} onClick={() => setShowScene(true)}>Show the scene again</button>
           )}
           <div className={collapsed ? styles.faded : undefined}>
             {shownMain.map((p, i) => (
-              <Para key={i} text={p} className={styles.np} style={{ animationDelay: `${0.04 + i * 0.14}s` }} />
+              <Para key={i} text={p} className={styles.np} style={{ animationDelay: `${i * revealStep}s` }} />
             ))}
 
             {shownAside.length > 0 && (
               <aside
                 className={styles.lens}
                 aria-label={`${CLASS_LABELS[state.player.class]}: your read`}
-                style={{ animationDelay: `${0.04 + shownMain.length * 0.14}s` }}
+                style={{ animationDelay: `${shownMain.length * revealStep}s` }}
               >
                 <div className={styles.lensLabel}>{CLASS_LABELS[state.player.class]}</div>
                 {shownAside.map((p, i) => <Para key={i} text={p} />)}
@@ -312,12 +382,12 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
             </div>
           )}
 
-          {inlineChoices && <div className={`${styles.choices} ${styles.choicesInline}`}>{choiceButtons}</div>}
+          {inlineChoices && <div className={`${styles.choices} ${styles.choicesInline} ${ready ? '' : styles.waiting}`} data-waiting={ready ? undefined : ''} inert={!ready}>{choiceButtons}</div>}
         </div>
       </div>
 
       {/* ── Choices ── */}
-      {!inlineChoices && <div className={styles.choices}>{choiceButtons}</div>}
+      {!inlineChoices && <div className={`${styles.choices} ${ready ? '' : styles.waiting}`} data-waiting={ready ? undefined : ''} inert={!ready}>{choiceButtons}</div>}
 
       {/* ── Dice overlay ── */}
       {rollResult && (

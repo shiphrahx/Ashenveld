@@ -49,7 +49,7 @@
   margin-bottom: 22px;
   opacity: 0;
   transform: translateY(5px);
-  animation: npIn 0.55s ease forwards;
+  animation: npIn var(--reveal, 0.55s) ease forwards;
 }
 
 @keyframes npIn { to { opacity: 1; transform: translateY(0); } }
@@ -290,3 +290,21 @@
   .ch { align-items: flex-start; }
   .badge { margin-left: 36px; }
 }
+
+/* E7: a click or key finishes the fade; choices wait for it, never more than 1.2s */
+.revealed .np, .revealed .lens { animation: none; opacity: 1; transform: none; }
+.lens { animation-duration: var(--reveal, 0.55s); }
+.choices { transition: opacity 200ms ease; }
+.waiting { opacity: 0; pointer-events: none; }
+
+/* E6: the chapter's title under the scene's, for three seconds */
+.chapterNote {
+  display: block; margin-top: 4px;
+  font-family: var(--font-ui); font-size: 13px; letter-spacing: 0.04em; text-transform: none;
+  color: var(--text-main);
+  animation: chapterNote 3s ease forwards;
+}
+@keyframes chapterNote { 0% { opacity: 0; } 15% { opacity: 1; } 75% { opacity: 1; } 100% { opacity: 0; } }
+
+/* E1: with motion off the chapter title just shows, and the timer takes it away */
+:global(:root[data-motion="off"]) .chapterNote { animation-name: none !important; }

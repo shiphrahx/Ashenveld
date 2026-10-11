@@ -33,7 +33,7 @@ export function useHotkeys({ enabled, panelOpen, openPanel }: Options) {
       const key = e.key.toLowerCase()
       if (/^[1-6]$/.test(key)) {
         const choices = [...document.querySelectorAll<HTMLElement>('[data-scene-id] [data-choice-id]:not([data-choice-id="continue"])')]
-          .filter(el => !el.matches(':disabled, [aria-disabled="true"]'))
+          .filter(el => !el.matches(':disabled, [aria-disabled="true"]') && !el.closest('[data-waiting]'))
         if (document.querySelector('[data-dice-continue]')) return
         const el = choices[Number(key) - 1]
         if (el) { e.preventDefault(); el.click() }

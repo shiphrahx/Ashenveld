@@ -54,19 +54,33 @@ const stats = {
 }
 
 // Words per scene, main text plus the longest class aside (what one player reads).
+// Relationship variants exclude each other, so only the longest counts; other
+// guarded parts all count, which makes this an upper bound.
 const words = t => (t.match(/[A-Za-z’'-]+/g) ?? []).length
+function readerWords(rt) {
+  if (rt == null) return 0
+  if (typeof rt === 'string') return words(rt)
+  let n = 0, variant = 0
+  for (const p of rt) {
+    if (typeof p === 'string') n += words(p)
+    else if (p.when?.relationship_type) variant = Math.max(variant, words(p.text ?? ''))
+    else n += Math.max(words(p.text ?? ''), words(p.else ?? ''))
+  }
+  return n + variant
+}
 const perScene = scenes.map(s => {
-  const main = flat(s.text.default).reduce((n, t) => n + words(t), 0)
-  const aside = Math.max(0, ...CLASSES.map(c => flat(s.text[c]).reduce((n, t) => n + words(t), 0)))
+  const main = readerWords(s.text.default)
+  const aside = Math.max(0, ...CLASSES.map(c => readerWords(s.text[c])))
   return { id: s.id, words: main + aside }
 }).sort((a, b) => b.words - a.words)
 const over220 = perScene.filter(s => s.words > 220)
+const over260 = perScene.filter(s => s.words > 260)
 
 if (process.argv.includes('--json')) {
-  console.log(JSON.stringify({ stats, over220: over220.length }, null, 2))
+  console.log(JSON.stringify({ stats, over220: over220.length, over260: over260.length }, null, 2))
 } else {
   for (const [k, v] of Object.entries(stats)) console.log(`${String(v).padStart(5)}  ${k}`)
-  console.log(`\n${over220.length} scenes over 220 words (main text plus the longest aside):`)
+  console.log(`\n${over220.length} scenes over 220 words, ${over260.length} over 260 (main text plus the longest aside, one reader):`)
   for (const s of over220.slice(0, 25)) console.log(`  ${s.words}  ${s.id}`)
   if (over220.length > 25) console.log(`  … and ${over220.length - 25} more`)
 }

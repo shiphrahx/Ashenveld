@@ -44,6 +44,19 @@ function Options<K extends keyof S>({ label, field, options }: { label: string; 
   )
 }
 
+function Volume() {
+  const { settings, update } = useSettings()
+  return (
+    <div className={styles.row}>
+      <label className={styles.label} htmlFor="set-volume">Volume</label>
+      <input id="set-volume" type="range" min={0} max={100} step={5} className={styles.slider}
+        value={Math.round(settings.volume * 100)}
+        aria-valuetext={`${Math.round(settings.volume * 100)}%`}
+        onChange={e => update({ volume: Number(e.target.value) / 100 })} />
+    </div>
+  )
+}
+
 export default function Settings({ onClose }: Props) {
   return (
     <Panel title="Settings" onClose={onClose}>
@@ -61,6 +74,14 @@ export default function Settings({ onClose }: Props) {
           <h3 id="set-motion" className={styles.group}>Motion</h3>
           <Options label="Movement" field="motion" options={[['system', 'System'], ['reduced', 'Reduced'], ['full', 'Full']]} />
           <Options label="Text appears" field="textReveal" options={[['fade', 'Fade in'], ['instant', 'At once']]} />
+          <Options label="Screen effects" field="screenEffects" options={[[true, 'On'], [false, 'Off']]} />
+        </section>
+
+        <section aria-labelledby="set-sound">
+          <h3 id="set-sound" className={styles.group}>Sound</h3>
+          <Volume />
+          <Options label="Ambience" field="ambience" options={[[true, 'On'], [false, 'Off']]} />
+          <Options label="All sound" field="muted" options={[[false, 'On'], [true, 'Muted']]} />
         </section>
 
         <section aria-labelledby="set-play">

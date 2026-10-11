@@ -21,10 +21,10 @@ const read = p => JSON.parse(fs.readFileSync(p, 'utf8'))
 // ── Allowed shapes ──────────────────────────────────────────────────────────
 const KEYS = {
   scene: ['id', 'act', 'chapter', 'location', 'title', 'when', 'on_enter', 'requires', 'text', 'choices',
-    'text_mode', 'route', 'ending', 'rest', 'objective'],
+    'text_mode', 'route', 'ending', 'rest', 'objective', 'cue', 'stage'],
   choice: ['id', 'text', 'requires', 'roll', 'outcomes', 'once', 'locked_hint'],
   outcomes: ['default', 'success', 'success_at_cost', 'failure'],
-  outcome: ['text', 'next_scene', 'state_changes'],
+  outcome: ['text', 'next_scene', 'state_changes', 'cue'],
   on_enter: ['state_changes'],
   state_changes: ['flags', 'resources', 'relationships', 'factions', 'inventory', 'inventory_remove', 'world', 'counters'],
   resources: ['gold', 'health', 'max_health'],
@@ -48,8 +48,8 @@ const ENGINE_FLAGS = ['crestfall_afflicted', 'last_rest_place']   // set by the 
 const STAGE_PHRASES = ['if you have', 'if you carry', 'if she came', 'whichever', 'the reader', 'your missing person']
 // Known duplicate images, kept until the new art lands (docs/06-art.md A5).
 const ALLOWED_DUPLICATES = [
-  ['ashenveld_img_009_rootless_camp_established.png', 'ashenveld_img_010_rootless_camp_alone.png'],
-  ['ashenveld_img_018_ruins_source_chamber.png', 'ashenveld_img_019_ruins_source_chamber_sealed.png'],
+  ['ashenveld_img_009_rootless_camp_established', 'ashenveld_img_010_rootless_camp_alone'],
+  ['ashenveld_img_018_ruins_source_chamber', 'ashenveld_img_019_ruins_source_chamber_sealed'],
 ]
 
 function checkKeys(obj, kind, where) {
@@ -65,6 +65,15 @@ const npcs = {}
 for (const m of metas) {
   Object.assign(locations, m.locations ?? {}, m.new_locations ?? {}, m.new_locations_act3 ?? {})
   Object.assign(npcs, m.npcs ?? {}, m.new_npcs ?? {})
+}
+// E3, E5, E9: the sound, the art layer and the staging each place and scene may name
+const BEDS = ['river', 'hearth', 'town', 'road', 'deep', 'chamber']
+const ATMOSPHERES = ['mist', 'embers', 'ash', 'motes', 'none']
+const CUES = ['silence_falls', 'touch', 'stopped', 'resolve', 'resolve_partial', 'end']
+const STAGES = ['quiet', 'reunion', 'ritual', 'touch', 'stopped', 'ending']
+for (const [id, l] of Object.entries(locations)) {
+  if (!BEDS.includes(l.ambience)) err(`location ${id}: ambience "${l.ambience}" is not one of ${BEDS.join(', ')}`)
+  if (!ATMOSPHERES.includes(l.atmosphere)) err(`location ${id}: atmosphere "${l.atmosphere}" is not one of ${ATMOSPHERES.join(', ')}`)
 }
 const items = index.inventory_items ?? {}
 
@@ -159,6 +168,8 @@ for (const [id, { scene: s }] of scenes) {
     for (const p of [s.when.part].flat()) if (!PARTS.includes(p)) err(`${id}: when.part "${p}" is not a day part`)
   }
   if (!locations[s.location]) err(`${id}: unknown location "${s.location}"`)   // 6
+  if (s.cue && !CUES.includes(s.cue)) err(`${id}: unknown cue "${s.cue}"`)
+  if (s.stage && !STAGES.includes(s.stage)) err(`${id}: unknown stage "${s.stage}"`)
   checkKeys(s.on_enter, 'on_enter', id)
   checkChanges(s.on_enter?.state_changes, `${id}:on_enter`)
   checkCondition(s.requires, `${id}:requires`)
@@ -197,6 +208,7 @@ for (const [id, { scene: s }] of scenes) {
     for (const [k, o] of Object.entries(c.outcomes)) {
       const ow = `${cw}:${k}`
       checkKeys(o, 'outcome', ow)
+      if (o.cue && !CUES.includes(o.cue)) err(`${ow}: unknown cue "${o.cue}"`)
       walkRich(o.text, `${ow}:text`)
       checkChanges(o.state_changes, ow)
       // "@return" goes back to wherever a collapse interrupted you (G9).
@@ -220,8 +232,9 @@ for (const n of journalNotes.notes) {
 
 // ── The ending list on the title screen ─────────────────────────────────────
 for (const e of index.endings ?? []) {
-  const s = scenes.get(e.id)?.scene
-  if (!s?.ending) err(`master index endings: "${e.id}" is not an ending scene`)
+  // Matched on the ending's id: a long ending can open with a "Go on." step (G15).
+  const s = [...scenes.values()].find(x => x.scene.ending?.id === e.id)?.scene
+  if (!s) err(`master index endings: "${e.id}" is not an ending scene`)
   else if (s.ending.title !== e.title) err(`master index endings: "${e.id}" is titled "${e.title}" but the scene says "${s.ending.title}"`)
 }
 
@@ -256,15 +269,24 @@ for (const [where, t] of texts) {
 // ── 8. Byte-identical images ────────────────────────────────────────────────
 const imgDir = path.join(RES, 'images')
 if (fs.existsSync(imgDir)) {
+  // Compared per image, not per size: name@1x.webp and name@2x.webp are one image (B22).
+  const base = f => f.replace(/(@[12]x)?\.(png|webp|jpe?g)$/i, '')
   const byHash = new Map()
+  const reported = new Set()
   for (const f of fs.readdirSync(imgDir).filter(f => /\.(png|webp|jpe?g)$/i.test(f)).sort()) {
     const h = crypto.createHash('sha1').update(fs.readFileSync(path.join(imgDir, f))).digest('hex')
     if (byHash.has(h)) {
-      const pair = [byHash.get(h), f]
+      const pair = [base(byHash.get(h)), base(f)]
+      if (reported.has(pair.join())) continue
+      reported.add(pair.join())
       if (ALLOWED_DUPLICATES.some(p => same(p, pair))) warn(`images ${pair.join(' and ')} are identical (known, see docs/06-art.md A5)`)
       else err(`images ${pair.join(' and ')} are byte-identical`)
     } else byHash.set(h, f)
   }
+  // Every image the game asks for exists at both sizes.
+  const map = fs.readFileSync(path.join(ROOT, 'src/data/imageMap.ts'), 'utf8')
+  for (const [, name] of map.matchAll(/:\s*"([^"]+)"/g))
+    for (const s of ['@1x', '@2x']) if (!fs.existsSync(path.join(imgDir, `${name}${s}.webp`))) err(`image ${name}${s}.webp is missing; run npm run images`)
 }
 
 // ── Warnings ────────────────────────────────────────────────────────────────

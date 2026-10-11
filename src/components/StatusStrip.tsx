@@ -1,6 +1,7 @@
 import React from 'react'
 import type { GameState } from '../types'
 import { dimmingBand, maxResolve } from '../rules'
+import MuteButton from './MuteButton'
 import styles from './StatusStrip.module.css'
 
 interface Props {
@@ -17,6 +18,7 @@ export default function StatusStrip({ state, hideClock = false, onOpen }: Props)
   const pct = Math.max(0, Math.min(100, (health / maxResolve(max_health, state.world.curse_spread)) * 100))
 
   return (
+    <div className={styles.wrap}>
     <button className={styles.strip} onClick={onOpen} aria-label="Open your status" data-status-strip>
       <span className={styles.group}>
         <span className={styles.label}>Resolve</span>
@@ -38,5 +40,7 @@ export default function StatusStrip({ state, hideClock = false, onOpen }: Props)
         <span className={styles.sub}>coin</span>
       </span>
     </button>
+    <MuteButton className={styles.mute} />
+    </div>
   )
 }

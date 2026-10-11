@@ -92,3 +92,6 @@ button { font-family: inherit; cursor: pointer; }
   animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
   transition-duration: 0.001ms !important; scroll-behavior: auto !important;
 }
+
+/* E10: every button answers a press, one step lighter for 80ms */
+button:not(:disabled):active { background-color: rgba(174, 196, 224, 0.08); transition-duration: 80ms; }

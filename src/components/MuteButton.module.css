@@ -1,0 +1,10 @@
+.mute {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; padding: 0;
+  background: none; border: 1px solid transparent; border-radius: 3px;
+  color: var(--text-main);
+}
+.mute svg { width: 18px; height: 18px; }
+.mute:hover { color: var(--white-cold); border-color: var(--border-lit); }
+.mute:focus-visible { outline: var(--focus); outline-offset: 2px; }
+.mute[aria-pressed='true'] { color: var(--text-muted); }

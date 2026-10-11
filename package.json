@@ -11,7 +11,8 @@
     "validate": "node tools/validate-content.mjs",
     "test:e2e": "playwright test",
     "prose": "node tools/prose-stats.mjs",
-    "og": "node tools/make-og.mjs"
+    "og": "node tools/make-og.mjs",
+    "images": "node tools/optimize-images.mjs"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
+    "sharp": "^0.35.5",
     "typescript": "^5.9.3",
     "vite": "^8.0.0",
     "vitest": "^3.2.7"

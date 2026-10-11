@@ -12,8 +12,8 @@ One step per branch and pull request. Each tick lists what was done, what was sk
 - [x] 8. docs/02 N5 to N8
 - [x] 9. docs/02 N9 to N18
 - [x] 10. docs/04 U8 to U20
-- [ ] 11. docs/05 E1 to E10
-- [ ] 12. docs/01 B22, B23. docs/03 G14, G15
+- [x] 11. docs/05 E1 to E10
+- [x] 12. docs/01 B22, B23. docs/03 G14, G15
 
 ---
 
@@ -399,4 +399,85 @@ Branch `step-10-ui-polish`, stacked on step 9. U14 was done in step 9 for the le
 - U12 says the stat tooltip overflowed the shell. The real cause was the sidebar's `overflow-y: auto`, which also clipped anything opening sideways.
 - The contrast test couldn't read `color-mix()` (browsers report it as `color(srgb …)`), so the step 9 narration colour is a plain rgba now.
 
-**Not started**: steps 11, 12.
+## Step 11 — E1 to E10
+
+Branch `step-11-effects`, stacked on step 10.
+
+**AUTHOR DECISION defaults used**: none came up in this step.
+
+**Done**
+
+- E1: was already in from step 4 (the `data-motion` rule, the Motion setting). Checked every new effect against it. The chapter title and day stamp were vanishing instantly with motion off; they now show still and a timer removes them.
+- E2: opaque dice surface; 700ms roll that slows at the end, 150ms land with a 4% overshoot, 300ms of chips, then verdict and Continue (focused). Click, Space or Enter skips. One `aria-live` sentence. Face ticks and verdict sounds.
+- E3: `src/audio/` (engine, beds, interface sounds, cues), all Web Audio, no files. Six beds, the note, birds after the seal, six cues, seven interface sounds. `ambience` on every location. Volume, ambience and mute in Settings, and a mute button in the sidebar and status strip. Nothing plays before Begin or Continue; the context suspends when the tab is hidden. Checked in a browser: no context before the click, running after, mute instant.
+- E4: `--dim` and `--deep` on the shell; the art desaturates, darkens and vignettes; 4s back after the seal; partial seal floors at 0.3; screen effects off pins it to 0.
+- E5: scanlines and the in-game star field gone, unused moon and fog CSS deleted, `Atmosphere.tsx` canvas with mist, embers, ash and motes from `atmosphere` on each location. 30fps cap, ≤40 particles, paused when hidden, one frame with motion off, embers halve at Dimming 75.
+- E6: `ActCard` for each act and for Act I after creation; chapter title for three seconds; day stamp on the art; 700ms art cross-fade; story fades out 200ms and in 300ms on a change of place.
+- E7: reveal capped at a second, one sequence for every paragraph kind, click or key finishes it, choices wait for it (never past 1.2s), instant for seen scenes, 'At once' and motion off, and it reads `--reveal` from The Dimming. e2e test added.
+- E8: 45s push-in drift and 6px pointer parallax on wide screens.
+- E9: `stage` on 18 scenes, with all six treatments, the sound cues and the sidebar dimming kept when effects are off.
+- E10: stat row lights with its modifier when a rolled choice is hovered or focused; Resolve and the Arcane's Dimming number count to their new value; pressed state on every button. The bar flash and the journal dot were already there.
+- Validator: knows the beds, atmospheres, cues and stages.
+
+**Checks**: validate 0 errors (4 warnings), unit 25 passed, e2e 13 passed. No prose changed, so the prose stats are as in step 9.
+
+**Skipped or deferred**
+
+- E8 light flicker, as you asked: it needs the art manifest.
+- E8 time-of-day grading: file 06 says to tune it against the new images and skip images with the light baked in, and you asked for the current images not to be restyled. Waits for the new art.
+- E8 drift towards the focal point: no manifest yet, so it scales from the centre.
+- E4's `--accent-sat` for the blue accents isn't used. It needs `color-mix()`, which the contrast test can't read (see step 9).
+- E6 trait line on the act card: the card takes a `trait`, but G14 is step 12.
+
+**Plan was wrong or unclear**
+
+- E6's 200ms fade-out and E9's 2s fade to the end screen both left the old scene clickable while it faded, so a quick second click could pick a choice from a scene you'd already left. Both are `inert` while fading.
+- E9 'touch' holds the choices for the length of the effect. The first version never let them back, because the hold's own cleanup cancelled its timer when the effect ended. Caught by the e2e run.
+- E3 says play `end` on entry to any ending, and E9 says play it after the last choice. It plays after the last choice, with the 2s fade, and the ending's entry starts the 5s fade-out of the bed.
+- The plan doesn't say what undoes a cue's cut or the ending's fade, so the next game could start silent. Begin and Continue reset the mix.
+
+## Step 12 — B22, B23, G14, G15
+
+Branch `step-12-assets-saves-traits`, stacked on step 11.
+
+**AUTHOR DECISION defaults used**
+- G14 picks one trait per act break in this order: the behaviour shown most (3 or more), then Compact coin, then Worn, then Kept faith. The plan lists the traits but not what wins when several qualify.
+- G14's "with the afflicted", "against soldiers", "with Maret", "with the Compact/Rootless" are lists of scenes in `src/rules.ts` (`TRAIT_SCENES`). The plan doesn't say which scenes count.
+- B23's "delete the player debris" is read as a relationship entry for the player themself. Nothing else in the old saves looked like debris.
+
+**Done**
+
+- B22: `resources/` moved to `public/resources/` (Vite copies it; the `cp` in `deploy.yml` is gone), mockups to `docs/mockups/`. `npm run images` (`tools/optimize-images.mjs`, `sharp`) writes `@1x` (640) and `@2x` (1280) webp at quality 78: 16 MB of PNG became 2.7 MB for both sizes, none over 150 KB. The art uses `srcset`/`sizes`. The next scenes' images and chapter files are fetched when a scene opens. The validator compares images per name and fails if a mapped image is missing.
+- B23: `src/saves.ts` with `migrateV1toV2`; an unreadable save goes to `ashenveld_save_backup`; a newer version is refused. Menu: Export save (downloads `ashenveld-save.json`) and Import save (checked for being a save, its version, and a known `current_scene`, then confirmed). Unit and e2e tests.
+- G14: six traits with their effects in `resolveRoll`, 66 outcomes counting the behaviour (`listened`, `blunt`, `careful`, `lied`, `compact_coin`), the award at the end of Acts 1 and 2, shown on the act card and under the class in the sidebar. Worn caps Resolve at 90. Unit tests, and the e2e runs check traits are earned.
+- G15: prose-stats counts one reader's words and lists scenes over 260. The playthroughs count what each reader actually saw. 20 scenes split at a natural break with a "Go on." step (a textless outcome now goes straight on, with no journal line). No words changed.
+
+**Words per path** (scene text only, from the e2e runs; outcomes add more)
+
+| Path | Scenes | Words |
+|---|---|---|
+| Commander, stays together | 89 | 15,471 |
+| Arcane, the road west | 85 | 15,553 |
+| Ranger, the camp endures | 86 | 15,343 |
+| Cipher, the warden alone | 86 | 15,039 |
+
+At about 200 words a minute that's 75 to 80 minutes of scene text, so with outcomes a run sits inside the plan's 75 to 100. No scene on these four paths is over 260 words now.
+
+**Prose stats**: unchanged from step 9 (no words changed).
+
+**Checks**: validate 0 errors (4 warnings), unit 33 passed, e2e 14 passed.
+
+**Skipped or deferred**
+
+- B23 save slots: optional, not added.
+- G15: the static count still lists 9 scenes over 260, because it counts every guarded paragraph. Most of these measured under 260 where a test path reached them (The Camp Endures is 340 by the static count). The rest are off the test paths and may need a look with a real run.
+- The `@2x` images are 1024 wide, the size of the current sources, rather than upscaled to 1280.
+
+**Plan was wrong or unclear**
+
+- B22 says sources go in `art/source/`, which is also where you'll put the new art. The current PNGs went to `art/legacy/` so that folder still means "new images are in". The script reads both and `art/source` wins.
+- The validator checked the title screen's ending list by scene id. Once an ending opens with a "Go on." step that's the wrong scene, so it matches by ending id.
+- Moving `resources/` failed while the dev server was watching it; the files were moved one by one instead. Worth knowing if it happens again.
+- The contrast test was flaky under load because it measured the title mid-fade. It now waits for animations to finish.
+
+All twelve steps are done. Art Part 2 is still on hold until the new images are in `art/source/`.
