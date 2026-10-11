@@ -31,9 +31,9 @@
               }
             },
             "text": "The curse is still present in Ashenveld. It is spreading more slowly, but it is spreading. Episodes are rarer. They have not stopped. The grey at Issa's fingertips has not moved.",
-            "else": "The curse is still present in Ashenveld — it does not evaporate in seventy-two hours. But it is no longer spreading. The ambient in Crestfall has shifted noticeably. People who have been having the episodes are having them less frequently and with shorter duration. The grey at Issa's fingertips has not disappeared but it has not progressed."
+            "else": "The curse is still present in Ashenveld. It does not evaporate in seventy-two hours. But it is no longer spreading. The ambient in Crestfall has shifted noticeably. People who have been having the episodes are having them less frequently and with shorter duration. The grey at Issa's fingertips has not disappeared but it has not progressed."
           },
-          "The factions are regrouping. This is the part that comes after every significant event — the negotiation of what it means and who gets credit for it and what happens next.",
+          "The factions are regrouping. This is the part that comes after every significant event. The negotiation of what it means and who gets credit for it and what happens next.",
           {
             "when": {
               "flags": {
@@ -42,12 +42,11 @@
             },
             "text": "Seriva's bargain is already working. The grey flag is down from the alderman's hall."
           },
-          "Vorne has his assessment. Seriva has hers. The Rootless camp has its position. And you have decisions to make about what happens to Ashenveld and your place in it.",
-          "The point of no return is coming."
+          "Vorne has his assessment. Seriva has hers. The Rootless camp has its position. And you have decisions to make about what happens to Ashenveld and your place in it."
         ],
         "commander": "You sit at your usual table in the Tallow and look at three forces arrayed around the question of what happens next.\n\nVorne wants control of the documentation and the ruins' status. Seriva wants the Covenant's involvement in the rebuilding formally recognised. The Rootless camp wants recognition, resources, and to be left alone.\n\nThese three things are not incompatible. They require a broker. You have been a broker before.",
-        "arcane": "Three days of observation have given you initial data on the sealing's effects.\n\nThe curse is not reversing rapidly. Affliction at early stages — like Issa, like Lira — is progressing more slowly. People at further stages show no measurable change yet.\n\nThe land itself shows the most immediate response. Birds are beginning to return to areas nearest Crestfall. Time is the question. How much.",
-        "ranger": "You have been tracking the recovery the way you track any environmental change — with patience and attention to specific signs.\n\nDirection is positive. Rate is slow. The deepest areas will take longest.\n\nBut you heard a bird this morning. In the ordinary trees, half a mile from Crestfall. A species you had not heard in Ashenveld since you arrived. You stood in the road and listened to it for longer than was strictly necessary.",
+        "arcane": "Three days of observation have given you initial data on the sealing's effects.\n\nThe curse is not reversing rapidly. Affliction at early stages, like Issa, like Lira, is progressing more slowly. People at further stages show no measurable change yet.\n\nThe land itself shows the most immediate response. Birds are beginning to return to areas nearest Crestfall. Time is the question. How much.",
+        "ranger": "You have been tracking the recovery the way you track any environmental change. With patience and attention to the signs.\n\nDirection is positive. Rate is slow. The deepest areas will take longest.\n\nBut you heard a bird this morning. In the ordinary trees, half a mile from Crestfall. A species you had not heard in Ashenveld since you arrived. You stood in the road and listened to it for longer than was strictly necessary.",
         "cipher": "Three days. You have been running the political analysis continuously.\n\nPower in Ashenveld for the next decade will be determined by who controls the documentation of what happened and who controls the interpretation of it.\n\nThe story is still being written. You are one of the people writing it."
       },
       "choices": [
@@ -110,7 +109,7 @@
                     }
                   },
                   "text": "Vorne gets the documentation and formal credit for the Compact's stabilising role. Seriva admits it in the room, in front of all of them: she broke the seal twenty years ago. Nobody absolves the Covenant of anything. The Rootless camp gets recognition and resource access. Edric gets a limited ongoing advisory presence.",
-                  "else": "Vorne gets the documentation and formal credit for the Compact's stabilising role. Seriva gets the Covenant formally absolved — the story becomes that the sealing deteriorated over time, not that she damaged it. The Rootless camp gets recognition and resource access. Edric gets a limited ongoing advisory presence."
+                  "else": "Vorne gets the documentation and formal credit for the Compact's stabilising role. Seriva gets the Covenant formally absolved. The story becomes that the sealing deteriorated over time, not that she damaged it. The Rootless camp gets recognition and resource access. Edric gets a limited ongoing advisory presence."
                 },
                 "It is not justice. It is an arrangement the people in the room can live with, which is the closest thing to justice that group negotiations produce."
               ],
@@ -133,7 +132,7 @@
               }
             },
             "success_at_cost": {
-              "text": "The settlement is reached but fragile. One party accepted terms they will not hold to when the situation permits abandonment.\n\nThe settlement is better than no settlement. You note its weak point and keep it in mind.",
+              "text": "The settlement is reached but fragile. One party accepted terms they will not hold to when the situation permits abandonment.\n\nThe settlement is better than no settlement. You can see where it will break.",
               "next_scene": "act2_ch8_relationship_test",
               "state_changes": {
                 "flags": {
@@ -195,7 +194,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You go to Vorne and make your position clear.\n\nThe Compact has resources, reach, and institutional stability. What Ashenveld needs now is rebuilding, and rebuilding requires the Compact's investment.\n\nIn exchange for your support — the documentation, your testimony, your account of Seriva's role — you want specific commitments. Resources for the affected villages. Investment in Crestfall's recovery. Formal protection for the Rootless camp.\n\nVorne listens. \"You drive a harder bargain than Cael does,\" he says.\n\n\"Cael works for you,\" you say. \"I do not.\"",
+              "text": "You go to Vorne and make your position clear.\n\nThe Compact has resources, reach, and institutional stability. What Ashenveld needs now is rebuilding, and rebuilding requires the Compact's investment.\n\nIn exchange for your support, the documentation, your testimony, your account of Seriva's role, you want specific commitments. Resources for the affected villages. Investment in Crestfall's recovery. Formal protection for the Rootless camp.\n\nVorne listens. \"You drive a harder bargain than Cael does,\" he says.\n\n\"Cael works for you,\" you say. \"I do not.\"",
               "next_scene": "act2_ch8_relationship_test",
               "state_changes": {
                 "flags": {
@@ -215,6 +214,48 @@
               }
             }
           }
+        },
+        {
+          "id": "ask_edric_to_keep_the_seal",
+          "text": "Ask Edric to keep the seal.",
+          "roll": null,
+          "requires": {
+            "any": [
+              {
+                "min_faction": {
+                  "ashen_covenant": 10
+                }
+              },
+              {
+                "flags": {
+                  "edric_heard_the_count": true
+                }
+              }
+            ]
+          },
+          "locked_hint": "Needs the Covenant, or Edric, on your side",
+          "outcomes": {
+            "default": {
+              "text": "You find him at the shrine with the candles. You ask him to keep it: to walk east every month and listen, and write down what he hears, and keep doing it after you are gone.\n\nHe is quiet for a long while. \"We were made to seal it,\" he says. \"Not like this. But we were made to seal it.\" He gives Pol the purification texts that afternoon, all of them, in a box tied with string, and does not ask for them back.",
+              "next_scene": "act2_ch8_relationship_test",
+              "state_changes": {
+                "flags": {
+                  "covenant_aligned": true
+                },
+                "factions": {
+                  "ashen_covenant": {
+                    "reputation": 30
+                  },
+                  "iron_compact": {
+                    "reputation": -10
+                  },
+                  "rootless": {
+                    "reputation": -5
+                  }
+                }
+              }
+            }
+          }
         }
       ],
       "rest": true
@@ -224,7 +265,7 @@
       "act": 2,
       "chapter": 8,
       "location": "crestfall_tallow_inn",
-      "title": "What the Mechanism Showed You",
+      "title": "The Good Wood",
       "when": {
         "part": "evening"
       },
@@ -237,11 +278,11 @@
       },
       "requires": {},
       "text": {
-        "default": "You and [missing person] have an evening alone — the first genuine one since you found them in the outskirts.\n\nThe Tallow. The fire is better tonight than it has been in weeks. Aldous has been burning the good wood, the kind he saves for occasions.\n\n[missing person] is sitting across from you. They look different in the Tallow's light than they looked in the chamber's light — or maybe you are seeing them differently now. The mechanism read everything. Including things you have been carrying about this person for eleven years and more.\n\nThey are looking at you with the quality of someone who went through the same reading and came out knowing things they did not choose to know.",
-        "commander": "\"The mechanism showed me why you left,\" they say. Not accusing. Stating.\n\n\"Yes,\" you say.\n\n\"The real reason. Not the war. The one underneath the war.\"\n\n\"Yes,\" you say again.\n\n\"I knew part of it,\" they say. \"I did not know the full shape of it.\" A pause. \"It does not change why I wrote the letter. It changes what the letter cost me to write.\"",
-        "arcane": "\"There is something I want to tell you,\" they say. \"That the mechanism showed me about myself, that I did not know before.\"\n\nThey tell you.\n\nWhat they say is not what you expected. Something about the fourteen months — not the ruins, not the ritual. What they understood about themselves while they were alone. What the isolation clarified.\n\nYou listen with the specific attention of someone who knows that what they are being told is being told precisely, without omission, for the first time to anyone.",
+        "default": "You and [missing person] have an evening alone. The first genuine one since you found them in the outskirts.\n\nThe Tallow. The fire is better tonight than it has been in weeks. Aldous has been burning the good wood, the kind he saves for occasions.\n\n[missing person] is sitting across from you. They look different in the Tallow's light than they looked in the chamber's light. Or maybe you are seeing them differently now. The mechanism read everything. Including things you have been carrying about this person for eleven years and more.\n\nThey went through the same reading. They know things now that they did not choose to know.",
+        "commander": "\"The mechanism showed me why you left,\" they say. Stating.\n\n\"Yes,\" you say.\n\n\"The real reason. Not the war. The one underneath the war.\"\n\n\"Yes,\" you say again.\n\n\"I knew part of it,\" they say. \"I did not know the full shape of it.\" A pause. \"It does not change why I wrote the letter. It changes what the letter cost me to write.\"",
+        "arcane": "\"There is something I want to tell you,\" they say. \"That the mechanism showed me about myself, that I did not know before.\"\n\nThey tell you.\n\nWhat they say is not what you expected. Something about the fourteen months. Not the ruins, not the ritual. What they understood about themselves while they were alone. What the isolation clarified.\n\nYou listen. They have never told anyone this.",
         "ranger": "\"What did it show you?\" they ask. \"About me.\"\n\nYou think about how to answer honestly.\n\n\"That you came back to Ashenveld for the same reason you left,\" you say. \"That those two things are the same reason. That you have been trying to solve a problem about yourself for eleven years and the ruins were the first place you found where the problem felt like it might have an answer.\"\n\nThey look at you for a long time. \"Yes,\" they say. \"Does it change how you see me?\"\n\n\"No,\" you say. You mean it.",
-        "cipher": "\"I know what you did not tell me,\" they say. \"By the fire. Before the ritual.\"\n\nYou look at them.\n\n\"You let the mechanism read it,\" they say. \"You decided to let it read you rather than say it yourself. I want you to know — I know why. And I know what it was.\"\n\nA silence.\n\n\"Is it something we can talk about?\" you ask.\n\n\"Yes,\" they say. \"But not tonight. Tonight I want to just be in this room with you. Without anything needing to be resolved.\"\n\n\"All right,\" you say."
+        "cipher": "\"I know what you did not tell me,\" they say. \"By the fire. Before the ritual.\"\n\nYou look at them.\n\n\"You let the mechanism read it,\" they say. \"You decided to let it read you rather than say it yourself. I want you to know — I know why. And I know what it was.\"\n\nA silence.\n\n\"Is it something we can talk about?\" you ask.\n\n\"Yes,\" they say. \"But not tonight.\"\n\n\"All right,\" you say."
       },
       "choices": [
         {
@@ -253,7 +294,7 @@
             "default": {
               "text": [
                 "You tell them.",
-                "Not everything — there is more than one evening's worth.",
+                "Not everything. There is more than one evening's worth.",
                 {
                   "when": {
                     "relationship_type": [
@@ -325,7 +366,12 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You keep some things. They keep some things. The mechanism read everything but you are not the mechanism.\n\nWhat you have is the shape of what the ritual revealed, held between you without being fully articulated. Some things are real without being spoken. Some things speaking would diminish.\n\nYou sit by the fire and do not say everything and the not-saying is its own kind of truth.",
+              "text": [
+                "You keep some things. They keep some things. The mechanism read everything but you are not the mechanism.",
+                "What you have is the shape of what the ritual revealed, held between you without being fully articulated. Some things are real without being spoken. Some things speaking would diminish.",
+                "You sit by the fire and do not say everything and the not-saying is its own kind of truth.",
+                "\"Tonight I want to just be in this room with you,\" they say. \"Without anything needing to be resolved.\""
+              ],
               "next_scene": "act2_ch8_point_of_no_return",
               "state_changes": {
                 "relationships": {
@@ -345,7 +391,7 @@
       "act": 2,
       "chapter": 8,
       "location": "crestfall_tallow_inn",
-      "title": "The Choice That Determines Everything",
+      "title": "The Sixteenth Morning",
       "when": {
         "part": "morning",
         "day": 16
@@ -355,11 +401,11 @@
       },
       "requires": {},
       "text": {
-        "default": "Morning of the sixteenth day.\n\nYou are sitting at your table in the Tallow when it becomes clear that today is the day the decisions solidify. Not made — you have been making them for days. But committed, the point past which revision requires extraordinary effort.\n\nThe factions have their positions. You have yours. [missing person] is here, and Pol, and Maret, and Branch, and Lira, and Issa, and Aldous behind his bar with the good wood still burning.\n\nThe question is not what you have done. The question is what you are going to do with what comes next.\n\nThis is the point of no return. What you choose here shapes which ending is possible.",
-        "commander": "You have been building toward a specific outcome. You know where you stand. What comes next is implementation — and implementation in Ashenveld's current state may require you to be present for a significant time. Possibly permanently.\n\nYou think about what that means. Then you decide what it means.",
+        "default": "Morning of the sixteenth day.\n\nYou are sitting at your table in the Tallow when it becomes clear that today is the day the decisions solidify. Not made. You have been making them for days. But committed, the point past which revision requires extraordinary effort.\n\nThe factions have their positions. You have yours. [missing person] is here, and Pol, and Maret, and Branch, and Lira, and Issa, and Aldous behind his bar with the good wood still burning.\n\nThe question is not what you have done. The question is what you are going to do with what comes next.",
+        "commander": "You have been building toward an outcome. You know where you stand. What comes next is implementation. And implementation in Ashenveld's current state may require you to be present for a significant time. Possibly permanently.\n\nYou think about what that means. Then you decide what it means.",
         "arcane": "You have documentation to produce. [missing person]'s fourteen months of notes. Pol's fifteen years of scholarship. Your own observations.\n\nThe question is who receives it and what version of events it tells. This work will determine what Ashenveld becomes.",
         "ranger": "Ashenveld needs time, and time is not threatened. But it also needs people who know how to read what is happening and respond to it.\n\nYou think about whether you are one of those people. You think about what it would mean to stay.",
-        "cipher": "The political situation has a shape. Remaining influence requires sustained presence — continued relationship management, continued attention to who is doing what and why.\n\nYou have done this in other places for other reasons. The question is whether you want to do it here."
+        "cipher": "The political situation has a shape. Remaining influence requires sustained presence. Continued relationship management, continued attention to who is doing what and why.\n\nYou have done this in other places for other reasons. The question is whether you want to do it here."
       },
       "choices": [
         {
@@ -443,10 +489,10 @@
             "default": {
               "text": [
                 "You decide to leave.",
-                "The curse is sealed. The factions have their arrangement. Ashenveld's recovery is underway and does not require your specific presence.",
+                "The curse is sealed. The factions have their arrangement. Ashenveld's recovery is underway and does not require your presence.",
                 "You came here for one reason. The reason is standing across from you.",
                 "You find [missing person] and tell them you are going.",
-                "Something in their face moves — not disappointment, something more complex. \"I thought—\" they begin. Then stop. \"All right,\" they say. \"When?\"",
+                "Something in their face moves. Not disappointment, something more complex. \"I thought—\" they begin. Then stop. \"All right,\" they say. \"When?\"",
                 {
                   "when": {
                     "flags": {
@@ -524,8 +570,8 @@
             "default": {
               "text": [
                 "\"Go,\" you tell them. \"Get somewhere safe and ordinary and rest. I will follow.\"",
-                "They look at you with the look they have been giving you since the ruins — the specific quality of someone who has been reading you longer than you have been reading them.",
-                "\"You will,\" they say. Not a question.",
+                "They look at you with the look they have been giving you since the ruins. They have been reading you longer than you have been reading them.",
+                "\"You will,\" they say.",
                 "\"Yes,\" you say.",
                 {
                   "when": {

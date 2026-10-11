@@ -6,9 +6,11 @@ import styles from './SceneArt.module.css'
 interface Props {
   locationName: string
   gameState: GameState
+  /** What the picture shows, for screen readers. Until the art manifest (A13) it is the place's description. */
+  alt?: string
 }
 
-export default function SceneArt({ locationName, gameState }: Props) {
+export default function SceneArt({ locationName, gameState, alt = '' }: Props) {
   const locationId = gameState.world.current_location
   const imageSrc = useLocationImage(locationId, gameState)
 
@@ -55,7 +57,7 @@ export default function SceneArt({ locationName, gameState }: Props) {
       <div className={styles.sceneArt}>
         {showPlaceholder && (
           <div className={styles.placeholder}>
-            <span className={styles.placeholderText}>{locationId}</span>
+            <span className={styles.placeholderText}>{locationName}</span>
           </div>
         )}
 
@@ -63,7 +65,7 @@ export default function SceneArt({ locationName, gameState }: Props) {
           <img
             key={displayed}
             src={displayed}
-            alt=""
+            alt={alt}
             className={styles.locationImg}
             style={{ opacity: fading ? 0 : 1 }}
           />
@@ -74,6 +76,7 @@ export default function SceneArt({ locationName, gameState }: Props) {
             key={incoming}
             src={incoming}
             alt=""
+            aria-hidden="true"
             className={styles.locationImg}
             style={{ opacity: fading ? 1 : 0, zIndex: 2 }}
             onLoad={handleIncomingLoad}

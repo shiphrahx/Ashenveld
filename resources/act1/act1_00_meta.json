@@ -11,7 +11,7 @@
     "innkeeper_aldous": {
       "id": "innkeeper_aldous",
       "name": "Aldous",
-      "role": "Innkeeper of the Tallow Inn",
+      "role": "Keeps the Tallow Inn",
       "location": "crestfall_tallow_inn",
       "personality": "Cautious. Tired. Knows more than he says. Was kind once.",
       "secret": "He saw the missing person leave with a Rootless woman the night before they disappeared into the forest.",
@@ -23,7 +23,7 @@
     "maret": {
       "id": "maret",
       "name": "Maret",
-      "role": "Leader of the Rootless",
+      "role": "Runs the camp outside town",
       "location": "rootless_camp",
       "personality": "Guarded. Pragmatic. Has seen too much. Protects her people above everything.",
       "secret": "She was the last person to see the missing person alive. She made a private arrangement with the curse to protect her people. It cost her something she will not name.",
@@ -35,7 +35,7 @@
     "lira": {
       "id": "lira",
       "name": "Lira",
-      "role": "Cursed young woman, Rootless member",
+      "role": "Works rope at the camp's edge",
       "location": "rootless_camp",
       "personality": "Quiet. Observant. Partially afflicted — some days better than others.",
       "secret": "She has been inside the ruins outskirts and came back changed. She will not say what she saw.",
@@ -48,7 +48,7 @@
     "branch": {
       "id": "branch",
       "name": "Branch",
-      "role": "Former soldier, Rootless member",
+      "role": "Maret's second. Used to be a soldier",
       "location": "rootless_camp",
       "personality": "Suspicious. Dry. Loyal to Maret above all. Does not trust outsiders and says so plainly.",
       "secret": "He recognises the player from a military record he should not have access to.",
@@ -60,7 +60,7 @@
     "lieutenant_cael": {
       "id": "lieutenant_cael",
       "name": "Lieutenant Cael",
-      "role": "Iron Compact officer stationed at Crestfall",
+      "role": "Compact lieutenant at the east gate",
       "location": "crestfall_gate",
       "personality": "Professional. Polite in a way that does not reach his eyes. Following orders he half-believes in.",
       "secret": "Commander Vorne's daughter is showing early curse symptoms. Cael knows. Vorne does not yet.",
@@ -71,7 +71,7 @@
     "priest_edric": {
       "id": "priest_edric",
       "name": "Edric",
-      "role": "Ashen Covenant priest stationed in Crestfall",
+      "role": "Covenant priest at the old alderman's hall",
       "location": "crestfall_shrine",
       "personality": "Devout. Precise. Believes completely. The certainty never wavers even when the facts argue against it.",
       "secret": "The Covenant's oldest texts describe exactly what is happening. He knows the purification ritual will kill as many as the curse does.",
@@ -82,7 +82,7 @@
     "dockworker_sen": {
       "id": "dockworker_sen",
       "name": "Sen",
-      "role": "Dockworker, lifelong Crestfall resident",
+      "role": "Works the docks. Knew you before",
       "location": "crestfall_docks",
       "personality": "Weathered. Nostalgic. Frightened but will not say of what.",
       "secret": "He saw something in the river three weeks ago that he has told no one.",
@@ -93,7 +93,7 @@
     "corvin": {
       "id": "corvin",
       "name": "Corvin",
-      "role": "Old market trader, lifelong Crestfall resident",
+      "role": "Sells preserved food in the market. Eighty years old",
       "location": "crestfall_market",
       "personality": "Eighty years old. Seen everything. Says exactly what he means in as few words as possible.",
       "secret": "He saw the missing person and the Rootless woman together, the night before they went east.",
@@ -105,7 +105,7 @@
     "hanna": {
       "id": "hanna",
       "name": "Hanna",
-      "role": "Grain seller, market square",
+      "role": "Sells grain in the market",
       "location": "crestfall_market",
       "personality": "Efficient. Frightened. Doing what she can for people who are worse off. Running low on optimism.",
       "secret": "She has been supplementing the Rootless camp with grain she writes off the books. If the Compact found out she would lose her stall.",
@@ -117,7 +117,7 @@
     "still_man_wren": {
       "id": "still_man_wren",
       "name": "Wren",
-      "role": "Afflicted Crestfall farmer",
+      "role": "Sits by the Tallow's fire. Was the man everyone liked",
       "location": "crestfall_tallow_inn",
       "personality": "Was warm, community-minded, the person everyone liked. Now diminished. Still present, partially.",
       "secret": "He went to the forest edge alone six months ago, touched something, and came back changed. He has told no one.",

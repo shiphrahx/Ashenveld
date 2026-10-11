@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { saveGame } from '../gameState'
+import { saveGame, loadMeta } from '../gameState'
+import { ENDING_COUNT } from './EndScreen'
 import { useSettings } from '../settings'
 import type { GameState } from '../types'
 import Panel from './Panel'
@@ -11,9 +12,10 @@ interface Props {
   onReturnToTitle: () => void
   onSettings: () => void
   onRestartChapter?: () => void
+  onCredits: () => void
 }
 
-export default function Menu({ state, onClose, onReturnToTitle, onSettings, onRestartChapter }: Props) {
+export default function Menu({ state, onClose, onReturnToTitle, onSettings, onRestartChapter, onCredits }: Props) {
   const [confirmChapter, setConfirmChapter] = useState(false)
   const { settings, update } = useSettings()
   const [saved, setSaved] = useState(false)
@@ -42,10 +44,12 @@ export default function Menu({ state, onClose, onReturnToTitle, onSettings, onRe
             <span className={styles.rowHint}>{settings.skipSeen ? 'On' : 'Off'}</span>
           </button>
 
-          <button className={styles.row} onClick={handleSave}>
-            <span className={styles.rowLabel}>Save Game</span>
-            {saved && <span className={styles.rowHint}>Saved</span>}
-          </button>
+          <div className={styles.savedRow} data-saved-line>
+            <span className={styles.rowHint}>
+              {saved ? 'Saved just now' : `Saved · Day ${state.world.day}, ${state.world.time_of_day}`}
+            </span>
+            <button className={styles.confirmBtn} onClick={handleSave}>Save now</button>
+          </div>
 
           {onRestartChapter && (confirmChapter ? (
             <div className={styles.confirm}>
@@ -61,19 +65,28 @@ export default function Menu({ state, onClose, onReturnToTitle, onSettings, onRe
             </button>
           ))}
 
+          <div className={styles.row} aria-live="polite">
+            <span className={styles.rowLabel}>Endings found</span>
+            <span className={styles.rowHint}>{Math.min(loadMeta().endings.length, ENDING_COUNT)} of {ENDING_COUNT}</span>
+          </div>
+
+          <button className={styles.row} onClick={onCredits}>
+            <span className={styles.rowLabel}>Credits</span>
+          </button>
+
           <div className={styles.divider} />
 
           {confirming ? (
             <div className={styles.confirm}>
-              <p className={styles.confirmText}>Return to the title screen?</p>
+              <p className={styles.confirmText}>Return to the title screen? Your game is saved.</p>
               <div className={styles.confirmBtns}>
-                <button className={`${styles.confirmBtn} ${styles.danger}`} onClick={onReturnToTitle}>Return to Title</button>
+                <button className={`${styles.confirmBtn} ${styles.danger}`} onClick={onReturnToTitle}>Return to title</button>
                 <button className={styles.confirmBtn} onClick={() => setConfirming(false)}>Cancel</button>
               </div>
             </div>
           ) : (
             <button className={`${styles.row} ${styles.rowDanger}`} onClick={() => setConfirming(true)}>
-              <span className={styles.rowLabel}>Return to Title</span>
+              <span className={styles.rowLabel}>Return to title</span>
             </button>
           )}
         </div>

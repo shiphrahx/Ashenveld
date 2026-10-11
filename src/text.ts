@@ -23,6 +23,7 @@ export function applyTokens(t: string, s: GameState): string {
     .replace(/\[missing person\]/g, mp.name || 'them')
     .replace(/\[player\]/g, s.player.name || 'you')
     .replace(/\[relationship\]/g, REL_LABEL[mp.relationship] ?? 'someone you loved')
+    .replace(/\[sir\/ma'am\]/g, s.player.gender === 'Woman' ? "ma'am" : s.player.gender === 'Man' ? 'sir' : 'traveller')
 }
 
 export const paragraphs = (t: string) => t.split(/\n{2,}/).map(p => p.trim()).filter(Boolean)
@@ -43,4 +44,16 @@ export const CLASS_LABELS: Record<string, string> = {
   arcane:    'The Arcane',
   ranger:    'The Ranger',
   cipher:    'The Cipher',
+}
+
+// ─── Paragraph kinds (U14) ────────────────────────────────────────────────────
+
+export type ParaKind = 'letter' | 'inscription' | 'p'
+
+/** A letter has "> " on every line; an inscription is wholly wrapped in *…*. */
+export function classify(p: string): { kind: ParaKind; text: string } {
+  const lines = p.split('\n')
+  if (lines.every(l => l.startsWith('> ') || l === '>')) return { kind: 'letter', text: lines.map(l => l.replace(/^> ?/, '')).join('\n') }
+  if (/^\*[^*]+\*$/.test(p.trim())) return { kind: 'inscription', text: p.trim().slice(1, -1) }
+  return { kind: 'p', text: p }
 }

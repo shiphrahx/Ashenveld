@@ -29,15 +29,33 @@ function metaFilename(act: number): string {
   return `act${act}_00_meta.json`
 }
 
+// ─── Fetching, with two retries (U17) ─────────────────────────────────────────
+
+const RETRY_MS = [500, 1500]
+const wait = (ms: number) => new Promise(r => setTimeout(r, ms))
+
+async function fetchJson<T>(url: string, what: string): Promise<T> {
+  let last: unknown
+  for (let attempt = 0; attempt <= RETRY_MS.length; attempt++) {
+    try {
+      const res = await fetch(url)
+      if (!res.ok) throw new Error(`Failed to load ${what}: ${url} (${res.status})`)
+      return (await res.json()) as T
+    } catch (e) {
+      last = e
+      if (attempt < RETRY_MS.length) await wait(RETRY_MS[attempt])
+    }
+  }
+  throw last
+}
+
 // ─── Public API ───────────────────────────────────────────────────────────────
 
 /** Fetch master index and all act meta files. Call once at startup. */
 export async function initLoader(): Promise<MasterIndex> {
   if (masterIndex) return masterIndex
 
-  const res = await fetch(`${import.meta.env.BASE_URL}resources/master_scene_index.json`)
-  if (!res.ok) throw new Error('Failed to load master_scene_index.json')
-  masterIndex = (await res.json()) as MasterIndex
+  masterIndex = await fetchJson<MasterIndex>(`${import.meta.env.BASE_URL}resources/master_scene_index.json`, 'the scene index')
 
   // Load all three act metas in parallel
   await Promise.all([loadMeta(1), loadMeta(2), loadMeta(3), loadNotes()])
@@ -116,21 +134,15 @@ export function isFileCached(filename: string): boolean {
 async function loadMeta(act: number): Promise<void> {
   if (metaCache[act]) return
   const url = `${actPath(act)}${metaFilename(act)}`
-  const res = await fetch(url)
-  if (!res.ok) throw new Error(`Failed to load meta for act ${act}: ${url}`)
-  metaCache[act] = (await res.json()) as ActMeta
+  metaCache[act] = await fetchJson<ActMeta>(url, `act ${act}`)
 }
 
 async function loadNotes(): Promise<void> {
-  const res = await fetch(`${import.meta.env.BASE_URL}resources/notes.json`)
-  if (!res.ok) throw new Error('Failed to load notes.json')
-  notes = (await res.json()) as NotesFile
+  notes = await fetchJson<NotesFile>(`${import.meta.env.BASE_URL}resources/notes.json`, 'the journal notes')
 }
 
 async function loadChapterFile(act: number, filename: string): Promise<void> {
   if (chapterCache[filename]) return
   const url = `${actPath(act)}${filename}`
-  const res = await fetch(url)
-  if (!res.ok) throw new Error(`Failed to load chapter file: ${url}`)
-  chapterCache[filename] = (await res.json()) as ChapterFile
+  chapterCache[filename] = await fetchJson<ChapterFile>(url, 'a chapter')
 }
