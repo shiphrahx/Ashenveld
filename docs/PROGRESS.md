@@ -10,8 +10,8 @@ One step per branch and pull request. Each tick lists what was done, what was sk
 - [x] 6. docs/03 G7 to G13
 - [x] 7. docs/02 Section 0 (author decisions), then N1 to N4
 - [x] 8. docs/02 N5 to N8
-- [ ] 9. docs/02 N9 to N18
-- [ ] 10. docs/04 U8 to U20
+- [x] 9. docs/02 N9 to N18
+- [x] 10. docs/04 U8 to U20
 - [ ] 11. docs/05 E1 to E10
 - [ ] 12. docs/01 B22, B23. docs/03 G14, G15
 
@@ -308,3 +308,95 @@ Branch `step-8-threads-companion`, stacked on step 7.
 - N6 asks Maret to grant `maret_letter_obtained` from text, which text can't do. Both outcomes of the forest-edge scene set it instead.
 - N7's three-sentence kit (herbs, ward, nothing) has to be three paragraphs, because guarded parts are joined as paragraphs.
 - I cut six "for a long time"s that had crept into my own new lines.
+
+## Step 9 — N9 to N18
+
+Branch `step-9-voice-endings`, stacked on step 8.
+
+**AUTHOR DECISION defaults used**
+- N17: kept the gender step, added Neither, and used the answer through a `[sir/ma'am]` token (ma'am, sir, traveller) in five lines from Cael, Sera and the soldiers. The script-wide pronoun conversion for [missing person] is **not** done: the plan says only if you confirm, so "they" stays throughout.
+
+**Done**
+
+- N9: the timeline table, plus `docs/story-bible.md` (canon timeline, the six relationships, D1–D6, a paragraph per person, voices in brief) and the README's dates. The "just be in this room with you" line moves into `keep_some_things`; the road-west callback is guarded on having taken it.
+- N10: `tools/prose-stats.mjs` (from step 7). A scripted pass for filler "specific" and spaced em dashes in narration (speech left alone, no sentence left ending on "was" or "the"), then hand edits for "of someone who", "You note / You file", the "Not unkind." tags, the "You read" openers, and contractions for attributed lines from Aldous, Lira, the soldiers and others.
+- N11: a live problem on each Act 3 path, with flags the endings read. Stayed: the returned at the gate (Wren on Day 30). Left: the pull east and the choice to turn back. Sent ahead: the letters stop. Alone: Joren wakes and asks about Harrow; Maret offers her list. The rebuilding choices move to `act3_ch2_rebuilding_work` so the returned can frame them.
+- N12: fiction breaks gone, including three the table missed; `act1_ch7_act1_end` removed and its text moved into stepping over the line; six titles renamed.
+- N13: four class choices replace the stub, each read once later; twelve class-only choices; one class option per class on each Act 3 path.
+- N14: Edric at Seriva's meeting, the number for Crestfall (a fifth), the map room, keeping the seal, and a line in every ending.
+- N15: both letters shown as letter blocks. U14's paragraph kinds (letter, inscription, speech) brought forward from step 10 to render them.
+- N16: `act3_branches` lists the five real endings; unwritten ones are marked `folded_into`; the guarded closing paragraphs; Goran's recommendation guarded.
+- N17: see above.
+- N18: player-facing roles for all sixteen people, one plain line for each item, README classes and endings.
+
+**Prose stats** (`npm run prose`), plan target in brackets
+
+| Pattern | Start of step 7 | Now |
+|---|---|---|
+| specific / specifically (≤25) | 253 | 24 |
+| the specific quality of (≤3) | 37 | 0 |
+| of someone who (≤15) | 88 | 14 |
+| Not a question / accusing / unkind (≤6) | 17 | 0 |
+| You note / You file outside Cipher (≤6) | 30 | 1 |
+| em dashes (halve) | 894 | 112 |
+| "You read" paragraphs, Ranger / Cipher (≤5 each) | 20 / 10 | 5 / 5 |
+| contractions | 43 | 63 |
+| for a long moment / time | 45 | 37 |
+
+**Checks**: validate 0 errors (4 warnings), unit 24 passed, e2e 11 passed.
+
+**Skipped or deferred**
+
+- The contractions pass only touched speech it could attribute with confidence, so it reached 16 lines. Issa's lines have little to contract. A read-through by voice would find more.
+- Act 3's chapter 1 scenes keep a single choice.
+- The words-per-scene list in prose-stats counts every guarded variant, so relationship-heavy scenes look longer than any one player reads. G15 (step 12) handles pacing.
+
+**Plan was wrong or unclear**
+
+- N14 has "Say the number aloud" gated on knowing that cleansing kills, but the player doesn't know a number yet at that point. The choice asks Seriva for it in front of Edric instead.
+- N13's Arcane "Feel what the stone does" duplicated G2b's Mana check, and "Listen to the thread" duplicated another. The Arcane versions are worded differently ("Kneel, and listen for where the stone wants to go", "Listen to the thread from where you stand").
+- The sent-ahead player who leaves never got `player_leaves_ashenveld`, which the road scenes require. Now set on leaving.
+- A step 7 edit produced "a habit, a habit the two of you shared" at the campsite. Fixed.
+- The "of someone who" edits left two sentences spliced without a full stop (ritual preparation, return to the ruins). Found on a read-through and fixed.
+
+## Step 10 — U8 to U20
+
+Branch `step-10-ui-polish`, stacked on step 9. U14 was done in step 9 for the letters.
+
+**AUTHOR DECISION defaults used**: none came up in this step.
+
+**Done**
+
+- U8: each faction shows its tier word and a five-step track; hover or focus says what the tier means now, from the G5 table. `repPercent` and its ±40 scale are gone.
+- U9: "Day 7" over "Evening", with six day-part glyphs.
+- U10: visited comes from `state.visited` (scene → location, loaded when the panel opens), `east_road_return` draws as East Road, Marker Line removed, Mill Lane, Gate Stones and West Road added, Inner Approach and Source Chamber moved apart, labels alternate. Visited places show in full, neighbours as unnamed rings, the rest hidden; region labels appear with their first place. A card shows description, the ambient line for the time of day, and people met there. The route is drawn through visited places in journal order. On a phone the map pans and opens centred on you.
+- U11: monogram tile, faction mark, role, closeness tier on a five-step track, "Last seen: The Tallow Inn, Day 7", the Cipher's read. [missing person] first, then by most recent change. To make "last seen" and the sort possible, a closeness change now stamps `{ day, location, at }` on the relationship (unit test added). The panel's own tier list ("Distant", "Unknown") is replaced by `closenessTier`.
+- U12: the tooltip text from the table, full name and modifier ("Mana · 16 · +5"), opening towards the story. The sidebar no longer clips them on normal heights; under 700px tall it scrolls again.
+- U13: tighter header, one column under 720px, descriptions behind "More about each class" under 800px tall, arrow keys move and choose, the chosen class shows all seven stats with modifiers and the good-at line, no silhouette, names 2–24 with `[ ] < > *` blocked, progress is an `<ol>` with `aria-current`.
+- U15: outcome text in the body colour, a tag ("Charisma · Failed") with a coloured dot, the left rule in the result colour. Unrolled outcomes have no tag.
+- U16: menu order as listed, with a saved line and Save now, endings found n of 5, and Credits.
+- U17: loading screen, two retries per fetch, the error screen, and an error boundary.
+- U18: the `index.html` tags, `favicon.svg`, `npm run og` (Playwright screenshot of the title screen to `public/og.jpg`), alt text on the scene art, and a `nav` round the sidebar's panel buttons.
+- U19: save summary under Continue, Credits, the time line, the content note.
+- U20: 1–6 keycaps, pressed state, 8px gap, tags wrap under the label on a phone.
+- A.7 (no images needed): the three faction marks, used in the sidebar and People.
+- Also fixed: the sidebar's People and Items buttons had accessible names ("Relationships", "Inventory") that didn't match their labels.
+- e2e test for the map and People.
+
+**Checks**: validate 0 errors (4 warnings), unit 25 passed, e2e 12 passed.
+
+**Skipped or deferred**
+
+- U16: Export and Import save come with B23 in step 12.
+- U18: alt text comes from each place's description until the art manifest (A13) exists.
+- U13: the cards stay `div role="radio"` with arrow keys rather than becoming `<button>`s; a button can't hold the block content they have.
+- A.7's illustrated map (river, tree line, hand-drawn strokes, Lira's marks) isn't done. U10 didn't need it and it's art direction more than layout.
+- U20: "speech keeps its quotation marks, actions get none" is a content rule; the choice labels weren't audited for it.
+
+**Plan was wrong or unclear**
+
+- U10 puts West Road at x 20, which the old viewBox cut off. The viewBox starts at −30.
+- U12 says the stat tooltip overflowed the shell. The real cause was the sidebar's `overflow-y: auto`, which also clipped anything opening sideways.
+- The contrast test couldn't read `color-mix()` (browsers report it as `color(srgb …)`), so the step 9 narration colour is a plain rgba now.
+
+**Not started**: steps 11, 12.

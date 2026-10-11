@@ -2,7 +2,7 @@ import React from 'react'
 import { Icon } from './icons'
 import styles from './TabBar.module.css'
 
-export type PanelId = 'journal' | 'items' | 'map' | 'people' | 'menu' | 'status' | 'settings' | 'keys' | 'rest'
+export type PanelId = 'journal' | 'items' | 'map' | 'people' | 'menu' | 'status' | 'settings' | 'keys' | 'rest' | 'credits'
 
 interface Props {
   onOpen: (id: PanelId) => void

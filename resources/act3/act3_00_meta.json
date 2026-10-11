@@ -12,37 +12,33 @@
       "entry_scene": "act3_ch1_new_ashenveld",
       "description": "Player and missing person both stay. The rebuilding arc. Ends with the Warden Stays ending family.",
       "available_endings": [
-        "ending_stays_rootless",
-        "ending_stays_compact",
-        "ending_stays_alone",
-        "ending_stays_together"
+        "ending_stays_together",
+        "ending_warden_of_ashenveld",
+        "ending_the_account"
       ]
     },
     "left_with_missing": {
       "entry_scene": "act3_ch1_leaving",
       "description": "Player leaves Ashenveld with the missing person. The Warden Escapes ending family.",
       "available_endings": [
-        "ending_escape_together",
-        "ending_escape_haunted",
-        "ending_escape_returns"
+        "ending_escape_together"
       ]
     },
     "sent_missing_ahead": {
       "entry_scene": "act3_ch1_staying_briefly",
       "description": "Player stays briefly to finish work, then follows. Hybrid arc.",
       "available_endings": [
-        "ending_follows_later",
-        "ending_stays_permanently",
-        "ending_never_leaves"
+        "ending_escape_together",
+        "ending_stays_together",
+        "ending_warden_of_ashenveld",
+        "ending_the_account"
       ]
     },
     "stayed_alone": {
       "entry_scene": "act3_ch1_alone_in_ashenveld",
       "description": "Player stays without the missing person. The most ambiguous arc.",
       "available_endings": [
-        "ending_alone_rebuilds",
-        "ending_alone_legend",
-        "ending_warden_dies"
+        "ending_alone_legend"
       ]
     }
   },
@@ -94,6 +90,7 @@
       }
     },
     "ending_stays_rootless": {
+      "folded_into": "ending_warden_of_ashenveld",
       "id": "ending_stays_rootless",
       "title": "The Warden of Ashenveld",
       "alignment": "rootless",
@@ -107,6 +104,7 @@
       }
     },
     "ending_stays_compact": {
+      "folded_into": "ending_stays_together",
       "id": "ending_stays_compact",
       "title": "The Compact's Warden",
       "alignment": "iron_compact",
@@ -120,6 +118,7 @@
       }
     },
     "ending_warden_dies": {
+      "folded_into": "ending_alone_legend",
       "id": "ending_warden_dies",
       "title": "What Remains",
       "alignment": "any",
@@ -133,6 +132,7 @@
       }
     },
     "ending_secret": {
+      "folded_into": "ending_the_account",
       "id": "ending_secret",
       "title": "The Account",
       "alignment": "none",

@@ -261,11 +261,6 @@
       "act": 1,
       "chapter": 7
     },
-    "act1_ch7_act1_end": {
-      "file": "act1_ch7_scenes.json",
-      "act": 1,
-      "chapter": 7
-    },
     "act2_ch1_ruins_outskirts": {
       "file": "act2_ch1_scenes.json",
       "act": 2,
@@ -610,6 +605,11 @@
       "file": "act2_ch3_scenes.json",
       "act": 2,
       "chapter": 3
+    },
+    "act3_ch2_rebuilding_work": {
+      "file": "act3_ch2_scenes.json",
+      "act": 3,
+      "chapter": 2
     }
   },
   "starting_scene": "act1_ch1_barge_arrival",
@@ -618,7 +618,7 @@
       "title": "The Return",
       "entry": "act1_ch1_barge_arrival",
       "exit_scenes": [
-        "act1_ch7_act1_end"
+        "act1_ch7_decision_enter"
       ],
       "chapters": 7,
       "description": "The player arrives in Crestfall, meets the three factions, discovers the missing person's trail, and crosses into the deep forest."
@@ -741,11 +741,6 @@
       "from": "act1_ch6_harrow_arrival",
       "to": "act1_ch7_forest_edge",
       "note": "Ch6 to ch7 fast path"
-    },
-    {
-      "from": "act1_ch7_act1_end",
-      "to": "act2_ch1_ruins_outskirts",
-      "note": "Act 1 to Act 2"
     },
     {
       "from": "act2_ch1_what_they_found",
@@ -881,6 +876,11 @@
       "from": "act3_ch4_resolution_alone",
       "to": "act3_ch5_endings",
       "note": "Ch4 alone to endings router"
+    },
+    {
+      "from": "act1_ch7_decision_enter",
+      "to": "act2_ch1_ruins_outskirts",
+      "note": "Act 1 to Act 2"
     }
   ],
   "flag_dependencies": {
@@ -926,28 +926,28 @@
   "inventory_items": {
     "covenant_ward": {
       "name": "Covenant ward",
-      "description": "Stone disc with Covenant markings. Slows curse exposure effects.",
+      "description": "A stone disc on a cord, from Edric. It eases what the deep forest takes out of you.",
       "consumable": false
     },
     "covenant_marker_stone": {
       "name": "Marker stone",
-      "description": "Carved stone for placing at the east road nexus point.",
+      "description": "Carved stone from Edric, to place where the tree line bends on the east road.",
       "consumable": true,
       "consumed_on": "covenant_marker_placed"
     },
     "rootless_map": {
       "name": "Rootless map",
-      "description": "Hand-drawn map of the east road with Rootless exploration points. Lira drew it.",
+      "description": "The east road and the outskirts in Lira's hand. Her marks are the useful ones.",
       "consumable": false
     },
     "rootless_provisions": {
       "name": "Provisions",
-      "description": "Dried food and medicinal herbs from Maret's camp.",
+      "description": "Dried food and bitter herbs. Eat when you cannot rest.",
       "consumable": true
     },
     "carved_bone_figure": {
       "name": "Bone figure",
-      "description": "Found in Harrow. Small figure. Unknown origin.",
+      "description": "A figure carved from bone, the size of your thumb. No face. From Harrow.",
       "consumable": false
     },
     "missing_person_note": {
@@ -957,22 +957,22 @@
     },
     "harrow_papers": {
       "name": "Harrow papers",
-      "description": "The old man's records from Harrow. The last entries are the most important.",
+      "description": "The old man's records from Harrow. The last entries matter most.",
       "consumable": false
     },
     "cellar_map_copy": {
       "name": "Cellar carvings",
-      "description": "A copy of the carvings from Harrow's barn cellar. A guide to the ruins.",
+      "description": "Your copy of the carvings in the Harrow cellar. They show a second way down.",
       "consumable": false
     },
     "maret_outskirts_notes": {
       "name": "Maret's notes",
-      "description": "Maret's handwritten notes on safe movement through the ruins outskirts.",
+      "description": "Maret's notes on the safe ground in the ruins outskirts.",
       "consumable": false
     },
     "mechanism_fragment": {
       "name": "Mechanism fragment",
-      "description": "A piece of the original sealing mechanism. Warm. Remembers what it was.",
+      "description": "A piece of the sealing mechanism. Warm. The ritual needs it.",
       "consumable": true,
       "consumed_on": "ritual_done"
     }

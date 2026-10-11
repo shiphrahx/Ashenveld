@@ -1,0 +1,24 @@
+/* body: narration a touch quieter than speech */
+.body { color: rgba(204, 218, 236, 0.92); }   /* --text-bright at 92%; a plain rgba so contrast checks can read it */
+.said { quotes: none; color: var(--white-cold); }
+
+/* a letter: indented, a rule, italic */
+.letter {
+  margin: 4px 0 22px 12px;
+  padding: 4px 0 4px 18px;
+  border-left: 1px solid var(--blue-mid);
+  font-style: italic;
+  color: var(--text-bright);
+  font-size: 0.95em;
+}
+.letter p { margin: 0 0 4px; }
+:global(:root[data-font="serif"]) .letter { font-family: 'Lora', Georgia, serif; }
+
+/* an inscription: carved, centred */
+.inscription {
+  text-align: center;
+  font-family: var(--font-display);
+  letter-spacing: 0.08em;
+  color: var(--blue-moon);
+  margin: 6px 0 22px;
+}

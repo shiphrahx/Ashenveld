@@ -7,12 +7,15 @@ import '@fontsource/atkinson-hyperlegible/400-italic.css'
 import '@fontsource/atkinson-hyperlegible/700.css'
 import App from './App'
 import SettingsProvider from './components/SettingsProvider'
+import ErrorBoundary from './components/ErrorBoundary'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <SettingsProvider>
-      <App />
+      <ErrorBoundary>
+        <App />
+      </ErrorBoundary>
     </SettingsProvider>
   </React.StrictMode>
 )

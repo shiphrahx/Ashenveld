@@ -3,119 +3,75 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  overflow: hidden;
 }
 
-/* ── Region labels ── */
-.regionLabels {
-  position: relative;
-  height: 20px;
-}
+/* U10.7: the map pans on narrow screens */
+.scroller { overflow-x: auto; overscroll-behavior-x: contain; }
+.svg { width: 100%; min-width: 760px; height: auto; display: block; }
 
 .regionLabel {
-  position: absolute;
   font-family: var(--font-display);
-  font-size: var(--fs-label);
+  font-size: 12px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--text-muted);
-}
-
-/* ── SVG map ── */
-.svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Region dividers */
-.divider {
-  stroke: var(--border-dim);
-  stroke-width: 1;
-  stroke-dasharray: 4 4;
+  fill: var(--text-muted);
 }
 
 /* Edges */
-.edgeVisited {
-  stroke: var(--blue-dim);
-  stroke-width: 1.5;
-}
-
-.edgeUnvisited {
-  stroke: var(--border-dim);
-  stroke-width: 1;
-  stroke-dasharray: 3 3;
-}
+.edgeVisited { stroke: var(--blue-dim); stroke-width: 1.5; }
+.edgeUnvisited { stroke: var(--text-muted); stroke-width: 1; stroke-dasharray: 3 4; opacity: 0.7; }
+.route { fill: none; stroke: var(--blue-steel); stroke-width: 2; stroke-linejoin: round; opacity: 0.55; }
 
 /* Nodes */
-.node {
-  fill: var(--blue-dim);
-  stroke: var(--blue-steel);
-  stroke-width: 1.5;
-}
-
+.node { fill: var(--blue-dim); stroke: var(--blue-steel); stroke-width: 1.5; }
 .node_crestfall { fill: var(--blue-dim);  stroke: var(--blue-steel); }
 .node_forest    { fill: var(--blue-faint); stroke: var(--blue-mid); }
 .node_ruins     { fill: var(--red-dark);  stroke: var(--red-mid); }
 
-.nodeUnvisited {
-  fill: var(--bg-panel);
-  stroke: var(--border-lit);
-  stroke-width: 1;
-  stroke-dasharray: 2 2;
-}
+/* U10.6: at least 3:1 against the panel */
+.nodeUnvisited { fill: var(--bg-panel); stroke: var(--text-muted); stroke-width: 1.5; stroke-dasharray: 2 2; }
 
-.nodeCurrent {
-  fill: var(--blue-ice);
-  stroke: var(--white-cold);
-  stroke-width: 2;
-}
+.nodeCurrent { fill: var(--blue-ice); stroke: var(--white-cold); stroke-width: 2; }
+.nodeCurrentPulse { fill: none; stroke: var(--blue-steel); stroke-width: 1; opacity: 0.5; }
 
-.nodeCurrentPulse {
-  fill: none;
-  stroke: var(--blue-steel);
-  stroke-width: 1;
-  opacity: 0.4;
-}
+.hitArea { fill: transparent; }
+.nodeHit[role='button'] { cursor: pointer; }
+.nodeHit:focus { outline: none; }
+.nodeHit:focus-visible .hitArea { stroke: var(--blue-ice); stroke-width: 1.5; }
+.nodeHit[aria-pressed='true'] .hitArea { stroke: var(--blue-steel); stroke-width: 1; }
 
 /* Labels */
-.label {
+.label, .labelCurrent {
   font-family: var(--font-display);
-  font-size: var(--fs-label);
+  font-size: 12px;
+  letter-spacing: 0.05em;
   fill: var(--text-main);
-  letter-spacing: 0.05em;
 }
+.labelCurrent { fill: var(--white-cold); font-weight: 600; }
 
-.labelUnvisited {
-  font-family: var(--font-display);
-  font-size: var(--fs-label);
-  fill: var(--border-lit);
-  letter-spacing: 0.05em;
+/* U10.4: the detail card */
+.card {
+  border: 1px solid var(--border-lit);
+  background: var(--panel);
+  padding: 14px 18px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-bright);
 }
+.card p + p { margin-top: 8px; }
+.cardName { font-family: var(--font-display); font-size: 15px; letter-spacing: 0.1em; color: var(--white-cold); margin-bottom: 6px; }
+.cardAmbient { color: var(--text-main); font-style: italic; }
+.cardPeople { color: var(--blue-moon); font-size: 14px; }
 
-.labelCurrent {
-  font-family: var(--font-display);
-  font-size: var(--fs-label);
-  fill: var(--white-cold);
-  letter-spacing: 0.05em;
-  font-weight: 600;
-}
-
-/* ── Legend ── */
+/* Legend */
 .legend {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 8px 20px;
   justify-content: center;
-  padding-top: 4px;
+  padding-top: 8px;
   border-top: 1px solid var(--border-dim);
 }
-
-.legendItem {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: var(--fs-label);
-  color: var(--text-muted);
-}
-
+.legendItem { display: flex; align-items: center; gap: 6px; font-size: var(--fs-label); color: var(--text-main); }
 .legendItem svg { flex-shrink: 0; overflow: visible; }
+.legendHint { font-size: var(--fs-label); color: var(--text-muted); }

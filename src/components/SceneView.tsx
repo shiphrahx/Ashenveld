@@ -6,6 +6,7 @@ import { useSettings } from '../settings'
 import { meets } from '../conditions'
 import { sceneText, resolveRich, CLASS_LABELS } from '../text'
 import { Inline } from './Inline'
+import Para from './Para'
 import DiceOverlay from './DiceOverlay'
 import { useMediaQuery } from '../hooks/useMediaQuery'
 import { applyStateChanges, diffState } from '../gameState'
@@ -22,13 +23,8 @@ interface Props {
 }
 
 // Roman numerals for choice markers, matching the prototype
-const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI']
-
-// ── Dialogue detection: lines that start with " are dialogue ─────────────────
-
-function isDialogue(line: string): boolean {
-  return line.trim().startsWith('"') || line.trim().startsWith('“')
-}
+// Choice numbers match the 1–6 shortcuts (U20).
+const KEYS = ['1', '2', '3', '4', '5', '6']
 
 // ── Choice visibility ──────────────────────────────────────────────────────────
 
@@ -87,7 +83,7 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
   const { settings } = useSettings()
   const [rollResult, setRollResult] = useState<RollResult | null>(null)
   const [activeChoice, setActiveChoice] = useState<Choice | null>(null)
-  const [shownOutcome, setShownOutcome] = useState<{ outcome: Outcome; css: string; key: OutcomeKey } | null>(null)
+  const [shownOutcome, setShownOutcome] = useState<{ outcome: Outcome; css: string; key: OutcomeKey; tag?: string } | null>(null)
   const activeChoiceText = useRef<string | null>(null)
   const activeChoiceId = useRef<string | null>(null)
 
@@ -148,7 +144,8 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
     const css = outcomeClass(rollResult, activeChoice)
     setRollResult(null)
     setActiveChoice(null)
-    if (outcome) setShownOutcome({ outcome, css, key })
+    const word = { success: 'Success', success_at_cost: 'At a cost', failure: 'Failed' }[rollResult.outcome]
+    if (outcome) setShownOutcome({ outcome, css, key, tag: `${STAT_NAMES[rollResult.statName] ?? rollResult.statName} · ${word}` })
   }, [rollResult, activeChoice])
 
   const handleOutcomeContinue = useCallback(() => {
@@ -226,7 +223,7 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
           onClick={() => handleChoiceClick(choice)}
           aria-describedby={tag ? tipId : undefined}
         >
-          <span className={styles.mk}>{ROMAN[i] ?? String(i + 1)}</span>
+          <kbd className={styles.mk} aria-hidden="true">{KEYS[i] ?? String(i + 1)}</kbd>
           <span className={styles.lb}><Inline text={resolveRich(choice.text, state)} /></span>
           {marks.map(m => <span key={m} className={styles.mark}>{m}</span>)}
           {tag && <span className={`${styles.badge} ${styles[tag.css]}`}>{tag.label}</span>}
@@ -268,16 +265,9 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
             <button className={styles.showScene} onClick={() => setShowScene(true)}>Show the scene again</button>
           )}
           <div className={collapsed ? styles.faded : undefined}>
-            {shownMain.map((p, i) => {
-              const dialogue = isDialogue(p)
-              return (
-                <p
-                  key={i}
-                  className={dialogue ? styles.nd : styles.np}
-                  style={dialogue ? undefined : { animationDelay: `${0.04 + i * 0.14}s` }}
-                ><Inline text={p} /></p>
-              )
-            })}
+            {shownMain.map((p, i) => (
+              <Para key={i} text={p} className={styles.np} style={{ animationDelay: `${0.04 + i * 0.14}s` }} />
+            ))}
 
             {shownAside.length > 0 && (
               <aside
@@ -286,7 +276,7 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
                 style={{ animationDelay: `${0.04 + shownMain.length * 0.14}s` }}
               >
                 <div className={styles.lensLabel}>{CLASS_LABELS[state.player.class]}</div>
-                {shownAside.map((p, i) => <p key={i}><Inline text={p} /></p>)}
+                {shownAside.map((p, i) => <Para key={i} text={p} />)}
               </aside>
             )}
           </div>
@@ -300,8 +290,13 @@ export default function SceneView({ scene, state, onChoice, seenBefore = false }
               data-outcome
               className={`${styles.outcomeBlock} ${shownOutcome.css ? styles[shownOutcome.css] : ''}`}
             >
+              {shownOutcome.tag && (
+                <div className={styles.resultTag} data-result>
+                  <span className={styles.resultDot} aria-hidden="true" />{shownOutcome.tag}
+                </div>
+              )}
               {outcomeText.split(/\n{2,}/).filter(Boolean).map((p, i) => (
-                <p key={i} style={{ marginBottom: '0.8em' }}><Inline text={p} /></p>
+                <Para key={i} text={p} style={{ marginBottom: '0.8em' }} />
               ))}
               {reads.length > 0 && (
                 <aside className={styles.lens} aria-label="The Cipher: your read">

@@ -10,7 +10,8 @@
     "test": "vitest run",
     "validate": "node tools/validate-content.mjs",
     "test:e2e": "playwright test",
-    "prose": "node tools/prose-stats.mjs"
+    "prose": "node tools/prose-stats.mjs",
+    "og": "node tools/make-og.mjs"
   },
   "repository": {
     "type": "git",

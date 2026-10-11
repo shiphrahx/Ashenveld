@@ -24,7 +24,7 @@
     "seriva": {
       "id": "seriva",
       "name": "Seriva",
-      "role": "Senior Ashen Covenant scholar, arrived from the capital",
+      "role": "Covenant scholar from the capital",
       "location": "crestfall_shrine",
       "personality": "More dangerous than Edric. Brilliant. Has read the original texts in full. Knows the purification ritual will work and knows exactly what it costs and has decided the cost is acceptable.",
       "secret": "She was in Ashenveld twenty years ago, before the sealing failed. She knows why it failed. She is partly responsible for why it failed. She is here to correct that.",
@@ -36,7 +36,7 @@
     "commander_vorne": {
       "id": "commander_vorne",
       "name": "Commander Vorne",
-      "role": "Iron Compact military commander, arrived from the regional capital",
+      "role": "Commands the Compact garrison",
       "location": "crestfall_compact_post",
       "personality": "Decisive. Pragmatic. Genuinely trying to save the region. His methods are the problem, not his intentions.",
       "secret": "His daughter Issa is at the Rootless camp. She went there three weeks ago when the curse touched her and he has been pretending he does not know where she is.",
@@ -48,7 +48,7 @@
     "issa_vorne": {
       "id": "issa_vorne",
       "name": "Issa",
-      "role": "Commander Vorne's daughter, partially afflicted, at the Rootless camp",
+      "role": "Seventeen. Vorne's daughter",
       "location": "rootless_camp",
       "personality": "Seventeen. Sharper than her father knows. Frightened of the curse and more frightened of what her father will do when he finds her.",
       "secret": "She found something in the ruins outskirts before she was afflicted — a fragment of the original sealing stone. She has been carrying it without knowing what it is.",
@@ -60,7 +60,7 @@
     "the_archivist": {
       "id": "the_archivist",
       "name": "Pol",
-      "role": "Rootless camp healer, formerly Ashen Covenant archivist",
+      "role": "The camp's healer. Used to keep the Covenant's archive",
       "location": "rootless_camp",
       "personality": "Quiet. Methodical. Left the Covenant fifteen years ago when she read something in the archives she was not supposed to read.",
       "secret": "She is the only living person who has read the complete original sealing text. She left the Covenant rather than participate in what it required. She has been at the Rootless camp for three years, preparing.",
@@ -72,7 +72,7 @@
     "ruins_watcher": {
       "id": "ruins_watcher",
       "name": "The Watcher",
-      "role": "Unknown figure observed moving through the ruins outskirts",
+      "role": "Sits at the gate stones in Harrow wool",
       "location": "ruins_outskirts",
       "personality": "Does not speak. Possibly cannot. Appears at intervals. Always moving away from the player, never toward. Leads somewhere.",
       "secret": "The Watcher is a person from Harrow who went east two years ago and reached a state of partial integration with the ruins that preserved their physical form while eliminating their individual will. They are being used as a guide by whatever animates the ruins.",
