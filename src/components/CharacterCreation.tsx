@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styles from './CharacterCreation.module.css'
 import StarField from './StarField'
+import { modifierForStat } from '../rules'
 
 export interface CreationResult {
   gender: string
@@ -83,10 +84,45 @@ const CLASS_LABELS: Record<string, string> = {
   cipher: 'The Cipher',
 }
 
-/** Enter and Space choose a card, as they would a button. */
-function selectKey(e: React.KeyboardEvent, pick: () => void) {
-  if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick() }
+/** Radio cards: Enter and Space choose; arrow keys move to the next card and choose it. */
+function radioKeys(e: React.KeyboardEvent, pick: () => void, move: (delta: number) => void) {
+  if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); return }
+  const d = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? -1 : 0
+  if (!d) return
+  e.preventDefault()
+  move(d)
+  const group = (e.currentTarget as HTMLElement).parentElement
+  const cards = [...(group?.querySelectorAll<HTMLElement>('[role="radio"]') ?? [])]
+  const i = cards.indexOf(e.currentTarget as HTMLElement)
+  cards[(i + d + cards.length) % cards.length]?.focus()
 }
+
+const GENDERS = ['Woman', 'Man', 'Neither'] as const
+
+/** Names: trimmed, 2 to 24 characters, none of the characters the story text uses for markup. */
+const cleanName = (v: string) => v.replace(/[[\]<>*]/g, '').slice(0, 24)
+const nameOk = (v: string) => v.trim().length >= 2 && v.trim().length <= 24
+
+function Progress({ step }: { step: number }) {
+  return (
+    <ol className={styles.navProgress} aria-label="Steps">
+      {[1, 2, 3, 4].map(i => (
+        <li key={i} aria-current={i === step ? 'step' : undefined}
+          className={`${styles.progDot} ${i < step ? styles.done : ''} ${i === step ? styles.active : ''}`}>
+          <span className={styles.srOnly}>Step {i}{i < step ? ', done' : ''}</span>
+        </li>
+      ))}
+    </ol>
+  )
+}
+
+const GOOD_AT: Record<string, string> = {
+  commander: 'Standing firm and giving orders.',
+  arcane: 'Sensing the curse and reading the old texts.',
+  ranger: 'Moving unseen and reading the land.',
+  cipher: 'Reading people and talking your way through.',
+}
+const STAT_ORDER: Array<[string, string]> = [['strength', 'STR'], ['dexterity', 'DEX'], ['stamina', 'STA'], ['intelligence', 'INT'], ['mana', 'MAN'], ['charisma', 'CHA'], ['perception', 'PER']]
 
 export default function CharacterCreation({ onComplete, onBack }: Props) {
   const [step, setStep] = useState(1)
@@ -96,6 +132,8 @@ export default function CharacterCreation({ onComplete, onBack }: Props) {
   const [relation, setRelation] = useState<string | null>(null)
   const [playerName, setPlayerName] = useState('')
   const [finishing, setFinishing] = useState(false)
+  const [showDesc, setShowDesc] = useState(false)
+  const chosen = CLASS_DATA.find(c => c.id === playerClass)
 
   function goTo(n: number) {
     setStep(n)
@@ -160,13 +198,13 @@ export default function CharacterCreation({ onComplete, onBack }: Props) {
               <div className={styles.stepNum}>Step 1 of 4</div>
               <div className={styles.stepTitle}>Who are you?</div>
               <div className={styles.stepSub}>
-                The world of Ashenveld treats you the same either way.
+                The world of Ashenveld treats you the same whichever you choose.
                 This is only about how you see yourself.
               </div>
             </div>
 
             <div className={styles.genderRow} role="radiogroup" aria-label="Who are you?">
-              {(['Woman', 'Man', 'Neither'] as const).map(g => (
+              {GENDERS.map(g => (
                 <div
                   key={g}
                   role="radio"
@@ -174,15 +212,9 @@ export default function CharacterCreation({ onComplete, onBack }: Props) {
                   tabIndex={0}
                   className={`${styles.genderCard} ${gender === g ? styles.selected : ''}`}
                   onClick={() => setGender(g)}
-                  onKeyDown={e => selectKey(e, () => setGender(g))}
+                  onKeyDown={e => radioKeys(e, () => setGender(g), d => setGender(GENDERS[(GENDERS.indexOf(g) + d + GENDERS.length) % GENDERS.length]))}
                 >
                   <div className={styles.check} />
-                  <div className={styles.genderIcon}>
-                    <svg viewBox="0 0 48 48">
-                      <circle cx="24" cy="16" r="10" />
-                      <path d="M10 46c0-7.73 6.27-14 14-14s14 6.27 14 14" />
-                    </svg>
-                  </div>
                   <div className={styles.genderLabel}>{g}</div>
                 </div>
               ))}
@@ -191,12 +223,7 @@ export default function CharacterCreation({ onComplete, onBack }: Props) {
 
           <div className={styles.stepNav}>
             <button className={styles.navBack} onClick={onBack}>← Back</button>
-            <div className={styles.navProgress}>
-              <div className={`${styles.progDot} ${styles.active}`} />
-              <div className={styles.progDot} />
-              <div className={styles.progDot} />
-              <div className={styles.progDot} />
-            </div>
+            <Progress step={step} />
             <button
               className={styles.navNext}
               disabled={!gender}
@@ -219,7 +246,10 @@ export default function CharacterCreation({ onComplete, onBack }: Props) {
               </div>
             </div>
 
-            <div className={styles.classGrid} role="radiogroup" aria-label="Your class">
+            <button className={styles.moreToggle} aria-expanded={showDesc} onClick={() => setShowDesc(v => !v)}>
+              {showDesc ? 'Fewer words' : 'More about each class'}
+            </button>
+            <div className={`${styles.classGrid} ${showDesc ? styles.showDesc : ''}`} role="radiogroup" aria-label="Your class">
               {CLASS_DATA.map(c => (
                 <div
                   key={c.id}
@@ -229,7 +259,7 @@ export default function CharacterCreation({ onComplete, onBack }: Props) {
                   tabIndex={0}
                   className={`${styles.classCard} ${playerClass === c.id ? styles.selected : ''}`}
                   onClick={() => setPlayerClass(c.id)}
-                  onKeyDown={e => selectKey(e, () => setPlayerClass(c.id))}
+                  onKeyDown={e => radioKeys(e, () => setPlayerClass(c.id), d => setPlayerClass(CLASS_DATA[(CLASS_DATA.findIndex(x => x.id === c.id) + d + CLASS_DATA.length) % CLASS_DATA.length].id))}
                 >
                   <div className={styles.classTop}>
                     <div>
@@ -261,16 +291,23 @@ export default function CharacterCreation({ onComplete, onBack }: Props) {
                 </div>
               ))}
             </div>
+            {chosen && (
+              <div className={styles.chosen} aria-live="polite">
+                <div className={styles.chosenGood}>{chosen.name}: {GOOD_AT[chosen.id]}</div>
+                <ul className={styles.chosenStats}>
+                  {STAT_ORDER.map(([k, label]) => {
+                    const v = chosen.stats[k as keyof typeof chosen.stats]
+                    const m = modifierForStat(v)
+                    return <li key={k}><span>{label}</span> {v} · {m >= 0 ? '+' : '−'}{Math.abs(m)}</li>
+                  })}
+                </ul>
+              </div>
+            )}
           </div>
 
           <div className={styles.stepNav}>
             <button className={styles.navBack} onClick={() => goTo(1)}>← Back</button>
-            <div className={styles.navProgress}>
-              <div className={`${styles.progDot} ${styles.done}`} />
-              <div className={`${styles.progDot} ${styles.active}`} />
-              <div className={styles.progDot} />
-              <div className={styles.progDot} />
-            </div>
+            <Progress step={step} />
             <button
               className={styles.navNext}
               disabled={!playerClass}
@@ -300,9 +337,9 @@ export default function CharacterCreation({ onComplete, onBack }: Props) {
                   className={styles.fieldInput}
                   type="text"
                   placeholder="The name you say when no one is listening"
-                  maxLength={32}
+                  maxLength={24}
                   value={missingName}
-                  onChange={e => setMissingName(e.target.value)}
+                  onChange={e => setMissingName(cleanName(e.target.value))}
                 />
               </div>
 
@@ -338,15 +375,10 @@ export default function CharacterCreation({ onComplete, onBack }: Props) {
 
           <div className={styles.stepNav}>
             <button className={styles.navBack} onClick={() => goTo(2)}>← Back</button>
-            <div className={styles.navProgress}>
-              <div className={`${styles.progDot} ${styles.done}`} />
-              <div className={`${styles.progDot} ${styles.done}`} />
-              <div className={`${styles.progDot} ${styles.active}`} />
-              <div className={styles.progDot} />
-            </div>
+            <Progress step={step} />
             <button
               className={styles.navNext}
-              disabled={missingName.trim().length < 2 || !relation}
+              disabled={!nameOk(missingName) || !relation}
               onClick={() => goTo(4)}
             ><span>Next →</span></button>
           </div>
@@ -373,9 +405,9 @@ export default function CharacterCreation({ onComplete, onBack }: Props) {
                   className={styles.fieldInput}
                   type="text"
                   placeholder="Your name"
-                  maxLength={32}
+                  maxLength={24}
                   value={playerName}
-                  onChange={e => setPlayerName(e.target.value)}
+                  onChange={e => setPlayerName(cleanName(e.target.value))}
                 />
               </div>
 
@@ -395,15 +427,10 @@ export default function CharacterCreation({ onComplete, onBack }: Props) {
 
           <div className={styles.stepNav}>
             <button className={styles.navBack} onClick={() => goTo(3)}>← Back</button>
-            <div className={styles.navProgress}>
-              <div className={`${styles.progDot} ${styles.done}`} />
-              <div className={`${styles.progDot} ${styles.done}`} />
-              <div className={`${styles.progDot} ${styles.done}`} />
-              <div className={`${styles.progDot} ${styles.active}`} />
-            </div>
+            <Progress step={step} />
             <button
               className={styles.navNext}
-              disabled={playerName.trim().length < 2}
+              disabled={!nameOk(playerName)}
               onClick={finish}
             ><span>Enter Ashenveld →</span></button>
           </div>

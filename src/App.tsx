@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react'
 import type { GameState, Scene, Outcome, JournalEntry } from './types'
-import { initLoader, resolveScene, locationName, peekScene } from './loader'
+import { initLoader, resolveScene, locationName, peekScene, getMasterIndex, getLocation } from './loader'
+import LoadingScreen from './components/LoadingScreen'
+import ErrorScreen from './components/ErrorScreen'
 import { DIMMING, REST, restOption, type RestOption } from './rules'
 import {
   createFreshState,
@@ -20,7 +22,7 @@ import {
   markSeen,
 } from './gameState'
 import { meets } from './conditions'
-import { resolveRich } from './text'
+import { resolveRich, CLASS_LABELS } from './text'
 import TitleScreen from './components/TitleScreen'
 import StarField from './components/StarField'
 import RestConfirm from './components/RestConfirm'
@@ -39,6 +41,7 @@ import TabBar, { type PanelId } from './components/TabBar'
 import Panel from './components/Panel'
 import Settings from './components/Settings'
 import KeysHelp from './components/KeysHelp'
+import Credits from './components/Credits'
 import { useHotkeys } from './hooks/useHotkeys'
 import Toasts, { type Toast } from './components/Toasts'
 import { useSettings } from './settings'
@@ -68,6 +71,7 @@ export default function App() {
   const [currentScene, setCurrentScene] = useState<Scene | null>(null)
   const [saveExists, setSaveExists] = useState(false)
   const [savedEnded, setSavedEnded] = useState(false)
+  const [saveSummary, setSaveSummary] = useState<string | undefined>()
   const [panel, setPanel] = useState<PanelId | null>(null)
   const [seenBefore, setSeenBefore] = useState(false)
   const [toasts, setToasts] = useState<Toast[]>([])
@@ -99,7 +103,9 @@ export default function App() {
 
   const refreshSaveInfo = useCallback(() => {
     setSaveExists(hasSave())
-    setSavedEnded(Boolean(loadGame()?.ended))
+    const saved = loadGame()
+    setSavedEnded(Boolean(saved?.ended))
+    setSaveSummary(saved ? `${saved.player.name} · ${CLASS_LABELS[saved.player.class] ?? ''} · ${saved.ended ? saved.ended.title : `Act ${['', 'I', 'II', 'III'][saved.world.act] ?? saved.world.act}, Day ${saved.world.day}`}` : undefined)
   }, [])
 
   // ── Startup ──────────────────────────────────────────────────────────────────
@@ -302,20 +308,11 @@ export default function App() {
 
   // ── Render ────────────────────────────────────────────────────────────────────
 
-  if (phase === 'loading') {
-    return (
-      <div className={styles.loading}>
-        <span className={styles.loadingText}>Loading…</span>
-      </div>
-    )
-  }
+  if (phase === 'loading') return <LoadingScreen />
 
   if (phase === 'error') {
-    return (
-      <div className={styles.error}>
-        <p className={styles.errorText}>{error ?? 'An unknown error occurred.'}</p>
-      </div>
-    )
+    return <ErrorScreen error={error ?? 'Unknown error'} onRetry={() => location.reload()}
+      onTitle={() => { try { getMasterIndex(); setError(null); handleReturnToTitle() } catch { location.reload() } }} />
   }
 
   if (phase === 'title') {
@@ -323,6 +320,7 @@ export default function App() {
       <TitleScreen
         hasSave={saveExists}
         saveEnded={savedEnded}
+        saveSummary={saveSummary}
         onNewGame={handleNewGame}
         onContinue={handleContinue}
       />
@@ -351,7 +349,8 @@ export default function App() {
         <StarField />
         <div className={styles.shell}>
           <div className={styles.areaArt}>
-            <SceneArt locationName={locationName(gameState.world.current_location)} gameState={gameState} />
+            <SceneArt locationName={locationName(gameState.world.current_location)} gameState={gameState}
+              alt={getLocation(gameState.world.current_location)?.description ?? locationName(gameState.world.current_location)} />
           </div>
           <header className={styles.areaStatus}>
             <StatusStrip state={gameState} hideClock={hideClock} onOpen={() => openPanel('status')} />
@@ -380,11 +379,13 @@ export default function App() {
               onClose={closePanel}
               onReturnToTitle={() => { closePanel(); handleReturnToTitle() }}
               onSettings={() => setPanel('settings')}
+              onCredits={() => setPanel('credits')}
               onRestartChapter={chapterCheckpoint(gameState) ? restartChapter : undefined}
             />
           )}
           {panel === 'settings' && <Settings onClose={closePanel} />}
           {panel === 'keys' && <KeysHelp onClose={closePanel} />}
+          {panel === 'credits' && <Credits onClose={closePanel} />}
           {panel === 'rest' && <RestConfirm cost={rest.cost} onRest={handleRest} onClose={closePanel} />}
           <Toasts toasts={toasts} onDone={dropToast} />
         </div>
@@ -393,9 +394,5 @@ export default function App() {
   }
 
   // Phase is 'game' but scene not yet loaded
-  return (
-    <div className={styles.loading}>
-      <span className={styles.loadingText}>Loading scene…</span>
-    </div>
-  )
+  return <LoadingScreen />
 }

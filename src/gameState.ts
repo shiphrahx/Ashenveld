@@ -97,6 +97,7 @@ export function applyStateChanges(state: GameState, changes: StateChanges): Game
         next.relationships[npcId] = { closeness: getNpc(npcId)?.initial_closeness ?? 0 }
       }
       next.relationships[npcId].closeness += delta.closeness
+      next.relationships[npcId].seen = { day: next.world.day, location: next.world.current_location, at: next.journal.length }
     }
   }
 

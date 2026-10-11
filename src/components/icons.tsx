@@ -18,3 +18,39 @@ export function Icon({ name, className }: { name: keyof typeof ICONS | string; c
     </svg>
   )
 }
+
+/** Six day-part glyphs (U9): low sun, sun, high sun, slanting sun, sun on the horizon, moon. */
+const PARTS: Record<string, React.ReactNode> = {
+  dawn: <><path d="M3 18h18"/><path d="M7 18a5 5 0 0 1 10 0"/><path d="M12 9v2M5.6 11.6l1.4 1.4M18.4 11.6 17 13"/></>,
+  morning: <><circle cx="12" cy="13" r="4"/><path d="M12 5v2M5 13H3M21 13h-2M6.3 7.3l1.4 1.4M17.7 7.3l-1.4 1.4"/><path d="M3 20h18"/></>,
+  midday: <><circle cx="12" cy="9" r="4"/><path d="M12 2v1.5M12 14.5V16M5 9H3.5M20.5 9H19M7 4l1 1M17 4l-1 1"/><path d="M3 20h18"/></>,
+  afternoon: <><circle cx="15" cy="10" r="4"/><path d="M15 3v1.5M21.5 10H20M19.6 5.4l-1 1"/><path d="M3 20h18M4 16l6-2"/></>,
+  evening: <><path d="M3 17h18"/><path d="M8 17a4 4 0 0 1 8 0"/><path d="M5 21h14"/></>,
+  night: <path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/>,
+}
+
+export function PartGlyph({ part, className }: { part: string; className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" focusable="false"
+      fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      {PARTS[part]}
+    </svg>
+  )
+}
+
+/** Faction marks (A.7): a barred gate, a bowl under a circle, a tent line with a small flame. */
+const MARKS: Record<string, React.ReactNode> = {
+  iron_compact: <><path d="M5 21V8a7 7 0 0 1 14 0v13"/><path d="M9 21v-9M15 21v-9"/><path d="M3 14h18"/></>,
+  ashen_covenant: <><circle cx="12" cy="6" r="3"/><path d="M4 13h16a8 8 0 0 1-16 0z"/><path d="M9 21h6"/></>,
+  rootless: <><path d="M2 20l5-8 5 8M10 20l5-8 5 8"/><path d="M2 20h20"/><path d="M12 9c-1.2-1.3-1-3 0-5 1 2 1.2 3.7 0 5z"/></>,
+}
+
+export function FactionMark({ faction, className, title }: { faction: string; className?: string; title?: string }) {
+  if (!MARKS[faction]) return null
+  return (
+    <svg viewBox="0 0 24 24" className={className} role={title ? 'img' : undefined} aria-label={title} aria-hidden={title ? undefined : true}
+      focusable="false" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      {MARKS[faction]}
+    </svg>
+  )
+}

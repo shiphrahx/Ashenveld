@@ -11,7 +11,7 @@ One step per branch and pull request. Each tick lists what was done, what was sk
 - [x] 7. docs/02 Section 0 (author decisions), then N1 to N4
 - [x] 8. docs/02 N5 to N8
 - [x] 9. docs/02 N9 to N18
-- [ ] 10. docs/04 U8 to U20
+- [x] 10. docs/04 U8 to U20
 - [ ] 11. docs/05 E1 to E10
 - [ ] 12. docs/01 B22, B23. docs/03 G14, G15
 
@@ -357,6 +357,46 @@ Branch `step-9-voice-endings`, stacked on step 8.
 - N13's Arcane "Feel what the stone does" duplicated G2b's Mana check, and "Listen to the thread" duplicated another. The Arcane versions are worded differently ("Kneel, and listen for where the stone wants to go", "Listen to the thread from where you stand").
 - The sent-ahead player who leaves never got `player_leaves_ashenveld`, which the road scenes require. Now set on leaving.
 - A step 7 edit produced "a habit, a habit the two of you shared" at the campsite. Fixed.
-- The mechanical dash pass produced one bad contraction-free fragment risk; sentences were spot-checked, and two spliced sentences from the "of someone who" edits were fixed.
+- The "of someone who" edits left two sentences spliced without a full stop (ritual preparation, return to the ruins). Found on a read-through and fixed.
 
-**Not started**: steps 10, 11, 12.
+## Step 10 — U8 to U20
+
+Branch `step-10-ui-polish`, stacked on step 9. U14 was done in step 9 for the letters.
+
+**AUTHOR DECISION defaults used**: none came up in this step.
+
+**Done**
+
+- U8: each faction shows its tier word and a five-step track; hover or focus says what the tier means now, from the G5 table. `repPercent` and its ±40 scale are gone.
+- U9: "Day 7" over "Evening", with six day-part glyphs.
+- U10: visited comes from `state.visited` (scene → location, loaded when the panel opens), `east_road_return` draws as East Road, Marker Line removed, Mill Lane, Gate Stones and West Road added, Inner Approach and Source Chamber moved apart, labels alternate. Visited places show in full, neighbours as unnamed rings, the rest hidden; region labels appear with their first place. A card shows description, the ambient line for the time of day, and people met there. The route is drawn through visited places in journal order. On a phone the map pans and opens centred on you.
+- U11: monogram tile, faction mark, role, closeness tier on a five-step track, "Last seen: The Tallow Inn, Day 7", the Cipher's read. [missing person] first, then by most recent change. To make "last seen" and the sort possible, a closeness change now stamps `{ day, location, at }` on the relationship (unit test added). The panel's own tier list ("Distant", "Unknown") is replaced by `closenessTier`.
+- U12: the tooltip text from the table, full name and modifier ("Mana · 16 · +5"), opening towards the story. The sidebar no longer clips them on normal heights; under 700px tall it scrolls again.
+- U13: tighter header, one column under 720px, descriptions behind "More about each class" under 800px tall, arrow keys move and choose, the chosen class shows all seven stats with modifiers and the good-at line, no silhouette, names 2–24 with `[ ] < > *` blocked, progress is an `<ol>` with `aria-current`.
+- U15: outcome text in the body colour, a tag ("Charisma · Failed") with a coloured dot, the left rule in the result colour. Unrolled outcomes have no tag.
+- U16: menu order as listed, with a saved line and Save now, endings found n of 5, and Credits.
+- U17: loading screen, two retries per fetch, the error screen, and an error boundary.
+- U18: the `index.html` tags, `favicon.svg`, `npm run og` (Playwright screenshot of the title screen to `public/og.jpg`), alt text on the scene art, and a `nav` round the sidebar's panel buttons.
+- U19: save summary under Continue, Credits, the time line, the content note.
+- U20: 1–6 keycaps, pressed state, 8px gap, tags wrap under the label on a phone.
+- A.7 (no images needed): the three faction marks, used in the sidebar and People.
+- Also fixed: the sidebar's People and Items buttons had accessible names ("Relationships", "Inventory") that didn't match their labels.
+- e2e test for the map and People.
+
+**Checks**: validate 0 errors (4 warnings), unit 25 passed, e2e 12 passed.
+
+**Skipped or deferred**
+
+- U16: Export and Import save come with B23 in step 12.
+- U18: alt text comes from each place's description until the art manifest (A13) exists.
+- U13: the cards stay `div role="radio"` with arrow keys rather than becoming `<button>`s; a button can't hold the block content they have.
+- A.7's illustrated map (river, tree line, hand-drawn strokes, Lira's marks) isn't done. U10 didn't need it and it's art direction more than layout.
+- U20: "speech keeps its quotation marks, actions get none" is a content rule; the choice labels weren't audited for it.
+
+**Plan was wrong or unclear**
+
+- U10 puts West Road at x 20, which the old viewBox cut off. The viewBox starts at −30.
+- U12 says the stat tooltip overflowed the shell. The real cause was the sidebar's `overflow-y: auto`, which also clipped anything opening sideways.
+- The contrast test couldn't read `color-mix()` (browsers report it as `color(srgb …)`), so the step 9 narration colour is a plain rgba now.
+
+**Not started**: steps 11, 12.

@@ -74,3 +74,8 @@
 .confirmBtn:hover { border-color: var(--border-lit); color: var(--text-main); }
 .confirmBtn.danger { color: var(--red-mid); border-color: var(--red-dark); }
 .confirmBtn.danger:hover { color: var(--red-bright); border-color: var(--red-mid); }
+
+.savedRow {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 12px 20px; border-bottom: 1px solid var(--border-dim);
+}
