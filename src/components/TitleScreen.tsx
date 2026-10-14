@@ -31,8 +31,8 @@ export default function TitleScreen({ hasSave, saveEnded = false, saveSummary, o
         <div className={styles.titleName}>Ashenveld</div>
         <div className={styles.titleRule} />
         <div className={styles.titleTagline}>
-          You left eleven years ago. Somebody you love stayed,<br />
-          and a year ago they stopped writing.
+          You left Ashenveld eleven years ago.<br />
+          Now somebody you love has gone missing there.
         </div>
         {confirming ? (
           <div className={styles.confirm} role="alertdialog" aria-labelledby="confirm-text">

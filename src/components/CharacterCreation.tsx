@@ -307,8 +307,8 @@ export default function CharacterCreation({ onComplete, onBack }: Props) {
               <div className={styles.stepNum}>Step 3 of 4</div>
               <div className={styles.stepTitle}>Who did you lose?</div>
               <div className={styles.stepSub}>
-                They stayed in Ashenveld when you left. Over a year ago they sent you
-                one letter, and nothing since.
+                They went missing in Ashenveld over a year ago. You had one letter
+                from them, and then nothing.
               </div>
             </div>
 
