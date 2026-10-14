@@ -26,9 +26,9 @@
       },
       "text": {
         "default": [
-          "You wake up in Crestfall on the seventeenth day and you know, with the clarity that comes from decisions that have finally settled, that you are not leaving.",
-          "The decision was made last night. This morning it is simply true, the way facts become true when the deciding is done. Not a question anymore, not a weight, just a condition of the world you are now operating in.",
-          "[missing person] is awake before you. They are at the window looking out at the market square. The square, in the morning light, is doing something it has not done in weeks: it is busy. Not crowded. Busy, which is different. People moving with the particular quality of people who have decided there are things worth doing today.",
+          "You wake in Crestfall on the seventeenth day, and you know, quite clearly, that you are not leaving.",
+          "You decided last night. This morning it is simply so, as things are once the deciding is over. It is no longer a question, and no longer a weight. It is only the way things are.",
+          "[missing person] is up before you. They are at the window, looking down at the market square. In the morning light the square is doing something it has not done for weeks. It is busy. It isn't crowded, but it is busy, which is not the same thing. People are going about as though there were things worth doing today.",
           {
             "when": {
               "any": [
@@ -44,7 +44,7 @@
                 }
               ]
             },
-            "text": "On the last day in the ruins you went to the gate stones once more. You had found the name in the old man's entries. \"Joren,\" you said."
+            "text": "On your last day in the ruins you went to the gate stones once more. You had found the name in the old man's entries. \"Joren,\" you said."
           },
           {
             "when": {
@@ -67,15 +67,15 @@
             "text": "He looked up from the figure in his hands. \"Yes,\" he said."
           }
         ],
-        "commander": "You stand beside them at the window and read the market the way you would read a position that has been secured and now requires administration rather than defence.\n\n\"We need to make a list,\" you say.\n\nThey look at you. Then, slowly, they smile. The first real one since you found them in the ruins, not the careful managed expression but the one you remember from before.\n\n\"Always,\" they say. \"Always with the lists.\"",
-        "arcane": "The ambient in Crestfall this morning is measurably different from yesterday. Not dramatically. Incrementally. But the increment is in the right direction.\n\nYou make a note in your journal. Day seventeen. Baseline established.\n\nYou have decided to stay and you have decided to document everything. Ashenveld is the most significant field site you will ever have access to and you have just committed to spending the foreseeable future in it. You are aware that this is either your best decision or your worst and that the distinction may take years to become clear.",
-        "ranger": "The birds are back in the market square this morning. Two sparrows and something larger you do not immediately identify. A species that normally keeps further into the ordinary forest, moving closer now that the forest is becoming ordinary again.\n\nYou will see it again tomorrow, and the day after, and the day after that. The recovery of Ashenveld's wildlife will be the clearest measure of what the sealing achieved.\n\n[missing person] is at the window. You stand beside them and you watch the birds.",
-        "cipher": "You walk the market this morning as someone who lives here now, and see it differently.\n\nDifferent things matter. Different relationships need different management. The short-term leverage you accumulated over the past weeks needs to be converted into something more durable.\n\nYou are going to be here for a while. You start thinking like it."
+        "commander": "You stand beside them at the window and look at the market as you would look at a position that has been taken and now wants running rather than defending.\n\n\"We need to make a list,\" you say.\n\nThey look at you. Then, slowly, they smile. It is the first real smile since you found them in the ruins, not the careful one, but the one you remember from before.\n\n\"Always,\" they say. \"Always with the lists.\"",
+        "arcane": "Crestfall feels different this morning from yesterday. It is only a little different, but it is different in the right direction.\n\nYou make a note in your journal: day seventeen, first readings taken.\n\nYou have decided to stay, and you have decided to write down everything. Ashenveld is the most important place you will ever have the chance to study, and you have just committed yourself to spending years in it. You are quite aware that this is either the best decision you have ever made or the worst, and that it may be years before you know which.",
+        "ranger": "The birds are back in the market square this morning. There are two sparrows, and something bigger that you can't put a name to at once, a bird that usually keeps further into the ordinary forest and is coming nearer now that the forest is becoming ordinary again.\n\nYou will see it again tomorrow, and the day after, and the day after that. How the creatures of Ashenveld come back will be the plainest measure of what the seal has done.\n\n[missing person] is at the window. You stand beside them and watch the birds.",
+        "cipher": "You walk round the market this morning as somebody who lives here now, and it looks different.\n\nDifferent things matter, and different people need handling in different ways. What hold you have got on people these last weeks will have to be turned into something that lasts.\n\nYou are going to be here a while, and you had better start thinking like it."
       },
       "choices": [
         {
           "id": "establish_first_priority",
-          "text": "Establish your first priority. What does Ashenveld need most right now?",
+          "text": "Decide what comes first. What does Ashenveld need most just now?",
           "requires": {},
           "roll": {
             "stat": "intelligence",
@@ -83,7 +83,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "You think clearly and the answer is clear: information. What the sealing has achieved, what it has not achieved, what the afflicted people need now, what the land's recovery rate will be. None of the other work, the rebuilding, the faction management, the documentation, can be done well without knowing the actual state of things.\n\nYou and [missing person] spend the first day of your new life in Ashenveld doing an assessment. Systematic. Documented. Shared.",
+              "text": "You think it through, and the answer is plain. You need to know how things stand: what the seal has done and what it hasn't, what the afflicted need now, and how quickly the land will mend. None of the rest of it, the rebuilding or the managing of people or the account, can be done well without knowing that.\n\nSo you and [missing person] spend the first day of your new life in Ashenveld finding out, carefully, and writing it all down for anyone to read.",
               "next_scene": "act3_ch2_rebuilding",
               "state_changes": {
                 "flags": {
@@ -92,12 +92,12 @@
               }
             },
             "success_at_cost": {
-              "text": "You identify the priorities but the list is longer than the day is. You make choices about order and some of the choices are wrong in ways you will not discover until later.\n\nThis is the work of staying somewhere. The particular incompleteness of it.",
+              "text": "You work out what needs doing, but there is more of it than there is day. You have to choose what comes first, and some of your choices are wrong in ways you won't discover until later.\n\nThat is what it is to stay somewhere. It is never quite finished.",
               "next_scene": "act3_ch2_rebuilding",
               "state_changes": {}
             },
             "failure": {
-              "text": "The priorities overwhelm each other. You spend the first day of staying in Ashenveld managing competing urgencies rather than establishing order among them.\n\nIn the evening [missing person] sits across from you and says: \"Tomorrow. We start again tomorrow.\" And the patience in their voice is one of the things you came here for.",
+              "text": "Everything wants doing at once. You spend your first day of staying in Ashenveld dealing with one urgent thing after another, and never get them into any order.\n\nIn the evening [missing person] sits down across from you and says, \"Tomorrow. We start again tomorrow.\" The patience in their voice is one of the things you came here for.",
               "next_scene": "act3_ch2_rebuilding",
               "state_changes": {}
             }
@@ -128,10 +128,10 @@
       "text": {
         "default": [
           "You and [missing person] leave Crestfall on the seventeenth day.",
-          "The west road. The one you did not arrive on — the one that goes away from Ashenveld into the rest of the world, the part that does not have ruins under its forests or curses in its groundwater or people going quietly dim.",
-          "The morning is ordinary. Overcast. Cold in the way of late autumn in this part of the world.",
-          "You walk. They walk beside you. The distance between you and Crestfall grows at the rate of walking. Two miles an hour, approximately, which is slow enough to see everything you are passing and fast enough that returning would require a decision.",
-          "You do not return.",
+          "You take the west road. It is not the way you came in. It goes out of Ashenveld into the rest of the world, where there are no ruins under the forests, and no curse in the wells, and nobody going quietly dim.",
+          "It is an ordinary morning, overcast, and cold as late autumn is cold in this part of the world.",
+          "You walk, and they walk beside you. Crestfall falls behind you at the pace of walking, which is slow enough to see everything you pass, and fast enough that going back would mean deciding to.",
+          "You don't go back.",
           {
             "when": {
               "any": [
@@ -147,7 +147,7 @@
                 }
               ]
             },
-            "text": "On the last day in the ruins you went to the gate stones once more. You had found the name in the old man's entries. \"Joren,\" you said."
+            "text": "On your last day in the ruins you went to the gate stones once more. You had found the name in the old man's entries. \"Joren,\" you said."
           },
           {
             "when": {
@@ -170,20 +170,20 @@
             "text": "He looked up from the figure in his hands. \"Yes,\" he said."
           }
         ],
-        "commander": "You carry what you left with. Your pack. Your skills. The knowledge of what is in the ruins and what was done about it.\n\nYou left Crestfall without telling Vorne everything. The documentation he was promised. [missing person] will send it, eventually, from wherever you end up. It will be complete. You gave your word.\n\nThe west road. Ordinary trees. You walk.",
-        "arcane": "You carry your journal. Fourteen months of [missing person]'s notes, copied in the days before you left, will travel with you.\n\nYou are leaving the most significant field site of your career. You are doing this because the person beside you matters more than the field site. Both are there. You leave them both there.\n\nThe west road. You walk. You write as you walk, because you are you.",
-        "ranger": "The ordinary forest on the west road. Birds. Deer. The right kind, moving correctly, aware of you and making the appropriate calculation about whether you are a threat.\n\nYou are not a threat. You are two people walking away from something and toward something that does not have a name yet.\n\nThe forest is ordinary. After weeks in Ashenveld, ordinary is almost overwhelming.",
-        "cipher": "You are thinking past Ashenveld. The world is large, you have skills, and beside you is someone who spent fourteen months learning things nobody else knows.\n\nThe two of you are worth a great deal to the wrong people. You are already thinking about how to keep it out of their hands."
+        "commander": "You take with you what you came with: your pack, your training, and what you know about the ruins and what was done about them.\n\nYou left Crestfall without telling Vorne everything. He was promised an account, and [missing person] will send it in the end, from wherever you finish up. It will be complete. You gave your word.\n\nThe west road runs on between ordinary trees, and you walk.",
+        "arcane": "You carry your journal, and the copy you made of [missing person]'s fourteen months of notes in the days before you left.\n\nYou are leaving the most important place you will ever have to study, because the person beside you matters more. You leave it behind you, and go.\n\nYou walk the west road, and write as you walk, because that is the sort of person you are.",
+        "ranger": "On the west road the forest is ordinary. There are birds, and there are deer of the right kind, moving as they should, who notice you and work out properly whether you are dangerous.\n\nYou are not. You are two people walking away from one thing and towards another that hasn't got a name yet.\n\nThe forest is ordinary, and after weeks in Ashenveld, ordinary is very nearly too much.",
+        "cipher": "You are thinking beyond Ashenveld already. The world is large, you have your skills, and beside you is somebody who spent fourteen months learning things that nobody else knows.\n\nThe two of you would be worth a great deal to the wrong people. You are already thinking how to keep it out of their hands."
       },
       "choices": [
         {
           "id": "talk_about_what_comes_next",
-          "text": "Talk about where you are going. What comes after Ashenveld.",
+          "text": "Talk about where you're going, and what comes after Ashenveld.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You walk for a mile before either of you speaks.\n\nThen [missing person] says: \"I want to go somewhere I have never been.\"\n\n\"That is most places,\" you say.\n\n\"Yes,\" they say. \"That is the point.\"\n\nYou walk. The west road meets the main road at the crossroads three miles from Crestfall. Left goes north. Right goes south. Straight goes west toward the coast.\n\n\"Which one?\" they say.\n\nYou look at all three. You pick one. You do not say why.",
+              "text": "You walk a mile before either of you says anything.\n\nThen [missing person] says, \"I want to go somewhere I have never been.\"\n\n\"That's most places,\" you say.\n\n\"Yes,\" they say. \"That is the point.\"\n\nYou walk on. Three miles out of Crestfall the west road meets the high road at a crossroads. Left goes north and right goes south, and straight on goes west to the coast.\n\n\"Which one?\" they say.\n\nYou look at all three, and choose one, and don't say why.",
               "next_scene": "act3_ch2_on_the_road",
               "state_changes": {
                 "flags": {
@@ -195,12 +195,12 @@
         },
         {
           "id": "walk_in_silence",
-          "text": "Walk in silence. Some departures need to be felt before they can be discussed.",
+          "text": "Walk without talking. Some leavings have to be felt before they can be talked about.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You do not talk. You walk.\n\nThe silence between you is the silence of two people who have been through something significant together and have not yet found the language for what it means that it is over.\n\nAt the crossroads: you stop. They stop.\n\nYou look at each other.\n\n\"Right or left?\" they say.\n\nYou choose. You go.",
+              "text": "You don't talk. You walk.\n\nIt is the silence of two people who have been through something together and have not yet found words for what it means that it is over.\n\nAt the crossroads you stop, and so do they.\n\nYou look at each other.\n\n\"Right or left?\" they say.\n\nYou choose, and you go.",
               "next_scene": "act3_ch2_on_the_road",
               "state_changes": {}
             }
@@ -229,11 +229,11 @@
       },
       "text": {
         "default": [
-          "They are gone. You watched them leave the Tallow and cross the market square and you are still sitting at your table.",
-          "Aldous brings you something without being asked. He does this — the competence of an innkeeper who understands that some moments require something in your hand without you having to ask for it.",
+          "They have gone. You watched them leave the Tallow and cross the market square, and you are still sitting at your table.",
+          "Aldous brings you something without being asked. He has been an innkeeper long enough to know when a person wants something in their hand and would rather not have to ask for it.",
           "\"How long?\" he says.",
-          "\"A week,\" you say. \"Maybe two.\"",
-          "He nods. He does not say: you said that about Ashenveld when you arrived. He is too good at his work to say that.",
+          "\"A week,\" you say. \"Perhaps two.\"",
+          "He nods. He doesn't remind you that you said much the same about Ashenveld when you first came. He is too good at his work for that.",
           {
             "when": {
               "any": [
@@ -249,7 +249,7 @@
                 }
               ]
             },
-            "text": "On the last day in the ruins you went to the gate stones once more. You had found the name in the old man's entries. \"Joren,\" you said."
+            "text": "On your last day in the ruins you went to the gate stones once more. You had found the name in the old man's entries. \"Joren,\" you said."
           },
           {
             "when": {
@@ -272,15 +272,15 @@
             "text": "He looked up from the figure in his hands. \"Yes,\" he said."
           }
         ],
-        "commander": "A week. Possibly two. You have commitments to finish. The documentation, the Compact arrangement, the Rootless camp's formal recognition. Things that will not hold if they are not properly tied off.\n\nYou have made a promise. You do not leave promises untied.",
-        "arcane": "The documentation needs to be complete before you leave. [missing person]'s notes, your own observations, Pol's scholarship. The account of what happened in the ruins and what it means.\n\nThis is the work of a week. Possibly longer. You will do it in the time you have.",
-        "ranger": "The land's recovery needs to be documented at this stage. Before you leave. The baseline, the direction, the rate. Someone needs to know what to look for and how to read it.\n\nYou spend the first morning teaching Branch. He is a better student than he lets on.",
-        "cipher": "The political arrangements are fragile until they are not. You have a week, possibly two, to make them less fragile.\n\nThis is familiar work. You have left places before. You know what needs to be done before departure to minimise the probability of what you built collapsing without you."
+        "commander": "A week, perhaps two. There are things you promised to see through: the account, the arrangement with the Compact, and the formal recognition of the Rootless camp. None of them will hold unless they are properly tied off.\n\nYou made a promise, and you don't leave promises hanging.",
+        "arcane": "The account has to be finished before you go: [missing person]'s notes, and what you saw yourself, and Pol's learning, the whole story of what happened in the ruins and what it means.\n\nIt is a week's work, perhaps longer. You will do it in the time you have.",
+        "ranger": "Somebody needs to write down how the land is mending now, before you leave: how it is now, which way it is going, and how fast. And somebody needs to know what to look for, and how to read it.\n\nYou spend the first morning teaching Branch. He is a better pupil than he lets on.",
+        "cipher": "The arrangements are fragile until suddenly they aren't. You have a week, perhaps two, to make them less so.\n\nYou know this kind of work. You have left places before. You know what has to be done before you go, so that what you built is less likely to fall down without you."
       },
       "choices": [
         {
           "id": "prioritise_the_work",
-          "text": "Prioritise. What must be done before you can leave?",
+          "text": "Decide what must be done before you can leave.",
           "requires": {},
           "roll": {
             "stat": "intelligence",
@@ -288,7 +288,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "You make the list. The documentation. The Compact arrangement, finalised in writing. The Rootless camp's recognition, formalised before Vorne finds a reason to delay it. A conversation with Pol about what comes next for her.\n\nSeven days of work. You have seven days. It fits, barely.",
+              "text": "You make the list. There is the account to finish. There is the arrangement with the Compact to be put in writing. There is the camp's recognition, to be made formal before Vorne can find an excuse to put it off. And there is a talk to be had with Pol about what she will do next.\n\nIt is seven days' work, and you have seven days. It will only just fit.",
               "next_scene": "act3_ch2_finishing_work",
               "state_changes": {
                 "flags": {
@@ -297,12 +297,12 @@
               }
             },
             "success_at_cost": {
-              "text": "The list is longer than seven days. You make choices about what to prioritise and what to leave for Maret and Branch to manage without you.\n\nThe choices are imperfect. Some of what you leave behind will go wrong in ways you will never know about. This is the price of leaving.",
+              "text": "There is more on the list than seven days will hold. You have to decide what comes first, and what to leave to Maret and Branch to manage without you.\n\nYou don't always decide rightly. Some of what you leave behind will go wrong, and you will never hear of it. That is the price of leaving.",
               "next_scene": "act3_ch2_finishing_work",
               "state_changes": {}
             },
             "failure": {
-              "text": "The list is longer than the time and you cannot make it shorter. You will do what you can and leave the rest.\n\nAt some point during the second week you will look up from the work and realise you are not going to finish and you will have to decide whether to stay longer or leave unfinished. That decision is coming.",
+              "text": "There is more on the list than there is time, and you can't make the list any shorter. You will do what you can and leave the rest.\n\nSome time in the second week you will look up from your work and see that you are not going to finish, and you will have to decide whether to stay longer or go with it undone. That is still to come.",
               "next_scene": "act3_ch2_finishing_work",
               "state_changes": {}
             }
@@ -332,10 +332,10 @@
       },
       "text": {
         "default": [
-          "The door of the Tallow closes behind them and you are alone at your table.",
-          "Aldous does not say anything. He has been a barman long enough to know when silence is the right response.",
-          "You sit with what you chose. Not regretting it. You do not yet know if it is the kind of choice that regret applies to. It is the kind of choice that has consequences and you will discover what the consequences are by living into them.",
-          "Outside, Crestfall is beginning its seventeenth day. Slowly. With the quality of a place that has been diminished and is discovering, incrementally, that diminishment is not the same as ending.",
+          "The door of the Tallow shuts behind them, and you are alone at your table.",
+          "Aldous says nothing. He has kept a bar long enough to know when it is best to say nothing at all.",
+          "You sit with what you chose. You don't regret it. You don't know yet whether it is the sort of choice anybody could regret. It is the sort that has consequences, and you will find out what they are by living through them.",
+          "Outside, Crestfall is beginning its seventeenth day. It is going slowly, like a place that has lost a great deal and is finding out, a little at a time, that it has not lost everything.",
           {
             "when": {
               "any": [
@@ -351,7 +351,7 @@
                 }
               ]
             },
-            "text": "On the last day in the ruins you went to the gate stones once more. You had found the name in the old man's entries. \"Joren,\" you said."
+            "text": "On your last day in the ruins you went to the gate stones once more. You had found the name in the old man's entries. \"Joren,\" you said."
           },
           {
             "when": {
@@ -374,15 +374,15 @@
             "text": "He looked up from the figure in his hands. \"Yes,\" he said."
           }
         ],
-        "commander": "You made a choice. You are the kind of person who makes choices and holds them.\n\nThe person you let leave will either understand or they will not. Either way, you are here. Ashenveld is here. The work is here.\n\nYou go find Maret. You have things to discuss.",
-        "arcane": "The loneliness of the choice hits you with a delay. Not in the moment, but twenty minutes later when you look up from the table and the seat across from you is empty and will be empty for the foreseeable future.\n\nYou put the feeling down in writing, with everything else. Present. Real. Worth attending to.\n\nThen you open your journal.",
-        "ranger": "You chose to stay and they chose to go and both of those things are real.\n\nYou go outside. The market square. The birds this morning. The quality of Crestfall in early recovery. Not healed, not well, but alive and moving in the right direction.\n\nYou are part of why it is moving in the right direction. You stay because of that. The other reason, the one that is walking away on the west road, you hold separately.",
-        "cipher": "You let them go. You are staying.\n\nThe political work of Ashenveld does not disappear because your personal situation has become complicated. The work is the work. You have done harder work in worse emotional conditions.\n\nYou go find Vorne. The documentation needs to be completed. The Rootless camp needs its formal recognition. There is a week of concentrated work ahead and you are going to do it."
+        "commander": "You made a choice, and you are the sort of person who makes a choice and keeps to it.\n\nThe one you let go will understand, or they won't. Either way, you are here, and so is Ashenveld, and so is the work.\n\nYou go and find Maret. You have things to talk about.",
+        "arcane": "It is a little while before you feel how lonely it is. It doesn't come at the time. It comes twenty minutes later, when you look up from the table and see the empty seat across from you, which will be empty for a long while.\n\nYou write that down too, with everything else.\n\nThen you get on with your notes.",
+        "ranger": "You chose to stay, and they chose to go.\n\nYou go outside, into the market square. The birds are about this morning, and Crestfall is beginning to mend. It isn't healed, and it isn't well, but it is alive, and going the right way.\n\nYou are part of the reason it is going the right way, and that is why you are staying. The other reason, walking away along the west road, you keep somewhere else.",
+        "cipher": "You let them go, and you are staying.\n\nThe work in Ashenveld doesn't stop because your own affairs have become complicated. It still has to be done. You have done harder work when you felt a good deal worse.\n\nYou go and find Vorne. The account has to be finished, and the camp needs its formal recognition. There is a hard week's work ahead, and you mean to do it."
       },
       "choices": [
         {
           "id": "commit_to_the_choice",
-          "text": "Commit to the choice. Ashenveld is where you are. Begin the work.",
+          "text": "Hold to your choice. Ashenveld is where you are. Begin the work.",
           "requires": {},
           "roll": {
             "stat": "stamina",
@@ -390,7 +390,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "You commit.\n\nNot with ceremony. You have made hard choices before. They are made in the doing, day after day, not once.\n\nYou get up. You go to the Rootless camp. You begin.",
+              "text": "You hold to it.\n\nThere is nothing solemn about it. You have made hard choices before. You keep them by doing them, day after day, not by deciding once.\n\nYou get up, and go to the Rootless camp, and begin.",
               "next_scene": "act3_ch2_alone_work",
               "state_changes": {
                 "flags": {
@@ -399,7 +399,7 @@
               }
             },
             "success_at_cost": {
-              "text": "You commit but the commitment is expensive in ways you did not fully calculate. The first day is the hardest. The quality of having chosen something and not being sure yet whether you chose correctly.\n\nYou do the work anyway. The work is what you have.",
+              "text": "You hold to it, but it costs you more than you had reckoned. The first day is the worst, because you have chosen and don't yet know whether you chose rightly.\n\nYou do the work anyway. The work is what you have.",
               "next_scene": "act3_ch2_alone_work",
               "state_changes": {
                 "resources": {
@@ -408,7 +408,7 @@
               }
             },
             "failure": {
-              "text": "The commitment does not come easily. You sit at the table for longer than you intended, held by something you do not have a clean name for.\n\nAldous, eventually, says: \"The camp sent someone looking for you this morning.\" He sets a note on the table.\n\nThe note is from Branch. Three words: we need you.\n\nThat is enough. You go.",
+              "text": "It doesn't come easily. You sit at the table far longer than you meant to, held there by something you can't put a name to.\n\nAt last Aldous says, \"The camp sent someone looking for you this morning,\" and puts a note on the table.\n\nIt is from Branch, and it has three words on it: we need you.\n\nThat is enough, and you go.",
               "next_scene": "act3_ch2_alone_work",
               "state_changes": {}
             }
@@ -438,14 +438,14 @@
       "requires": {},
       "text": {
         "default": [
-          "You do not remember the end of it.",
+          "You don't remember how it ended.",
           {
             "when": {
               "flags": {
                 "last_rest_place": "camp"
               }
             },
-            "text": "You wake under canvas, with the smell of the camp's fire and somebody's coat over you. It is morning. You have lost a day.\n\nMaret is sitting on an upturned crate by the tent flap. \"Branch carried you,\" she says. \"Do not thank him. He will not know what to do with it.\""
+            "text": "You wake under canvas, with the smell of the camp fire and somebody's coat over you. It is morning, and you have lost a day.\n\nMaret is sitting on an upturned crate by the tent flap. \"Branch carried you,\" she says. \"Do not thank him. He will not know what to do with it.\""
           },
           {
             "when": {
@@ -461,7 +461,7 @@
                 "last_rest_place": "ruins"
               }
             },
-            "text": "You wake by the fire in the outskirts. The grey light is the same as it always is, but [missing person] says a day has gone.\n\n\"You stopped,\" they say. \"In the middle of a sentence. I talked to you until you came back.\""
+            "text": "You wake by the fire in the outskirts. The light is the same grey as always, but [missing person] tells you a day has gone.\n\n\"You stopped,\" they say. \"In the middle of a sentence. I talked to you until you came back.\""
           },
           {
             "when": {
@@ -485,7 +485,7 @@
                 ]
               }
             },
-            "text": "You wake in a room at the Tallow with your boots still on. The light says morning, and the wrong morning: a day has gone. Somebody has left water by the bed and a heel of bread on a plate.\n\nAldous is in the doorway. \"Two of them brought you in,\" he says. \"I didn't ask from where.\""
+            "text": "You wake in a room at the Tallow with your boots still on. The light says it is morning, and the wrong morning, too, for a day has gone. Somebody has left water by the bed and a heel of bread on a plate.\n\nAldous is in the doorway. \"Two of them brought you in,\" he says. \"I didn't ask where from.\""
           },
           "You sit up. Your hands are steady enough."
         ]
