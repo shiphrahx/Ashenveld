@@ -39,7 +39,7 @@
                 ]
               }
             },
-            "text": "You pack what you have. At the Tallow's bar, Aldous gives you bread for the road without being asked and charges you three coins less than the posted rate, which is his language for: I hope you come back."
+            "text": "You pack what you have. At the bar Aldous gives you bread for the road without being asked, and charges you three coins less than the posted rate. Nothing more is said."
           },
           {
             "when": {
@@ -58,7 +58,7 @@
                 ]
               }
             },
-            "text": "You have been in Crestfall for three days. You know more than you did and less than you need and the gap is east."
+            "text": "You have been in Crestfall three days. You know more than you did, and not nearly enough, and the rest of it lies to the east."
           },
           {
             "when": {
@@ -77,7 +77,7 @@
                 ]
               }
             },
-            "text": "Three factions have asked things of you or offered things to you."
+            "text": "All three of the powers in the town have asked you for something or offered you something."
           },
           {
             "when": {
@@ -144,7 +144,7 @@
                 "covenant_task_accepted": false
               }
             },
-            "text": "You owe none of them anything, which is its own kind of position."
+            "text": "You owe none of them anything, which has its advantages."
           },
           {
             "when": {
@@ -163,7 +163,7 @@
                 ]
               }
             },
-            "text": "What you have now: a direction, a destination, a letter that may or may not be a warning, and the quality of purpose that comes from having assembled enough pieces to see the shape of a thing, even if the thing itself is still dark."
+            "text": "You have a direction, and somewhere to go, and a letter that may or may not be a warning. You have pieced together enough to see the outline of the thing, though you still cannot see what it is."
           },
           {
             "when": {
@@ -184,19 +184,19 @@
                 }
               }
             },
-            "text": "The light is coming up. The east road is waiting."
+            "text": "It is getting light, and the east road is waiting."
           },
           "You leave before the market opens."
         ],
-        "commander": "Before leaving, you have made your commitments. The Compact message, if you took it. The covenant ward, if you wear it. The relationships with the Rootless.\n\nYou are not beholden to any single answer. You are going east to find the truth of it.",
-        "arcane": "Before leaving, you spend an hour at the Tallow's writing table going over your notes from three days. You are better prepared than [missing person] was, you think. You have more information, more context, more theoretical framework.\n\nYou hope that makes a difference. You know it might not.",
-        "ranger": "Before leaving, you check your pack with automatic thoroughness. Everything in order. Everything necessary.\n\nYou check the east road from the market square. Empty this early, which is either good or suspicious, and you need to decide which before you are a mile in.",
-        "cipher": "Before leaving, you say goodbye to no one, which is the goodbye that costs least and protects most. If you fail to come back, no one will remember it as a choice you made in their presence.\n\nThis is either wisdom or the kind of loneliness that has become strategy. You have stopped distinguishing between the two."
+        "commander": "You have made your arrangements before you go: the Compact's message, if you took it, the Covenant's ward, if you are wearing it, and whatever you have built with the Rootless.\n\nNone of them has bought you. You are going east to find out the truth for yourself.",
+        "arcane": "Before you go you spend an hour at the Tallow's writing table going over three days of notes. You are better prepared than [missing person] was, you think. You know more, and you understand more of what you know.\n\nYou hope that will make a difference. You are quite aware that it may not.",
+        "ranger": "Before you go you check your pack, as thoroughly as you always do. Everything is there.\n\nFrom the market square you look down the east road. It is empty at this hour, which may be good or may be suspicious, and you had better decide which before you are a mile along it.",
+        "cipher": "You say goodbye to nobody before you go. It is the cheapest kind of goodbye, and the safest. If you don't come back, nobody will remember that you chose to leave them.\n\nIt may be good sense, or it may be loneliness that has turned into a method. You stopped being able to tell the two apart some time ago."
       },
       "choices": [
         {
           "id": "visit_compact_before_leaving",
-          "text": "Visit the Compact gate. Confirm arrangements.",
+          "text": "Go to the Compact gate and confirm the arrangements.",
           "requires": {
             "flags": {
               "compact_allied": true
@@ -206,9 +206,9 @@
           "outcomes": {
             "default": {
               "text": [
-                "Cael is at the gate. He nods when he sees you. The nod means: you are doing what you said you would. He gives you one addition. A contact point, a passphrase, a way to send information back if you find something significant.",
+                "Cael is on the gate. He nods when he sees you, pleased that you are doing what you said you would. He gives you one thing more: a place to leave word, a password, and a way of sending news back if you find anything important.",
                 "\"Be thorough, [sir/ma'am],\" he says. \"Whatever is in those ruins, Commander Vorne needs to know exactly what it is before he can act.\"",
-                "The word act.",
+                "You don't much like the word act.",
                 {
                   "when": {
                     "flags": {
@@ -230,12 +230,12 @@
         },
         {
           "id": "visit_maret_before_leaving",
-          "text": "Visit Maret at the camp before leaving.",
+          "text": "Go and see Maret at the camp before you leave.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "She knows you are leaving. She has packed something for you — dried food from the camp's stores, a bitter herb prepared by Pol, the camp's healer, and a hand-drawn map of the east road with the camp's known exploration points marked.\n\n\"Lira drew it,\" Maret says. \"She remembers the outskirts in more detail than the rest of us. The marks there are hers.\"\n\nShe gives it to you without asking for anything in return. Which means the debt is implicit, and both of you know it.",
+              "text": "She knows you are going. She has put a few things together for you: dried food from the camp stores, a bitter herb that Pol, the camp's healer, has prepared, and a map of the east road drawn by hand, with the places the camp has explored marked on it.\n\n\"Lira drew it,\" Maret says. \"She remembers the outskirts better than the rest of us. Those marks are hers.\"\n\nShe asks for nothing in return. You both know you owe her for it all the same.",
               "next_scene": "act1_ch6_departure_decision",
               "state_changes": {
                 "flags": {
@@ -262,7 +262,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You leave Crestfall alone, before dawn, moving east while the town is still deciding whether to be awake.",
+              "text": "You leave Crestfall alone before dawn, heading east while the town is still making up its mind whether to wake.",
               "next_scene": "act1_ch6_east_road_start",
               "state_changes": {}
             }
@@ -290,33 +290,33 @@
       "requires": {},
       "text": {
         "default": [
-          "The cobblestone lasts for a mile. Then packed earth. Then the path becomes a habit rather than a road. The evidence of people having gone this way rather than any deliberate construction for the purpose.",
-          "The forest closes in from both sides after the second mile. Not dramatically. Gradually, the way a room changes when the light changes. First the trees are at a distance and you can see sky. Then the trees are closer and the sky is framed. Then the trees are overhead and the sky is a theory.",
+          "The cobbles last for a mile. Then the road is packed earth, and then it is hardly a road at all, only the way people have happened to go.",
+          "After the second mile the forest begins to close in on either side. It happens gradually, as a room changes when the light goes. At first the trees stand back and you can see the sky. Then they come nearer and the sky is a strip above you. Then they meet overhead, and you can only take it on trust that the sky is there.",
           "You walk.",
-          "The silence here is wrong in the way you have started to understand. Not the absence of sound but the presence of something that has taken the place of sound. Birds are absent. Insects are absent. The wind moves the branches above you without making the sound that wind makes in branches.",
+          "The silence here is wrong in a way you are beginning to understand. It is as if something has taken the place of sound. There are no birds and no insects. The wind moves the branches over your head, but without the noise that wind makes in branches.",
           {
             "when": {
               "flags": {
                 "read_the_east_road": true
               }
             },
-            "text": "You read this road at midnight. It holds no surprises yet."
+            "text": "You read this road at midnight, and so far it has held no surprises."
           }
         ],
-        "commander": "You walk the road with the assessment of a military advance. Looking at the terrain, the angles, the places where something could be waiting. The road is tactically poor: flanked on both sides, limited sight lines, one direction of travel.\n\nYou keep moving. The answer to poor tactical ground is to not stop in it.",
-        "arcane": "The frequency you have been feeling since arriving in Ashenveld is stronger out here. Not dramatically. Incrementally, with each half mile. Your notebook is open as you walk.\n\nYou write: the effect intensifies linearly with proximity, not exponentially. This is consistent with a single stationary source rather than a distributed field. The source is ahead. The source is specific.",
-        "ranger": "You walk and read the land as you walk. The curse's effect on the terrain is visible to you in ways it would not be to someone less trained. The particular angle at which the grass grows, the distribution of fungi along the root systems, the places where the soil has a slightly different colour.\n\nThe curse came from the east and moved west. You can see the direction in the land itself.",
-        "cipher": "You walk and pay attention to your own attention. What it is drawn to, what it is not drawn to, what seems more interesting than it should and what seems less. The curse, even at this distance, creates an ambient effect. You want to be sure you are noticing it rather than being moved by it without noticing."
+        "commander": "You walk the road as you would advance on any position, watching the ground and the angles and the places where something might be waiting. It is poor ground: trees close on both sides, no view to speak of, and only one way to go.\n\nYou keep moving. The only answer to poor ground is not to stop on it.",
+        "arcane": "The pressure you have felt since you came to Ashenveld is stronger out here. It grows a little with every half mile. You walk with your notebook open.\n\nYou write: the effect grows steadily as one gets nearer, and not by leaps. That fits a single source that does not move, rather than something spread about. The source is ahead, and it is in one place.",
+        "ranger": "You read the land as you walk. The curse shows in it plainly enough, if you know what to look for: the way the grass leans, the fungus along the roots, the patches where the soil is a shade darker than it should be.\n\nThe curse came from the east and travelled west. You can see which way it came in the ground itself.",
+        "cipher": "You walk and keep an eye on your own attention: what it goes to, what it passes over, what seems more interesting than it ought to and what seems less. Even this far from the ruins the curse is in the air, and you want to be sure you notice it rather than let it steer you without your knowing."
       },
       "choices": [
         {
           "id": "continue_to_first_encounter",
-          "text": "Keep moving. Read the road as you walk.",
+          "text": "Keep going, and read the road as you walk.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You keep moving. The road continues its narrowing. The forest continues its enclosure. Two hours in, the road shows you something.",
+              "text": "You keep going. The road gets narrower, and the trees come closer. Two hours along, the road shows you something.",
               "next_scene": "act1_ch6_place_covenant_marker",
               "state_changes": {}
             }
@@ -329,7 +329,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "From here the town is a smudge of smoke above the trees. You can pick out the shrine roof and nothing else. You stand there longer than you need to.\n\nThen the road, again.",
+              "text": "From here the town is a smudge of smoke above the trees. You can make out the shrine roof and nothing else. You stand there longer than you need to.\n\nThen you turn back to the road.",
               "next_scene": "act1_ch6_place_covenant_marker",
               "state_changes": {
                 "flags": {
@@ -356,7 +356,7 @@
       "requires": {},
       "text": {
         "default": [
-          "The point Edric described is identifiable if you are looking for it. The angle of the tree line on the left side changes by approximately thirty degrees over the course of ten metres, creating a notch in the canopy. Not natural. Or perhaps natural, and the Covenant has been watching this spot long enough to give it meaning.",
+          "The place Edric described is easy enough to find if you are looking for it. On the left the tree line turns sharply over a few yards and leaves a notch in the canopy. It may not be natural. Or it may be perfectly natural, and the Covenant has simply watched this spot long enough to make something of it.",
           {
             "when": {
               "inventory": [
@@ -364,14 +364,14 @@
               ]
             },
             "text": "Edric's stone is heavy in your pocket.",
-            "else": "You are not carrying Edric's stone. You stop anyway."
+            "else": "You are not carrying Edric's stone, but you stop anyway."
           },
-          "There is something about this location. A quality in the air, a stillness different from the surrounding stillness. If the Covenant's scholars identified this as a nexus point, they identified something real."
+          "There is something about the place. The air is still, and still in a different way from the stillness round about. If the Covenant's scholars called this a nexus, they found something real."
         ],
-        "commander": "The location is real. Something is different here. Not threatening exactly, but concentrated. You stop here a moment longer than you need to.",
-        "arcane": "The ambient here is dense. You stand in the notch and extend your perception and feel the quality of a place where several of the curse's channels converge near the surface. Like the confluence of rivers, except the rivers are invisible and what they carry is worse than water.\n\nThe Covenant's scholars are competent. That is useful information.",
-        "ranger": "The animals that are left in this forest have been avoiding this spot. You can see it in the tracks. Paths that approach and then veer off, over and over, worn into the soil by repeated circumvention. Whatever is concentrated here, the local fauna has been giving it a wide berth for months.",
-        "cipher": "The spot is real. The Covenant identified something genuine here. That tells you their scholars have actual knowledge of the curse's mechanics. Not just doctrine, but mapped understanding. That changes how dangerous they are and how useful they could be."
+        "commander": "There is something here, and it is real. It is not exactly threatening, but it is concentrated. You stop a moment longer than you need to.",
+        "arcane": "The air here is thick with it. You stand in the notch and let your senses reach out, and you can feel several of the curse's channels meeting near the surface, like rivers coming together, except that you cannot see the rivers and what they carry is worse than water.\n\nSo the Covenant's scholars know their business. That is worth knowing.",
+        "ranger": "What animals are left in this forest have been keeping away from the spot. You can see it in the tracks: paths that come towards it and then turn aside, again and again, worn into the ground by going round. Whatever is gathered here, the creatures have given it a wide berth for months.",
+        "cipher": "The place is real, and the Covenant found something genuine here. So their scholars do understand how the curse works, and have mapped it, and it is not all doctrine. That makes them both more dangerous and more useful than you had thought."
       },
       "choices": [
         {
@@ -385,7 +385,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You place the stone where Edric instructed. You stand back and wait. Nothing visible happens. No light, no sound, no perceptible change.\n\nEither it is working on a scale you cannot perceive or it is doing nothing. Either way, the obligation is fulfilled and the Covenant owes you something small.",
+              "text": "You put the stone where Edric told you to, and stand back, and wait. Nothing happens that you can see or hear.\n\nEither it is working on a scale you can't perceive, or it is doing nothing at all. Either way you have done what you said you would, and the Covenant owes you a small favour.",
               "next_scene": "act1_ch6_waystation_route",
               "state_changes": {
                 "flags": {
@@ -418,7 +418,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "You set the stone down where the tree line bends and keep your hand on it.\n\nIt pulls. Very slightly, the way a lodestone pulls at a needle. Not away from the forest. Towards it. Whatever Edric's people made this to do, it is not holding anything back. It is finding where the note is strongest, and marking it.\n\nYou take your hand away. The stone stays where it is.",
+              "text": "You set the stone down where the tree line bends, and keep your hand on it.\n\nIt pulls, very slightly, as a lodestone pulls at a needle. It does not pull away from the forest but towards it. Whatever Edric's people made it for, it is not holding anything back. It is feeling out where the note is strongest, and marking the place.\n\nYou take your hand away. The stone stays where it is.",
               "next_scene": "act1_ch6_waystation_route",
               "state_changes": {
                 "flags": {
@@ -436,7 +436,7 @@
               }
             },
             "success_at_cost": {
-              "text": "You set the stone down and feel it settle into the ground, and something under the ground settle towards it. You cannot tell what it is doing. Only that it is not nothing.",
+              "text": "You set the stone down and feel it settle into the ground, and something under the ground settle towards it. You can't tell what it is doing, except that it is not nothing.",
               "next_scene": "act1_ch6_waystation_route",
               "state_changes": {
                 "flags": {
@@ -456,7 +456,7 @@
               }
             },
             "failure": {
-              "text": "You set the stone down and feel cold stone and wet earth, and nothing else. Whatever it does, it does not do it for you.",
+              "text": "You set the stone down and feel cold stone and wet earth, and nothing more. Whatever it does, it doesn't do it for you.",
               "next_scene": "act1_ch6_waystation_route",
               "state_changes": {
                 "flags": {
@@ -477,7 +477,7 @@
         },
         {
           "id": "kneel_and_listen",
-          "text": "Kneel, and listen for where the stone wants to go.",
+          "text": "Kneel, and feel where the stone wants to go.",
           "requires": {
             "class": "arcane",
             "inventory": [
@@ -488,7 +488,7 @@
           "locked_hint": "Arcane only",
           "outcomes": {
             "default": {
-              "text": "You kneel with the stone in both hands and lower it towards the ground until you feel the pull. It wants to go a little to the left of where Edric said, closer to the bend. You let it.\n\nThe moment it touches the earth, the note under the road leans towards it. The Covenant is not slowing anything with these stones. They are mapping it.",
+              "text": "You kneel with the stone in both hands and lower it towards the ground until you feel the pull. It wants to go a little to the left of where Edric said, nearer the bend, and you let it.\n\nThe moment it touches the earth, the note under the road leans towards it. The Covenant is not slowing anything with these stones. It is mapping it.",
               "next_scene": "act1_ch6_waystation_route",
               "state_changes": {
                 "flags": {
@@ -509,13 +509,13 @@
         },
         {
           "id": "do_not_place_marker",
-          "text": "Note the location. Keep moving.",
+          "text": "Remember the place, and keep moving.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
               "text": [
-                "You fix the place in your memory and keep moving. The spot is real. Edric's scholars are competent. The Covenant is more dangerous than they look."
+                "You fix the place in your memory and move on. The spot is real, and Edric's scholars know what they are about. The Covenant is more dangerous than it looks."
               ],
               "next_scene": "act1_ch6_waystation_route",
               "state_changes": {
@@ -586,7 +586,7 @@
                 ]
               }
             },
-            "text": "Where the road dips towards a stream there is a lean-to of planks and canvas, and a mule tied to the post in front of it. A woman in a Compact coat sits on an upturned crate, eating bread with one hand. A crossbow lies across her knees.\n\nShe stands when she sees you. She does not raise the crossbow. Her hands are not quite steady.\n\n\"Sera,\" she says. \"Quartermaster. The lieutenant said someone might come along with a packet, [sir/ma'am].\" She looks past you, up the road, then into the trees. \"Nobody else has. Not for a while.\"",
+            "text": "Where the road dips down to a stream there is a lean-to of planks and canvas, with a mule tied to a post in front of it. A woman in a Compact coat sits on an upturned crate, eating bread with one hand. There is a crossbow across her knees.\n\nShe stands up when she sees you. She doesn't raise the crossbow, but her hands are not quite steady.\n\n\"Sera,\" she says. \"Quartermaster. The lieutenant said someone might come along with a packet, [sir/ma'am].\" She looks past you up the road, and then into the trees. \"Nobody else has. Not for a while.\"",
             "else": "Sera is still by the mule, not looking at you."
           }
         ]
@@ -599,7 +599,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "She takes the packet and puts it inside her coat without looking at it, and counts twenty coins into your hand.\n\n\"A patrol went east nine days ago,\" she says as you turn to go. \"Six of them. They were meant to be back on the fourth day.\" She looks at the mule. \"I keep the feed ready.\"",
+              "text": "She takes the packet, puts it inside her coat without looking at it, and counts twenty coins into your hand.\n\n\"A patrol went east nine days ago,\" she says as you turn to go. \"Six of them. They were meant to be back on the fourth day.\" She looks at the mule. \"I keep the feed ready.\"",
               "next_scene": "act1_ch6_cursed_creature",
               "state_changes": {
                 "flags": {
@@ -631,7 +631,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "You turn your back to her as if to check your pack, and work the seal up with a thumbnail. It lifts clean.\n\nOne sheet. An order to prepare billets in Crestfall for thirty men and a commander, signed in Vorne's name and dated a month back. Cael knew. He has known all along.\n\nYou press the seal back down. It holds.",
+              "text": "You turn your back on her as if to check your pack, and work the seal up with your thumbnail. It comes away cleanly.\n\nThere is one sheet inside: an order to make ready billets in Crestfall for thirty men and a commander, signed in Vorne's name and dated a month ago. So Cael knew. He has known all along.\n\nYou press the seal back down, and it holds.",
               "next_scene": "act1_ch6_waystation",
               "state_changes": {
                 "flags": {
@@ -641,7 +641,7 @@
               }
             },
             "success_at_cost": {
-              "text": "The seal lifts, but not cleanly. You read the order: billets in Crestfall for thirty, Vorne's name at the bottom, a month old. Cael knew.\n\nWhen you press the seal down, one corner will not sit flat.",
+              "text": "The seal comes up, though not cleanly. You read the order: billets in Crestfall for thirty men, Vorne's name at the foot, a month old. Cael knew.\n\nWhen you press the seal back down, one corner won't lie flat.",
               "next_scene": "act1_ch6_waystation",
               "state_changes": {
                 "flags": {
@@ -652,7 +652,7 @@
               }
             },
             "failure": {
-              "text": "The seal tears. The sound is very small and she hears it anyway.\n\nSera looks at the packet in your hands, then at your face. \"I'll have to report that,\" she says. She does not sound angry. She sounds tired. She does not pay you, and she does not take the packet.",
+              "text": "The seal tears. It is a very small sound, and she hears it anyway.\n\nSera looks at the packet in your hands and then at your face. \"I'll have to report that,\" she says. She doesn't sound angry, only tired. She doesn't pay you, and she doesn't take the packet.",
               "next_scene": "act1_ch6_cursed_creature",
               "state_changes": {
                 "flags": {
@@ -675,7 +675,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You nod to her and keep walking. The packet stays in your pack. She watches you all the way to the bend.",
+              "text": "You nod to her and walk on, with the packet still in your pack. She watches you all the way to the bend.",
               "next_scene": "act1_ch6_cursed_creature",
               "state_changes": {
                 "flags": {
@@ -701,16 +701,16 @@
       },
       "requires": {},
       "text": {
-        "default": "You hear it before you see it. Not the sound itself but the wrong quality of the sound. Movement through undergrowth with the rhythm slightly off. Like something that learned to move through forest by watching something else do it rather than by being born to it.\n\nIt comes through the trees on your left: a deer.\n\nExcept it is wrong. The gait is wrong. The legs move in the right pattern but the timing is off, a half-beat delay between front legs and back legs that makes the whole thing look mechanical. Its eyes are open but not tracking. Its head is at an angle that does not serve any purpose. Not scenting, not watching, just held at that angle.\n\nIt crosses the road thirty metres ahead of you and goes into the trees on the other side without pausing.",
-        "commander": "You watch it cross. Your skin is crawling and you could not say why.\n\nAn afflicted animal. The curse has gotten into the local fauna, which means the affected area is broader than the ruins themselves. You mark the location in your mind. The distance from Crestfall, the direction.",
-        "arcane": "The residue on the deer is dense. Months, possibly longer. The curse in animals progresses differently than in humans: humans retain enough of themselves to suffer the gap between what they were and what they are becoming. Animals seem to lose the gap more completely.\n\nThe deer is, in some meaningful sense, no longer there.",
-        "ranger": "You have tracked deer in a dozen different forests. You have never seen one move like that.\n\nThe wrongness of it is specific: a prey animal that has stopped being afraid. The fear response in deer is so deeply embedded that removing it requires removing the animal. Whatever the curse does to awareness, it does it all the way down to the oldest levels.\n\nYou wait for two minutes after it is gone, listening for anything that might have been following it.",
-        "cipher": "The deer is a data point. The curse affects animals as well as people, with what appears to be a similar progression. The removal of normal responsiveness, the maintenance of baseline physical function without the animating attention.\n\nYou mark the place in your head and go on."
+        "default": "You hear it before you see it, or rather you hear that the sound is wrong. Something is moving through the undergrowth with the rhythm slightly off, as though it had learned to walk in a forest by watching something else do it.\n\nIt comes out of the trees on your left. It is a deer.\n\nBut it is wrong. Its legs move in the proper order, but the back legs come half a beat behind the front, so that the whole animal looks like a machine. Its eyes are open but they follow nothing. It holds its head at an angle that serves no purpose; it is not scenting the air or watching anything, only holding it there.\n\nIt crosses the road thirty yards ahead of you and goes into the trees on the other side without stopping.",
+        "commander": "You watch it cross. Your skin is crawling, and you couldn't say why.\n\nSo the curse has got into the animals too, which means it has spread a good deal further than the ruins. You fix the place in your mind: how far you are from Crestfall, and in which direction.",
+        "arcane": "The residue on the deer is thick. It has been under the curse for months, perhaps longer. The curse goes differently in animals. People keep enough of themselves to suffer the difference between what they were and what they are becoming. Animals seem to lose even that.\n\nIn any sense that matters, the deer is no longer there.",
+        "ranger": "You have tracked deer in a dozen forests, and you have never seen one move like that.\n\nWhat is wrong with it is quite particular. It is a hunted animal that has stopped being afraid. Fear goes so deep in a deer that you could not take it out without taking out the deer, and whatever the curse does, it goes all the way down to the bottom.\n\nYou wait a couple of minutes after it has gone, listening for anything that might have been following it.",
+        "cipher": "So the curse takes animals as well as people, and in much the same way, it seems. It leaves the body going about its business, and takes away whatever was paying attention.\n\nYou fix the place in your head and go on."
       },
       "choices": [
         {
           "id": "follow_the_deer",
-          "text": "Follow it into the trees. See what it is doing.",
+          "text": "Follow it into the trees and see what it is doing.",
           "requires": {},
           "roll": {
             "stat": [
@@ -741,7 +741,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "You track it through fifty metres of undergrowth. It is standing in a small clearing, doing nothing. Not eating, not drinking, not resting. Just standing with that wrong head angle, breathing normally.\n\nAround it, in a radius of about ten metres, the ground is slightly different. The grass lower. The soil darker. You crouch and look at the boundary of the radius. The curse is concentrated here. The deer has apparently returned to this spot repeatedly. There are tracks from multiple visits.\n\nThe deer chose this place. Whatever the curse does to wanting, it does not eliminate it. It redirects it.",
+              "text": "You track it fifty yards through the undergrowth and find it standing in a small clearing, doing nothing at all. It isn't eating or drinking or resting. It stands with its head at that wrong angle, breathing quite normally.\n\nFor ten yards or so round about, the ground is different. The grass is lower and the soil darker. You crouch at the edge of it and look. The curse is concentrated here, and there are tracks from a great many visits. The deer has come back to this place over and over again.\n\nIt chose to come here. Whatever the curse does to wanting, it does not do away with it. It turns it to something else.",
               "next_scene": "act1_ch6_road_traveller",
               "state_changes": {
                 "flags": {
@@ -750,12 +750,12 @@
               }
             },
             "success_at_cost": {
-              "text": "You follow it far enough to confirm it is doing nothing. Just standing in the trees. You come back to the road feeling like you have looked at something you cannot quite describe.",
+              "text": "You follow it far enough to make sure that it is doing nothing but stand in the trees. You come back to the road feeling that you have seen something you couldn't describe if you tried.",
               "next_scene": "act1_ch6_road_traveller",
               "state_changes": {}
             },
             "failure": {
-              "text": "You follow it and lose it quickly. It moves in a pattern your tracking instinct cannot quite predict. You return to the road. You were in the trees long enough for the road to feel like a relief.",
+              "text": "You follow it and lose it almost at once. It moves in a way you can't predict. You go back to the road, and after even that short while in the trees the road is a relief.",
               "next_scene": "act1_ch6_road_traveller",
               "state_changes": {
                 "resources": {
@@ -790,7 +790,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "You leave the road slowly and come at it from downwind, a step at a time, stopping when it stops. It does not notice you. Close up its eyes are not quite still. They drift, and settle, and drift again, and every time they settle they are pointing east.\n\nYou touch its flank. It is warm. It does not flinch.\n\nWhen you step back it walks on through the trees, east, at the same wrong pace.",
+              "text": "You leave the road slowly and come at it from downwind, a step at a time, stopping when it stops. It doesn't notice you. Close to, its eyes are not quite still. They drift, and settle, and drift again, and every time they settle they are pointing east.\n\nYou touch its flank. It is warm, and it doesn't flinch.\n\nWhen you step back it walks on through the trees, eastward, at the same wrong pace.",
               "next_scene": "act1_ch6_road_traveller",
               "state_changes": {
                 "flags": {
@@ -799,7 +799,7 @@
               }
             },
             "success_at_cost": {
-              "text": "You get within an arm's length before a stick goes under your boot. Its head comes round, slowly, and it looks through you. Then it walks on. You stay crouched in the bracken until your legs cramp.",
+              "text": "You are within arm's length when a stick snaps under your boot. Its head comes round slowly and it looks straight through you. Then it walks on. You stay crouched in the bracken until your legs cramp.",
               "next_scene": "act1_ch6_road_traveller",
               "state_changes": {
                 "resources": {
@@ -808,7 +808,7 @@
               }
             },
             "failure": {
-              "text": "You are almost there when it bolts. It goes straight through the place you are standing, as if you were not there, and its shoulder takes you off your feet. By the time you are up it has gone.",
+              "text": "You are almost there when it bolts. It goes straight through the place where you are standing, as though you were not there at all, and its shoulder knocks you off your feet. By the time you are up again it has gone.",
               "next_scene": "act1_ch6_road_traveller",
               "state_changes": {
                 "resources": {
@@ -828,7 +828,7 @@
           "locked_hint": "Ranger only",
           "outcomes": {
             "default": {
-              "text": "You leave the deer to its walking and go where it came from. The trail is easy: it comes the same way every day, the same wrong stride, to the same place. A clearing a hundred yards in, where the grass is shorter and the soil darker, in a ring ten paces across.\n\nIt does not wander. It comes here, and stands, and goes. Something in it still wants this one thing.",
+              "text": "You leave the deer to its walking and go back the way it came. The trail is easy to follow. It comes the same way every day, with the same wrong stride, to the same place: a clearing a hundred yards in, where the grass is shorter and the soil darker in a ring ten paces across.\n\nIt does not wander. It comes here, and stands, and goes away again. There is still one thing it wants.",
               "next_scene": "act1_ch6_road_traveller",
               "state_changes": {
                 "flags": {
@@ -840,12 +840,12 @@
         },
         {
           "id": "let_deer_go",
-          "text": "Let it go. Continue on the road.",
+          "text": "Let it go, and carry on along the road.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You let it go. Whatever it is now, engaging with it does not serve your purpose. You continue east.",
+              "text": "You let it go. Whatever it is now, it is nothing to do with what you came for. You carry on east.",
               "next_scene": "act1_ch6_road_traveller",
               "state_changes": {}
             }
@@ -867,11 +867,11 @@
       },
       "requires": {},
       "text": {
-        "default": "A figure coming toward you on the road. Moving fast, not running but close to it. A man, middle-aged, carrying more than he should be carrying for someone moving at that speed. He wants distance more than he wants comfort.\n\nHe sees you and does not slow down. If anything he speeds up slightly.\n\nYou step to the side of the road so he can pass if he wants to. He almost does. Then, two metres past you, he stops.",
-        "commander": "He turns back with the face of a man who has decided something and already regrets it.\n\n\"You are going the wrong way,\" he says.",
-        "arcane": "He stops and turns and looks at you with the assessment of someone measuring how much you might want to know versus how much he wants to tell.\n\n\"You are going east,\" he says. It is not a question.",
-        "ranger": "He stops and turns. His pack is military in origin. The straps, the frame. He is not military anymore. His boots are worn on the outside of the heel, a gait, something about his history you cannot place yet.\n\n\"Going to Harrow?\" he says.",
-        "cipher": "He stops and turns and you read him quickly. Running from something. Not afraid of you specifically. Afraid of what is behind him, and you happen to be coming from the wrong direction.\n\n\"Turn around,\" he says. No pleasantry, no preamble."
+        "default": "Somebody is coming towards you down the road, moving fast, not quite running. It is a middle-aged man carrying a good deal more than anyone ought to carry at that pace. He would rather be far away than comfortable.\n\nHe sees you and doesn't slow down. If anything he goes a little faster.\n\nYou step to the side of the road so that he can pass if he wants to. He very nearly does. Then, a couple of yards past you, he stops.",
+        "commander": "He turns round with the face of a man who has made up his mind to something and is already sorry.\n\n\"You're going the wrong way,\" he says.",
+        "arcane": "He stops and turns, and looks at you as if weighing how much you might want to know against how much he wants to tell.\n\n\"You're going east,\" he says. He doesn't make it a question.",
+        "ranger": "He stops and turns. His pack was made for the army, by the straps and the frame of it, though he is not in the army any more. His boots are worn down on the outsides of the heels, which tells you something about him you can't yet place.\n\n\"Going to Harrow?\" he says.",
+        "cipher": "He stops and turns, and you take his measure quickly. He is running from something. He is not afraid of you in particular. He is afraid of what is behind him, and you happen to be heading towards it.\n\n\"Turn round,\" he says. He doesn't bother with good morning."
       },
       "choices": [
         {
@@ -884,7 +884,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "He tells you. He was trying to get through Ashenveld to the coast. The east road was the fastest route. He camped a mile past Harrow last night and at some point during the night he woke up in the middle of the road, sitting upright, facing east.\n\nHe had not walked there. He does not sleepwalk. He has no memory of moving.\n\n\"I was facing east,\" he says. \"Like something wanted me to look.\"\n\nHe hands you something without being asked. A small carved bone figure he found in Harrow. \"Do not know why I took it,\" he says. \"Do not want it.\"",
+              "text": "He tells you. He was trying to get across Ashenveld to the coast, and the east road was the quickest way. Last night he camped a mile beyond Harrow, and some time in the night he woke up in the middle of the road, sitting upright, facing east.\n\nHe hadn't walked there. He doesn't walk in his sleep. He has no memory of moving at all.\n\n\"I was facing east,\" he says. \"Like something wanted me to look.\"\n\nHe gives you something without being asked: a small figure carved out of bone, which he picked up in Harrow. \"Don't know why I took it,\" he says. \"Don't want it.\"",
               "next_scene": "act1_ch6_missing_person_campsite",
               "state_changes": {
                 "flags": {
@@ -897,7 +897,7 @@
               }
             },
             "success_at_cost": {
-              "text": "\"Harrow is empty,\" he says. \"Do not go into Harrow.\" He looks at the road behind you. \"Go back to Crestfall if you have sense.\" He resumes walking before you can ask more.",
+              "text": "\"Harrow's empty,\" he says. \"Don't go into Harrow.\" He looks up the road behind you. \"Go back to Crestfall, if you've any sense.\" He has walked on before you can ask him anything else.",
               "next_scene": "act1_ch6_missing_person_campsite",
               "state_changes": {
                 "flags": {
@@ -906,7 +906,7 @@
               }
             },
             "failure": {
-              "text": "He shakes his head and keeps moving. He is past you in four seconds and becoming a figure in the distance in twenty. He does not look back.",
+              "text": "He shakes his head and keeps going. In a few seconds he is past you, and in half a minute he is a speck in the distance. He doesn't look back.",
               "next_scene": "act1_ch6_missing_person_campsite",
               "state_changes": {}
             }
@@ -914,12 +914,12 @@
         },
         {
           "id": "let_him_pass",
-          "text": "Step aside and let him pass.",
+          "text": "Stand aside and let him pass.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "He passes. He does not look back. The sound of his footsteps going west fades quickly. You continue east.",
+              "text": "He goes by without looking back, and the sound of his feet going west soon dies away. You carry on east.",
               "next_scene": "act1_ch6_missing_person_campsite",
               "state_changes": {}
             }
@@ -942,8 +942,8 @@
       "requires": {},
       "text": {
         "default": [
-          "Half a mile further and the road shows you something.",
-          "A campsite. Old. More than a year of leaf-fall has settled in the fire ring, and still nobody has kicked the stones apart. Used once, by one person, not the traveller you just passed. A ring of stones for a fire. A cleared ground space. The careful arrangement of someone who knows how to camp and habitually tidies before leaving.",
+          "Half a mile further on, the road shows you something.",
+          "It is a camping place, and an old one. More than a year's leaves have settled in the fire ring, and still nobody has kicked the stones apart. One person camped here, once, and it was not the man you have just passed. There is a ring of stones for the fire and a patch of cleared ground, all neatly done by somebody who knew how to camp and always tidied up before leaving.",
           {
             "when": {
               "relationship_type": [
@@ -951,20 +951,20 @@
                 "mentor"
               ]
             },
-            "text": "You know the arrangement. You have seen it before. The ring of stones is three flat, one angled. A marker, a habit, something you noticed years ago when you watched the person who taught it to you do it for the first time.",
-            "else": "You know the arrangement. You have seen it before. The ring of stones is three flat, one angled. A marker, and a habit the two of you shared."
+            "text": "You know the way it is laid out. You have seen it before. The ring of stones is three flat and one tilted. It was a mark, and a habit, and you noticed it years ago when you watched the person who taught it you do it for the first time.",
+            "else": "You know the way it is laid out. You have seen it before. The ring of stones is three flat and one tilted, a mark the two of you always used."
           },
-          "[missing person] was here. Fourteen months ago. Moving east."
+          "[missing person] was here fourteen months ago, travelling east."
         ],
-        "commander": "You assess the campsite with systematic attention. Duration of stay: one night. Direction of departure: east, based on the site's orientation. Condition when they were here: functional. The camp is tidy, the fire correctly built. Not someone in crisis.",
-        "arcane": "The residue here is clear enough to read. One person, one night, not deeply afflicted when they left. Present and aware.\n\nYou feel something that is probably relief, and is also fear.",
-        "ranger": "The campsite is easy work for a tracker. One person, one night. The fire stones are arranged in a way you have not seen anyone else use. The cleared area is exactly the size of a bedroll.\n\nThe departure direction is east and the tracks, faint on this ground, confirm it. Fourteen months ago. Moving east.",
-        "cipher": "The arrangement of the fire stones. You know that arrangement. It is not a coincidence. The angle of the angled stone, the spacing, the choice of this particular clearing. Someone was here recently and they wanted you, you, if you came, to know it was them."
+        "commander": "You go over the camp methodically. They stayed one night. They left heading east, by the way the place faces. And they were in good order when they were here: the camp is tidy and the fire properly built. Whoever made it was not in any trouble.",
+        "arcane": "The residue here is clear enough to read. One person, one night, and the curse had not gone deep in them when they left. They were themselves, and wide awake.\n\nYou feel something that is very likely relief, and is fear as well.",
+        "ranger": "The camp is easy work for a tracker. One person stayed one night. The fire stones are set in a way you have never seen anybody else use, and the cleared patch is exactly the size of a bedroll.\n\nThey went east, and the tracks, faint on this ground, bear it out. Fourteen months ago, travelling east.",
+        "cipher": "You know that way of setting the fire stones. It is no coincidence: the tilt of the one stone, the spacing, the choice of this clearing. Somebody was here, and they wanted you, if you came, to know it was them."
       },
       "choices": [
         {
           "id": "examine_campsite",
-          "text": "Examine the campsite carefully. They may have left something.",
+          "text": "Go over the camp carefully. They may have left something.",
           "requires": {},
           "roll": {
             "stat": "perception",
@@ -972,7 +972,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "Under the edge of one of the fire stones, placed there on purpose and weighted down, a torn piece of cloth. They left it.\n\nOn the cloth, in ink that has partly run, three words. You read them three times each to make sure you are reading them right.\n\n[player]. Go home.\n\nThey knew you would come. They knew it well enough to leave you this at the first place you would stop. And they did not want you to.",
+              "text": "Under the edge of one of the fire stones, put there on purpose and weighted down, there is a torn piece of cloth. They left it.\n\nOn the cloth, in ink that has partly run, there are three words. You read them several times to be sure you are reading them right.\n\n[player]. Go home.\n\nThey knew you would come. They knew it well enough to leave you this at the first place you would stop. And they did not want you to.",
               "next_scene": "act1_ch6_harrow_arrival",
               "state_changes": {
                 "flags": {
@@ -987,7 +987,7 @@
               }
             },
             "success_at_cost": {
-              "text": "You find a scuff in the soil at the campsite's edge. Foot traffic, recent, east. Just the confirmation of direction. Nothing left for you to find.",
+              "text": "At the edge of the camp you find a scuff in the soil, a footprint going east. It tells you which way they went, and nothing more. There is nothing here left for you.",
               "next_scene": "act1_ch6_harrow_arrival",
               "state_changes": {
                 "counters": {
@@ -996,7 +996,7 @@
               }
             },
             "failure": {
-              "text": "The campsite gives you nothing more than you already have. You have the arrangement of the stones. That is enough. You continue.",
+              "text": "The camp gives you nothing more than you have already. You have the stones, and that is enough. You go on.",
               "next_scene": "act1_ch6_harrow_arrival",
               "state_changes": {
                 "counters": {
@@ -1008,12 +1008,12 @@
         },
         {
           "id": "follow_the_trail",
-          "text": "Follow the trail. They are ahead of you.",
+          "text": "Follow the trail. They're ahead of you.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You leave the campsite without disturbing anything and continue east. Faster than before. The trail is fourteen months cold and it is still a trail.",
+              "text": "You leave the camp without touching anything and go on east, faster than before. The trail is fourteen months cold, but it is still a trail.",
               "next_scene": "act1_ch6_harrow_arrival",
               "state_changes": {
                 "flags": {
@@ -1043,21 +1043,21 @@
       },
       "requires": {},
       "text": {
-        "default": "Harrow.\n\nTwelve houses. A well. A shrine. A communal barn. Everything in the position it was built in and should still be in.\n\nNothing moving.\n\nThe silence here is different from the road's silence. Denser, the quality of a place that used to have people in it and no longer does. Not ruin. Harrow is not ruined. The houses are intact. A door hangs open on one of them but not because of violence. Because someone left in a way that did not include closing the door behind them.\n\nYou walk into the main street and your footsteps are the only sound.\n\nThere are meals on three tables in the houses you can see through their windows. Set meals, not interrupted ones. The kind of placement that goes before sitting, not after leaving.",
-        "commander": "You move through Harrow with the tactical sweep of clearing a position. House by house, quick looks, assessing for threats and useful intelligence.\n\nNo threats. No bodies. No blood. No sign of panic.\n\nEvery indication points to people who left calmly. The food on the tables is months old. They left as if they were going somewhere for the day and intending to return for dinner.",
-        "arcane": "The curse's residue in Harrow is saturating. The kind of density that accumulates over months of sustained exposure in a closed space.\n\nYou read the history of it. The curse built slowly here and then, at some point, reached a threshold. Above the threshold: everyone in Harrow stopped wanting to stay. Below the threshold: everything remaining exactly as it was.\n\nYou understand now how this happens. The curse does not force anyone to do anything. It changes what seems preferable. And eventually, the forest seemed preferable. To everyone. At approximately the same time.",
-        "ranger": "Harrow looks like ground after something has happened to it.\n\nDoors left open in calm. Not panic. Food prepared and never eaten. A child's toy beside a doorstep, placed there as if to mark the leaving rather than forgotten.\n\nThe tracks leading out of Harrow go east. All of them. Staggered over days and weeks, each person going when the time came, but all going the same direction.",
-        "cipher": "Harrow is a document. You read it.\n\nNo signs of violence. No signs of flight. Signs of departure. Calm, sequential, individual. People left Harrow the way people leave places they no longer want to be. Over time. One at a time. Until there was no one left.\n\nThe question is not what happened here. The question is what made staying seem worse than going east."
+        "default": "This is Harrow.\n\nThere are twelve houses, a well, a shrine and a barn the village shared. Everything stands where it was built and where it ought to be.\n\nNothing is moving.\n\nThe silence here is not like the silence of the road. It is heavier, the silence of a place that used to have people in it and has none now. Harrow is not a ruin. The houses are whole. A door stands open in one of them, but not because anybody broke it; somebody simply went out and did not think to shut it.\n\nYou walk into the main street, and your footsteps are the only sound.\n\nThrough the windows you can see meals laid out on three tables. They were set and never eaten. Nobody was interrupted. They laid the tables, and then they went.",
+        "commander": "You go through Harrow as you would clear any village, house by house, quickly, looking for danger and for anything worth knowing.\n\nThere is no danger. There are no bodies and no blood, and no sign that anybody panicked.\n\nEverything says these people left quite calmly. The food on the tables is months old. They went as though they meant to be out for the day and back for supper.",
+        "arcane": "Harrow is soaked in the curse. It is the kind of thickness that builds up over months of steady exposure in a closed place.\n\nYou read the history of it. The curse built up here slowly, and then at some point it reached a level beyond which everyone in Harrow stopped wanting to stay. Short of that, nothing changed at all.\n\nYou understand now how it happens. The curse does not make anybody do anything. It only changes what they would rather do. And in the end everybody here would rather have gone into the forest, and all at about the same time.",
+        "ranger": "Harrow looks like ground something has passed over.\n\nThe doors were left open calmly, not in a panic. Food was cooked and never eaten. There is a child's toy beside a doorstep, put down there on purpose, you would say, and not dropped.\n\nAll the tracks out of Harrow go east. They were made over days and weeks, each person going when their time came, but every one of them went the same way.",
+        "cipher": "Harrow can be read like a letter, so you read it.\n\nNobody fought, and nobody ran. They simply went, calmly and one at a time, as people leave a place they no longer care to be in, until there was nobody left.\n\nWhat you want to know is not what happened here. It is what made staying seem worse than going east."
       },
       "choices": [
         {
           "id": "explore_harrow",
-          "text": "Explore Harrow. Whatever is here matters.",
+          "text": "Look round Harrow. Whatever is here matters.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You take time in Harrow. The afternoon light is going and you want to be inside something before dark.",
+              "text": "You take your time in Harrow. The afternoon light is going, and you would like to be under a roof before dark.",
               "next_scene": "act1_ch7_harrow_investigation",
               "state_changes": {
                 "world": {
@@ -1069,12 +1069,12 @@
         },
         {
           "id": "pass_through_harrow",
-          "text": "Pass through quickly. Reach the forest edge before dark.",
+          "text": "Go through quickly, and reach the edge of the forest before dark.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You move through Harrow at pace and out the other side. The forest edge is visible from the village's eastern wall. The dark line of where the trees begin in earnest. A mile, maybe less.\n\nYou camp in Harrow's barn. Better to sleep in a structure tonight.",
+              "text": "You go briskly through Harrow and out the other side. From the eastern wall of the village you can see where the forest begins in earnest, a dark line perhaps a mile off, or less.\n\nYou sleep in Harrow's barn. It is better to have walls round you tonight.",
               "next_scene": "act1_ch7_forest_edge",
               "state_changes": {
                 "world": {

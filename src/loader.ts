@@ -70,7 +70,7 @@ export async function initLoader(): Promise<MasterIndex> {
 
 /** Get the cached master index (must call initLoader first). */
 export function getMasterIndex(): MasterIndex {
-  if (!masterIndex) throw new Error('Loader not initialised — call initLoader() first')
+  if (!masterIndex) throw new Error('Loader not initialised. Call initLoader() first.')
   return masterIndex
 }
 

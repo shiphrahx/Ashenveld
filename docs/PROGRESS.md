@@ -481,3 +481,16 @@ At about 200 words a minute that's 75 to 80 minutes of scene text, so with outco
 - The contrast test was flaky under load because it measured the title mid-fade. It now waits for animations to finish.
 
 All twelve steps are done. Art Part 2 is still on hold until the new images are in `art/source/`.
+
+## After step 12: the voice pass
+
+Asked for after the twelve steps: cut the interface lines that only reassure (where the game saves, that sound is made in the browser, how long it takes), stop the creation screens asking deep questions, and rewrite the story in the tone of Christie's *The Mysterious Affair at Styles*, with no dashes.
+
+- Every scene, choice and outcome in all 20 chapter files was rewritten, plus the place descriptions, people's reads, journal notes and the endings. Plot, flags, ids, numbers and hints are unchanged. Still second person, present tense.
+- The touchstone lines are kept word for word.
+- No em or en dashes are left in the story, the meta files or the interface. "— End —" is now "The end."
+- The gender step now says what it does (people call you ma'am, sir or traveller). The class cards lost their slogans.
+- Fixed on the way: Pol was sixty in one line, the paid runner option sent Pol anyway, three ritual choices shared one pasted outcome, and Joren turned up in the camp on two different days.
+- Not fixed: the new prose runs about 5% longer. On the four test paths, nine scenes are now over 260 words (the most is 278). Trim them if the length rule still matters.
+
+Prose stats after: specific 0, of someone who 0, em dashes 0, contractions 740, "for a long moment/time" 11.

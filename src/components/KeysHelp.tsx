@@ -3,7 +3,7 @@ import Panel from './Panel'
 import styles from './KeysHelp.module.css'
 
 const KEYS: Array<[string, string]> = [
-  ['1 – 6', 'Pick that choice'],
+  ['1 to 6', 'Pick that choice'],
   ['Enter, Space', 'Continue'],
   ['J', 'Journal'],
   ['I', 'Items'],

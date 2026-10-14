@@ -92,17 +92,17 @@
       "requires": {},
       "text": {
         "default": [
-          "A morning, some years later.",
-          "Crestfall. The market square. The fountain running properly now. Someone fixed it in the second year, a project that took three weeks and which the whole town had an opinion about and which Aldous funded half of and will not admit to funding.",
-          "The market has nine stalls. The ninth is new. A woman from one of the eastern villages who walked back out of the forest eighteen months after walking in, confused and thin and eventually, gradually, herself again. She sells dried herbs now. Some of them are from Maret's garden. Some of them are varieties nobody recognised until she started growing them.",
+          "It is a morning, some years later.",
+          "You are in the market square at Crestfall, and the fountain is running properly now. Somebody mended it in the second year. It took three weeks, the whole town had an opinion about it, and Aldous paid for half of it and will not admit that he did.",
+          "There are nine stalls in the market. The ninth is new. It belongs to a woman from one of the villages to the east, who walked out of the forest again eighteen months after she walked into it, bewildered and thin, and in the end, little by little, herself again. She sells dried herbs. Some of them come from Maret's garden, and some are kinds nobody knew until she began to grow them.",
           {
             "when": {
               "visited": [
                 "act1_ch2_old_friend"
               ]
             },
-            "text": "You and [missing person] live in the house on the north lane. Goran's old recommendation, which became available two years after you decided to stay. You have been in it since.",
-            "else": "You and [missing person] live in the house on the north lane with the blue door, which became available two years after you decided to stay. You have been in it since."
+            "text": "You and [missing person] live in the house on the north lane, Goran's old house, which came free two years after you decided to stay. You have lived there ever since.",
+            "else": "You and [missing person] live in the house on the north lane with the blue door, which came free two years after you decided to stay. You have lived there ever since."
           }
         ]
       },
@@ -129,14 +129,14 @@
       "title": "The Warden Stays",
       "text": {
         "default": [
-          "This morning: the market. The fountain. A quality of light that this time of year produces over Crestfall. Not warm exactly, something more honest than warm. You are standing in it and so is [missing person] and the day has not yet told you what it needs.",
+          "This morning there is the market, and the fountain, and the light that comes over Crestfall at this time of year. It isn't warm, exactly. It is plainer than that. You are standing in it, and so is [missing person], and the day hasn't yet told you what it wants of you.",
           {
             "when": {
               "relationship_type": [
                 "childhood friend"
               ]
             },
-            "text": "[missing person] still walks the east field fence some evenings, one foot on the rail, and still waits for you to fall off first."
+            "text": "Some evenings [missing person] still walks the east field fence with one foot on the rail, and still waits for you to fall off first."
           },
           {
             "when": {
@@ -176,7 +176,7 @@
                 "the one who got away"
               ]
             },
-            "text": "You said it in the end, on an ordinary evening by the mill wall, and [missing person] said they knew."
+            "text": "You said it in the end, one ordinary evening by the mill wall, and [missing person] said they knew."
           },
           {
             "when": {
@@ -184,7 +184,7 @@
                 "ritual_partial": true
               }
             },
-            "text": "Once a month you and [missing person] walk east to the chamber and sit with the seal for an afternoon. It has not finished. It has not failed."
+            "text": "Once a month you and [missing person] walk east to the chamber and sit with the seal for an afternoon. It hasn't finished, and it hasn't failed."
           },
           {
             "when": {
@@ -211,10 +211,10 @@
             "text": "Crestfall went still once, before the seal held. Most of it came back. Aldous sits by the fire most evenings now, and somebody else keeps the bar."
           }
         ],
-        "commander": "You have a formal role now. Not the Compact's offer, something more particular. The regional recovery authority, a small organisation with a large remit. You chair it. Maret sits on it. Pol advises it. Branch does not sit on it because Branch does not sit on things but is always available.\n\nYou have done harder work with less. You have done less meaningful work with more. This is the right work at the right scale with the right people and you have the satisfaction of someone doing a thing they are built for.",
-        "arcane": "The documentation became a text. The text has been in print for two years. You receive letters about it from scholars in four countries and from ordinary people who read it because they heard there was a book about what happened in Ashenveld.\n\n[missing person], who spent fourteen months making the core findings possible, is credited on the cover. They do not mind. They stopped needing some things in the ruins and have not started again.",
-        "ranger": "The forest east of Crestfall is different now from the forest of three years ago. Not restored. You would not use that word, it implies a return to a fixed state, and forests do not return, they continue. But functioning. The apex predators came back in the third year. The ecosystem is a working ecosystem.\n\nYou still read it every morning. The record you have been keeping is the most complete account of a damaged ecosystem's recovery from a novel cause that exists anywhere.\n\nSome mornings [missing person] comes with you. They read the landscape with you the way you read people. Looking for what is true underneath what is presented. They are not bad at it.",
-        "cipher": "The political situation in Ashenveld has reached the stability that follows from people having invested in something long enough to not want to lose what they built.\n\nMaret is the most trusted person in the region. Branch is the most competent. Lira is, improbably, becoming a teacher. She found that the skill she developed for managing her own cognition translates into helping others manage theirs.\n\nYou watch all of this with the satisfaction of someone who built something they can see working.\n\n[missing person], standing beside you in the morning market light, says: \"You are cataloguing again.\"\n\n\"Yes,\" you say.\n\n\"Good,\" they say."
+        "commander": "You have a proper post now. It isn't the one the Compact offered; it is something more to the purpose. There is a small body charged with the recovery of the whole region, and you chair it. Maret sits on it and Pol advises it. Branch doesn't sit on it, because Branch doesn't sit on things, but he is always there when he is wanted.\n\nYou have done harder work with less to do it with, and work that mattered less with more. This is the right work, on the right scale, with the right people, and you have the satisfaction of somebody doing what they were made for.",
+        "arcane": "The account has become a book, and it has been in print for two years. You have letters about it from scholars in four countries, and from ordinary people who read it because they heard there was a book about what happened in Ashenveld.\n\n[missing person], whose fourteen months made most of what is in it possible, has their name on the cover. They don't mind. They stopped needing some things in the ruins, and have not started needing them again.",
+        "ranger": "The forest east of Crestfall is not the forest it was three years ago. You wouldn't say it was restored; that would mean it had gone back to how it was, and forests don't go back, they go on. But it works. The wolves came back in the third year, and it is a forest that works as a forest should.\n\nYou still read it every morning. The record you have kept is the fullest account anywhere of a country mending from a kind of harm nobody had seen before.\n\nSome mornings [missing person] comes with you. They read the land with you as you read people, looking for what is true under what it shows. They are not at all bad at it.",
+        "cipher": "Things in Ashenveld are steady now, as they are when people have put enough into something that they don't want to lose it.\n\nMaret is the most trusted person in the region, and Branch the most capable. Lira, of all people, is becoming a teacher. She found that the ways she learned of managing her own mind are just as good for helping other people manage theirs.\n\nYou watch it all with the satisfaction of somebody who built a thing and can see it working.\n\n[missing person], standing beside you in the morning light in the market, says, \"You are taking notes again.\"\n\n\"Yes,\" you say.\n\n\"Good,\" they say."
       },
       "choices": [
         {
@@ -224,7 +224,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You stay.\n\nThe day arrives the way days do. With the indifference of things that do not know they are significant, or do not need to know.\n\nAshenveld. The market. The fountain. Nine stalls and the light and [missing person] and the years that made this morning possible.\n\nThis is the ending that is not an ending. This is the story that keeps going in the way that real things keep going. Not dramatically, not conclusively, but persistently. Because the alternative is not something you chose.\n\n— End —",
+              "text": "You stay.\n\nThe day comes on as days do, without any notion that it might matter.\n\nThere is the market, and the fountain, and the nine stalls, and the light, and [missing person], and the years it took to make this morning.\n\nNothing ends. It simply goes on, as real things go on, without any fuss and without stopping. You chose that.\n\nThe end.",
               "next_scene": null,
               "state_changes": {
                 "flags": {
@@ -264,7 +264,7 @@
       },
       "requires": {},
       "text": {
-        "default": "A morning, some time later. Not years. Months. Long enough for things to settle into a pattern.\n\nYou are in a place that does not know your name and does not need to. The quality of anonymity that comes from being somewhere that has not been shaped by anything you did.\n\n[missing person] is beside you. They are having breakfast in a market town they chose because they heard the birds here are interesting. The birds are interesting. They were right.\n\nThe letters from Ashenveld arrive every two weeks. From Maret, from Branch, from Pol. The recovery is ongoing. The work continues without you. This is what you built: something that can continue without you."
+        "default": "It is a morning some time later. It is not years. It is months, long enough for things to have settled into a way of going on.\n\nYou are somewhere that doesn't know your name and has no need to. It is pleasant to be somewhere that nothing you did ever touched.\n\n[missing person] is beside you, having breakfast, in a market town they chose because they heard the birds here were interesting. The birds are interesting. They were right.\n\nLetters come from Ashenveld every fortnight, from Maret and Branch and Pol. The mending goes on, and the work goes on without you. That is what you built: something that could go on without you."
       },
       "choices": [
         {
@@ -289,8 +289,8 @@
       "title": "The Road West",
       "text": {
         "default": [
-          "Across the table, [missing person] is eating bread and butter, slowly, as if it were a feast.",
-          "You watch them eat breakfast in a market town they chose. This is not what you expected your life to look like. You are not sure what you expected. You are here.",
+          "Across the table [missing person] is eating bread and butter, slowly, as though it were a feast.",
+          "You watch them eat their breakfast in a town they chose. It is not what you thought your life would look like. You are not sure what you thought it would look like. But here you are.",
           {
             "when": {
               "relationship_type": [
@@ -321,7 +321,7 @@
                 "mentor"
               ]
             },
-            "text": "[missing person] is teaching someone else now, and lets you watch."
+            "text": "[missing person] is teaching somebody else now, and lets you watch."
           },
           {
             "when": {
@@ -329,7 +329,7 @@
                 "parent"
               ]
             },
-            "text": "[missing person] still asks if you have been eating."
+            "text": "[missing person] still asks whether you have been eating."
           },
           {
             "when": {
@@ -337,7 +337,7 @@
                 "the one who got away"
               ]
             },
-            "text": "You said it on the road, the second week, and [missing person] said they knew."
+            "text": "You said it on the road, in the second week, and [missing person] said they knew."
           },
           {
             "when": {
@@ -345,7 +345,7 @@
                 "ritual_partial": true
               }
             },
-            "text": "Pol walks east to the chamber every new moon and writes to you what she finds. The letters are short. Holding, they say. Not finished."
+            "text": "Pol walks east to the chamber every new moon and writes to tell you what she finds. Her letters are short. Holding, they say. Not finished."
           },
           {
             "when": {
@@ -361,7 +361,7 @@
                 "turned_back_east": true
               }
             },
-            "text": "The last you see of that market town is the road out of it, east. You walk it together, and neither of you hurries."
+            "text": "The last you see of that market town is the road out of it, going east. You walk it together, and neither of you hurries."
           },
           {
             "when": {
@@ -370,7 +370,7 @@
                 "full_disclosure_made": false
               }
             },
-            "text": "There is one thing you have still not said to them. There is time."
+            "text": "There is one thing you still haven't said to them. There is time."
           },
           {
             "when": {
@@ -381,10 +381,10 @@
             "text": "Crestfall went still once, before the seal held. Most of it came back. Aldous sits by the fire most evenings now, and somebody else keeps the bar."
           }
         ],
-        "commander": "You are not currently in command of anything. This is a new condition.\n\nYou are discovering that the capacity for command does not disappear when there is nothing to command. It becomes something else. Attention, precision, the ability to read situations quickly. These things are useful in ordinary life too. They are just useful differently.",
-        "arcane": "You are writing. Not the Ashenveld documentation. That is complete. Something new. The beginning of a longer work about what the ruins were, what the power was, what the ritual means for the understanding of phenomena that have been observed in other places and not yet understood.\n\nAshenveld is not unique. You knew this theoretically. You are beginning to understand it practically.\n\n[missing person] reads your drafts and asks questions that improve them. They spent fourteen months in the most concentrated field site for your area of study that has existed in recorded history. They are, if they wanted to be, a significant scholarly collaborator.\n\nYou ask them if they want to be. They think about it. They say: sometimes.",
-        "ranger": "The forest in this region is different from Ashenveld's forest. Ordinary, undamaged, the richness of a landscape that has not been through what Ashenveld went through.\n\nYou read it every morning anyway. You cannot stop reading landscapes. You have accepted this about yourself.\n\n[missing person] has started coming with you. They are learning to read landscapes the way you read them. For what is true underneath what is presented. They are not bad at it. They are the person who spent fourteen months reading one of the most complex landscapes on record. The skill transferred.",
-        "cipher": "You are out of the political environment of Ashenveld and the absence of a political problem to manage has revealed something: you are a person who is interesting to be around when not actively managing a political problem.\n\nThis surprises you more than it surprises [missing person], who apparently knew this already.\n\n\"You are different out here,\" they say.\n\n\"Yes,\" you say.\n\n\"It suits you,\" they say. They are telling you something about who you are when the circumstances do not require the other version. You take the information and hold it."
+        "commander": "You are not in command of anything at present, which is a new state of affairs.\n\nYou are finding that the knack of command doesn't go when there is nothing to command. It turns into something else: you notice things, and you are exact, and you can read a situation quickly. Those are as useful in ordinary life. They are only useful differently.",
+        "arcane": "You are writing again. It isn't the account of Ashenveld, which is finished. It is something new, the beginning of a longer work about what the ruins were and what the power was, and what the ritual might tell people about things that have been seen in other places and never understood.\n\nAshenveld is not the only such place. You always knew it in principle. Now you are beginning to know it in fact.\n\n[missing person] reads your drafts and asks questions that make them better. They spent fourteen months in the richest place for your kind of study that there has ever been. If they wanted to be, they could be a scholar of real note.\n\nYou ask whether they want to be. They think about it, and say: sometimes.",
+        "ranger": "The forest round here is not like Ashenveld's. It is ordinary and unharmed, and it has the richness of country that never went through what Ashenveld went through.\n\nYou read it every morning all the same. You can't stop reading the land, and you have given up minding.\n\n[missing person] has started coming with you. They are learning to read the land as you do, looking for what is true under what it shows. They are not bad at it. They spent fourteen months reading some of the hardest country there is, and the knack has carried over.",
+        "cipher": "Now that you are out of Ashenveld, with no scheming to manage, you have found something out. You are good company when you aren't managing anything.\n\nIt surprises you more than it surprises [missing person], who seems to have known it all along.\n\n\"You are different out here,\" they say.\n\n\"Yes,\" you say.\n\n\"It suits you,\" they say. You take that in, and keep it."
       },
       "choices": [
         {
@@ -394,7 +394,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "The day continues. Ordinary and specific.\n\nAshenveld is behind you. What you learned there is not. You carry it the way you carry anything that changed you — not as a burden, not as a trophy, as a quality of attention you did not have before.\n\nThe birds here are interesting.\n\n[missing person] finishes their breakfast. They look up and see you looking at them.\n\n\"What?\" they say.\n\n\"Nothing,\" you say. \"Watching.\"\n\nThey accept this. They have accepted a lot from you. You intend to be worth the accepting.\n\n— End —",
+              "text": "The day goes on, ordinary and particular.\n\nAshenveld is behind you, but what you learned there isn't. You carry it as you carry anything that has changed you. It isn't a burden, and it isn't a trophy. It is simply that you notice things you never used to notice.\n\nThe birds here are interesting.\n\n[missing person] finishes their breakfast, and looks up, and sees you watching them.\n\n\"What?\" they say.\n\n\"Nothing,\" you say. \"Just looking.\"\n\nThey let it pass. They have let a good deal pass, where you are concerned. You mean to deserve it.\n\nThe end.",
               "next_scene": null,
               "state_changes": {
                 "flags": {
@@ -434,7 +434,7 @@
       },
       "requires": {},
       "text": {
-        "default": "A morning, several years later.\n\nCrestfall. The market square. The fountain running. It has been running for two years now. Nine stalls. Children who do not remember the curse as anything other than a story their parents tell.\n\nThe children call you the Warden. Not a title anyone assigned. A name that accumulated the way names do in small places, from the accumulation of someone always being there, always doing the thing that needed doing, always knowing the answer to the question the town was asking.\n\nYou are not sure you like the name. You have stopped trying to change it.\n\nThis morning: the market. The fountain. The children who do not know what the wrong silence sounded like because they were too young or not yet born. The Rootless camp, now a formal institution with a building and a sign and Lira on the staff. Branch, somewhere on the perimeter, doing whatever Branch does on perimeters.\n\nMaret, crossing the square, who sees you and raises a hand in greeting. The shorthand of two people who have worked together long enough that full greeting is unnecessary."
+        "default": "It is a morning, several years later.\n\nYou are in the market square at Crestfall. The fountain is running, and has been for two years. There are nine stalls, and there are children who know the curse only as a story their parents tell.\n\nThe children call you the Warden. Nobody gave you the name. It simply grew up, as names do in small places, because you were always there, always doing whatever wanted doing, and always seemed to know the answer to whatever the town was asking.\n\nYou aren't sure you like it. You have stopped trying to change it.\n\nThis morning there is the market, and the fountain, and the children who never heard the wrong silence because they were too young, or not born. There is the Rootless camp, which is a proper body now, with a building and a sign and Lira on the staff. Branch is somewhere about its edges, doing whatever Branch does there.\n\nMaret crosses the square, sees you, and lifts a hand. You have worked together so long that neither of you needs to say good morning."
       },
       "choices": [
         {
@@ -497,7 +497,7 @@
                 "parent"
               ]
             },
-            "text": "[missing person] writes that they are proud of you, every letter, and you have stopped arguing."
+            "text": "In every letter [missing person] writes that they are proud of you, and you have stopped arguing."
           },
           {
             "when": {
@@ -505,7 +505,7 @@
                 "the one who got away"
               ]
             },
-            "text": "You never said it. [missing person] writes anyway, and does not ask."
+            "text": "You never said it. [missing person] writes all the same, and doesn't ask."
           },
           {
             "when": {
@@ -546,10 +546,10 @@
             "text": "Crestfall went still once, before the seal held. Most of it came back. Aldous sits by the fire most evenings now, and somebody else keeps the bar."
           }
         ],
-        "commander": "You took the Compact's offer eventually. Modified it. Restructured it into something you could accept without surrendering the independence the work requires.\n\nThe regional recovery authority exists because you built it. It works because Maret runs the human side and you run the institutional side and the two sides, improbably, trust each other.\n\nYou have not made peace with being here alone. You have made peace with the work being worth it regardless.",
-        "arcane": "The documentation became a text. The text is taught in three universities. You receive letters from students who have read it and want to know more.\n\nSome years ago a letter arrived from a town three weeks west of Ashenveld. Not from who you thought it might be from. From a scholar [missing person] had sent it to, who wanted to connect with you about a related phenomenon in their region.\n\nYou wrote back. You have been corresponding since. The work extends further than Ashenveld. This is either comfort or distraction. You have decided it is both and that both are acceptable.",
-        "ranger": "The hawk's descendants have territories now. You know three individuals from the original hawk's line by their markings and their territories.\n\nThe forest east of Crestfall is functioning. Not as it was before the curse. Differently. New species that were not here before. The curse changed the land and the land kept changing after the curse stopped. What it became is not a restoration. It is a continuation.\n\nYou read it every morning. You have read it every morning for several years. You are the person who knows this land most completely. When you are gone, the record you have kept will be what remains of that knowledge.\n\nThis concerns you sometimes. You have been training Branch's youngest to read the forest. He is not bad at it.",
-        "cipher": "The political situation in Ashenveld has long since stabilised past the point where it requires your active management.\n\nWhat it requires now is your presence. The gravity that comes from being the person who was there when it mattered and stayed when staying was the necessary thing.\n\nYou are not naive about this. You understand the mechanism. You have been the thing that holds a situation together for long enough that you are now part of the structure rather than an actor within it.\n\nThere are worse things to become. You have decided to be this thing without pretending you chose it entirely freely. Some choices are made by accumulation. You note this. Then you go to the market and do the work of another day."
+        "commander": "You took the Compact's offer in the end, though you altered it first, and made it into something you could accept without giving up the freedom the work needs.\n\nThe body that sees to the region's recovery exists because you built it. It works because Maret runs the people and you run the institution, and the two of you, against all likelihood, trust each other.\n\nYou have not made your peace with being here alone. You have made your peace with the work being worth doing anyway.",
+        "arcane": "The account became a book, and the book is taught at three universities. Students who have read it write to you wanting to know more.\n\nSome years ago a letter came from a town three weeks west of Ashenveld. It was not from the person you hoped. It was from a scholar [missing person] had sent the book to, who wanted to talk to you about something like it in their own part of the world.\n\nYou wrote back, and you have been writing to each other ever since. The work goes further than Ashenveld. Whether that is a comfort or a distraction you haven't decided, and you have stopped minding which.",
+        "ranger": "The hawk's descendants have territories of their own now. You know three of them by their markings, and by where they hunt.\n\nThe forest east of Crestfall works. It doesn't work as it did before the curse; it works differently. There are creatures here now that were never here before. The curse changed the land, and the land went on changing after the curse stopped. What it has become is not the old forest back again. It is the next forest.\n\nYou read it every morning, and have done for years. Nobody knows this country as well as you do. When you are gone, the record you have kept will be all that is left of what you knew.\n\nThat troubles you sometimes. You have been teaching Branch's youngest to read the forest. He isn't bad at it.",
+        "cipher": "Things in Ashenveld settled long ago, past the point where they need you to manage them.\n\nWhat they need now is for you to be here. You were there when it mattered, and you stayed when somebody had to, and that gives you a weight in the place.\n\nYou aren't naive about it. You know how it works. You have held this place together so long that you have become part of it, rather than somebody acting on it.\n\nThere are worse things to become. You have decided to be this, without pretending you chose it quite freely. Some choices make themselves, a little at a time. You notice that, and then you go to the market and do another day's work."
       },
       "choices": [
         {
@@ -559,7 +559,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "Maret crosses the square. She raises a hand. You raise yours.\n\nShe keeps walking. You keep standing.\n\nAshenveld. The fountain. The children. The hawk somewhere over the ordinary forest to the east.\n\nYou are the Warden of Ashenveld. It is not what you came here to become. It is what happened when you kept staying.\n\nSomewhere west of here, a person you came back to Ashenveld for is having a morning that you are not part of. This is true and present and it is one of the things the morning contains along with everything else.\n\nThe day begins.\n\n— End —",
+              "text": "Maret crosses the square and lifts a hand, and you lift yours.\n\nShe walks on, and you stay where you are.\n\nThere is the fountain, and the children, and the hawk somewhere above the ordinary forest to the east.\n\nYou are the Warden of Ashenveld. It is not what you came here to be. It is what happened because you kept on staying.\n\nSomewhere to the west of here, the person you came back to Ashenveld for is having a morning that you are no part of. You know it, and it is part of this morning, along with everything else.\n\nThe day begins.\n\nThe end.",
               "next_scene": null,
               "state_changes": {
                 "flags": {
@@ -600,17 +600,17 @@
       "requires": {},
       "text": {
         "default": [
-          "Years have passed. Crestfall has a name in the region now. Not a famous one, but a known one. The town where the curse stopped. The town with the camp that knows what to do when someone comes in from the forest changed.",
-          "The Rootless camp is not called the Rootless camp anymore. It has a formal name. The Ashenveld Recovery Centre, a name that took three meetings to agree on and that nobody uses except on official documents. Unofficially it is still the camp. Maret is still Maret.",
-          "You and [missing person] are in it. In all of it. The work, the place, the texture of a life built in a hard place with the people who stayed.",
-          "Not the easiest path. Not the one the institutions wanted. The one that put the people who knew the most about the curse in charge of what came after it.",
+          "Years have gone by. Crestfall has a name in the region now, not a famous one, but known. It is the town where the curse was stopped, the town with the camp that knows what to do when somebody comes out of the forest changed.",
+          "The Rootless camp isn't called the Rootless camp any more. It has a proper name, the Ashenveld Recovery Centre, which took three meetings to agree on and which nobody uses except on official papers. Everyone still calls it the camp. Maret is still Maret.",
+          "You and [missing person] are part of it, part of all of it: the work, and the place, and a life made in a hard country with the people who stayed.",
+          "It was not the easy way, and it was not the way the institutions wanted. It was the way that put the people who knew most about the curse in charge of what came after it.",
           {
             "when": {
               "relationship_type": [
                 "childhood friend"
               ]
             },
-            "text": "You and [missing person] walk the camp's fence most evenings, the way you once walked the east field."
+            "text": "You and [missing person] walk the camp's fence most evenings, as you once walked the east field."
           },
           {
             "when": {
@@ -618,7 +618,7 @@
                 "former lover"
               ]
             },
-            "text": "[missing person] keeps the camp's ledgers by lamplight, knees drawn up, and you still pretend to be asleep."
+            "text": "[missing person] keeps the camp's ledgers by lamplight, with their knees drawn up, and you still pretend to be asleep."
           },
           {
             "when": {
@@ -634,7 +634,7 @@
                 "mentor"
               ]
             },
-            "text": "[missing person] teaches the camp's young ones what they taught you, and some evenings asks you to take the class."
+            "text": "[missing person] teaches the camp's young ones what they once taught you, and some evenings asks you to take the class."
           },
           {
             "when": {
@@ -677,10 +677,10 @@
             "text": "Crestfall went still once, before the seal held. Most of it came back. Aldous sits by the fire most evenings now, and somebody else keeps the bar."
           }
         ],
-        "commander": "The regional authority reports to a civilian board rather than to the Compact. This was the negotiation that took the longest and cost the most political capital and was the one that mattered most.\n\nVorne, who moved on to a different region three years ago, sends letters occasionally. They are formal and occasional and warm in the way military correspondence is warm. Acknowledging what was accomplished without dwelling on it.\n\nYou write back in the same register. You were adversaries and collaborators and neither of those things cleanly and the correspondence reflects this.",
-        "arcane": "The knowledge of what the ruins are and what the sealing did is public and complete. Nobody controls it. This was your most important achievement and the one most likely to be forgotten. Not the content of the knowledge, but the act of ensuring no single entity held it exclusively.\n\nYou teach, now, alongside the documentation. Students come to Ashenveld. The site is the text. You are the most knowledgeable person about the text who is also willing to stand in it with students and let them ask questions.\n\nThis is the best version of academic work you have done.",
-        "ranger": "The camp has a garden that produces things the surrounding villages need. Lira designed the garden. She knows which plants absorb the curse's residual effects, which ones help the afflicted who are still recovering, which ones are simply good for people to grow and tend.\n\nYou helped with the initial land assessment. The garden is Lira's.\n\nThis is how the work goes, done correctly: you do your part and step back and the people who know their part do theirs and what results is better than any single person's vision of it.",
-        "cipher": "The Rootless alignment was the right call. Not because the other options were wrong. Because the camp had the most accurate understanding of what Ashenveld needed and the most invested interest in getting it right.\n\nPolitical alignment with the group most invested in the correct outcome is not idealism. It is analysis. You made an analytical decision and it was correct.\n\nYou have also, over the years, become genuinely invested in the camp's continued success in ways that are not analytical. You leave it untidy."
+        "commander": "The body that runs the region's recovery answers to a civilian board, not to the Compact. That was the longest negotiation of all, and it cost you more goodwill than any other, and it was the one that mattered most.\n\nVorne went on to another region three years ago. Now and then he sends a letter. His letters are formal, and not frequent, and warm in the way soldiers' letters are warm. They say what was done, and don't dwell on it.\n\nYou answer in the same way. You were opponents and allies and never quite either, and the letters show it.",
+        "arcane": "What the ruins are, and what the seal did, is known to everyone now, and complete, and nobody owns it. That was the most important thing you did, and the thing most likely to be forgotten. It was not the knowledge itself. It was making sure nobody could ever keep it to themselves.\n\nYou teach now, as well as write. Students come to Ashenveld, and the place itself is the lesson. You know more about it than anyone else who is willing to stand in it with students and let them ask questions.\n\nIt is the best work you have ever done as a scholar.",
+        "ranger": "The camp has a garden that grows what the villages round about need. Lira laid it out. She knows which plants draw off what the curse left behind, and which help the afflicted who are still mending, and which are simply good for people to grow and look after.\n\nYou helped with the first survey of the ground. The garden is Lira's.\n\nThat is how the work goes when it is done properly. You do your part, and stand back, and the people who know their parts do theirs, and what comes of it is better than anything one person could have planned.",
+        "cipher": "Siding with the Rootless was right. It wasn't that the others were wrong. It was that the camp understood best what Ashenveld needed, and had most reason to get it right.\n\nTo side with the people with most reason to get it right is not being idealistic. It is simply good judgement, and your judgement was good.\n\nOver the years you have also come to care about the camp doing well, in ways that have nothing to do with judgement. You leave that untidy."
       },
       "choices": [
         {
@@ -690,7 +690,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "The camp. The town. The work.\n\nYou are the warden. Not because the title was given to you — because you stayed long enough to become the person the place shaped itself around.\n\nAshenveld continues. The curse recedes. The people who went east and came back keep coming back, slowly, in the way of people returning from somewhere far inside themselves.\n\nThe ones who do not come back. You hold them separately. The Watcher, who is at the camp and is recovering and still does not speak reliably. The others who went further. Wren, who has not returned and may not.\n\nYou hold all of it. The things that worked and the things that did not. The completeness and the gaps. The morning light over Crestfall, which is the same light it has always been and which you finally, after all this time, can look at without filtering for what the curse was doing to it.\n\nThis is the ending. And the beginning of what comes after the ending.\n\n— End —",
+              "text": "There is the camp, and the town, and the work.\n\nYou are the warden. Nobody gave you the title. You stayed long enough to become the person the place grew round.\n\nAshenveld goes on, and the curse goes back. The people who went east and came back keep on coming back, slowly, as people do who have been a long way inside themselves.\n\nThe ones who haven't come back you keep in a separate place. There is Joren, who is at the camp and mending and still doesn't always speak. There are the others, who went further. There is Wren, who has not come back and may never.\n\nYou keep all of it: what worked and what didn't, what was done and what was left. And there is the morning light over Crestfall, which is the same light it always was, and which at last, after all this time, you can look at without wondering what the curse is doing to it.\n\nThe end.",
               "next_scene": null,
               "state_changes": {
                 "flags": {
@@ -726,7 +726,7 @@
       },
       "requires": {},
       "text": {
-        "default": "The account was published in the second year.\n\nNot the academic documentation. That went to universities. The account was different. A complete record of what happened in Ashenveld, what each faction did and why, what the Covenant's purification ritual would have cost, what Seriva did twenty years ago and what it caused, what the Compact's operations actually consisted of, what the Rootless camp accomplished without resources or recognition.\n\nEvery name. Every decision. Every hidden thing made visible.\n\nAshenveld read it. The region read it. The Compact responded formally. The Covenant responded formally. Seriva did not respond.\n\nThe formal responses mattered less than the informal ones. The people who lived through the curse now had a complete account of what happened to them and who made which decisions while it was happening.\n\nNo faction emerged from the account with full credit. No faction emerged cleanly. What emerged was the truth, distributed, which was what you intended."
+        "default": "The account was published in the second year.\n\nIt was not the scholars' account; that went to the universities. This was something else. It was a full record of what happened in Ashenveld: what each of the powers did and why, what the Covenant's purification would have cost, what Seriva did twenty years ago and what came of it, what the Compact was really doing here, and what the Rootless camp managed with no money and no recognition.\n\nEvery name was in it, and every decision, and every thing that had been hidden.\n\nAshenveld read it, and so did the region. The Compact made a formal reply, and so did the Covenant. Seriva made none.\n\nThe formal replies mattered less than the rest. The people who had lived through the curse had, at last, a full account of what had been done to them, and of who had decided what while it was happening.\n\nNobody came out of it with all the credit, and nobody came out of it clean. What came out of it was the truth, in everybody's hands, which was what you meant."
       },
       "choices": [
         {
@@ -751,7 +751,7 @@
       "title": "The Account",
       "text": {
         "default": [
-          "Ashenveld did not collapse. It fractured. Into smaller independent settlements, each organised around the most trustworthy local figures. Maret's camp became the centre of a loose network of communities that operated without central authority and, after the first difficult years, without needing one.",
+          "Ashenveld didn't fall apart. It broke up into smaller places, each of them gathered round whoever was most trusted there. Maret's camp became the middle of a loose web of villages that managed without anybody in charge, and, after the first hard years, found they didn't need anybody.",
           "It was lonely work. More people know the truth because of it.",
           {
             "when": {
@@ -767,7 +767,7 @@
                 "former lover"
               ]
             },
-            "text": "[missing person] wrote the last chapter. You never asked them to change a word."
+            "text": "[missing person] wrote the last chapter. You never asked them to change a word of it."
           },
           {
             "when": {
@@ -775,7 +775,7 @@
                 "sibling"
               ]
             },
-            "text": "[missing person]'s name is in the account next to yours, in the order your mother would have put them."
+            "text": "[missing person]'s name is in the account beside yours, in the order your mother would have put them."
           },
           {
             "when": {
@@ -783,7 +783,7 @@
                 "mentor"
               ]
             },
-            "text": "[missing person] corrected your drafts in the margins, the way they used to correct everything."
+            "text": "[missing person] corrected your drafts in the margins, as they used to correct everything."
           },
           {
             "when": {
@@ -807,7 +807,7 @@
                 "ritual_partial": true
               }
             },
-            "text": "The account's last page says who checks the seal: Pol, and Lira after her, once a month. It says the seal is partial. It says so plainly."
+            "text": "The last page of the account says who goes to look at the seal: Pol, and Lira after her, once a month. It says the seal is only partly made. It says so plainly."
           },
           {
             "when": {
@@ -826,20 +826,20 @@
             "text": "Crestfall went still once, before the seal held. Most of it came back. Aldous sits by the fire most evenings now, and somebody else keeps the bar."
           }
         ],
-        "commander": "You published the account knowing it would end your institutional relationships. It did.\n\nVorne cut contact. The Compact formally removed your advisory status. Edric, to his credit, wrote to say that the account was accurate and that the accuracy was the only reason the Covenant could begin to repair what it had become.\n\nYou are no longer affiliated with any institution. You are affiliated with the truth. It is a smaller organisation but the membership is good.",
-        "arcane": "The academic community's response to the account was the most interesting part.\n\nThe documentation was accepted. The account, the complete record of institutional failures and hidden truths, produced a kind of debate that will continue for decades. Not about whether it was accurate. About whether publishing it was the right decision.\n\nYou believe it was. You also believe the debate about it is legitimate. Both things are true. You are comfortable with both things being true.",
-        "ranger": "You published the account and watched Ashenveld receive it.\n\nNot all at once. Truth distributes slowly in small communities, each person reading it in the context of what they knew and revising their understanding of events they lived through.\n\nThe most significant responses were the quiet ones. People who knew something was wrong and now had the full picture. People who had trusted an institution that the account showed had not deserved the trust, who now had to decide what to do with that knowledge.\n\nMost of them decided to do what people in difficult places always do: continue. The account did not solve anything. It told the truth about what needed solving. That is a different kind of service.",
-        "cipher": "The account was the most significant information operation of your career.\n\nYou knew when you published it that you were destroying your own political position in Ashenveld permanently. You published it anyway.\n\nYou have thought about why you made that choice more times than you have thought about almost any other choice in your life. The answer you keep coming back to is simple: the truth was more important than your position. This is not a complicated answer. It is a hard one to live.\n\nYou live it."
+        "commander": "You published the account knowing it would cost you every connection you had with every institution, and it did.\n\nVorne stopped writing. The Compact formally struck you off as an adviser. Edric, to his credit, wrote to say the account was accurate, and that being accurate was the only reason the Covenant could begin to mend what it had become.\n\nYou belong to no institution now. You belong to the truth, which is a smaller body, but the company is good.",
+        "arcane": "What the scholars made of the account was the most interesting part of it.\n\nThey accepted the scholars' version. The other account, the full record of what institutions had failed to do and what had been hidden, began an argument that will go on for decades. Nobody argues about whether it is accurate. They argue about whether it ought to have been published.\n\nYou believe it ought. You also think they are right to argue about it, and you find you don't mind that they do.",
+        "ranger": "You published the account and watched Ashenveld take it in.\n\nIt didn't happen all at once. The truth goes round small places slowly. Each person reads it alongside what they already knew, and has to think again about things they lived through.\n\nThe replies that mattered most were the quiet ones. There were people who had known something was wrong and now knew the whole of it. There were people who had trusted an institution that the account showed had not deserved it, and who now had to decide what to do about that.\n\nMost of them did what people in hard places always do. They carried on. The account didn't put anything right. It told the truth about what needed putting right, which is a different sort of help.",
+        "cipher": "The account was the biggest thing you ever did with what you knew.\n\nWhen you published it you knew you were throwing away any standing you had in Ashenveld, for good. You published it all the same.\n\nYou have wondered why more often than you have wondered about nearly anything. The answer you keep coming back to is a simple one: the truth mattered more than your standing. It is not a complicated answer. It is only a hard one to live with.\n\nYou live with it."
       },
       "choices": [
         {
           "id": "end_account",
-          "text": "The account is out. The truth is in the world.",
+          "text": "The account is out, and the truth is in the world.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "The morning after the account was published, you walked to the market square.\n\nCrestfall was reading it. You could see it. People with copies, talking quietly to each other. Aldous behind the bar with his own copy, not open, his hand resting on the cover.\n\nYou sat at your usual table. Aldous brought you something without being asked.\n\n[missing person] sat across from you. They had read it, obviously. They were in it, extensively. They had read it and they were sitting across from you and they were looking at you, and they understood exactly what you had done.\n\n\"Was it right?\" you asked.\n\n\"Yes,\" they said. \"It was lonely and correct.\"\n\nBoth of those things. You had done something lonely and correct.\n\nAshenveld would continue. Smaller, less certain, more honest. The people who lived in it would know what happened to them. The people who made decisions while it was happening would be known.\n\nThat is the ending. Lonely and correct.\n\n— End —",
+              "text": "The morning after the account came out, you walked down to the market square.\n\nCrestfall was reading it; you could see that. People had copies, and were talking quietly together. Aldous was behind the bar with his own copy, shut, with his hand resting on the cover.\n\nYou sat at your usual table, and Aldous brought you something without being asked.\n\n[missing person] sat down across from you. They had read it, of course. They were in it, a good deal. They had read it, and they were sitting across from you looking at you, and they understood exactly what you had done.\n\n\"Was it right?\" you asked.\n\n\"Yes,\" they said. \"It was right. It will not make you many friends.\"\n\nAshenveld would go on, smaller and less certain and more honest. The people who lived there would know what had been done to them, and the people who had decided things while it was happening would be known.\n\nYou finished your drink, and Aldous didn't charge you for it.\n\nThe end.",
               "next_scene": null,
               "state_changes": {
                 "flags": {

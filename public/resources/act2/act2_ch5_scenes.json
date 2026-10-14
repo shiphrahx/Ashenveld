@@ -22,15 +22,15 @@
       "requires": {},
       "text": {
         "default": [
-          "The east road. The checkpoint. You have your account ready and you use it and you pass. Harrow. The forest edge.",
+          "You take the east road again. At the checkpoint you tell your story, and they let you through. Then Harrow, and the edge of the forest.",
           {
             "when": {
               "flags": {
                 "watcher_spoke": true
               }
             },
-            "text": "The ruins receive you back with the quality of a place that has not changed while you have. The grey light. The silence with mass. The Watcher at the gate, unchanged, who says \"[player]\" again when you pass. The same word, the same flat tone.",
-            "else": "The ruins receive you back with the quality of a place that has not changed while you have. The grey light. The silence with mass. The Watcher at the gate, unchanged, who does not turn."
+            "text": "The ruins take you back as a place does that has not changed while you have. There is the grey light, and the heavy silence, and the Watcher at the gate just as before, who says \"[player]\" again as you pass, in the same flat voice.",
+            "else": "The ruins take you back as a place does that has not changed while you have. There is the grey light, and the heavy silence, and the Watcher at the gate just as before, who does not turn."
           },
           {
             "when": {
@@ -40,24 +40,24 @@
             },
             "text": "They are turning the bone figure over and over in their hands."
           },
-          "[missing person] is where you left them. They look up when they hear your steps in the outskirts. They have spent months listening for footsteps. They knew yours before they looked.",
+          "[missing person] is where you left them. They look up when they hear you coming through the outskirts. They have spent months listening for footsteps, and they knew yours before they looked.",
           "\"Two days,\" you say.",
           "They nod. \"Two days is enough.\""
         ],
-        "commander": "You sit across from them in the outskirts and brief them on Crestfall the way you would brief a fellow officer. The Compact's position, Seriva's presence, Vorne's daughter, the fragment, Pol.\n\nThey listen with complete attention. When you finish: \"The window is closing,\" they say.\n\n\"Yes,\" you say.\n\n\"Then we spend two days making sure we do this correctly,\" they say. \"Not fast. Correctly.\"",
-        "arcane": "You tell them about Pol's revelation. The distinction between the Covenant's purification ritual and the original sealing ritual, the nature of each, the cost of each.\n\nThey are quiet for a moment. \"I knew there was another ritual,\" they say. \"The chamber walls reference it. A second approach, described as the lesser path because it does not require the same quality of relationship between the participants.\" A pause. \"The Covenant's ritual will work. It will stop the curse. And it will be catastrophic.\"\n\n\"Yes,\" you say.\n\n\"Then we do the right one,\" they say.",
-        "ranger": "You brief them efficiently. They ask the relevant questions. The Compact's strength, Seriva's location, the fragment, Pol's readiness.\n\nThen: \"How are you?\" they ask.\n\nThe question catches you. You have been moving and assessing and managing since you left the ruins and the question, simple, direct, the question people ask each other and mean, arrives like something from before.\n\n\"Functioning,\" you say.\n\nThey almost smile. \"That is what I expected you to say. Rest tonight. We start tomorrow.\"",
-        "cipher": "You give them the full picture. All of it, in the order that makes strategic sense. The threats, the timeline, the resources, the risks.\n\nThey listen and then say: \"You did not tell me how any of this made you feel.\"\n\n\"That is not the relevant information,\" you say.\n\nThey look at you for a long moment. \"For the ritual,\" they say, \"it is the only relevant information. The mechanism reads what is real. Not what you present. What you actually carry.\"\n\nA pause. \"So: how are you?\""
+        "commander": "You sit down across from them in the outskirts and tell them about Crestfall as you would report to a fellow officer: where the Compact stands, Seriva, Vorne's daughter, the fragment, and Pol.\n\nThey listen with their whole attention. When you have finished they say, \"Time is running out.\"\n\n\"Yes,\" you say.\n\n\"Then we spend two days making sure we do it properly,\" they say. \"Not quickly. Properly.\"",
+        "arcane": "You tell them what Pol told you: that the Covenant's purification and the old sealing are two different rituals, and what each of them is, and what each of them costs.\n\nThey are quiet for a moment. \"I knew there was another ritual,\" they say. \"The chamber walls speak of it. A second way, which they call the lesser way, because it does not need the same bond between the two people.\" They pause. \"The Covenant's ritual will work. It will stop the curse. And it will be a catastrophe.\"\n\n\"Yes,\" you say.\n\n\"Then we do the right one,\" they say.",
+        "ranger": "You tell them briskly, and they ask the right questions: how strong the Compact is, where Seriva is, the fragment, and whether Pol is ready.\n\nThen they ask, \"How are you?\"\n\nIt catches you out. You have been on the move, weighing things up and managing them, ever since you left the ruins. The question is so simple, the one people ask each other and mean, that it seems to come from another life.\n\n\"Getting by,\" you say.\n\nThey very nearly smile. \"That is what I thought you would say. Rest tonight. We begin tomorrow.\"",
+        "cipher": "You give them the whole picture, in the order that makes most sense: the dangers, how long you have, what you have to work with, and what may go wrong.\n\nThey listen, and then they say, \"You have not told me how any of it made you feel.\"\n\n\"That's not what matters,\" you say.\n\nThey look at you a long while. \"For the ritual,\" they say, \"it is all that matters. The mechanism reads what is real. Not what you show it. What you really carry.\"\n\nThey pause. \"So. How are you?\""
       },
       "choices": [
         {
           "id": "begin_ritual_preparation",
-          "text": "Begin the ritual preparation. Two days, done correctly.",
+          "text": "Begin getting ready for the ritual. Two days, done properly.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "They take you back into the inner approach. Not to the chamber. Not yet. They show you the sections of the carving that pertain to the participants, what the ritual will ask of you, what you will need to be prepared for.\n\nThe work of the next two days begins.",
+              "text": "They take you back into the inner approach, though not to the chamber yet. They show you the parts of the carving that concern the two people: what the ritual will ask of you, and what you will need to be ready for.\n\nSo the work of the next two days begins.",
               "next_scene": "act2_ch5_ritual_preparation",
               "state_changes": {
                 "flags": {
@@ -69,12 +69,12 @@
         },
         {
           "id": "spend_evening_with_missing_person",
-          "text": "Spend the evening talking. Not about the ritual. Just talking.",
+          "text": "Spend the evening talking. Not about the ritual, only talking.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "The Watcher sits at the gate. The ruins are around you. The grey light fades toward whatever passes for night here.\n\nYou talk. Not about the ritual, not about Crestfall, not about what happens next. About before. The texture of the time before either of you came to Ashenveld. The things that made you. The shape of the relationship you have carried through eleven years and a hundred miles and fourteen months of silence.\n\nBy the time the light has fully gone, you understand something about what the mechanism reads. Not what you present. What you actually carry.\n\nYou understand why it needed two people who knew each other this well.",
+              "text": "The Watcher sits at the gate, and the ruins lie all round you. The grey light fades towards whatever does duty for night here.\n\nYou talk. You don't talk about the ritual, or Crestfall, or what happens next. You talk about before, about what life was like before either of you came to Ashenveld, about the things that made you, and about what has been between you all through eleven years and a hundred miles and fourteen months of silence.\n\nBy the time the light has quite gone you understand something about what the mechanism reads. It doesn't read what you show it. It reads what you really carry.\n\nAnd you understand why it needed two people who knew each other this well.",
               "next_scene": "act2_ch5_ritual_preparation",
               "state_changes": {
                 "relationships": {
@@ -112,16 +112,16 @@
         }
       },
       "text": {
-        "default": "Two days in the ruins outskirts.\n\n[missing person] teaches you the ritual's structure patiently. Eight months of learning, to pass on in two days. They are a good teacher. Or they have become one, here, in the absence of anyone to teach.\n\nThe ritual has three phases. The approach. What you do before you enter the chamber, how you prepare the participants' relationship for the mechanism's reading. The engagement. What happens in the chamber, where each participant stands, what actions are required, the moment of physical contact. The sealing. What happens if the mechanism responds correctly, which the text describes but which they admit they do not fully understand.\n\n\"The builders,\" they say, \"were honest about the fact that they did not fully understand what they were doing. They knew it worked. They did not know exactly why.\"",
-        "commander": "You approach the two days as training. The objective is clear, the method is as documented as anything you are going to get, and the risks are known. You prepare.\n\nOn the evening of the second day they ask you whether you are ready.\n\n\"I have done harder things with less preparation,\" you say.\n\n\"That is not what I asked,\" they say.\n\n\"I am ready,\" you say. And you mean it.",
-        "arcane": "Two days of the most intensive study of your professional life.\n\nThe ritual is elegant in its original conception. It uses the mechanism's own function to reseal it, rather than overriding that function as the Covenant's ritual would. It asks the mechanism to remember what it is and to do that thing again, with the participants serving as both the invitation and the demonstration.\n\nYou understand it at the theoretical level by the end of the first day. The second day is spent on the practical. Which requires a different kind of preparation entirely.",
-        "ranger": "They show you what to do and you learn by doing. The ritual's movements are exact: set positions, set actions at set moments, and you learn them the way you learn terrain: by moving through it until it is in your body rather than in your head.\n\nOn the second evening they sit across from you and say: \"The ritual requires you to mean it. Everything you do in that chamber has to be genuinely intended. The mechanism reads intent, not performance.\"\n\n\"I know,\" you say. You have been meaning things your entire life. It is the one skill that does not require practice.",
-        "cipher": "The preparation is the most unusual form of readiness you have ever developed for anything.\n\nThe ritual does not require you to be skilled or brave or clever. It requires you to be present. To be exactly who you are, with the person you are with, at this moment in both your histories.\n\nYou have spent a long time being exactly who you are not. The preparation for this ritual is, in a sense, the work of putting down something you have been carrying for a very long time."
+        "default": "You spend two days in the outskirts of the ruins.\n\n[missing person] teaches you the shape of the ritual patiently. They have eight months of learning to pass on in two days. They are a good teacher, or they have become one, here, with nobody to teach.\n\nThe ritual has three parts. There is the approach, which is what you do before you go into the chamber, and how you make ready what is between you for the mechanism to read. There is the engagement, which is what happens in the chamber: where each of you stands, what you must do, and the moment when you touch. And there is the sealing, which is what happens if the mechanism answers as it should. The text describes it, but they admit they don't wholly understand it.\n\n\"The builders were honest that they did not wholly understand what they were doing,\" they say. \"They knew it worked. They did not know exactly why.\"",
+        "commander": "You treat the two days as training. You know what you have to do, the method is as well set down as anything you are likely to get, and you know the risks. So you prepare.\n\nOn the evening of the second day they ask whether you are ready.\n\n\"I've done harder things with less preparation,\" you say.\n\n\"That is not what I asked,\" they say.\n\n\"I'm ready,\" you say, and you mean it.",
+        "arcane": "They are two days of the hardest study you have ever done.\n\nThe ritual is a beautiful piece of work. It uses the mechanism's own purpose to seal it again, instead of forcing it, as the Covenant's ritual would. It asks the mechanism to remember what it is and do it once more, and the two people are both the asking and the showing.\n\nBy the end of the first day you understand it in principle. The second day is given to practice, which needs a very different kind of preparation.",
+        "ranger": "They show you what to do, and you learn it by doing it. The movements of the ritual are exact: certain places, and certain actions at certain moments. You learn them as you learn ground, by going over it until it is in your body and not only in your head.\n\nOn the second evening they sit down across from you and say, \"The ritual needs you to mean it. Everything you do in that chamber must be truly meant. The mechanism reads what you intend, not what you perform.\"\n\n\"I know,\" you say. You have been meaning things all your life. It is the one thing that needs no practice.",
+        "cipher": "You have never got ready for anything in quite this way before.\n\nThe ritual doesn't ask you to be skilful, or brave, or clever. It asks you to be there: to be exactly who you are, with the person you are with, at this point in both your lives.\n\nYou have spent a long time being exactly who you are not. Getting ready for this ritual is, in a way, a matter of putting down something you have carried for years."
       },
       "choices": [
         {
           "id": "preparation_complete",
-          "text": "The preparation is complete. Tomorrow: the chamber.",
+          "text": "You're ready. Tomorrow, the chamber.",
           "requires": {},
           "roll": {
             "stat": "intelligence",
@@ -129,7 +129,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "You are as prepared as two days and forty-eight hours of instruction can make you. [missing person] looks at you on the evening of the second day. They have given you everything they know. Now they wait to see what you do with it.\n\n\"Tomorrow,\" they say.\n\n\"Tomorrow,\" you say.\n\nYou both sleep in the outskirts, in the camp they have made, under the grey non-sky of the deep forest. You sleep better than you have slept since you came to Ashenveld.",
+              "text": "You are as ready as two days of teaching can make you. [missing person] looks at you on the evening of the second day. They have given you everything they know, and now they wait to see what you will do with it.\n\n\"Tomorrow,\" they say.\n\n\"Tomorrow,\" you say.\n\nYou both sleep in the outskirts, in the camp they have made, under the grey of the deep forest where no sky shows. You sleep better than you have since you came to Ashenveld.",
               "next_scene": "act2_ch5_maret_conversation",
               "state_changes": {
                 "flags": {
@@ -141,7 +141,7 @@
               }
             },
             "success_at_cost": {
-              "text": "You are prepared but not completely. There are sections of the ritual that did not fully settle, concepts that remain slightly out of reach. [missing person] says: \"It is enough. The mechanism does not require perfection. It requires honesty.\"\n\nYou take them at their word.",
+              "text": "You are ready, though not altogether. There are parts of the ritual that have not quite settled, ideas that stay a little out of reach. [missing person] says, \"It is enough. The mechanism does not need you to be perfect. It needs you to be honest.\"\n\nYou take them at their word.",
               "next_scene": "act2_ch5_maret_conversation",
               "state_changes": {
                 "flags": {
@@ -150,7 +150,7 @@
               }
             },
             "failure": {
-              "text": "The preparation has not fully taken. You can feel it, the way you can feel when you have memorised the words but not the meaning. [missing person] sees it too.\n\n\"We need another day,\" they say. \"The risk of going in before you are ready is worse than the risk of the extra time.\"",
+              "text": "It hasn't taken properly. You can feel it, as you can feel it when you have learned the words of something and not the sense. [missing person] can see it too.\n\n\"We need another day,\" they say. \"Going in before you are ready is worse than taking the extra time.\"",
               "next_scene": "act2_ch5_maret_conversation",
               "state_changes": {
                 "world": {
@@ -163,12 +163,12 @@
         },
         {
           "id": "rest_instead",
-          "text": "You are worn through. Rest, and let [missing person] go over it alone.",
+          "text": "You're worn out. Rest, and let [missing person] go over it alone.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You sleep most of the second day. When you wake they are sitting by the fire with the chamber text spread across their knees, mouthing it.\n\n\"You will know enough,\" they say, without looking up. You are not sure either of you believes it.",
+              "text": "You sleep through most of the second day. When you wake they are sitting by the fire with the chamber text spread over their knees, mouthing the words.\n\n\"You will know enough,\" they say, without looking up. You are not sure either of you believes it.",
               "next_scene": "act2_ch5_maret_conversation",
               "state_changes": {
                 "resources": {
@@ -204,21 +204,21 @@
       },
       "requires": {},
       "text": {
-        "default": "Pol arrives at the ruins outskirts on the evening before the ritual.\n\nShe comes alone, on foot, through the forest edge without difficulty. She has clearly been here before, knows the path, knows the safe routes through the outskirts. She carries the fragment wrapped in cloth, and a pack of the herbs that Maret's camp has developed for sustained exposure.\n\nShe greets [missing person] as if she has been expecting them for a long time.\n\nThen she finds you, and she says: \"Maret sent a message. The Compact has been asking questions about the east road. Seriva has been seen with a map. You have less time than we thought.\"",
-        "commander": "The timeline has compressed. You run the situation: Seriva has a map, she knows the general area, she is moving. The checkpoint is active but you were able to pass it. A Covenant scholar with Compact support could also pass it. Or circumvent it entirely.\n\n\"How long?\" you ask Pol.\n\n\"Days,\" she says. \"Not weeks. Maybe two days. Maybe less.\"",
-        "arcane": "Seriva has a map of the region from twenty years ago. The outskirts have changed since then. You know this from moving through them, the paths have shifted, the concentrations of the curse have moved. But the general location of the inner approach will not have changed.\n\nIf she has a map from her original visit, she can find the inner approach. It will take her time, but she can find it.",
-        "ranger": "Two days, maybe less. You map the timeline against the ritual's requirements.\n\nThe ritual takes approximately three hours inside the chamber, from the approach phase to the sealing. Pol outside. You and [missing person] inside.\n\nIf Seriva reaches the outskirts before the ritual is complete, she will find Pol. Pol is one person and Seriva will have Compact support.\n\nThe math is uncomfortable.",
-        "cipher": "The message changes the calculus. You recalibrate.\n\nThe ritual must happen tomorrow, not the day after. The preparation you have done is what you have done. The risk of going in under-prepared is now smaller than the risk of waiting.\n\nYou look at [missing person]. They have arrived at the same conclusion. You can see it in their face."
+        "default": "Pol comes to the outskirts of the ruins on the evening before the ritual.\n\nShe comes alone and on foot, over the edge of the forest without any trouble. She has plainly been here before; she knows the path and the safe ways through the outskirts. She has the fragment wrapped in a cloth, and a pack of the herbs Maret's camp uses against long exposure.\n\nShe greets [missing person] as though she had been expecting them for years.\n\nThen she finds you. \"Maret sent word,\" she says. \"The Compact has been asking questions about the east road, and Seriva has been seen with a map. You have less time than we thought.\"",
+        "commander": "There is less time than you thought. You go over it. Seriva has a map, she knows roughly where to look, and she is on the move. The checkpoint is manned, but you got past it, and a Covenant scholar with the Compact behind her could get past it too, or simply go round it.\n\n\"How long?\" you ask Pol.\n\n\"Days,\" she says. \"Not weeks. Two days, perhaps. Perhaps less.\"",
+        "arcane": "Seriva has a map of the country from twenty years ago. The outskirts have changed since then; you know it from walking through them. The paths have shifted, and the curse lies thick in different places. But the inner approach will be where it always was.\n\nIf she has her map from that first visit, she can find the inner approach. It will take her a while, but she can find it.",
+        "ranger": "Two days, perhaps less. You set that against what the ritual needs.\n\nThe ritual takes about three hours in the chamber, from the approach to the sealing. Pol will be outside, and you and [missing person] inside.\n\nIf Seriva reaches the outskirts before it is finished, she will find Pol. Pol is one old woman, and Seriva will have the Compact with her.\n\nYou don't much like the sum.",
+        "cipher": "The news changes things, and you work it out again.\n\nThe ritual must be tomorrow, not the day after. You have done what preparation you have done. Going in not quite ready is now less of a risk than waiting.\n\nYou look at [missing person]. They have come to the same conclusion; you can see it in their face."
       },
       "choices": [
         {
           "id": "proceed_tomorrow",
-          "text": "The ritual happens tomorrow. Whatever time you have is what you have.",
+          "text": "The ritual is tomorrow. Whatever time you have, you have.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "\"Tomorrow,\" you say.\n\n[missing person] nods. Pol nods. The decision is made.\n\nYou spend the evening not rehearsing the ritual. That work is done. You spend it in the company of the people who are here because of you and because of choices each of you made. Pol with her fifteen years of waiting. [missing person] with their fourteen months. You with the eleven years before all of this and the few days since.\n\nThe fire is small. The ruins are quiet around you. The Watcher sits at the gate.\n\nTomorrow.",
+              "text": "\"Tomorrow,\" you say.\n\n[missing person] nods, and Pol nods. It is decided.\n\nYou do not spend the evening going over the ritual again. That is done. You spend it with the people who are here because of you, and because of choices each of you made: Pol with her fifteen years of waiting, [missing person] with their fourteen months, and you with eleven years before all this and the few days since.\n\nThe fire is small, and the ruins are quiet round you. The Watcher sits at the gate.",
               "next_scene": "act2_ch5_missing_person_private",
               "state_changes": {
                 "flags": {
@@ -230,7 +230,7 @@
         },
         {
           "id": "send_message_back",
-          "text": "Send a message to Maret. Ask her to delay Seriva if she can.",
+          "text": "Send word to Maret, and ask her to hold Seriva up if she can.",
           "requires": {},
           "roll": {
             "stat": "charisma",
@@ -250,9 +250,9 @@
           "outcomes": {
             "success": {
               "text": [
-                "Pol can carry a message back to the camp before she returns to witness the ritual. You compose something brief. The Rootless camp has resources that Seriva will need to requisition through Vorne, and Vorne's daughter is at the camp, and Maret can make that requisition complicated enough to cost Seriva a day.",
+                "Pol can take a message back to the camp before she comes to witness the ritual. You write something short. There are things at the Rootless camp that Seriva will need, and she will have to get them through Vorne; and Vorne's daughter is at the camp; and Maret can make getting them difficult enough to cost Seriva a day.",
                 "Pol takes the message and goes. She will be back before morning.",
-                "You have bought possibly another day. It may not be needed. It may make all the difference.",
+                "You may have bought another day. You may not need it, or it may make all the difference.",
                 {
                   "when": {
                     "flags": {
@@ -271,7 +271,7 @@
               }
             },
             "success_at_cost": {
-              "text": "The message goes but you are not confident it will work. Maret has limited leverage over Seriva, even through Vorne. It may buy hours, not a day.",
+              "text": "The message goes, but you are not confident it will work. Maret has little hold over Seriva, even through Vorne. It may buy a few hours, not a day.",
               "next_scene": "act2_ch5_missing_person_private",
               "state_changes": {
                 "flags": {
@@ -280,7 +280,7 @@
               }
             },
             "failure": {
-              "text": "The message goes but you do not believe it will make a significant difference. Seriva is not easily delayed. You proceed without counting on the extra time.",
+              "text": "The message goes, but you don't believe it will make much difference. Seriva is not easily held up. You go on without counting on the extra time.",
               "next_scene": "act2_ch5_missing_person_private",
               "state_changes": {
                 "flags": {
@@ -292,7 +292,7 @@
         },
         {
           "id": "pay_a_runner",
-          "text": "Pay a runner from the camp to take word to Maret.",
+          "text": "Pay one of the camp's runners to take word to Maret.",
           "requires": {
             "min_gold": 8
           },
@@ -300,9 +300,9 @@
           "outcomes": {
             "default": {
               "text": [
-                "Pol can carry a message back to the camp before she returns to witness the ritual. You compose something brief. The Rootless camp has resources that Seriva will need to requisition through Vorne, and Vorne's daughter is at the camp, and Maret can make that requisition complicated enough to cost Seriva a day.",
-                "Pol takes the message and goes. She will be back before morning.",
-                "You have bought possibly another day. It may not be needed. It may make all the difference.",
+                "You count eight coins into Pol's hand for the boy who runs the camp's messages, and write something short. There are things at the Rootless camp that Seriva will need, and she will have to get them through Vorne; and Vorne's daughter is at the camp; and Maret can make getting them difficult enough to cost Seriva a day.",
+                "Pol goes back to the forest edge to send the boy off. She will be back before morning.",
+                "You may have bought another day. You may not need it, or it may make all the difference.",
                 {
                   "when": {
                     "flags": {
@@ -346,29 +346,29 @@
       },
       "requires": {},
       "text": {
-        "default": "Late. Pol is asleep. The fire has gone down. You and [missing person] are the last ones awake.\n\nThis happens. Not by plan but by the logic of people who have things to say to each other and are waiting for the right time and have run out of time to wait for the right time.\n\nThey speak first.\n\n\"The ritual will read everything,\" they say. \"I need you to know that before we go in. Not just your intention for the sealing. Everything. What you feel about me. What you are afraid of. What you have been carrying since before you came here.\"\n\nA pause. \"The mechanism does not judge. It reads. But you will know that I will see it. Everything you are.\"\n\nThe fire pops. The ruins are dark around the circle of its warmth.",
-        "commander": "You are someone who has spent a career managing what others see of you. The discipline is so old it has become your natural state.\n\n\"And you?\" you say. \"It will read you too.\"\n\n\"Yes,\" they say.\n\n\"Then we go in equal,\" you say. Which is either terrifying or the most honest thing you have said in years. Possibly both.",
-        "arcane": "You think about everything the mechanism will read. All of it. The ambition, the hunger for knowledge, eleven years in a library, because anywhere else hurt.\n\n\"I understand,\" you say.\n\n\"Do you mind?\" they ask.\n\nYou think about it honestly. \"No,\" you say. \"I mind that you will see it. I do not mind that the mechanism will see it.\"\n\nThey look at you. \"Why the difference?\"\n\n\"Because I know what the mechanism will do with what it sees,\" you say. \"I am less certain about you.\"",
-        "ranger": "You are someone who has spent years being exactly what the situation required. Efficient, legible, no more than necessary.\n\nBut this is different. The mechanism does not need efficiency. It needs truth.\n\n\"I came here for you,\" you say. Simply. \"Not for Ashenveld. Not because I knew what was in the ruins. I came because of you specifically.\" A pause. \"Whatever the mechanism reads — that is the clearest thing in it.\"",
-        "cipher": "You have spent your life reading people and being read less than you wanted. The idea of a mechanism that reads everything, not partially, not selectively, but fully, is either the most comfortable thought you have had in years or the least.\n\nYou have not decided which.\n\n\"I am going to tell you something I have not said to anyone,\" you say.\n\nAnd you do."
+        "default": "It is late. Pol is asleep and the fire has burned low. You and [missing person] are the last ones awake.\n\nIt was bound to happen. You both have things to say, and you have each been waiting for the right moment, and now there is no time left to wait for it.\n\nThey speak first.\n\n\"The ritual will read everything,\" they say. \"I need you to know that before we go in. Not only what you want for the sealing. Everything. What you feel about me. What you are afraid of. What you have been carrying since before you came here.\"\n\nThey pause. \"The mechanism does not judge. It only reads. But you should know that I will see it. All of you.\"\n\nThe fire cracks. The ruins are dark beyond the circle of its warmth.",
+        "commander": "You have spent a whole career managing what other people see of you. You have done it so long that it has become your nature.\n\n\"And you?\" you say. \"It'll read you too.\"\n\n\"Yes,\" they say.\n\n\"Then we go in even,\" you say. It is either a frightening thought, or the most honest thing you have said in years. Very likely it is both.",
+        "arcane": "You think about everything the mechanism will read: the ambition, the hunger to know things, and eleven years in a library because everywhere else hurt.\n\n\"I understand,\" you say.\n\n\"Do you mind?\" they ask.\n\nYou think about it honestly. \"No,\" you say. \"I mind that you'll see it. I don't mind the mechanism seeing it.\"\n\nThey look at you. \"Why the difference?\"\n\n\"Because I know what the mechanism will do with what it sees,\" you say. \"I'm less sure about you.\"",
+        "ranger": "You have spent years being exactly what was needed and no more, quick and plain and easy to read.\n\nBut this is different. The mechanism doesn't want quick. It wants the truth.\n\n\"I came here for you,\" you say. \"Not for Ashenveld. Not because I knew what was in the ruins. I came because of you.\" You stop for a moment. \"Whatever else it reads, that'll be the plainest thing in it.\"",
+        "cipher": "You have spent your life reading other people, and being read less than you wanted to be. The thought of something that reads you entirely, not in part and not just what you choose to show, is either the most comforting thought you have had in years or the least.\n\nYou have not decided which.\n\n\"I'm going to tell you something I've never told anyone,\" you say.\n\nAnd you do."
       },
       "choices": [
         {
           "id": "be_completely_honest",
-          "text": "Tell them everything you are carrying. Before the mechanism does.",
+          "text": "Tell them everything you're carrying, before the mechanism does.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
               "text": [
-                "You talk for an hour. The fire goes out and neither of you moves to rebuild it. You talk in the dark.",
+                "You talk for an hour. The fire goes out, and neither of you gets up to build it again. You go on talking in the dark.",
                 {
                   "when": {
                     "relationship_type": [
                       "childhood friend"
                     ]
                   },
-                  "text": "\"I said I would write,\" you say. \"I wrote twice. I do not have a reason. I have been looking for one for eleven years.\""
+                  "text": "\"I said I'd write,\" you say. \"I wrote twice. I haven't got a reason. I've been looking for one for eleven years.\""
                 },
                 {
                   "when": {
@@ -384,7 +384,7 @@
                       "sibling"
                     ]
                   },
-                  "text": "\"I left you with the house,\" you say. \"And with her, at the end. I knew what I was leaving you with. I went anyway.\""
+                  "text": "\"I left you with the house,\" you say. \"And with her, at the end. I knew what I was leaving you with, and I went anyway.\""
                 },
                 {
                   "when": {
@@ -400,7 +400,7 @@
                       "parent"
                     ]
                   },
-                  "text": "\"We never finished that argument,\" you say. \"I have had it with you every night for eleven years. You win most of them.\""
+                  "text": "\"We never finished that argument,\" you say. \"I've had it with you every night for eleven years. You win most of them.\""
                 },
                 {
                   "when": {
@@ -408,11 +408,11 @@
                       "the one who got away"
                     ]
                   },
-                  "text": "\"I left before I had to say it,\" you say. \"So I am saying it now, in the dark, where I cannot see your face.\""
+                  "text": "\"I left before I had to say it,\" you say. \"So I'm saying it now, in the dark, where I can't see your face.\""
                 },
-                "When you finish, they are quiet for a long time.",
-                "Then: \"Thank you,\" they say. \"For not making me find out in the chamber.\"",
-                "You sleep. In the morning: the chamber."
+                "When you have finished, they are quiet a long while.",
+                "Then they say, \"Thank you. For not making me find out in the chamber.\"",
+                "You sleep. In the morning you go to the chamber."
               ],
               "next_scene": "act2_ch6_day_of_ritual",
               "state_changes": {
@@ -435,7 +435,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You stay quiet. They understand. Or they accept it, which is the closest thing.\n\n\"All right,\" they say. \"The mechanism will know.\"\n\n\"Yes,\" you say. \"I know.\"\n\nYou sleep. In the morning: the chamber.\n\nBut something has shifted in the quality of silence between you. Not worse. Just. Acknowledged.",
+              "text": "You keep quiet. They understand, or at any rate they accept it, which is nearly the same.\n\n\"All right,\" they say. \"The mechanism will know.\"\n\n\"Yes,\" you say. \"I know.\"\n\nYou sleep, and in the morning you go to the chamber.\n\nBut the silence between you is not quite what it was. It is no worse. It is only that now you both know it is there.",
               "next_scene": "act2_ch6_day_of_ritual",
               "state_changes": {
                 "relationships": {

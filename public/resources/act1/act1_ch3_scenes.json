@@ -24,21 +24,21 @@
       },
       "requires": {},
       "text": {
-        "default": "The soldier at the gate is young and too upright. Someone recently given authority they are still learning to wear. Behind him, through the gate, two more soldiers doing nothing with great efficiency.\n\nHe introduces himself as Lieutenant Cael. A city name, a career-soldier's name. He smiles with the lower half of his face.\n\n\"We have been expecting someone to arrive asking questions, [sir/ma'am],\" he says. \"The town always gets one eventually. Someone from outside who cares about what is happening here.\" A pause that is not really a pause. \"The Compact cares about what is happening here. We have been here for eight months. We would like to help.\"",
-        "commander": "He straightens when he sees how you stand, before he knows who you are. The body knows rank even when the mind is trying to be diplomatic.\n\n\"Lieutenant,\" you say, acknowledging without conceding.\n\n\"Commander,\" he says. He has done his research.",
-        "arcane": "He has been told to watch for scholars and mages arriving from outside. You see him place you, and let him. The Compact has people who know what to look for. That is interesting, and slightly concerning.",
-        "ranger": "Cael sees you coming across the market square and positions himself to intercept naturally, without making it look like an interception. Practised.\n\n\"Just arrived?\" he asks, already knowing the answer.\n\n\"Yesterday,\" you say.\n\n\"We heard.\" Of course they did.",
-        "cipher": "He is good at his job. Not great: you caught him adjusting his approach twice between seeing you and your reaching the gate. The smile is practised and the openness is measured.\n\nHe said someone, not you. He is waiting to see whether you correct him."
+        "default": "The soldier on the gate is young and holds himself rather too straight, like a man who has been given authority recently and is still getting used to it. Through the gate behind him two more soldiers are doing nothing, very efficiently.\n\nHe introduces himself as Lieutenant Cael. It is a city name, and a career soldier's. He smiles with the lower half of his face.\n\n\"We have been expecting somebody to arrive asking questions, [sir/ma'am],\" he says. \"The town always gets one sooner or later. Somebody from outside who cares about what is happening here.\" He waits a moment, but not long enough for you to answer. \"The Compact cares about what is happening here. We have been here eight months. We would like to help.\"",
+        "commander": "He stands up straighter when he sees the way you stand, before he knows who you are. A soldier knows rank even when he is trying to be diplomatic.\n\n\"Lieutenant,\" you say, and leave it at that.\n\n\"Commander,\" he says. So he has made enquiries.",
+        "arcane": "He has been told to look out for scholars and mages coming in from outside. You see him decide that you are one, and you let him. So the Compact has people who know what to look for. That is interesting, and not altogether comfortable.",
+        "ranger": "Cael sees you coming across the market square and puts himself in your way, quite naturally, so that it does not look as if he meant to. He has done it before.\n\n\"Just arrived?\" he asks, though he knows perfectly well.\n\n\"Yesterday,\" you say.\n\n\"So we heard.\"",
+        "cipher": "He is good at this, though not very good. You saw him change his approach twice between first seeing you and your reaching the gate. The smile has been practised, and so has the friendliness.\n\nHe said somebody, you notice, and not you. He is waiting to see whether you will correct him."
       },
       "choices": [
         {
           "id": "hear_compact_offer",
-          "text": "\"What is it the Compact wants?\"",
+          "text": "\"What does the Compact want?\"",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "He tells you directly, which you had not expected. The Compact wants the ruins to the east assessed. Extent, stability, what is in them. They believe the curse originates there and that whoever controls the source controls the cure. Or the weapon. He does not say weapon but you hear it in the space around what he says.\n\nIn exchange: coin, protection, access to Compact resources in the region. He produces a sealed packet. A message for a contact on the east road. \"Just deliver it,\" he says. \"Consider it an introduction to how we work.\"",
+              "text": "He tells you plainly, which you had not expected. The Compact wants the ruins to the east looked over: how far they go, how safe they are, what is in them. They think the curse comes from there, and that whoever controls the source controls the cure. Or the weapon, you think. He doesn't say weapon, but he leaves a space for it.\n\nIn return there is money, protection, and the use of Compact supplies in the region. He takes out a sealed packet, a message for somebody on the east road. \"Just deliver it,\" he says. \"Think of it as an introduction to the way we work.\"",
               "next_scene": "act1_ch3_compact_offer",
               "state_changes": {}
             }
@@ -54,7 +54,7 @@
           "locked_hint": "Commander only",
           "outcomes": {
             "default": {
-              "text": "He tells you. The date, the regiment, the colonel's name. Somewhere in the telling the smile goes, and what is left is a young officer who was sent somewhere difficult and is not sure he was meant to come back.\n\n\"Sir,\" he says, and then corrects himself, and does not finish the correction.",
+              "text": "He tells you the date, the regiment and the colonel's name. Somewhere in the telling the smile goes, and what is left is a young officer who has been sent somewhere difficult and is not at all sure he was expected to come back.\n\n\"Sir,\" he says, and starts to correct himself, and doesn't finish.",
               "next_scene": "act1_ch3_compact_offer",
               "state_changes": {
                 "flags": {
@@ -71,7 +71,7 @@
         },
         {
           "id": "ask_compact_about_curse",
-          "text": "\"What does the Compact know about what is happening here?\"",
+          "text": "\"What does the Compact know about what's happening here?\"",
           "requires": {},
           "roll": {
             "stat": "intelligence",
@@ -79,7 +79,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "Cael gives you more than he intends to. Under the official line, coordinated response, measured approach, protecting the region, you hear the shape of what the Compact actually believes: that there is something in those ruins that their scholars have been trying to classify for eight months and cannot, and that the curse is not a disease but a signal.",
+              "text": "Cael tells you more than he means to. Under the official phrases about a coordinated response and protecting the region, you can make out what the Compact really thinks. Their scholars have spent eight months trying to put a name to what is in those ruins and have failed. And they have come to believe the curse is not a disease at all, but a signal.",
               "next_scene": "act1_ch3_compact_offer",
               "state_changes": {
                 "flags": {
@@ -88,12 +88,12 @@
               }
             },
             "success_at_cost": {
-              "text": "Cael gives you the official line. Competently. You are not sure if there is more under it or if the official line is all there is. Either way, there is a conversation to be had with someone higher up than a lieutenant.",
+              "text": "Cael gives you the official line, and gives it well. You can't tell whether there is more underneath or whether that is all there is. Either way, you would need to talk to somebody more senior than a lieutenant.",
               "next_scene": "act1_ch3_compact_offer",
               "state_changes": {}
             },
             "failure": {
-              "text": "He gives you the official line completely and you accept it without probing. It is smoother than it should be, which means it has been said before. That is all you get.",
+              "text": "He gives you the official line from start to finish, and you take it without pressing him. It is smoother than it ought to be, as if it has been said a good many times before, but that is all you get.",
               "next_scene": "act1_ch3_compact_offer",
               "state_changes": {}
             }
@@ -118,11 +118,11 @@
       },
       "requires": {},
       "text": {
-        "default": "Cael explains the terms cleanly. The Compact wants eyes in the ruins. They have soldiers but soldiers are obvious. They attract attention and create resistance. Someone moving independently, gathering information, moving between the factions without formal allegiance. That is more valuable right now.\n\nIn exchange: fifteen coins now, forty on completion of the assessment. Access to Compact supply lines, food, medicine, equipment, which in a place like Crestfall is not a small thing. And protection: if something goes wrong in a way that requires more than one person, the Compact will send people.\n\n\"We are not your enemies,\" Cael says. \"And we are not pretending to be your friends. We are a business arrangement, if you want one.\"",
-        "commander": "He makes the offer cleanly, which you respect. He does not dress it up. The Compact wants intelligence from the ruins and is willing to pay for it and to provide resources in exchange.\n\nYou have worked with organisations like the Compact before. They are reliable right up until their interests diverge from yours, and then they are not. The difference matters. They want the ruins assessed. They have not said they want the curse stopped.",
-        "arcane": "The offer is financially coherent and strategically obvious. The Compact believes the ruins contain something they want. They want you to confirm what it is.\n\nWhat interests you more than the offer is what he does not say: there are Compact scholars who have already been to the ruins outskirts and come back with something that classified the artefacts there as pre-Compact, pre-kingdom, pre-any-record-they-have.",
-        "ranger": "The offer is practical. Coin, supplies, backup. The Compact's agenda does not have to be yours for the arrangement to be useful. As long as you know what they want and factor it in.\n\nThe sealed message for the east road contact is the part you do not like. You do not carry messages whose contents you do not know.",
-        "cipher": "A clean offer from someone who knows how to make clean offers. The Compact is organised, which is more than the other factions in this town can say. That organisation comes with structure, loyalty obligations, and the vulnerability of organisations: they do what their leadership decides, whether or not it is the right thing."
+        "default": "Cael sets out the terms clearly. The Compact wants somebody in the ruins. They have soldiers, but soldiers are noticed; they put people's backs up. What they want is somebody who comes and goes on their own account and belongs to no side, and just now that is worth more to them.\n\nIn return they will give you fifteen coins now and forty when the work is done. You would have the use of the Compact's supplies, food and medicine and equipment, which in Crestfall is no small thing. And if anything goes wrong that one person can't handle, the Compact will send people.\n\n\"We are not your enemies,\" Cael says. \"And we are not pretending to be your friends. We are a business arrangement, if you want one.\"",
+        "commander": "He puts the offer plainly, and you think the better of him for it. The Compact wants information from the ruins and will pay for it.\n\nYou have worked with outfits like the Compact before. They are reliable right up to the moment their interests part company with yours. You notice that they want the ruins looked over, and that nobody has said they want the curse stopped.",
+        "arcane": "The offer makes sense, and it is obvious enough what lies behind it. The Compact thinks there is something in the ruins it wants, and wants you to tell it what.\n\nWhat interests you more is what he leaves out. The Compact has already had scholars at the edge of the ruins, and they came back calling what they found older than the Compact, older than the kingdom, older than any record anybody has.",
+        "ranger": "It is a practical offer: money, supplies, and somebody to come for you if it goes badly. The Compact's business needn't be yours for the arrangement to be useful, so long as you know what they are after and allow for it.\n\nWhat you don't like is the sealed message. You make a point of never carrying a message without knowing what is in it.",
+        "cipher": "It is a clean offer from a man who knows how to make one. The Compact is organised, which is more than can be said for anyone else in this town. But being organised has its drawbacks. Organisations do what their leaders decide, whether it is right or not."
       },
       "choices": [
         {
@@ -132,7 +132,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "Cael nods once, the way people nod when something they expected happened. He hands you the packet and the first payment, fifteen coins, and gives you a point of contact on the east road: a woman called Sera who runs what looks like a waystation and is not.\n\n\"Do not open the packet,\" he says. \"She will know if you did.\" He says it without inflection. You cannot tell if that is a threat or a test.",
+              "text": "Cael nods once, as a man does when something has gone as he expected. He hands you the packet and the first fifteen coins, and gives you a name on the east road: a woman called Sera, who keeps what looks like a waystation and isn't.\n\n\"Don't open the packet,\" he says. \"She'll know if you have.\" He says it quite flatly, and you can't tell whether it is a threat or a test.",
               "next_scene": "act1_ch3_after_faction",
               "state_changes": {
                 "flags": {
@@ -156,12 +156,12 @@
         },
         {
           "id": "refuse_compact",
-          "text": "Refuse. You are not working for anyone.",
+          "text": "Refuse. You aren't working for anybody.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "\"Understood,\" Cael says. The smile stays exactly where it was. \"The offer remains open. We are not going anywhere.\" He steps aside from the gate.\n\nYou feel his attention on your back for twenty metres.",
+              "text": "\"Understood,\" says Cael. The smile does not move. \"The offer stays open. We are not going anywhere.\" He steps aside from the gate.\n\nYou can feel him watching you for some way down the street.",
               "next_scene": "act1_ch3_after_faction",
               "state_changes": {
                 "factions": {
@@ -178,7 +178,7 @@
         },
         {
           "id": "negotiate_compact",
-          "text": "Counter-offer. You want to see the message before you carry it.",
+          "text": "Make a counter-offer. You want to see the message before you carry it.",
           "requires": {},
           "roll": {
             "stat": "charisma",
@@ -186,7 +186,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "Cael considers you for a moment. Then he opens the packet himself and hands it over.\n\nThe message is administrative. A supply requisition, a request for additional personnel. Whatever it was, it is not sinister. You hand it back.\n\n\"Fair,\" he says, and means it. He offers thirty coins now and thirty on completion. Marginally better than his original terms. You have negotiated something. That means something to him.",
+              "text": "Cael considers you. Then he breaks the seal himself and hands you the packet.\n\nThe message turns out to be dull, a requisition for supplies and a request for more men. There is nothing sinister in it. You hand it back.\n\n\"Fair,\" he says, and seems to mean it. He offers you thirty coins now and thirty when the work is done, which is a little better than before. You have bargained with him, and he respects that.",
               "next_scene": "act1_ch3_after_faction",
               "state_changes": {
                 "flags": {
@@ -207,7 +207,7 @@
               }
             },
             "success_at_cost": {
-              "text": "Cael does not open the message. But he offers you a slightly better rate, twenty coins now, and says the contents are logistical. You take the offer without the contents. You have improved your position. You have not resolved your concern.",
+              "text": "Cael won't open the message, but he offers you a better rate, twenty coins now, and tells you the contents are only logistics. You take the money without seeing the contents. You are better off than you were, but you are no less uneasy.",
               "next_scene": "act1_ch3_after_faction",
               "state_changes": {
                 "flags": {
@@ -228,7 +228,7 @@
               }
             },
             "failure": {
-              "text": "\"The packet stays sealed,\" Cael says. The smile does not move. \"That is the arrangement or there is not one.\" He waits.\n\nCael waits. The offer is still on the table, and it is the same offer.",
+              "text": "\"The packet stays sealed,\" Cael says, still smiling. \"That's the arrangement, or there isn't one.\"\n\nHe waits. It is the same offer as before.",
               "next_scene": "act1_ch3_compact_offer",
               "state_changes": {}
             }
@@ -258,16 +258,16 @@
       },
       "requires": {},
       "text": {
-        "default": "The shrine is the old alderman's hall. You remember it differently, with a different flag above the door and a different kind of authority inside. The Ashen Covenant's flag is grey, which might be a statement or might just be the colour they settled on.\n\nEdric is outside when you arrive, as if he knew you were coming, which he probably did. In a town this size, word of a stranger travels at the speed of a glance across a street.\n\nHe is a composed man in his fifties. He found his answer a long time ago. Not smug. Just settled.\n\n\"You arrived last night,\" he says. Simply establishing that he knows.",
-        "commander": "Edric takes you in with the assessment of someone trained to read people. Not the military read, the spiritual one. He is looking for something in your bearing that will tell him where to place you.\n\n\"A soldier,\" he says. Correct. \"And something more than a soldier now.\" Also correct, in the way that vague truths are correct.",
-        "arcane": "Edric looks at you and you look at him and there is a brief moment where you both understand that you each know more about the other's field than is comfortable.\n\nHe has ritual knowledge. Old knowledge. The Covenant's texts go back further than most of the kingdom's official history. And he has been near the curse for long enough that the residue of his resistance to it is visible on him like a patina.\n\n\"Scholar,\" he says. \"Or mage. The Covenant does not distinguish between the categories, in practice.\"",
-        "ranger": "Edric watches you come across the square with the patience of someone who has been watching people approach him for thirty years. He reads your movement. You read his stillness.\n\n\"Hunter,\" he says, which is not wrong. \"From outside Ashenveld.\" Also not wrong. He tilts his head slightly. \"The ones who come from outside always look at the forest differently. Less familiarity. More instinct.\"",
-        "cipher": "Edric knows you are coming before you arrive and manages to look as if he does not, which is a skill. His stillness is practised, not natural. You can see the deliberateness in it if you know where to look.\n\n\"A traveller,\" he says, which is technically true and reveals very little. He is doing the same thing you are doing, which is immediately interesting."
+        "default": "The shrine is in the old alderman's hall. You remember it with a different flag over the door and a different sort of authority inside. The Ashen Covenant's flag is grey, which may mean something, or may only be the colour they happened to choose.\n\nEdric is outside when you get there, as though he knew you were coming, which very likely he did. In a town of this size news of a stranger gets about very quickly.\n\nHe is a composed man in his fifties, who found his answers a long time ago and is quite settled in them, though he is not smug about it.\n\n\"You arrived last night,\" he says, simply to let you know that he knows.",
+        "commander": "Edric looks you over as a man does who has been trained to read people. It is not a soldier's way of looking. He is trying to make out what sort of soul you are, and where to put you.\n\n\"A soldier,\" he says, which is right. \"And something more than a soldier now.\" That is right too, in the way that vague remarks generally are.",
+        "arcane": "Edric looks at you, and you look at him, and for a moment you each understand that the other knows rather more about your own line of work than is comfortable.\n\nHe has ritual knowledge, and old knowledge at that; the Covenant's texts go back further than most of the kingdom's history. He has been near the curse long enough for his resistance to it to show on him, like the green on an old roof.\n\n\"A scholar,\" he says. \"Or a mage. In practice the Covenant does not distinguish.\"",
+        "ranger": "Edric watches you cross the square with the patience of a man who has watched people come to him for thirty years. He reads the way you walk, and you read the way he stands still.\n\n\"A hunter,\" he says, which is fair. \"From outside Ashenveld.\" That is fair too. He puts his head a little on one side. \"People from outside always look at the forest differently. They know it less, and trust their noses more.\"",
+        "cipher": "Edric knew you were coming before you arrived, and manages to look as if he did not, which takes skill. His calm is practised rather than natural. If you know where to look you can see the effort in it.\n\n\"A traveller,\" he says. It is quite true, and tells you almost nothing. He is doing exactly what you are doing, and that interests you at once."
       },
       "choices": [
         {
           "id": "ask_covenant_about_curse",
-          "text": "\"What do the Covenant believe is causing this?\"",
+          "text": "\"What does the Covenant believe is causing this?\"",
           "requires": {},
           "roll": {
             "stat": "intelligence",
@@ -275,7 +275,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "He tells you the official doctrine. The Covenant believes the curse is a consequence of the ruins being disturbed, of an old sealed power being unsealed, of the region's people moving away from the old ways that kept it contained. Punishment is too simple a word for what he actually means. More like consequence, the natural result of ignoring things that were being ignored for a reason.\n\nBut underneath the doctrine, your reading of him catches something: he has been in those texts for thirty years and he knows the ritual that sealed the old power the first time. He knows exactly what it required. His certainty about the solution is not the certainty of faith. It is the certainty of someone who has done the maths.",
+              "text": "He gives you the doctrine. The Covenant believes the curse came of the ruins being disturbed: an old power, sealed long ago, has come unsealed, and the people of the region had already drifted away from the old ways that kept it shut. Punishment is too simple a word for what he means. He means a consequence, the natural result of meddling with what had been left alone for good reason.\n\nBut under the doctrine you catch something else. He has been in those texts thirty years, and he knows the ritual that sealed the power the first time, and exactly what it required. When he talks about the cure he does not sound like a man of faith. He sounds like a man who has done the sums.",
               "next_scene": "act1_ch3_covenant_warning",
               "state_changes": {
                 "flags": {
@@ -285,7 +285,7 @@
               }
             },
             "success_at_cost": {
-              "text": "He gives you the doctrine. It is coherent and internally consistent and it requires accepting a set of premises about the nature of the world that you may or may not share. The curse is consequence. The solution is purification. The Covenant knows how.",
+              "text": "He gives you the doctrine. It hangs together well enough, provided you accept a number of ideas about the world that you may or may not share. The curse is a consequence, the cure is purification, and the Covenant knows how it is done.",
               "next_scene": "act1_ch3_covenant_warning",
               "state_changes": {
                 "flags": {
@@ -294,7 +294,7 @@
               }
             },
             "failure": {
-              "text": "He gives you the doctrine and you take it at face value. It is a belief system. You have encountered belief systems before. This one is more specific than most.",
+              "text": "He gives you the doctrine, and you take it as you find it. It is a belief, and you have met beliefs before. This one goes into more detail than most.",
               "next_scene": "act1_ch3_covenant_warning",
               "state_changes": {}
             }
@@ -302,12 +302,12 @@
         },
         {
           "id": "ask_about_east_road",
-          "text": "\"I am going east. What should I know?\"",
+          "text": "\"I'm going east. What should I know?\"",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "His expression does not change but something behind it does. A gathering of attention.\n\n\"Do not go east,\" he says. \"Not yet. Not without preparation and not without understanding what you are walking toward.\" He pauses. \"The people who go east without preparation come back changed or they do not come back. The Covenant has methods of preparation. I would offer them to you.\"",
+              "text": "His face does not change, but he becomes noticeably more attentive.\n\n\"Do not go east,\" he says. \"Not yet. Not without preparation, and not without knowing what you are walking towards. People who go east unprepared come back changed, or they do not come back at all. The Covenant has ways of preparing people. I would offer them to you.\"",
               "next_scene": "act1_ch3_covenant_warning",
               "state_changes": {}
             }
@@ -333,11 +333,11 @@
       },
       "requires": {},
       "text": {
-        "default": "Inside the shrine, Edric shows you the ward they have built around the building. Not visible to the eye, but he explains it: herbs in the threshold, arrangements of stone, a chant maintained by the priests in three-hour shifts. It has been keeping the worst of the curse's effects off the shrine and the people in it.\n\n\"The forest contains something that should be contained,\" he says. \"An ancient working — a power sealed away by the people who lived here before history. The sealing deteriorated. Three years ago it failed.\"\n\nHe looks at you. \"The Covenant knows how to reseal it. We have the texts. We know the ritual.\"\n\nHe pauses. \"The ritual requires the source to be purified. Everything the power has touched — deeply touched — must be cleansed. Completely.\"\n\nThe word cleansed sits in the air between you.",
-        "commander": "\"Purified,\" you say. \"How?\"\n\nHe tells you. Calmly. The way doctors describe procedures that will hurt. He says it evenly. The necessity and the cost are kept in different rooms.\n\nYou keep your face neutral. This is what the Covenant considers a solution.",
-        "arcane": "You parse his language carefully. Purified. Cleansed. The ritual vocabulary of an organisation that has a technical meaning for those words and is using them now instead of saying what those words mean in practice.\n\n\"What does cleansing entail?\" you ask.",
-        "ranger": "\"Who decides what has been touched deeply enough to need cleansing?\" you ask.\n\nHe considers the question for longer than the answer should require. \"The Covenant determines the threshold,\" he says finally. \"Based on the texts. It is not arbitrary.\"\n\nHe answered the second question and not the first.",
-        "cipher": "The word cleansed. You let it sit where he put it and watch his face as he watches yours.\n\nHe believes it. That is the thing that matters. He is not cynical. He is not hiding a monstrous agenda behind a pleasant face. He genuinely believes the ritual is necessary and that the cost is the cost.\n\nThis makes him more dangerous than someone who knows they are doing harm."
+        "default": "Inside, Edric shows you the ward they have put round the building. You cannot see it, but he explains: herbs laid along the threshold, stones set in certain patterns, and a chant the priests keep up in shifts of three hours. It has kept the worst of the curse away from the shrine and the people in it.\n\n\"The forest holds something that ought to be held,\" he says. \"A power that was sealed away by the people who lived here before history began. The seal wore thin, and three years ago it failed.\"\n\nHe looks at you. \"The Covenant knows how to seal it again. We have the texts, and we know the ritual.\"\n\nThen he goes on. \"But the ritual requires that the source be purified. Everything the power has touched, and touched deeply, must be cleansed. Completely.\"\n\nHe lets the word cleansed stand, and does not explain it.",
+        "commander": "\"Purified,\" you say. \"How?\"\n\nHe tells you, quite calmly, in the voice doctors use for procedures that will hurt. He keeps what is necessary and what it costs carefully apart.\n\nYou keep your face still. So this is what the Covenant calls a cure.",
+        "arcane": "You listen carefully to the words he uses. Purified, cleansed. They are the words of an order that has a technical meaning for them, and uses them so as not to say what they mean in practice.\n\n\"What does cleansing involve?\" you ask.",
+        "ranger": "\"Who decides what's been touched deeply enough to need cleansing?\" you ask.\n\nHe takes longer over the question than the answer seems to need. \"The Covenant sets the threshold,\" he says at last. \"From the texts. It is not arbitrary.\"\n\nHe has told you how it is decided. He has not told you who decides.",
+        "cipher": "You leave the word where he put it and watch his face while he watches yours.\n\nHe believes it, and that is what matters. He isn't cynical, and he isn't hiding something monstrous behind a pleasant manner. He honestly believes the ritual is necessary, and that the cost is simply the cost.\n\nThat makes him more dangerous than a man who knew he was doing harm."
       },
       "choices": [
         {
@@ -350,7 +350,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "He tells you. The ritual requires that everything significantly afflicted by the power, people, animals, places, be separated from the world in a way. He uses the word released. You hear the word killed.\n\nNot all of them. He is careful to say that. The threshold is significant exposure. Minor exposure, the early stages, the stillness, the dimming, may be reversible. The Covenant believes the reversible and the irreversible can be distinguished.\n\nYou believe him that they believe this.",
+              "text": "He tells you. The ritual requires that everything badly afflicted by the power, whether people or animals or places, be separated from the world. He says released. You hear killed.\n\nNot all of them, he is careful to add. The threshold is serious exposure. The early stages, the stillness and the dimming, may well be reversible, and the Covenant believes it can tell the one from the other.\n\nYou believe that they believe it.",
               "next_scene": "act1_ch3_covenant_task",
               "state_changes": {
                 "flags": {
@@ -359,7 +359,7 @@
               }
             },
             "success_at_cost": {
-              "text": "He gives you the language around it. Separation. Release. Necessary loss for the preservation of the greater whole. The details of what that means for people you have already met in this town he does not volunteer.",
+              "text": "He gives you the words for it: separation, release, a loss that has to be borne for the good of the whole. What that would mean for the people you have already met in the town, he does not say.",
               "next_scene": "act1_ch3_covenant_task",
               "state_changes": {
                 "flags": {
@@ -368,7 +368,7 @@
               }
             },
             "failure": {
-              "text": "He gives you the doctrine without the specifics and you accept the doctrine without pressing. The edge of what the Covenant does remains something you will have to find out elsewhere.",
+              "text": "He gives you the doctrine without the details, and you do not press him. Just how far the Covenant means to go is something you will have to find out somewhere else.",
               "next_scene": "act1_ch3_covenant_task",
               "state_changes": {}
             }
@@ -384,7 +384,7 @@
           "locked_hint": "Arcane only",
           "outcomes": {
             "default": {
-              "text": "You hold your finger a hair above the carving and follow it. It is not a shield. The lines run in a grid, square on square, with a mark at every crossing. It is a surveyor's pattern. Whatever wears this is not being protected. They are being used to measure.\n\nEdric watches you do it and does not say anything.",
+              "text": "You hold your finger a hair's breadth above the carving and follow the lines. It is not a shield at all. The lines run in a grid, square on square, with a mark at every crossing, like a surveyor's plan. Whoever wears this is not being protected. They are being used to take measurements.\n\nEdric watches you do it and says nothing.",
               "next_scene": "act1_ch3_covenant_task",
               "state_changes": {
                 "flags": {
@@ -396,7 +396,7 @@
         },
         {
           "id": "ask_what_town_is_not_told",
-          "text": "\"What is the Covenant not telling the town?\"",
+          "text": "\"What isn't the Covenant telling the town?\"",
           "requires": {
             "min_faction": {
               "ashen_covenant": 15
@@ -407,7 +407,7 @@
           "locked_hint": "Needs the Covenant to trust you",
           "outcomes": {
             "default": {
-              "text": "He takes his time. \"That we have done this before,\" he says. \"Not here. In the south, two hundred years ago. The texts say it worked.\"\n\nHe does not say what it cost. He looks as though he expects you to ask, and is relieved when you do not.",
+              "text": "He takes his time. \"That we have done this before,\" he says. \"Not here. In the south, two hundred years ago. The texts say it worked.\"\n\nHe does not say what it cost. He looks as if he expects you to ask, and is relieved when you don't.",
               "next_scene": "act1_ch3_covenant_warning",
               "state_changes": {
                 "flags": {
@@ -424,7 +424,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "He gives you a ward. A small stone disc with markings, strung on a cord. He places it with the care of someone giving something genuine.\n\n\"It will not protect you from everything,\" he says. \"But it will slow the effect of sustained exposure. Keep it close to your skin.\" He asks nothing in return. The Covenant apparently operates on a credit system. They help you, and you owe them the consideration of knowing they helped you.",
+              "text": "He gives you a ward: a small stone disc with markings on it, threaded on a cord. He hands it over carefully, as one hands over something of real value.\n\n\"It will not protect you from everything,\" he says. \"But it will slow the effect of long exposure. Keep it next to your skin.\" He asks for nothing in return. You gather the Covenant works on credit. They help you, and you are left knowing that they helped you.",
               "next_scene": "act1_ch3_covenant_task",
               "state_changes": {
                 "inventory": [
@@ -460,26 +460,26 @@
       "requires": {},
       "text": {
         "default": [
-          "Before you leave, Edric produces a small carved stone, a shape, a marking, and holds it out to you.",
-          "\"There is a point on the east road where the tree line makes a particular angle,\" he says. \"Our scholars identified it as a significant nexus — a place where the curse's channels converge near the surface. If you are going east regardless, placing this marker there would be of service.\"",
-          "He says it may slow the curse's spread in that corridor. He says it with the precision of someone reporting a probability rather than a certainty.",
-          "\"It may do nothing,\" he admits. \"We do not have certainty. We act on probability.\"",
-          "\"A senior scholar is coming from the capital,\" Edric says. \"Seriva. She will want to know the stone was placed.\""
+          "Before you go, Edric takes out a small carved stone and holds it out to you.",
+          "\"There is a place on the east road where the tree line turns at a sharp angle,\" he says. \"Our scholars believe it is a nexus, where the channels of the curse come together near the surface. If you are going east in any case, it would be a service to us if you placed this marker there.\"",
+          "It may slow the spread of the curse along that road, he says. He says it as though he were giving you the odds on a horse.",
+          "\"It may do nothing,\" he admits. \"We cannot be certain. We act on probabilities.\"",
+          "\"A senior scholar is coming from the capital,\" he adds. \"Seriva. She will want to know the stone was placed.\""
         ],
-        "commander": "You take the stone. A task with a clear deliverable and a clear location. You will place it if it is convenient to your route. That is not the same as being in service to the Covenant.\n\nEdric seems to understand the distinction.",
-        "arcane": "The stone's markings are from a pre-Covenant tradition. Older, more specific, the kind of notation you have seen in texts that predate the current religious structure by several centuries. Someone in the Covenant has access to material that most scholars believe was destroyed.\n\nYou take the stone and say nothing about recognising the markings.",
-        "ranger": "You examine the stone before taking it. The marking is consistent. Not a symbol you know, but the carving is careful, done by someone who understood what they were making.\n\nYou take it. If the location is where Edric says it is, you will pass it anyway.",
-        "cipher": "You take the stone. A favour owed to the Covenant, proportional to however useful the marker turns out to be. If it does nothing, the debt is small. If it works, the debt is meaningful.\n\nEdric is building goodwill at low cost to himself. You respect the technique."
+        "commander": "You take the stone. It is a plain enough job, with a clear place to do it. You will put it down if it is on your way, and that does not make you a servant of the Covenant.\n\nEdric seems to understand the difference.",
+        "arcane": "The markings on the stone come from a tradition older than the Covenant. You have seen notation like it in texts written centuries before the present church existed. Somebody in the Covenant has access to writings most scholars believe were destroyed long ago.\n\nYou take the stone, and you say nothing about recognising the marks.",
+        "ranger": "You look the stone over before you take it. The carving is regular and careful, the work of somebody who knew what they were making, though you don't know the mark.\n\nYou take it. If the place is where Edric says, you will pass it anyway.",
+        "cipher": "You take the stone. Now you owe the Covenant a favour, and how large a favour depends on how useful the stone turns out to be. If it does nothing, the debt is small. If it works, you will owe them a good deal.\n\nEdric is buying goodwill cheaply. You rather admire the way he does it."
       },
       "choices": [
         {
           "id": "accept_covenant_task",
-          "text": "Take the marker stone. Place it if you pass the location.",
+          "text": "Take the marker stone, and place it if you pass that way.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You take the stone. Edric nods. You are one more moving part, and he has not asked too much of you.\n\n\"Safe travel,\" he says. He means it.",
+              "text": "You take the stone and Edric nods. He has not asked very much of you, and he has gained one more pair of hands.\n\n\"Travel safely,\" he says, and he means it.",
               "next_scene": "act1_ch3_after_faction",
               "state_changes": {
                 "flags": {
@@ -499,12 +499,12 @@
         },
         {
           "id": "refuse_covenant_task",
-          "text": "Decline. You are not running errands.",
+          "text": "Decline. You aren't running errands.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "\"Of course,\" Edric says. The composure is absolute. He was not counting on you. He puts the stone away. He has other people to ask.\n\n\"The ward is still yours,\" he says. \"No conditions.\"",
+              "text": "\"Of course,\" says Edric, perfectly composed. He was not relying on you. He puts the stone away; there are other people he can ask.\n\n\"The ward is still yours,\" he says. \"There are no conditions.\"",
               "next_scene": "act1_ch3_after_faction",
               "state_changes": {
                 "counters": {
@@ -573,7 +573,7 @@
                 "covenant_met": true
               }
             },
-            "text": "By midday you have a picture of the three forces operating in what is left of Crestfall.",
+            "text": "By midday you have some idea of the three powers in what is left of Crestfall.",
             "else": "By midday you have met one of the powers in what is left of Crestfall and heard about the others."
           },
           {
@@ -582,7 +582,7 @@
                 "compact_met": true
               }
             },
-            "text": "The Compact wants the ruins. They are organised, resourced, and patient. They have been building towards something for eight months.",
+            "text": "The Compact wants the ruins. They are organised, they have money, and they are patient. For eight months they have been working towards something.",
             "else": "The Compact holds the gate. People say they want the ruins and are patient about it."
           },
           {
@@ -591,26 +591,26 @@
                 "covenant_met": true
               }
             },
-            "text": "The Covenant wants the ruins sealed. They believe they know how. The cost of how is something they have decided not to lead with.",
+            "text": "The Covenant wants the ruins sealed, and believes it knows how. What that would cost is something they prefer not to mention first.",
             "else": "The Covenant has the old hall and a grey flag. People say they know how to seal the curse, and do not say what it costs."
           },
-          "The Rootless are outside the town limits and nobody talks about them, which means they are the most interesting.",
-          "You have heard the name Maret from three separate people now. Each time it came with a quality. Not exactly recommendation, not exactly warning. Something closer to the way people say the name of a weather system. Real. Significant. Already moving."
+          "The Rootless live outside the town and nobody talks about them, which makes them the most interesting of the three.",
+          "Three different people have now given you Maret's name. None of them quite recommended her and none of them quite warned you off. They said her name as people talk about the weather coming in, as something you would have to deal with whether you liked it or not."
         ],
-        "commander": "You have spent half a day with two of the three powers. You know what each wants and you have made a preliminary decision about each.\n\nThe Compact: useful, watch them carefully.\nThe Covenant: not your ally, possibly your enemy, definitely a source of information.\nThe Rootless: unknown, which is both the most dangerous assessment and the most interesting one.",
-        "arcane": "Two factions assessed. Both have partial knowledge. Neither has the complete picture.\n\nThe Rootless camp has been living alongside this for three years. That is the longest sustained proximity of any group in Ashenveld. Whatever they know, they know it the hard way.",
-        "ranger": "Two factions seen. The third one is outside the town's control and has been surviving in proximity to the curse for three years.\n\nSurvival in proximity to a hostile environment is the most reliable form of knowledge there is. You are going to the camp.",
-        "cipher": "Two factions, two offers, two agendas mapped. The third faction is the one nobody is quite claiming to be allied with and nobody is quite opposing. The middle position. In a three-way conflict, whoever holds the middle position holds the most leverage.\n\nMaret holds the middle position."
+        "commander": "You have spent half a day with two of the three powers. You know what each of them wants, and you have formed a first opinion of each.\n\nThe Compact is useful, and needs watching. The Covenant is not your friend, may well be your enemy, and certainly knows things. The Rootless you know nothing about, which is the most dangerous position to be in and much the most interesting.",
+        "arcane": "You have seen two of the three. Each knows part of the truth, and neither has all of it.\n\nThe Rootless have been living beside the curse for three years, longer than anyone else in Ashenveld. Whatever they know, they have learned the hard way.",
+        "ranger": "You have seen two of the three. The third lives outside the town's control and has been surviving next to the curse for three years.\n\nPeople who have survived in bad country are the ones worth listening to. You are going to the camp.",
+        "cipher": "Two sides, two offers, and you know roughly what each is after. The third is the one nobody claims as a friend and nobody openly opposes. When there are three parties to a quarrel, the one in the middle generally has the most say.\n\nMaret is the one in the middle."
       },
       "choices": [
         {
           "id": "go_to_rootless_camp",
-          "text": "Head to the Rootless camp east of town.",
+          "text": "Go to the Rootless camp east of the town.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "East of the market, past the last building, along a path that is not quite a path, through the first of the ordinary trees, and into the liminal space where the town stops and the forest has not yet claimed it.",
+              "text": "You go east out of the market, past the last house, along something that is not quite a path, and in among the first of the trees, where the town stops and the forest has not yet taken over.",
               "next_scene": "act1_ch3_rootless_camp_approach",
               "state_changes": {}
             }
@@ -618,12 +618,12 @@
         },
         {
           "id": "ask_aldous_first",
-          "text": "Go back to the Tallow first. Ask Aldous about the camp.",
+          "text": "Go back to the Tallow first, and ask Aldous about the camp.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "Aldous is wiping the same table he was wiping last night. \"The camp,\" he says. He thinks about it. \"Take bread. Don't take advice. And don't stand in the path, the big one doesn't like it.\"\n\nHe gives you the bread.",
+              "text": "Aldous is wiping the same table as last night. \"The camp,\" he says, and thinks about it. \"Take bread. Don't take advice. And don't stand in the path, the big one doesn't like it.\"\n\nHe gives you the bread.",
               "next_scene": "act1_ch3_rootless_camp_approach",
               "state_changes": {
                 "relationships": {
@@ -658,16 +658,16 @@
       },
       "requires": {},
       "text": {
-        "default": "Fifteen tents. A central fire burning even at midday. A herb garden along the southern edge that grows too well for this soil and this season.\n\nA man steps out from between two tents when you arrive. Big. Unhurried. The stillness of someone who has decided that moving quickly is almost never necessary.\n\n\"Camp is not open to visitors,\" he says. Not hostile. Just clear.\n\n\"I am looking for Maret,\" you say.\n\nHe looks at you for a moment with the quality of someone checking something against an internal list. \"Most people who come looking for Maret want something from her. What is it you want?\"",
-        "commander": "The man is Branch, you will learn. Former soldier. You see it in everything, the way he stands, the way he positioned himself between you and the camp without making it look deliberate.\n\nYou match his directness. \"I am looking for someone who came through here about fourteen months ago. I was told Maret would know.\"\n\nHe looks at you with the assessment of one former soldier looking at another. \"Maybe she does. That is her answer to give, not mine.\"",
-        "arcane": "The herb garden behind the man has plants you recognise from medicinal texts. Things that grow near sites of accumulated power, things that absorb it, neutralise it. Someone here knows exactly what they are doing with those plants.\n\n\"I am a researcher,\" you say, which is partially true. \"I am trying to understand what is happening in this region.\"\n\nHe makes a sound that might be a laugh. \"Everyone who comes to Maret is trying to understand something. She decides if understanding is something you should have.\"",
-        "ranger": "He gives himself away before he has the measure of you — the set of his shoulders, the slight rotation toward the camp that tells you he is protecting something, the quality of calm that comes from someone who has been in dangerous situations and stopped being surprised by them.\n\n\"You came from the north path,\" he says. \"Not the main approach.\"\n\n\"Shorter,\" you say.\n\nA pause. \"Careful or experienced. Maret likes both.\"",
-        "cipher": "Branch. You read him immediately. Ex-military, loyal to Maret rather than to the Rootless generally, cautious by training rather than temperament.\n\n\"I am not here to take anything,\" you say. \"I am here to ask questions.\"\n\n\"Everyone says that,\" he says. \"Some of them are even telling the truth.\""
+        "default": "There are fifteen tents, and a fire in the middle burning even at midday. Along the south side runs a herb garden that is doing far better than it has any right to in this soil at this time of year.\n\nA man steps out from between two of the tents as you arrive. He is big and in no hurry, like a man who decided long ago that there is very seldom any need to move quickly.\n\n\"The camp is not open to visitors,\" he says. He is not unfriendly about it, only clear.\n\n\"I'm looking for Maret,\" you say.\n\nHe looks you over as though checking you against a list he keeps in his head. \"Most people who come looking for Maret want something from her. What is it you want?\"",
+        "commander": "The man is called Branch, you learn later, and he was a soldier once. It shows in the way he stands, and in the way he has put himself between you and the camp without seeming to.\n\nYou answer him as directly as he asked. \"I'm looking for somebody who came through here about fourteen months ago. I was told Maret would know.\"\n\nHe looks at you as one old soldier looks at another. \"Perhaps she does. That is hers to tell, not mine.\"",
+        "arcane": "The herb garden behind him has plants in it you know from the medical texts. They grow near places where power has collected, and they draw it off and dull it. Somebody here knows very well what they are doing with them.\n\n\"I'm a scholar,\" you say, which is partly true. \"I'm trying to understand what's happening in this country.\"\n\nHe makes a sound that might be a laugh. \"Everyone who comes to Maret is trying to understand something. She decides whether you should.\"",
+        "ranger": "He gives himself away before he has your measure. His shoulders are set, he has half turned towards the camp as if guarding it, and he has the calm of a man who has been in danger often enough to stop being surprised by it.\n\n\"You came by the north path,\" he says. \"Not the main way.\"\n\n\"It's shorter,\" you say.\n\nHe considers that. \"Careful, or experienced. Maret likes both.\"",
+        "cipher": "You have Branch's measure at once. He has been a soldier, and he is loyal to Maret rather than to the Rootless in general. He is careful because he was trained to be, not because it is his nature.\n\n\"I'm not here to take anything,\" you say. \"I'm here to ask questions.\"\n\n\"Everyone says that,\" he says. \"Some of them are even telling the truth.\""
       },
       "choices": [
         {
           "id": "be_direct_with_branch",
-          "text": "\"Someone I am looking for came through here. I just need to know where they went.\"",
+          "text": "\"Someone I'm looking for came through here. I only need to know where they went.\"",
           "requires": {},
           "roll": {
             "stat": "charisma",
@@ -675,7 +675,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "He looks at you for a long moment and makes a decision.\n\n\"Wait here,\" he says. He goes back into the camp. Three minutes later, a woman comes out.\n\nMaret is not what you expected. Not in any way you can immediately specify. She is approximately your age, weathered, as if she has lived out of doors for years and stopped noticing. She looks at you the way she probably looks at most things. Fully, without performance.\n\n\"Branch says you are looking for someone,\" she says.",
+              "text": "He looks at you, and makes up his mind.\n\n\"Wait here,\" he says, and goes back into the camp. A few minutes later a woman comes out.\n\nMaret is not what you expected, though you could not say what you did expect. She is about your own age, and weathered, as people are who have lived out of doors for years and stopped minding. She looks straight at you, as she very likely looks at everything, and does not put on any manner for your benefit.\n\n\"Branch says you are looking for someone,\" she says.",
               "next_scene": "act1_ch3_maret_first_meeting",
               "state_changes": {
                 "relationships": {
@@ -689,7 +689,7 @@
               }
             },
             "success_at_cost": {
-              "text": "He considers you. \"That is what half the people who show up here say.\" He looks at your pack, your bearing, something he is calculating. \"Maret will see you but do not push. She will give you what she wants to give you.\" He goes to get her.",
+              "text": "He considers you. \"Half the people who turn up here say that.\" He looks at your pack and at the way you stand, working something out. \"Maret will see you. But do not push her. She will give you what she wants to give you.\" He goes to fetch her.",
               "next_scene": "act1_ch3_maret_first_meeting",
               "state_changes": {
                 "counters": {
@@ -698,7 +698,7 @@
               }
             },
             "failure": {
-              "text": "\"Maret is busy,\" he says. Not immediately hostile but not open either. \"Come back tomorrow.\"\n\nThe day is ending. Tomorrow the camp, and a different approach.",
+              "text": "\"Maret is busy,\" he says. He is not unfriendly yet, but he is not going to budge either. \"Come back tomorrow.\"\n\nThe day is nearly over. You will have to try the camp again tomorrow, and try it differently.",
               "next_scene": "act1_ch3_camp_second_try",
               "state_changes": {
                 "world": {
@@ -714,7 +714,7 @@
         },
         {
           "id": "offer_help_to_branch",
-          "text": "\"I can help. Whatever the camp needs, I have skills.\"",
+          "text": "\"I can help. Whatever the camp needs, I can turn my hand to it.\"",
           "requires": {},
           "roll": {
             "stat": [
@@ -725,7 +725,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "His expression shifts. Not convinced, but curious. In a camp that needs things, offering things is a different kind of approach than most take.\n\n\"What kind of skills?\" he asks. And then he goes to get Maret.",
+              "text": "He looks at you with more interest. He is not convinced, but in a camp that is short of everything, somebody offering instead of asking is a change.\n\n\"What can you do?\" he asks. And then he goes to fetch Maret.",
               "next_scene": "act1_ch3_maret_first_meeting",
               "state_changes": {
                 "relationships": {
@@ -736,12 +736,12 @@
               }
             },
             "success_at_cost": {
-              "text": "He is not moved by the offer but he is not dismissive of it either. He goes to get Maret without committing to anything. You wait.",
+              "text": "He is not won over, but he does not dismiss the offer either. He goes to fetch Maret without promising anything, and you wait.",
               "next_scene": "act1_ch3_maret_first_meeting",
               "state_changes": {}
             },
             "failure": {
-              "text": "\"Maret has enough people with skills,\" Branch says. He does not send you away. He also does not go to get her. You are in a holding pattern until tomorrow.",
+              "text": "\"Maret has enough people who can turn their hand to things,\" Branch says. He doesn't send you away, but he doesn't go to fetch her either. You will get no further today.",
               "next_scene": "act1_ch3_camp_second_try",
               "state_changes": {
                 "world": {
@@ -772,7 +772,7 @@
       },
       "requires": {},
       "text": {
-        "default": "You sleep at the Tallow and walk back out at first light.\n\nBranch is in the same place between the same two tents, as if he has not moved. He watches you come up the path that is not quite a path. He does not look surprised. He looks like a man revising an estimate.\n\n\"You came back,\" he says. \"Most do not.\""
+        "default": "You sleep at the Tallow and walk back out at first light.\n\nBranch is standing between the same two tents, as if he had never moved. He watches you come up the path. He doesn't look surprised. He looks like a man who has had to change his opinion of somebody and is not altogether pleased about it.\n\n\"You came back,\" he says. \"Most do not.\""
       },
       "choices": [
         {
@@ -782,7 +782,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You sit. He goes back to watching the tree line. The camp wakes behind him. After most of an hour a woman comes out between the tents, looks at you, looks at Branch, and says: \"How long has that one been sitting there?\"\n\n\"Long enough,\" Branch says.",
+              "text": "You sit down. He goes back to watching the trees. The camp wakes up behind him. After the best part of an hour a woman comes out from between the tents, looks at you, looks at Branch, and says, \"How long has that one been sitting there?\"\n\n\"Long enough,\" says Branch.",
               "next_scene": "act1_ch3_maret_first_meeting",
               "state_changes": {
                 "relationships": {
@@ -799,12 +799,12 @@
         },
         {
           "id": "ask_again_plainly",
-          "text": "\"I am not selling anything. I am looking for [missing person].\"",
+          "text": "\"I'm not selling anything. I'm looking for [missing person].\"",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "The name does something to his face that yesterday's words did not. He looks at you for a long moment.\n\n\"Wait here,\" he says.",
+              "text": "The name does what yesterday's words did not. He looks at you differently.\n\n\"Wait here,\" he says.",
               "next_scene": "act1_ch3_maret_first_meeting",
               "state_changes": {}
             }
@@ -832,7 +832,7 @@
       "requires": {},
       "text": {
         "default": [
-          "She comes out of the camp and looks at you and you look at her and there is a brief moment, the span of a breath, not longer, where something moves in her face that she covers immediately. She knows the name you are going to say. You have not said it yet but she knows.",
+          "She comes out of the camp and looks at you, and for a second something shows in her face before she puts it away. She knows the name you are going to say. You have not said it yet, but she knows.",
           "That is the first thing you learn about Maret.",
           {
             "when": {
@@ -840,16 +840,16 @@
                 "knows_maret_name": true
               }
             },
-            "text": "You have had her name from three mouths. None of them said it lightly."
+            "text": "Three people have given you her name, and none of them said it lightly."
           },
-          "\"Sit down,\" she says, gesturing to a log bench at the camp's edge. \"I will hear what you have to say.\"",
-          "She sits across from you. Branch stands nearby. Someone asked him to. The camp around you continues its business. People moving, a child's voice somewhere, the smell of something cooking.",
+          "\"Sit down,\" she says, and nods at a log bench on the edge of the camp. \"I will hear what you have to say.\"",
+          "She sits down opposite you. Branch stands a little way off; somebody has asked him to. The camp goes on with its business around you. People come and go, a child is calling somewhere, and something is cooking.",
           "\"You are looking for someone,\" Maret says."
         ],
-        "commander": "She takes in how you stand like someone who has dealt with commanders before and has finished taking their orders. She is not hostile about it. She is clear about the terms.",
-        "arcane": "She looks at you with the attention of someone reading more than your face. You do the same to her — the residue on her is complex, layered in ways that take time to read. She has been near the curse for a long time. She is not afflicted. Whatever she did to avoid affliction, it was not the Covenant's methods.\n\nYou give her the name. She knew it before you said it.",
-        "ranger": "Neither of you minds the quiet. It is the quiet of two people who are used to silence and know it can be used.\n\n\"You are from outside Ashenveld,\" she says. \"But you know this land. Your feet know where to step.\"",
-        "cipher": "You read her in the first ten seconds. Controlled. Intelligent. Used to deciding things on too little, and good at it by now.\n\nWhen you say the name, her clasped hands press together harder for half a second. She covers it. You pretend not to have seen. Both of you know you saw."
+        "commander": "She takes in the way you stand like a woman who has had dealings with commanders before and has done with taking their orders. She is not rude about it. She simply makes the terms clear.",
+        "arcane": "She looks at you as though she were reading more than your face, and you do the same to her. The residue on her is complicated, and lies in layers that would take some time to make out. She has been near the curse a long while, and it has not touched her. Whatever she did to keep it off, it was not the Covenant's method.\n\nYou give her the name. She knew it before you said it.",
+        "ranger": "Neither of you minds the silence. You are both used to it, and you both know what it is good for.\n\n\"You are not from Ashenveld any more,\" she says. \"But you know the ground. You know where to put your feet.\"",
+        "cipher": "You have her measure in the first few seconds. She is controlled and clever, and used to deciding things on too little to go on, and by now she is good at it.\n\nWhen you say the name, her hands, clasped in her lap, tighten for half a second. She covers it at once, and you pretend not to have noticed, and both of you know that you did."
       },
       "choices": [
         {
@@ -873,7 +873,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "She looks at you for a long moment. Then she does something you did not expect. She almost smiles.\n\n\"You are observant,\" she says. \"That is useful here.\" She is quiet for a moment. \"Yes. I knew them. They were here for three weeks.\" She says it cleanly, giving you the fact and none of the weight around it yet.\n\n\"Where did they go?\"\n\nShe looks at the trees. \"East.\" She says it the way people say the word for something they are still deciding how to feel about.",
+              "text": "She looks at you, and then does something you did not expect. She very nearly smiles.\n\n\"You notice things,\" she says. \"That is useful here.\" She is quiet for a moment. \"Yes. I knew them. They were here three weeks.\" She gives you the fact plainly, and nothing that goes with it, not yet.\n\n\"Where did they go?\"\n\nShe looks at the trees. \"East,\" she says, as though she had still not made up her mind how she felt about it.",
               "next_scene": "act1_ch4_maret_opens",
               "state_changes": {
                 "flags": {
@@ -890,7 +890,7 @@
               }
             },
             "success_at_cost": {
-              "text": "She catches you catching her and makes a quick decision. Not denial, not full admission. \"I meet a lot of people who come through the camp,\" she says carefully. \"Some names stay with me.\" A pause. \"Come back tomorrow. I need to think about what I can tell you.\"",
+              "text": "She sees that you have caught her, and decides quickly what to do about it. She neither denies it nor quite admits it. \"I meet a great many people who come through the camp,\" she says. \"Some names stay with me.\" Then: \"Come back tomorrow. I need to think about what I can tell you.\"",
               "next_scene": "act1_ch4_maret_guarded",
               "state_changes": {
                 "relationships": {
@@ -904,7 +904,7 @@
               }
             },
             "failure": {
-              "text": "She deflects smoothly. \"Lots of people come through the camp. I try to help the ones I can.\" Her voice is steady. \"Come back tomorrow. I have things to attend to today.\"",
+              "text": "She turns it aside without any trouble. \"A great many people come through the camp. I try to help the ones I can.\" Her voice is quite steady. \"Come back tomorrow. I have things to see to today.\"",
               "next_scene": "act1_ch4_maret_guarded",
               "state_changes": {
                 "relationships": {
@@ -929,7 +929,7 @@
           "locked_hint": "Cipher only",
           "outcomes": {
             "default": {
-              "text": "You say the name. Her face does nothing. Her hands, in her lap, close on each other and hold on.\n\n\"You knew,\" you say.\n\nShe looks at her hands, then at you, and does not pretend.",
+              "text": "You say the name. Her face does nothing at all. Her hands, in her lap, take hold of each other and do not let go.\n\n\"You knew,\" you say.\n\nShe looks at her hands, and then at you, and doesn't pretend.",
               "next_scene": "act1_ch4_maret_opens",
               "state_changes": {
                 "flags": {
@@ -949,12 +949,12 @@
         },
         {
           "id": "ask_about_camp_first",
-          "text": "Do not push yet. Ask about the camp and her people first.",
+          "text": "Don't push yet. Ask about the camp and her people first.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "She opens slightly at this. Not much. But the wariness that was in her face when you arrived eases a degree.\n\nShe tells you about the camp: survivors from the eastern villages, people the town did not know what to do with, people whose families stopped wanting them once the curse touched them. Twenty-three people currently. She runs it on practical principles.\n\n\"Why do you do it?\" you ask.\n\nShe considers the question longer than it requires. \"Because someone has to,\" she says. \"And I am here.\"",
+              "text": "She warms a little at this, though not much. The wariness she met you with eases by a degree.\n\nShe tells you about the camp. There are people from the villages to the east, people the town didn't know what to do with, people whose families stopped wanting them once the curse had touched them. There are twenty-three of them at present, and she runs it on practical lines.\n\n\"Why do you do it?\" you ask.\n\nShe thinks about it longer than the question seems to need. \"Because somebody has to,\" she says. \"And I am here.\"",
               "next_scene": "act1_ch4_rootless_camp_stay",
               "state_changes": {
                 "relationships": {

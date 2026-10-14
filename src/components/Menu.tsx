@@ -85,7 +85,6 @@ export default function Menu({ state, onClose, onReturnToTitle, onSettings, onRe
 
           <button className={styles.row} onClick={() => exportSave(state)}>
             <span className={styles.rowLabel}>Export save</span>
-            <span className={styles.rowHint}>A file you can keep or move</span>
           </button>
 
           {pending ? (
@@ -119,7 +118,7 @@ export default function Menu({ state, onClose, onReturnToTitle, onSettings, onRe
 
           {confirming ? (
             <div className={styles.confirm}>
-              <p className={styles.confirmText}>Return to the title screen? Your game is saved.</p>
+              <p className={styles.confirmText}>Return to the title screen?</p>
               <div className={styles.confirmBtns}>
                 <button className={`${styles.confirmBtn} ${styles.danger}`} onClick={onReturnToTitle}>Return to title</button>
                 <button className={styles.confirmBtn} onClick={() => setConfirming(false)}>Cancel</button>

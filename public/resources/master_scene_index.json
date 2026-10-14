@@ -885,22 +885,22 @@
     {
       "from": "act2_ch8_point_of_no_return",
       "to": "act3_ch1_new_ashenveld",
-      "note": "Act 2 to Act 3 — stayed"
+      "note": "Act 2 to Act 3, stayed"
     },
     {
       "from": "act2_ch8_point_of_no_return",
       "to": "act3_ch1_leaving",
-      "note": "Act 2 to Act 3 — left"
+      "note": "Act 2 to Act 3, left"
     },
     {
       "from": "act2_ch8_point_of_no_return",
       "to": "act3_ch1_staying_briefly",
-      "note": "Act 2 to Act 3 — sent ahead"
+      "note": "Act 2 to Act 3, sent ahead"
     },
     {
       "from": "act2_ch8_point_of_no_return",
       "to": "act3_ch1_alone_in_ashenveld",
-      "note": "Act 2 to Act 3 — alone"
+      "note": "Act 2 to Act 3, alone"
     },
     {
       "from": "act3_ch1_new_ashenveld",
@@ -1116,7 +1116,7 @@
       "mana": 9,
       "charisma": 16,
       "perception": 13,
-      "unique_mechanic": "The Read — private NPC assessment each new scene. Sees what others miss."
+      "unique_mechanic": "The Read: private NPC assessment each new scene. Sees what others miss."
     }
   },
   "relationship_archetypes": {
