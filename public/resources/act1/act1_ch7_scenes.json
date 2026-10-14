@@ -17,16 +17,16 @@
       },
       "requires": {},
       "text": {
-        "default": "You go house to house.\n\nIn the first: a kitchen mid-preparation, the ingredients for something that was never finished. The preservation is wrong. Things that should have rotted have dried instead, as if the air here stopped moving months ago.\n\nIn the second: a family's house, the beds still holding the impressions of the people who slept in them. In the child's room: drawings. Most of them ordinary. Trees, animals, familiar scenes. The last few are different. The trees are drawn from inside them, looking up. Drawn with a quality of light the child must have experienced directly.\n\nIn the third: an old man's house with a writing desk covered in papers. Records, initially. The administrative notes of a small community. Then, in the last pages, something different.",
-        "commander": "You find the old man's records and read them with military discipline. In order, from the beginning, watching for the change in tone.\n\nNormal records. Harvest counts. Birth and death records. Maintenance notes. Then the handwriting changes, becomes slightly different, a shade less careful. The entries get shorter. Then they get strange.",
-        "arcane": "The papers on the old man's desk are the most valuable thing in Harrow. You read them with the care you would give a primary text.\n\nHarvest records. Community notes. A register of the curse's first symptoms. Someone made a careful account. The account changes tone at a point, entry 47, and after that the information becomes something else entirely.",
-        "ranger": "The drawings in the child's room stop you. You hold the last one up to the light.\n\nThe trees are drawn from memory, but the light is exact: grey-green, filtered through very dense canopy. Not the trees at the edge of Ashenveld. Further in.",
-        "cipher": "You work the houses quickly, looking for information rather than experience. In the third house, the old man's desk is exactly what you wanted. A paper trail through the life and death of this community."
+        "default": "You go from house to house.\n\nIn the first there is a kitchen where somebody was in the middle of cooking, with the makings of a meal that was never finished. Nothing has rotted as it should have. It has all dried instead, as though the air in here stopped moving months ago.\n\nThe second was a family's house, and the beds still hold the shapes of the people who slept in them. In the child's room there are drawings. Most are ordinary enough, trees and animals and the village. The last few are different. The trees in them are drawn from underneath, looking up, in a light the child must have seen for themselves.\n\nThe third was an old man's house, with a writing desk covered in papers. They begin as records, the ordinary notes anyone keeps for a small village. In the last pages they become something else.",
+        "commander": "You find the old man's records and read them properly, in order from the beginning, watching for the point where they change.\n\nThey begin as ordinary records: harvests, births and deaths, repairs. Then the handwriting changes, and becomes a shade less careful. The entries grow shorter, and then they grow strange.",
+        "arcane": "The papers on the old man's desk are the most valuable thing in Harrow. You read them as carefully as you would read any original source.\n\nThere are harvest records and notes about the village, and then a register of the first signs of the curse. Somebody kept a careful account. Then, at entry 47, the account changes, and after that it is not really an account at all.",
+        "ranger": "The drawings in the child's room stop you short. You hold the last one up to the light.\n\nThe trees are drawn from memory, but the light is exactly right, grey and green, coming through a very thick canopy. These are not the trees at the edge of Ashenveld. They are trees from much further in.",
+        "cipher": "You go through the houses quickly, looking for facts rather than feelings. In the third house the old man's desk is exactly what you were hoping for: the whole life and death of the village, set down on paper."
       },
       "choices": [
         {
           "id": "read_papers",
-          "text": "Read the old man's papers fully.",
+          "text": "Read all of the old man's papers.",
           "requires": {},
           "roll": {
             "stat": "intelligence",
@@ -34,7 +34,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "The last entries read like this:\n\nEntry 51: The well tastes wrong. I have stopped mentioning it to the others.\n\nEntry 58: Marta went to the trees this morning and came back in the afternoon. She said she just needed to think. That is probably true.\n\nEntry 62: Joren went east and did not come back. I told myself I would go looking in the morning. In the morning I found I had other things to do.\n\nEntry 68: I am writing this because I want to remember why it was important to write things down. I know it was important. I can feel the shape of the reason without the substance of it.\n\nEntry 71: Tomorrow I am going to the trees. I have been going to the trees every day for two weeks. This time I will keep going. I think that is what happens next.\n\nThe last entry. Nothing after it.",
+              "text": "The last entries go like this.\n\nEntry 51: The well tastes wrong. I have stopped mentioning it to the others.\n\nEntry 58: Marta went to the trees this morning and came back in the afternoon. She said she just needed to think. That is probably true.\n\nEntry 62: Joren went east and did not come back. I told myself I would go looking in the morning. In the morning I found I had other things to do.\n\nEntry 68: I am writing this because I want to remember why it was important to write things down. I know it was important. I can feel the shape of the reason without the substance of it.\n\nEntry 71: Tomorrow I am going to the trees. I have been going to the trees every day for two weeks. This time I will keep going. I think that is what happens next.\n\nThere is nothing after that.",
               "next_scene": "act1_ch7_harrow_cellar",
               "state_changes": {
                 "flags": {
@@ -44,7 +44,7 @@
               }
             },
             "success_at_cost": {
-              "text": "You read the broad shape of it. The records go normal, then slightly wrong, then clearly wrong, then stop. The last few entries are shorter than the ones before. A progression of brevity that tells its own story.",
+              "text": "You get the general drift of it. The records are ordinary, then a little wrong, then very wrong, and then they stop. The last entries are shorter than the ones before, and get shorter still, and that tells its own story.",
               "next_scene": "act1_ch7_harrow_cellar",
               "state_changes": {
                 "flags": {
@@ -53,7 +53,7 @@
               }
             },
             "failure": {
-              "text": "The handwriting in the later entries is hard to parse. The changes in it track with the changes in the content and by the end it is barely legible. You take the papers with you to read later with more light.",
+              "text": "The writing in the later entries is hard to make out. It changes as what it says changes, and by the end you can barely read it at all. You take the papers with you, to read later in a better light.",
               "next_scene": "act1_ch7_harrow_cellar",
               "state_changes": {
                 "inventory": [
@@ -65,12 +65,12 @@
         },
         {
           "id": "take_papers_move_on",
-          "text": "Take the papers and move to the barn.",
+          "text": "Take the papers and go to the barn.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You pack the papers. You will read them properly later. Right now there is more to find.",
+              "text": "You pack up the papers to read properly later. There is more to find first.",
               "next_scene": "act1_ch7_harrow_cellar",
               "state_changes": {
                 "inventory": [
@@ -102,20 +102,20 @@
       "requires": {},
       "text": {
         "default": [
-          "The barn has a cellar. Most barns do. This one has a cellar that was locked from the inside. Not by a mechanism, by arrangement. Boxes stacked in a pattern that blocks the door and can only have been arranged by someone already inside.",
-          "You move the boxes. The cellar smells of old root vegetables and something else. A scent that you will later learn to associate with places where people stayed for a long time in a small space.",
-          "The cellar was occupied. Recently. Within the last month or two. Someone lived down here while Harrow emptied above them. They stayed longer than anyone else. Long enough to carve things into the cellar wall.",
-          "Among the marks on the wall are figures. Small ones, the size of a thumb, a head and a body and no face, carved over and over. Dozens of them."
+          "The barn has a cellar, as most barns do. This one was barred from the inside. There is no lock; boxes have been stacked so as to block the door, and nobody could have stacked them like that except from within.",
+          "You move the boxes. The cellar smells of old root vegetables and of something else, a smell you will come to know later, of places where people have lived a long time in a small space.",
+          "Somebody lived down here, and not long ago, within the last month or two. They stayed on in the cellar while Harrow emptied over their head. They stayed longer than anyone, long enough to cut things into the cellar wall.",
+          "Among the marks on the wall are figures. They are small, the size of your thumb, a head and a body and no face, carved again and again, dozens of them."
         ],
-        "commander": "The carvings are a map. You recognise it as such immediately. The spatial logic of it is military, the way significant points are marked, the proportions kept consistent.\n\nA map of the ruins. The accessible areas, the deeper areas. Points marked with small symbols you do not know the meaning of yet.\n\nSomeone made a detailed survey of the ruins and then came back to Harrow and drew it from memory in a cellar wall before eventually going east again.",
-        "arcane": "The carvings are a schematic. Not a map. A diagram of the power structure of the ruins. Someone with significant working knowledge has mapped the curse's source, the channels through which it spreads, the points where it concentrates.\n\nThe symbols are from a tradition you half-recognise. Older than any active school of practice, pre-Covenant. Someone read the old texts and used what they found.",
-        "ranger": "The carvings are a guide. Not a map. A survival guide. This location is safe, this location is not. This path stays outside the deepest effect. This point is where the ground starts to feel wrong. This is where the animals gather.\n\nSomeone spent time in those ruins learning how to move through them and then came here to write down what they learned.",
-        "cipher": "The carvings are a message. Not to you specifically. But to whoever came this way later. Someone who went into the ruins and came back out and went in again wanted someone else to know what they found.\n\nYou read it carefully. Some of it you understand. Some of it you do not. All of it matters."
+        "commander": "You see at once that the carvings are a map. It is laid out as a soldier would lay one out, with the important places marked and the proportions kept true.\n\nIt is a map of the ruins, showing the parts that can be reached and the deeper parts, with points marked by small signs whose meaning you do not yet know.\n\nSomebody surveyed the ruins thoroughly, came back to Harrow, and drew it from memory on a cellar wall before going east again.",
+        "arcane": "The carvings are not a map, or not only a map. They are a diagram of how the power in the ruins is laid out. Somebody who knew a great deal has set down the source of the curse, the channels it spreads along, and the places where it gathers.\n\nYou half recognise the signs. They come from a tradition older than any school still practising, older than the Covenant. Whoever made them had read the old texts and made use of what they found.",
+        "ranger": "The carvings are not so much a map as a set of instructions for staying alive. This place is safe and that one is not. This path keeps out of the worst of it. Here is where the ground starts to feel wrong. Here is where the animals gather.\n\nSomebody spent time in those ruins learning how to get about in them, and then came here to write down what they had learned.",
+        "cipher": "The carvings are a message, though not to you in particular. They are for whoever came this way afterwards. Somebody went into the ruins, came out, went in again, and wanted somebody else to know what they had found.\n\nYou read it carefully. Some of it you understand and some you don't, but all of it matters."
       },
       "choices": [
         {
           "id": "copy_carvings",
-          "text": "Copy the carvings into your journal. Take them with you.",
+          "text": "Copy the carvings into your journal, and take them with you.",
           "requires": {},
           "roll": {
             "stat": [
@@ -126,7 +126,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "You spend forty minutes in the cellar with your journal and a lamp. You copy everything. Every marking, every symbol, every indication of direction. By the end your hand aches and the cellar air has given you a headache but you have an accurate copy.\n\nYou go back to the barn to sleep. Tomorrow: the forest edge.",
+              "text": "You spend the best part of an hour in the cellar with your journal and a lamp, and copy everything: every mark and every sign and every indication of direction. By the end your hand aches and the air down there has given you a headache, but you have a true copy.\n\nYou go back up to the barn to sleep. Tomorrow you go to the edge of the forest.",
               "next_scene": "act1_ch7_forest_edge",
               "state_changes": {
                 "flags": {
@@ -138,7 +138,7 @@
               }
             },
             "success_at_cost": {
-              "text": "You copy the most legible parts. Some of the older carvings are too worn or too cryptic to accurately reproduce. You get the shape of it. The major features, the marked points. Enough to navigate by.",
+              "text": "You copy the parts you can read. Some of the older carvings are too worn, or too obscure, to copy properly. But you have the outline, the main features and the marked places, and that is enough to find your way by.",
               "next_scene": "act1_ch7_forest_edge",
               "state_changes": {
                 "flags": {
@@ -147,7 +147,7 @@
               }
             },
             "failure": {
-              "text": "The carvings are too complex in too little time. You capture what you can, the major landmarks, some of the symbols, but the connections between them elude you. You commit what you can to memory.",
+              "text": "There is too much of it and too little time. You copy what you can, the main landmarks and a few of the signs, but you cannot make out how they join up. You fix what you can in your memory.",
               "next_scene": "act1_ch7_forest_edge",
               "state_changes": {
                 "resources": {
@@ -159,12 +159,12 @@
         },
         {
           "id": "memorise_and_move",
-          "text": "Memorise what you can. Sleep. Then the forest.",
+          "text": "Memorise what you can and sleep. Then the forest.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You stand in the cellar for ten minutes and look. You commit the major features to the part of your memory that keeps things.\n\nThen you go up and sleep in the barn. Tomorrow.",
+              "text": "You stand in the cellar for ten minutes and look, and you fix the main features in your memory.\n\nThen you go up and sleep in the barn.",
               "next_scene": "act1_ch7_forest_edge",
               "state_changes": {}
             }
@@ -180,7 +180,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "The boxes along the back wall are packed tight, floor to beam. You take them down one at a time and set them on the floor in the order they came off.\n\nBehind the last of them is a bundle of sacking tied with twine. A blanket, a tin cup, a candle end. And a small figure carved from bone, no longer than your thumb, worn smooth where somebody's fingers held it.\n\nYou take the figure. You leave the rest where it was.",
+              "text": "The boxes along the back wall are packed tight from the floor to the beam. You take them down one at a time and set them on the floor in the order they came off.\n\nBehind the last of them is a bundle of sacking tied up with twine. There is a blanket, a tin cup and a candle end in it, and a small figure carved out of bone, no longer than your thumb, worn smooth where somebody's fingers held it.\n\nYou take the figure and leave the rest as it was.",
               "next_scene": "act1_ch7_forest_edge",
               "state_changes": {
                 "inventory": [
@@ -189,7 +189,7 @@
               }
             },
             "success_at_cost": {
-              "text": "Two boxes come down together and you catch the second against your chest. Something inside it breaks. Behind the stack is a bundle of sacking: a blanket, a cup, a candle end, and a small figure carved from bone. You take the figure. Your arms ache all the way back to the barn.",
+              "text": "Two boxes come down together and you catch the second against your chest. Something inside it breaks. Behind the stack is a bundle of sacking with a blanket, a cup, a candle end and a small figure carved out of bone. You take the figure. Your arms ache all the way back to the barn.",
               "next_scene": "act1_ch7_forest_edge",
               "state_changes": {
                 "inventory": [
@@ -201,7 +201,7 @@
               }
             },
             "failure": {
-              "text": "The stack goes. It comes down all at once, louder than anything in Harrow has been for months, and the dust takes a long time to settle. You sit on the cellar step with your sleeve over your mouth until it does. Whatever was behind the boxes is under them now.",
+              "text": "The whole stack goes. It comes down at once, louder than anything Harrow has heard for months, and the dust takes a long while to settle. You sit on the cellar step with your sleeve over your mouth until it does. Whatever was behind the boxes is underneath them now.",
               "next_scene": "act1_ch7_forest_edge",
               "state_changes": {
                 "resources": {
@@ -231,21 +231,21 @@
       },
       "requires": {},
       "text": {
-        "default": "The forest edge is a line.\n\nNot a gradual transition. A line. On one side: Harrow's trees, the familiar species you grew up with, their bark the right texture, their spacing the right distance. On the other side: something that is technically also trees but which is wrong in several ways at once.\n\nThe bark is darker. The spacing is too regular. An interval that repeats precisely, like something arranged rather than grown. The ground on the other side of the line is softer than it should be for this weather. And the sound.\n\nThe sound stops at the line. Not just the birds. Everything. The wind still moves but it moves in silence. The total absence of ambient sound past that point is so complete that you become suddenly aware of your own heartbeat.",
-        "commander": "You stand at the line and assess. The forest ahead is tactically unknown territory. You have partial intelligence from the cellar map, from Maret's account, from the traveller. Not enough to guarantee outcomes. Enough to proceed with acceptable risk.\n\nYou have walked into worse situations with less. You remind yourself of this. You also remind yourself that in most of those situations you had backup.",
-        "arcane": "You stand at the line and read it.\n\nThe transition is architectural. Not natural growth into a different zone but a boundary, like a wall without visible material. Whatever created this, it was deliberate. The ruins' builders knew how to create spatial barriers.\n\nThe frequency you have been feeling since arriving in Ashenveld is, at this line, a full note rather than a partial one. Clear. Sustained. Almost musical, if music were something you felt in your bones rather than heard.",
-        "ranger": "You stand at the line and do what you always do. Read it as territory.\n\nOn your side: familiar. On the other side: unknown. The transition marks a genuine ecological boundary, not just an aesthetic one. Different soil chemistry, different moisture levels, different something-in-the-air that makes your body register it before your mind does.\n\nYour body is saying: this is somewhere new. Your body is right.",
-        "cipher": "You stand at the line and take stock of yourself. Three days in Crestfall, two on the road. You are better prepared than most people who reach this point. Whether that is enough is on the other side of the line."
+        "default": "The edge of the forest is a line.\n\nThere is no gradual change at all. On one side are the trees of Harrow, the kinds you grew up with, with the right bark and the right spaces between them. On the other side are what are, strictly speaking, trees as well, but they are wrong in several ways at once.\n\nThe bark is darker. They stand too regularly, at exactly the same distance one from the next, as if somebody had planted them rather than letting them grow. The ground beyond the line is softer than it should be in this weather. And then there is the sound.\n\nThe sound stops at the line. It is not only the birds; everything stops. The wind still moves, but it moves without a sound, and beyond that point there is such a complete absence of noise that you suddenly become aware of your own heartbeat.",
+        "commander": "You stand at the line and weigh it up. You know very little about the ground ahead. You have something from the cellar map, from Maret, and from the man on the road, but not enough to be sure of anything. It is enough to go on, at a risk you can accept.\n\nYou have gone into worse places knowing less, you remind yourself. You also remind yourself that in most of them you had somebody at your back.",
+        "arcane": "You stand at the line and read it.\n\nIt is not natural. The forest does not simply change into something else here; there is a boundary, like a wall made of nothing you can see. Whoever made it made it on purpose. The people who built the ruins knew how to raise barriers in the air itself.\n\nThe note you have felt ever since you came to Ashenveld is, at this line, a whole note at last, clear and steady. It is very nearly music, if music were something you felt in your bones.",
+        "ranger": "You stand at the line and look at it as you look at any ground.\n\nYou know this side and you don't know that one. It is a real boundary, not only a change in how things look. The soil is different, and the damp, and something in the air that your body notices before you do.\n\nYour body tells you this is somewhere new, and your body is quite right.",
+        "cipher": "You stand at the line and take stock. You have had three days in Crestfall and two on the road, and you are better prepared than most people who get this far. Whether that is enough, you will find out on the other side."
       },
       "choices": [
         {
           "id": "wait_sense_behind",
-          "text": "Wait. Something behind you.",
+          "text": "Wait. There's something behind you.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You heard her before she intended to be heard. Footsteps on the road behind you, a measured pace, someone moving with purpose and some haste.\n\nMaret comes out of the Harrow tree line. She is carrying a pack. She looks at you at the forest edge and does not look surprised to see you standing there.",
+              "text": "You hear her before she means you to: footsteps on the road behind you, steady, somebody walking with a purpose and in some haste.\n\nMaret comes out of the Harrow trees with a pack on her back. She sees you standing at the edge of the forest and does not look in the least surprised.",
               "next_scene": "act1_ch7_maret_follows",
               "state_changes": {
                 "flags": {
@@ -265,7 +265,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You step back into the last of the ordinary trees and wait.\n\nIt is Maret. She comes along the road with a pack on her back, fast, and stops short of the line. She does not see you. She stands facing the dark trees with her hands at her sides and says something to them, too quietly to carry. She waits, as if for an answer.\n\nThen she turns, and finds you watching.",
+              "text": "You step back among the last of the ordinary trees and wait.\n\nIt is Maret. She comes quickly along the road with a pack on her back, and stops short of the line. She doesn't see you. She stands facing the dark trees with her hands at her sides and says something to them, too quietly for you to hear. Then she waits, as if for an answer.\n\nThen she turns round and finds you watching.",
               "next_scene": "act1_ch7_maret_follows",
               "state_changes": {
                 "flags": {
@@ -281,12 +281,12 @@
         },
         {
           "id": "step_into_forest_alone",
-          "text": "Cross the line. Go in alone.",
+          "text": "Cross the line, and go in alone.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You step across the line and the sound stops.\n\nThe silence is not unpleasant. It is complete. You take three steps into the different forest and turn to look back at the ordinary forest behind you.\n\nThen you hear footsteps on the road.",
+              "text": "You step across the line, and the sound stops.\n\nIt is not unpleasant. It is simply complete. You take three steps into the strange forest and turn to look back at the ordinary one behind you.\n\nThen you hear footsteps on the road.",
               "next_scene": "act1_ch7_maret_follows",
               "state_changes": {
                 "flags": {
@@ -308,7 +308,7 @@
           "locked_hint": "Ranger only",
           "outcomes": {
             "default": {
-              "text": "You walk north along the edge with the ordinary trees on your left hand. Eighty paces in you find the first cairn: three stones, waist high, old moss on the bottom one. Another at a hundred and forty. Somebody marked this line, carefully, more than once.\n\nWhen you come back to the road, Maret is standing there with a pack on her back, looking at the cairn you have just come from.",
+              "text": "You walk north along the edge with the ordinary trees on your left. Eighty paces along you find the first cairn: three stones, waist high, with old moss on the bottom one. There is another at a hundred and forty. Somebody has marked this line, carefully, more than once.\n\nWhen you come back to the road, Maret is standing there with a pack on her back, looking at the cairn you have just left.",
               "next_scene": "act1_ch7_maret_follows",
               "state_changes": {
                 "flags": {
@@ -340,14 +340,14 @@
       },
       "text": {
         "default": [
-          "She followed you.",
+          "She has followed you.",
           {
             "when": {
               "flags": {
                 "saw_maret_at_line": true
               }
             },
-            "text": "You watched her talk to the trees a moment ago. She knows you did."
+            "text": "A moment ago you watched her talk to the trees, and she knows that you did."
           },
           {
             "when": {
@@ -355,12 +355,12 @@
                 "crossed_into_forest_first": true
               }
             },
-            "text": "She stops on the ordinary side of the line and looks at you standing in the silence. Her pack is full. She is dressed for several days of travel.",
-            "else": "She stops beside you, an arm's length short of the line, and looks at the trees. Her pack is full. She is dressed for several days of travel."
+            "text": "She stops on the ordinary side of the line and looks at you standing in the silence. Her pack is full, and she is dressed for several days on the road.",
+            "else": "She stops beside you, an arm's length short of the line, and looks at the trees. Her pack is full, and she is dressed for several days on the road."
           },
-          "\"Why are you here?\" you say.",
-          "She takes a breath. \"Because I sent them in,\" she says. \"Because it has been fourteen months and I have been telling myself they made their choice and I had to respect it. And because I woke up this morning and could not respect it anymore.\"",
-          "She looks at the line. \"I know this place. I have been to the outskirts. I know more about what is in there than anyone except the people who went in and did not come back.\" She looks at you. \"You need that. And I owe it.\"",
+          "\"Why are you here?\" you ask.",
+          "She takes a breath. \"Because I sent them in,\" she says. \"Because for fourteen months I have been telling myself they made their own choice and I ought to respect it. And because I woke up this morning and found I could not respect it any longer.\"",
+          "She looks at the line. \"I know this place. I have been in the outskirts. I know more about what is in there than anyone, except the people who went in and did not come back.\" She looks at you. \"You need that. And I owe it.\"",
           {
             "when": {
               "flags": {
@@ -370,25 +370,25 @@
             },
             "text": "She is holding the letter. \"This is yours,\" she says. \"I was wrong to keep it.\""
           },
-          "It is new moon tomorrow. She should be at the tree line by the camp.",
+          "It is new moon tomorrow. She ought to be at the tree line by the camp.",
           {
             "when": {
               "flags": {
                 "maret_believes_alive": true
               }
             },
-            "text": "She says \"the people who went in\", never \"the people who died in there\". You noticed that at the camp. She still does it."
+            "text": "She says \"the people who went in\", and never \"the people who died in there\". You noticed it at the camp, and she still does it."
           }
         ],
-        "commander": "\"You are not a soldier,\" you say.\n\n\"No,\" she says. \"But I have kept twenty-three people alive in a camp next to the worst outbreak zone in this region for three years. I know how to manage difficult ground.\" A pause. \"And I know when a decision I made needs to be corrected.\"\n\nShe waits for you to decide.",
-        "arcane": "\"You made an arrangement,\" you say. \"With whatever is in here. Does that not make this complicated?\"\n\n\"Yes,\" she says. \"It makes it very complicated. I am telling you that before we go in rather than after, which is my version of being honest about it.\"\n\nYou weigh the complication against the information she carries. It is not a close calculation.",
-        "ranger": "\"You will slow me down,\" you say. Not hostile. Factual.\n\n\"Maybe,\" she says. \"But I know the terrain inside the outskirts and you do not. And I know—\" she pauses, and something in her face is harder now. \"I know the thing that is inside responds to certain people differently. I am one of those people. Having me present changes the calculation.\"",
-        "cipher": "\"You are not here out of guilt alone,\" you say.\n\nShe looks at you for a moment. \"No,\" she says. \"I want to know what is in there. I have been three years next to it and I want to know.\" A pause. \"That is honest.\"\n\nHonesty earned by admission. You decide it is worth something."
+        "commander": "\"You're not a soldier,\" you say.\n\n\"No,\" she says. \"But I have kept twenty-three people alive for three years in a camp beside the worst of it. I know how to manage difficult ground.\" She pauses. \"And I know when a decision I made needs putting right.\"\n\nShe waits for you to make up your mind.",
+        "arcane": "\"You made an arrangement,\" you say, \"with whatever is in there. Doesn't that make this complicated?\"\n\n\"Yes,\" she says. \"It makes it very complicated. I am telling you so before we go in rather than after. That is as honest as I know how to be about it.\"\n\nYou weigh the complication against what she knows. It is not a close thing.",
+        "ranger": "\"You'll slow me down,\" you say. You don't say it unkindly. It is simply true.\n\n\"Perhaps,\" she says. \"But I know the ground inside the outskirts, and you do not. And I know...\" She stops, and her face hardens a little. \"I know that what is in there answers some people differently. I am one of them. Having me with you changes things.\"",
+        "cipher": "\"It isn't only guilt that's brought you,\" you say.\n\nShe looks at you for a moment. \"No,\" she says. \"I want to know what is in there. I have lived three years next to it, and I want to know.\" She pauses. \"That is the truth.\"\n\nShe has owned up to it, and you decide that counts for something."
       },
       "choices": [
         {
           "id": "accept_maret_companion",
-          "text": "\"Come then. You know what you are getting into.\"",
+          "text": "\"Come, then. You know what you're getting into.\"",
           "requires": {
             "min_relationship": {
               "maret": 30
@@ -397,7 +397,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "She crosses the forest line.\n\nThe sound stops for her too. She stands in the different silence and looks around. Not afraid, you note. Something more complicated than fear. Like someone arriving at a place they have thought about for a long time.\n\n\"Stay close,\" you say.\n\n\"Yes,\" she says. And then, quietly: \"I am sorry it took me this long.\"",
+              "text": "She steps over the line into the forest.\n\nThe sound stops for her too. She stands in the strange silence and looks about her. She isn't afraid, you notice. It is something more complicated than fear, like a person arriving at last at a place they have thought about for a very long time.\n\n\"Stay close,\" you say.\n\n\"Yes,\" she says. And then, more quietly, \"I am sorry it took me so long.\"",
               "next_scene": "act1_ch7_maret_confession",
               "state_changes": {
                 "flags": {
@@ -421,7 +421,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "She looks at you for a long moment. \"They have Branch,\" she says. Then: \"Alright.\"\n\nShe takes the pack off and opens it and hands you the most useful things. The provisions, the herbs, a set of notes she has made about the outskirts.\n\nShe does not argue. That, somehow, is worse than arguing would have been.\n\n\"Find them,\" she says. She goes back the way she came. You watch her until the Harrow tree line takes her.",
+              "text": "She looks at you. \"They have Branch,\" she says. Then: \"All right.\"\n\nShe takes off the pack, opens it, and hands you the most useful things in it: the food, the herbs, and some notes she has made about the outskirts.\n\nShe doesn't argue, and somehow that is worse than if she had.\n\n\"Find them,\" she says, and goes back the way she came. You watch her until the Harrow trees hide her.",
               "next_scene": "act1_ch7_decision_enter",
               "state_changes": {
                 "flags": {
@@ -463,11 +463,11 @@
         }
       },
       "text": {
-        "default": "You move into the outskirts together. She walks slightly behind and to your left. Close enough to help. Far enough not to lead.\n\nAfter ten minutes: \"I saw them go in,\" she says. \"The last time. Not the first time they went in — they had been in the outskirts twice before. The third time they went deeper. I watched them go past the marker line.\"\n\nShe walks for a moment without speaking.\n\n\"They were smiling,\" she says. \"Not the way the afflicted smile — the way the afflicted smile has no warmth in it. They were smiling the way people smile when they have finally stopped being afraid of something.\"",
-        "commander": "\"What is past the marker line?\" you ask.\n\n\"The ruins proper,\" she says. \"The old city. Or what is left of it.\" She navigates around a tree whose roots are wrong. Too symmetrical. \"The outskirts you can move through with care. Past the marker line it is different. I have never been past it.\"\n\n\"But they went past it.\"\n\n\"They went past it,\" she confirms. \"Alone. I watched them go.\"",
-        "arcane": "\"What was your arrangement?\" you ask. It is time to know.\n\nShe is quiet for long enough that you think she will not answer. Then: \"The curse leaves some people alone,\" she says. \"People who stop resisting it in a way. Not giving in. Something more careful than that. An acknowledgement.\"\n\n\"I acknowledged it. What it is, what it does, that it is real and not going to stop being real. In exchange—\" She stops. \"It leaves my people alone. Not cured. Not protected. Just not prioritised.\"\n\n\"What did that acknowledgement cost?\"\n\nA long pause. \"I know exactly what is in the ruins,\" she says. \"And I cannot tell anyone. When I try, the words stop.\"",
-        "ranger": "You move together through the outskirts. She knows the terrain here. You can see it in how she moves, the knowledge of where the ground is reliable and where it is not.\n\n\"They went in smiling,\" you say. \"That is what you said.\"\n\n\"Yes.\"\n\n\"Was that the curse?\"\n\nShe thinks about this for a while. \"I do not know,\" she says finally. \"Maybe they found something that made going deeper feel like the obvious next thing. Or maybe the curse made it feel obvious.\" She pauses. \"Yes. Or that.\"",
-        "cipher": "You listen without planning what to say back.\n\n\"Did they know they might not come back?\" you ask.\n\n\"Yes,\" she says. \"We talked about it the night before.\"\n\n\"And they went anyway.\"\n\n\"And they went anyway.\" A pause. \"That is either courage or the curse.\"\n\n\"You cannot tell the difference?\"\n\nShe looks at you. \"Not from here. That is why we are going in.\""
+        "default": "You go into the outskirts together. She walks a little behind you and to your left, near enough to help and far enough back not to lead.\n\nAfter ten minutes she says, \"I saw them go in. The last time, I mean. They had been into the outskirts twice before. The third time they went deeper, and I watched them go past the marker line.\"\n\nShe walks on for a while without speaking.\n\n\"They were smiling,\" she says. \"Not as the afflicted smile. There is no warmth in that. They were smiling as people do when they have finally stopped being afraid of something.\"",
+        "commander": "\"What's past the marker line?\" you ask.\n\n\"The ruins proper,\" she says. \"The old city, or what is left of it.\" She steps round a tree whose roots are wrong, too even on either side. \"You can get through the outskirts if you are careful. Past the marker line it is different. I have never been past it.\"\n\n\"But they went past it.\"\n\n\"They went past it,\" she says. \"Alone. I watched them go.\"",
+        "arcane": "\"What was your arrangement?\" you ask. It is time you knew.\n\nShe is quiet for so long that you think she will not answer. Then she says, \"The curse leaves some people alone. People who stop fighting it, in a certain way. It is not giving in. It is something more careful than that. You admit that it is there.\"\n\n\"I admitted it. What it is, and what it does, and that it is real and is not going to stop being real. And in return...\" She stops. \"It leaves my people alone. They are not cured, or protected. It simply does not come for them first.\"\n\n\"What did it cost you?\"\n\nShe is silent a long while. \"I know exactly what is in the ruins,\" she says. \"And I cannot tell anyone. When I try, the words stop.\"",
+        "ranger": "You go on together through the outskirts. She knows the ground here; you can see it in the way she walks, knowing where it will bear her weight and where it won't.\n\n\"They went in smiling,\" you say. \"That's what you said.\"\n\n\"Yes.\"\n\n\"Was that the curse?\"\n\nShe thinks about it for some time. \"I do not know,\" she says at last. \"Perhaps they found something that made going deeper seem the obvious thing to do. Or perhaps the curse made it seem obvious.\" She pauses. \"Or both.\"",
+        "cipher": "You listen without working out what to say next.\n\n\"Did they know they might not come back?\" you ask.\n\n\"Yes,\" she says. \"We talked about it the night before.\"\n\n\"And they went anyway.\"\n\n\"And they went anyway.\" She is quiet a moment. \"Either that was courage, or it was the curse.\"\n\n\"You can't tell which?\"\n\nShe looks at you. \"Not from here. That is why we are going in.\""
       },
       "choices": [
         {
@@ -477,7 +477,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You move deeper into the different forest, together. The light has changed. Not dimmer, but greyer, as if the colour has been removed from it. Behind you, through the trees, you can no longer see the ordinary forest.",
+              "text": "You go deeper into the strange forest together. The light has changed. It is no dimmer, but it is greyer, as though the colour had been taken out of it. Behind you, through the trees, you can no longer see the ordinary forest at all.",
               "next_scene": "act1_ch7_decision_enter",
               "state_changes": {}
             }
@@ -490,7 +490,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "\"I did not let them,\" she says. \"I told them where. That is different, and it is not better.\"\n\nShe walks on. After a while she says, \"You will ask me again. Ask me when we find them.\"",
+              "text": "\"I did not let them,\" she says. \"I told them where. That is different, and it is no better.\"\n\nShe walks on. After a while she says, \"You will ask me that again. Ask me when we find them.\"",
               "next_scene": "act1_ch7_decision_enter",
               "state_changes": {
                 "relationships": {
@@ -530,23 +530,23 @@
                 "maret_letter_obtained": true
               }
             },
-            "text": "Behind you: Crestfall, a day's walk. Maret's camp. Three factions each with their version of what this place is and what should be done about it. The letter, folded inside your coat. The things you built in three days and left in the care of the people you built them with.",
-            "else": "Behind you: Crestfall, a day's walk. Maret's camp. Three factions each with their version of what this place is and what should be done about it. The letter Maret would not give you. The things you built in three days and left in the care of the people you built them with."
+            "text": "Behind you, a day's walk back, are Crestfall and Maret's camp, and three parties who each have their own idea of what this place is and what ought to be done about it. The letter is folded inside your coat. Whatever you managed to build in three days, you have left with the people you built it with.",
+            "else": "Behind you, a day's walk back, are Crestfall and Maret's camp, and three parties who each have their own idea of what this place is and what ought to be done about it. There is the letter Maret would not give you. Whatever you managed to build in three days, you have left with the people you built it with."
           },
-          "Ahead: the ruins, under the dark forest. [missing person], fourteen months in. The source of the curse. The knowledge of what was sealed here and why.",
-          "You stand at the threshold. Not deciding. You already decided. Locating yourself. The way you do when you want to be sure you know where you started before you go somewhere you might not come back from.",
+          "Ahead are the ruins, under the dark forest, and [missing person], fourteen months gone. Somewhere ahead is the source of the curse, and the answer to what was sealed here, and why.",
+          "You stand on the threshold. You are not making up your mind; you did that long ago. You only want to be sure of where you are starting from, as people do before they go somewhere they may not come back from.",
           "You know where you started.",
-          "You go forward."
+          "You go on."
         ],
-        "commander": "The last thought before you move is the same thought you have before every significant action: the objective is clear, the resources are what they are, and hesitation now costs more than proceeding.\n\nYou proceed.",
-        "arcane": "The last entry in your journal, written while there is still enough light:\n\nThe source is ahead. The effect on the ambient intensifies with every step. Whatever was sealed here was sealed for good reason. I am going in to find out what the reason was and whether the sealing can be restored.\n\nI am also going in because someone I came back to Ashenveld for is in there and I am not the kind of person who can leave that alone.\n\nBoth of those things are true. I note that both are true.\n\nYou close the journal and go forward.",
-        "ranger": "You go forward the way you enter any unknown territory: alert to everything, committed to nothing except the direction, reading as you move rather than standing and reading before you move.\n\nThe objective is in there. You are the person who is going to find it.",
-        "cipher": "One last inventory. What you know. What you do not know. What you have built in three days that might matter when you come back out.\n\nIf you come back out.\n\nIt belongs in a different category than the one you are operating in.\n\nYou go forward."
+        "commander": "Your last thought before you move is the one you always have before anything that matters. You know what you are there to do, you have what you have, and to hang back now would cost more than to go on.\n\nSo you go on.",
+        "arcane": "You write a last entry in your journal while there is still light to write by.\n\nThe source is ahead, and the pressure grows with every step. Whatever was sealed here was sealed for a good reason. I am going in to find out what the reason was, and whether the seal can be mended.\n\nI am also going in because someone I came back to Ashenveld for is in there, and I am not the sort of person who can leave that alone.\n\nYou close the journal and go on.",
+        "ranger": "You go on as you go into any country you don't know, watching everything, keeping only to the direction, and reading the ground as you walk rather than stopping to read it first.\n\nWhat you came for is in there, and you are going to find it.",
+        "cipher": "You go over it one last time: what you know, what you don't, and what you have built in three days that may matter when you come out again.\n\nIf you come out again. You put that thought aside, for now.\n\nYou go on."
       },
       "choices": [
         {
           "id": "go_forward_into_ruins",
-          "text": "Go forward.",
+          "text": "Go on.",
           "requires": {},
           "roll": null,
           "outcomes": {
@@ -554,11 +554,11 @@
               "text": [
                 "The trees close behind you.",
                 "Crestfall is gone.",
-                "The silence of the deep forest is total.",
-                "The trees here are wrong in every way. The light is wrong. The ground under your feet is wrong. Too soft, too even. The air tastes like the air in a room that has been closed for a very long time.",
+                "In the deep forest the silence is complete.",
+                "The trees here are wrong in every way. The light is wrong. The ground under your feet is wrong, too soft and too level. The air tastes like the air in a room that has been shut up for a very long time.",
                 "You keep moving.",
-                "Somewhere in the ruins ahead, in a place fourteen months of letters and silence and one name written at the end of a note have been pointing you toward, someone is waiting. Or was waiting. Or wanted you to come. Or wanted you to stay away and wrote it in a way that made staying away impossible.",
-                "You will know which when you find them.",
+                "Somewhere in the ruins ahead somebody is waiting for you, or was waiting, or wanted you to come. Or else they wanted you to stay away, and put it in such a way that staying away was impossible. Fourteen months, and a letter, and a name at the end of a note have all been pointing you here.",
+                "You will know which it was when you find them.",
                 "You keep moving."
               ],
               "next_scene": "act2_ch1_ruins_outskirts",
