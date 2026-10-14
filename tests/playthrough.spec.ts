@@ -24,7 +24,7 @@ async function createCharacter(page: Page, cls: string, name = 'Tam', missing = 
   await page.getByRole('button', { name: /^(begin|new game)$/i }).click()
   const again = page.getByRole('button', { name: /start again/i })
   if (await again.count()) await again.click()
-  await page.getByText('Woman', { exact: true }).click()
+  await page.getByText('A woman', { exact: true }).click()
   await page.getByRole('button', { name: /next/i }).click()
   await page.getByText(`The ${cls}`, { exact: true }).first().click()
   await page.getByRole('button', { name: /next/i }).click()

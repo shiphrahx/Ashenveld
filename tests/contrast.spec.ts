@@ -14,7 +14,7 @@ test('text contrast is at least 4.5:1', async ({ page }) => {
   expect(await lowContrast(page), 'title').toEqual([])
 
   await page.getByRole('button', { name: /begin/i }).click()
-  await page.getByText('Woman', { exact: true }).click()
+  await page.getByText('A woman', { exact: true }).click()
   await page.getByRole('button', { name: /next/i }).click()
   await page.waitForTimeout(800)
   expect(await lowContrast(page), 'class step').toEqual([])
