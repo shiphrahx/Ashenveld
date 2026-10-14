@@ -26,10 +26,10 @@
       },
       "text": {
         "default": [
-          "A month after the ritual. Day thirty.",
-          "Crestfall is measurably different. Not healed. Different. The market has six stalls now instead of three. The fountain has not started running again but someone has planted bulbs around its base. Not flowers. Vegetables, which is more honest.",
-          "Vorne's garrison is down to eight soldiers. The remaining eight are doing things that look less like occupation and more like maintenance. The east road checkpoint has been moved a mile east and is now staffed by two people rather than five.",
-          "The Rootless camp has seventeen new members. People from the eastern villages who heard that something had changed and came toward Crestfall rather than continuing east. Maret received them with the efficiency of someone who has been preparing for this for three years.",
+          "It is a month since the ritual: the thirtieth day.",
+          "Crestfall is noticeably different. It isn't healed, but it is different. There are six stalls in the market now instead of three. The fountain still isn't running, but somebody has planted bulbs round the foot of it. They are not flowers but onions, which is more honest.",
+          "Vorne's garrison is down to eight men, and what they do now looks less like occupying a town than keeping it in repair. The checkpoint on the east road has been moved a mile further out, and two men keep it instead of five.",
+          "The Rootless camp has seventeen new people. They came from the villages to the east, having heard that something had changed, and turned towards Crestfall instead of going on east. Maret took them in as briskly as somebody who has been getting ready for exactly this for three years.",
           {
             "when": {
               "flags": {
@@ -37,7 +37,7 @@
               },
               "lowest_faction": "iron_compact"
             },
-            "text": "The settlement held for nine days. Then the Compact posted a new curfew without asking anyone, and Maret stopped coming to the meetings."
+            "text": "The settlement held for nine days. Then the Compact put up a new curfew without asking anybody, and Maret stopped coming to the meetings."
           },
           {
             "when": {
@@ -46,7 +46,7 @@
               },
               "lowest_faction": "ashen_covenant"
             },
-            "text": "The settlement held until the Covenant took the grey flag down and put it back up the next morning, bigger. Edric says it was not his decision."
+            "text": "The settlement held until the Covenant took the grey flag down, and then put it up again the next morning, bigger. Edric says it was not his decision."
           },
           {
             "when": {
@@ -55,7 +55,7 @@
               },
               "lowest_faction": "rootless"
             },
-            "text": "The settlement held until a Compact patrol walked through the camp at night. Branch walked them back out to the road. Nobody has called a meeting since."
+            "text": "The settlement held until a Compact patrol walked through the camp one night. Branch walked them back out to the road. Nobody has called a meeting since."
           }
         ]
       },
@@ -87,7 +87,7 @@
                 "ritual_partial": true
               }
             },
-            "text": "The seal is checked every month. It is holding, and it is not finished."
+            "text": "Somebody goes to look at the seal every month. It is holding, and it is not finished."
           },
           {
             "when": {
@@ -95,7 +95,7 @@
                 "compact_aligned": true
               }
             },
-            "text": "The notice nailed to the dry fountain is the Compact's: a schedule for the well, in Vorne's hand."
+            "text": "The notice nailed to the dry fountain is the Compact's, a timetable for the well in Vorne's hand."
           },
           {
             "when": {
@@ -111,7 +111,7 @@
                 "returned_went_to_camp": true
               }
             },
-            "text": "One of the three from the gate is Wren. The camp knew him by the second day. He has started carrying water with the midwife. He has not said a word yet, and he is carrying water."
+            "text": "One of the three from the gate is Wren. The camp knew him by the second day. He has begun carrying water with the midwife. He hasn't said a word yet, but he carries the water."
           },
           {
             "when": {
@@ -119,7 +119,7 @@
                 "returned_held_by_compact": true
               }
             },
-            "text": "One of the three held at the post is Wren. Nobody at the post knew him. Aldous went down and told them, and now they let him sit with Wren in the yard for an hour a day."
+            "text": "One of the three kept at the post is Wren. Nobody there knew him. Aldous went down and told them, and now they let him sit with Wren in the yard for an hour a day."
           },
           {
             "when": {
@@ -127,18 +127,18 @@
                 "player_stays_permanently": true
               }
             },
-            "text": "[missing person] came back on the twenty-ninth day. They had read your letter, the honest one, on a bench outside an inn, and then turned round and walked the whole way."
+            "text": "[missing person] came back on the twenty-ninth day. They read your letter, the honest one, on a bench outside an inn, and then turned round and walked the whole way back."
           }
         ],
-        "commander": "You and [missing person] have developed a division of labour that neither of you planned.\n\nThey work with Pol on the documentation and with Maret on the camp's organisation. You work with Vorne on the Compact arrangements and with Edric on the Covenant's restructured role.\n\nYou are, you realise, managing the institutional half of Ashenveld's recovery while they manage the human half. The two halves require different things from different people and you each turned out to be the right person for the half you ended up in.",
-        "arcane": "The documentation is complete. Three copies distributed. The knowledge is out in the world.\n\nWhat follows the documentation's completion is unexpected: you have time. Not unlimited time, not unstructured time, but the quality of a project finished and a next one not yet defined.\n\nYou walk out into Crestfall on day thirty and you try something you have not done in months: you observe without recording. Just watch. The market. The people. The quality of ordinary life reasserting itself in a damaged place.\n\nYou do it for an hour. At the end of the hour [missing person] finds you and asks what you were doing.\n\n\"Looking,\" you say.\n\nThey nod as if this is the most normal thing you have said in weeks. It might be.",
-        "ranger": "The wildlife recovery is past the point where you can track it in the market square.\n\nYou spend day thirty outside the town, in the ordinary forest west of Crestfall, reading what the animals are doing. The forest is returning to normal in the order that ecosystems recover. The generalists first, the specialists later, the apex predators last.\n\nNo predators yet. But the prey animals are moving normally, which means they are expecting predators at the right distance and behaving accordingly. The expectation of predators means the expectation of a functioning ecosystem.\n\nYou write it down. The sentence: the prey animals expect predators. You look at it for a while. It is the most hopeful sentence you have written in a month.",
-        "cipher": "Day thirty. The political landscape has stabilised enough that you can read it clearly.\n\nVorne will withdraw within six weeks. The Compact will maintain a nominal presence. A small permanent post, two administrators, a communication line. This is the best outcome you could have achieved from their involvement.\n\nThe Rootless camp is recognised, resourced, and growing. Maret has emerged as the most significant figure in Ashenveld's actual recovery. Not in the political sense, in the practical one. The camp knows what to do and is doing it.\n\nThe Covenant is the weakest position. Edric remains but his congregation has not returned in the numbers it had before. The Covenant's authority in Ashenveld may not survive Seriva's departure and the exposure of what the purification ritual would have cost."
+        "commander": "You and [missing person] have divided the work between you without ever meaning to.\n\nThey work with Pol on the account, and with Maret on how the camp is run. You work with Vorne on the Compact's arrangements, and with Edric on the Covenant's new and smaller place.\n\nYou find you are seeing to the town's institutions while they see to its people. The two need different things, and each of you has turned out to be right for the half you ended up with.",
+        "arcane": "The account is finished, and three copies have gone out. What you know is out in the world.\n\nWhat you had not expected is that now you have time. It is not endless time, and it is not idle time, but it is the time that comes between finishing one piece of work and knowing what the next will be.\n\nOn the thirtieth day you go out into Crestfall and try something you haven't done for months. You watch without writing anything down. You look at the market, and the people, and ordinary life coming back into a place that was hurt.\n\nYou do it for an hour. At the end of it [missing person] finds you and asks what you were doing.\n\n\"Looking,\" you say.\n\nThey nod, as though it were the most ordinary thing you have said in weeks. Perhaps it is.",
+        "ranger": "The animals have come back further than you can follow from the market square.\n\nYou spend the thirtieth day outside the town, in the ordinary forest to the west of Crestfall, reading what the creatures are doing. The forest is coming back in the order these things always go: the animals that can live anywhere first, the ones that need particular things later, and the hunters last of all.\n\nThere are no hunters yet. But the creatures they hunt are behaving properly, which means they are expecting hunters to be about, at the right distance. And if they expect hunters, they expect a forest that works as a forest should.\n\nYou write it down: the deer expect wolves. You look at it a while. It is the most hopeful thing you have written in a month.",
+        "cipher": "On the thirtieth day things have settled enough for you to see clearly how they lie.\n\nVorne will be gone within six weeks. The Compact will keep a token post, two clerks and a line of messengers. It is the best you could have got out of them.\n\nThe Rootless camp is recognised, and supplied, and growing. Maret has become the person who matters most to how Ashenveld actually mends, not as a politician but in practice. The camp knows what to do, and it is doing it.\n\nThe Covenant is the weakest of the three. Edric is still here, but his people have not come back to him in anything like their old numbers. The Covenant may not keep its hold on Ashenveld now that Seriva has gone and everyone knows what the purification would have cost."
       },
       "choices": [
         {
           "id": "assess_what_remains",
-          "text": "Make an honest assessment. What does Ashenveld still need most?",
+          "text": "Take an honest look. What does Ashenveld still need most?",
           "requires": {},
           "roll": {
             "stat": "intelligence",
@@ -146,7 +146,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "You and [missing person] sit down together and make the list.\n\nWhat Ashenveld still needs: time for the natural recovery to reach the deeper-affected areas. A sustainable structure for the Rootless camp's ongoing work. A way to support the people who walked east and have not come back. A clear account of what happened for the region's historical record.\n\nWhat Ashenveld does not need: another faction competition for control of the ruins. Political instability during the transition period. You leaving before the transition is stable.\n\nThe list is manageable. That is the first time in thirty days you have thought of it that way.",
+              "text": "You and [missing person] sit down together and make the list.\n\nAshenveld still needs time, for the mending to reach the places the curse went deepest. The camp needs a way of carrying on its work that will last. Somebody has to help the people who walked east and have not come back. And there must be a plain account of what happened, for the history of the region.\n\nWhat Ashenveld doesn't need is another quarrel over who owns the ruins, or any upset while things are changing over, or you going before the change is safe.\n\nThe list can be managed. It is the first time in thirty days you have thought so.",
               "next_scene": "act3_ch4_resolution",
               "state_changes": {
                 "flags": {
@@ -155,12 +155,12 @@
               }
             },
             "success_at_cost": {
-              "text": "You make the list but some of what remains is beyond your capacity to address. You name those things anyway. Named things are less overwhelming than unnamed ones.",
+              "text": "You make the list, but some of what is left is beyond you. You write those things down anyway. Things are less overwhelming once they have names.",
               "next_scene": "act3_ch4_resolution",
               "state_changes": {}
             },
             "failure": {
-              "text": "The list is too long and you cannot find a frame that makes it manageable. [missing person], watching you work through it, takes the list away from you.\n\n\"What is the most important thing on it?\" they ask.\n\nYou answer without thinking. They write it down. \"Start there,\" they say.",
+              "text": "The list is too long, and you can't find any way of looking at it that makes it manageable. [missing person], watching you struggle with it, takes it away from you.\n\n\"What is the most important thing on it?\" they ask.\n\nYou answer without thinking, and they write it down. \"Start there,\" they say.",
               "next_scene": "act3_ch4_resolution",
               "state_changes": {}
             }
@@ -187,7 +187,7 @@
       },
       "requires": {},
       "text": {
-        "default": "A month after leaving Ashenveld.\n\nYou are somewhere else entirely. The town does not matter. What matters is that it has nothing to do with ruins or curses or factions negotiating over broken mechanisms.\n\n[missing person] has adapted faster than you. Fourteen months in isolation inside a ruined city produced, apparently, a person who is intensely grateful for ordinary things. They speak to strangers. They eat everything on the plate. They sleep without difficulty in strange rooms.\n\nYou are the one who is still adjusting.\n\nAshenveld follows you in the way that significant places follow people who were changed by them. Not as regret. As something that has become part of how you read the world. Every landscape you move through, you are reading for the signs that Ashenveld taught you to read. Mostly the signs are absent. Sometimes they are not."
+        "default": "It is a month since you left Ashenveld.\n\nYou are somewhere else altogether. It doesn't matter which town. What matters is that it has nothing to do with ruins, or curses, or factions bargaining over broken mechanisms.\n\n[missing person] has got used to it faster than you. Fourteen months alone in a ruined city have made them, it seems, profoundly grateful for ordinary things. They talk to strangers. They eat everything on the plate. They sleep soundly in strange rooms.\n\nIt is you who are still getting used to it.\n\nAshenveld follows you about, as places do that have changed you. It isn't regret. It has become part of how you look at the world. Wherever you go, you find yourself looking for the signs Ashenveld taught you to look for. Mostly they aren't there. Once or twice they are."
       },
       "choices": [
         {
@@ -218,7 +218,7 @@
                 "missing_person_sent_ahead": false
               }
             },
-            "text": "A letter from Maret catches up with you at an inn, three weeks old."
+            "text": "A letter from Maret catches up with you at an inn. It is three weeks old."
           },
           {
             "when": {
@@ -228,7 +228,7 @@
                 "ritual_partial": true
               }
             },
-            "text": "The seal is holding, she writes. It is not finished. She does not ask you to come back. She asks if you know anyone who can read the old texts."
+            "text": "The seal is holding, she writes, but it is not finished. She doesn't ask you to come back. She asks whether you know anybody who can read the old texts."
           },
           {
             "when": {
@@ -247,7 +247,7 @@
                 "left_unfinished": true
               }
             },
-            "text": "You find them on the fourth day, two towns on, in a back room of an inn with a fever that broke the night before. They are sitting up. \"You came,\" they say. \"You were meant to finish.\"\n\n\"I did not,\" you say, and sit down on the end of the bed."
+            "text": "You find them on the fourth day, two towns on, in the back room of an inn, with a fever that broke the night before. They are sitting up. \"You came,\" they say. \"You were meant to finish.\"\n\n\"I didn't,\" you say, and sit down on the end of the bed."
           },
           {
             "when": {
@@ -256,13 +256,13 @@
                 "finished_the_work": true
               }
             },
-            "text": "The inn they last wrote from says they moved on a week ago, thinner than they came. There is a note with the innkeeper in their hand: the next town, and the one after, and underneath, \"Keep up.\""
+            "text": "At the inn they last wrote from they tell you that they went on a week ago, thinner than when they came. The innkeeper has a note in their writing: the next town, and the one after, and underneath, \"Keep up.\""
           }
         ],
-        "commander": "You received a letter from Cael three weeks out. The documentation arrived. Vorne is proceeding with the withdrawal. The Rootless camp is formally recognised.\n\nYou read the letter twice and filed it. The work is continuing without you. That is the correct outcome.\n\nYou think about whether you are done with institutional work or whether this is a period between institutional works. You have not decided yet. The question is patient.",
-        "arcane": "The academic letters have begun arriving. Responses to the documentation you distributed. Colleagues from three institutions with questions, with frameworks you had not considered, with corrections to errors you made under pressure.\n\nThis is the normal life of a scholar. It follows you wherever you go.\n\n[missing person] watches you correspond and says: \"Is it strange? To be doing this in an ordinary place?\"\n\n\"Yes,\" you say. \"Good strange.\"",
-        "ranger": "You are in a town with a market and a forest and birds and animals behaving in ways you can read without filtering for contamination.\n\nIt is a relief that is also a kind of grief. You spent weeks learning to read a damaged landscape and now the reading is not necessary and you are not sure what to do with the skill.\n\n[missing person] says, watching you track a hawk's flight across the market square: \"You are doing it again.\"\n\n\"Yes,\" you say.\n\n\"It is fine,\" they say. \"I like that you do that.\"",
-        "cipher": "Out of the political environment of Ashenveld, you have discovered that you are not sure what to want.\n\nIn Ashenveld, you always knew what to want: better outcomes for people in a situation. The wanting was clear because the situation was clear.\n\nIn ordinary life, the wanting is less obvious. You are working on it. [missing person], who has been working on it for thirty days longer than you, is occasionally patient about this and occasionally not. Both reactions are reasonable."
+        "commander": "Three weeks out, a letter from Cael reached you. The account has arrived, Vorne is going ahead with the withdrawal, and the Rootless camp has been formally recognised.\n\nYou read the letter twice and put it away. The work is going on without you, which is as it should be.\n\nYou wonder whether you have finished with that kind of work for good, or whether this is only a gap between one post and the next. You haven't decided. The question will keep.",
+        "arcane": "The letters from other scholars have begun to arrive, answering the account you sent out. Colleagues at three different places write with questions, and with ideas you hadn't thought of, and with corrections to mistakes you made in a hurry.\n\nIt is the ordinary life of a scholar, and it follows you wherever you go.\n\n[missing person] watches you write your replies and says, \"Is it strange? Doing this somewhere ordinary?\"\n\n\"Yes,\" you say. \"But a good strange.\"",
+        "ranger": "You are in a town with a market and a forest and birds, and animals behaving in ways you can read without first having to allow for anything poisoning them.\n\nIt is a relief, and it is also a kind of grief. You spent weeks learning to read a damaged country, and now there is no need, and you don't know what to do with what you learned.\n\n[missing person], watching you follow a hawk across the market square, says, \"You are doing it again.\"\n\n\"Yes,\" you say.\n\n\"It is all right,\" they say. \"I like that you do that.\"",
+        "cipher": "Away from the scheming of Ashenveld, you have found that you don't quite know what to want.\n\nIn Ashenveld you always knew. You wanted things to go better for the people caught up in it, and the wanting was plain because the situation was plain.\n\nIn ordinary life the wanting is less obvious. You are working on it. [missing person], who has been working on it a month longer than you, is sometimes patient with you about it and sometimes not, and you can hardly blame them either way."
       },
       "choices": [
         {
@@ -272,7 +272,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You think about it for a week.\n\nThe answer shifts depending on the day. Some days the answer is yes. Ashenveld is unfinished and you are the person with the most useful knowledge of what finishing it requires. Some days the answer is no. You did what you came to do and the ongoing work belongs to the people who are living there.\n\nBy the end of the week you have an answer. The answer is: not yet. Which is different from never and different from yes and is probably the honest position.\n\nYou tell [missing person]. They say: \"I know.\" They knew before you said it. The ruins apparently teach you to read people accurately at distance.",
+              "text": "You think about it for a week.\n\nThe answer changes from day to day. Some days it is yes. Ashenveld isn't finished, and you know better than anyone what finishing it would take. Some days it is no. You did what you came to do, and the rest of the work belongs to the people who live there.\n\nBy the end of the week you have your answer, and the answer is not yet. That is neither never nor yes, and it is probably the honest place to be.\n\nYou tell [missing person]. \"I know,\" they say. They knew before you said it. It seems the ruins teach you to read people very well, and from a distance.",
               "next_scene": "act3_ch4_resolution_road",
               "state_changes": {}
             }
@@ -280,12 +280,12 @@
         },
         {
           "id": "commit_to_not_returning",
-          "text": "Commit. Ashenveld was a chapter. This is the next one.",
+          "text": "Make up your mind. Ashenveld is behind you, and this is what comes next.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You decide quickly. A month of hard decisions has made you quicker at them.\n\nAshenveld was the work. The work is done. The next work is something else.\n\nYou say this to [missing person]. They look at you for a moment.\n\n\"All right,\" they say. \"What next?\"\n\nYou think about it. You do not have a complete answer yet. But you are asking the question in the right direction.",
+              "text": "You decide quickly. A month of hard decisions has made you quicker at them.\n\nAshenveld was the work, and the work is done. The next work will be something else.\n\nYou say so to [missing person]. They look at you for a moment.\n\n\"All right,\" they say. \"What next?\"\n\nYou think about it. You haven't a full answer yet. But at least you are asking the right question.",
               "next_scene": "act3_ch4_resolution_road",
               "state_changes": {
                 "flags": {
@@ -320,7 +320,7 @@
         }
       },
       "text": {
-        "default": "Day thirty.\n\nYou have been in Ashenveld a month. You have been alone in Ashenveld for two weeks. The two weeks since they left.\n\nYou are not going to lie to yourself about this: it is hard. Not the work. You have the work and the work is good and necessary and uses you well. The hard part is the quality of the evenings, when the work is done and the Tallow is quiet and the fire is lower than it should be.\n\nYou manage it the way you manage most difficult things: by doing the next thing. By keeping the list current. By talking to the people who are here, Maret, Branch, Lira, Pol, and finding in those conversations what ordinary evenings should contain.\n\nIt is not the same. It is enough."
+        "default": "It is the thirtieth day.\n\nYou have been in Ashenveld a month, and alone here for a fortnight, since they left.\n\nYou won't lie to yourself about it. It is hard. The work isn't; you have the work, and it is good and needed and suits you. What is hard is the evenings, when the work is done and the Tallow is quiet and the fire is lower than it ought to be.\n\nYou manage it as you manage most hard things, by doing the next thing. You keep the list up to date. You talk to the people who are here, Maret and Branch and Lira and Pol, and find in those talks something of what an ordinary evening should have in it.\n\nIt isn't the same. It will have to do."
       },
       "choices": [
         {
@@ -343,21 +343,21 @@
       "location": "rootless_camp",
       "title": "The Shape of Staying Alone",
       "text": {
-        "default": "On the thirtieth day Joren speaks. A whole sentence, in a voice that has not been used for a year, to Pol, who is changing the water by his bed.\n\n\"Is there anyone left in Harrow?\"\n\nPol looks at you. Somebody has to answer him.",
-        "commander": "Vorne sought you out last week. He offered you a formal position in the regional administration. Advisory, well-resourced, meaningful.\n\nYou have been thinking about it for seven days. The position would give you institutional reach. It would also give you a reason to stay in Ashenveld that does not require you to examine too closely why staying feels necessary.\n\nYou think about whether those two things can be separated.",
-        "arcane": "The work is good. The documentation is complete and distributed. Pol has become a collaborator in the ongoing observation of the curse's recession. You are building a monitoring system that can function without you if you leave, or with you if you stay.\n\nThe question of whether you stay is one you are answering by making both options viable simultaneously. You recognise this strategy. You have used it before. It is usually what you do when you do not want to make a decision and cannot admit it.",
-        "ranger": "The Watcher at the ruins gate, the person you could not reach, who said your name once in the chamber approach, came back into the ordinary world on day twenty-seven.\n\nNot fully. Not immediately. But Branch found them at the forest edge, moving slowly, in the direction of Crestfall, and brought them to the camp.\n\nThey do not speak. They sit in the herb garden for hours. Pol tends them. Their hands have stopped being still. They move slightly now, tracking the plants, the light. Something is returning.\n\nYou visit them every morning. You do not need them to speak to you. You are glad they are here.",
-        "cipher": "Two weeks alone and you have discovered something.\n\nThe political work is more satisfying when it is for something you believe in rather than for institutional reasons. You believed in Ashenveld's recovery before you had a personal stake in it. The personal stake leaving did not change the belief.\n\nYou are here because this is where the work is and because you are good at it and because the people here need someone who is good at it. That is three reasons. Three reasons is enough."
+        "default": "On the thirtieth day Joren speaks. He says a whole sentence, in a voice that has not been used for a year, to Pol, who is changing the water by his bed.\n\n\"Is there anyone left in Harrow?\"\n\nPol looks at you. Somebody will have to answer him.",
+        "commander": "Vorne came looking for you last week. He offered you a proper post in the government of the region, as an adviser, with money behind it, doing work that would matter.\n\nYou have been thinking about it for seven days. The post would give you a long reach. It would also give you a reason to stay in Ashenveld that would spare you from looking too closely at why staying seems so necessary.\n\nYou wonder whether the two can be told apart.",
+        "arcane": "The work is good. The account is finished and sent out. Pol has become your partner in keeping watch on the curse as it goes back, and you are building a way of keeping that watch that will go on without you if you leave, or with you if you stay.\n\nYou are answering the question of whether to stay by keeping both choices open at once. You know that trick. You have used it before. It is what you generally do when you don't want to decide and can't admit it.",
+        "ranger": "Since the twentieth day Joren has been in the tent by the fire, and every morning you have gone to sit with him.\n\nFor a long time he did nothing. Now his hands have stopped being still. They move a little, following the light on the canvas, or the shadows of people going past. Something is coming back.\n\nYou don't need him to talk to you. You are glad he is here.",
+        "cipher": "A fortnight on your own, and you have found something out.\n\nThe work is more satisfying when you do it for something you believe in than when you do it for an institution. You believed in Ashenveld getting better before you had any personal stake in it, and losing the personal stake has not changed that.\n\nYou are here because the work is here, and you are good at it, and the people here need somebody who is. You find that you don't need a better reason than that."
       },
       "choices": [
         {
           "id": "tell_joren_the_truth",
-          "text": "Tell him the truth. Nobody is left.",
+          "text": "Tell him the truth. There is nobody left.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You tell him. He listens with his hands round the bone figure and nods, slowly, as if it is what he expected and needed someone else to say.\n\nThat night he eats for the first time without being asked.",
+              "text": "You tell him. He listens with his hands round the bone figure, and nods slowly, as though it were what he expected and needed somebody else to say.\n\nThat night he eats for the first time without being asked.",
               "next_scene": "act3_ch4_resolution_alone",
               "state_changes": {
                 "flags": {
@@ -369,12 +369,12 @@
         },
         {
           "id": "promise_to_look",
-          "text": "Tell him you will go and look.",
+          "text": "Tell him you'll go and look.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You walk to Harrow and back in two days. The doors are still open. The table is still laid. You tell him what you saw, all of it, and he asks you to describe one house twice.",
+              "text": "You walk to Harrow and back in two days. The doors are still open, and the tables still laid. You tell him what you saw, all of it, and he asks you to describe one house twice.",
               "next_scene": "act3_ch4_resolution_alone",
               "state_changes": {
                 "flags": {
@@ -386,7 +386,7 @@
         },
         {
           "id": "consider_what_you_need",
-          "text": "Be honest with yourself. What do you actually need?",
+          "text": "Be honest with yourself. What do you really need?",
           "requires": {},
           "roll": {
             "stat": "intelligence",
@@ -394,7 +394,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "You sit with the question the way the ritual taught you to sit with things. Completely, without performance.\n\nWhat you need: the work, which you have. The people you are building relationships with here, which you have. The sense of contributing to something that matters, which you have.\n\nWhat you are missing: the person who is not here. You do not pretend this is not a missing. You do not fill it with the other things.\n\nBoth are true simultaneously. You can have most of what you need and be missing something. That is not a problem to solve. That is the shape of your current life.\n\nYou hold this honestly and you go back to work.",
+              "text": "You sit with the question as the ritual taught you to sit with things, wholly and without putting on any show.\n\nYou need the work, and you have it. You need the people you are getting to know here, and you have them. You need to feel you are part of something that matters, and you have that too.\n\nWhat you are missing is the one who isn't here. You don't pretend you aren't missing them, and you don't try to fill the gap with other things.\n\nYou can have most of what you need and still be missing something. There is nothing to be done about that. It is simply how your life is at present.\n\nYou look at it honestly, and then you go back to work.",
               "next_scene": "act3_ch4_resolution_alone",
               "state_changes": {
                 "flags": {
@@ -403,12 +403,12 @@
               }
             },
             "success_at_cost": {
-              "text": "You get partway there. You acknowledge what you are missing before you can fully acknowledge what you have.\n\nPol, watching you in the herb garden with the expression she has when she is about to say something useful, says: \"Both things can be true at the same time.\" She goes back to her plants. You sit with this.",
+              "text": "You get part of the way. You admit what you are missing before you can admit what you have.\n\nPol, watching you in the herb garden with the look she wears when she is about to say something useful, says, \"Onions do not mind being planted in a fountain. They mind not being watered.\" Then she goes back to her plants, and you are left to work out what she meant.",
               "next_scene": "act3_ch4_resolution_alone",
               "state_changes": {}
             },
             "failure": {
-              "text": "You cannot fully answer the question today. It is not a good day for the question.\n\nLira, sitting nearby, says without looking up from her rope: \"You do not have to know today.\"\n\nThis is not comfort exactly. It is permission. You take it.",
+              "text": "You can't answer the question today. It isn't a good day for it.\n\nLira, sitting near by, says without looking up from her rope, \"You don't have to know today.\"\n\nIt isn't comfort, exactly. It is permission, and you take it.",
               "next_scene": "act3_ch4_resolution_alone",
               "state_changes": {}
             }
