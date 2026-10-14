@@ -81,7 +81,7 @@
     {
       "flag": "knows_missing_was_purposeful",
       "group": "People",
-      "text": "Goran talked with [missing person] about the old city under the forest. Not frightened. Purposeful."
+      "text": "Goran talked with [missing person] about the old city under the forest. He says they didn't seem frightened. They seemed to have a purpose."
     },
     {
       "flag": "knows_maret_trusted_missing",
@@ -141,12 +141,12 @@
     {
       "flag": "knows_episodes_shorten",
       "group": "The Curse",
-      "text": "The woman in the market stopped for fifteen minutes. Last week it was thirty. She does not remember them."
+      "text": "The woman in the market stopped for fifteen minutes. Last week it was thirty. She doesn't remember either time."
     },
     {
       "flag": "understands_curse_episodes",
       "group": "The Curse",
-      "text": "An episode ends on its own, without warning. The town has stopped reacting to them."
+      "text": "A turn ends of its own accord, without warning. The town has stopped making a fuss about them."
     },
     {
       "flag": "knows_building_affected",
@@ -176,7 +176,7 @@
     {
       "flag": "found_pre_departure_insight",
       "group": "The Curse",
-      "text": "Something in what you were told in Crestfall changes what you are looking for in the east."
+      "text": "What you were told in Crestfall has changed what you are looking for in the east."
     },
     {
       "flag": "knows_ruins_are_ancient",

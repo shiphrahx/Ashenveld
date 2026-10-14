@@ -47,7 +47,7 @@
       "id": "ending_stays_together",
       "title": "The Warden Stays",
       "alignment": "rootless_or_neutral",
-      "description": "The player and their missing person remain in Ashenveld together. The Rootless camp becomes a permanent institution. The curse recedes over years. Ashenveld slowly rebuilds. The ending is quiet and specific — a particular morning some years later, the ordinary texture of a life built in a difficult place with a person worth staying for.",
+      "description": "The player and their missing person stay in Ashenveld together. The Rootless camp becomes a lasting institution, the curse goes back over the years, and Ashenveld slowly rebuilds. The ending is quiet and particular: one morning some years later, and the ordinary run of a life made in a hard place with somebody worth staying for.",
       "moral_tone": "ambiguous_hopeful",
       "requires": {
         "flags": {
@@ -63,7 +63,7 @@
       "id": "ending_alone_legend",
       "title": "The Warden Becomes a Legend",
       "alignment": "any",
-      "description": "The player stays in Ashenveld alone and becomes, over years, the person the region defines itself around. Not a hero — a fixture. Someone whose presence is the difference between Ashenveld surviving and not. The missing person is referred to but not present. The ending is melancholic and proud in equal measure.",
+      "description": "The player stays in Ashenveld alone and becomes, over the years, the person the region forms itself round. Not a hero, but a fixture, somebody whose being there makes the difference between Ashenveld lasting and not. The missing person is spoken of but not present. The ending is sad and proud in equal measure.",
       "moral_tone": "melancholic_proud",
       "requires": {
         "flags": {
@@ -78,7 +78,7 @@
       "id": "ending_escape_together",
       "title": "The Warden Escapes",
       "alignment": "any",
-      "description": "The player leaves Ashenveld with their missing person. The ending is deliberately unresolved — what they built together in the ruins has no name yet. They are somewhere else, somewhere ordinary, and the ordinary is both a relief and a question.",
+      "description": "The player leaves Ashenveld with their missing person. The ending is left open on purpose: what they made between them in the ruins has no name yet. They are somewhere else, somewhere ordinary, and the ordinary is both a relief and a question.",
       "moral_tone": "ambiguous_tender",
       "requires": {
         "flags": {
@@ -94,7 +94,7 @@
       "id": "ending_stays_rootless",
       "title": "The Warden of Ashenveld",
       "alignment": "rootless",
-      "description": "The player stays aligned with the Rootless. The camp grows into a genuine institution. The ending shows Ashenveld years later — rebuilt, not healed completely, but viable. The player is a foundational figure in whatever Ashenveld becomes.",
+      "description": "The player stays on the Rootless side. The camp grows into a real institution. The ending shows Ashenveld years later, rebuilt, not wholly healed, but able to go on. The player is one of the people whatever Ashenveld becomes was built on.",
       "moral_tone": "hopeful_complicated",
       "requires": {
         "flags": {
@@ -108,7 +108,7 @@
       "id": "ending_stays_compact",
       "title": "The Compact's Warden",
       "alignment": "iron_compact",
-      "description": "The player stays aligned with the Compact. Ashenveld is stabilised efficiently. The player becomes the regional authority's primary local representative. Order returns. The cost of that order is visible in what the Rootless camp becomes — smaller, managed, less its own thing. The ending is not triumphant. It is functional.",
+      "description": "The player stays on the Compact side. Ashenveld is made steady, efficiently. The player becomes the regional authority's chief man or woman on the spot, and order comes back. What that order costs shows in what becomes of the Rootless camp: smaller, managed, less its own. The ending is not a triumph. It works.",
       "moral_tone": "functional_melancholic",
       "requires": {
         "flags": {
@@ -122,7 +122,7 @@
       "id": "ending_warden_dies",
       "title": "What Remains",
       "alignment": "any",
-      "description": "The player dies in Ashenveld — not dramatically, but as the cost of a choice made in Act III. The ending is told from the perspective of the people who remain. What they remember. What the player's presence made possible that would not have been possible otherwise.",
+      "description": "The player dies in Ashenveld. It is not dramatic. It is the cost of a choice made in Act III. The ending is told by the people who are left: what they remember, and what the player's being there made possible that would never have been possible otherwise.",
       "moral_tone": "sad_meaningful",
       "requires": {
         "flags": {
@@ -136,7 +136,7 @@
       "id": "ending_secret",
       "title": "The Account",
       "alignment": "none",
-      "description": "Unlocked only if the player has exposed all three factions' hidden truths, has maximum relationship with their missing person, and chose to stay. The player publishes a complete account of what happened in Ashenveld — what the Compact was doing, what Seriva did, what the Covenant's purification ritual would have cost. No faction wins. Ashenveld fractures into independent settlements. It is the most hopeful ending and the loneliest.",
+      "description": "Opened only if the player has brought out the hidden truth of all three factions, is as close as possible to their missing person, and chose to stay. The player publishes a full account of what happened in Ashenveld: what the Compact was doing, what Seriva did, and what the Covenant's purification would have cost. No faction wins, and Ashenveld breaks up into separate settlements. It is the most hopeful ending, and the loneliest.",
       "moral_tone": "lonely_hopeful",
       "requires": {
         "flags": {
@@ -154,8 +154,8 @@
   "new_locations_act3": {
     "ashenveld_years_later": {
       "id": "ashenveld_years_later",
-      "name": "Ashenveld — Several Years Later",
-      "description": "The ending scenes take place in Ashenveld as it has become over time. The exact state depends on choices made: under Compact administration it is orderly and diminished; under Rootless influence it is less orderly and more alive; abandoned by both it is still slowly recovering on its own terms.",
+      "name": "Ashenveld, some years later",
+      "description": "The endings take place in Ashenveld as it has become over time. How it stands depends on the choices made. Under the Compact it is orderly and smaller; under the Rootless it is less orderly and more alive; left by both, it is still mending slowly in its own way.",
       "note": "This location is rendered differently based on faction flags.",
       "ambience": "town",
       "atmosphere": "none"
