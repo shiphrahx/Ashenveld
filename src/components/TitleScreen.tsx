@@ -28,12 +28,11 @@ export default function TitleScreen({ hasSave, saveEnded = false, saveSummary, o
       <div className={styles.titleBg} />
       <StarField />
       <div className={styles.titleContent}>
-        <div className={styles.titleEyebrow}>A story of return</div>
         <div className={styles.titleName}>Ashenveld</div>
         <div className={styles.titleRule} />
         <div className={styles.titleTagline}>
-          You left this place behind.<br />
-          Now something you love has disappeared into it.
+          You left eleven years ago. Somebody you love stayed,<br />
+          and a year ago they stopped writing.
         </div>
         {confirming ? (
           <div className={styles.confirm} role="alertdialog" aria-labelledby="confirm-text">
@@ -59,7 +58,6 @@ export default function TitleScreen({ hasSave, saveEnded = false, saveSummary, o
               {anyEnding && <button className={styles.titleLink} onClick={() => setEndingsOpen(true)}>Endings</button>}
               <button className={styles.titleLink} onClick={() => setCreditsOpen(true)}>Credits</button>
             </div>
-            <p className={styles.titleSmall}>About 90 minutes. Saves in this browser.</p>
             <button className={styles.noteLink} aria-expanded={noteOpen} onClick={() => setNoteOpen(o => !o)}>Content note</button>
             {noteOpen && <p className={styles.titleSmall}>Themes: loss, illness, coercion, military occupation.</p>}
           </>

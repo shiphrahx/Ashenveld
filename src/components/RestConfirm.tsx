@@ -13,7 +13,7 @@ export default function RestConfirm({ cost = 0, onRest, onClose }: Props) {
   return (
     <Panel title="Rest" onClose={onClose}>
       <div className={styles.body}>
-        <p className={styles.question}>Rest until morning? The Dimming does not sleep.</p>
+        <p className={styles.question}>Rest until morning? The Dimming keeps spreading while you sleep.</p>
         {cost > 0 && <p className={styles.cost}>A room costs {cost} coin.</p>}
         <div className={styles.buttons}>
           <button className={styles.btn} onClick={onRest} data-rest-confirm>Rest</button>
