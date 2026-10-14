@@ -18,33 +18,33 @@
       "requires": {},
       "text": {
         "default": [
-          "Crestfall in the morning is a study in what remains.",
-          "The baker's is open. Reisa, who has been baking since before you were born, working without a word. The church is open, the Ashen Covenant flag above its door, new since your time here. The smith's is not open. Neither is the cooper's. Or the chandler's.",
-          "You walk the main street and count the closed shops the way you counted the wrong things on the pier. Automatically, a habit you cannot switch off.",
-          "The fountain in the market square has been dry for months. You can tell from the colour of the stone. The waterline, where the wet stopped. Someone left a bunch of dried flowers at its base. Nobody has removed them. They have been there long enough to go completely grey.",
+          "In the morning you can see how much of Crestfall is left.",
+          "The baker's is open, and Reisa, who was baking before you were born, is at work in it without a word to anyone. The church is open too, with the Ashen Covenant's flag above the door, which is new since your day. The smith's is shut, and so are the cooper's and the chandler's.",
+          "You walk down the main street counting the closed shops, as you counted the wrong things on the pier last night. It is a habit, and you cannot seem to stop it.",
+          "The fountain in the market square has been dry for months; you can tell by the stain on the stone where the water used to stand. Somebody has left a bunch of flowers at its foot. Nobody has cleared them away, and they have been there long enough to go quite grey.",
           {
             "when": {
               "flags": {
                 "aldous_closed_off": true
               }
             },
-            "text": "Aldous did not look up when you left this morning."
+            "text": "Aldous didn't look up when you left this morning."
           }
         ],
-        "commander": "You walk Crestfall with the eye of someone used to assessing positions.\n\nThe town is defensible but unprepared. No organised patrol, Compact soldiers at one gate only, the rest of the perimeter unwatched. The population is reduced from what you remember, or they are staying inside, which amounts to the same thing. The Covenant has a visible presence. The Compact has a garrison presence. The Rootless camp apparently exists outside the town's administrative awareness, which is either an oversight or a decision.",
-        "arcane": "You walk Crestfall and read it the way you read any site. Looking for the shape of what has accumulated here.\n\nThe curse is visible to you, dimly, if you let your vision unfocus slightly. Not the curse itself but its effect on the ambient. A grey tinge to things, a quality of muffled sound, as if the town exists behind a veil that is getting very slightly thinner. The baker's bread probably tastes fine. But the intent behind baking it, the pleasure, the warmth, that quality is fading.\n\nThis is how the curse spreads. Not by taking life. By taking the sense that life is worth having.",
-        "ranger": "You walk Crestfall and read it like territory.\n\nThe absence of animals is total within the town limits. You find one cat, under a porch on the north side, and it looks at you with the awareness of an animal that knows it is the last of its kind in a given space and has decided to stay anyway. You respect it for that.\n\nThe tree line to the east is visible from the market square. Further in than it used to be — not by much, maybe twenty metres, but the encroachment is measurable. The forest is taking ground slowly.",
-        "cipher": "You walk Crestfall and collect information the way other people collect impressions.\n\nFive people on the main street before eight in the morning. Two are Compact soldiers doing nothing in particular. One is a Covenant priest. Two are civilians moving with the efficiency of people who have stopped lingering in public spaces.\n\nEverybody knows everybody here. A stranger is noticed. You are being noticed. You watch who notices you, and how."
+        "commander": "You walk through Crestfall as you would through any position you had been sent to hold.\n\nIt could be defended, but nobody has thought to. There is no proper patrol. The Compact has soldiers on one gate and has left the rest of the town unwatched. There are fewer people about than you remember, or else they are keeping indoors, which comes to the same thing. The Covenant is very much in evidence, and the Compact has a garrison. Nobody in authority seems to have noticed the Rootless camp at all, and you wonder whether that is carelessness or policy.",
+        "arcane": "You walk through Crestfall and look at it as you would look at any site, for what has built up there over the years.\n\nIf you let your eyes go a little out of focus you can see the curse, or rather what it is doing. Everything has a faint grey cast, and sounds come to you muffled, as though through a curtain. Reisa's bread very likely tastes as it always did. It is the pleasure in baking it that is going.\n\nThat is how the curse spreads. It does not kill anybody. It simply takes away their reasons for getting up.",
+        "ranger": "You walk through Crestfall and look it over as you would any ground.\n\nThere are no animals in the town at all. You find one cat, under a porch on the north side, and it looks at you as if it knows perfectly well it is the last cat in the street and has decided to stay anyway. You think the better of it for that.\n\nFrom the market square you can see the tree line to the east. It is nearer than it used to be, not by much, perhaps twenty yards, but you can tell. The forest is taking ground, slowly.",
+        "cipher": "You walk through Crestfall and collect what you can.\n\nThere are five people on the main street before eight o'clock. Two are Compact soldiers with nothing much to do, one is a Covenant priest, and two are townspeople who walk briskly and do not stop to talk.\n\nEverybody here knows everybody, so a stranger is noticed, and you are being noticed now. You make a point of seeing who is doing it."
       },
       "choices": [
         {
           "id": "go_to_market",
-          "text": "Go to the market square. Find whoever is trading.",
+          "text": "Go to the market square and see who is trading.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "The market has three stalls. Used to have twelve. You remember counting them once as a child. An afternoon game, trying to find the one that would give you something for free if you asked the right way.",
+              "text": "There are three stalls in the market. There used to be twelve. You counted them once as a child, one long afternoon, trying to work out which would give you something for nothing if you asked nicely.",
               "next_scene": "act1_ch2_market_square",
               "state_changes": {}
             }
@@ -52,12 +52,12 @@
         },
         {
           "id": "find_covenant_shrine",
-          "text": "Find the Ashen Covenant shrine. Understand who they are.",
+          "text": "Find the Ashen Covenant shrine and see who they are.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "The flag is new since your time here but the building is not — it is the old alderman's hall, which the Covenant apparently acquired. A priest stands outside, which is not quite the same as waiting.",
+              "text": "The flag is new, but the building is not. It is the old alderman's hall, which the Covenant seems to have taken over. A priest is standing outside, though not, you think, waiting for anybody in particular.",
               "next_scene": "act1_ch3_covenant_introduction",
               "state_changes": {}
             }
@@ -70,7 +70,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You know the way without thinking about it. Some things the body remembers before the mind gets involved.",
+              "text": "You know the way without having to think about it. Your feet seem to remember before you do.",
               "next_scene": "act1_ch2_childhood_home",
               "state_changes": {}
             }
@@ -92,16 +92,16 @@
       },
       "requires": {},
       "text": {
-        "default": "Three stalls in a square that was built for twelve. The gaps between them feel like missing teeth.\n\nA grain seller, a woman with cloth, and an old man with preserved food. Dried fish, smoked meat, things that last. The grain seller sees you approaching and makes a decision with her eyes that you cannot quite read. Not hostile, not welcoming, somewhere between.\n\nThey are doing business with each other more than with the town at this point. The economy of a place that has been quietly preparing for something without admitting it is preparing.",
-        "commander": "Three stalls. The grain seller is the one in charge of the three. You can see it in how the others orient toward her, small unconscious shifts of posture. She is the one to talk to.",
-        "arcane": "Three stalls. The old man with the preserved food is watching you, deciding whether you are worth the trouble of looking at. You make a note to speak to him.",
-        "ranger": "Three stalls. The gaps where the others used to be are more informative than the stalls themselves. The ground is worn differently there, the patterns of foot traffic still running to where people used to be.",
-        "cipher": "Three stalls. You read all three quickly: the grain seller is frightened but functional, the cloth woman is going through the motions, the old man is watching you in a way that means he knows something about you or thinks he does."
+        "default": "There are three stalls in a square built for twelve, and the gaps between them are hard not to look at.\n\nOne sells grain, one cloth, and an old man has a stall of food that keeps: dried fish, smoked meat. The grain seller watches you come and seems to make up her mind about you, though you can't tell which way.\n\nBy now they trade with one another more than with the town. It is the market of a place that is getting ready for something and will not say so.",
+        "commander": "The grain seller is the one in charge here. You can tell by the way the other two keep half an eye on her. She is the one to talk to.",
+        "arcane": "The old man with the preserved food is watching you and making up his mind whether you are worth the trouble. You decide to speak to him.",
+        "ranger": "The empty pitches tell you more than the stalls do. The ground is worn differently there, and people's feet still take them to where the stalls used to be.",
+        "cipher": "You take the measure of all three in a glance. The grain seller is frightened but getting on with it. The cloth woman is going through the motions. The old man is watching you as though he knows something about you, or thinks he does."
       },
       "choices": [
         {
           "id": "talk_grain_seller",
-          "text": "Approach the grain seller.",
+          "text": "Go and talk to the grain seller.",
           "requires": {},
           "roll": {
             "stat": "charisma",
@@ -118,7 +118,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "Her name is Hanna. She tells you things about Crestfall with the efficiency of someone who has been answering the same questions for months.\n\nThe curse started three years ago in the eastern villages. Moved west slowly. Three families from Harrow, the village on the east road, arrived in Crestfall six months ago. They left because Harrow emptied. Not because of violence. One by one, everyone in Harrow stopped wanting to stay and walked east into the forest and did not come back.\n\n\"They do not come back,\" she says. \"But they are not dead. Or — nobody knows. Nobody has found bodies.\"",
+              "text": "Her name is Hanna. She tells you about Crestfall briskly, like someone who has been answering the same questions for months.\n\nIt began three years ago in the villages to the east, she says, and has been creeping west ever since. Three families came in from Harrow, the village on the east road, six months back. They left because Harrow had emptied. Nobody was attacked. One by one everybody in Harrow lost the wish to stay, and walked east into the forest, and didn't come back.\n\n\"They don't come back,\" she says. \"But they're not dead. Or nobody knows. Nobody's found anyone.\"",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {
                 "flags": {
@@ -128,7 +128,7 @@
               }
             },
             "success_at_cost": {
-              "text": "She will talk but carefully. The curse is spreading west. The eastern villages are mostly empty. People come to Crestfall because it feels safer. \"It probably is not,\" she adds, and immediately looks like she wishes she had not.",
+              "text": "She will talk, but carefully. The curse is spreading west, she says, and the villages to the east are mostly empty now. People come to Crestfall because it feels safer. \"It probably isn't,\" she adds, and looks at once as if she wishes she hadn't.",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {
                 "flags": {
@@ -137,7 +137,7 @@
               }
             },
             "failure": {
-              "text": "\"Just selling grain today,\" she says pleasantly. She has done this before. The careful withdrawal into transaction when a conversation could go somewhere uncomfortable.",
+              "text": "\"Just selling grain today,\" she says pleasantly. She has done this before, you can tell. When a conversation looks like going somewhere awkward, she simply goes back to selling grain.",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {}
             }
@@ -162,7 +162,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "His name is Corvin and he has been in Crestfall for eighty years and he knows things the way old people in small towns know things. Not because anyone told him but because he was there.\n\nHe saw [missing person]. He says so directly, which surprises you. \"Asking about the ruins,\" he says. \"Like you are probably about to.\" He gives you a long look. \"Went to the camp outside town eventually. The woman there — Maret — sent them east.\"\n\nHe hands you a piece of dried fish you did not ask for and looks away, which means the conversation is over.",
+              "text": "His name is Corvin. He has lived in Crestfall for eighty years, and he knows things as old men in small towns do, because he was there when they happened.\n\nHe saw [missing person], and he tells you so straight out, which surprises you. \"Asking about the ruins,\" he says. \"Same as you're about to.\" He looks at you hard. \"Went out to the camp in the end. The woman there, Maret, sent them east.\"\n\nHe hands you a piece of dried fish you didn't ask for and looks away, and you understand that he has finished.",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {
                 "flags": {
@@ -172,7 +172,7 @@
               }
             },
             "success_at_cost": {
-              "text": "He watched you come in and has been deciding something. He lands on partial disclosure. [missing person] was here, went to the camp. He looks away before you can ask more.",
+              "text": "He has been watching you since you came into the square, and now he seems to decide to tell you a little. [missing person] was here, he says, and went out to the camp. He looks away before you can ask him anything more.",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {
                 "flags": {
@@ -181,7 +181,7 @@
               }
             },
             "failure": {
-              "text": "He watches you and does not get up. The world can come to him. He will tell you his prices. That is today's limit.",
+              "text": "He watches you and does not get up. If you want anything, he seems to say, you can come to him. He tells you his prices, and that is all you get today.",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {}
             }
@@ -224,7 +224,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "He wraps four fish in paper without asking how many. \"For the road,\" he says. \"Everyone who buys fish from me now is going east.\"",
+              "text": "He wraps four fish in paper without asking how many you want. \"For the road,\" he says. \"Everyone who buys fish from me these days is going east.\"",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {
                 "resources": {
@@ -240,12 +240,12 @@
         },
         {
           "id": "move_to_compact",
-          "text": "Head to the town gate. See what the Compact soldiers want.",
+          "text": "Go to the town gate and see what the Compact soldiers want.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "The soldier at the gate saw you leave the inn this morning. You get the feeling he has been waiting.",
+              "text": "The soldier on the gate saw you leave the inn this morning. You rather think he has been waiting for you.",
               "next_scene": "act1_ch3_compact_introduction",
               "state_changes": {}
             }
@@ -267,21 +267,21 @@
       },
       "requires": {},
       "text": {
-        "default": "Two things happen in quick succession as you move through the market.\n\nFirst: Hanna from the grain stall stops you on the way past and lowers her voice. \"You asked about the Rootless earlier.\" She did not hear you ask. She heard about it, which is different and faster. \"Maret. The woman who runs the camp. She is careful. Do not go there offering things. She does not want things from people like you. She wants to know why you are worth trusting.\"\n\nSecond: an old woman you do not recognise presses a piece of bread into your hand and says, \"The camp fed my daughter when the town would not. Whatever anyone tells you about them, remember that.\" She walks away before you can ask who she is.",
-        "commander": "Two pieces of unsolicited intelligence in thirty seconds. People in frightened towns become generous with information when they sense someone taking stock. They want you to have the right picture.\n\nYou calibrate: the Rootless have support in parts of the town population. Maret is trusted with a kind of trust. The camp helped when helping was a risk. People remember that.",
-        "arcane": "Two data points, delivered consecutively, from two very different sources. Both are telling you the same thing in different registers. Go carefully. Do not assume.\n\nNobody in town has said anything against the Rootless that was more than suspicion.",
-        "ranger": "Both women are easy to read. Hanna: genuinely wants to help, slightly afraid you will make things complicated. The old woman: loves someone the Rootless took care of, and that love is absolute.\n\nHead for the camp.",
-        "cipher": "Hanna's tip is practical. The old woman's is emotional. Together they give you a clearer picture of Maret than either would alone: someone trusted by people who do not trust easily, who has made herself necessary in a place that tried to decide she was not."
+        "default": "Two things happen, one after the other, as you go through the market.\n\nThe first is that Hanna from the grain stall stops you and lowers her voice. \"You were asking about the Rootless.\" She didn't hear you ask, you notice. She heard about it, which is quicker. \"Maret, the woman who runs the camp. She's careful. Don't go out there offering her things. She doesn't want things from people like you. She wants to know why she should trust you.\"\n\nThe second is that an old woman you don't know presses a piece of bread into your hand. \"The camp fed my daughter when the town wouldn't,\" she says. \"Whatever they tell you about them, you remember that.\" She has walked off before you can ask her name.",
+        "commander": "That is twice in half a minute that people have told you things without being asked. In a frightened town people get generous when they see somebody trying to make sense of it. They want you to get it right.\n\nYou take it to mean that the Rootless have friends in the town, and that Maret is trusted, after a fashion. The camp helped people when helping was a risk, and people have not forgotten it.",
+        "arcane": "Two people, one after the other, very different from each other, have told you the same thing in different words: go carefully, and don't take anything for granted.\n\nSo far nobody in the town has said anything against the Rootless that was more than suspicion.",
+        "ranger": "Both women are easy enough to read. Hanna wants to help, and is a little afraid you will make things difficult. The old woman loves somebody the Rootless looked after, and there is no arguing with that.\n\nYou had better go to the camp.",
+        "cipher": "Hanna's advice is practical and the old woman's is not, but between them they tell you more about Maret than either would alone. She is trusted by people who do not trust easily, and she has made herself necessary in a town that tried very hard to do without her."
       },
       "choices": [
         {
           "id": "go_to_camp_now",
-          "text": "Head to the Rootless camp.",
+          "text": "Go to the Rootless camp.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "East of the market, past the last building, along a path that is not quite a path, through the first of the trees.",
+              "text": "You go east out of the market, past the last of the houses, along something that is not quite a path, and in among the first of the trees.",
               "next_scene": "act1_ch3_rootless_camp_approach",
               "state_changes": {}
             }
@@ -289,12 +289,12 @@
         },
         {
           "id": "explore_more_first",
-          "text": "Spend more time in town before going to the camp.",
+          "text": "Spend more time in town before you go to the camp.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You spend the rest of the morning moving through the town's remaining open businesses, gathering what you can. The afternoon: the camp.",
+              "text": "You spend the rest of the morning going round the few shops that are still open and picking up what you can. In the afternoon you go out to the camp.",
               "next_scene": "act1_ch3_rootless_camp_approach",
               "state_changes": {
                 "world": {
@@ -312,7 +312,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "The gate is a five minute walk. Cael is posted there. He looks up when he sees you coming, which means he has been watching.",
+              "text": "The gate is five minutes' walk. Cael is on duty there, and he looks up as you come, so he has been watching for you.",
               "next_scene": "act1_ch3_compact_introduction",
               "state_changes": {}
             }
@@ -352,10 +352,10 @@
       "requires": {},
       "text": {
         "default": [
-          "Left at the baker's, down the hill, past the old mill wall that was already crumbling when you were a child and has crumbled further since, around the corner, and—",
-          "A different door. Same frame, different door. Someone painted the shutters a colour you would not have chosen. The window boxes have plants in them you do not recognise.",
-          "The house is occupied and has been for years. Of course it is. You left. You did not come back. What you left has become something else, which is what things do when you are not watching.",
-          "You stand in the street in front of it for longer than you intend to.",
+          "You go left at the baker's and down the hill, past the old mill wall, which was falling down when you were a child and has fallen down a good deal more since. You turn the corner, and there it is.",
+          "It has a new door in the old frame. Somebody has painted the shutters a colour you would never have chosen, and the window boxes are full of plants you don't recognise.",
+          "Of course somebody lives there, and has for years. You went away and did not come back, and the house has gone on without you, as houses do.",
+          "You stand in the street in front of it longer than you mean to.",
           {
             "when": {
               "relationship_type": [
@@ -405,15 +405,15 @@
             "text": "The corner by the mill wall is where you and [missing person] used to stop and talk until it got dark, and then a while after. You never once walked them home. They never asked."
           }
         ],
-        "commander": "You stand in front of your childhood home and make yourself acknowledge it completely. The different door, the painted shutters, the strangers who live there now and have made it theirs. You let the acknowledgement sit until it loses its weight.\n\nYou left. Eleven years passed. The house continued.\n\nYou turn and go back to the main street.",
-        "arcane": "You stand in front of your childhood home and note that it feels different than you expected. Not painful. Stranger than painful.\n\nThe residue on the building is layered. Your own history, faint now, eleven years old, and over it the residue of other lives. You look for your own traces and find them in the places you would expect: the window of your room, the corner of the yard where you used to sit, the step at the door.\n\nYou are still in this place, slightly, the way everyone is still in the places they grew up. It is smaller than you remembered.",
-        "ranger": "You stand in front of the house and read it as territory first, which is a habit you have noticed in yourself before. The building is structurally sound. The new occupants keep it up. The yard behind has been turned into a kitchen garden.\n\nThen you let yourself feel it. You came here for someone who also grew up not far from here. That is enough of that.",
-        "cipher": "You stand in front of your childhood home and let yourself be briefly unprofessional about it.\n\nSomebody else's curtains. Somebody else's door. The shape the shadow makes on the paving is exactly the shape it always made.\n\nYou stayed too long. You turn and go back."
+        "commander": "You stand in front of the house you grew up in and make yourself take it all in: the new door, the painted shutters, the strangers who live there now and have made it their own. You stand there until it stops troubling you.\n\nYou left, eleven years went by, and the house carried on. You turn and go back to the main street.",
+        "arcane": "You stand in front of the house you grew up in, and find it is not what you expected. It does not hurt, exactly. It is only rather strange.\n\nThe residue on the building lies in layers. Your own is faint now, eleven years old, and the lives of other people lie over it. You look for your traces and find them where you would expect: at the window of your old room, in the corner of the yard where you used to sit, on the doorstep.\n\nThere is still a little of you in the place, as there is a little of everybody in the house they grew up in. It is smaller than you remember.",
+        "ranger": "You find yourself looking the house over before anything else, which you have caught yourself doing before. It is sound. The people who live there look after it. The yard at the back has been dug over for vegetables.\n\nThen you let yourself feel it, for a moment. The person you came for grew up a few streets from here. That will do.",
+        "cipher": "You stand in front of the house you grew up in and allow yourself, just for a minute, not to be working.\n\nThe curtains and the door are somebody else's now. The shadow on the paving is exactly the shape it always was.\n\nYou have stayed too long. You turn and go back."
       },
       "choices": [
         {
           "id": "knock_on_door",
-          "text": "Knock. Introduce yourself to whoever lives there now.",
+          "text": "Knock, and introduce yourself to whoever lives there now.",
           "requires": {},
           "roll": {
             "stat": "charisma",
@@ -421,7 +421,7 @@
           },
           "outcomes": {
             "success": {
-              "text": "A woman in her thirties opens the door. Wary at first, then warm when you explain.\n\nShe was born in Crestfall and moved here with her husband six years ago. She knew some of the people who knew you. She invites you in for something to drink. You go.\n\nThe inside has changed completely and is, underneath the changes, entirely the same. You sit in the kitchen and drink something hot and she tells you about the town. And then, without you asking, she says: \"Someone was here last year asking after you. Or someone like you — they described the family who used to live here. Asked questions about the old ruins.\"\n\n[missing person] was here. At your childhood home. Looking for something about you, or about where you came from.",
+              "text": "A woman in her thirties opens the door. She is wary at first, and then, when you explain, quite friendly.\n\nShe was born in Crestfall and moved into the house with her husband six years ago, and she knew a few of the people who knew you. She asks you in for something hot, and you go.\n\nInside it has all been changed, and under the changes it is exactly the same. You sit in the kitchen with your cup and she tells you about the town. Then, without your asking, she says, \"Somebody came here last year asking about you. Or somebody like you. They described the family who used to live here, and asked about the old ruins.\"\n\nSo [missing person] came here, to your old house, looking for something about you, or about where you came from.",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {
                 "flags": {
@@ -435,7 +435,7 @@
               }
             },
             "success_at_cost": {
-              "text": "She opens the door and is politely reserved. You explain briefly. She nods and tells you one thing useful: that she saw [missing person] walking east on the road about fourteen months ago. Alone. Purposeful.\n\n\"I remember thinking they knew where they were going,\" she says. \"That is rare now. People here do not look like they know where they are going.\"",
+              "text": "She opens the door and is polite but reserved. You explain who you are. She nods, and tells you one useful thing: about fourteen months ago she saw [missing person] walking east on the road, alone, and in no doubt about where they were going.\n\n\"I remember thinking they knew where they were going,\" she says. \"You don't see that much now. People here don't look as though they know where they're going.\"",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {
                 "flags": {
@@ -444,7 +444,7 @@
               }
             },
             "failure": {
-              "text": "A man opens the door and is immediately, not unkindly, closed. He does not know you. He has things to do. He closes the door with the gentle firmness of someone protecting their morning.\n\nYou stand on the step for a moment. Then you go.",
+              "text": "A man opens the door. He doesn't know you, he has things to do, and he says so quite kindly and shuts the door.\n\nYou stand on the step a moment, and then you go.",
               "next_scene": "act1_ch2_old_friend",
               "state_changes": {}
             }
@@ -452,12 +452,12 @@
         },
         {
           "id": "dont_knock",
-          "text": "Do not knock. Just look, then go.",
+          "text": "Don't knock. Look, and then go.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You stand long enough to finish the thought and then go before it becomes something else.",
+              "text": "You stay just long enough to finish the thought, and go before it can turn into anything else.",
               "next_scene": "act1_ch2_old_friend",
               "state_changes": {}
             }
@@ -479,21 +479,21 @@
       },
       "requires": {},
       "text": {
-        "default": "Someone calls \"[player]\" across the street. The name people here knew, not the one you have been using since. A man your age, give or take. You recognise him slowly, the way you recognise a piece of music from hearing only the first few notes and having to wait for memory to supply the rest.\n\nGoran. You used to run the east field fence together in the summers, a job both your families shared. You have not thought of him in years.\n\nHe crosses the street and shakes your hand. He is glad to see you, and a little afraid of what your coming back means.",
-        "commander": "Goran. He was the kind of child who became the kind of adult who holds a community together by doing the things nobody notices until they stop getting done. Looking at him now you can see he has been doing a lot of that lately.\n\n\"It is good to see you,\" he says. He means it and also the underneath of it. It is good to see someone from before, someone who remembers what this place used to be.",
-        "arcane": "Goran. He looks at you with the mix of recognition and relief that you have seen on people who have been frightened for a long time and have just encountered someone who might understand something.\n\n\"You are back,\" he says. \"Are you here because of—\" He stops. \"You heard about what is happening.\"",
-        "ranger": "Goran. The east field. Long summers, short pay, the particular friendship of people who work alongside each other in comfortable silence. He is heavier now and his hair is going and he is looking at you like you might have an answer.\n\n\"I heard you were at the Tallow,\" he says. Word moves fast in a town this size.",
-        "cipher": "Goran. Someone who knew you before you learned to be careful about who knew you. He is looking at you as if it were eleven years ago.\n\nThat is useful. People tell old friends things they would not tell strangers."
+        "default": "Somebody calls \"[player]\" across the street. It is the name people here knew you by, not the one you have used since. It comes from a man of about your own age, and it is a moment before you place him.\n\nIt is Goran. The two of you used to run the east field fence together in the summers, a job your families shared. You haven't thought of him in years.\n\nHe crosses over and shakes your hand. He is glad to see you, and a little afraid of what your coming back may mean.",
+        "commander": "Goran was always the sort of boy who would grow up to keep a place going by doing the jobs nobody notices until they stop being done. You can see he has had a great deal of that lately.\n\n\"It's good to see you,\" he says, and he means it. It is good, you suppose, to see somebody from before, who remembers what the town used to be.",
+        "arcane": "Goran looks at you with recognition and with a kind of relief. You have seen that look on people who have been frightened a long time and think they have met somebody who might understand.\n\n\"You're back,\" he says. \"Are you here because of...\" He stops. \"You've heard what's been happening.\"",
+        "ranger": "You remember the east field, the long summers and the poor pay, and how the two of you could work all day without needing to talk. He has got heavier, his hair is going, and he is looking at you as though you might have an answer.\n\n\"Heard you were at the Tallow,\" he says. News travels quickly in a town this size.",
+        "cipher": "Goran knew you before you learned to be careful about who knew you. He is looking at you as though it were eleven years ago.\n\nThat may be useful. People tell old friends what they would never tell a stranger."
       },
       "choices": [
         {
           "id": "catch_up_with_goran",
-          "text": "\"Tell me what happened here. Everything.\"",
+          "text": "\"Tell me what happened here.\"",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "He finds you a place to sit, a bench near the old fountain, and tells you. Not everything, but more than you have gotten from anyone else, told in a rush, as if he has been waiting to tell somebody.\n\nThe curse started two winters ago. First the animals, then the crops, then people. Three families left Harrow and came to Crestfall. The Compact arrived eight months ago. The Covenant strengthened its presence. The Rootless camp appeared at the forest edge.\n\n\"Your person,\" he says suddenly. You have not mentioned anyone. \"The one you are here for. I saw them. About fourteen months back. They spent a week asking questions and then went to the camp outside town.\" He looks at the trees to the east. \"Then they went east. Nobody I know went to find out what happened.\"",
+              "text": "He finds you a bench near the old fountain and tells you. It isn't everything, but it is more than anybody else has told you, and it comes out in a rush, as if he has been waiting for someone to tell.\n\nIt started two winters ago, he says, with the animals, and then the crops, and then people. Three families left Harrow and came here. The Compact came eight months ago, the Covenant took over the alderman's hall, and the Rootless set up their camp on the edge of the forest.\n\n\"Your person,\" he says suddenly. You haven't mentioned anybody. \"The one you've come for. I saw them, fourteen months back or so. They spent a week asking questions and then went out to the camp.\" He looks at the trees to the east. \"Then they went east, and nobody I know went to find out what happened to them.\"",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {
                 "flags": {
@@ -516,7 +516,7 @@
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "He nods before you finish the name. \"I saw them,\" he says. \"We spoke a few times. They were asking about the history of this place — the old city under the forest, the ruins. Things people here grow up not asking about.\"\n\nHe looks at his hands. \"They seemed — purposeful. Not frightened. I remember thinking: either they know something we do not, or they are about to find out something they did not expect.\"\n\nHe looks at you. \"I take it they did not come back.\"",
+              "text": "He is nodding before you have finished the name. \"I saw them,\" he says. \"We talked a few times. They were asking about the history of the place, the old city under the forest, the ruins. The things people here grow up not asking about.\"\n\nHe looks at his hands. \"They didn't seem frightened. They seemed to have a purpose. I remember thinking either they knew something the rest of us didn't, or they were about to find out something they weren't expecting.\"\n\nHe looks at you. \"I take it they never came back.\"",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {
                 "flags": {
@@ -529,12 +529,12 @@
         },
         {
           "id": "keep_it_brief",
-          "text": "Keep it brief. You have things to do.",
+          "text": "Keep it short. You have things to do.",
           "requires": {},
           "roll": null,
           "outcomes": {
             "default": {
-              "text": "You exchange a few minutes and a few words and it is warm and insufficient and you both know it. He gives you his address, the house on the north lane, the one with the blue door, and says to come by if you need anything.\n\nYou might. You go.",
+              "text": "You talk for a few minutes. It is friendly and it is not nearly enough, and you both know it. He tells you where he lives, the house with the blue door on the north lane, and says to come by if you need anything.\n\nYou may well need to. You go.",
               "next_scene": "act1_ch2_market_rumour_missing",
               "state_changes": {}
             }
